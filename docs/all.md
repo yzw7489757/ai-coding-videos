@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 27 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 36 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -51,6 +51,13 @@
   - 看点：禁止团队碰编辑器；750 包仓库、文件行数测试、带修复指引的 lint、按 persona 的 CI reviewer、每周 Garbage Collection Day。
   - 👉 [阅读分析](/07-harness-engineering)
 
+### Hooks：让规则一定会执行 {#item-28}
+
+- **[Automate actions with hooks](https://code.claude.com/docs/en/hooks-guide)** <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Anthropic ／ Claude Code 官方文档 ｜ 发布：持续更新（抓取于 2026-10-09） ｜ 工具：Claude Code hooks（`settings.json`、`/hooks`）；对照 Gemini CLI hooks（Google Developers Blog，2026-01-28）
+  - 看点：PostToolUse 自动格式化、PreToolUse + 退出码 2 拦截敏感文件、压缩后重新注入约定、Stop prompt / agent hook；PreToolUse 的 deny 在跳过权限模式下仍生效。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/28-claude-code-hooks-guide)
+
 ## 做规划 · 需求澄清与任务拆解 {#domain-planning}
 
 **这一组放什么**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -84,6 +91,13 @@
   - 讲者 / 频道：Bijan Bowen ｜ 发布：2026-05-15 ｜ 工具：Grok Build + Grok 4.3
   - 看点：plan mode 的可交互计划（含 non-goals 与成功指标）、截图反馈、无头浏览器自测，以及越界行为等问题。
   - 👉 [阅读分析](/13-bijan-bowen-grok-build)
+
+### Conductor：把计划写进仓库 {#item-29}
+
+- **[Conductor: Introducing context-driven development for Gemini CLI](https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span>
+  - 作者 / 来源：Keith Ballinger、Jay Kornder、Sherzat Aitbayev ／ Google Developers Blog ｜ 发布：2025-12-17（后续更新 2026-02-13） ｜ 工具：Gemini CLI + Conductor 扩展
+  - 看点：setup 写下产品、技术栈和流程；每个需求生成 spec.md 和 plan.md，人审后执行并逐项打勾；后来加入对照计划和规范的自动审查。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/29-gemini-cli-conductor)
 
 ## 去执行 · 从单代理到多代理 {#domain-execution}
 
@@ -140,6 +154,13 @@
   - 看点：扁平协作 + 锁在数百代理时失败，改成 Planner / Worker / Judge 分层；按角色选模型；integrator 角色反成瓶颈。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/18-cursor-scaling-long-running-agents)
 
+### 大型重构拆给并行代理 {#item-30}
+
+- **[Automating Large Scale Refactors with Parallel Agents - Robert Brennan, OpenHands](https://www.youtube.com/watch?v=rcsliSIy_YU)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>
+  - 讲者 / 频道：Robert Brennan（OpenHands）／ AI Engineer ｜ 发布：2026-01-08 ｜ 工具：OpenHands、Agent SDK、Refactor SDK
+  - 看点：代理一次做不完大迁移；迁移分支 + 背景说明 + 3–5 个并行代理 + 每个 PR 人审；拆任务的五条标准；按依赖图分批、验证器 + 修复器；Redux 迁 Zustand 的临时脚手架。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/30-openhands-parallel-refactors)
+
 ## 做验证 · 测试、评测与审查 {#domain-verification}
 
 **这一组放什么**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
@@ -173,6 +194,20 @@
   - 作者 / 来源：Mikaela Grace 等（Anthropic）／ Anthropic Engineering 博客 ｜ 发布：2026-01-09 ｜ 工具：与工具无关
   - 看点：评测的零件（Task / Trial / Grader）、三种评分器怎么搭配、能力评测与回归评测、pass@k 与 pass^k，以及从 0 到 1 的路线图。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/19-anthropic-demystifying-agent-evals)
+
+### AI 代码审查：精确率优先 {#item-31}
+
+- **[A Practical Approach to Verifying Code at Scale](https://alignment.openai.com/scaling-code-verification/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Maja Trębacz 等（OpenAI，与 Codex 团队合作）／ OpenAI Alignment Research Blog ｜ 发布：2025-12-01 ｜ 工具：Codex Code Review、`/review`
+  - 看点：精确率比召回率重要；审查者要能读整个仓库、运行代码；训练用的检查器和交给人用的审查器要分开；作者对 52.7% 的评论用代码修改回应。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/31-openai-verifying-code-at-scale)
+
+### Devin 用 Computer Use 自测 {#item-32}
+
+- **[Verifying Agentic Development at Scale](https://cognition.com/blog/testing-development)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>
+  - 作者 / 来源：Ido Pesok ／ Cognition 博客 ｜ 发布：2026-05-29 ｜ 工具：Devin（云端虚拟机、Computer Use、测试模式）
+  - 看点：异步触发的会话已超过交互式；测试计划基于源码；操作前先写预期；登录写成确定性脚本放进测试技能；交回截图报告和分章节录屏。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/32-cognition-verifying-agentic-development)
 
 ## 自动化 · 后台代理与 CI/CD {#domain-automation}
 
@@ -208,6 +243,20 @@
   - 看点：`codex exec` 的管道、JSONL、结构化输出；CI 失败自动修复的两段式布局：只读 job 拿密钥生成补丁，无密钥 job 开 PR。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/22-openai-codex-ci-autofix)
 
+### Bugbot：用解决率迭代审查机器人 {#item-33}
+
+- **[Building a better Bugbot](https://cursor.com/blog/building-bugbot)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Jon Kaplan ／ Cursor 博客 ｜ 发布：2026-01-15 ｜ 工具：Cursor Bugbot、Bugbot rules、Bugbot Autofix
+  - 看点：8 次并行审查 + 多数投票 + 验证模型；用“解决率”衡量并做了 40 次实验（52% → 70% 以上）；代理式架构后提示词从克制改为激进。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/33-cursor-building-bugbot)
+
+### Grok Build 跑进脚本和 CI {#item-34}
+
+- **[Hooks](https://docs.x.ai/build/features/hooks)** 等 Grok Build 文档页 <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-grokbuild">Grok Build</span>
+  - 作者 / 来源：xAI ／ Grok Build 官方文档（Hooks、Headless & Scripting、AGENTS.md、Background Tasks、Worktrees） ｜ 发布：2026-06-10 至 2026-07-21 更新（抓取于 2026-10-09） ｜ 工具：Grok Build CLI
+  - 看点：`grok -p` + JSON 输出；兼容 Claude Code / Cursor 的 hook 文件，PreToolUse 是唯一能拦截的事件，出错时故障放行；`/loop` 定时任务；`grok -w` worktree。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/34-grok-build-headless-hooks)
+
 ## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
@@ -235,29 +284,50 @@
   - 看点：Planner 扩写规格、Generator 实现、Evaluator 用浏览器实测打分；单代理 20 分钟 / $9 做出的游戏是坏的，完整 harness 6 小时 / $200 能玩；模型升级后逐个拆脚手架。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/16-anthropic-harness-design-long-running-apps)
 
+### Amp 的专长子代理架构 {#item-35}
+
+- **[Amp Code: Next Generation AI Coding – Beyang Liu, Amp Code](https://www.youtube.com/watch?v=gvIAkmZUEZY)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-amp">Amp</span>
+  - 讲者 / 频道：Beyang Liu（Sourcegraph）／ AI Engineer ｜ 发布：2025-12-22 ｜ 工具：Amp
+  - 看点：代理 = 模型 + 工具 + 循环；精选工具而非大量接 MCP；读太少会陷入 doom loop；Finder / Oracle / Librarian / Kraken 专长子代理；不做模型选择器。附演讲后的产品变化。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/35-amp-next-generation-ai-coding)
+
+### 用代码调用 MCP 省上下文 {#item-36}
+
+- **[Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/code-execution-with-mcp)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Adam Jones、Conor Kelly ／ Anthropic Engineering 博客 ｜ 发布：2025-11-04 ｜ 工具：MCP + 代码执行环境（与具体代理无关）
+  - 看点：工具定义和中间结果都在吃上下文；把 MCP 服务器包装成文件树里的代码 API，按需加载，示例 token 从 150,000 降到 2,000；渐进披露、结果过滤、隐私脱敏、沉淀成技能；代价是沙箱。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/36-anthropic-code-execution-with-mcp)
+
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段：打地基 5 篇（#20、#21、#14、#26、#07）；做规划 4 篇（#03、#06、#04、#13）；去执行 7 篇（#27、#11、#05、#08、#23、#17、#18）；做验证 4 篇（#25、#12、#15、#19）；自动化 4 篇（#01、#02、#10、#22）；看原理 3 篇（#09、#24、#16）。
+按阶段：打地基 6 篇（#20、#21、#14、#26、#07、#28）；做规划 5 篇（#03、#06、#04、#13、#29）；去执行 8 篇（#27、#11、#05、#08、#23、#17、#18、#30）；做验证 6 篇（#25、#12、#15、#19、#31、#32）；自动化 6 篇（#01、#02、#10、#22、#33、#34）；看原理 5 篇（#09、#24、#16、#35、#36）。“去执行”已到 8 篇，下一批新增前需要检查归类是否偏了。
 
-按类型：视频 19 篇；文章 6 篇（#16–#20、#27）；官方文档 1 篇（#22）；指南 1 篇（#25）。
+按类型：视频 21 篇；文章 11 篇（#16–#20、#27、#29、#31、#32、#33、#36）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
 
 按工具：
 
 | 工具 | 数量 | 资料 | 说明 |
 |---|---|---|---|
-| Claude Code | 12 | #01–#06、#16、#17、#20、#21、#23、#24 | 内容最充足，官方团队直接讲内部用法；2026-10-09 新增 Anthropic 工程博客 3 篇 |
-| Codex | 6 | #07–#11、#22 | 官方工程师讲 harness 与内部流程，#22 为官方文档；#09、#10 为同一讲者的不同演讲 |
-| Grok（Grok Build / Cursor + Grok 4.5） | 4 | #12–#15 | **缺口明显**，见下 |
-| Cursor | 1 | #18 | 公司研究博客 |
-| 通用（不限工具） | 4 | #19、#25、#26、#27 | 方法论与评测，适用于任何编码代理 |
+| Claude Code | 13 | #01–#06、#16、#17、#20、#21、#23、#24、#28 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
+| Codex | 7 | #07–#11、#22、#31 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
+| Grok（Grok Build / Cursor + Grok 4.5） | 5 | #12–#15、#34 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
+| Cursor | 2 | #18、#33 | 公司研究博客 |
+| Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
+| OpenHands | 1 | #30 | 大会研讨会 |
+| Devin | 1 | #32 | Cognition 官方博客 |
+| Amp | 1 | #35 | 大会演讲；演讲后产品有较大变化，文中已注明 |
+| 通用（不限工具） | 5 | #19、#25、#26、#27、#36 | 方法论、评测与 MCP 设计，适用于任何编码代理 |
 
 **Grok 的缺口：**
+- 2026-10-09 第二批收录了 xAI 官方 Grok Build 文档（#34：hooks、headless、AGENTS.md、`/loop`、worktree），内容实在、可复制。但 xAI 官方的**工程博客或大会演讲**（讲设计取舍和团队实践）仍未找到。
 - 未找到 xAI 官方频道或 AI Engineer 等大会上关于 Grok Build / Grok 编码代理的长篇工程演讲或实战讲解；Grok 官方频道只有 1–2 分钟的产品宣传片（如 “Introducing Grok 4.5”），不符合“内容实战”的标准，没有收录。
 - 收录的 4 个 Grok 视频都是第三方实测：#12、#13、#14 有完整字幕；#15 内容最贴近“多代理 + 验证”主题，但自动字幕质量差，因此结合简介和官方文档分析。
 - 讲架构设计和长期团队实践的 Grok 内容（类似 #07、#10 那样）目前没有找到。Grok 部分的结论主要是“工具能力 + 个人体验”，可信度低于 Claude / Codex 部分。
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-09 第二批**仍未覆盖**：Aider（没有找到近 12 个月内够分量的一手资料）；“把 agent evals 接进 CI”的专门资料（评测方法见 #19，但没有可靠的端到端 CI 配置示例）；Cursor 后台代理（Background / Cloud Agents）的专门资料（#33 只提到 Autofix 会启动云端代理）。
+- 第二批考虑过但未收录：Google Cloud Tech 的 Gemini CLI 直播《Making a list {and checking it twice}: The Gemini CLI workflow》（https://www.youtube.com/watch?v=4U3nfVxlwlM，1 小时直播，内容与 #29 重叠）。
 - 时效：#04、#20、#21、#26 发布于 2025 年 11–12 月，#22（持续更新的文档）与 #25（连载指南）以 2026-10-09 抓取的版本为准，其余均为 2026 年发布。
 - 按要求排除了以漏洞挖掘 / 攻防安全为主题的资料，只保留软件开发工作流。
 - 未收录但可作延伸阅读：Ryan Lopopolo 在 Latent Space 的长访谈 *Extreme Harness Engineering*（https://www.youtube.com/watch?v=CeOXx-XTYek，与 #07 同一讲者，含 Symphony 编排器）；Jason Liu 在 OpenAI DevDay 2026 的 *From Single Player to Multiplayer with Codex*（https://www.youtube.com/watch?v=aDTPTwnrRyA，偏知识工作协作）。

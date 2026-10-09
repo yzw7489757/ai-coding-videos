@@ -8,6 +8,10 @@ export const tools = {
   grok45: 'Cursor + Grok 4.5',
   grokbuild: 'Grok Build',
   cursor: 'Cursor',
+  gemini: 'Gemini CLI',
+  openhands: 'OpenHands',
+  devin: 'Devin',
+  amp: 'Amp',
   general: '通用（不限工具）'
 }
 
@@ -33,7 +37,8 @@ export const domains = [
       { n: '21', slug: '21-anthropic-agent-skills-talk', text: '别造代理，写 Skills', short: 'Skills 按需加载', tool: 'claude', type: 'video', added: '2026-10-09' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video' },
       { n: '26', slug: '26-factory-agent-ready-codebases', text: '让代码库为代理做好准备', short: '8 根验证支柱', tool: 'general', type: 'video', added: '2026-10-09' },
-      { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video' }
+      { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video' },
+      { n: '28', slug: '28-claude-code-hooks-guide', text: 'Hooks：让规则一定会执行', short: 'Hooks 确定性规则', tool: 'claude', type: 'docs', added: '2026-10-09' }
     ]
   },
   {
@@ -47,7 +52,8 @@ export const domains = [
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video' },
       { n: '06', slug: '06-field-guide-to-fable', text: '找出未知，给上下文做减法', short: '找未知 做减法', tool: 'claude', type: 'video' },
       { n: '04', slug: '04-no-vibes-allowed-rpi', text: 'RPI：研究、计划、实施', short: 'RPI 有意压缩', tool: 'claude', type: 'video' },
-      { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video' }
+      { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video' },
+      { n: '29', slug: '29-gemini-cli-conductor', text: 'Conductor：把计划写进仓库', short: 'Conductor 上下文驱动', tool: 'gemini', type: 'article', added: '2026-10-09' }
     ]
   },
   {
@@ -64,7 +70,8 @@ export const domains = [
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09' },
       { n: '17', slug: '17-anthropic-c-compiler-agent-teams', text: '16 个代理并行写 C 编译器', short: '16 代理写编译器', tool: 'claude', type: 'article', added: '2026-10-09' },
-      { n: '18', slug: '18-cursor-scaling-long-running-agents', text: '数百个代理协作写浏览器', short: '数百代理分层', tool: 'cursor', type: 'article', added: '2026-10-09' }
+      { n: '18', slug: '18-cursor-scaling-long-running-agents', text: '数百个代理协作写浏览器', short: '数百代理分层', tool: 'cursor', type: 'article', added: '2026-10-09' },
+      { n: '30', slug: '30-openhands-parallel-refactors', text: '大型重构拆给并行代理', short: '并行代理做大重构', tool: 'openhands', type: 'video', added: '2026-10-09' }
     ]
   },
   {
@@ -78,7 +85,9 @@ export const domains = [
       { n: '25', slug: '25-simonw-agentic-engineering-testing-patterns', text: '测试驱动与代理手动测试', short: 'TDD 与手动测试', tool: 'general', type: 'guide', added: '2026-10-09' },
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video' },
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video' },
-      { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09' }
+      { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09' },
+      { n: '31', slug: '31-openai-verifying-code-at-scale', text: 'AI 代码审查：精确率优先', short: '审查精确率优先', tool: 'codex', type: 'article', added: '2026-10-09' },
+      { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09' }
     ]
   },
   {
@@ -92,7 +101,9 @@ export const domains = [
       { n: '01', slug: '01-claude-code-one-year', text: 'Claude Code 一周年：验证与 Routines', short: 'Routines 与验证', tool: 'claude', type: 'video' },
       { n: '02', slug: '02-claude-code-team-workflows', text: 'Claude Code 团队的工作流', short: 'Slack 派活 扇出审查', tool: 'claude', type: 'video' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video' },
-      { n: '22', slug: '22-openai-codex-ci-autofix', text: 'CI 挂了让 Codex 自动修', short: 'codex exec 修 CI', tool: 'codex', type: 'docs', added: '2026-10-09' }
+      { n: '22', slug: '22-openai-codex-ci-autofix', text: 'CI 挂了让 Codex 自动修', short: 'codex exec 修 CI', tool: 'codex', type: 'docs', added: '2026-10-09' },
+      { n: '33', slug: '33-cursor-building-bugbot', text: 'Bugbot：用解决率迭代审查机器人', short: 'Bugbot 解决率', tool: 'cursor', type: 'article', added: '2026-10-09' },
+      { n: '34', slug: '34-grok-build-headless-hooks', text: 'Grok Build 跑进脚本和 CI', short: 'Grok Build 无人值守', tool: 'grokbuild', type: 'docs', added: '2026-10-09' }
     ]
   },
   {
@@ -105,7 +116,9 @@ export const domains = [
     items: [
       { n: '09', slug: '09-how-codex-works', text: 'Codex Harness 内部机制', short: 'Codex harness 拆解', tool: 'codex', type: 'video' },
       { n: '24', slug: '24-huntley-horthy-ralph-loop', text: 'Ralph 循环：为什么每轮重开', short: 'Ralph 循环', tool: 'claude', type: 'video', added: '2026-10-09' },
-      { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09' }
+      { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09' },
+      { n: '35', slug: '35-amp-next-generation-ai-coding', text: 'Amp 的专长子代理架构', short: 'Amp 专长子代理', tool: 'amp', type: 'video', added: '2026-10-09' },
+      { n: '36', slug: '36-anthropic-code-execution-with-mcp', text: '用代码调用 MCP 省上下文', short: '代码调用 MCP', tool: 'general', type: 'article', added: '2026-10-09' }
     ]
   }
 ]

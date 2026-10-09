@@ -237,6 +237,14 @@
 .tool-general { color: #7c3aed; }
 .dark .tool-cursor { color: #93c5fd; }
 .dark .tool-general { color: #c4b5fd; }
+.tool-gemini { color: #1a73e8; }
+.tool-openhands { color: #b45309; }
+.tool-devin { color: #0f766e; }
+.tool-amp { color: #be123c; }
+.dark .tool-gemini { color: #8ab4f8; }
+.dark .tool-openhands { color: #fcd34d; }
+.dark .tool-devin { color: #5eead4; }
+.dark .tool-amp { color: #fda4af; }
 .type-tag {
   display: inline-block;
   margin-left: 4px;

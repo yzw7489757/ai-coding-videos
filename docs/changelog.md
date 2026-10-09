@@ -2,6 +2,36 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-09 · 第二批：新增 9 份资料，补上 Hooks 配置和 Ghostty AGENTS.md
+
+**新增资料（#28–#36）**
+
+| # | 资料 | 阶段 | 类型 | 工具 |
+|---|---|---|---|---|
+| 28 | [Hooks：让规则一定会执行](/28-claude-code-hooks-guide) | [打地基](/guide/foundation) | 官方文档 | Claude Code（附 Gemini CLI hooks 对照） |
+| 29 | [Conductor：把计划写进仓库](/29-gemini-cli-conductor) | [做规划](/guide/planning) | 文章 | Gemini CLI |
+| 30 | [大型重构拆给并行代理](/30-openhands-parallel-refactors) | [去执行](/guide/execution) | 视频 | OpenHands |
+| 31 | [AI 代码审查：精确率优先](/31-openai-verifying-code-at-scale) | [做验证](/guide/verification) | 文章 | Codex |
+| 32 | [Devin 用 Computer Use 自测](/32-cognition-verifying-agentic-development) | [做验证](/guide/verification) | 文章 | Devin |
+| 33 | [Bugbot：用解决率迭代审查机器人](/33-cursor-building-bugbot) | [自动化](/guide/automation) | 文章 | Cursor |
+| 34 | [Grok Build 跑进脚本和 CI](/34-grok-build-headless-hooks) | [自动化](/guide/automation) | 官方文档 | Grok Build |
+| 35 | [Amp 的专长子代理架构](/35-amp-next-generation-ai-coding) | [看原理](/guide/harness) | 视频 | Amp |
+| 36 | [用代码调用 MCP 省上下文](/36-anthropic-code-execution-with-mcp) | [看原理](/guide/harness) | 文章 | 通用 |
+
+**边界归类说明**
+- #28 Hooks 放在“打地基”而不是“自动化”：它的主要贡献是把规则从“建议”变成“一定执行”，和规则文件是同一件事的两面；自动化阶段只引用它的“故障放行”部分。
+- #33 Bugbot 放在“自动化”而不是“做验证”：它讲的是一个常驻在 PR 流程里的机器人怎么上线、衡量和迭代，与 #10、#22 同类；审查器设计原则（#31）放在“做验证”，两页互相引用。
+- #30 放在“去执行”：核心是怎么组织多个代理把大迁移做完，审查只是流程中的一环。“去执行”现有 8 篇，已到 AGENTS.md 规定的检查线。
+
+**横向页面**
+- 6 个阶段指南都更新了收录列表、小导图和推荐阅读顺序；“去执行”新增“大迁移、大重构怎么拆给多个代理”，“做验证”新增“AI 审查工具本身该怎么设计”。分歧表新增 5 条：审查该少报还是多报（#31 vs #33）、干净审查说明什么（#31、#32）、审查机器人怎么衡量（#31 vs #33）、工具多了怎么办（#35 vs #36）、推理模型怎么用（#35）。
+- 模式库新增 P21–P29（Hooks 确定性闸门、计划存进仓库、迁移分支 + 临时脚手架、依赖图分批、精确率优先审查、投票 + 解决率、测试计划先于实测、专长子代理、用代码调用 MCP）。
+- 配置模板库新增模板 14–21：Claude Code 的 4 段 hooks 配置、Gemini CLI 密钥扫描 hook、Grok Build PreToolUse hook、Conductor `workflow.md` 指导原则、Ghostty 的 AGENTS.md 全文（MIT 许可，附许可全文）。上一批的两项缺口已补上，缺口说明同步更新。
+- 学习路径、全部资料（含覆盖情况）、总结页同步更新。新增工具标签：Gemini CLI、OpenHands、Devin、Amp。
+- 术语表新增 21 个词，例如 Doom Loop、Code Mode、Prompt / Agent Hook、ACP、Fail-open、解决率、精确率 / 召回率、多数投票、迁移脚手架；`Oracle` 词条补充说明 Amp 的同名子代理是另一回事。
+
+**仍未覆盖**：Aider；“把 agent evals 接进 CI”的专门资料；Cursor 后台代理的专门资料；xAI 官方的 Grok 工程博客或大会演讲（本批只有官方文档）。
+
 ## 2026-10-09 · 导航改版：按任务阶段分类
 
 **分类原则改为一条轴：按一个 AI 代理开发任务从开始到上线的顺序分组。** 全部 27 份资料重新归入 6 个阶段，每份只放在它主要贡献所在的阶段：

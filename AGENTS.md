@@ -102,7 +102,7 @@ python3 scripts/check-links.py   # 构建后检查站内链接与锚点
 | `slug` | 文件名（不含 `.md`），即 URL |
 | `text` | **侧边栏标题**：简洁、可辨认的中文标题，不带编号、不带标签，尽量 15 字以内 |
 | `short` | 首页全景图的短标签，几个词，**不要用括号和引号** |
-| `tool` | `tools` 的 key：`claude` / `codex` / `grok45` / `grokbuild` / `cursor` / `general`。新工具先在 `tools` 加 key，并在 `custom.css` 加 `.tool-<key>` 亮 / 暗两套颜色 |
+| `tool` | `tools` 的 key：`claude` / `codex` / `grok45` / `grokbuild` / `cursor` / `gemini` / `openhands` / `devin` / `amp` / `general`。新工具先在 `tools` 加 key，并在 `custom.css` 加 `.tool-<key>` 亮 / 暗两套颜色 |
 | `type` | `video` / `article` / `docs` / `guide`（视频 / 文章 / 官方文档 / 指南） |
 | `added` | 收录日期。首页“最近收录”自动显示 `added` 最新的一批 |
 
