@@ -1,0 +1,74 @@
+/* 术语链接：虚线下划线 + 悬停提示 */
+.vp-doc a.gloss {
+  position: relative;
+  color: inherit;
+  text-decoration: underline dotted var(--vp-c-brand-1);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  font-weight: inherit;
+}
+.vp-doc a.gloss:hover { color: var(--vp-c-brand-1); }
+.vp-doc a.gloss code { color: inherit; }
+.vp-doc a.gloss:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  z-index: 50;
+  width: max-content;
+  max-width: 300px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-elv);
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: var(--vp-shadow-3);
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: normal;
+  pointer-events: none;
+}
+/* 提示词翻译 */
+.vp-doc .tr {
+  margin: -8px 0 16px;
+  padding: 8px 14px;
+  border-left: 3px solid var(--vp-c-brand-2);
+  background: var(--vp-c-brand-soft);
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--vp-c-text-1);
+}
+.vp-doc .tr::before { content: '译｜'; font-weight: 600; color: var(--vp-c-brand-1); }
+.vp-doc blockquote + .tr { margin-top: -8px; }
+.vp-doc div[class*='language-'] + .tr { margin-top: -8px; }
+/* 视频截图 */
+.vp-doc figure.shot { margin: 20px 0; }
+.vp-doc figure.shot img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+}
+.vp-doc figure.shot figcaption {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+.vp-doc .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.vp-doc .shots figure.shot { margin: 0; }
+/* 一句话看懂 */
+.vp-doc .hook {
+  font-size: 17px;
+  line-height: 1.8;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--vp-c-brand-soft), transparent);
+  border: 1px solid var(--vp-c-divider);
+  margin: 16px 0 20px;
+}
+.vp-doc .seen-in { margin-bottom: 4px; }
+.vp-doc kbd {
+  border: 1px solid var(--vp-c-divider); border-radius: 4px; padding: 0 5px; font-size: 12px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ai-coding-videos-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/gen-glossary.mjs && vitepress dev docs",
+    "build": "node scripts/gen-glossary.mjs && vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "markdown-it": "^14.3.2",
+    "mermaid": "^11.17.2",
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-mermaid": "^2.0.17"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
