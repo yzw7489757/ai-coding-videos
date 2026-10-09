@@ -1,6 +1,6 @@
 # 22｜CI 挂了让代理自动修：OpenAI 官方的 codex exec + Codex GitHub Action 用法与安全布局
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：5 自动化 · 后台代理与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 
@@ -9,7 +9,7 @@
 </div>
 
 ::: info 为什么值得看
-本站的[“后台代理、自动化与 CI/CD”主题](/guide/automation)下目前多是讲思路，这篇是**能直接抄进仓库的 YAML**。特别值得看的是官方自己把旧版 cookbook 标成“归档、不要照抄”，并解释了原因，这是把代理接入 CI 时最容易踩的坑。
+本站的[“自动化 · 后台代理与 CI/CD”阶段](/guide/automation)下目前多是讲思路，这篇是**能直接抄进仓库的 YAML**。特别值得看的是官方自己把旧版 cookbook 标成“归档、不要照抄”，并解释了原因，这是把代理接入 CI 时最容易踩的坑。
 :::
 
 ::: tip 小白先懂这几个词

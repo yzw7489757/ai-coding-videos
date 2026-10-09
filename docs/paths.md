@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-不知道从哪读起？按你现在的阶段选一条路径。每条 6 步左右，顺序是“先懂概念 → 跟着做 → 再扩展”。每一步都写了**读完能带走什么**。
+不知道从哪读起？按你现在的水平选一条路径。左侧边栏是按任务阶段（打地基 → 做规划 → 去执行 → 做验证 → 自动化 → 看原理）组织的“目录”，这里是按难度组织的“读法”。每条 6 步左右，顺序是“先懂概念 → 跟着做 → 再扩展”。每一步都写了**读完能带走什么**。
 
 </div>
 
@@ -33,7 +33,7 @@ flowchart LR
 
 **动手练习**：在自己的项目里新开一个会话，第一句话写 “First run the tests”，再按 [[20]] 的建议把 CLAUDE.md / AGENTS.md 删到只剩通用内容。
 
-**延伸阅读**：[🛠️ 实战与把关指南](/guide/practice) · [🧭 规划与上下文指南](/guide/planning)
+**延伸阅读**：[1 打地基](/guide/foundation) · [2 做规划](/guide/planning) · [3 去执行](/guide/execution)
 
 ## 🚀 进阶：并行与自动化 {#intermediate}
 
@@ -50,7 +50,7 @@ flowchart LR
 
 **动手练习**：挑两个互不相关的小 issue，各开一个 worktree 让代理实现并开 PR，然后在一个 `/clear` 后的新会话里审查它们（[模式 P12](/patterns#p12)、[P13](/patterns#p13)）。
 
-**延伸阅读**：[⚙️ 后台与 CI 指南](/guide/automation) · [✅ 评测、测试与验证指南](/guide/verification)
+**延伸阅读**：[3 去执行](/guide/execution) · [4 做验证](/guide/verification) · [5 自动化](/guide/automation)
 
 ## 🧪 专家：长时自主任务与多代理 {#expert}
 
@@ -67,4 +67,4 @@ flowchart LR
 
 **动手练习**：把四种长时任务做法放在一起看：[长时自主任务专题](/guide/long-running)；再按 [[19]] 的路线图，为自己最常用的一类任务写 5 道评测题。
 
-**延伸阅读**：[🧠 Harness 工程指南](/guide/harness) · [🤝 多代理协作指南](/guide/multi-agent) · [🧩 模式库](/patterns)
+**延伸阅读**：[3 去执行](/guide/execution) · [6 看原理](/guide/harness) · [🧩 模式库](/patterns)

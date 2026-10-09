@@ -1,6 +1,6 @@
 # 23｜同时开 5 个 Claude Code 不打架：Cole Medin 的并行代理“五根支柱”与 worktree 实战
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

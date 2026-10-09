@@ -1,6 +1,6 @@
 # 05｜Claude Code Task System：用模板元提示词 + Builder/Validator 代理团队自动构建与自检
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

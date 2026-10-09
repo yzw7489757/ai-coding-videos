@@ -1,6 +1,6 @@
 # 16｜Planner / Generator / Evaluator：Anthropic 怎样让 Claude 连续几小时自己做出一个全栈应用
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">🧠 主题：Harness 工程与内部机制</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：6 看原理 · Harness 与内部机制</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

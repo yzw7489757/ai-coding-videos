@@ -1,6 +1,6 @@
 # 14｜I Put Grok Build to the Test：用项目 Skills 约束设计，一次 prompt 生成完整页面
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/practice">🛠️ 主题：真实项目实战与人工把关</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：1 打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
 
 <div class="hook">
 

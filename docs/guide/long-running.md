@@ -1,4 +1,4 @@
-# ⏱️ 跨主题专题：长时自主任务
+# 专题：长时自主任务
 
 <div class="hook">
 
@@ -49,6 +49,6 @@ C 编译器实验用锁文件 + 扁平结构跑通了 16 个代理（[[17§3.2]]
 2. **规格要清晰**：规格错了，循环只会高效地放大错误（[[24§4]]）。
 3. **隔离环境**：无人值守 + 放开权限，必须在隔离环境里跑（[[24§3.1]]、[[17§3.1]]）。
 
-::: info 相关主题
-[🧠 Harness 工程](/guide/harness) · [🤝 多代理协作](/guide/multi-agent) · [✅ 评测、测试与验证](/guide/verification)
+::: info 所属阶段
+本专题属于 [3 去执行](/guide/execution)。Ralph 和 Planner / Generator / Evaluator 的设计原理见 [6 看原理](/guide/harness)，验收方式见 [4 做验证](/guide/verification)。
 :::

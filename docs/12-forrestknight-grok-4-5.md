@@ -1,6 +1,6 @@
 # 12｜Coding with Grok 4.5 is surprisingly good…：在真实 Rust / TypeScript 代码库里逐行审 Grok 的产出
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/practice">🛠️ 主题：真实项目实战与人工把关</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grok45">工具：Cursor + Grok 4.5</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：4 做验证 · 测试、评测与审查</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grok45">工具：Cursor + Grok 4.5</span></div>
 
 <div class="hook">
 

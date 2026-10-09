@@ -1,6 +1,6 @@
 # 10｜How OpenAI Uses Codex to Change How We Build：上下文 → 验证 → 核实 的飞轮
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：5 自动化 · 后台代理与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 

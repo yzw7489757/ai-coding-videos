@@ -1,6 +1,6 @@
 # 11｜Builders Unscripted Ep.1：Peter Steinberger 如何用 Codex 构建 OpenClaw
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/practice">🛠️ 主题：真实项目实战与人工把关</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 

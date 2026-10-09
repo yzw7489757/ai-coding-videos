@@ -1,6 +1,6 @@
 # 25｜四个字的提示词也能很管用：Simon Willison《Agentic Engineering Patterns》里的测试与验收模式
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">✅ 主题：评测、测试与验证</a><span class="type-tag type-guide">类型：指南</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：4 做验证 · 测试、评测与审查</a><span class="type-tag type-guide">类型：指南</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
 
 <div class="hook">
 

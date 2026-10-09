@@ -1,6 +1,6 @@
 # 08｜OpenAI Codex Masterclass：插件、自动化、Code Review 与自定义 Subagents
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 

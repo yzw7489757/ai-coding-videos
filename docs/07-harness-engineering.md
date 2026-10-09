@@ -1,6 +1,6 @@
 # 07｜Harness Engineering：人类掌舵、代理执行（Ryan Lopopolo, OpenAI）
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">🧠 主题：Harness 工程与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：1 打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 
