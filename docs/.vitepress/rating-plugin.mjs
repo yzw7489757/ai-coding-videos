@@ -1,6 +1,7 @@
 // markdown-it 插件：把 ratings.mjs 里的评分渲染进页面（静态 HTML）。
-// - 单篇资料（NN-slug.md）：在标题下方 meta 行的工具标签后面追加三个评分标签：
-//   [工具名] [综合 ★★★★☆ 4.5] [实用性 ★★★★★ 5.0] [深度 ★★★☆☆ 3.0]（星级是按分数比例填充的 CSS 星）。不显示理由。
+// - 单篇资料（NN-slug.md）：标题下方两行：第一行工具标签，第二行三个评分标签：
+//   [工具名]
+//   [综合 ★★★★☆ 4.5] [实用性 ★★★★★ 5.0] [深度 ★★★☆☆ 3.0]（星级是按分数比例填充的 CSS 星）。不显示理由。
 // - 全部资料页（all.md）：在每个 `### … {#item-NN}` 标题后插入同样的三个评分标签。
 // 资料缺少评分、或评分超出 1–5 / 不是 0.5 的倍数、或 meta 行的工具和 domains.mjs 不一致时，构建直接失败。
 import { ratings, scoreKeys, fmtScore } from './ratings.mjs'
@@ -40,7 +41,10 @@ export function ratingPlugin(md) {
       if (!t) throw new Error(`[rating] ${rel} 缺少 meta-tags 行`)
       const want = `<span class="tool-tag tool-${item.tool}">${tools[item.tool]}</span>`
       if (!t.content.includes(want)) throw new Error(`[rating] ${rel} 的 meta 行应为：<div class="meta-tags">${want}</div>`)
-      t.content = t.content.replace('</div>', `${scoreSpans(m[1])}</div>`)
+      // 第一行：工具标签；第二行：三个评分标签
+      t.content = t.content
+        .replace('<div class="meta-tags">', '<div class="meta-tags meta-tool">')
+        .replace('</div>', `</div>\n<div class="meta-tags meta-scores">${scoreSpans(m[1])}</div>`)
       return
     }
     if (rel === 'all.md') {

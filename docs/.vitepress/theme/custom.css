@@ -303,3 +303,7 @@
 
 /* 表格第一列（如“基本信息”的项目名）不要被长内容挤成竖排 */
 .vp-doc table td:first-child, .vp-doc table th:first-child { word-break: keep-all; overflow-wrap: normal; }
+
+/* 文章标题下：H1 → 工具标签行 → 评分标签行 */
+.vp-doc .meta-tags.meta-tool { margin: 16px 0 0; }
+.vp-doc .meta-tags.meta-scores { margin: 8px 0 20px; }
