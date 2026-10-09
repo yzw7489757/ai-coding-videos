@@ -1,6 +1,6 @@
 # 04｜No Vibes Allowed：在复杂代码库里用 Research → Plan → Implement 做“频繁有意压缩”
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：2 做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

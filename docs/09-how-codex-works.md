@@ -1,6 +1,6 @@
 # 09｜How Codex Works：沿着一条消息看 Codex harness 内部（Dominik Kundel, OpenAI）
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：6 看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 

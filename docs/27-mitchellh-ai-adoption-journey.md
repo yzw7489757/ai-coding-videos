@@ -1,6 +1,6 @@
 # 27｜从 AI 怀疑者到“总有一个代理在跑”：Mitchell Hashimoto 的六步采用路线
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
 
 <div class="hook">
 

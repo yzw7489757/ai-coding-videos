@@ -1,6 +1,6 @@
 # 22｜CI 挂了让代理自动修：OpenAI 官方的 codex exec + Codex GitHub Action 用法与安全布局
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：5 自动化 · 后台代理与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-codex">工具：Codex</span></div>
 
 <div class="hook">
 

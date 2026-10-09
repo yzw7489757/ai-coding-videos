@@ -1,6 +1,6 @@
 # 17｜16 个 Claude 并行写出 10 万行 C 编译器：没有调度中心的 Agent Teams 是怎么协作的
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

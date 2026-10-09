@@ -7,14 +7,14 @@
 </div>
 
 ::: tip 快速跳转
-[1 打地基 · 上下文与规范](#domain-foundation) → [2 做规划 · 需求澄清与任务拆解](#domain-planning) → [3 去执行 · 从单代理到多代理](#domain-execution) → [4 做验证 · 测试、评测与审查](#domain-verification) → [5 自动化 · 后台代理与 CI/CD](#domain-automation) → [6 看原理 · Harness 与内部机制](#domain-harness)
+[打地基 · 上下文与规范](#domain-foundation) → [做规划 · 需求澄清与任务拆解](#domain-planning) → [去执行 · 从单代理到多代理](#domain-execution) → [做验证 · 测试、评测与审查](#domain-verification) → [自动化 · 后台代理与 CI/CD](#domain-automation) → [看原理 · Harness 与内部机制](#domain-harness)
 :::
 
-## 1 打地基 · 上下文与规范 {#domain-foundation}
+## 打地基 · 上下文与规范 {#domain-foundation}
 
 **这一组放什么**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 
-📘 **先读阶段指南**：[1 打地基 · 上下文与规范](/guide/foundation)
+📘 **先读阶段指南**：[打地基 · 上下文与规范](/guide/foundation)
 
 ### CLAUDE.md 怎么写：少即是多 {#item-20}
 
@@ -51,11 +51,11 @@
   - 看点：禁止团队碰编辑器；750 包仓库、文件行数测试、带修复指引的 lint、按 persona 的 CI reviewer、每周 Garbage Collection Day。
   - 👉 [阅读分析](/07-harness-engineering)
 
-## 2 做规划 · 需求澄清与任务拆解 {#domain-planning}
+## 做规划 · 需求澄清与任务拆解 {#domain-planning}
 
 **这一组放什么**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
 
-📘 **先读阶段指南**：[2 做规划 · 需求澄清与任务拆解](/guide/planning)
+📘 **先读阶段指南**：[做规划 · 需求澄清与任务拆解](/guide/planning)
 
 ### 访谈式需求与可验证组件 {#item-03}
 
@@ -85,11 +85,11 @@
   - 看点：plan mode 的可交互计划（含 non-goals 与成功指标）、截图反馈、无头浏览器自测，以及越界行为等问题。
   - 👉 [阅读分析](/13-bijan-bowen-grok-build)
 
-## 3 去执行 · 从单代理到多代理 {#domain-execution}
+## 去执行 · 从单代理到多代理 {#domain-execution}
 
 **这一组放什么**：让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
 
-📘 **先读阶段指南**：[3 去执行 · 从单代理到多代理](/guide/execution)；另有[专题：长时自主任务](/guide/long-running)
+📘 **先读阶段指南**：[去执行 · 从单代理到多代理](/guide/execution)；另有[专题：长时自主任务](/guide/long-running)
 
 ### 从怀疑到离不开：六步采用 AI {#item-27}
 
@@ -140,11 +140,11 @@
   - 看点：扁平协作 + 锁在数百代理时失败，改成 Planner / Worker / Judge 分层；按角色选模型；integrator 角色反成瓶颈。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/18-cursor-scaling-long-running-agents)
 
-## 4 做验证 · 测试、评测与审查 {#domain-verification}
+## 做验证 · 测试、评测与审查 {#domain-verification}
 
 **这一组放什么**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
 
-📘 **先读阶段指南**：[4 做验证 · 测试、评测与审查](/guide/verification)
+📘 **先读阶段指南**：[做验证 · 测试、评测与审查](/guide/verification)
 
 ### 测试驱动与代理手动测试 {#item-25}
 
@@ -174,11 +174,11 @@
   - 看点：评测的零件（Task / Trial / Grader）、三种评分器怎么搭配、能力评测与回归评测、pass@k 与 pass^k，以及从 0 到 1 的路线图。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/19-anthropic-demystifying-agent-evals)
 
-## 5 自动化 · 后台代理与 CI/CD {#domain-automation}
+## 自动化 · 后台代理与 CI/CD {#domain-automation}
 
 **这一组放什么**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
 
-📘 **先读阶段指南**：[5 自动化 · 后台代理与 CI/CD](/guide/automation)
+📘 **先读阶段指南**：[自动化 · 后台代理与 CI/CD](/guide/automation)
 
 ### Claude Code 一周年：验证与 Routines {#item-01}
 
@@ -208,11 +208,11 @@
   - 看点：`codex exec` 的管道、JSONL、结构化输出；CI 失败自动修复的两段式布局：只读 job 拿密钥生成补丁，无密钥 job 开 PR。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/22-openai-codex-ci-autofix)
 
-## 6 看原理 · Harness 与内部机制 {#domain-harness}
+## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
-📘 **先读阶段指南**：[6 看原理 · Harness 与内部机制](/guide/harness)
+📘 **先读阶段指南**：[看原理 · Harness 与内部机制](/guide/harness)
 
 ### Codex Harness 内部机制 {#item-09}
 
@@ -237,7 +237,7 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段：1 打地基 5 篇（#20、#21、#14、#26、#07）；2 做规划 4 篇（#03、#06、#04、#13）；3 去执行 7 篇（#27、#11、#05、#08、#23、#17、#18）；4 做验证 4 篇（#25、#12、#15、#19）；5 自动化 4 篇（#01、#02、#10、#22）；6 看原理 3 篇（#09、#24、#16）。
+按阶段：打地基 5 篇（#20、#21、#14、#26、#07）；做规划 4 篇（#03、#06、#04、#13）；去执行 7 篇（#27、#11、#05、#08、#23、#17、#18）；做验证 4 篇（#25、#12、#15、#19）；自动化 4 篇（#01、#02、#10、#22）；看原理 3 篇（#09、#24、#16）。
 
 按类型：视频 19 篇；文章 6 篇（#16–#20、#27）；官方文档 1 篇（#22）；指南 1 篇（#25）。
 

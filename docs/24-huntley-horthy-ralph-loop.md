@@ -1,6 +1,6 @@
 # 24｜Ralph Wiggum 循环到底是什么：发明者 Geoffrey Huntley 和 Dex Horthy 现场对比 bash 循环与官方插件
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：6 看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

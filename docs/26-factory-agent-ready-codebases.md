@@ -1,6 +1,6 @@
 # 26｜代理不好用，往往不是工具的问题：Factory CTO 讲“让代码库为代理做好准备”的 8 根验证支柱
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：1 打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
 
 <div class="hook">
 

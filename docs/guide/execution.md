@@ -1,4 +1,4 @@
-# 3 去执行 · 从单代理到多代理
+# 去执行 · 从单代理到多代理
 
 <div class="hook">
 
@@ -61,7 +61,7 @@ mindmap
 
 ## 6. 让代理连续跑几小时到几周
 
-Ralph 循环、C 编译器、Cursor 数百代理和 Anthropic 的 Planner / Generator / Evaluator 在上下文策略、协调方式、停止条件和验收上各不相同，对照表见 **[长时自主任务专题](/guide/long-running)**。其中 Ralph 和 Planner / Generator / Evaluator 的设计原理放在 [6 看原理](/guide/harness)。
+Ralph 循环、C 编译器、Cursor 数百代理和 Anthropic 的 Planner / Generator / Evaluator 在上下文策略、协调方式、停止条件和验收上各不相同，对照表见 **[长时自主任务专题](/guide/long-running)**。其中 Ralph 和 Planner / Generator / Evaluator 的设计原理放在 [看原理](/guide/harness)。
 
 ## 7. 来源之间的分歧
 
@@ -81,5 +81,5 @@ Ralph 循环、C 编译器、Cursor 数百代理和 Anthropic 的 Planner / Gene
 5. [[17]] → [[18]]：从十几个代理到几百个代理，协调方式怎么变。
 
 ::: info 上一阶段 / 下一阶段
-← [2 做规划](/guide/planning) ｜ 代理说“做完了”之后，进入 [4 做验证](/guide/verification) →
+← [做规划](/guide/planning) ｜ 代理说“做完了”之后，进入 [做验证](/guide/verification) →
 :::

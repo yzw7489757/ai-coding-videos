@@ -1,6 +1,6 @@
 # 20｜CLAUDE.md 写得越多越没用？HumanLayer 的“少即是多”写作指南
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：1 打地基 · 上下文与规范</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

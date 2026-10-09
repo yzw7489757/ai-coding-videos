@@ -1,6 +1,6 @@
 # 21｜别再造新代理了，去写 Skills：Anthropic 讲 Agent Skills 为什么只是一个文件夹
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：1 打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

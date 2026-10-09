@@ -1,6 +1,6 @@
 # 18｜几百个代理同时写一个浏览器：Cursor 的 Planner / Worker 多代理实验踩过的坑
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：3 去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-cursor">工具：Cursor</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-cursor">工具：Cursor</span></div>
 
 <div class="hook">
 

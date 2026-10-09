@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：27 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：1 打地基 · 上下文与规范（20、21、14、26、07）；2 做规划 · 需求澄清与任务拆解（03、06、04、13）；3 去执行 · 从单代理到多代理（27、11、05、08、23、17、18）；4 做验证 · 测试、评测与审查（25、12、15、19）；5 自动化 · 后台代理与 CI/CD（01、02、10、22）；6 看原理 · Harness 与内部机制（09、24、16）。类型：视频 19、文章 6、官方文档 1、指南 1。工具：Claude Code 12、Codex 6、Grok 4、Cursor 1、通用 4。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：27 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（20、21、14、26、07）；做规划 · 需求澄清与任务拆解（03、06、04、13）；去执行 · 从单代理到多代理（27、11、05、08、23、17、18）；做验证 · 测试、评测与审查（25、12、15、19）；自动化 · 后台代理与 CI/CD（01、02、10、22）；看原理 · Harness 与内部机制（09、24、16）。类型：视频 19、文章 6、官方文档 1、指南 1。工具：Claude Code 12、Codex 6、Grok 4、Cursor 1、通用 4。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -21,7 +21,7 @@
 - Boris Cherny（01）把验证定义为代理能否把东西真正跑起来；Arno（03）让组件输出 `data-verify-*`，供代理和 CI 核验。
 - Dominik Kundel（10）的飞轮是 context → validation → verification；Ryan Lopopolo（07）把“测试 + lint + reviewer agents”当作 harness 的核心。
 - Grok 这边，Bijan Bowen（13）看到代理用无头浏览器自测；ForrestKnight（12）则证明**测试全绿 ≠ 代码正确**，人工审查仍然必要。
-- 2026-10-09 新增的资料把这一条推得更远：Factory（26）认为限制代理的是代码库的自动化验证，并给出 8 根验证支柱；Simon Willison（25）用 “Use red/green TDD”“First run the tests” 两句话把测试纪律交给代理；Carlini（17）说任务验证器必须近乎完美，否则代理会去解决一个错误的问题。详见 [4 做验证](/guide/verification)。
+- 2026-10-09 新增的资料把这一条推得更远：Factory（26）认为限制代理的是代码库的自动化验证，并给出 8 根验证支柱；Simon Willison（25）用 “Use red/green TDD”“First run the tests” 两句话把测试纪律交给代理；Carlini（17）说任务验证器必须近乎完美，否则代理会去解决一个错误的问题。详见 [做验证](/guide/verification)。
 
 ::: tip 实践
 先给代理一个能跑的命令（测试、浏览器、预览环境），再给任务。
@@ -145,7 +145,7 @@ flowchart TD
 
 六个阶段按一个任务从开始到上线的顺序排列，和左侧边栏一致。每个阶段先读阶段指南，再按下面的顺序读资料。小标签是资料类型和所用工具。
 
-**1 打地基 · 上下文与规范**（[阶段指南](/guide/foundation)）
+**打地基 · 上下文与规范**（[阶段指南](/guide/foundation)）
 
 - [20 · CLAUDE.md 怎么写：少即是多](/20-humanlayer-writing-good-claude-md) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：规则文件怎么写，最短最实用。
 - [21 · 别造代理，写 Skills](/21-anthropic-agent-skills-talk) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：Skills 为什么是文件夹、怎么渐进加载。
@@ -153,14 +153,14 @@ flowchart TD
 - [26 · 让代码库为代理做好准备](/26-factory-agent-ready-codebases) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span>：给自己的代码库的可验证性打分。
 - [07 · 把团队规范变成 lint 和测试](/07-harness-engineering) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：最激进的“人不写代码”团队实践，适合最后看。
 
-**2 做规划 · 需求澄清与任务拆解**（[阶段指南](/guide/planning)）
+**做规划 · 需求澄清与任务拆解**（[阶段指南](/guide/planning)）
 
 - [03 · 访谈式需求与可验证组件](/03-how-we-claude-code) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：可以照着复现的 workshop（有配套仓库）。
 - [06 · 找出未知，给上下文做减法](/06-field-guide-to-fable) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：需求盲区与上下文减法。
 - [04 · RPI：研究、计划、实施](/04-no-vibes-allowed-rpi) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：在复杂代码库中做上下文管理的方法论。
 - [13 · Grok Build 实测：从计划到执行](/13-bijan-bowen-grok-build) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：更长的全流程实测：plan mode、截图反馈、无头浏览器自测。
 
-**3 去执行 · 从单代理到多代理**（[阶段指南](/guide/execution)）
+**去执行 · 从单代理到多代理**（[阶段指南](/guide/execution)）
 
 - [27 · 从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：从怀疑到熟练的六步路线，最适合刚起步。
 - [11 · 一个人用 Codex 建 OpenClaw](/11-peter-steinberger-openclaw) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：轻松的访谈，先建立“代理主导开发”的直观印象。
@@ -170,21 +170,21 @@ flowchart TD
 - [17 · 16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：十几个代理、无编排者，靠 git + 锁文件协作。
 - [18 · 数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：数百代理时扁平协作为什么失败、分层后怎么跑。
 
-**4 做验证 · 测试、评测与审查**（[阶段指南](/guide/verification)）
+**做验证 · 测试、评测与审查**（[阶段指南](/guide/verification)）
 
 - [25 · 测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span>：三句马上能用的测试提示词。
 - [12 · 测试全绿也要读代码](/12-forrestknight-grok-4-5) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grok45">Cursor + Grok 4.5</span>：学会怎么审查 AI 产出，警惕“测试全绿”。
 - [15 · 57 个子代理与对抗式验证](/15-arcade-grok-build-57-agents) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：大规模并行与对抗式验证（建议配合 Grok Build 官方文档）。
 - [19 · Agent Evals 入门](/19-anthropic-demystifying-agent-evals) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：系统评测代理时再读。
 
-**5 自动化 · 后台代理与 CI/CD**（[阶段指南](/guide/automation)）
+**自动化 · 后台代理与 CI/CD**（[阶段指南](/guide/automation)）
 
 - [01 · Claude Code 一周年：验证与 Routines](/01-claude-code-one-year) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
 - [02 · Claude Code 团队的工作流](/02-claude-code-team-workflows) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：团队级协作与动态 workflows。
 - [10 · OpenAI 用 Codex 守住 PR 质量](/10-how-openai-uses-codex) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：PR 审查、CI 看护、Deploy preview 全链路。
 - [22 · CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span>：能抄进仓库的 CI 配置和安全布局。
 
-**6 看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
+**看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
 
 - [09 · Codex Harness 内部机制](/09-how-codex-works) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：harness 内部机制，理解前面所有现象的“为什么”。
 - [24 · Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：“上下文窗口就是数组”的心智模型。

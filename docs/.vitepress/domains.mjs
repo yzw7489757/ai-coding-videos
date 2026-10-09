@@ -19,7 +19,7 @@ export const types = {
   guide: '指南'
 }
 
-// 阶段：id 用于 URL（/guide/<id>），no 表示顺序；label = `${no} ${name} · ${sub}`
+// 阶段：id 用于 URL（/guide/<id>），no 表示顺序；label = `${name} · ${sub}`（菜单里不显示序号）
 export const domains = [
   {
     id: 'foundation',
@@ -110,7 +110,7 @@ export const domains = [
   }
 ]
 
-export const stageLabel = (d) => `${d.no} ${d.name} · ${d.sub}`
+export const stageLabel = (d) => `${d.name} · ${d.sub}`
 export const toolTag = (k) => `<span class="tool-tag tool-${k}">${tools[k]}</span>`
 export const typeTag = (k) => `<span class="type-tag type-${k}">${types[k]}</span>`
 export const allItems = () => domains.flatMap((d) => d.items.map((i) => ({ ...i, domain: d })))

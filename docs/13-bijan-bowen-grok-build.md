@@ -1,6 +1,6 @@
 # 13｜Grok Build + Grok 4.3 FULL Test：Plan mode、截图反馈与无头浏览器自测
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：2 做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
 
 <div class="hook">
 

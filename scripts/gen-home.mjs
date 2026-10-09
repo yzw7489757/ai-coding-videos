@@ -39,7 +39,7 @@ fm += '---\n'
 // 全景图：六个阶段从左到右按顺序排列，每个阶段下面竖排该阶段的资料
 let mm = ['```mermaid','flowchart LR']
 for (const d of domains){
-  mm.push(`  subgraph S${d.no}["${d.no} ${d.name}"]`, '    direction TB')
+  mm.push(`  subgraph S${d.no}["${d.name}"]`, '    direction TB')
   d.items.forEach((i)=>mm.push(`    A${i.n}["${i.n} ${i.short}"]`))
   for (let k=1;k<d.items.length;k++) mm.push(`    A${d.items[k-1].n} ~~~ A${d.items[k].n}`)
   mm.push('  end')

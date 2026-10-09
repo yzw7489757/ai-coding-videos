@@ -1,6 +1,6 @@
 # 19｜怎么给 AI 代理“出考卷”：Anthropic 的 Agent Evals 入门路线图
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：4 做验证 · 测试、评测与审查</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
 
 <div class="hook">
 

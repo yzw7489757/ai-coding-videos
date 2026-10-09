@@ -33,7 +33,7 @@ flowchart LR
 
 **动手练习**：在自己的项目里新开一个会话，第一句话写 “First run the tests”，再按 [[20]] 的建议把 CLAUDE.md / AGENTS.md 删到只剩通用内容。
 
-**延伸阅读**：[1 打地基](/guide/foundation) · [2 做规划](/guide/planning) · [3 去执行](/guide/execution)
+**延伸阅读**：[打地基](/guide/foundation) · [做规划](/guide/planning) · [去执行](/guide/execution)
 
 ## 🚀 进阶：并行与自动化 {#intermediate}
 
@@ -50,7 +50,7 @@ flowchart LR
 
 **动手练习**：挑两个互不相关的小 issue，各开一个 worktree 让代理实现并开 PR，然后在一个 `/clear` 后的新会话里审查它们（[模式 P12](/patterns#p12)、[P13](/patterns#p13)）。
 
-**延伸阅读**：[3 去执行](/guide/execution) · [4 做验证](/guide/verification) · [5 自动化](/guide/automation)
+**延伸阅读**：[去执行](/guide/execution) · [做验证](/guide/verification) · [自动化](/guide/automation)
 
 ## 🧪 专家：长时自主任务与多代理 {#expert}
 
@@ -67,4 +67,4 @@ flowchart LR
 
 **动手练习**：把四种长时任务做法放在一起看：[长时自主任务专题](/guide/long-running)；再按 [[19]] 的路线图，为自己最常用的一类任务写 5 道评测题。
 
-**延伸阅读**：[3 去执行](/guide/execution) · [6 看原理](/guide/harness) · [🧩 模式库](/patterns)
+**延伸阅读**：[去执行](/guide/execution) · [看原理](/guide/harness) · [🧩 模式库](/patterns)

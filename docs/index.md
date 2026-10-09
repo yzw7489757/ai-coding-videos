@@ -20,32 +20,32 @@ hero:
       link: /glossary
 features:
   - icon: 🧱
-    title: 1 打地基 · 上下文与规范
+    title: 打地基 · 上下文与规范
     details: 让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
     link: /guide/foundation
     linkText: 阅读阶段指南
   - icon: 📝
-    title: 2 做规划 · 需求澄清与任务拆解
+    title: 做规划 · 需求澄清与任务拆解
     details: 动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
     link: /guide/planning
     linkText: 阅读阶段指南
   - icon: 🚀
-    title: 3 去执行 · 从单代理到多代理
+    title: 去执行 · 从单代理到多代理
     details: 让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
     link: /guide/execution
     linkText: 阅读阶段指南
   - icon: ✅
-    title: 4 做验证 · 测试、评测与审查
+    title: 做验证 · 测试、评测与审查
     details: 确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
     link: /guide/verification
     linkText: 阅读阶段指南
   - icon: ⚙️
-    title: 5 自动化 · 后台代理与 CI/CD
+    title: 自动化 · 后台代理与 CI/CD
     details: 让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
     link: /guide/automation
     linkText: 阅读阶段指南
   - icon: 🧠
-    title: 6 看原理 · Harness 与内部机制
+    title: 看原理 · Harness 与内部机制
     details: 理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
     link: /guide/harness
     linkText: 阅读阶段指南
@@ -76,33 +76,33 @@ features:
 
 | # | 资料 | 阶段 | 类型 / 工具 |
 |---|---|---|---|
-| 16 | [Planner / Generator / Evaluator 长时 harness](/16-anthropic-harness-design-long-running-apps) | [6 看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 17 | [16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) | [3 去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 18 | [数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) | [3 去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> |
-| 19 | [Agent Evals 入门](/19-anthropic-demystifying-agent-evals) | [4 做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 20 | [CLAUDE.md 怎么写：少即是多](/20-humanlayer-writing-good-claude-md) | [1 打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 21 | [别造代理，写 Skills](/21-anthropic-agent-skills-talk) | [1 打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 22 | [CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) | [5 自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span> |
-| 23 | [5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) | [3 去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 24 | [Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) | [6 看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 25 | [测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) | [4 做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 26 | [让代码库为代理做好准备](/26-factory-agent-ready-codebases) | [1 打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 27 | [从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) | [3 去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 16 | [Planner / Generator / Evaluator 长时 harness](/16-anthropic-harness-design-long-running-apps) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 17 | [16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 18 | [数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> |
+| 19 | [Agent Evals 入门](/19-anthropic-demystifying-agent-evals) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 20 | [CLAUDE.md 怎么写：少即是多](/20-humanlayer-writing-good-claude-md) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 21 | [别造代理，写 Skills](/21-anthropic-agent-skills-talk) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 22 | [CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span> |
+| 23 | [5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 24 | [Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 25 | [测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 26 | [让代码库为代理做好准备](/26-factory-agent-ready-codebases) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 27 | [从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
 
 ## 知识库全景图
 
 按“阶段 → 资料”展示全部 27 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
-- **[1 打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
-- **[2 做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
-- **[3 去执行 · 从单代理到多代理](/guide/execution)**：让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
-- **[4 做验证 · 测试、评测与审查](/guide/verification)**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
-- **[5 自动化 · 后台代理与 CI/CD](/guide/automation)**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
-- **[6 看原理 · Harness 与内部机制](/guide/harness)**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
+- **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
+- **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
+- **[去执行 · 从单代理到多代理](/guide/execution)**：让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
+- **[做验证 · 测试、评测与审查](/guide/verification)**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
+- **[自动化 · 后台代理与 CI/CD](/guide/automation)**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
+- **[看原理 · Harness 与内部机制](/guide/harness)**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
 ```mermaid
 flowchart LR
-  subgraph S1["1 打地基"]
+  subgraph S1["打地基"]
     direction TB
     A20["20 规则文件少即是多"]
     A21["21 Skills 按需加载"]
@@ -114,7 +114,7 @@ flowchart LR
     A14 ~~~ A26
     A26 ~~~ A07
   end
-  subgraph S2["2 做规划"]
+  subgraph S2["做规划"]
     direction TB
     A03["03 访谈式需求"]
     A06["06 找未知 做减法"]
@@ -124,7 +124,7 @@ flowchart LR
     A06 ~~~ A04
     A04 ~~~ A13
   end
-  subgraph S3["3 去执行"]
+  subgraph S3["去执行"]
     direction TB
     A27["27 Mitchell 六步采用"]
     A11["11 Steinberger 十个 checkout"]
@@ -140,7 +140,7 @@ flowchart LR
     A23 ~~~ A17
     A17 ~~~ A18
   end
-  subgraph S4["4 做验证"]
+  subgraph S4["做验证"]
     direction TB
     A25["25 TDD 与手动测试"]
     A12["12 测试全绿也要读"]
@@ -150,7 +150,7 @@ flowchart LR
     A12 ~~~ A15
     A15 ~~~ A19
   end
-  subgraph S5["5 自动化"]
+  subgraph S5["自动化"]
     direction TB
     A01["01 Routines 与验证"]
     A02["02 Slack 派活 扇出审查"]
@@ -160,7 +160,7 @@ flowchart LR
     A02 ~~~ A10
     A10 ~~~ A22
   end
-  subgraph S6["6 看原理"]
+  subgraph S6["看原理"]
     direction TB
     A09["09 Codex harness 拆解"]
     A24["24 Ralph 循环"]

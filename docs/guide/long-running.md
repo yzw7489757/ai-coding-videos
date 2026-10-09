@@ -50,5 +50,5 @@ C 编译器实验用锁文件 + 扁平结构跑通了 16 个代理（[[17§3.2]]
 3. **隔离环境**：无人值守 + 放开权限，必须在隔离环境里跑（[[24§3.1]]、[[17§3.1]]）。
 
 ::: info 所属阶段
-本专题属于 [3 去执行](/guide/execution)。Ralph 和 Planner / Generator / Evaluator 的设计原理见 [6 看原理](/guide/harness)，验收方式见 [4 做验证](/guide/verification)。
+本专题属于 [去执行](/guide/execution)。Ralph 和 Planner / Generator / Evaluator 的设计原理见 [看原理](/guide/harness)，验收方式见 [做验证](/guide/verification)。
 :::
