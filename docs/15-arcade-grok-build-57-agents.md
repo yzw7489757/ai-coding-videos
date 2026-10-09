@@ -1,6 +1,6 @@
 # 15｜Grok Build Spawned 57 Agents in 3 Minutes：Plan mode、并行子代理与 `/goal` 对抗式验证
 
-<div class="meta-tags"><a class="domain-tag" href="/#domain-multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
 
 <div class="hook">
 

@@ -203,3 +203,58 @@
 }
 .vp-doc .meta-tags .domain-tag:hover { background: var(--vp-c-brand-soft); text-decoration: underline; }
 .vp-doc .meta-tags .tool-tag { font-size: 12px; line-height: 20px; padding: 0 8px; margin: 0; }
+
+/* 非视频资料的来源卡片 */
+.vp-doc a.source-card {
+  display: grid;
+  gap: 6px;
+  margin: 16px 0 24px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-divider);
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.vp-doc a.source-card:hover { border-color: var(--vp-c-brand-2); box-shadow: var(--vp-shadow-2); }
+.source-card__type {
+  justify-self: start;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 10px;
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+.source-card__title { font-size: 18px; font-weight: 600; line-height: 1.5; }
+.source-card__meta { font-size: 14px; color: var(--vp-c-text-2); }
+.source-card__link { font-size: 13px; color: var(--vp-c-brand-1); }
+
+/* 新工具与资料类型标签 */
+.tool-cursor { color: #1d4ed8; }
+.tool-general { color: #7c3aed; }
+.dark .tool-cursor { color: #93c5fd; }
+.dark .tool-general { color: #c4b5fd; }
+.type-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 6px;
+  font-size: 11px;
+  line-height: 17px;
+  border-radius: 9px;
+  white-space: nowrap;
+  vertical-align: 1px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-default-soft);
+}
+.type-video { color: #b91c1c; background: rgba(239, 68, 68, .1); }
+.type-article { color: #0f766e; background: rgba(20, 184, 166, .12); }
+.type-docs { color: #1e40af; background: rgba(59, 130, 246, .12); }
+.type-guide { color: #a16207; background: rgba(234, 179, 8, .14); }
+.dark .type-video { color: #fca5a5; }
+.dark .type-article { color: #5eead4; }
+.dark .type-docs { color: #93c5fd; }
+.dark .type-guide { color: #fde047; }
+.vp-doc .meta-tags .type-tag { font-size: 12px; line-height: 20px; padding: 0 8px; margin: 0; }

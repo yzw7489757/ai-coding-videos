@@ -1,6 +1,6 @@
 # 02｜How the Claude Code team uses Claude Code：Claude Tag、Routines 与“扇出式”代码审查 Workflow
 
-<div class="meta-tags"><a class="domain-tag" href="/#domain-automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

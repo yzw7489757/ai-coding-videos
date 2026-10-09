@@ -1,6 +1,6 @@
 # 06｜Field Guide to Fable：解除模型束缚、找出你的“未知”、保持人在回路
 
-<div class="meta-tags"><a class="domain-tag" href="/#domain-planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

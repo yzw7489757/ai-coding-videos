@@ -36,7 +36,7 @@ function linkHtml(t, inner) {
 export function glossaryPlugin(md, opts = {}) {
   md.core.ruler.push('glossary_links', (state) => {
     const rel = (state.env && state.env.relativePath) || ''
-    if (!/^\d\d-.*\.md$/.test(rel) && rel !== 'index.md') return
+    if (!/^(\d\d-.*|guide\/.*|patterns|paths|index)\.md$/.test(rel)) return
     const used = new Set()
     let skipDepth = 0
     const collect = opts.collect

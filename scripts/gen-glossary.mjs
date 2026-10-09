@@ -9,7 +9,11 @@ import { glossaryPlugin } from '../docs/.vitepress/glossary-plugin.mjs'
 import { trPlugin } from '../docs/.vitepress/tr-plugin.mjs'
 
 const docs = path.resolve('docs')
-const files = fs.readdirSync(docs).filter((f) => /^\d\d-.*\.md$/.test(f)).sort()
+// 与 glossary-plugin 的作用范围一致：单篇资料 + 主题指南 + 模式库 / 学习路径 / 首页
+const files = [
+  ...fs.readdirSync(docs).filter((f) => /^(\d\d-.*|patterns|paths|index)\.md$/.test(f)),
+  ...(fs.existsSync(path.join(docs, 'guide')) ? fs.readdirSync(path.join(docs, 'guide')).filter((f) => f.endsWith('.md')).map((f) => 'guide/' + f) : [])
+].sort()
 const hits = new Map() // id -> [file]
 const md = new MarkdownIt({ html: true })
 md.use(trPlugin)
@@ -54,4 +58,4 @@ for (const c of categories) {
 }
 fs.writeFileSync(path.join(docs, 'glossary.md'), out)
 const unused = terms.filter((t) => !hits.has(t.id)).map((t) => t.id)
-console.log(`glossary.md: ${terms.length} terms; not yet linked from any article: ${unused.join(', ') || 'none'}`)
+console.log(`glossary.md: ${terms.length} terms; not yet linked from any page: ${unused.join(', ') || 'none'}`)

@@ -1,6 +1,6 @@
 # 03｜How we Claude Code：访谈式需求 → HTML 设计探索 → “Agent 原生”的可验证组件
 
-<div class="meta-tags"><a class="domain-tag" href="/#domain-planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><a class="domain-tag" href="/guide/planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
 
 <div class="hook">
 

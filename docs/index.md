@@ -1,237 +1,140 @@
 ---
 layout: home
-title: AI 编程专家实战视频研究
+title: AI 编程代理实战知识库
 hero:
-  name: AI 编程专家实战视频研究
-  text: 看资深工程师怎么用 Claude Code、Codex、Grok 写软件
-  tagline: 精选 15 个真实存在的演讲和实测视频，每个配一篇深度拆解：做了什么、怎么做、效果如何、你能怎么用。小白友好，术语可一键查。
+  name: AI 编程代理实战知识库
+  text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
+  tagline: 27 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；再按主题串成指南、模式库和配置模板。小白友好，术语可一键查。
   actions:
     - theme: brand
-      text: 从总结开始
-      link: /00-summary
+      text: 按学习路径读
+      link: /paths
+    - theme: alt
+      text: 模式库
+      link: /patterns
+    - theme: alt
+      text: 全部资料
+      link: /all
     - theme: alt
       text: 小白先看术语表
       link: /glossary
-    - theme: alt
-      text: 入门第一篇
-      link: /11-peter-steinberger-openclaw
 features:
   - icon: 🛠️
-    title: 真实项目实战与人工把关
-    details: 一个人维护大型开源项目、新代理工具上手实测、逐行审查 AI 产出。
-    link: /11-peter-steinberger-openclaw
-    linkText: "看 #11 / #14 / #13 / #12"
+    title: 真实项目实战与人工把关（5）
+    details: 一个人维护大型开源项目、新工具上手实测、逐行审查 AI 产出，以及从怀疑到熟练的采用路线。
+    link: /guide/practice
+    linkText: "主题指南 · #11 #14 #13 #12 #27"
   - icon: 🧭
-    title: 需求澄清、规划与上下文管理
-    details: 动手前先把需求问清楚；Research → Plan → Implement；给上下文做减法。
-    link: /03-how-we-claude-code
-    linkText: "看 #03 / #06 / #04"
+    title: 需求澄清、规划与上下文管理（5）
+    details: 动手前先把需求问清楚；Research → Plan → Implement；规则文件少即是多；Skills 按需加载。
+    link: /guide/planning
+    linkText: "主题指南 · #03 #06 #04 #20 #21"
   - icon: 🤝
-    title: 多代理协作与对抗式验证
-    details: 一个写、一个查；按角色配置子代理；几十个子代理并行后再让怀疑者复核。
-    link: /05-indydevdan-task-system
-    linkText: "看 #05 / #08 / #15"
+    title: 多代理协作与对抗式验证（5）
+    details: 一个写、一个查；按角色配置子代理；从十几个到数百个代理，协调方式怎么变。
+    link: /guide/multi-agent
+    linkText: "主题指南 · #05 #08 #15 #17 #18"
   - icon: ⚙️
-    title: 后台代理、自动化与 CI/CD
-    details: Routines 和 /loop 在后台跑；在 Slack 里派活；PR 先过代理审查、代理看护 CI。
-    link: /01-claude-code-one-year
-    linkText: "看 #01 / #02 / #10"
+    title: 后台代理、自动化与 CI/CD（5）
+    details: Routines 和 /loop 在后台跑；worktree 并行开发；PR 先过代理审查；代理在 CI 里自动修复。
+    link: /guide/automation
+    linkText: "主题指南 · #01 #02 #10 #22 #23"
   - icon: 🧠
-    title: Harness 工程与内部机制
-    details: 代理外壳怎么工作；把团队标准写成 lint 和测试，让代理在轨道上跑。
-    link: /09-how-codex-works
-    linkText: "看 #09 / #07"
+    title: Harness 工程与内部机制（4）
+    details: 代理外壳怎么工作；把团队标准写成 lint 和测试；长时任务的循环、上下文与做查分离。
+    link: /guide/harness
+    linkText: "主题指南 · #09 #07 #16 #24"
+  - icon: ✅
+    title: 评测、测试与验证（3）
+    details: 给代理出考卷（evals）、用测试约束代理、让代码库可被自动验证。
+    link: /guide/verification
+    linkText: "主题指南 · #19 #25 #26"
 ---
 
-## 这个站点怎么读
+## 这是什么
 
-整理日期：2026-10-08（2026-10-09 改版）｜共 15 个视频，按内容分 5 个主题（工具：Claude Code 6、Codex 5、Grok 4）｜每个视频一篇分析，另有[总结](./00-summary.md)和[术语表](./glossary.md)。
+一个持续更新的中文知识库，主题是**怎样用编码代理（coding agent）把软件做好**。内容分三层：
 
-::: tip 四个阅读小功能
-- **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](./glossary.md)。
-- **英文原话悬停看翻译**：讲者说的话、敲的 prompt 和配置保留英文原样，带灰色虚线下划线和“译”角标；鼠标悬停、键盘聚焦或手机点按就会弹出中文翻译。
-- **视频直接播放**：每篇“基本信息”最上方都内嵌了 YouTube 播放器。
-- **真实视频截图**：每篇配 2–4 张视频原画面，点截图说明里的时间戳，会直接跳到 YouTube 对应位置。
+| 层次 | 是什么 | 从哪进 |
+|---|---|---|
+| 单篇资料 | 每份视频 / 文章一篇拆解，固定 5 节：基本信息、做了什么、怎么做的、结果如何、可借鉴之处 | [全部资料（27）](/all) |
+| 主题指南 | 每个主题一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 顶部导航“主题指南” |
+| 横向页面 | [学习路径](/paths)、[模式库](/patterns)（20 个做法）、[配置模板库](/templates)（13 段原文配置）、[长时自主任务专题](/guide/long-running)、[总结](/00-summary)、[术语表](/glossary) | 顶部导航 |
+
+整理开始于 2026-10-08，最近一次更新：2026-10-09（见[更新日志](/changelog)）。分类依据是**资料讲的内容**，不是用的工具；工具和资料类型用彩色小标签标出。
+
+::: tip 阅读小功能
+- **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
+- **英文原话悬停看翻译**：原话、prompt 和配置保留英文原样，带灰色虚线下划线和“译”角标；悬停、键盘聚焦或手机点按会弹出中文翻译。
+- **原始来源一键直达**：视频资料在“基本信息”最上方内嵌 YouTube 播放器；文章、官方文档和指南则放一张来源卡片（标题、作者、日期、链接）。
+- **小节级引用**：指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-::: info 资料来源与可信度
-所有链接均经 YouTube 元数据核实存在；分析以字幕 / 官方文字稿为主要依据，截图全部来自视频本身的画面帧。两个例外已在文中注明：#05 整理时 YouTube 限制了字幕下载，只有部分原话再次核对过，标“转述”的不是逐字原话；#15 的自动字幕质量差（疑似机器翻译），因此结合简介、官方文档和画面上可读的文字分析。
-:::
+## 🆕 最近收录（2026-10-09，12 份）
 
-## 分类全景图
+| # | 资料 | 主题 | 类型 / 工具 |
+|---|---|---|---|
+| 16 | [Anthropic：Planner / Generator / Evaluator 长时任务 harness](/16-anthropic-harness-design-long-running-apps) | [🧠 Harness 工程](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 17 | [Anthropic：16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) | [🤝 多代理协作](/guide/multi-agent) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 18 | [Cursor：数百代理的 Planner / Worker 实验](/18-cursor-scaling-long-running-agents) | [🤝 多代理协作](/guide/multi-agent) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> |
+| 19 | [Anthropic：Agent Evals 入门路线图](/19-anthropic-demystifying-agent-evals) | [✅ 评测与验证](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 20 | [HumanLayer：CLAUDE.md 少即是多](/20-humanlayer-writing-good-claude-md) | [🧭 规划与上下文](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 21 | [Anthropic：别造代理，写 Skills](/21-anthropic-agent-skills-talk) | [🧭 规划与上下文](/guide/planning) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 22 | [OpenAI：codex exec + GitHub Action 自动修 CI](/22-openai-codex-ci-autofix) | [⚙️ 后台与 CI](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span> |
+| 23 | [Cole Medin：5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) | [⚙️ 后台与 CI](/guide/automation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 24 | [Huntley & Horthy：Ralph 循环 vs 官方插件](/24-huntley-horthy-ralph-loop) | [🧠 Harness 工程](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
+| 25 | [Simon Willison：测试与验收模式](/25-simonw-agentic-engineering-testing-patterns) | [✅ 评测与验证](/guide/verification) | <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 26 | [Factory：让代码库为代理做好准备](/26-factory-agent-ready-codebases) | [✅ 评测与验证](/guide/verification) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| 27 | [Mitchell Hashimoto：六步 AI 采用路线](/27-mitchellh-ai-adoption-journey) | [🛠️ 实战与把关](/guide/practice) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
 
-下图按“主题 → 目标 → 视频”展示全部 15 个视频，下面的清单顺序与之对应。分类依据是**文章讲的内容**，不是用的工具；每条后面的彩色小标签标出了所用工具。
+## 知识库全景图
+
+按“主题 → 资料”展示全部 27 份资料。每个主题指南里还有更细的“问题 → 资料”小图。
 
 ```mermaid
 mindmap
-  root((AI 编程代理实战))
-    真实项目实战与人工把关
-      个人主导大型开源项目
-        11 Steinberger 用 Codex 建 OpenClaw
-      Skills 约束 UI 风格
-        14 OrcDev Grok Build
-      新代理工具全流程实测
-        13 Bijan Bowen Grok Build
-      测试全绿后仍要逐行审查
-        12 ForrestKnight Grok 4.5
-    需求澄清 规划与上下文管理
-      访谈式需求与可验证组件
-        03 How we Claude Code
-      发现未知与上下文减法
-        06 Field Guide to Fable
-      存量代码库 RPI 与有意压缩
-        04 No Vibes Allowed RPI
-    多代理协作与对抗式验证
-      Builder + Validator 团队
-        05 IndyDevDan Task System
-      子代理按角色配权限并行审查
-        08 Codex Masterclass
-      对抗式验证“完成”
-        15 Arcade Grok Build 57 子代理
-    后台代理 自动化与 CI/CD
-      Routines Loop Auto mode
-        01 Claude Code 一周年
-      Slack 派活与扇出 Workflows
-        02 Claude Code 团队工作流
-      PR 审查 CI 看护 Deploy preview
-        10 How OpenAI Uses Codex
-    Harness 工程与内部机制
-      理解 harness 内部机制
-        09 How Codex Works
-      团队标准变成 lint 和测试
-        07 Harness Engineering
+  root((AI 编程代理知识库))
+    实战与把关
+      11 Steinberger 十个 checkout
+      14 OrcDev Skills 管风格
+      13 Bijan Grok Build 实测
+      12 ForrestKnight 读代码
+      27 Mitchell 六步采用
+    规划与上下文
+      03 访谈式需求
+      06 找未知 做减法
+      04 RPI 有意压缩
+      20 CLAUDE.md 少即是多
+      21 Skills 渐进加载
+    多代理协作
+      05 Builder 加 Validator
+      08 子代理切片审查
+      15 57 子代理 加 skeptic
+      17 16 代理写编译器
+      18 数百代理分层
+    后台与 CI
+      01 Routines 与验证
+      02 Slack 派活 扇出审查
+      10 PR 审查 CI 看护
+      22 codex exec 修 CI
+      23 worktree 并行
+    Harness 工程
+      09 Codex harness 拆解
+      07 标准变 lint 和测试
+      16 Planner Generator Evaluator
+      24 Ralph 循环
+    评测与验证
+      19 Agent Evals
+      25 TDD 与手动测试
+      26 8 根验证支柱
 ```
 
+## 不知道从哪开始？
 
-## 一、🛠️ 真实项目实战与人工把关 {#domain-practice}
+- **完全新手**：走[🌱 新手路径](/paths#beginner)，第一篇读 [#27 Mitchell Hashimoto 的六步路线](/27-mitchellh-ai-adoption-journey)。
+- **想马上抄作业**：去[🧩 模式库](/patterns)和[🧾 配置模板库](/templates)。
+- **想看全貌**：读[总结与最佳实践](/00-summary)，或打开[📚 全部资料](/all)按主题浏览。
 
-一个人维护大型开源项目、新代理工具上手实测、逐行审查 AI 产出。
-
-### 目标 1：一个人主导大型开源项目
-- **[Builders Unscripted: Ep. 1 - Peter Steinberger, Creator of OpenClaw](https://www.youtube.com/watch?v=9jgcT0Fqt7U)** <span class="tool-tag tool-codex">Codex</span>
-  - 讲者 / 频道：Peter Steinberger，主持 Romain Huet ／ OpenAI ｜ 发布：2026-02-24 ｜ 工具：Codex（早期 Claude Code）
-  - 看点：“Do you have any questions?”、10 个 checkout 并行、外部 PR 先让代理解释意图再决定方案。
-  - 👉 [阅读分析](./11-peter-steinberger-openclaw.md)
-
-### 目标 2：用项目 Skills 约束 UI 风格
-- **[I Put Grok Build to the Test](https://www.youtube.com/watch?v=W8wECVc3z6E)** <span class="tool-tag tool-grokbuild">Grok Build</span>
-  - 讲者 / 频道：OrcDev ｜ 发布：2026-05-19 ｜ 工具：Grok Build + Grok 4.3
-  - 看点：复用项目已有的设计 skills，一份计划式 prompt 在 2 分 55 秒内生成风格一致的完整页面。
-  - 👉 [阅读分析](./14-orcdev-grok-build-skills.md)
-
-### 目标 3：新代理工具的全流程实测
-- **[Grok Build + Grok 4.3 FULL Test – xAI's Claude Code & Codex Competitor!](https://www.youtube.com/watch?v=X6SubdG4NuU)** <span class="tool-tag tool-grokbuild">Grok Build</span>
-  - 讲者 / 频道：Bijan Bowen ｜ 发布：2026-05-15 ｜ 工具：Grok Build + Grok 4.3
-  - 看点：plan mode 的可交互计划（含 non-goals 与成功指标）、截图反馈、无头浏览器自测，以及越界行为等问题。
-  - 👉 [阅读分析](./13-bijan-bowen-grok-build.md)
-
-### 目标 4：测试全绿之后，仍要逐行审查 AI 产出
-- **[Coding with Grok 4.5 is surprisingly good…](https://www.youtube.com/watch?v=5J6HCDEkg64)** <span class="tool-tag tool-grok45">Cursor + Grok 4.5</span>
-  - 讲者 / 频道：ForrestKnight ｜ 发布：2026-07-10 ｜ 工具：Cursor + Grok 4.5
-  - 看点：24 个测试全绿、Clippy 无警告，逐行审查仍发现字符串比较版本号、重复造轮子；对比 Fable 5 / Opus 4.8。
-  - 👉 [阅读分析](./12-forrestknight-grok-4-5.md)
-
-## 二、🧭 需求澄清、规划与上下文管理 {#domain-planning}
-
-动手前先把需求问清楚；Research → Plan → Implement；给上下文做减法。
-
-### 目标 1：访谈式需求 + Agent 可验证的组件
-- **[How we Claude Code](https://www.youtube.com/watch?v=IlqJqcl8ONE)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Arno（Anthropic Applied AI）／ Claude ｜ 发布：2026-05-22 ｜ 工具：Claude Code（AskUserQuestion、Auto mode）、Playwright MCP
-  - 看点：让 Claude 采访你写 spec → 四套 HTML 设计 → 组件输出 `data-verify-*` 契约供代理 / CI 运行时核验。
-  - 👉 [阅读分析](./03-how-we-claude-code.md)
-
-### 目标 2：找出需求盲区，给 harness 做减法
-- **[Field Guide to Fable — Thariq Shihipar, Anthropic](https://www.youtube.com/watch?v=9fubhllmsBU)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Thariq Shihipar（Anthropic）／ AI Engineer ｜ 发布：2026-07-06 ｜ 工具：Claude Code
-  - 看点：Claude Code 删掉 80% system prompt；blind spot pass、HTML 原型、访谈、实现笔记、让模型 quiz 你。
-  - 👉 [阅读分析](./06-field-guide-to-fable.md)
-
-### 目标 3：在复杂存量代码库里做 RPI 与有意压缩
-- **[No Vibes Allowed: Solving Hard Problems in Complex Codebases – Dex Horthy, HumanLayer](https://www.youtube.com/watch?v=rmvDxxNubIg)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Dex Horthy（HumanLayer）／ AI Engineer ｜ 发布：2025-12-02 ｜ 工具：Claude Code（子代理、slash commands）
-  - 看点：Research → Plan → Implement 与“频繁有意压缩”，把上下文控制在“smart zone”；附 HumanLayer 开源命令原文。
-  - 👉 [阅读分析](./04-no-vibes-allowed-rpi.md)
-
-## 三、🤝 多代理协作与对抗式验证 {#domain-multi-agent}
-
-一个写、一个查；按角色配置子代理；几十个子代理并行后再让怀疑者复核。
-
-### 目标 1：Builder + Validator 代理团队
-- **[Claude Code Task System: ANTI-HYPE Agentic Coding (Advanced)](https://www.youtube.com/watch?v=4_2j5wgt_ds)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：IndyDevDan ｜ 发布：2026-02-02 ｜ 工具：Claude Code（Task 系统、Hooks、子代理）
-  - 看点：用模板元提示词生成计划，再让 builder / validator 成对的子代理通过 Task 依赖协作、自检。
-  - 👉 [阅读分析](./05-indydevdan-task-system.md)
-
-### 目标 2：子代理按角色配权限、并行切片审查
-- **[OpenAI Codex Masterclass — Vaibhav Srivastav & Katia Gil Guzman](https://www.youtube.com/watch?v=MhHEGMFCEB0)** <span class="tool-tag tool-codex">Codex</span>
-  - 讲者 / 频道：VB、Katia Gil Guzman（OpenAI）／ AI Engineer ｜ 发布：2026-04-29 ｜ 工具：Codex（subagents、Code Review、Plugins、Hooks）
-  - 看点：现场让 20 个子代理分片审查 45 个 persona 文件；只读审查 persona、stop hook “再验证一轮”。
-  - 👉 [阅读分析](./08-codex-masterclass.md)
-
-### 目标 3：用对抗式验证代理确认“真的完成了”
-- **[@space-xai Grok Build Spawned 57 Agents in 3 Minutes. Here's Why I Wasn't Worried.](https://www.youtube.com/watch?v=1NwO2dPzwRM)** <span class="tool-tag tool-grokbuild">Grok Build</span>
-  - 讲者 / 频道：Thierry Damiba ／ Arcade ｜ 发布：2026-09-09 ｜ 工具：Grok Build + Grok 4.5（plan mode、subagents、`/goal`）
-  - 看点：57 个并行子代理审查文件；`/goal` 声称完成后，skeptic 验证代理发现真实问题并只复查 delta。（字幕质量差，结合简介 + 官方文档分析）
-  - 👉 [阅读分析](./15-arcade-grok-build-57-agents.md)
-
-## 四、⚙️ 后台代理、自动化与 CI/CD {#domain-automation}
-
-Routines 和 /loop 在后台跑；在 Slack 里派活；PR 先过代理审查、代理看护 CI。
-
-### 目标 1：Routines、Loop 与 Auto mode
-- **[Reflecting on a year of Claude Code](https://www.youtube.com/watch?v=Hth_tLaC2j8)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Boris Cherny、Cat Wu（Anthropic）／ Claude ｜ 发布：2026-06-08 ｜ 工具：Claude Code（Routines、Auto mode、`/loop`、Remote Control）
-  - 看点：每次犯错就写进 CLAUDE.md / Skill；验证 = “can the agent run the thing?”；用 routine 自动修 bug、盯 PR。
-  - 👉 [阅读分析](./01-claude-code-one-year.md)
-
-### 目标 2：在 Slack 里派活与扇出式 Workflows
-- **[How the Claude Code team uses Claude Code](https://www.youtube.com/watch?v=S-sYlFiGFv8)** <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Thariq Shihipar、Sid Bidasaria、Robert Boyce（Anthropic）／ Claude ｜ 发布：2026-09-02 ｜ 工具：Claude Code、Claude Tag
-  - 看点：70–80% 工作经由 Slack 原生的 Claude Tag；给目标而非任务；扇出找 bug + 对抗式复审的 workflow。
-  - 👉 [阅读分析](./02-claude-code-team-workflows.md)
-
-### 目标 3：PR 审查、CI 看护、Deploy preview
-- **[OpenAI @ Replay 2026 | How OpenAI Uses Codex to Change How We Build](https://www.youtube.com/watch?v=NjaX4qt-O1Y)** <span class="tool-tag tool-codex">Codex</span>
-  - 讲者 / 频道：Dominik Kundel（OpenAI）／ Temporal ｜ 发布：2026-05-28 ｜ 工具：Codex（GitHub Code Review、babysitting skill、`/goal`）
-  - 看点：context → validation → verification 飞轮；100% PR 经 Codex review；PR 看护 skill 盯 CI；手机上完成“修复→预览→合并”。
-  - 👉 [阅读分析](./10-how-openai-uses-codex.md)
-
-## 五、🧠 Harness 工程与内部机制 {#domain-harness}
-
-代理外壳怎么工作；把团队标准写成 lint 和测试，让代理在轨道上跑。
-
-### 目标 1：理解编码代理 harness 的内部机制
-- **[How Codex Works — Dominik Kundel, OpenAI](https://www.youtube.com/watch?v=shRR1e2HXMk)** <span class="tool-tag tool-codex">Codex</span>
-  - 讲者 / 频道：Dominik Kundel（OpenAI）／ AI Engineer ｜ 发布：2026-08-10 ｜ 工具：Codex harness（开源）、Responses API
-  - 看点：deferred tools、skills 占 2% 上下文上限、只读 Auto Review 子代理、`/goal` continuation prompt、服务端 compaction。
-  - 👉 [阅读分析](./09-how-codex-works.md)
-
-### 目标 2：把团队标准变成 lint / 测试 / reviewer agents
-- **[Harness Engineering: How to Build Software When Humans Steer, Agents Execute — Ryan Lopopolo, OpenAI](https://www.youtube.com/watch?v=am_oeAoUhew)** <span class="tool-tag tool-codex">Codex</span>
-  - 讲者 / 频道：Ryan Lopopolo（OpenAI）／ AI Engineer ｜ 发布：2026-04-16 ｜ 工具：Codex
-  - 看点：禁止团队碰编辑器；750 包仓库、文件行数测试、带修复指引的 lint、按 persona 的 CI reviewer、每周 Garbage Collection Day。
-  - 👉 [阅读分析](./07-harness-engineering.md)
-
-## 覆盖情况与已知缺口（如实说明）
-
-按主题：真实项目实战与人工把关 4 篇（#11、#14、#13、#12）；需求澄清、规划与上下文管理 3 篇（#03、#06、#04）；多代理协作与对抗式验证 3 篇（#05、#08、#15）；后台代理、自动化与 CI/CD 3 篇（#01、#02、#10）；Harness 工程与内部机制 2 篇（#09、#07）。
-
-按工具：
-
-| 工具 | 数量 | 来源构成 | 说明 |
-|---|---|---|---|
-| Claude（Claude Code） | 6 | 官方频道 3、AI Engineer 2、独立开发者 1 | 内容最充足，官方团队直接讲内部用法 |
-| Codex | 5 | OpenAI 官方 1、AI Engineer 3、Temporal 大会 1 | 官方工程师讲 harness 与内部流程，质量高；其中 #09、#10 为同一讲者的不同演讲 |
-| Grok | 4 | 独立开发者 3、Arcade（工具厂商频道）1 | **缺口明显**，见下 |
-
-**Grok 的缺口：**
-- 未找到 xAI 官方频道或 AI Engineer 等大会上关于 Grok Build / Grok 编码代理的长篇工程演讲或实战讲解；Grok 官方频道只有 1–2 分钟的产品宣传片（如 “Introducing Grok 4.5”），不符合“内容实战”的标准，没有收录。
-- 收录的 4 个 Grok 视频都是第三方实测：#12、#13、#14 有完整字幕；#15 内容最贴近“多代理 + 验证”主题，但自动字幕质量差，因此结合简介和官方文档分析。
-- 讲架构设计和长期团队实践的 Grok 内容（类似 #07、#10 那样）目前没有找到。Grok 部分的结论主要是“工具能力 + 个人体验”，可信度低于 Claude / Codex 部分。
-- 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
-
-**其他说明：**
-- 时效：除 #04（2025-12-02）外，其余均为 2026 年发布。
-- 按要求排除了以漏洞挖掘 / 攻防安全为主题的视频，只保留软件开发工作流。
-- 未收录但可作延伸阅读：Ryan Lopopolo 在 Latent Space 的长访谈 *Extreme Harness Engineering*（https://www.youtube.com/watch?v=CeOXx-XTYek，与 #07 同一讲者，含 Symphony 编排器）；Jason Liu 在 OpenAI DevDay 2026 的 *From Single Player to Multiplayer with Codex*（https://www.youtube.com/watch?v=aDTPTwnrRyA，偏知识工作协作）。
+::: info 资料来源与可信度
+所有链接均已核实存在。视频以字幕 / 官方文字稿为主要依据，截图全部来自视频画面；文章和文档以原文全文为依据，抓取日期写在每篇的“信息来源”里。例外和局限都在对应文章中注明，覆盖情况与缺口见[全部资料页末尾](/all#coverage)。
+:::

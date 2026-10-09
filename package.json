@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/gen-glossary.mjs && vitepress dev docs",
-    "build": "node scripts/gen-glossary.mjs && vitepress build docs",
+    "build": "node scripts/gen-glossary.mjs && node scripts/gen-home.mjs && vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "devDependencies": {
