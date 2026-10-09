@@ -1,6 +1,6 @@
-# 16｜Planner / Generator / Evaluator：Anthropic 怎样让 Claude 连续几小时自己做出一个全栈应用
+# Planner / Generator / Evaluator：Anthropic 怎样让 Claude 连续几小时自己做出一个全栈应用
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - [Playwright MCP](/glossary#playwright)：让代理能真的打开浏览器、点按钮、截图的工具。
 :::
 
-> 信息来源：Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。文中英文引用均为原文摘录，中文翻译为本站所加。原文中的截图与视频版权归 Anthropic，本站未转载。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Harness design for long-running application development" author="Prithvi Rajasekaran（Anthropic Labs）" date="2026-03-24" url="https://www.anthropic.com/engineering/harness-design-long-running-apps" />
@@ -35,6 +33,7 @@
 | 发布日期 | 2026-03-24 |
 | 使用工具 | Claude Agent SDK、Claude Opus 4.5 / 4.6、Playwright MCP、git |
 | 前作 | [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)（2025-11，Initializer + Coding Agent 两段式） |
+| 分析依据 | Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。文中英文引用均为原文摘录。原文中的截图与视频版权归 Anthropic，本站未转载。 |
 
 ## 2. 做了什么
 

@@ -1,6 +1,6 @@
-# 34｜让 Grok Build 跑进脚本和 CI：官方文档里的 headless、hooks、/loop 与 worktree
+# 让 Grok Build 跑进脚本和 CI：官方文档里的 headless、hooks、/loop 与 worktree
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><span class="tool-tag tool-grokbuild">Grok Build</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - [Git Worktree](/glossary#worktree)：同一个仓库检出多个工作目录，每个目录一个分支，互不干扰。
 :::
 
-> 信息来源：xAI 官方 Grok Build 文档（docs.x.ai/build）的六个页面：Hooks（页面标注最后更新 2026-07-02）、Headless & Scripting（2026-06-10）、AGENTS.md 项目规则（2026-07-04）、Background Tasks、Worktrees、Subagents（均为 2026-07-21）。均于 2026-10-09 抓取。文档在持续更新，命令和参数以官方页面为准。配置和命令均为原文摘录，中文说明为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="官方文档" title="Hooks" author="xAI · Grok Build 文档（另含 Headless & Scripting、AGENTS.md、Background Tasks、Worktrees 等页）" date="2026-07-02 更新（抓取于 2026-10-09）" url="https://docs.x.ai/build/features/hooks" />
@@ -37,6 +35,7 @@
 | 类型 | 官方产品文档 |
 | 作者 | xAI |
 | 使用工具 | Grok Build CLI（`grok`） |
+| 分析依据 | xAI 官方 Grok Build 文档（docs.x.ai/build）的六个页面：Hooks（页面标注最后更新 2026-07-02）、Headless & Scripting（2026-06-10）、AGENTS.md 项目规则（2026-07-04）、Background Tasks、Worktrees、Subagents（均为 2026-07-21）。均于 2026-10-09 抓取。文档在持续更新，命令和参数以官方页面为准。配置和命令均为原文摘录。 |
 
 ## 2. 做了什么
 

@@ -1,6 +1,6 @@
-# 25｜四个字的提示词也能很管用：Simon Willison《Agentic Engineering Patterns》里的测试与验收模式
+# 四个字的提示词也能很管用：Simon Willison《Agentic Engineering Patterns》里的测试与验收模式
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-guide">类型：指南</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><span class="tool-tag tool-general">通用（不限工具）</span></div>
 
 <div class="hook">
 
@@ -22,8 +22,6 @@ Simon 是最早系统记录 AI 编程实践的工程师之一，写了 400 多�
 - [Showboat](/glossary#showboat)：Simon 写的工具，让代理把测试过程（命令 + 真实输出 + 截图）记录成 Markdown 文档。
 :::
 
-> 信息来源：Simon Willison 博客上的指南首页、介绍文章（2026-02-23）以及 “Red/green TDD”“First run the tests”“Agentic manual testing”“Anti-patterns: things to avoid” 四章原文（抓取于 2026-10-09）。指南章节会持续更新，引用以抓取时版本为准。英文引用均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="指南" title="Agentic Engineering Patterns（测试与 QA 章节）" author="Simon Willison" date="2026-02-23 起连载" url="https://simonwillison.net/guides/agentic-engineering-patterns/" />
@@ -36,6 +34,7 @@ Simon 是最早系统记录 AI 编程实践的工程师之一，写了 400 多�
 | 作者 | Simon Willison（Django 联合创始人、Datasette 作者） |
 | 发布日期 | 2026-02-23 起连载，章节持续更新 |
 | 涉及工具 | Claude Code、OpenAI Codex；`uv`/pytest、Playwright、Rodney、agent-browser、Showboat |
+| 分析依据 | Simon Willison 博客上的指南首页、介绍文章（2026-02-23）以及 “Red/green TDD”“First run the tests”“Agentic manual testing”“Anti-patterns: things to avoid” 四章原文（抓取于 2026-10-09）。指南章节会持续更新，引用以抓取时版本为准。英文引用均为原文摘录。 |
 
 ## 2. 做了什么
 

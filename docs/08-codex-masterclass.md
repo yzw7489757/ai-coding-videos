@@ -1,6 +1,6 @@
-# 08｜OpenAI Codex Masterclass：插件、自动化、Code Review 与自定义 Subagents
+# OpenAI Codex Masterclass：插件、自动化、Code Review 与自定义 Subagents
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -22,19 +22,17 @@
 - [P1 / P2](/glossary#severity)：审查意见的严重度等级。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/MhHEGMFCEB0，含完整时间戳文字稿与配图说明）+ YouTube 视频简介与章节 + 本次新增的视频画面截图。英文引号内容为文字稿或幻灯片原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="MhHEGMFCEB0" title="OpenAI Codex Masterclass" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=MhHEGMFCEB0 |
 | 讲者 / 频道 | Vaibhav Srivastav（VB）、Katia Gil Guzman（OpenAI Developer Experience，伦敦）／ **AI Engineer** |
 | 发布日期 | 2026-04-29 |
 | 时长 | 1:01:58（工作坊，含 Q&A） |
 | 使用工具 | Codex app / CLI（GPT-5.4、GPT-5.3-Codex-Spark、mini/nano）、worktrees、Plugins（Skills + Apps + MCP）、Automations、Code Review（GitHub 与 `/review`）、Subagents、Guardian approvals、Hooks、Claude Code 中的 Codex 插件 |
+| 分析依据 | AI Engineer 官方讲稿页（ai.engineer/talks/MhHEGMFCEB0，含完整时间戳文字稿与配图说明）+ YouTube 视频简介与章节 + 视频画面截图。英文引号内容为文字稿或幻灯片原话。 |
 
 章节（节选）：7:04 App、项目与 worktrees → 8:37 Automations → 12:28 Plugins → 27:14 Code Review 与 GitHub → 32:39 Subagents 并行与 persona → 36:18 用 subagents 审查 persona 文件 → 44:52 创建自定义 subagent → 49:29 Guardian approvals、hooks。
 

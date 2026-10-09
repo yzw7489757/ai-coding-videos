@@ -171,7 +171,6 @@
   box-shadow: var(--vp-shadow-2);
 }
 .vp-doc .yt-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.vp-doc .yt-player figcaption { margin-top: 6px; font-size: 13px; color: var(--vp-c-text-2); }
 
 /* 主题标签与工具标签 */
 .tool-tag {
@@ -267,50 +266,32 @@
 .dark .type-guide { color: #fde047; }
 .vp-doc .meta-tags .type-tag { font-size: 12px; line-height: 20px; padding: 0 8px; margin: 0; }
 
-/* ===== 评分（ratings.mjs → rating-plugin.mjs / ScoreTable.vue） ===== */
+/* ===== 文章标题下的 meta 行：[工具] [综合] [实用性] [深度]（rating-plugin.mjs） ===== */
 :root { --rating-star: #e0a100; --rating-empty: #d9d9de; }
-.dark { --rating-star: #f5c542; --rating-empty: #45454f; }
-.rating-stars {
-  display: inline-block; position: relative; font-size: 14px; line-height: 1; letter-spacing: 1px;
-  vertical-align: -1px; white-space: nowrap;
-}
+.dark { --rating-star: #f5c542; --rating-empty: #4a4a55; }
+.rating-stars { display: inline-block; font-size: 12px; line-height: 1; letter-spacing: 1px; white-space: nowrap; }
 .rating-stars::before {
   content: '★★★★★';
   background: linear-gradient(90deg, var(--rating-star) calc(var(--r) * 20%), var(--rating-empty) calc(var(--r) * 20%));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.vp-doc .rating-card {
-  margin: 0 0 20px; padding: 10px 14px 8px; border: 1px solid var(--vp-c-divider);
-  border-radius: 10px; background: var(--vp-c-bg-soft); font-size: 13.5px; line-height: 1.55;
+.vp-doc .meta-tags { gap: 6px; }
+.score-tag {
+  display: inline-flex; align-items: center; gap: 5px; padding: 0 9px; height: 22px;
+  font-size: 12px; line-height: 22px; border-radius: 11px; white-space: nowrap; cursor: default;
+  color: var(--vp-c-text-1); background: var(--vp-c-default-soft); border: 1px solid var(--vp-c-divider);
 }
-.vp-doc .rating-card .rating-head {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 12px; font-weight: 600; color: var(--vp-c-text-2); margin-bottom: 4px;
-}
-.vp-doc .rating-card .rating-head a { font-weight: 400; font-size: 12px; }
-.vp-doc .rating-row {
-  display: grid; grid-template-columns: 3.4em auto 2.2em 1fr; column-gap: 8px; align-items: baseline;
-  padding: 4px 0; border-top: 1px dashed var(--vp-c-divider);
-}
-.vp-doc .rating-row:first-of-type { border-top: 0; }
-.vp-doc .rating-row .rating-label { font-weight: 600; color: var(--vp-c-text-1); }
-.vp-doc .rating-row .rating-num { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--vp-c-text-1); }
-.vp-doc .rating-row .rating-why { color: var(--vp-c-text-2); }
-.vp-doc .rating-row.rating-overall .rating-label,
-.vp-doc .rating-row.rating-overall .rating-num { color: var(--vp-c-brand-1); }
-@media (max-width: 640px) {
-  .vp-doc .rating-row { grid-template-columns: 3.4em auto 1fr; }
-  .vp-doc .rating-row .rating-why { grid-column: 1 / -1; }
-}
-.vp-doc .rating-inline { margin: 4px 0 6px; font-size: 13.5px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-.vp-doc .rating-inline .rating-label { font-weight: 600; color: var(--vp-c-text-2); }
-.vp-doc .rating-inline b { font-variant-numeric: tabular-nums; }
-.vp-doc .rating-inline .rating-sub { color: var(--vp-c-text-2); font-size: 12.5px; }
+.score-tag .score-label { color: var(--vp-c-text-2); }
+.score-tag .score-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.score-tag.score-overall { background: var(--vp-c-brand-soft); border-color: transparent; }
+.score-tag.score-overall .score-label, .score-tag.score-overall .score-num { color: var(--vp-c-brand-1); }
+.vp-doc .meta-tags .tool-tag { height: 22px; line-height: 22px; padding: 0 9px; border-radius: 11px; font-size: 12px; font-weight: 600; }
+.vp-doc .meta-inline { margin: 2px 0 8px; }
 .vp-doc .score-table table { display: table; width: 100%; font-size: 13.5px; }
 .vp-doc .score-table td, .vp-doc .score-table th { padding: 6px 10px; }
-.vp-doc .score-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vp-doc .score-table .num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.vp-doc .score-table td.num b { margin-left: 5px; }
 .vp-doc .score-table th.on { color: var(--vp-c-brand-1); }
-.vp-doc .score-table td.overall b { margin-left: 6px; }
 .vp-doc .score-table .score-stage { white-space: nowrap; }
 .vp-doc .score-sort { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--vp-c-text-2); }
 .vp-doc .score-sort button {
@@ -319,3 +300,6 @@
 }
 .vp-doc .score-sort button:hover { border-color: var(--vp-c-brand-1); }
 .vp-doc .score-sort button.active { background: var(--vp-c-brand-soft); border-color: var(--vp-c-brand-1); color: var(--vp-c-brand-1); }
+
+/* 表格第一列（如“基本信息”的项目名）不要被长内容挤成竖排 */
+.vp-doc table td:first-child, .vp-doc table th:first-child { word-break: keep-all; overflow-wrap: normal; }

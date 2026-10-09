@@ -1,6 +1,6 @@
-# 29｜把计划写进仓库：Gemini CLI 的 Conductor 扩展与“上下文驱动开发”
+# 把计划写进仓库：Gemini CLI 的 Conductor 扩展与“上下文驱动开发”
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-gemini">工具：Gemini CLI</span></div>
+<div class="meta-tags"><span class="tool-tag tool-gemini">Gemini CLI</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - [Brownfield（棕地项目）](/glossary#brownfield)：已经有大量代码的老项目，和从零开始的 greenfield 相对。
 :::
 
-> 信息来源：Google Developers Blog 的两篇文章：《Conductor: Introducing context-driven development for Gemini CLI》（2025-12-17）和《Conductor Update: Introducing Automated Reviews》（2026-02-13），以及 GitHub 仓库 `gemini-cli-extensions/conductor` 的 README 和 `workflow.md` 模板（Apache-2.0 许可）。均于 2026-10-09 抓取。英文引用为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Conductor: Introducing context-driven development for Gemini CLI" author="Keith Ballinger、Jay Kornder、Sherzat Aitbayev（Google）" date="2025-12-17" url="https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/" />
@@ -35,6 +33,7 @@
 | 作者 | Keith Ballinger、Jay Kornder、Sherzat Aitbayev |
 | 发布日期 | 2025-12-17 |
 | 使用工具 | Gemini CLI + Conductor 扩展（`gemini extensions install https://github.com/gemini-cli-extensions/conductor`） |
+| 分析依据 | Google Developers Blog 的两篇文章：《Conductor: Introducing context-driven development for Gemini CLI》（2025-12-17）和《Conductor Update: Introducing Automated Reviews》（2026-02-13），以及 GitHub 仓库 `gemini-cli-extensions/conductor` 的 README 和 `workflow.md` 模板（Apache-2.0 许可）。均于 2026-10-09 抓取。英文引用为原文摘录。 |
 
 ## 2. 做了什么
 

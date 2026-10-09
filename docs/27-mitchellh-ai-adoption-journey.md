@@ -1,6 +1,6 @@
-# 27｜从 AI 怀疑者到“总有一个代理在跑”：Mitchell Hashimoto 的六步采用路线
+# 从 AI 怀疑者到“总有一个代理在跑”：Mitchell Hashimoto 的六步采用路线
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><span class="tool-tag tool-general">通用（不限工具）</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - [Slam Dunk（稳赢的任务）](/glossary#slam-dunk)：你已经很有把握代理能做好的任务。
 :::
 
-> 信息来源：作者个人博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="My AI Adoption Journey" author="Mitchell Hashimoto" date="2026-02-05" url="https://mitchellh.com/writing/my-ai-adoption-journey" />
@@ -34,6 +32,7 @@
 | 发布日期 | 2026-02-05 |
 | 提到的工具 | Claude Code、Gemini（网页版）、Amp 的 deep mode、GitHub CLI（`gh`） |
 | 配套示例 | 文中链接的 Ghostty 仓库 AGENTS.md |
+| 分析依据 | 作者个人博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用均为原文摘录。 |
 
 ## 2. 做了什么
 

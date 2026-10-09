@@ -1,6 +1,6 @@
-# 06｜Field Guide to Fable：解除模型束缚、找出你的“未知”、保持人在回路
+# Field Guide to Fable：解除模型束缚、找出你的“未知”、保持人在回路
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [模型名称](/glossary#model-names)：Fable、Opus 等都是 Claude 系列的模型名。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/9fubhllmsBU，含完整时间戳文字稿）+ YouTube 视频简介与章节 + 本次新增的幻灯片截图。英文引号内容均为文字稿或幻灯片原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="9fubhllmsBU" title="Field Guide to Fable" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=9fubhllmsBU |
 | 讲者 / 频道 | Thariq Shihipar（Anthropic，Claude Code 团队）／ **AI Engineer** |
 | 发布日期 | 2026-07-06 |
 | 时长 | 19:28 |
 | 使用工具 | Claude Code（Fable 模型、AskUserQuestion、Bash、HTML 报告产物）、Claude Tag |
 | 形式 | 大会主题演讲（经验方法论，无现场编码） |
+| 分析依据 | AI Engineer 官方讲稿页（ai.engineer/talks/9fubhllmsBU，含完整时间戳文字稿）+ YouTube 视频简介与章节 + 幻灯片截图。英文引号内容均为文字稿或幻灯片原话。 |
 
 章节：0:00 引子 → 2:32 Unhobbling Claude → 9:08 找出未知：地图与疆域 → 14:29 编程方式变化带来的情绪 → 16:30 Being unreasonable。
 

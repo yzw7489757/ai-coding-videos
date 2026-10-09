@@ -1,6 +1,6 @@
-# 35｜子代理不是“换个人设”：Amp 的 Finder / Oracle / Librarian 架构与“少给工具”的取舍
+# 子代理不是“换个人设”：Amp 的 Finder / Oracle / Librarian 架构与“少给工具”的取舍
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-amp">工具：Amp</span></div>
+<div class="meta-tags"><span class="tool-tag tool-amp">Amp</span></div>
 
 <div class="hook">
 
@@ -21,19 +21,17 @@
 - [Context Window（上下文窗口）](/glossary#context-window)：模型一次能“看到”的全部内容的上限。
 :::
 
-> 信息来源：AI Engineer 频道发布的 AIE Code 2025 演讲录像，文字依据 ai.engineer 网站提供的带时间戳字幕（只引用讲者原话，不引用页面上的编辑摘要），截图为视频真实画面。演讲后 Amp 的产品有较大变化，第 4 节据 Amp 官方新闻（2026-02-19、2026-03-30）补充。中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <YouTube id="gvIAkmZUEZY" title="Amp Code: Next Generation AI Coding – Beyang Liu, Amp Code" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=gvIAkmZUEZY |
 | 讲者 / 频道 | Beyang Liu（Sourcegraph 联合创始人兼 CTO，幻灯片署名）／ **AI Engineer** |
 | 发布日期 | 2025-12-22（AIE Code 2025 演讲；讲者提到 Gemini 3 “两天前”发布） |
 | 时长 | 18:30 |
 | 使用工具 | Amp（终端 UI、编辑器扩展、子代理） |
+| 分析依据 | AI Engineer 频道发布的 AIE Code 2025 演讲录像，文字依据 ai.engineer 网站提供的带时间戳字幕（只引用讲者原话，不引用页面上的编辑摘要），截图为视频真实画面。演讲后 Amp 的产品有较大变化，第 4 节据 Amp 官方新闻（2026-02-19、2026-03-30）补充。 |
 
 ## 2. 做了什么
 

@@ -1,6 +1,6 @@
-# 24｜Ralph Wiggum 循环到底是什么：发明者 Geoffrey Huntley 和 Dex Horthy 现场对比 bash 循环与官方插件
+# Ralph Wiggum 循环到底是什么：发明者 Geoffrey Huntley 和 Dex Horthy 现场对比 bash 循环与官方插件
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -22,20 +22,18 @@
 - [tmux](/glossary#tmux)：终端复用工具，可以分屏运行多个命令并让代理读取各窗格输出。
 :::
 
-> 信息来源：YouTube 自动字幕（yt-dlp 获取，口语化、有识别错误，引用时只保留能确认的原话）+ 视频章节 + Geoffrey Huntley 博客《Ralph Wiggum as a "software engineer"》（2025-07-14，ghuntley.com/ralph，其中直接链接了本视频）。中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <YouTube id="O2bBWDoxO4s" title="Ralph Wiggum (and why Claude Code's implementation isn't it)" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=O2bBWDoxO4s |
 | 讲者 / 频道 | Geoffrey Huntley（Ralph 技术的提出者）、Dex Horthy（HumanLayer 创始人）／ **Geoffrey Huntley** 频道（直播录像） |
 | 发布日期 | 2026-01-04 |
 | 时长 | 41:56 |
 | 使用工具 | Claude Code（`--dangerously-skip-permissions`、官方 Ralph Wiggum 插件）、bash、tmux、GCP 虚拟机 |
 | 配套阅读 | https://ghuntley.com/ralph/ |
+| 分析依据 | YouTube 自动字幕（yt-dlp 获取，口语化、有识别错误，引用时只保留能确认的原话）+ 视频章节 + Geoffrey Huntley 博客《Ralph Wiggum as a "software engineer"》（2025-07-14，ghuntley.com/ralph，其中直接链接了本视频）。 |
 
 ## 2. 做了什么
 

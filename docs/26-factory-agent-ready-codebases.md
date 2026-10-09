@@ -1,6 +1,6 @@
-# 26｜代理不好用，往往不是工具的问题：Factory CTO 讲“让代码库为代理做好准备”的 8 根验证支柱
+# 代理不好用，往往不是工具的问题：Factory CTO 讲“让代码库为代理做好准备”的 8 根验证支柱
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><span class="tool-tag tool-general">通用（不限工具）</span></div>
 
 <div class="hook">
 
@@ -21,19 +21,17 @@
 - [Droid](/glossary#droid)：Factory 自家编码代理的名字。
 :::
 
-> 信息来源：AI Engineer 官网该演讲页面的带时间戳文字稿（ai.engineer/talks/ShuJ_CN6zr4-making-codebases-agent-ready）+ YouTube 元数据与章节（yt-dlp）+ 视频截图（8 根支柱的名称来自 4:30 的幻灯片）。英文引用均来自文字稿，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <YouTube id="ShuJ_CN6zr4" title="Making Codebases Agent Ready" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=ShuJ_CN6zr4 |
 | 讲者 / 频道 | Eno Reyes（Factory 联合创始人兼 CTO）／ **AI Engineer**（AI Engineer Code Summit 2025） |
 | 发布日期 | 2025-12-22 |
 | 时长 | 15:33 |
 | 使用工具 | 与工具无关；提到 Factory 的 Droid、AGENTS.md、Browserbase 等 |
+| 分析依据 | AI Engineer 官网该演讲页面的带时间戳文字稿（ai.engineer/talks/ShuJ_CN6zr4-making-codebases-agent-ready）+ YouTube 元数据与章节（yt-dlp）+ 视频截图（8 根支柱的名称来自 4:30 的幻灯片）。英文引用均来自文字稿。 |
 
 ## 2. 做了什么
 

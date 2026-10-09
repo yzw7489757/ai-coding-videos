@@ -1,6 +1,6 @@
-# 03｜How we Claude Code：访谈式需求 → HTML 设计探索 → “Agent 原生”的可验证组件
+# How we Claude Code：访谈式需求 → HTML 设计探索 → “Agent 原生”的可验证组件
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -20,20 +20,18 @@
 - [Happy Path](/glossary#happy-path)：一切正常、不出错的那条路径。
 :::
 
-> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介 + 配套 GitHub 仓库 `anthropics/cwc-workshops/how-we-claude-code`（README 与 PROMPT.MD 原文）。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="IlqJqcl8ONE" title="How we Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=IlqJqcl8ONE |
 | 讲者 / 频道 | Arno（字幕自我介绍：Anthropic Applied AI 团队架构师）／ 官方频道 **Claude**（Code w/ Claude 2026 工作坊） |
 | 发布日期 | 2026-05-22 |
 | 时长 | 31:43 |
 | 使用工具 | Claude Code（Opus 4.7、Auto mode、Fast mode、`/effort`、AskUserQuestion）、Playwright MCP、Bun、Vite + React、Zod、Vitest |
 | 配套仓库 | https://github.com/anthropics/cwc-workshops/tree/main/how-we-claude-code |
+| 分析依据 | YouTube 字幕全文（网页抓取）+ 视频简介 + 配套 GitHub 仓库 `anthropics/cwc-workshops/how-we-claude-code`（README 与 PROMPT.MD 原文）。 |
 
 <figure class="shot"><img src="/images/03/0237.webp" alt="讲者的总纲幻灯片“Three tools for working with long-running agents”：消除歧义（让 Agent 先采访你）、理解与规划（用 HTML 而非 Markdown 写计划）、内建验证（从一开始就做验证，而不是最后补）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=IlqJqcl8ONE&t=237s" target="_blank" rel="noopener">3:57</a> · 讲者的总纲幻灯片“Three tools for working with long-running agents”：消除歧义（让 Agent 先采访你）、理解与规划（用 HTML 而非 Markdown 写计划）、内建验证（从一开始就做验证，而不是最后补）。</figcaption></figure>
 

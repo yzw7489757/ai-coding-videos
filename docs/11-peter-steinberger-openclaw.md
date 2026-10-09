@@ -1,6 +1,6 @@
-# 11｜Builders Unscripted Ep.1：Peter Steinberger 如何用 Codex 构建 OpenClaw
+# Builders Unscripted Ep.1：Peter Steinberger 如何用 Codex 构建 OpenClaw
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [Prompt Injection](/glossary#prompt-injection)：恶意指令藏在外部内容里，代理读到后可能照做。
 :::
 
-> 信息来源：YouTube 字幕全文（yt-dlp 获取的英文字幕）+ 视频简介与官方章节。英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="9jgcT0Fqt7U" title="Builders Unscripted Ep.1" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=9jgcT0Fqt7U |
 | 讲者 / 频道 | Peter Steinberger（PSPDFKit 创始人、OpenClaw 作者；录制于加入 OpenAI 之前），主持 Romain Huet（OpenAI Head of Developer Experience）／ 官方频道 **OpenAI** |
 | 发布日期 | 2026-02-24 |
 | 时长 | 31:28 |
 | 使用工具 | Codex（GPT-5.2）、早期使用 Claude Code、Playwright MCP、语音输入、自定义 slash command |
 | 形式 | 访谈（无现场编码），但讲了大量个人真实工作流 |
+| 分析依据 | YouTube 字幕全文（yt-dlp 获取的英文字幕）+ 视频简介与官方章节。英文引号内容均为字幕原话。 |
 
 官方章节：0:00 OpenClaw 现象 → 4:24 第一次 AI 突破 → 7:58 构建代理 → 10:45 自主解决问题 → 12:58 Discord bot 与安全 → 18:09 新的编码方式 → 21:45 不读代码就发布 → 24:03 管理开源 → 29:14 给开发者的建议。
 

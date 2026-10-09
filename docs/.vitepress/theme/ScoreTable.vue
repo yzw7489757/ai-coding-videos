@@ -48,9 +48,9 @@ const sorted = computed(() => {
       <thead>
         <tr>
           <th>#</th><th>资料</th><th>阶段</th>
+          <th class="num" :class="{ on: mode === 'overall' }">综合</th>
           <th class="num" :class="{ on: mode === 'use' }">实用性</th>
           <th class="num" :class="{ on: mode === 'depth' }">深度</th>
-          <th class="num" :class="{ on: mode === 'overall' }">综合</th>
         </tr>
       </thead>
       <tbody>
@@ -58,12 +58,9 @@ const sorted = computed(() => {
           <td>{{ r.n }}</td>
           <td><a :href="`/${r.slug}`">{{ r.text }}</a></td>
           <td><a class="score-stage" :href="`/guide/${r.stageId}`">{{ r.stage.split(' · ')[0] }}</a></td>
-          <td class="num">{{ fmtScore(r.use) }}</td>
-          <td class="num">{{ fmtScore(r.depth) }}</td>
-          <td class="num overall">
-            <span class="rating-stars" :style="{ '--r': r.overall }" role="img" :aria-label="`${fmtScore(r.overall)} / 5`"></span>
-            <b>{{ fmtScore(r.overall) }}</b>
-          </td>
+          <td class="num" :title="`综合 ${fmtScore(r.overall)} / 5`"><span class="rating-stars" :style="{ '--r': r.overall }" aria-hidden="true"></span><b>{{ fmtScore(r.overall) }}</b></td>
+          <td class="num" :title="`实用性 ${fmtScore(r.use)} / 5`"><span class="rating-stars" :style="{ '--r': r.use }" aria-hidden="true"></span><b>{{ fmtScore(r.use) }}</b></td>
+          <td class="num" :title="`深度 ${fmtScore(r.depth)} / 5`"><span class="rating-stars" :style="{ '--r': r.depth }" aria-hidden="true"></span><b>{{ fmtScore(r.depth) }}</b></td>
         </tr>
       </tbody>
     </table>

@@ -23,9 +23,5 @@ const src = computed(() => {
         allowfullscreen
       />
     </div>
-    <figcaption>
-      ▶ 可直接在本页播放；也可以
-      <a :href="`https://www.youtube.com/watch?v=${id}`" target="_blank" rel="noopener">在 YouTube 打开</a>
-    </figcaption>
   </figure>
 </template>

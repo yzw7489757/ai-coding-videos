@@ -1,6 +1,6 @@
-# 21｜别再造新代理了，去写 Skills：Anthropic 讲 Agent Skills 为什么只是一个文件夹
+# 别再造新代理了，去写 Skills：Anthropic 讲 Agent Skills 为什么只是一个文件夹
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [skill-creator](/glossary#skill-creator)：Anthropic 提供的“用来创建技能的技能”。
 :::
 
-> 信息来源：AI Engineer 官网该演讲页面的带时间戳文字稿（ai.engineer/talks/CEvIs9y1uog-agent-skills）+ YouTube 视频元数据与章节（yt-dlp）+ 视频截图。英文引用均来自文字稿，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <YouTube id="CEvIs9y1uog" title="Don't Build Agents, Build Skills Instead" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=CEvIs9y1uog |
 | 讲者 / 频道 | Barry Zhang、Mahesh Murag（Anthropic，Agent Skills 创建者）／ **AI Engineer**（AI Engineer Code Summit 2025） |
 | 发布日期 | 2025-12-08 |
 | 时长 | 16:22 |
 | 使用工具 | Claude Code、Claude Agent SDK、Agent Skills、MCP |
 | 文字稿 | https://ai.engineer/talks/CEvIs9y1uog-agent-skills |
+| 分析依据 | AI Engineer 官网该演讲页面的带时间戳文字稿（ai.engineer/talks/CEvIs9y1uog-agent-skills）+ YouTube 视频元数据与章节（yt-dlp）+ 视频截图。英文引用均来自文字稿。 |
 
 ## 2. 做了什么
 

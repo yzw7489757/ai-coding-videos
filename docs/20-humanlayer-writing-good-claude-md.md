@@ -1,6 +1,6 @@
-# 20｜CLAUDE.md 写得越多越没用？HumanLayer 的“少即是多”写作指南
+# CLAUDE.md 写得越多越没用？HumanLayer 的“少即是多”写作指南
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - Biome：一个可以自动修复问题的 JS/TS linter + formatter。
 :::
 
-> 信息来源：HumanLayer 官方博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用和代码块均为原文摘录，中文翻译为本站所加。文中“~150–200 条指令”等数字是作者引用的研究结论，作者自己也说该话题<Trans zh="还没有被非常严格地研究过">“hasn't been investigated in an incredibly rigorous manner”</Trans>。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Writing a good CLAUDE.md" author="Kyle（HumanLayer）" date="2025-11-25" url="https://www.humanlayer.dev/blog/writing-a-good-claude-md" />
@@ -34,6 +32,7 @@
 | 作者 | Kyle（HumanLayer；博客署名仅为 Kyle，第三方转载标注为 Kyle Mistele） |
 | 发布日期 | 2025-11-25 |
 | 适用工具 | Claude Code（CLAUDE.md）；同样适用于 OpenCode、Zed、Cursor、Codex（AGENTS.md） |
+| 分析依据 | HumanLayer 官方博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用和代码块均为原文摘录。文中“~150–200 条指令”等数字是作者引用的研究结论，作者自己也说该话题<Trans zh="还没有被非常严格地研究过">“hasn't been investigated in an incredibly rigorous manner”</Trans>。 |
 
 ## 2. 做了什么
 

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import { domains, toolTag, typeTag, allItems, stageLabel } from '../docs/.vitepress/domains.mjs'
 import { ratings, fmtScore } from '../docs/.vitepress/ratings.mjs'
 
-const scoreCell = (n) => { const o = ratings[n].overall[0]; return `<span class="rating-stars" style="--r:${o}" role="img" aria-label="${fmtScore(o)} / 5"></span> **${fmtScore(o)}**` }
+const scoreCell = (n) => { const o = ratings[n].overall[0]; return `<span class="rating-stars" style="--r:${o}" aria-hidden="true"></span> **${fmtScore(o)}**` }
 const out = path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs/index.md')
 const all = allItems(), total = all.length
 const lastAdded = all.map(i=>i.added).filter(Boolean).sort().at(-1)
@@ -77,7 +77,7 @@ const body = `
 |---|---|---|---|---|
 ${recent.map(i=>`| ${i.n} | [${i.text}](/${i.slug}) | [${stageLabel(i.domain)}](/guide/${i.domain.id}) | ${typeTag(i.type)} ${toolTag(i.tool)} | ${scoreCell(i.n)} |`).join('\n')}
 
-综合评分（1–5）兼顾内容质量和来源可信度；每篇的实用性、深度评分和理由见文章顶部，[全部资料页](/all#scores)可以按评分排序。
+每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
@@ -94,7 +94,7 @@ ${mm.join('\n')}
 - **想看全貌**：读[总结与最佳实践](/00-summary)，或打开[📚 全部资料](/all)按阶段浏览。
 
 ::: info 资料来源与可信度
-所有链接均已核实存在。视频以字幕 / 官方文字稿为主要依据，截图全部来自视频画面；文章和文档以原文全文为依据，抓取日期写在每篇的“信息来源”里。例外和局限都在对应文章中注明，覆盖情况与缺口见[全部资料页末尾](/all#coverage)。
+所有链接均已核实存在。视频以字幕 / 官方文字稿为主要依据，截图全部来自视频画面；文章和文档以原文全文为依据，抓取日期写在每篇“基本信息”表的“分析依据”一行。例外和局限都在对应文章中注明，覆盖情况与缺口见[全部资料页末尾](/all#coverage)。
 :::
 `
 fs.writeFileSync(out, fm + body)

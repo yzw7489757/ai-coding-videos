@@ -1,6 +1,6 @@
-# 10｜How OpenAI Uses Codex to Change How We Build：上下文 → 验证 → 核实 的飞轮
+# How OpenAI Uses Codex to Change How We Build：上下文 → 验证 → 核实 的飞轮
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -22,19 +22,17 @@
 - [/goal](/glossary#goal)：给代理一个可验证目标的长任务模式。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 本次新增的幻灯片截图。英文引号内容为字幕原话；自动字幕把 “Codex” 多处误识别为 “codecs / codeex / CEX”，引用时已按原意写作 Codex；另将明显的识别错误（“llinter”→linter、“poll requests”→pull requests）更正，其余未改动。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="NjaX4qt-O1Y" title="How OpenAI Uses Codex to Change How We Build" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=NjaX4qt-O1Y |
 | 讲者 / 频道 | Dominik Kundel（OpenAI Developer Experience Lead）／ **Temporal**（Replay 2026 大会） |
 | 发布日期 | 2026-05-28 |
 | 时长 | 47:03（演讲约 32 分钟 + Q&A） |
 | 使用工具 | Codex app / Cloud / GitHub Code Review、Slack/Linear/GitHub 中 @Codex、Memories、Chronicle、in-app browser、computer use、Chrome 扩展、`/goal`、babysitting skills、deploy previews |
+| 分析依据 | YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 幻灯片截图。英文引号内容为字幕原话；自动字幕把 “Codex” 多处误识别为 “codecs / codeex / CEX”，引用时已按原意写作 Codex；另将明显的识别错误（“llinter”→linter、“poll requests”→pull requests）更正，其余未改动。 |
 
 ## 2. 做了什么
 

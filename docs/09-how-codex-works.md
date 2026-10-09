@@ -1,6 +1,6 @@
-# 09｜How Codex Works：沿着一条消息看 Codex harness 内部（Dominik Kundel, OpenAI）
+# How Codex Works：沿着一条消息看 Codex harness 内部（Dominik Kundel, OpenAI）
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -22,20 +22,18 @@
 - [Compaction](/glossary#compaction)：上下文过长时压缩成摘要。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/shRR1e2HXMk，含完整时间戳文字稿）+ YouTube 视频简介 + 本次新增的幻灯片截图。英文引号内容均为文字稿原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。讲稿页中的 Playwright 示例代码为讲稿页作者的示意，本文没有引用。
-
 ## 1. 基本信息
 
 <YouTube id="shRR1e2HXMk" title="How Codex Works" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=shRR1e2HXMk |
 | 讲者 / 频道 | Dominik Kundel（OpenAI Developer Experience）／ **AI Engineer**（AI Engineer World's Fair 2026） |
 | 发布日期 | 2026-08-10 |
 | 时长 | 20:54 |
 | 使用工具 | Codex harness（开源，Rust，Apache-2.0）、app-server 协议、Responses API（tool search、`apply_patch`、WebSocket mode、server-side compaction）、Auto Review、`/goal` |
 | 代码 | https://github.com/openai/codex |
+| 分析依据 | AI Engineer 官方讲稿页（ai.engineer/talks/shRR1e2HXMk，含完整时间戳文字稿）+ YouTube 视频简介 + 幻灯片截图。英文引号内容均为文字稿原话。讲稿页中的 Playwright 示例代码为讲稿页作者的示意，本文没有引用。 |
 
 ## 2. 做了什么
 

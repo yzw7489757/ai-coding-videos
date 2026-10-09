@@ -1,6 +1,6 @@
-# 33｜PR 审查机器人怎么越做越好：Cursor 打磨 Bugbot 的 40 次实验
+# PR 审查机器人怎么越做越好：Cursor 打磨 Bugbot 的 40 次实验
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-cursor">工具：Cursor</span></div>
+<div class="meta-tags"><span class="tool-tag tool-cursor">Cursor</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - [Benchmark（基准测试）](/glossary#benchmark)：固定的测试集，用于比较不同版本的效果。
 :::
 
-> 信息来源：Cursor 官方博客《Building a better Bugbot》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Building a better Bugbot" author="Jon Kaplan（Cursor）" date="2026-01-15" url="https://cursor.com/blog/building-bugbot" />
@@ -33,6 +31,7 @@
 | 作者 | Jon Kaplan |
 | 发布日期 | 2026-01-15 |
 | 使用工具 | Cursor Bugbot（GitHub PR 审查）、Bugbot rules、Bugbot Autofix（Beta） |
+| 分析依据 | Cursor 官方博客《Building a better Bugbot》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录。 |
 
 ## 2. 做了什么
 

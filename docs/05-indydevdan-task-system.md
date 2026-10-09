@@ -1,6 +1,6 @@
-# 05｜Claude Code Task System：用模板元提示词 + Builder/Validator 代理团队自动构建与自检
+# Claude Code Task System：用模板元提示词 + Builder/Validator 代理团队自动构建与自检
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [Lint](/glossary#lint)：只读代码就能发现问题的检查工具。
 :::
 
-> 信息来源：YouTube 字幕（早期网页抓取的内容；整理本站时 YouTube 限制了字幕下载，没能重新获取全文，只有部分段落经搜索引擎收录的字幕片段再次核对）+ 视频简介 + 讲者公开仓库 `disler/claude-code-hooks-mastery`（`.claude/commands/plan_w_team.md`、`.claude/agents/team/builder.md`、`validator.md` 原文）+ 本次新增的视频画面截图。标注“转述”的内容不是逐字原话。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="4_2j5wgt_ds" title="Claude Code Task System" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=4_2j5wgt_ds |
 | 讲者 / 频道 | IndyDevDan（独立工程师，长期做 Claude Code 实战演示）／ **IndyDevDan** |
 | 发布日期 | 2026-02-02 |
 | 时长 | 28:26 |
 | 使用工具 | Claude Code（Opus、Task 系统：TaskCreate / TaskGet / TaskList / TaskUpdate）、Hooks（Stop、PostToolUse、SubagentStop）、自定义子代理、ruff / ty、uv |
 | 配套仓库 | https://github.com/disler/claude-code-hooks-mastery |
+| 分析依据 | YouTube 字幕（早期网页抓取的内容；整理本站时 YouTube 限制了字幕下载，没能重新获取全文，只有部分段落经搜索引擎收录的字幕片段再次核对）+ 视频简介 + 讲者公开仓库 `disler/claude-code-hooks-mastery`（`.claude/commands/plan_w_team.md`、`.claude/agents/team/builder.md`、`validator.md` 原文）+ 视频画面截图。标注“转述”的内容不是逐字原话。 |
 
 ## 2. 做了什么
 

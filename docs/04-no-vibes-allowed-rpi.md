@@ -1,6 +1,6 @@
-# 04｜No Vibes Allowed：在复杂代码库里用 Research → Plan → Implement 做“频繁有意压缩”
+# No Vibes Allowed：在复杂代码库里用 Research → Plan → Implement 做“频繁有意压缩”
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [Slash Command](/glossary#slash-command)：以 / 开头的自定义命令。
 :::
 
-> 信息来源：带时间戳的字幕全文（withtranscript.ai 镜像的 YouTube 字幕）+ 视频简介与章节 + HumanLayer 开源仓库 `humanlayer/humanlayer` 的 `.claude/commands/`（research / plan / implement 命令原文）。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="rmvDxxNubIg" title="No Vibes Allowed" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=rmvDxxNubIg |
 | 讲者 / 频道 | Dex Horthy（HumanLayer 创始人，“12 Factor Agents”作者）／ **AI Engineer**（AI Engineer Code Summit 演讲） |
 | 发布日期 | 2025-12-02 |
 | 时长 | 20:31 |
 | 使用工具 | Claude Code（子代理、slash command）；方法论与工具无关，讲者提到也适用于 Codex、Cursor |
 | 配套资料 | https://github.com/humanlayer/humanlayer/tree/main/.claude/commands |
+| 分析依据 | 带时间戳的字幕全文（withtranscript.ai 镜像的 YouTube 字幕）+ 视频简介与章节 + HumanLayer 开源仓库 `humanlayer/humanlayer` 的 `.claude/commands/`（research / plan / implement 命令原文）。 |
 
 ## 2. 做了什么
 

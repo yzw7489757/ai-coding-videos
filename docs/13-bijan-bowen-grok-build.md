@@ -1,6 +1,6 @@
-# 13｜Grok Build + Grok 4.3 FULL Test：Plan mode、截图反馈与无头浏览器自测
+# Grok Build + Grok 4.3 FULL Test：Plan mode、截图反馈与无头浏览器自测
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/planning">阶段：做规划 · 需求澄清与任务拆解</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><span class="tool-tag tool-grokbuild">Grok Build</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [子代理](/glossary#subagent)：被派出去干具体小活的代理“分身”。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + 本次新增的视频画面截图。英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="X6SubdG4NuU" title="Grok Build + Grok 4.3 FULL Test" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=X6SubdG4NuU |
 | 讲者 / 频道 | Bijan Bowen（独立开发者 / AI 集成顾问，约 7.8 万订阅）／ **Bijan Bowen** |
 | 发布日期 | 2026-05-15 |
 | 时长 | 44:07 |
 | 使用工具 | Grok Build（xAI 终端编码代理，early beta）+ Grok 4.3；plan mode、always approve 模式、subagents、`/imagine` 图像生成、多模态截图输入 |
 | 形式 | 独立开发者长时间实测（多个从零构建的任务 + 一个基于现有仓库的任务） |
+| 分析依据 | YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + 视频画面截图。英文引号内容均为字幕原话。 |
 
 章节：0:46 First Look → 2:16 Technical Look → 5:48 Browser OS Test → 8:19 Result Improvement Test → 18:55 Plan Mode Feedback Test → 21:30 C++ Skate Game Test → 23:36 X Algo Replication Test → 31:04 Multimodal Coding Test → 35:58 Drum Kit Simulation → 40:05 Results Overview。
 

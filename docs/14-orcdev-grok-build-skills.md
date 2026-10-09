@@ -1,6 +1,6 @@
-# 14｜I Put Grok Build to the Test：用项目 Skills 约束设计，一次 prompt 生成完整页面
+# I Put Grok Build to the Test：用项目 Skills 约束设计，一次 prompt 生成完整页面
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><span class="tool-tag tool-grokbuild">Grok Build</span></div>
 
 <div class="hook">
 
@@ -20,19 +20,17 @@
 - [Plan Mode](/glossary#plan-mode)：先出计划再动手的模式。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + xAI 官方 Grok Build 文档 / 发布文（docs.x.ai/build/overview、x.ai/news/grok-build-cli，用于核对功能名称）+ 本次新增的视频画面截图。英文引号内容均为字幕或官方页面原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="W8wECVc3z6E" title="I Put Grok Build to the Test" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=W8wECVc3z6E |
 | 讲者 / 频道 | OrcDev（独立开发者，公开构建自己的产品，约 3.2 万订阅）／ **OrcDev** |
 | 发布日期 | 2026-05-19 |
 | 时长 | 10:20 |
 | 使用工具 | Grok Build（early beta）+ Grok 4.3；项目级 skills（web design guidelines、shadcn 相关 skill）、plan / always approve 模式、`/model`、多代理并行 |
+| 分析依据 | YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + xAI 官方 Grok Build 文档 / 发布文（docs.x.ai/build/overview、x.ai/news/grok-build-cli，用于核对功能名称）+ 视频画面截图。英文引号内容均为字幕或官方页面原话。 |
 
 章节：0:00 介绍 → 0:26 价格与安装 → 1:18 功能与命令 → 2:57 构建 UI 项目 → 6:14 结果评审 → 7:56 展望。
 

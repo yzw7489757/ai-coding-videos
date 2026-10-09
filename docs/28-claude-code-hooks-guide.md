@@ -1,6 +1,6 @@
-# 28｜让规则“一定会执行”：Claude Code Hooks 官方指南（附 Gemini CLI hooks 对照）
+# 让规则“一定会执行”：Claude Code Hooks 官方指南（附 Gemini CLI hooks 对照）
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - [Prompt / Agent Hook](/glossary#prompt-agent-hook)：不跑 shell 命令，而是让模型（或带工具的子代理）来判断条件是否满足。
 :::
 
-> 信息来源：Claude Code 官方文档《Automate actions with hooks》的 Markdown 版本（`code.claude.com/docs/en/hooks-guide.md`），以及 Google Developers Blog《Tailor Gemini CLI to your workflow with hooks》（2026-01-28）。均于 2026-10-09 抓取。Claude Code 文档持续更新，没有固定发布日期，文中出现的事件名和版本号以抓取时为准。英文引用和配置均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="官方文档" title="Automate actions with hooks" author="Anthropic（Claude Code 文档）" date="持续更新的文档页（抓取于 2026-10-09）" url="https://code.claude.com/docs/en/hooks-guide" />
@@ -36,6 +34,7 @@
 | 作者 | Anthropic |
 | 日期 | 持续更新的文档，抓取于 2026-10-09 |
 | 使用工具 | Claude Code（`settings.json`、`/hooks`）、`jq`、Prettier；对照部分为 Gemini CLI |
+| 分析依据 | Claude Code 官方文档《Automate actions with hooks》的 Markdown 版本（`code.claude.com/docs/en/hooks-guide.md`），以及 Google Developers Blog《Tailor Gemini CLI to your workflow with hooks》（2026-01-28）。均于 2026-10-09 抓取。Claude Code 文档持续更新，没有固定发布日期，文中出现的事件名和版本号以抓取时为准。英文引用和配置均为原文摘录。 |
 
 ## 2. 做了什么
 

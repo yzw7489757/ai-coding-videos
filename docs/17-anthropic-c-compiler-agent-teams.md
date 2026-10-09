@@ -1,6 +1,6 @@
-# 17｜16 个 Claude 并行写出 10 万行 C 编译器：没有调度中心的 Agent Teams 是怎么协作的
+# 16 个 Claude 并行写出 10 万行 C 编译器：没有调度中心的 Agent Teams 是怎么协作的
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - Clean-room（净室实现）：开发时不联网、不抄现成实现，从规范出发自己写。
 :::
 
-> 信息来源：Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Building a C compiler with a team of parallel Claudes" author="Nicholas Carlini（Anthropic）" date="2026-02-05" url="https://www.anthropic.com/engineering/building-c-compiler" />
@@ -35,6 +33,7 @@
 | 发布日期 | 2026-02-05 |
 | 使用工具 | Claude Code（`claude -p` 无界面模式）、Claude Opus 4.6、Docker、git |
 | 规模 | 16 个并行代理、近 2,000 个会话、两周、约 $20,000 |
+| 分析依据 | Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用均为原文摘录。 |
 
 ## 2. 做了什么
 

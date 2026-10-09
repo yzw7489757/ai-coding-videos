@@ -1,6 +1,6 @@
-# 12｜Coding with Grok 4.5 is surprisingly good…：在真实 Rust / TypeScript 代码库里逐行审 Grok 的产出
+# Coding with Grok 4.5 is surprisingly good…：在真实 Rust / TypeScript 代码库里逐行审 Grok 的产出
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grok45">工具：Cursor + Grok 4.5</span></div>
+<div class="meta-tags"><span class="tool-tag tool-grok45">Cursor + Grok 4.5</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [模型名称](/glossary#model-names)：Fable、Opus、GPT-5.x、Grok 4.x 分属不同厂商。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 本次新增的视频画面截图。英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。视频含 PostHog 赞助段落（约 1:07–2:43），本文不涉及。
-
 ## 1. 基本信息
 
 <YouTube id="5J6HCDEkg64" title="Coding with Grok 4.5 is surprisingly good…" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=5J6HCDEkg64 |
 | 讲者 / 频道 | ForrestKnight（软件工程师、开发者 YouTuber，约 70 万订阅）／ **ForrestKnight** |
 | 发布日期 | 2026-07-10 |
 | 时长 | 27:02 |
 | 使用工具 | Cursor + Grok 4.5（对照 Fable 5、Opus 4.8、GPT-5.5） |
 | 形式 | 独立开发者实测：真实项目 diff 讲解 + 人工代码审查 |
+| 分析依据 | YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 视频画面截图。英文引号内容均为字幕原话。视频含 PostHog 赞助段落（约 1:07–2:43），本文不涉及。 |
 
 ## 2. 做了什么
 

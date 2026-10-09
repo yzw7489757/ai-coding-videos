@@ -1,6 +1,6 @@
-# 36｜工具太多把上下文撑爆怎么办：Anthropic 的“用代码调用 MCP”
+# 工具太多把上下文撑爆怎么办：Anthropic 的“用代码调用 MCP”
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/harness">阶段：看原理 · Harness 与内部机制</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><span class="tool-tag tool-general">通用（不限工具）</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - [Sandbox（沙箱）](/glossary#sandbox)：隔离的执行环境，限制代码能访问的文件、网络和资源。
 :::
 
-> 信息来源：Anthropic Engineering 博客《Code execution with MCP: Building more efficient agents》全文，2026-10-09 抓取。文中数字和代码均为原文摘录，中文翻译与注释为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Code execution with MCP: Building more efficient agents" author="Adam Jones、Conor Kelly（Anthropic）" date="2025-11-04" url="https://www.anthropic.com/engineering/code-execution-with-mcp" />
@@ -33,6 +31,7 @@
 | 作者 | Adam Jones、Conor Kelly |
 | 发布日期 | 2025-11-04 |
 | 适用范围 | 任何支持 MCP 且有代码执行环境的代理（文中示例为 TypeScript） |
+| 分析依据 | Anthropic Engineering 博客《Code execution with MCP: Building more efficient agents》全文，2026-10-09 抓取。文中数字和代码均为原文摘录。 |
 
 ## 2. 做了什么
 

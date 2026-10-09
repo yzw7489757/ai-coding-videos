@@ -1,6 +1,6 @@
-# 19｜怎么给 AI 代理“出考卷”：Anthropic 的 Agent Evals 入门路线图
+# 怎么给 AI 代理“出考卷”：Anthropic 的 Agent Evals 入门路线图
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-general">工具：通用（不限工具）</span></div>
+<div class="meta-tags"><span class="tool-tag tool-general">通用（不限工具）</span></div>
 
 <div class="hook">
 
@@ -22,8 +22,6 @@
 - [Saturation（饱和）](/glossary#eval-saturation)：分数接近 100%，再也看不出进步。
 :::
 
-> 信息来源：Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用和 YAML 示例均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Demystifying evals for AI agents" author="Mikaela Grace、Jeremy Hadfield、Rodrigo Olivares、Jiri De Jonghe（Anthropic）" date="2026-01-09" url="https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents" />
@@ -35,6 +33,7 @@
 | 作者 | Mikaela Grace、Jeremy Hadfield、Rodrigo Olivares、Jiri De Jonghe（Anthropic） |
 | 发布日期 | 2026-01-09 |
 | 涉及工具 | Claude Code、Agent SDK；评测框架 Harbor、Braintrust、LangSmith、Langfuse、Arize Phoenix；基准 SWE-bench Verified、Terminal-Bench、τ2-Bench 等 |
+| 分析依据 | Anthropic Engineering 博客原文全文（WebFetch 抓取于 2026-10-09）。英文引用和 YAML 示例均为原文摘录。 |
 
 ## 2. 做了什么
 

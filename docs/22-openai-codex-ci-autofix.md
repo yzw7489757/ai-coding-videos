@@ -1,6 +1,6 @@
-# 22｜CI 挂了让代理自动修：OpenAI 官方的 codex exec + Codex GitHub Action 用法与安全布局
+# CI 挂了让代理自动修：OpenAI 官方的 codex exec + Codex GitHub Action 用法与安全布局
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-docs">类型：官方文档</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -21,8 +21,6 @@
 - JSONL：每行一个 JSON 对象的日志格式，方便脚本逐行解析。
 :::
 
-> 信息来源：OpenAI Codex 官方文档《Non-interactive mode》与《Codex GitHub Action》的 Markdown 版本（`developers.openai.com/codex/...` 现已 308 跳转到 `learn.chatgpt.com/docs/...`），以及已归档的 OpenAI Cookbook《Autofix CI failures on GitHub with Codex CLI》。均于 2026-10-09 抓取；官方文档为持续更新的页面，没有固定发布日期。英文引用和 YAML 为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="官方文档" title="Non-interactive mode（Codex 文档，另见 Codex GitHub Action）" author="OpenAI" date="持续更新的文档页（抓取于 2026-10-09）" url="https://developers.openai.com/codex/noninteractive" />
@@ -36,6 +34,7 @@
 | 作者 | OpenAI |
 | 日期 | 持续更新的文档，抓取于 2026-10-09 |
 | 使用工具 | Codex CLI（`codex exec`）、`openai/codex-action@v1`、GitHub Actions |
+| 分析依据 | OpenAI Codex 官方文档《Non-interactive mode》与《Codex GitHub Action》的 Markdown 版本（`developers.openai.com/codex/...` 现已 308 跳转到 `learn.chatgpt.com/docs/...`），以及已归档的 OpenAI Cookbook《Autofix CI failures on GitHub with Codex CLI》。均于 2026-10-09 抓取；官方文档为持续更新的页面，没有固定发布日期。英文引用和 YAML 为原文摘录。 |
 
 ## 2. 做了什么
 

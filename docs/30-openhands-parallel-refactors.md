@@ -1,6 +1,6 @@
-# 30｜大型重构怎么拆给多个代理：OpenHands 的并行代理编排方法
+# 大型重构怎么拆给多个代理：OpenHands 的并行代理编排方法
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-openhands">工具：OpenHands</span></div>
+<div class="meta-tags"><span class="tool-tag tool-openhands">OpenHands</span></div>
 
 <div class="hook">
 
@@ -21,19 +21,17 @@
 - [Codemod](/glossary#codemod)：批量改写代码的自动化脚本或工具。
 :::
 
-> 信息来源：AI Engineer 频道发布的研讨会录像，文字依据 ai.engineer 网站提供的带时间戳字幕（自动转写，有少量识别错误，引用时已尽量对照上下文）。截图为视频真实画面。本文只整理前 35 分钟的方法论部分，后半段的动手练习（用 SDK 批量修复依赖漏洞）没有展开。中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <YouTube id="rcsliSIy_YU" title="Automating Large Scale Refactors with Parallel Agents - Robert Brennan, OpenHands" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=rcsliSIy_YU |
 | 讲者 / 频道 | Robert Brennan（OpenHands 联合创始人兼 CEO），另有同事 Calvin 演示 Refactor SDK ／ **AI Engineer** |
 | 发布日期 | 2026-01-08 |
 | 时长 | 1:16:21（本文覆盖 0:00–35:00） |
 | 使用工具 | OpenHands、OpenHands Agent SDK、OpenHands Refactor SDK（演示） |
+| 分析依据 | AI Engineer 频道发布的研讨会录像，文字依据 ai.engineer 网站提供的带时间戳字幕（自动转写，有少量识别错误，引用时已尽量对照上下文）。截图为视频真实画面。本文只整理前 35 分钟的方法论部分，后半段的动手练习（用 SDK 批量修复依赖漏洞）没有展开。 |
 
 ## 2. 做了什么
 

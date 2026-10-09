@@ -1,6 +1,6 @@
-# 18｜几百个代理同时写一个浏览器：Cursor 的 Planner / Worker 多代理实验踩过的坑
+# 几百个代理同时写一个浏览器：Cursor 的 Planner / Worker 多代理实验踩过的坑
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-cursor">工具：Cursor</span></div>
+<div class="meta-tags"><span class="tool-tag tool-cursor">Cursor</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - LoC（Lines of Code）：代码行数。
 :::
 
-> 信息来源：Cursor 官方博客原文全文（WebFetch 抓取于 2026-10-09）；补充参考 Simon Willison 的评论文章（2026-01-19，他实际编译运行了该浏览器）和 Cursor 后续文章《Towards self-driving codebases》。英文引用均为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Scaling long-running autonomous coding" author="Wilson Lin（Cursor）" date="2026-01-14" url="https://cursor.com/blog/scaling-agents" />
@@ -34,6 +32,7 @@
 | 发布日期 | 2026-01-14 |
 | 使用工具 | Cursor 自研多代理 harness；GPT-5.2、GPT-5.1-Codex、Opus 4.5（对比） |
 | 代码 | 浏览器项目源码：https://github.com/wilsonzlin/fastrender |
+| 分析依据 | Cursor 官方博客原文全文（WebFetch 抓取于 2026-10-09）；补充参考 Simon Willison 的评论文章（2026-01-19，他实际编译运行了该浏览器）和 Cursor 后续文章《Towards self-driving codebases》。英文引用均为原文摘录。 |
 
 ## 2. 做了什么
 

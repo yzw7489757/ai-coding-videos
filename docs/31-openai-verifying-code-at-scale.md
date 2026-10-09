@@ -1,6 +1,6 @@
-# 31｜AI 代码审查为什么要“宁缺毋滥”：OpenAI 训练 Codex 审查代理的经验
+# AI 代码审查为什么要“宁缺毋滥”：OpenAI 训练 Codex 审查代理的经验
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - [AGENTS.md](/glossary#agents-md)：写给编码代理看的项目说明文件，也可以用来调整审查的松紧。
 :::
 
-> 信息来源：OpenAI Alignment Research Blog《A Practical Approach to Verifying Code at Scale》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="A Practical Approach to Verifying Code at Scale" author="Maja Trębacz、Sam Arnesen、Albin Cassirer、Max Johnson、Xin Lin、Thibault Sottiaux（OpenAI，与 Codex 团队合作）" date="2025-12-01" url="https://alignment.openai.com/scaling-code-verification/" />
@@ -34,6 +32,7 @@
 | 发布日期 | 2025-12-01 |
 | 涉及模型 | gpt-5-codex、gpt-5.1-codex-max（生成和审查是同一个模型，训练方法不同） |
 | 怎么用 | Codex CLI 里运行 `/review`；或在 Codex Cloud 仓库设置里打开 Code Review，在 PR 下评论 `@codex review` |
+| 分析依据 | OpenAI Alignment Research Blog《A Practical Approach to Verifying Code at Scale》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录。 |
 
 ## 2. 做了什么
 

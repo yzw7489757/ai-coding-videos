@@ -1,6 +1,6 @@
-# 07｜Harness Engineering：人类掌舵、代理执行（Ryan Lopopolo, OpenAI）
+# Harness Engineering：人类掌舵、代理执行（Ryan Lopopolo, OpenAI）
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/foundation">阶段：打地基 · 上下文与规范</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-codex">工具：Codex</span></div>
+<div class="meta-tags"><span class="tool-tag tool-codex">Codex</span></div>
 
 <div class="hook">
 
@@ -22,20 +22,18 @@
 - [Slop](/glossary#slop)：看似能跑、实则质量差的 AI 产出。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/am_oeAoUhew，含完整时间戳文字稿，包括演讲后 Q&A）+ YouTube 视频简介（指向 OpenAI 博客 *Harness engineering*）。英文引号内容均为文字稿原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="am_oeAoUhew" title="Harness Engineering" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=am_oeAoUhew |
 | 讲者 / 频道 | Ryan Lopopolo（OpenAI Member of Technical Staff），Q&A 主持 Vibhu Sapra ／ **AI Engineer**（AI Engineer Europe 2026，伦敦） |
 | 发布日期 | 2026-04-16 |
 | 时长 | 46:20（主题演讲约 18 分钟 + Q&A） |
 | 使用工具 | Codex（GPT-5.4、auto compaction、skills、reviewer agents）、pnpm workspace、自定义 ESLint、Chrome DevTools、本地可观测性栈 |
 | 延伸 | 同一讲者在 Latent Space 播客的长访谈：https://www.youtube.com/watch?v=CeOXx-XTYek（含 Symphony 编排器，本文未单独分析） |
+| 分析依据 | AI Engineer 官方讲稿页（ai.engineer/talks/am_oeAoUhew，含完整时间戳文字稿，包括演讲后 Q&A）+ YouTube 视频简介（指向 OpenAI 博客 *Harness engineering*）。英文引号内容均为文字稿原话。 |
 
 ## 2. 做了什么
 

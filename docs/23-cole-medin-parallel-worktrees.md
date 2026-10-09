@@ -1,6 +1,6 @@
-# 23｜同时开 5 个 Claude Code 不打架：Cole Medin 的并行代理“五根支柱”与 worktree 实战
+# 同时开 5 个 Claude Code 不打架：Cole Medin 的并行代理“五根支柱”与 worktree 实战
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/execution">阶段：去执行 · 从单代理到多代理</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -22,20 +22,18 @@
 - [Self-healing Layer（自愈层）](/glossary#self-healing-layer)：每发现一个 bug，就修改规则、技能或流程，防止同类问题再出现。
 :::
 
-> 信息来源：YouTube 自动字幕（yt-dlp 获取）+ 视频简介与章节 + 配套 GitHub 仓库 `coleam00/GitHubIssueTriager`（`.claude/commands/review-pr.md`、`scripts/assign-port.ts`、`scripts/worktree-setup.sh` 原文）。中文翻译为本站所加。视频简介中包含 Neon 的推广链接，讲者也在推广自己的开源工具 Archon，阅读时请留意。
-
 ## 1. 基本信息
 
 <YouTube id="rFGlJ4oIlhw" title="Parallel Claude Code + Git Worktrees" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=rFGlJ4oIlhw |
 | 讲者 / 频道 | Cole Medin（独立开发者，开源 harness 构建工具 Archon 作者）／ **Cole Medin** |
 | 发布日期 | 2026-04-23 |
 | 时长 | 23:53 |
 | 使用工具 | Claude Code（`claude -w` worktree、自定义命令、子代理）、Codex 的 Claude Code 插件、GitHub CLI、Neon Postgres |
 | 配套仓库 | https://github.com/coleam00/GitHubIssueTriager |
+| 分析依据 | YouTube 自动字幕（yt-dlp 获取）+ 视频简介与章节 + 配套 GitHub 仓库 `coleam00/GitHubIssueTriager`（`.claude/commands/review-pr.md`、`scripts/assign-port.ts`、`scripts/worktree-setup.sh` 原文）。视频简介中包含 Neon 的推广链接，讲者也在推广自己的开源工具 Archon，阅读时请留意。 |
 
 ## 2. 做了什么
 

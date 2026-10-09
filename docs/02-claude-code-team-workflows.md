@@ -1,6 +1,6 @@
-# 02｜How the Claude Code team uses Claude Code：Claude Tag、Routines 与“扇出式”代码审查 Workflow
+# How the Claude Code team uses Claude Code：Claude Tag、Routines 与“扇出式”代码审查 Workflow
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -20,19 +20,17 @@
 - [Harness](/glossary#harness)：包在模型外面、负责工具和上下文的那层程序。
 :::
 
-> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介与章节。字幕未标注说话人，除简介明确的信息外，引用不归属到具体个人。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="S-sYlFiGFv8" title="How the Claude Code team uses Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=S-sYlFiGFv8 |
 | 讲者 / 频道 | Thariq Shihipar、Sid Bidasaria、Robert Boyce（Claude Code 团队）／ 官方频道 **Claude** |
 | 发布日期 | 2026-09-02 |
 | 时长 | 22:23 |
 | 使用工具 | Claude Code（TUI、Desktop、Claude Code on the web）、Claude Tag（Slack 原生 Agent）、AskUserQuestion、Artifacts、Routines、Workflows、Auto mode |
+| 分析依据 | YouTube 字幕全文（网页抓取）+ 视频简介与章节。字幕未标注说话人，除简介明确的信息外，引用不归属到具体个人。 |
 
 章节：0:35 通过 Claude Tag 工作：从 tool call 到 goal → 4:48 AskUserQuestion、artifacts → 6:41 远程运行 loops 与 routines → 8:52 代码审查如何催生 dynamic workflows → 14:04 用 Claude Tag 开发 Claude Tag：Slack 中的验证与反馈循环。
 

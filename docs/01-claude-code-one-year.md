@@ -1,6 +1,6 @@
-# 01｜Reflecting on a year of Claude Code：验证、Routines、Auto mode 与“上下文极简主义”
+# Reflecting on a year of Claude Code：验证、Routines、Auto mode 与“上下文极简主义”
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/automation">阶段：自动化 · 后台代理与 CI/CD</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+<div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
 <div class="hook">
 
@@ -20,20 +20,18 @@
 - [Worktree](/glossary#worktree)：同一个仓库同时开多个工作目录，方便并行。
 :::
 
-> 信息来源：YouTube 字幕全文（通过网页抓取获得）+ 视频简介与官方章节。文中英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="Hth_tLaC2j8" title="Reflecting on a year of Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=Hth_tLaC2j8 |
 | 讲者 / 频道 | Boris Cherny（Head of Claude Code）、Cat Wu（Head of Product, Claude Code）／ 官方频道 **Claude** |
 | 发布日期 | 2026-06-08 |
 | 时长 | 18:07 |
 | 使用工具 | Claude Code（CLI、Desktop app、Agent view、Remote Control、Routines、Auto mode、`/loop`） |
 | 形式 | 对谈 + 经验总结（无现场编码，但给出了大量内部真实用法） |
+| 分析依据 | YouTube 字幕全文（通过网页抓取获得）+ 视频简介与官方章节。文中英文引号内容均为字幕原话。 |
 
 官方章节：0:00 起源 → 1:10 如何让 Claude 擅长验证 → 4:48 用 Routines 做 CI、Code review → 6:43 Auto mode → 8:10 Auto mode 的红队与评测 → 10:24 Loop → 14:20 管理上百个 Agent → 16:05 从上下文工程到上下文极简主义。
 

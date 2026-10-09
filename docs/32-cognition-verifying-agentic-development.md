@@ -1,6 +1,6 @@
-# 32｜让代理“带着证据”交付：Cognition 用 Computer Use 让 Devin 自己测试改动
+# 让代理“带着证据”交付：Cognition 用 Computer Use 让 Devin 自己测试改动
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-article">类型：文章</span><span class="tool-tag tool-devin">工具：Devin</span></div>
+<div class="meta-tags"><span class="tool-tag tool-devin">Devin</span></div>
 
 <div class="hook">
 
@@ -20,8 +20,6 @@
 - Async（异步）：任务由事件、定时器或其他代理触发，人不在旁边实时盯着。
 :::
 
-> 信息来源：Cognition 官方博客《Verifying Agentic Development at Scale》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录，中文翻译为本站所加。
-
 ## 1. 基本信息
 
 <SourceCard type="文章" title="Verifying Agentic Development at Scale" author="Ido Pesok（Cognition）" date="2026-05-29" url="https://cognition.com/blog/testing-development" />
@@ -33,6 +31,7 @@
 | 作者 | Ido Pesok（文中自述加入 Cognition 3 个月） |
 | 发布日期 | 2026-05-29 |
 | 使用工具 | Devin（云端虚拟机、Computer Use 工具、测试模式、Devin Review） |
+| 分析依据 | Cognition 官方博客《Verifying Agentic Development at Scale》全文，2026-10-09 抓取。文中所有数字均来自原文。英文引用为原文摘录。 |
 
 ## 2. 做了什么
 

@@ -1,6 +1,6 @@
-# 15｜Grok Build Spawned 57 Agents in 3 Minutes：Plan mode、并行子代理与 `/goal` 对抗式验证
+# Grok Build Spawned 57 Agents in 3 Minutes：Plan mode、并行子代理与 `/goal` 对抗式验证
 
-<div class="meta-tags"><a class="domain-tag" href="/guide/verification">阶段：做验证 · 测试、评测与审查</a><span class="type-tag type-video">类型：视频</span><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+<div class="meta-tags"><span class="tool-tag tool-grokbuild">Grok Build</span></div>
 
 <div class="hook">
 
@@ -21,20 +21,18 @@
 - [Persona](/glossary#persona)：给子代理配的角色和关注点。
 :::
 
-> 信息来源：① **YouTube 英文自动字幕**（后补获取；措辞明显不通顺，常把 Grok 写成 “he”，疑似经过机器翻译或自动生成，因此只用来核对流程细节和时间点，**不做逐字引用**）；② 视频简介与官方章节（YouTube 元数据）；③ **本次新增的视频画面截图**，其中终端里清晰可读的 prompt 和输出按画面原文引用；④ xAI 官方页面 *Introducing /goal*（x.ai/news/introducing-goal）与 *Introducing Grok Build*（x.ai/news/grok-build-cli）；⑤ Grok Build 开源仓库用户手册（github.com/xai-org/grok-build 下 `docs/user-guide/04-slash-commands.md`、`16-subagents.md`、`19-plan-mode.md`）。凡来自官方文档的机制说明均已标注，**不代表视频中逐字出现**。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
-
 ## 1. 基本信息
 
 <YouTube id="1NwO2dPzwRM" title="Grok Build Spawned 57 Agents in 3 Minutes" />
 
 | 项目 | 内容 |
 |---|---|
-| 链接 | https://www.youtube.com/watch?v=1NwO2dPzwRM |
 | 讲者 / 频道 | Thierry Damiba（Arcade.dev Member of Technical Staff）／ **Arcade**（企业 AI 代理 actions runtime 厂商的官方频道） |
 | 发布日期 | 2026-09-09 |
 | 时长 | 18:57 |
 | 使用工具 | Grok Build + Grok 4.5（简介：“This walkthrough was recorded with Grok 4.5.”，本演示用 Grok 4.5 录制）；plan mode、并行 subagents、`/goal`、对抗式验证代理 |
 | 利益相关 | 视频结尾部分为 Arcade 的产品观点（代理离开代码仓库后的权限与审计） |
+| 分析依据 | ① **YouTube 英文自动字幕**（后补获取；措辞明显不通顺，常把 Grok 写成 “he”，疑似经过机器翻译或自动生成，因此只用来核对流程细节和时间点，**不做逐字引用**）；② 视频简介与官方章节（YouTube 元数据）；③ **视频画面截图**，其中终端里清晰可读的 prompt 和输出按画面原文引用；④ xAI 官方页面 *Introducing /goal*（x.ai/news/introducing-goal）与 *Introducing Grok Build*（x.ai/news/grok-build-cli）；⑤ Grok Build 开源仓库用户手册（github.com/xai-org/grok-build 下 `docs/user-guide/04-slash-commands.md`、`16-subagents.md`、`19-plan-mode.md`）。凡来自官方文档的机制说明均已标注，**不代表视频中逐字出现**。 |
 
 官方章节：00:00 用 plan mode 加 dry-run 功能 → 02:39 并行派生子代理 → 04:47 57 个子代理完成 → 05:11 测试自主 goal 模式 → 08:20 目标完成、开始验证 → 09:27 skeptic 发现真实问题 → 13:18 只复查变更的 delta → 14:42 第二轮验证通过 → 14:50 评价 → 16:06 为什么 Git 让编码代理的自主性显得安全 → 17:20 代理离开仓库后需要什么。
 
