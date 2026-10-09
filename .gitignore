@@ -5,3 +5,6 @@ docs/.vitepress/cache/
 .DS_Store
 .vercel
 /.vitepress/
+.env
+.env.*
+*.log
