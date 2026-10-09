@@ -1,5 +1,7 @@
 # 15｜Grok Build Spawned 57 Agents in 3 Minutes：Plan mode、并行子代理与 `/goal` 对抗式验证
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+
 <div class="hook">
 
 **一句话看懂**：Arcade 的工程师给 Grok Build 出了三道题：用计划模式加一个 dry-run 参数；派 57 个子代理并行审查 57 个文件；用 `/goal` 完成一个开放目标。最精彩的是第三题：代理说“完成了”之后，一个专门唱反调的验证代理找出了真实问题，修完后只复查改动部分，第二轮才放行。
@@ -19,9 +21,11 @@
 - [Persona](/glossary#persona)：给子代理配的角色和关注点。
 :::
 
-> 信息来源：① **YouTube 英文自动字幕**（后补获取；措辞明显不通顺，常把 Grok 写成 “he”，疑似经过机器翻译或自动生成，因此只用来核对流程细节和时间点，**不做逐字引用**）；② 视频简介与官方章节（YouTube 元数据）；③ **本次新增的视频画面截图**，其中终端里清晰可读的 prompt 和输出按画面原文引用；④ xAI 官方页面 *Introducing /goal*（x.ai/news/introducing-goal）与 *Introducing Grok Build*（x.ai/news/grok-build-cli）；⑤ Grok Build 开源仓库用户手册（github.com/xai-org/grok-build 下 `docs/user-guide/04-slash-commands.md`、`16-subagents.md`、`19-plan-mode.md`）。凡来自官方文档的机制说明均已标注，**不代表视频中逐字出现**。中文翻译为本站所加。
+> 信息来源：① **YouTube 英文自动字幕**（后补获取；措辞明显不通顺，常把 Grok 写成 “he”，疑似经过机器翻译或自动生成，因此只用来核对流程细节和时间点，**不做逐字引用**）；② 视频简介与官方章节（YouTube 元数据）；③ **本次新增的视频画面截图**，其中终端里清晰可读的 prompt 和输出按画面原文引用；④ xAI 官方页面 *Introducing /goal*（x.ai/news/introducing-goal）与 *Introducing Grok Build*（x.ai/news/grok-build-cli）；⑤ Grok Build 开源仓库用户手册（github.com/xai-org/grok-build 下 `docs/user-guide/04-slash-commands.md`、`16-subagents.md`、`19-plan-mode.md`）。凡来自官方文档的机制说明均已标注，**不代表视频中逐字出现**。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="1NwO2dPzwRM" title="Grok Build Spawned 57 Agents in 3 Minutes" />
 
 | 项目 | 内容 |
 |---|---|
@@ -54,29 +58,28 @@
 
 讲者的吐槽：速度太快跟不上；界面突出“模型在想什么、调了哪些工具”，代码 diff 反而不显眼；有些命令失败了，但看不到失败详情。
 
-官方手册对 plan mode 的说明：除计划文件外只读，“edits to any other file are rejected outright … This holds in every permission mode, including always-approve”（对其他任何文件的修改都会被直接拒绝……在所有权限模式下都如此，包括 always-approve）。计划包含变更理由（Context）、推荐方案、关键文件路径、可复用的现有函数等，经批准后才进入实现。
+官方手册对 plan mode 的说明：除计划文件外只读，<Trans zh="对其他任何文件的修改都会被直接拒绝……在所有权限模式下都如此，包括 always-approve">“edits to any other file are rejected outright … This holds in every permission mode, including always-approve”</Trans>。计划包含变更理由（Context）、推荐方案、关键文件路径、可复用的现有函数等，经批准后才进入实现。
 
 ### 3.2 并行子代理审查 57 个文件（测试 2）
 
 **为什么重要**：一个代理审 57 个文件，上下文会被撑爆。每个文件一个子代理，各自在干净的上下文里工作，也不会互相改到同一个文件。
 
-简介：“xAI just gave an AI coding agent permission to spin up 57 copies of itself on the same codebase”（xAI 刚刚允许一个 AI 编码代理在同一个代码库上启动 57 个自己的副本）。
+简介：<Trans zh="xAI 刚刚允许一个 AI 编码代理在同一个代码库上启动 57 个自己的副本">“xAI just gave an AI coding agent permission to spin up 57 copies of itself on the same codebase”</Trans>。
 
 画面上讲者输入的 prompt 原文：
 
+::: tr 并行审查这个仓库里的每一个文件。为每个文件写一份配套的 NOTES-<文件名>.md，概述这个文件做什么、有哪些依赖，并给出一条改进建议。每个文件用单独的子代理，避免互相冲突。
 > Review every file in this repo in parallel. For each one, write a companion NOTES-&lt;filename&gt;.md summarizing what the file does, its dependencies, and one improvement suggestion. Use separate subagents per file so they don't conflict.
+:::
 
-<div class="tr">并行审查这个仓库里的每一个文件。为每个文件写一份配套的 NOTES-&lt;文件名&gt;.md，概述这个文件做什么、有哪些依赖，并给出一条改进建议。每个文件用单独的子代理，避免互相冲突。</div>
-
-
-<figure class="shot"><img src="/images/15/0200.webp" alt="3:20 讲者输入上面的 prompt 后，Grok 先列出要处理的文件，再“launching the first batch of subagents, one per file”（每个文件一个子代理，分批启动）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=1NwO2dPzwRM&t=200s" target="_blank" rel="noopener">3:20</a> · 3:20 讲者输入上面的 prompt 后，Grok 先列出要处理的文件，再“launching the first batch of subagents, one per file”（每个文件一个子代理，分批启动）。</figcaption></figure>
+<figure class="shot"><img src="/images/15/0200.webp" alt="3:20 讲者输入上面的 prompt 后，Grok 先列出要处理的文件，再“launching the first batch of subagents, one per file”（每个文件一个子代理，分批启动）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=1NwO2dPzwRM&t=200s" target="_blank" rel="noopener">3:20</a> · 3:20 讲者输入上面的 prompt 后，Grok 先列出要处理的文件，再<Trans zh="每个文件一个子代理，分批启动">“launching the first batch of subagents, one per file”</Trans>。</figcaption></figure>
 
 据字幕：Grok 没有一次启动 57 个，而是**分批**派生。子代理列表显示在界面顶部，带每个代理的运行时长，可以点进去看单个子代理在做什么。全部完成用了大约 3 分钟，每个文件都得到一份配套说明（02:39–04:47）。
 
 
 <figure class="shot"><img src="/images/15/0290.webp" alt="4:50 画面显示“Ran 57 subagents”，随后“All 57 subagents launched”，主代理等待全部完成后，逐个核对 NOTES 文件是否都已写出。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=1NwO2dPzwRM&t=290s" target="_blank" rel="noopener">4:50</a> · 4:50 画面显示“Ran 57 subagents”，随后“All 57 subagents launched”，主代理等待全部完成后，逐个核对 NOTES 文件是否都已写出。</figcaption></figure>
 
-官方手册对子代理机制的说明（不是视频原文）：子代理是“independent child sessions”（独立的子会话），各有独立的上下文窗口，结束后向父会话汇报摘要；内置类型包括 `general-purpose`、`explore`（不改文件）、`plan`（不改文件）；还可以叠加 persona 控制输出格式和关注点。
+官方手册对子代理机制的说明（不是视频原文）：子代理是<Trans zh="独立的子会话">“independent child sessions”</Trans>，各有独立的上下文窗口，结束后向父会话汇报摘要；内置类型包括 `general-purpose`、`explore`（不改文件）、`plan`（不改文件）；还可以叠加 persona 控制输出格式和关注点。
 
 ### 3.3 `/goal` + 对抗式验证（测试 3，视频最有价值的部分）
 
@@ -84,15 +87,15 @@
 
 简介描述的过程：
 
+::: tr 当目标看起来已经完成时，一个对抗式验证代理发现了真实的问题，把工作退回去修复，然后再次检查改动的那部分（delta）。
 > "When the goal looks complete, an adversarial verification agent finds a real issue, sends the work back for a fix, and checks the changed delta again."
-
-<div class="tr">当目标看起来已经完成时，一个对抗式验证代理发现了真实的问题，把工作退回去修复，然后再次检查改动的那部分（delta）。</div>
+:::
 
 画面上讲者输入的 `/goal` 原文：
 
+::: tr 让这个仓库达到这样的状态：第一次来的贡献者 clone 下来后，5 分钟内就能跑起 demo。修好安装流程里任何坏掉的地方，确认 README 里的安装步骤真的能用，并把你一路上遇到的问题写成一个故障排查章节。
 > /goal Get this repo to a state where a first-time contributor can clone it and run the demo in under five minutes: fix anything broken in setup, verify the install steps in the README actually work, and add a troubleshooting section for whatever you hit along the way.
-
-<div class="tr">让这个仓库达到这样的状态：第一次来的贡献者 clone 下来后，5 分钟内就能跑起 demo。修好安装流程里任何坏掉的地方，确认 README 里的安装步骤真的能用，并把你一路上遇到的问题写成一个故障排查章节。</div>
+:::
 
 据字幕的细节（05:11–14:50）：
 
@@ -100,9 +103,9 @@
 - **第一次声称完成**：约 7 分钟、约 15 万 tokens。随后自动启动 goal skeptic（验证代理）。
 - **验证代理的提示词**：画面上能看到子代理标签“General goal achievement skeptic · grok-4.5”，提示词开头是：
 
+::: tr 你是 xAI Grok Build harness 的“对抗式验证者”。下面的工作不是你做的。你的任务是证伪“目标已经达成”。如果不确定，默认判定为“已证伪”（refuted: true）……（画面中后文被截断）
 > You are an **adversarial verifier** for the xAI Grok Build harness. You are NOT the agent that produced the work below. Your job is to **refute** that the objective has been met. **Default to `refuted: true` if uncertain** – a …
-
-<div class="tr">你是 xAI Grok Build harness 的“对抗式验证者”。下面的工作不是你做的。你的任务是证伪“目标已经达成”。如果不确定，默认判定为“已证伪”（refuted: true）……（画面中后文被截断）</div>
+:::
 
 
 <figure class="shot"><img src="/images/15/0575.webp" alt="9:35 验证子代理“General goal achievement skeptic”启动，提示词要求它证伪目标已达成、不确定时默认判为已证伪。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=1NwO2dPzwRM&t=575s" target="_blank" rel="noopener">9:35</a> · 9:35 验证子代理“General goal achievement skeptic”启动，提示词要求它证伪目标已达成、不确定时默认判为已证伪。</figcaption></figure>
@@ -139,15 +142,15 @@ sequenceDiagram
 
 简介原文：
 
+::: tr Anthropic、OpenAI 和 xAI 都收敛到了同一套流程：计划、批准、看 diff、隔离、回滚。Git 让编码代理的错误看得见、也能恢复。
 > "Anthropic, OpenAI, and xAI have all converged on plan, approve, diff, isolate, and revert. Git makes coding-agent mistakes visible and recoverable"
-
-<div class="tr">Anthropic、OpenAI 和 xAI 都收敛到了同一套流程：计划、批准、看 diff、隔离、回滚。Git 让编码代理的错误看得见、也能恢复。</div>
+:::
 
 因此，几十个代理并行改代码，反而比一个代理发邮件、改 CRM 或转账更让人放心。而：
 
+::: tr 代理一旦离开代码仓库，Git 就不再是它的安全带了。
 > "The moment an agent leaves the repo, Git stops being its seatbelt."
-
-<div class="tr">代理一旦离开代码仓库，Git 就不再是它的安全带了。</div>
+:::
 
 ## 4. 结果如何
 

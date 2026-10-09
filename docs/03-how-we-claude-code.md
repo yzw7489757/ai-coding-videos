@@ -1,5 +1,7 @@
 # 03｜How we Claude Code：访谈式需求 → HTML 设计探索 → “Agent 原生”的可验证组件
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+
 <div class="hook">
 
 **一句话看懂**：Anthropic 架构师现场演示三步法：先让 Claude 采访你、把需求问清楚；再让它用 HTML 一次出 4 套设计给你挑；最后把“可验证”直接做进 React 组件里，让 Agent、人和 CI 用同一套标准检查结果。
@@ -18,9 +20,11 @@
 - [Happy Path](/glossary#happy-path)：一切正常、不出错的那条路径。
 :::
 
-> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介 + 配套 GitHub 仓库 `anthropics/cwc-workshops/how-we-claude-code`（README 与 PROMPT.MD 原文）。中文翻译为本站所加。
+> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介 + 配套 GitHub 仓库 `anthropics/cwc-workshops/how-we-claude-code`（README 与 PROMPT.MD 原文）。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="IlqJqcl8ONE" title="How we Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
@@ -30,7 +34,6 @@
 | 时长 | 31:43 |
 | 使用工具 | Claude Code（Opus 4.7、Auto mode、Fast mode、`/effort`、AskUserQuestion）、Playwright MCP、Bun、Vite + React、Zod、Vitest |
 | 配套仓库 | https://github.com/anthropics/cwc-workshops/tree/main/how-we-claude-code |
-
 
 <figure class="shot"><img src="/images/03/0237.webp" alt="讲者的总纲幻灯片“Three tools for working with long-running agents”：消除歧义（让 Agent 先采访你）、理解与规划（用 HTML 而非 Markdown 写计划）、内建验证（从一开始就做验证，而不是最后补）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=IlqJqcl8ONE&t=237s" target="_blank" rel="noopener">3:57</a> · 讲者的总纲幻灯片“Three tools for working with long-running agents”：消除歧义（让 Agent 先采访你）、理解与规划（用 HTML 而非 Markdown 写计划）、内建验证（从一开始就做验证，而不是最后补）。</figcaption></figure>
 
@@ -50,31 +53,31 @@
 
 ### Phase 1：让 Claude 用 AskUserQuestion 采访你
 
-**为什么重要**：讲者的观点是，“Claude is likely better at extracting what you want and what you need from you than you are in specifying it to Claude.”（比起你自己把需求说清楚，Claude 很可能更擅长从你身上把需求挖出来。）
+**为什么重要**：讲者的观点是，<Trans zh="比起你自己把需求说清楚，Claude 很可能更擅长从你身上把需求挖出来。">“Claude is likely better at extracting what you want and what you need from you than you are in specifying it to Claude.”</Trans>
 
-坏 prompt 是“Just make it better… make no mistakes”（做得更好就行……别出错）；好 prompt 只给出**你关心的领域**，不预设答案。
+坏 prompt 是<Trans zh="做得更好就行……别出错">“Just make it better… make no mistakes”</Trans>；好 prompt 只给出**你关心的领域**，不预设答案。
 
 仓库中的原始 prompt（`phase-1-exploration/PROMPT.MD`）：
 
+::: tr 我想做一个分账 App。你能先和我一起头脑风暴一下目标用户是谁，然后用 AskUserQuestion 工具深入采访我要做什么吗？重点是把所有歧义都挖出来，最后写成一份 spec。
 > I want to build a bill-splitting app, can you help me brainstorm with me on who the audience is, and then interview me in-depth using the AskUserQuestion tool about what to build, focusing on  pulling out any ambiguities to create a spec.
-
-<div class="tr">我想做一个分账 App。你能先和我一起头脑风暴一下目标用户是谁，然后用 AskUserQuestion 工具深入采访我要做什么吗？重点是把所有歧义都挖出来，最后写成一份 spec。</div>
+:::
 
 关键是**在 prompt 里点名 AskUserQuestion 工具**。这会触发多轮选择题式的访谈，最后生成 spec。
 
 ### Phase 2：用 HTML 而不是 Markdown 做设计探索
 
-**为什么重要**：Markdown 超过大约 200 行，“unlikely you're going to read it”（你多半不会读完）。HTML 能放图、能点、能对比，人更愿意看。
+**为什么重要**：Markdown 超过大约 200 行，<Trans zh="你多半不会读完">“unlikely you're going to read it”</Trans>。HTML 能放图、能点、能对比，人更愿意看。
 
 - 背景：Thariq 的博文《The Unreasonable Effectiveness of HTML files》。
 - 仓库 prompt（`phase-2-planning/PROMPT.MD`）：
 
+::: tr 读取 ../phase-1-planning 里的 spec 文件，然后帮我确定这个 App 的整体设计。探索 4 种不同的设计方向，为每种方向把重要页面做成一组 HTML 文件。
 > Read ../phase-1-planning for its spec file, then help me figure out the overall design of this app. Explore 4 different designs, and create a set of HTML files with important screens for each.
-
-<div class="tr">读取 ../phase-1-planning 里的 spec 文件，然后帮我确定这个 App 的整体设计。探索 4 种不同的设计方向，为每种方向把重要页面做成一组 HTML 文件。</div>
+:::
 
 - 现场生成了 brutalist、Tokyo fintech 等 4 种方向。人点击对比后再反馈（配合截图）。
-- 关于 token 成本的问答：HTML spec 单次更贵，但“in the long term you iterate less”（长期看迭代次数更少）。
+- 关于 token 成本的问答：HTML spec 单次更贵，但<Trans zh="长期看迭代次数更少">“in the long term you iterate less”</Trans>。
 
 
 <figure class="shot"><img src="/images/03/0396.webp" alt="6:36 前后，演示用的分账 App（A bill-splitting app）界面：讲者随后让 Claude 就这个 App 采访自己。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=IlqJqcl8ONE&t=396s" target="_blank" rel="noopener">6:36</a> · 6:36 前后，演示用的分账 App（A bill-splitting app）界面：讲者随后让 Claude 就这个 App 采访自己。</figcaption></figure>
@@ -83,7 +86,7 @@
 
 **为什么重要**：Agent 说“做完了”不算数。如果每个组件都能被机器读取状态、自动核对，Agent、人和 CI 就能用同一套标准判断对错。
 
-仓库 README 原话：“every piece of the app should be trivially verifiable by an AI agent at runtime”（App 的每一部分都应该能在运行时被 AI Agent 轻松验证）。六个设计点：
+仓库 README 原话：<Trans zh="App 的每一部分都应该能在运行时被 AI Agent 轻松验证">“every piece of the app should be trivially verifiable by an AI agent at runtime”</Trans>。六个设计点：
 
 1. **DOM 是机器可读的接口**：组件输出 `data-verify-*` 属性，例如
    ```html
@@ -91,7 +94,7 @@
             data-verify-done="1" data-verify-active="2" data-verify-filter="all">
    ```
    这段 HTML 的意思是：TodoApp 单元当前共 3 项、已完成 1 项、未完成 2 项、筛选条件为“全部”。
-2. **每个单元声明 fixtures + invariants**：用 Zod schema 校验 props；fixture 是可复现的渲染配置；`probe: true` 的 fixture 是对抗性边界用例。README 原话：“A unit with zero probe fixtures has only replayed the happy path.”（一个没有任何 probe 的单元，只是把理想路径重放了一遍。）
+2. **每个单元声明 fixtures + invariants**：用 Zod schema 校验 props；fixture 是可复现的渲染配置；`probe: true` 的 fixture 是对抗性边界用例。README 原话：<Trans zh="一个没有任何 probe 的单元，只是把理想路径重放了一遍。">“A unit with zero probe fixtures has only replayed the happy path.”</Trans>
 3. **隔离渲染路由** `/verify/:unit/:fixture`，加 `?chrome=0` 可以得到干净的截图。
 4. **可插拔 verifier**：`schema`、`invariants`、`dom-contract`、`a11y`（无障碍）。
 5. **Agent 句柄** `window.__verify`：`manifest()`、`current()`、`runAll()`。
@@ -102,8 +105,8 @@
 
 现场演示：
 
-- 故意埋了一个必然失败的 probe（`TodoStats/inconsistent-counts`，字幕里讲者的说法是“3 + 4 does not equal 10”），证明框架能“catch lies”（抓住谎言）。
-- 删除 `data-verify-total` 后，一批检查失败。讲者原话：“Not because we broke the app but because we broke the contract”（不是因为我们弄坏了 App，而是因为我们破坏了契约）。
+- 故意埋了一个必然失败的 probe（`TodoStats/inconsistent-counts`，字幕里讲者的说法是“3 + 4 does not equal 10”），证明框架能<Trans zh="抓住谎言">“catch lies”</Trans>。
+- 删除 `data-verify-total` 后，一批检查失败。讲者原话：<Trans zh="不是因为我们弄坏了 App，而是因为我们破坏了契约">“Not because we broke the app but because we broke the contract”</Trans>。
 - 让 Opus 4.7 通过已连接的 **Playwright MCP** 自己跑验证、诊断失败原因。
 - 验证过程可以录制成视频片段，存到 S3 或分享给同事。讲者说 Claude Code 团队的前端改动基本都这样录制证据。
 
@@ -143,8 +146,8 @@ sequenceDiagram
 
 ::: warning 局限与注意
 - 演示应用是小型 todo app。大型应用为每个组件写 fixtures / invariants 有维护成本（讲者说很多会“generated by Claude for Claude”，由 Claude 生成、给 Claude 用）。
-- 讲者明确推荐 Opus 4.7（视觉能力更强）：“If you use Sonnet, I wouldn't recommend that”（如果用 Sonnet，我不推荐）。
-- 仓库标注“Workshop sample. Not maintained”（工作坊示例，不维护）。
+- 讲者明确推荐 Opus 4.7（视觉能力更强）：<Trans zh="如果用 Sonnet，我不推荐">“If you use Sonnet, I wouldn't recommend that”</Trans>。
+- 仓库标注<Trans zh="工作坊示例，不维护">“Workshop sample. Not maintained”</Trans>。
 :::
 
 ## 5. 可借鉴之处

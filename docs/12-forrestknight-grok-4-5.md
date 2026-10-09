@@ -1,5 +1,7 @@
 # 12｜Coding with Grok 4.5 is surprisingly good…：在真实 Rust / TypeScript 代码库里逐行审 Grok 的产出
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-practice">🛠️ 主题：真实项目实战与人工把关</a><span class="tool-tag tool-grok45">工具：Cursor + Grok 4.5</span></div>
+
 <div class="hook">
 
 **一句话看懂**：ForrestKnight 在三个真实项目里用 Grok 4.5 写代码，然后一行行读。结论是：它很快，能修好别的模型修不好的 bug；但 24 个测试全绿的代码里，照样藏着“按字符串比较版本号”这种低级错误。
@@ -19,9 +21,11 @@
 - [模型名称](/glossary#model-names)：Fable、Opus、GPT-5.x、Grok 4.x 分属不同厂商。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 本次新增的视频画面截图。英文引号内容均为字幕原话，中文翻译为本站所加。视频含 PostHog 赞助段落（约 1:07–2:43），本文不涉及。
+> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介 + 本次新增的视频画面截图。英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。视频含 PostHog 赞助段落（约 1:07–2:43），本文不涉及。
 
 ## 1. 基本信息
+
+<YouTube id="5J6HCDEkg64" title="Coding with Grok 4.5 is surprisingly good…" />
 
 | 项目 | 内容 |
 |---|---|
@@ -48,13 +52,13 @@ Grok 4.5（SpaceX AI 与 Cursor 联合发布）号称编码能力追上了第一
 
 ### 3.1 对基准保持怀疑
 
-讲者指出 Cursor 自己的说明：Grok 4.5 在 CursorBench 上有优势，是因为“an earlier snapshot of the Cursor code base was accidentally included in training”（训练数据里意外包含了 Cursor 代码库的一个早期快照），因此这个基准被排除。他更关注 Artificial Analysis 上从 4.3 到 4.5 的跃升，并以自己的实际使用做判断。
+讲者指出 Cursor 自己的说明：Grok 4.5 在 CursorBench 上有优势，是因为<Trans zh="训练数据里意外包含了 Cursor 代码库的一个早期快照">“an earlier snapshot of the Cursor code base was accidentally included in training”</Trans>，因此这个基准被排除。他更关注 Artificial Analysis 上从 4.3 到 4.5 的跃升，并以自己的实际使用做判断。
 
 ### 3.2 案例一：Fable 5 连续失败的 Linux 移植 bug
 
-- 问题：录屏工具在 Linux 上预览显示彩虹花屏。讲者说 Fable 5 尝试了“six or seven times in a row”（连续六七次）都失败。
+- 问题：录屏工具在 Linux 上预览显示彩虹花屏。讲者说 Fable 5 尝试了<Trans zh="连续六七次">“six or seven times in a row”</Trans>都失败。
 - Grok 4.5 的改法（字幕原述）：把软件预览指向 `live.jpg`，以 15 FPS 轮询；Linux 上跳过 preview live start，以免 FFmpeg 覆盖合成帧；懒加载 electron updater，避免启动崩溃；Rust 侧让 live JPEG 和 MJPEG 保持同步。
-- 讲者评价：“is it a perfect fix? No. But it was able to actually get a preview shown”（是完美的修复吗？不是。但它确实让预览显示出来了）。
+- 讲者评价：<Trans zh="是完美的修复吗？不是。但它确实让预览显示出来了">“is it a perfect fix? No. But it was able to actually get a preview shown”</Trans>。
 
 ### 3.3 案例二：Rust 写的 “UV for Java”，测试全绿也要读代码
 
@@ -63,14 +67,13 @@ Grok 4.5（SpaceX AI 与 Cursor 联合发布）号称编码能力追上了第一
 - 任务：工具链管理器阶段（从 API 找 JDK、下载、校验 checksum、安装、按项目 pin 版本、在 shell 里激活）。
 - 结果：
 
+::: tr 它写了 24 个测试，24 个全部通过。第一次就编译成功，Clippy 也完全没有警告。
 > "it had 24 tests, and all 24 tests passed. It compiles first time, Clippy is completely clean"
-
-<div class="tr">它写了 24 个测试，24 个全部通过。第一次就编译成功，Clippy 也完全没有警告。</div>
-
+:::
 
 <figure class="shot"><img src="/images/12/0900.webp" alt="15:00 Cursor 里 Grok 4.5 完成工具链管理器阶段后的汇总，底部模型选择显示“Cursor Grok 4.5 High Fast”。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=5J6HCDEkg64&t=900s" target="_blank" rel="noopener">15:00</a> · 15:00 Cursor 里 Grok 4.5 完成工具链管理器阶段后的汇总，底部模型选择显示“Cursor Grok 4.5 High Fast”。</figcaption></figure>
 
-但讲者说“I read the code”（我读了代码），发现：
+但讲者说<Trans zh="我读了代码">“I read the code”</Trans>，发现：
 
 - **好**：对 API 返回结果，按 package ID 加了稳定排序的 tie-break。因为这个 API 不保证返回顺序，不这样做，同一条命令可能装出不同的包。选择策略用 tuple 编码，而不是层层嵌套的 if。
 - **坏**：比较已安装的 JDK 版本时按字符串比较，`.9` 会被判断为大于 `.11`。而且项目里已经引入了专门比较版本的 crate，模型却自己重写了一份。
@@ -85,7 +88,7 @@ Grok 4.5（SpaceX AI 与 Cursor 联合发布）号称编码能力追上了第一
 
 ### 3.4 案例三：TypeScript 短链平台
 
-- **好**：API 路径不做 302 重定向，因为“a 302 makes most clients replay a post as a get”（302 会让大多数客户端把 POST 请求重放成 GET），会破坏 Stripe、Clerk 的 webhook。它还复用了已有的 reserved slugs 集合，没有另建一份。
+- **好**：API 路径不做 302 重定向，因为<Trans zh="302 会让大多数客户端把 POST 请求重放成 GET">“a 302 makes most clients replay a post as a get”</Trans>，会破坏 Stripe、Clerk 的 webhook。它还复用了已有的 reserved slugs 集合，没有另建一份。
 - **坏**：声明了 `short domain` 字段却没有使用。设计中途变了，死代码没清理（讲者说其他模型也常这样）。
 
 
@@ -108,23 +111,23 @@ flowchart TD
 
 ### 3.5 对工作流的判断：快模型 vs 长时循环模型
 
-讲者把 Fable 5 描述为“that looping type of model”（那种循环型的模型）：给足信息后，它在后台长时间运行并派发子代理。Grok 4.5 的特点是快：
+讲者把 Fable 5 描述为<Trans zh="那种循环型的模型">“that looping type of model”</Trans>：给足信息后，它在后台长时间运行并派发子代理。Grok 4.5 的特点是快：
 
+::: tr 你不用切去做别的事，因为一分钟后它就会把这个任务做完。
 > "you don't go and work on something else, because a minute later it's going to be complete with that task."
+:::
 
-<div class="tr">你不用切去做别的事，因为一分钟后它就会把这个任务做完。</div>
-
-他设想的分工：让 Fable 5 这类模型做高层编排，“route all of that bulk execution work to other models”（把所有批量执行的工作分给其他模型）。Grok 4.5 适合做被委派的执行者，或者和其他模型结对。
+他设想的分工：让 Fable 5 这类模型做高层编排，<Trans zh="把所有批量执行的工作分给其他模型">“route all of that bulk execution work to other models”</Trans>。Grok 4.5 适合做被委派的执行者，或者和其他模型结对。
 
 另一个细节：一次性生成“Rust 编译到 WebAssembly 的割草游戏”时，Fable 5 自行引入了 JavaScript / CSS，没有遵守约束；Grok 4.5 严格保持纯 Rust。
 
 ## 4. 结果如何
 
-- **可见结果**：录屏预览问题被修到可用（不完美）；Java 工具链阶段 24/24 测试通过、Clippy 无警告，但人工审查发现了版本比较 bug 和重复实现；TypeScript 改动“plus 93 minus three”（新增 93 行、删除 3 行），大体可用，但有死代码。
+- **可见结果**：录屏预览问题被修到可用（不完美）；Java 工具链阶段 24/24 测试通过、Clippy 无警告，但人工审查发现了版本比较 bug 和重复实现；TypeScript 改动<Trans zh="新增 93 行、删除 3 行">“plus 93 minus three”</Trans>，大体可用，但有死代码。
 - **讲者给出的价格信息**：Grok 4.5 输入 $2 / 输出 $6 每百万 token（对比 Opus 4.8 $5/$25、GPT-5.5 $5/$30，视频发布时）。
 
 ::: warning 局限与注意
-- 只是约 24 小时的个人使用体验，讲者自己说“this is just one man's experience”（这只是一个人的体验）。
+- 只是约 24 小时的个人使用体验，讲者自己说<Trans zh="这只是一个人的体验">“this is just one man's experience”</Trans>。
 - 没有测量缺陷率、成本或耗时的系统数据；Fable 5 的失败次数是讲者口述。
 - 视频关注模型本身，Cursor 里的代理配置（规则文件、子代理等）没有展开。
 :::

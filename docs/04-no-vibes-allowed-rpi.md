@@ -1,5 +1,7 @@
 # 04｜No Vibes Allowed：在复杂代码库里用 Research → Plan → Implement 做“频繁有意压缩”
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-planning">🧭 主题：需求澄清、规划与上下文管理</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+
 <div class="hook">
 
 **一句话看懂**：AI 在新项目里很好用，一进老代码库就开始返工。Dex Horthy 的解法是“先调研、再计划、后实现”，每一步都把结果压缩成一份文档，让上下文始终保持小而干净。
@@ -19,9 +21,11 @@
 - [Slash Command](/glossary#slash-command)：以 / 开头的自定义命令。
 :::
 
-> 信息来源：带时间戳的字幕全文（withtranscript.ai 镜像的 YouTube 字幕）+ 视频简介与章节 + HumanLayer 开源仓库 `humanlayer/humanlayer` 的 `.claude/commands/`（research / plan / implement 命令原文）。中文翻译为本站所加。
+> 信息来源：带时间戳的字幕全文（withtranscript.ai 镜像的 YouTube 字幕）+ 视频简介与章节 + HumanLayer 开源仓库 `humanlayer/humanlayer` 的 `.claude/commands/`（research / plan / implement 命令原文）。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="rmvDxxNubIg" title="No Vibes Allowed" />
 
 | 项目 | 内容 |
 |---|---|
@@ -34,7 +38,7 @@
 
 ## 2. 做了什么
 
-讲者引用了 AI Engineer 6 月的一项调研（Igor 的演讲，约 10 万名开发者）：AI 在 greenfield 小项目上表现好，但在**棕地（brownfield）复杂代码库**里会产生大量返工。原话是“a lot of it is just reworking the slop that you shipped last week”（很多工作其实是在返工上周交付的 slop）。
+讲者引用了 AI Engineer 6 月的一项调研（Igor 的演讲，约 10 万名开发者）：AI 在 greenfield 小项目上表现好，但在**棕地（brownfield）复杂代码库**里会产生大量返工。原话是<Trans zh="很多工作其实是在返工上周交付的 slop">“a lot of it is just reworking the slop that you shipped last week”</Trans>。
 
 目标：让今天的模型在复杂棕地代码库里解决难题，做到“no slop”，同时保持团队的 **mental alignment**（心智对齐）。
 
@@ -46,22 +50,22 @@
 
 **为什么重要**：模型的权重你改不了，你唯一能控制的就是喂给它什么。
 
+::: tr 想让 LLM 表现更好，唯一的办法就是输入更好的 token，这样才能得到更好的 token 输出。
 > "the only way to get better performance out of an LLM is to put better tokens in and then you get better tokens out."
-
-<div class="tr">想让 LLM 表现更好，唯一的办法就是输入更好的 token，这样才能得到更好的 token 输出。</div>
+:::
 
 优化顺序：先避免**错误信息**，再避免**缺失信息**，最后避免**噪音**。还要注意**轨迹**：反复“骂”模型，会让它预测“我应该再犯错”。
 
 ### 3.2 Dumb zone：上下文用到约 40% 后效果递减
 
-- 以 Claude Code 约 168k token 的窗口为例，“Around the 40% line is where you're going to start to see some diminishing returns”（大约在 40% 这条线，你会开始看到收益递减）。这是经验线，因任务而异。
-- MCP 装太多，会让你“doing all your work in the dumb zone”（一直在 dumb zone 里干活）。
+- 以 Claude Code 约 168k token 的窗口为例，<Trans zh="大约在 40% 这条线，你会开始看到收益递减">“Around the 40% line is where you're going to start to see some diminishing returns”</Trans>。这是经验线，因任务而异。
+- MCP 装太多，会让你<Trans zh="一直在 dumb zone 里干活">“doing all your work in the dumb zone”</Trans>。
 
 ### 3.3 子代理用来控制上下文，而不是扮演角色
 
+::: tr 子代理不是用来拟人化扮演角色的，而是用来控制上下文的。
 > "Sub agents are not for anthropomorphizing roles. They are for controlling context."
-
-<div class="tr">子代理不是用来拟人化扮演角色的，而是用来控制上下文的。</div>
+:::
 
 做法：让子代理在独立上下文里搜索、读文件，**只回传精简结论**（例如“你要的文件在这里”）。父代理读那一个文件就能开工。
 
@@ -69,13 +73,12 @@
 
 **为什么重要**：与其等上下文满了被动压缩，不如在每个阶段结束时主动把成果写成文档，下一阶段从一个干净的会话开始。
 
-
-<figure class="shot"><img src="/images/04/0461.webp" alt="7:41 幻灯片“Frequent Intentional Compaction — Building Your ENTIRE WORKFLOW around context management”（频繁有意压缩：围绕上下文管理来构建你的整个工作流）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=rmvDxxNubIg&t=461s" target="_blank" rel="noopener">7:41</a> · 7:41 幻灯片“Frequent Intentional Compaction — Building Your ENTIRE WORKFLOW around context management”（频繁有意压缩：围绕上下文管理来构建你的整个工作流）。</figcaption></figure>
+<figure class="shot"><img src="/images/04/0461.webp" alt="7:41 幻灯片“Frequent Intentional Compaction — Building Your ENTIRE WORKFLOW around context management”（频繁有意压缩：围绕上下文管理来构建你的整个工作流）。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=rmvDxxNubIg&t=461s" target="_blank" rel="noopener">7:41</a> · 7:41 幻灯片<Trans zh="频繁有意压缩：围绕上下文管理来构建你的整个工作流">“Frequent Intentional Compaction — Building Your ENTIRE WORKFLOW around context management”</Trans>。</figcaption></figure>
 
 | 阶段 | 做什么 | 产物 |
 |---|---|---|
-| Research | 理解系统如何工作、找到正确的文件、保持客观；启动子代理“take these vertical slices through the code base”（沿代码库纵向切片） | research 文档：“We are compressing truth”（我们在压缩事实） |
-| Plan | 列出精确步骤，包含文件名、代码片段，写清每次改动后如何测试 | plan 文件：“compression of intent”（意图的压缩） |
+| Research | 理解系统如何工作、找到正确的文件、保持客观；启动子代理<Trans zh="沿代码库纵向切片">“take these vertical slices through the code base”</Trans> | research 文档：<Trans zh="我们在压缩事实">“We are compressing truth”</Trans> |
+| Plan | 列出精确步骤，包含文件名、代码片段，写清每次改动后如何测试 | plan 文件：<Trans zh="意图的压缩">“compression of intent”</Trans> |
 | Implement | 按 plan 执行，保持上下文低占用 | 代码 + 验证结果 |
 
 
@@ -85,27 +88,27 @@
 
 - `research_codebase.md`：
 
+  ::: tr 你的任务是在整个代码库中开展全面调研：派出并行的子代理，综合它们的发现，来回答用户的问题。
   > "You are tasked with conducting comprehensive research across the codebase to answer user questions by spawning parallel sub-agents and synthesizing their findings."
-
-  <div class="tr">你的任务是在整个代码库中开展全面调研：派出并行的子代理，综合它们的发现，来回答用户的问题。</div>
+  :::
 
   并强调：
 
+  ::: tr 你唯一的工作是记录和解释代码库现在的样子。／不要提出改进建议……
   > "YOUR ONLY JOB IS TO DOCUMENT AND EXPLAIN THE CODEBASE AS IT EXISTS TODAY" / "DO NOT suggest improvements…"
-
-  <div class="tr">你唯一的工作是记录和解释代码库现在的样子。／不要提出改进建议……</div>
+  :::
 
 - `create_plan.md`：
 
+  ::: tr 你应该保持怀疑、做到周全，并与用户协作，产出高质量的技术规格说明。
   > "You should be skeptical, thorough, and work collaboratively with the user to produce high-quality technical specifications."
-
-  <div class="tr">你应该保持怀疑、做到周全，并与用户协作，产出高质量的技术规格说明。</div>
+  :::
 
 - `implement_plan.md`：
 
+  ::: tr 执行 thoughts/shared/plans/ 目录中一份已批准的技术计划……这些计划按阶段划分，每个阶段都有具体改动和成功标准。
   > "implementing an approved technical plan from `thoughts/shared/plans/`… These plans contain phases with specific changes and success criteria."
-
-  <div class="tr">执行 thoughts/shared/plans/ 目录中一份已批准的技术计划……这些计划按阶段划分，每个阶段都有具体改动和成功标准。</div>
+  :::
 
 ### 3.5 Onboarding：按需压缩，而不是维护会过期的文档
 
@@ -123,17 +126,17 @@
 - 技术负责人读 plan 就能跟上系统演进；计划里放实际代码片段，能提高可预期性。
 - 讲者原话：
 
+::: tr 一行坏代码就是一行坏代码。计划里一处错误可能变成 100 行坏代码；而调研里一行错误……整件事都会完蛋。
 > "a bad line of code is a bad line of code. And a bad part of a plan could be 100 bad lines of code and a bad line of research… your whole thing's going to be hosed."
+:::
 
-<div class="tr">一行坏代码就是一行坏代码。计划里一处错误可能变成 100 行坏代码；而调研里一行错误……整件事都会完蛋。</div>
-
+::: tr 别把思考外包出去……如果你不读计划，这套方法就不会奏效。
 > "Don't outsource the thinking… It will not work if you do not read the plan."
-
-<div class="tr">别把思考外包出去……如果你不读计划，这套方法就不会奏效。</div>
+:::
 
 ### 3.7 按难度选择流程强度
 
-改按钮颜色 → 直接对话；小功能 → 简单 plan；跨多个仓库的中型功能 → 一次 research + plan；越难的问题，越需要更多压缩。讲者建议“Pick one tool and get some reps”（选一个工具，多练几遍），别在多个工具之间反复比较。
+改按钮颜色 → 直接对话；小功能 → 简单 plan；跨多个仓库的中型功能 → 一次 research + plan；越难的问题，越需要更多压缩。讲者建议<Trans zh="选一个工具，多练几遍">“Pick one tool and get some reps”</Trans>，别在多个工具之间反复比较。
 
 下图是按复杂度分流的 RPI 流程：
 
@@ -157,16 +160,16 @@ flowchart LR
 
 视频中给出的结果（均为讲者陈述）：
 
-- 团队（3 人、花了 8 周改造流程）获得“2 to 3x more throughput”（2 到 3 倍的产出）。
+- 团队（3 人、花了 8 周改造流程）获得<Trans zh="2 到 3 倍的产出">“2 to 3x more throughput”</Trans>。
 - 对 BoundaryML 的 **30 万行 Rust 代码库**一夜完成一个修复，对方 CTO 看过 PR 表示会进入下个版本。
 - 与对方 CEO 一起用约 7 小时提交了 **35,000 行代码**（讲者承认部分是 codegen / golden files 更新），对方估计相当于 1–2 周的工作量；其中一个 PR 约一周后被合并。
-- **失败案例**：尝试从 Parquet Java 移除 Hadoop 依赖“did not go well”（不顺利），最终推倒重来，回到白板设计。
+- **失败案例**：尝试从 Parquet Java 移除 Hadoop 依赖<Trans zh="不顺利">“did not go well”</Trans>，最终推倒重来，回到白板设计。
 
 
 <figure class="shot"><img src="/images/04/1179.webp" alt="19:39 前后的幻灯片：纵轴从 Hate AI 到 Love AI，两条曲线分别标注 Mid-Level 和 Senior+。讲者此时在谈团队和研发流程如何适应“99% 代码由 AI 交付”的文化转变。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=rmvDxxNubIg&t=1179s" target="_blank" rel="noopener">19:39</a> · 19:39 前后的幻灯片：纵轴从 Hate AI 到 Love AI，两条曲线分别标注 Mid-Level 和 Senior+。讲者此时在谈团队和研发流程如何适应“99% 代码由 AI 交付”的文化转变。</figcaption></figure>
 
 ::: warning 局限与注意
-- 调研和计划需要人认真读，否则无效。讲者原话：“There is no perfect prompt. There is no silver bullet.”（没有完美的 prompt，也没有银弹。）
+- 调研和计划需要人认真读，否则无效。讲者原话：<Trans zh="没有完美的 prompt，也没有银弹。">“There is no perfect prompt. There is no silver bullet.”</Trans>
 - 讲者自己也认为 RPI 这三个步骤名不重要，重要的是上下文工程和“留在 smart zone”。
 - 成果数据都是讲者口述，没有独立测量。
 :::

@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：Claude 6 篇（01–06）、Codex 5 篇（07–11）、Grok 4 篇（12–15）。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章。
+> 覆盖：15 篇，按内容分 5 个主题：真实项目实战与人工把关（11、14、13、12）；需求澄清、规划与上下文管理（03、06、04）；多代理协作与对抗式验证（05、08、15）；后台代理、自动化与 CI/CD（01、02、10）；Harness 工程与内部机制（09、07）。所用工具：Claude Code 6 篇、Codex 5 篇、Grok 4 篇。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章。
 
 ## 1. 共性模式（多数视频独立得出的结论）
 
@@ -34,7 +34,7 @@
 - 扇出找 bug 后再做对抗式复核（02）、`/goal` 完成后由 skeptic 代理复查（15）、CI 中按 persona 设置 reviewer（07）。
 
 ::: tip 实践
-审查代理只给只读权限；让它“尽量证伪”，而不是“确认完成”；复查只看 delta。#15 画面上的那句提示词可以直接借用：“You are NOT the agent that produced the work… Your job is to refute that the objective has been met.”（下面的工作不是你做的……你的任务是证伪“目标已经达成”。）
+审查代理只给只读权限；让它“尽量证伪”，而不是“确认完成”；复查只看 delta。#15 画面上的那句提示词可以直接借用：<Trans zh="下面的工作不是你做的……你的任务是证伪“目标已经达成”。">“You are NOT the agent that produced the work… Your job is to refute that the objective has been met.”</Trans>
 :::
 
 <figure class="shot"><img src="/images/15/0575.webp" alt="Grok Build 的对抗式验证子代理" loading="lazy"><figcaption>📷 #15 视频截图 · <a href="https://www.youtube.com/watch?v=1NwO2dPzwRM&t=575s" target="_blank" rel="noopener">9:35</a> · Grok Build 自动派出的“goal achievement skeptic”验证代理，提示词要求它证伪目标已达成。</figcaption></figure>
@@ -85,6 +85,9 @@
 
 ## 2. 工具 / 方法对比
 
+本站按内容主题分类；这张表换个角度，把同一类做法在三家工具里的对应功能并排放在一起。
+
+
 | 维度 | Claude Code（01–06） | Codex（07–11） | Grok Build / Grok 4.x（12–15） |
 |---|---|---|---|
 | 规则文件 | CLAUDE.md、Skills | AGENTS.md、Skills（上下文占比有上限，09） | 兼容 AGENTS.md / CLAUDE.md 与 skills（14、官方文档） |
@@ -117,26 +120,43 @@ flowchart TD
     K -. 下一个任务 .-> B
 ```
 
-## 4. 推荐观看顺序（入门 → 进阶）
+## 4. 推荐观看顺序（按主题，入门 → 进阶）
 
 ::: info 只有 30 分钟？
 先看 **11**（访谈，轻松）→ 再看 **14**（10 分钟的工具上手）→ 最后读本页第 1 节的六个模式。
 :::
 
-1. **11 Steinberger × Codex**：轻松的访谈，先建立“代理主导开发”的直观印象。
-2. **01 Claude Code 一周年**：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
-3. **14 OrcDev Grok Build** → **13 Bijan Bowen Grok Build**：从短到长，看一个新代理工具的完整上手流程。
-4. **03 How we Claude Code**：可以照着复现的 workshop（有配套仓库）。
-5. **04 No Vibes Allowed**：在复杂代码库中做上下文管理的方法论。
-6. **06 Field Guide to Fable**：需求盲区与上下文减法。
-7. **12 ForrestKnight Grok 4.5**：学会怎么审查 AI 产出，警惕“测试全绿”。
-8. **08 Codex Masterclass**：子代理、hooks、plugins 的实操。
-9. **05 IndyDevDan Task System**：builder / validator 团队的编排。
-10. **15 Arcade Grok Build**：大规模并行与对抗式验证（建议配合 Grok Build 官方文档）。
-11. **02 Claude Code 团队工作流**：团队级协作与动态 workflows。
-12. **10 How OpenAI Uses Codex**：PR 审查、CI 看护、Deploy preview 全链路。
-13. **09 How Codex Works**：harness 内部机制，理解前面所有现象的“为什么”。
-14. **07 Harness Engineering**：最激进的“人不写代码”团队实践，适合最后看。
+五个主题从“看别人怎么做”到“理解底层为什么”排列，和左侧边栏的顺序一致。每篇后面的小标签是所用工具。
+
+**1. 🛠️ 真实项目实战与人工把关**
+
+- [11 · Peter Steinberger：用 Codex 建 OpenClaw](/11-peter-steinberger-openclaw) <span class="tool-tag tool-codex">Codex</span>：轻松的访谈，先建立“代理主导开发”的直观印象。
+- [14 · OrcDev：Skills 约束设计的 UI 开发](/14-orcdev-grok-build-skills) <span class="tool-tag tool-grokbuild">Grok Build</span>：10 分钟看一个新代理工具怎么上手，Skills 如何约束风格。
+- [13 · Bijan Bowen：Grok Build 完整实测](/13-bijan-bowen-grok-build) <span class="tool-tag tool-grokbuild">Grok Build</span>：更长的全流程实测：plan mode、截图反馈、无头浏览器自测。
+- [12 · ForrestKnight：Grok 4.5 实战与代码审查](/12-forrestknight-grok-4-5) <span class="tool-tag tool-grok45">Cursor + Grok 4.5</span>：学会怎么审查 AI 产出，警惕“测试全绿”。
+
+**2. 🧭 需求澄清、规划与上下文管理**
+
+- [03 · How we Claude Code：访谈式需求与可验证组件](/03-how-we-claude-code) <span class="tool-tag tool-claude">Claude Code</span>：可以照着复现的 workshop（有配套仓库）。
+- [06 · Field Guide to Fable：找出未知、上下文减法](/06-field-guide-to-fable) <span class="tool-tag tool-claude">Claude Code</span>：需求盲区与上下文减法。
+- [04 · No Vibes Allowed：RPI 与有意压缩](/04-no-vibes-allowed-rpi) <span class="tool-tag tool-claude">Claude Code</span>：在复杂代码库中做上下文管理的方法论。
+
+**3. 🤝 多代理协作与对抗式验证**
+
+- [05 · IndyDevDan：Builder / Validator 代理团队](/05-indydevdan-task-system) <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
+- [08 · Codex Masterclass：子代理、Hooks 与插件](/08-codex-masterclass) <span class="tool-tag tool-codex">Codex</span>：子代理、hooks、plugins 的实操。
+- [15 · Arcade：57 个子代理与 /goal 对抗验证](/15-arcade-grok-build-57-agents) <span class="tool-tag tool-grokbuild">Grok Build</span>：大规模并行与对抗式验证（建议配合 Grok Build 官方文档）。
+
+**4. ⚙️ 后台代理、自动化与 CI/CD**
+
+- [01 · Claude Code 一周年：验证、Routines、Auto mode](/01-claude-code-one-year) <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
+- [02 · Claude Code 团队：Claude Tag 与扇出 Workflows](/02-claude-code-team-workflows) <span class="tool-tag tool-claude">Claude Code</span>：团队级协作与动态 workflows。
+- [10 · How OpenAI Uses Codex：验证飞轮与 PR 看护](/10-how-openai-uses-codex) <span class="tool-tag tool-codex">Codex</span>：PR 审查、CI 看护、Deploy preview 全链路。
+
+**5. 🧠 Harness 工程与内部机制**
+
+- [09 · How Codex Works：Harness 内部机制](/09-how-codex-works) <span class="tool-tag tool-codex">Codex</span>：harness 内部机制，理解前面所有现象的“为什么”。
+- [07 · Harness Engineering：人掌舵、代理执行](/07-harness-engineering) <span class="tool-tag tool-codex">Codex</span>：最激进的“人不写代码”团队实践，适合最后看。
 
 ## 5. 你可以这样开始（一周计划）
 

@@ -1,5 +1,7 @@
 # 09｜How Codex Works：沿着一条消息看 Codex harness 内部（Dominik Kundel, OpenAI）
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-harness">🧠 主题：Harness 工程与内部机制</a><span class="tool-tag tool-codex">工具：Codex</span></div>
+
 <div class="hook">
 
 **一句话看懂**：同一个模型，为什么放进 Codex 就能长时间、安全地改代码？Dominik 用一个自制的 “nano Codex” 可视化演示 harness 做的六件事：拼上下文、执行动作、沙箱审批、加速传输、目标循环和上下文压缩。
@@ -20,9 +22,11 @@
 - [Compaction](/glossary#compaction)：上下文过长时压缩成摘要。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/shRR1e2HXMk，含完整时间戳文字稿）+ YouTube 视频简介 + 本次新增的幻灯片截图。英文引号内容均为文字稿原话，中文翻译为本站所加。讲稿页中的 Playwright 示例代码为讲稿页作者的示意，本文没有引用。
+> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/shRR1e2HXMk，含完整时间戳文字稿）+ YouTube 视频简介 + 本次新增的幻灯片截图。英文引号内容均为文字稿原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。讲稿页中的 Playwright 示例代码为讲稿页作者的示意，本文没有引用。
 
 ## 1. 基本信息
+
+<YouTube id="shRR1e2HXMk" title="How Codex Works" />
 
 | 项目 | 内容 |
 |---|---|
@@ -45,9 +49,8 @@
 
 ### 3.1 两个协议
 
-- **app-server**：连接界面和 harness。Codex app 自己就用它；社区项目（T3 Code、RemoteX）也基于它；讲者还用它“put Codex into Claude Code”（把 Codex 放进了 Claude Code）。
+- **app-server**：连接界面和 harness。Codex app 自己就用它；社区项目（T3 Code、RemoteX）也基于它；讲者还用它<Trans zh="把 Codex 放进了 Claude Code">“put Codex into Claude Code”</Trans>。
 - **Responses API**：连接 harness 和模型推理。OpenAI 还在推动 Open Responses 规范，让兼容的模型提供方能接入 Codex harness。
-
 
 <figure class="shot"><img src="/images/09/0156.webp" alt="2:36 幻灯片“App server”：左边是官方产品（Codex Desktop App、Codex TUI/CLI 等），右边是第三方集成（JetBrains IDEs、VS Code 等），中间的 Codex harness 通过 app server 用 JSON-RPC 和两边通信。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=shRR1e2HXMk&t=156s" target="_blank" rel="noopener">2:36</a> · 2:36 幻灯片“App server”：左边是官方产品（Codex Desktop App、Codex TUI/CLI 等），右边是第三方集成（JetBrains IDEs、VS Code 等），中间的 Codex harness 通过 app server 用 JSON-RPC 和两边通信。</figcaption></figure>
 
@@ -55,18 +58,18 @@
 
 **为什么重要**：上下文不是越多越好。内容一多，互相矛盾的信息也跟着变多。
 
+::: tr 你的上下文里内容越多……出现相互矛盾信息的可能性就越高，而这会让模型困惑。
 > "the more context you have in your … context … the higher it is that you have contradicting information and … it causes confusion for the model."
+:::
 
-<div class="tr">你的上下文里内容越多……出现相互矛盾信息的可能性就越高，而这会让模型困惑。</div>
-
-- **Deferred tools**：部分工具“are not added directly to the context window, but instead are available through tool search later on”（不直接放进上下文窗口，而是之后通过工具搜索来获取）。GPT-5.4 起 Responses API 支持。
-- **Skills 列表上限**：“we actually cap the available skills list at two percent of your context … maximum context window”（我们把可用 skills 列表的上限设为最大上下文窗口的 2%），超出时逐步缩短描述。
+- **Deferred tools**：部分工具<Trans zh="不直接放进上下文窗口，而是之后通过工具搜索来获取">“are not added directly to the context window, but instead are available through tool search later on”</Trans>。GPT-5.4 起 Responses API 支持。
+- **Skills 列表上限**：<Trans zh="我们把可用 skills 列表的上限设为最大上下文窗口的 2%">“we actually cap the available skills list at two percent of your context … maximum context window”</Trans>，超出时逐步缩短描述。
 
 ### 3.3 动作：子代理、后台终端、浏览器、文件系统
 
 - 子代理：`spawn_agent` 创建实例，`send_input` 追加输入，可以等待或关闭。后台终端同理（stdin 交互、定时等待）。
 - 浏览器：在持久化的 Node REPL 里写 Playwright 风格的 JS，跨轮次复用变量和标签页。看懂一页的结构后，可以写脚本批量处理后面的页面。
-- 文件：GPT-5 起的模型训练过用 `apply_patch` 以 diff 方式编辑文件。搜索导航走 shell，模型习惯用 ripgrep，所以“we're actually in the Codex harness shipping ripgrep”（我们其实在 Codex harness 里直接内置了 ripgrep）。
+- 文件：GPT-5 起的模型训练过用 `apply_patch` 以 diff 方式编辑文件。搜索导航走 shell，模型习惯用 ripgrep，所以<Trans zh="我们其实在 Codex harness 里直接内置了 ripgrep">“we're actually in the Codex harness shipping ripgrep”</Trans>。
 - 沙箱：macOS 用 Seatbelt，Linux 用 Bubblewrap，Windows 用自研的开源沙箱。
 
 
@@ -74,16 +77,16 @@
 
 ### 3.4 Auto Review：用一个只读子代理替你审批越权操作
 
-**为什么重要**：审批弹窗太多，大家就干脆开 full access。可高自主性的代理真会闯祸：讲者举例，代理发现附件发不出去，可能“uploads it to a file share”（把它上传到文件共享）；或者转义写错，删多了数据。
+**为什么重要**：审批弹窗太多，大家就干脆开 full access。可高自主性的代理真会闯祸：讲者举例，代理发现附件发不出去，可能<Trans zh="把它上传到文件共享">“uploads it to a file share”</Trans>；或者转义写错，删多了数据。
 
+::: tr 它会启动一个 Auto Review 子代理，这个子代理完全独立运行，不能再派生其他子代理……它只有读权限。
 > "it spins up an Auto Review sub-agent, and this sub-agent runs entirely separate. It can't spin up other sub-agents. … It has read permissions only."
-
-<div class="tr">它会启动一个 Auto Review 子代理，这个子代理完全独立运行，不能再派生其他子代理……它只有读权限。</div>
+:::
 
 审查子代理拿到三样东西：关于用户授权和风险分类的指导、对话 transcript、待执行的工具调用。它分别判断**授权程度**（用户是否明确要求）和**影响**。例如用户明确要求删除 `.git` 可以，没要求就不该碰。
 
 
-<figure class="shot"><img src="/images/09/0783.webp" alt="13:03 幻灯片“What could go wrong?”（可能会出什么问题？），引出 Auto Review 要解决的风险。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=shRR1e2HXMk&t=783s" target="_blank" rel="noopener">13:03</a> · 13:03 幻灯片“What could go wrong?”（可能会出什么问题？），引出 Auto Review 要解决的风险。</figcaption></figure>
+<figure class="shot"><img src="/images/09/0783.webp" alt="13:03 幻灯片“What could go wrong?”（可能会出什么问题？），引出 Auto Review 要解决的风险。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=shRR1e2HXMk&t=783s" target="_blank" rel="noopener">13:03</a> · 13:03 幻灯片<Trans zh="可能会出什么问题？">“What could go wrong?”</Trans>，引出 Auto Review 要解决的风险。</figcaption></figure>
 
 下图是一次越权操作的审批过程：
 
@@ -109,11 +112,11 @@ sequenceDiagram
 
 ### 3.5 速度：推理快了，网络成了瓶颈
 
-GPT-5.3-Codex-Spark 在 Cerebras 上达到“a thousand tokens per second”（每秒一千个 token）后，瓶颈变成了网络。WebSocket mode 用持久连接 + 有状态的上下文：
+GPT-5.3-Codex-Spark 在 Cerebras 上达到<Trans zh="每秒一千个 token">“a thousand tokens per second”</Trans>后，瓶颈变成了网络。WebSocket mode 用持久连接 + 有状态的上下文：
 
+::: tr 我们只回传工具调用的结果，而不是把所有条目都重新发回去。
 > "we only send back the result of the tool call rather than sending all of the items back"
-
-<div class="tr">我们只回传工具调用的结果，而不是把所有条目都重新发回去。</div>
+:::
 
 演示服务器当场崩溃，改用备份演示：1 项对比 9 项。
 
@@ -121,15 +124,15 @@ GPT-5.3-Codex-Spark 在 Cerebras 上达到“a thousand tokens per second”（�
 
 **为什么重要**：代理最常见的问题是“没做完就说做完了”。`/goal` 让 harness 在目标没达成时自动推它继续。
 
+::: tr 在它完成之前，harness 会自动注入这条“继续”提示。
 > "until it's done with that, um, it will actually automatically, the harness will inject this continuation prompt."
-
-<div class="tr">在它完成之前，harness 会自动注入这条“继续”提示。</div>
+:::
 
 模型调用 `update_goal` 才会结束循环。所以讲者建议：
 
+::: tr 写非常具体、可验证的 prompt，这样才容易判断事情是否已经完成。
 > "have very concrete and verifiable, um, prompts so that, uh, it's easy to detect when things are done."
-
-<div class="tr">写非常具体、可验证的 prompt，这样才容易判断事情是否已经完成。</div>
+:::
 
 ### 3.7 Compaction
 
@@ -164,13 +167,13 @@ flowchart LR
 <figure class="shot"><img src="/images/09/1201.webp" alt="20:01 结论幻灯片“Conclusion”：01 把开源的 Codex app server 当作现成的代理 harness 或蓝本；02 Codex 的大部分代理能力可以通过 Responses API 获得（tool search、apply patch、shell、websockets 等）；03 模型在进化，你的代理也应该跟着进化。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=shRR1e2HXMk&t=1201s" target="_blank" rel="noopener">20:01</a> · 20:01 结论幻灯片“Conclusion”：01 把开源的 Codex app server 当作现成的代理 harness 或蓝本；02 Codex 的大部分代理能力可以通过 Responses API 获得（tool search、apply patch、shell、websockets 等）；03 模型在进化，你的代理也应该跟着进化。</figcaption></figure>
 
 ::: warning 局限与注意
-- 讲者开头就声明“this is a current state of affairs”（这是当前的状况）。模型和 API 一变，harness 的行为就会变。
-- 讲者自称 Auto Review 的讲解是“a gross oversimplification”（严重简化）。它是降低风险的手段，不是确定性的安全保证。
+- 讲者开头就声明<Trans zh="这是当前的状况">“this is a current state of affairs”</Trans>。模型和 API 一变，harness 的行为就会变。
+- 讲者自称 Auto Review 的讲解是<Trans zh="严重简化">“a gross oversimplification”</Trans>。它是降低风险的手段，不是确定性的安全保证。
 :::
 
 ## 5. 可借鉴之处
 
-1. **自建代理时直接复用 Responses API 的能力**：tool search / deferred loading、`apply_patch`、WebSocket、server-side compaction。讲者原话是“regardless of what harness you're using”（不管你用的是哪个 harness）。
+1. **自建代理时直接复用 Responses API 的能力**：tool search / deferred loading、`apply_patch`、WebSocket、server-side compaction。讲者原话是<Trans zh="不管你用的是哪个 harness">“regardless of what harness you're using”</Trans>。
 2. **MCP 装多了要做“延迟加载”**：工具 schema 不进初始上下文，靠搜索发现；skills 描述设总量上限。这条对 Claude Code 和其他代理同样适用。
 3. **审批交给只读审查子代理**：给它 transcript 和授权准则，区分“用户明确授权”和“代理自作主张”，比全开权限或频繁弹窗都好。
 4. **长任务用可验证目标**：`/goal` 写“把构建时间降 50%”“所有测试通过”，别写长篇大论。

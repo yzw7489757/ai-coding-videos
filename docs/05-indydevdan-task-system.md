@@ -1,5 +1,7 @@
 # 05｜Claude Code Task System：用模板元提示词 + Builder/Validator 代理团队自动构建与自检
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+
 <div class="hook">
 
 **一句话看懂**：IndyDevDan 用 Claude Code 的 Task 系统搭了一个“一人写、一人查”的代理小队：规划命令按模板写出计划，主代理把任务分给 builder，每个 builder 做完后由只读的 validator 检查，全程靠 hooks 自动把关。
@@ -19,9 +21,11 @@
 - [Lint](/glossary#lint)：只读代码就能发现问题的检查工具。
 :::
 
-> 信息来源：YouTube 字幕（早期网页抓取的内容；整理本站时 YouTube 限制了字幕下载，没能重新获取全文，只有部分段落经搜索引擎收录的字幕片段再次核对）+ 视频简介 + 讲者公开仓库 `disler/claude-code-hooks-mastery`（`.claude/commands/plan_w_team.md`、`.claude/agents/team/builder.md`、`validator.md` 原文）+ 本次新增的视频画面截图。标注“转述”的内容不是逐字原话。中文翻译为本站所加。
+> 信息来源：YouTube 字幕（早期网页抓取的内容；整理本站时 YouTube 限制了字幕下载，没能重新获取全文，只有部分段落经搜索引擎收录的字幕片段再次核对）+ 视频简介 + 讲者公开仓库 `disler/claude-code-hooks-mastery`（`.claude/commands/plan_w_team.md`、`.claude/agents/team/builder.md`、`validator.md` 原文）+ 本次新增的视频画面截图。标注“转述”的内容不是逐字原话。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="4_2j5wgt_ds" title="Claude Code Task System" />
 
 | 项目 | 内容 |
 |---|---|
@@ -50,15 +54,13 @@
 
 调用时传入两个 prompt：**用户需求** + **编排提示词**。视频中使用的编排提示词（原文见仓库 README 的 Workflow Example）：
 
+::: tr 为每个 hook 建一组代理：一个 builder，一个 validator。
 > "Create groups of agents for each hook, one builder and one validator"
-
-<div class="tr">为每个 hook 建一组代理：一个 builder，一个 validator。</div>
+:::
 
 ### 3.2 元提示词的三个组成部分
 
-视频简介原文把这个元提示词概括为：“three powerful components: self-validation (agents checking their own work), agent orchestration (conducting teams of subagents), and templating (teaching agents to build as you would)”。
-
-<div class="tr">三个强大的组成部分：自我验证（代理检查自己的工作）、代理编排（指挥一队子代理）、模板化（教代理按你的方式来构建）。</div>
+视频简介原文把这个元提示词概括为：<Trans zh="三个强大的组成部分：自我验证（代理检查自己的工作）、代理编排（指挥一队子代理）、模板化（教代理按你的方式来构建）。">“three powerful components: self-validation (agents checking their own work), agent orchestration (conducting teams of subagents), and templating (teaching agents to build as you would)”</Trans>。
 
 **① 自我验证：Stop hook 写在 front matter 里**
 
@@ -66,6 +68,7 @@
 
 仓库原文：
 
+::: tr 配置大意：禁止这个规划代理使用 Task 和 EnterPlanMode 工具；它准备结束（Stop）时，依次运行两个检查脚本：第一个确认 specs/ 目录下新建了 .md 文件；第二个确认文件里包含“任务描述、目标、相关文件、分步任务、验收标准、团队编排、团队成员”这些章节标题。
 ```yaml
 disallowed-tools: Task, EnterPlanMode
 hooks:
@@ -89,8 +92,7 @@ hooks:
             --contains '## Team Orchestration'
             --contains '### Team Members'
 ```
-
-<div class="tr">配置大意：禁止这个规划代理使用 Task 和 EnterPlanMode 工具；它准备结束（Stop）时，依次运行两个检查脚本：第一个确认 specs/ 目录下新建了 .md 文件；第二个确认文件里包含“任务描述、目标、相关文件、分步任务、验收标准、团队编排、团队成员”这些章节标题。</div>
+:::
 
 规划代理结束时，脚本检查 `specs/` 下是否新建了 `.md` 且包含所有必需章节；不满足，就把指令回传给规划代理继续修。
 
@@ -98,9 +100,9 @@ hooks:
 
 提示词里的 Team Orchestration 段落规定团队负责人：
 
+::: tr 你绝不直接写代码，你用这些工具来编排团队成员。
 > "You NEVER write code directly - you orchestrate team members using these tools"
-
-<div class="tr">你绝不直接写代码，你用这些工具来编排团队成员。</div>
+:::
 
 它通过 TaskCreate / TaskUpdate / TaskList / TaskGet 分派任务、设置依赖和阻塞关系。
 
@@ -116,26 +118,25 @@ hooks:
 
 - `builder.md`：
 
+  ::: tr 你是一个专注的工程代理，一次只负责执行一个任务……不要派生其他代理，也不要协调工作。你是干活的，不是管事的。
   > "You are a focused engineering agent responsible for executing ONE task at a time… Do NOT spawn other agents or coordinate work. You are a worker, not a manager."
-
-  <div class="tr">你是一个专注的工程代理，一次只负责执行一个任务……不要派生其他代理，也不要协调工作。你是干活的，不是管事的。</div>
+  :::
 
   它还挂了 **PostToolUse hook**：每次 `Write|Edit` 之后运行 `ruff_validator.py` 和 `ty_validator.py`（微观自检）。
 
 - `validator.md`：
 
+  ::: tr 只读的验证代理……你不能修改文件。
   > "Read-only validation agent… You CANNOT modify files"
-
-  <div class="tr">只读的验证代理……你不能修改文件。</div>
+  :::
 
   front matter 设置 `disallowedTools: Write, Edit, NotebookEdit`。
 
 讲者原话：
 
+::: tr 一个代理干活，一个代理检查。我给每个任务都投入了双倍的算力。
 > "An agent that does the work and an agent that checks the work. I'm 2xing the compute for every single task."
-
-<div class="tr">一个代理干活，一个代理检查。我给每个任务都投入了双倍的算力。</div>
-
+:::
 
 <figure class="shot"><img src="/images/05/0213.webp" alt="3:33 前后，主代理创建任务并设置依赖后，一次并行启动 6 个 builder 执行 Phase 1；任务列表里 “Validate … Hook” 都标着“blocked by #1/#2…”，要等对应的 builder 完成才解锁。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=4_2j5wgt_ds&t=213s" target="_blank" rel="noopener">3:33</a> · 3:33 前后，主代理创建任务并设置依赖后，一次并行启动 6 个 builder 执行 Phase 1；任务列表里 “Validate … Hook” 都标着“blocked by #1/#2…”，要等对应的 builder 完成才解锁。</figcaption></figure>
 

@@ -1,5 +1,7 @@
 # 14｜I Put Grok Build to the Test：用项目 Skills 约束设计，一次 prompt 生成完整页面
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-practice">🛠️ 主题：真实项目实战与人工把关</a><span class="tool-tag tool-grokbuild">工具：Grok Build</span></div>
+
 <div class="hook">
 
 **一句话看懂**：OrcDev 把自己项目里现成的设计 skills 复制给 Grok Build，再写一份像计划书一样详细的 prompt，2 分 55 秒后得到一个风格和整站一致的新页面。他的结论是：模型是谁不重要，工作流才重要。
@@ -18,9 +20,11 @@
 - [Plan Mode](/glossary#plan-mode)：先出计划再动手的模式。
 :::
 
-> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + xAI 官方 Grok Build 文档 / 发布文（docs.x.ai/build/overview、x.ai/news/grok-build-cli，用于核对功能名称）+ 本次新增的视频画面截图。英文引号内容均为字幕或官方页面原话，中文翻译为本站所加。
+> 信息来源：YouTube 自动字幕全文（yt-dlp 获取）+ 视频简介与章节 + xAI 官方 Grok Build 文档 / 发布文（docs.x.ai/build/overview、x.ai/news/grok-build-cli，用于核对功能名称）+ 本次新增的视频画面截图。英文引号内容均为字幕或官方页面原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="W8wECVc3z6E" title="I Put Grok Build to the Test" />
 
 | 项目 | 内容 |
 |---|---|
@@ -32,8 +36,7 @@
 
 章节：0:00 介绍 → 0:26 价格与安装 → 1:18 功能与命令 → 2:57 构建 UI 项目 → 6:14 结果评审 → 7:56 展望。
 
-
-<figure class="shot"><img src="/images/14/0025.webp" alt="0:25 xAI 的 Grok Build 页面：“Grok Build is in early beta for SuperGrok Heavy subscribers”（Grok Build 目前面向 SuperGrok Heavy 订阅用户提供早期测试），下方是一行安装命令。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=W8wECVc3z6E&t=25s" target="_blank" rel="noopener">0:25</a> · 0:25 xAI 的 Grok Build 页面：“Grok Build is in early beta for SuperGrok Heavy subscribers”（Grok Build 目前面向 SuperGrok Heavy 订阅用户提供早期测试），下方是一行安装命令。</figcaption></figure>
+<figure class="shot"><img src="/images/14/0025.webp" alt="0:25 xAI 的 Grok Build 页面：“Grok Build is in early beta for SuperGrok Heavy subscribers”（Grok Build 目前面向 SuperGrok Heavy 订阅用户提供早期测试），下方是一行安装命令。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=W8wECVc3z6E&t=25s" target="_blank" rel="noopener">0:25</a> · 0:25 xAI 的 Grok Build 页面：<Trans zh="Grok Build 目前面向 SuperGrok Heavy 订阅用户提供早期测试">“Grok Build is in early beta for SuperGrok Heavy subscribers”</Trans>，下方是一行安装命令。</figcaption></figure>
 
 ## 2. 做了什么
 
@@ -51,24 +54,24 @@
 
 讲者把项目已有的 UI skills 复制到 Grok Build 读取的目录：
 
+::: tr 这里能看到 Grok 目录，里面放着我的 web design guidelines（网页设计规范）和 shadcn skill。
 > "here we can see the Grok directory, and here I have web design guidelines and Shed C and skill."
-
-<div class="tr">这里能看到 Grok 目录，里面放着我的 web design guidelines（网页设计规范）和 shadcn skill。</div>
+:::
 
 （字幕里的 “Shed C” 应为 shadcn 的语音识别误差。）xAI 官方发布文写道：
 
+::: tr 你的 AGENTS.md、插件、hooks、skills 和 MCP server 都能开箱即用。
 > "Your AGENTS.md, plugins, hooks, skills, and MCP servers all work out of the box."
-
-<div class="tr">你的 AGENTS.md、插件、hooks、skills 和 MCP server 都能开箱即用。</div>
+:::
 
 
 <figure class="shot"><img src="/images/14/0240.webp" alt="4:00 项目的文件树里同时有 .agents、.claude、.cursor、.grok 等目录，讲者把现成的 skills 复制到了 .grok 下。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=W8wECVc3z6E&t=240s" target="_blank" rel="noopener">4:00</a> · 4:00 项目的文件树里同时有 .agents、.claude、.cursor、.grok 等目录，讲者把现成的 skills 复制到了 .grok 下。</figcaption></figure>
 
 ### 3.2 先写一份计划式的长 prompt
 
+::: tr 做这么大的东西时，我总是先把计划写好。
 > "I'm always planning things up when I'm creating something this big."
-
-<div class="tr">做这么大的东西时，我总是先把计划写好。</div>
+:::
 
 prompt 里包含：页面目标、每张卡片的字段（项目名、成员名、简介、分类徽章等）、筛选、细微的 hover 效果、链接先用 `#` 占位、交互细节。
 
@@ -78,11 +81,11 @@ prompt 里包含：页面目标、每张卡片的字段（项目名、成员名�
 ### 3.3 选好模式，一次执行
 
 - `Shift+Tab` 在默认、plan、always approve 之间切换。讲者选了 always approve（“I'm going like yoloing this”，我就放手赌一把）。
-- 结果：“it's done after 2 minutes and 55 seconds”（2 分 55 秒后完成）。
+- 结果：<Trans zh="2 分 55 秒后完成">“it's done after 2 minutes and 55 seconds”</Trans>。
 
 ### 3.4 评审产物
 
-- 好的地方：自动在导航栏加了入口（prompt 没要求）；文案“not AI-ish at all”（一点都不像 AI 写的）；遵循了项目的设计风格，复用了落地页上的细节；额外加了“本月精选”区块。
+- 好的地方：自动在导航栏加了入口（prompt 没要求）；文案<Trans zh="一点都不像 AI 写的">“not AI-ish at all”</Trans>；遵循了项目的设计风格，复用了落地页上的细节；额外加了“本月精选”区块。
 - 需要改的地方：整张卡片应该都可以点击，而不只是里面的一个 ghost 按钮。
 
 
@@ -103,19 +106,19 @@ graph LR
 
 ### 3.5 讲者的工作流观点
 
+::: tr 用哪个模型并不重要，重要的是你的工作流。
 > "it doesn't matter which model we are using. It matters like your workflow is something that matters"
+:::
 
-<div class="tr">用哪个模型并不重要，重要的是你的工作流。</div>
-
-他还提到 `/model` 可以切换到其他提供商的模型；他试过“three or four different agents working on different tasks”（三四个代理同时做不同的任务），主观感受是协作良好（没有展示细节）。
+他还提到 `/model` 可以切换到其他提供商的模型；他试过<Trans zh="三四个代理同时做不同的任务">“three or four different agents working on different tasks”</Trans>，主观感受是协作良好（没有展示细节）。
 
 ## 4. 结果如何
 
-- **可见结果**：一次 prompt，2 分 55 秒生成完整页面，风格和项目一致，讲者表示“impressed”（印象深刻）。
+- **可见结果**：一次 prompt，2 分 55 秒生成完整页面，风格和项目一致，讲者表示<Trans zh="印象深刻">“impressed”</Trans>。
 
 ::: warning 局限与注意
 - 视频较短，只有一个构建任务；多代理并行只是口头描述，没有演示。
-- 讲者在视频里引用了自己的推文：“Grok build is awesome, but the model is still far from where it where it needs to be”（Grok Build 很棒，但模型离它该有的水平还差得远）。
+- 讲者在视频里引用了自己的推文：<Trans zh="Grok Build 很棒，但模型离它该有的水平还差得远">“Grok build is awesome, but the model is still far from where it where it needs to be”</Trans>。
 - 当时是 early beta，订阅价格较高（讲者提到 $300/月，另有限时优惠）。
 - 没有展示测试、类型检查等验证环节，效果只靠视觉评审。
 :::

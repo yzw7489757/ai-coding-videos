@@ -1,5 +1,7 @@
 # 02｜How the Claude Code team uses Claude Code：Claude Tag、Routines 与“扇出式”代码审查 Workflow
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+
 <div class="hook">
 
 **一句话看懂**：Claude Code 团队三位工程师聊自己怎么用 Claude Code：大部分工作在 Slack 里 @Claude 完成；代码审查交给“先扇出找 bug、再对抗式复核”的自动化流程；人只看架构和边界。
@@ -18,9 +20,11 @@
 - [Harness](/glossary#harness)：包在模型外面、负责工具和上下文的那层程序。
 :::
 
-> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介与章节。字幕未标注说话人，除简介明确的信息外，引用不归属到具体个人。中文翻译为本站所加。
+> 信息来源：YouTube 字幕全文（网页抓取）+ 视频简介与章节。字幕未标注说话人，除简介明确的信息外，引用不归属到具体个人。中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="S-sYlFiGFv8" title="How the Claude Code team uses Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
@@ -46,22 +50,20 @@
 
 **为什么重要**：Slack 里本来就有产品讨论和团队决策。Agent 在那里工作，能自己找到这些上下文，做出的决定更靠谱。
 
-- 字幕原话：“70 to 80% of my work happens on Claude Tag now, and for 20% of the work, I will maybe open up the TUI or the desktop app to like, refine something.”
+- 字幕原话：<Trans zh="我现在 70% 到 80% 的工作都在 Claude Tag 上完成，剩下 20% 可能会打开 TUI 或桌面 App 去精修一些东西。">“70 to 80% of my work happens on Claude Tag now, and for 20% of the work, I will maybe open up the TUI or the desktop app to like, refine something.”</Trans>
 
-<div class="tr">我现在 70% 到 80% 的工作都在 Claude Tag 上完成，剩下 20% 可能会打开 TUI 或桌面 App 去精修一些东西。</div>
-
-- 交互方式也变了：Claude Tag 通过“发送消息”工具和人沟通，内部推理默认看不见（可以点链接看完整 transcript）。讲者坦言起初觉得“a little scary”（有点吓人），但被迫“let Claude cook”（放手让 Claude 干）之后，发现结果足够好。
+- 交互方式也变了：Claude Tag 通过“发送消息”工具和人沟通，内部推理默认看不见（可以点链接看完整 transcript）。讲者坦言起初觉得<Trans zh="有点吓人">“a little scary”</Trans>，但被迫<Trans zh="放手让 Claude 干">“let Claude cook”</Trans>之后，发现结果足够好。
 
 ### 3.2 敢于删掉 harness 里的功能
 
 **为什么重要**：很多功能是给旧模型打的补丁。模型变强后，这些补丁反而成了束缚。
 
-- To-do list 是 Sonnet 3.5 时代加的，用来解决“5 件事做了 3 件就放弃”的问题。一年后，“you don't really need the to do list anymore”（已经不太需要 to-do list 了）。
+- To-do list 是 Sonnet 3.5 时代加的，用来解决“5 件事做了 3 件就放弃”的问题。一年后，<Trans zh="已经不太需要 to-do list 了">“you don't really need the to do list anymore”</Trans>。
 - 原则：模型变强后，把补丁**删掉**，同时为更大的任务补充新工具。
 
 ### 3.3 从 AskUserQuestion 到 HTML Artifact 提问
 
-- 最初把提问放在规划之后，后来改成模型可以随时调用的 AskUserQuestion 工具。讲者说设计这个工具“took me so long”（花了我很长时间）。
+- 最初把提问放在规划之后，后来改成模型可以随时调用的 AskUserQuestion 工具。讲者说设计这个工具<Trans zh="花了我很长时间">“took me so long”</Trans>。
 - 现在更常见的做法是让 Claude **生成一个 HTML artifact 来反问自己**，里面带图表和 mockup。
 
 ### 3.4 从本地到云端：Loops 与 Routines
@@ -72,10 +74,9 @@
 
 routine 示例原话：
 
+::: tr 每天去看我们收到的所有反馈，按重要程度分桶，然后把它有高把握修好的那些修掉。
 > "every day go and look at all the feedback that we're getting and look at, you know, bucket them into buckets of importance and fix the ones that it actually has high confidence in fixing."
-
-<div class="tr">每天去看我们收到的所有反馈，按重要程度分桶，然后把它有高把握修好的那些修掉。</div>
-
+:::
 
 <figure class="shot"><img src="/images/02/0391.webp" alt="6:31 前后：讲者说现在常让 Claude 直接生成一个会“反问你”的 HTML artifact，随后话题转到 loops 与远程运行。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=S-sYlFiGFv8&t=391s" target="_blank" rel="noopener">6:31</a> · 6:31 前后：讲者说现在常让 Claude 直接生成一个会“反问你”的 HTML artifact，随后话题转到 loops 与远程运行。</figcaption></figure>
 
@@ -87,12 +88,12 @@ routine 示例原话：
 
 审查 bot 的做法（字幕原述）：
 
+::: tr 你让 Claude 扇出去找 bug。然后对每个 bug 做一次对抗式复核：让它从三个不同的观点或视角去看这个 bug，判断它是不是真的。
 > "you tell Claude to go out and fan out and find bugs. And then for each bug, you might do an adversarial review where you ask it to look at the bug from three different, you know, opinions or perspectives and see if the bug is actually real."
-
-<div class="tr">你让 Claude 扇出去找 bug。然后对每个 bug 做一次对抗式复核：让它从三个不同的观点或视角去看这个 bug，判断它是不是真的。</div>
+:::
 
 - 讲者把它称作 MapReduce 式的问题，用 test-time compute（推理时多花算力）换置信度。同样的模式也能用在性能问题和深度调研上。
-- **Workflows 的关键**：由 Agent **写代码**来编排子代理。for 循环这类确定性代码保证每一项都被处理，判断交给 LLM。字幕原话：“Claude is actually really good at making its own harnesses”（Claude 其实很擅长给自己搭 harness），它可以自己决定扇出的拓扑。
+- **Workflows 的关键**：由 Agent **写代码**来编排子代理。for 循环这类确定性代码保证每一项都被处理，判断交给 LLM。字幕原话：<Trans zh="Claude 其实很擅长给自己搭 harness">“Claude is actually really good at making its own harnesses”</Trans>，它可以自己决定扇出的拓扑。
 
 
 <figure class="shot"><img src="/images/02/0727.webp" alt="12:07 前后：讲者用“规划去 Tahoe 的旅行”举例，说明扇出（同时发十个搜索）再由其他 Agent 排序筛选的模式。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=S-sYlFiGFv8&t=727s" target="_blank" rel="noopener">12:07</a> · 12:07 前后：讲者用“规划去 Tahoe 的旅行”举例，说明扇出（同时发十个搜索）再由其他 Agent 排序筛选的模式。</figcaption></figure>
@@ -118,13 +119,13 @@ graph TD
 ```
 
 ::: details 深入一点：为什么编排要用代码写？
-讲者在 13:28 前后解释：让 Claude 写一个 for 循环来遍历所有待审项，“it's not going to skip one of the items”（它不会漏掉任何一项）。确定性代码负责“一个都不能少”，LLM 负责“这个 bug 是不是真的”，两者分工后，人对结果更有信心。
+讲者在 13:28 前后解释：让 Claude 写一个 for 循环来遍历所有待审项，<Trans zh="它不会漏掉任何一项">“it's not going to skip one of the items”</Trans>。确定性代码负责“一个都不能少”，LLM 负责“这个 bug 是不是真的”，两者分工后，人对结果更有信心。
 :::
 
 ### 3.6 用 Claude Tag 开发 Claude Tag：验证闭环
 
-- 重点是让开发环境与 dev loop 对 Claude 足够友好，能“do everything that I, as a human need to do to build the software and test that it's working end to end”（做到我作为人类为了构建软件、端到端测试它能用所需要做的一切）。
-- Claude 给 Claude Code 提 PR 时会**自测并发送截图**；有人让它“record itself using the TUI”（录下自己使用 TUI 的过程）来证明。
+- 重点是让开发环境与 dev loop 对 Claude 足够友好，能<Trans zh="做到我作为人类为了构建软件、端到端测试它能用所需要做的一切">“do everything that I, as a human need to do to build the software and test that it's working end to end”</Trans>。
+- Claude 给 Claude Code 提 PR 时会**自测并发送截图**；有人让它<Trans zh="录下自己使用 TUI 的过程">“record itself using the TUI”</Trans>来证明。
 - 新工具的内测流程：Claude Tag 帮忙找相关干系人 → 做 mockup → 实现并埋点 → 内部部署 → **监控事件与反馈**，有人反馈时 tag 作者 → 让 Claude 自己提出漏斗优化方案。
 
 
@@ -137,7 +138,7 @@ graph TD
 
 ::: warning 局限与注意
 - Claude Tag、Workflows 是 Anthropic 内部或新产品形态，外部团队能用到的形式可能不同。
-- 远程容器需要为 Agent 配置开发环境的访问权限，讲者承认“a bit of a pain”（有点麻烦）。
+- 远程容器需要为 Agent 配置开发环境的访问权限，讲者承认<Trans zh="有点麻烦">“a bit of a pain”</Trans>。
 - 不再逐条看 transcript，依赖对模型能力的信任，需要用验证截图 / 录屏来补足信心。
 :::
 

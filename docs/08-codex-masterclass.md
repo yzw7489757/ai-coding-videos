@@ -1,5 +1,7 @@
 # 08｜OpenAI Codex Masterclass：插件、自动化、Code Review 与自定义 Subagents
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-multi-agent">🤝 主题：多代理协作与对抗式验证</a><span class="tool-tag tool-codex">工具：Codex</span></div>
+
 <div class="hook">
 
 **一句话看懂**：两位 OpenAI 开发者体验工程师用一小时现场演示 Codex 怎样从“一个编码助手”变成“一套软件工程系统”：并行 worktree、定时自动化、PR 第一道审查，以及一口气派 20 个只读子代理去审查 45 个配置文件。
@@ -20,9 +22,11 @@
 - [P1 / P2](/glossary#severity)：审查意见的严重度等级。
 :::
 
-> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/MhHEGMFCEB0，含完整时间戳文字稿与配图说明）+ YouTube 视频简介与章节 + 本次新增的视频画面截图。英文引号内容为文字稿或幻灯片原话，中文翻译为本站所加。
+> 信息来源：AI Engineer 官方讲稿页（ai.engineer/talks/MhHEGMFCEB0，含完整时间戳文字稿与配图说明）+ YouTube 视频简介与章节 + 本次新增的视频画面截图。英文引号内容为文字稿或幻灯片原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="MhHEGMFCEB0" title="OpenAI Codex Masterclass" />
 
 | 项目 | 内容 |
 |---|---|
@@ -36,7 +40,7 @@
 
 ## 2. 做了什么
 
-当多个代理同时产出代码，“several agents can produce changes faster than one person can inspect every line”（几个代理产出改动的速度，比一个人逐行检查的速度更快，讲稿页概述）。所以审查、拆分、权限控制也得交给代理体系。
+当多个代理同时产出代码，<Trans zh="几个代理产出改动的速度，比一个人逐行检查的速度更快">“several agents can produce changes faster than one person can inspect every line”</Trans>（讲稿页概述）。所以审查、拆分、权限控制也得交给代理体系。
 
 **目标**：现场演示 Codex 从“单个编码助手”变成“软件工程系统”：并行 worktree、计划任务、第一道代码审查、带不同模型 / 权限 / 工具的自定义子代理。
 
@@ -46,18 +50,17 @@
 
 ### 3.1 并行的基础：worktrees + 自动化
 
-- App 内按项目组织线程。原生 worktree 支持让功能开发、修 bug、排查可以“all at the same time, uh, without really interfering with individual tasks”（同时进行，彼此不干扰）。
+- App 内按项目组织线程。原生 worktree 支持让功能开发、修 bug、排查可以<Trans zh="同时进行，彼此不干扰">“all at the same time, uh, without really interfering with individual tasks”</Trans>。
 - Automations 类似 cron：Katia 演示了每天 9 点的邮件 / Slack 分诊。用对话方式创建自动化时，现场没能可靠地弹出配置框，最后改走手动界面（指令 + 插件 + 所属项目）。
 
 ### 3.2 Plugins = Skills + Apps + MCP
 
 - Game Studio 插件组合了 Playwright Interactive（打开应用、点击、截图分析）和 ImageGen（生成精灵素材）。
-- Google Drive 插件：让 Codex 读取仓库里 YAML 格式的 meetup 记录，写入表格。讲稿页记录为“wrote 57 event rows”（写入了 57 行活动记录）。
+- Google Drive 插件：让 Codex 读取仓库里 YAML 格式的 meetup 记录，写入表格。讲稿页记录为<Trans zh="写入了 57 行活动记录">“wrote 57 event rows”</Trans>。
 
 ::: tip 启示
 去目标系统里核对产物，而不只看代理的“完成”消息。下面的截图里，代理的汇总写了 57 行，你应该打开表格亲自确认。
 :::
-
 
 <div class="shots"><figure class="shot"><img src="/images/08/1394.webp" alt="23:14 前后，Codex 更新 meetup 表格后的汇总：“Wrote 57 event rows plus the existing headers”，按日期和城市排序，耗时 Worked for 2m 57s。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=MhHEGMFCEB0&t=1394s" target="_blank" rel="noopener">23:14</a> · 23:14 前后，Codex 更新 meetup 表格后的汇总：“Wrote 57 event rows plus the existing headers”，按日期和城市排序，耗时 Worked for 2m 57s。</figcaption></figure></div>
 
@@ -65,9 +68,9 @@
 
 **为什么重要**：代码量涨上来之后，人审不过来。先让代理把明显问题筛掉，人再看剩下的。
 
+::: tr OpenAI 所有仓库里、所有员工提交的 PR，百分之百默认都由 Codex code review 审查。
 > "one hundred percent of pull requests across all OpenAI repos, um, made by all employees … are reviewed by Codex code review by default."
-
-<div class="tr">OpenAI 所有仓库里、所有员工提交的 PR，百分之百默认都由 Codex code review 审查。</div>
+:::
 
 - 入口：GitHub 自动 PR 审查（行内意见带 P1 / P2 等严重度）、CLI / App 里的 `/review`、Claude Code 里的 Codex 插件。
 - 演示：审查未提交的改动，独立线程 + 专用的 review system prompt，约一分钟返回 P1 本地化问题、P2 翻译问题；随后可以让 Codex 修复，或者开后续 PR。
@@ -81,12 +84,12 @@
 
 演示任务：仓库里有 40–50 个子代理 persona 文件，规范变更后需要逐个复审。
 
+::: tr 启动 20 个子代理，去审查所有的子代理（配置）。
 > "spin up twenty subagents to review all the subagents."
-
-<div class="tr">启动 20 个子代理，去审查所有的子代理（配置）。</div>
+:::
 
 - 主代理先发现 45 个 persona TOML，规划 20 个审查切片，显示一份五步清单，然后再派发。
-- 本机配置的并发上限是 6：“I have a cap on six num- like, six concurrent agent threads”（我设了上限：最多 6 个并发代理线程），所以先启动 6 个。
+- 本机配置的并发上限是 6：<Trans zh="我设了上限：最多 6 个并发代理线程">“I have a cap on six num- like, six concurrent agent threads”</Trans>，所以先启动 6 个。
 - 每个子代理拿到：角色、要审查的确切文件、指向仓库规范（AGENTS.md 和 skills）的指针。完成后被销毁，结果回到主线程汇总。
 
 
@@ -113,10 +116,11 @@ sequenceDiagram
 ### 3.5 自定义 persona：模型、权限、工具按角色配置
 
 - 内置三种 persona（执行、探索等）；自定义 persona 可以配 model、reasoning effort、sandbox、instructions。
-- 权限原则：“for a review agent, you would almost always 100% want to use the review agent in read-only mode”（审查代理几乎百分之百应该用只读模式）。写文档、写 bug report 的角色才给写权限。
+- 权限原则：<Trans zh="审查代理几乎百分之百应该用只读模式">“for a review agent, you would almost always 100% want to use the review agent in read-only mode”</Trans>。写文档、写 bug report 的角色才给写权限。
 - 工具按角色给：例如给某个子代理 Sentry MCP 看报错，给另一个 Linear 权限看 backlog。
 - VB 的 PR Explorer：用 GPT-5.3-Codex-Spark、只读 sandbox、只追踪代码路径、不提修复。幻灯片上展示的配置原文（45:00 截图）：
 
+::: tr 配置大意：名字叫 pr_explorer，是“在提出改动前收集证据的只读代码库探查员”；用 gpt-5.3-codex-spark 模型、中等推理强度、只读沙箱。给它的指令是：保持探索模式；追踪真实的执行路径，引用具体的文件和符号；除非父代理要求，不要提出修复方案；优先用快速搜索和有针对性的文件读取，而不是大范围扫描。
 ```toml
 name = "pr_explorer"
 description = "Read-only codebase explorer for gathering evidence before changes are proposed."
@@ -129,22 +133,21 @@ Trace the real execution path, cite files and symbols, and avoid proposing fixes
 Prefer fast search and targeted file reads over broad scans.
 """
 ```
-
-<div class="tr">配置大意：名字叫 pr_explorer，是“在提出改动前收集证据的只读代码库探查员”；用 gpt-5.3-codex-spark 模型、中等推理强度、只读沙箱。给它的指令是：保持探索模式；追踪真实的执行路径，引用具体的文件和符号；除非父代理要求，不要提出修复方案；优先用快速搜索和有针对性的文件读取，而不是大范围扫描。</div>
+:::
 
 
 <figure class="shot"><img src="/images/08/2700.webp" alt="45:00 幻灯片“Custom Subagents”：为前端、后端、测试、审查、调研等具体工作创建代理；控制上下文和代理间的交接；并行能提高吞吐量，但每个代理都会额外消耗 token。右侧即上面的 pr_explorer 配置。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=MhHEGMFCEB0&t=2700s" target="_blank" rel="noopener">45:00</a> · 45:00 幻灯片“Custom Subagents”：为前端、后端、测试、审查、调研等具体工作创建代理；控制上下文和代理间的交接；并行能提高吞吐量，但每个代理都会额外消耗 token。右侧即上面的 pr_explorer 配置。</figcaption></figure>
 
-- 讲者最推荐的做法：“just ask Codex to look through my past sessions and recommend me certain automations, certain subagents”（直接让 Codex 翻看我过去的会话，给我推荐该建哪些自动化、哪些子代理）。
+- 讲者最推荐的做法：<Trans zh="直接让 Codex 翻看我过去的会话，给我推荐该建哪些自动化、哪些子代理">“just ask Codex to look through my past sessions and recommend me certain automations, certain subagents”</Trans>。
 
 ### 3.6 Guardian approvals 与 Hooks
 
 - Guardian approvals（实验功能，`/experimental` 开启）：需要特权操作（删目录、起服务、暴露文件）时，另起一个子代理判断是否需要人介入。现场因为全权限模式切换的问题，没能展示完整的判定结果。
 - Hooks：会话开始时拉取最新代码、记录工具调用、**用 stop hook 让长任务继续**：
 
+::: tr 继续，再过一遍，跑一条靠谱的验证命令，再收紧一处，然后停下来给出结果。
 > "keep going, do one more pass, run one, one solid validating command, tighten one more thing, and then stop and give the result."
-
-<div class="tr">继续，再过一遍，跑一条靠谱的验证命令，再收紧一处，然后停下来给出结果。</div>
+:::
 
 ## 4. 结果如何
 

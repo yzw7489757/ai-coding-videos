@@ -1,5 +1,5 @@
 // markdown-it 插件：在构建时把每篇文章里“第一次出现”的术语链接到 /glossary#id。
-// 跳过：标题、引用块（原文引用）、代码块、Mermaid、HTML 块、已有链接内部、英文引号内的原话。
+// 跳过：标题、引用块（原文引用）、::: tr 翻译块、<Trans> 行内原文、代码块、Mermaid、HTML 块、已有链接内部、英文引号内的原话。
 import { terms } from './glossary-data.mjs'
 
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -41,8 +41,8 @@ export function glossaryPlugin(md, opts = {}) {
     let skipDepth = 0
     const collect = opts.collect
     for (const blk of state.tokens) {
-      if (blk.type === 'heading_open' || blk.type === 'blockquote_open') skipDepth++
-      if (blk.type === 'heading_close' || blk.type === 'blockquote_close') skipDepth--
+      if (/^(heading|blockquote|trans)_open$/.test(blk.type)) skipDepth++
+      if (/^(heading|blockquote|trans)_close$/.test(blk.type)) skipDepth--
       if (blk.type !== 'inline' || skipDepth > 0 || !blk.children) continue
       const out = []
       let linkDepth = 0
@@ -51,6 +51,8 @@ export function glossaryPlugin(md, opts = {}) {
         if (tok.type === 'link_close') linkDepth--
         if (tok.type === 'html_inline' && /^<a[\s>]/i.test(tok.content)) linkDepth++
         if (tok.type === 'html_inline' && /^<\/a>/i.test(tok.content)) linkDepth--
+        if (tok.type === 'html_inline' && /^<Trans[\s>]/.test(tok.content)) linkDepth++
+        if (tok.type === 'html_inline' && /^<\/Trans>/.test(tok.content)) linkDepth--
         if (linkDepth > 0) { out.push(tok); continue }
         if (tok.type === 'code_inline' && codeMap.has(tok.content.trim())) {
           const t = codeMap.get(tok.content.trim())

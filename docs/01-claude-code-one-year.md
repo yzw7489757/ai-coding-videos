@@ -1,5 +1,7 @@
 # 01｜Reflecting on a year of Claude Code：验证、Routines、Auto mode 与“上下文极简主义”
 
+<div class="meta-tags"><a class="domain-tag" href="/#domain-automation">⚙️ 主题：后台代理、自动化与 CI/CD</a><span class="tool-tag tool-claude">工具：Claude Code</span></div>
+
 <div class="hook">
 
 **一句话看懂**：Claude Code 的负责人 Boris Cherny 回顾一年：他已经不再“盯着一个 Agent 干活”，而是让 Agent 自己验证、自己被事件触发、自己把教训写进规则文件。
@@ -18,9 +20,11 @@
 - [Worktree](/glossary#worktree)：同一个仓库同时开多个工作目录，方便并行。
 :::
 
-> 信息来源：YouTube 字幕全文（通过网页抓取获得）+ 视频简介与官方章节。文中英文引号内容均为字幕原话，中文翻译为本站所加。
+> 信息来源：YouTube 字幕全文（通过网页抓取获得）+ 视频简介与官方章节。文中英文引号内容均为字幕原话，中文翻译为本站所加（鼠标悬停或点按带虚线的英文即可查看）。
 
 ## 1. 基本信息
+
+<YouTube id="Hth_tLaC2j8" title="Reflecting on a year of Claude Code" />
 
 | 项目 | 内容 |
 |---|---|
@@ -32,7 +36,6 @@
 | 形式 | 对谈 + 经验总结（无现场编码，但给出了大量内部真实用法） |
 
 官方章节：0:00 起源 → 1:10 如何让 Claude 擅长验证 → 4:48 用 Routines 做 CI、Code review → 6:43 Auto mode → 8:10 Auto mode 的红队与评测 → 10:24 Loop → 14:20 管理上百个 Agent → 16:05 从上下文工程到上下文极简主义。
-
 
 <figure class="shot"><img src="/images/01/0045.webp" alt="开场对谈：讲到“一年前刚发布时”和现在“一棵由上千个 Agent 组成的树”的对比。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=Hth_tLaC2j8&t=45s" target="_blank" rel="noopener">0:45</a> · 开场对谈：讲到“一年前刚发布时”和现在“一棵由上千个 Agent 组成的树”的对比。</figcaption></figure>
 
@@ -56,9 +59,9 @@ Claude Code 正式发布（GA）一年后，Anthropic 内部的用法已经变�
 
 Boris 的做法是让纠错“落盘”：
 
+::: tr 每次 Claude 犯错，我都不是告诉它“换个做法”，而是让它把这条写进 CLAUDE.md，或者做成一个 skill 之类的东西，让它以后换个做法。只要能做到这一点，Claude 就可以一直跑下去。
 > "every single time Claude makes a mistake. I don't tell Claude to do it differently, I tell it to write it to the CLAUDE.md, or to like make a skill or or something to do it differently. And if you can do this, then Claude can just like run forever."
-
-<div class="tr">每次 Claude 犯错，我都不是告诉它“换个做法”，而是让它把这条写进 CLAUDE.md，或者做成一个 skill 之类的东西，让它以后换个做法。只要能做到这一点，Claude 就可以一直跑下去。</div>
+:::
 
 做法要点：纠错不停留在当前会话，而是沉淀到持久化的上下文（CLAUDE.md 或 Skill），让下一次、下一个 Agent 自动受益。
 
@@ -66,9 +69,9 @@ Boris 的做法是让纠错“落盘”：
 
 **为什么重要**：很多人以为“验证”就是单元测试和 lint。Boris 认为对 Agent 来说，更关键的是它能否亲手启动产品、亲眼看到结果。
 
+::: tr 一说到验证，大家想到的是单元测试、lint 或类型检查……但对 Agent 来说，验证有点不一样，它指的是：Agent 能不能把这个东西真正跑起来？
 > "whenever we talk about verification, people are thinking like unit tests or they're thinking like lint or like type check… But actually when we talk about verification for agents, it's something slightly different. It's like can the agent run the thing?"
-
-<div class="tr">一说到验证，大家想到的是单元测试、lint 或类型检查……但对 Agent 来说，验证有点不一样，它指的是：Agent 能不能把这个东西真正跑起来？</div>
+:::
 
 字幕里讲到的内部真实例子：
 
@@ -87,15 +90,15 @@ Boris 的做法是让纠错“落盘”：
 字幕中的两个真实 routine：
 
 1. 负责 voice mode 的工程师设置了一个 routine，**监听所有关于 voice mode 的工单、GitHub issue、bug report**，Claude 主动提交修复 PR 并 ping 他。
-2. 另一个 routine **寻找 5 小时内无人响应的 bug report 并提交修复**，“he merges the ones that are easy to verify”（他只合并那些容易验证的）。
+2. 另一个 routine **寻找 5 小时内无人响应的 bug report 并提交修复**，<Trans zh="他只合并那些容易验证的">“he merges the ones that are easy to verify”</Trans>。
 
+::: tr 它把代码审查全包了，每个 PR 都由它看护……以前你得自己修 CI、自己 rebase……我已经很久没干过这些了。
 > "it just does like all the code review, it babysits like every PR… you used to have to like fix CI. You used to have to rebase… I haven't done that in a long time."
-
-<div class="tr">它把代码审查全包了，每个 PR 都由它看护……以前你得自己修 CI、自己 rebase……我已经很久没干过这些了。</div>
+:::
 
 ### 3.4 从 Plan mode 换到 Auto mode
 
-- Boris 说自己**不再用 Plan mode**，而是用 Auto mode：“the newer models they don't actually need like a planning step anymore”（新模型其实已经不需要单独的规划步骤了）。他认为 Opus 4 到 4.5 时代规划步骤很重要，4.6 / 4.7 起不再需要；他也承认有人仍喜欢计划这个产物。
+- Boris 说自己**不再用 Plan mode**，而是用 Auto mode：<Trans zh="新模型其实已经不需要单独的规划步骤了">“the newer models they don't actually need like a planning step anymore”</Trans>。他认为 Opus 4 到 4.5 时代规划步骤很重要，4.6 / 4.7 起不再需要；他也承认有人仍喜欢计划这个产物。
 - Auto mode 的原理：把权限请求**路由给另一个模型做安全分类**，可疑命令直接拒绝，事后可以再手动放行。
 - 安全性论证：人对 99% 都点“是”的权限弹窗会麻木；Auto mode 让人只关注最重要的少数情况。
 - 上线前的做法：收集**数千份完整的 Agent 轨迹和权限请求**让分类器判断；请红队尝试 prompt injection、攻击代码库，并据此**构建 evals**；内部团队再攻击一轮后继续改进。
@@ -105,9 +108,9 @@ Boris 的做法是让纠错“落盘”：
 
 ### 3.5 Loop：从“和 Agent 对话”到“和 Loop 对话”
 
+::: tr 我已经不直接跟 Agent 说话了。我跟 loop 或 routine 说话，再由它们替我去给 Claude 下指令。
 > "I don't talk to an agent anymore. I talk to loop or I talk to a routine and it prompts Claude for me."
-
-<div class="tr">我已经不直接跟 Agent 说话了。我跟 loop 或 routine 说话，再由它们替我去给 Claude 下指令。</div>
+:::
 
 ### 3.6 管理上百个 Agent 的界面演进
 
@@ -118,11 +121,11 @@ Boris 的做法是让纠错“落盘”：
 
 **为什么重要**：上下文给得越多，模型越像被“微操”。新模型自己找信息的能力已经很强。
 
+::: tr 对今天的模型，这些都不用做了。给它尽可能少的系统提示词、尽可能少的工具，然后让模型自己想办法。你只需要给模型某种自己拉取上下文的途径。
 > "with the models of today, you don't do any of this. You give it the minimal possible system prompt, the minimal possible tools, and then you let the model figure it out. Like you just have to give the model some way to pull in the context."
+:::
 
-<div class="tr">对今天的模型，这些都不用做了。给它尽可能少的系统提示词、尽可能少的工具，然后让模型自己想办法。你只需要给模型某种自己拉取上下文的途径。</div>
-
-另一位讲者补充：“I'm a context minimalist… tell the model only what it needs to know and let it figure out the rest of it”（我是上下文极简主义者……只告诉模型它必须知道的，剩下的让它自己搞清楚）。并认为上下文给多了“kind of like you're micromanaging it”（有点像在微操它）。团队也在让 harness 更精简，给用户自己的 prompt 留出空间。
+另一位讲者补充：<Trans zh="我是上下文极简主义者……只告诉模型它必须知道的，剩下的让它自己搞清楚">“I'm a context minimalist… tell the model only what it needs to know and let it figure out the rest of it”</Trans>。并认为上下文给多了<Trans zh="有点像在微操它">“kind of like you're micromanaging it”</Trans>。团队也在让 harness 更精简，给用户自己的 prompt 留出空间。
 
 
 <figure class="shot"><img src="/images/01/0951.webp" alt="15:51 前后，对谈讲到用手机远程控制 Agent、“在沙发上提交 PR”；紧接着进入“上下文极简主义”话题。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=Hth_tLaC2j8&t=951s" target="_blank" rel="noopener">15:51</a> · 15:51 前后，对谈讲到用手机远程控制 Agent、“在沙发上提交 PR”；紧接着进入“上下文极简主义”话题。</figcaption></figure>
@@ -146,7 +149,7 @@ flowchart TD
 
 ## 4. 结果如何
 
-- **定性结果**（视频陈述，无量化指标）：Boris 称自己已在运行由 Agent 层层派发的“tree of like thousands of agents”（一棵由上千个 Agent 组成的树）；代码审查、盯 PR、修 CI、rebase 基本交给 routine；设计师、PM、财务、数据科学都在用 Claude Code。
+- **定性结果**（视频陈述，无量化指标）：Boris 称自己已在运行由 Agent 层层派发的<Trans zh="一棵由上千个 Agent 组成的树">“tree of like thousands of agents”</Trans>；代码审查、盯 PR、修 CI、rebase 基本交给 routine；设计师、PM、财务、数据科学都在用 Claude Code。
 - **未给出**：合并率、缺陷率、成本等数据。视频没有任何数字型效果指标，“thousands”只是口头描述。
 
 ::: warning 局限与注意
