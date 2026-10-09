@@ -15,6 +15,11 @@
       "source": "/guide/multi-agent",
       "destination": "/guide/execution",
       "permanent": true
+    },
+    {
+      "source": "/templates",
+      "destination": "/patterns",
+      "permanent": true
     }
   ]
 }

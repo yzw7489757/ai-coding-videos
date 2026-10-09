@@ -3,6 +3,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 import { glossaryPlugin } from './glossary-plugin.mjs'
 import { trPlugin } from './tr-plugin.mjs'
 import { xrefPlugin } from './xref-plugin.mjs'
+import { ratingPlugin } from './rating-plugin.mjs'
 import { domains, stageLabel } from './domains.mjs'
 
 export default withMermaid(
@@ -18,7 +19,6 @@ export default withMermaid(
       nav: [
         { text: '学习路径', link: '/paths' },
         { text: '模式库', link: '/patterns' },
-        { text: '配置模板', link: '/templates' },
         { text: '术语表', link: '/glossary' },
         { text: '更新日志', link: '/changelog' }
       ],
@@ -57,6 +57,7 @@ export default withMermaid(
         md.use(xrefPlugin)
         md.use(trPlugin)
         md.use(glossaryPlugin)
+        md.use(ratingPlugin)
       }
     },
     mermaid: {},

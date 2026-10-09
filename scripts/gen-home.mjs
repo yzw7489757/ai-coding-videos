@@ -3,6 +3,9 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { domains, toolTag, typeTag, allItems, stageLabel } from '../docs/.vitepress/domains.mjs'
+import { ratings, fmtScore } from '../docs/.vitepress/ratings.mjs'
+
+const scoreCell = (n) => { const o = ratings[n].overall[0]; return `<span class="rating-stars" style="--r:${o}" role="img" aria-label="${fmtScore(o)} / 5"></span> **${fmtScore(o)}**` }
 const out = path.join(path.dirname(fileURLToPath(import.meta.url)), '../docs/index.md')
 const all = allItems(), total = all.length
 const lastAdded = all.map(i=>i.added).filter(Boolean).sort().at(-1)
@@ -13,7 +16,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: ${total} 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的六个阶段组织，配阶段指南、模式库和配置模板。小白友好，术语可一键查。
+  tagline: ${total} 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的六个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -57,7 +60,7 @@ const body = `
 |---|---|---|
 | 单篇资料 | 每份视频 / 文章一篇拆解，固定 5 节：基本信息、做了什么、怎么做的、结果如何、可借鉴之处 | 左侧边栏，或[全部资料](/all) |
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
-| 工具页面 | [学习路径](/paths)、[模式库](/patterns)（20 个做法）、[配置模板库](/templates)（13 段原文配置）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
+| 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
 整理开始于 2026-10-08，最近一次更新：${lastAdded}（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
@@ -70,9 +73,11 @@ const body = `
 
 ## 🆕 最近收录（${lastAdded}，${recent.length} 份）
 
-| # | 资料 | 阶段 | 类型 / 工具 |
-|---|---|---|---|
-${recent.map(i=>`| ${i.n} | [${i.text}](/${i.slug}) | [${stageLabel(i.domain)}](/guide/${i.domain.id}) | ${typeTag(i.type)} ${toolTag(i.tool)} |`).join('\n')}
+| # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
+|---|---|---|---|---|
+${recent.map(i=>`| ${i.n} | [${i.text}](/${i.slug}) | [${stageLabel(i.domain)}](/guide/${i.domain.id}) | ${typeTag(i.type)} ${toolTag(i.tool)} | ${scoreCell(i.n)} |`).join('\n')}
+
+综合评分（1–5）兼顾内容质量和来源可信度；每篇的实用性、深度评分和理由见文章顶部，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
@@ -85,7 +90,7 @@ ${mm.join('\n')}
 ## 不知道从哪开始？
 
 - **完全新手**：走[🌱 新手路径](/paths#beginner)，第一篇读 [#27 Mitchell Hashimoto 的六步路线](/27-mitchellh-ai-adoption-journey)。
-- **想马上抄作业**：去[🧩 模式库](/patterns)和[🧾 配置模板库](/templates)。
+- **想马上抄作业**：去[🧩 模式库](/patterns)，每个做法都链接到原文小节，配置和提示词原文就在文章里。
 - **想看全貌**：读[总结与最佳实践](/00-summary)，或打开[📚 全部资料](/all)按阶段浏览。
 
 ::: info 资料来源与可信度

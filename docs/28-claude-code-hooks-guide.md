@@ -9,7 +9,7 @@
 </div>
 
 ::: info 为什么值得看
-本站多篇文章都提到“用 hook 把规范变成确定性检查”：HumanLayer 建议用 Stop hook 跑 linter（[[20§3.6]]），官方 Ralph 插件靠 hook 反复注入提示词（[[24§3.4]]），Codex 也有 hooks（[[08§3.6]]），但之前没有一篇给出**可以逐字照抄的配置**。这篇官方文档补上了这个缺口，它的示例也已收进[配置模板库](/templates#t14)。文末附上 Google 官方博客里 Gemini CLI hooks 的写法作对照，两者的设计几乎一样。
+本站多篇文章都提到“用 hook 把规范变成确定性检查”：HumanLayer 建议用 Stop hook 跑 linter（[[20§3.6]]），官方 Ralph 插件靠 hook 反复注入提示词（[[24§3.4]]），Codex 也有 hooks（[[08§3.6]]），但之前没有一篇给出**可以逐字照抄的配置**。这篇官方文档补上了这个缺口，下文第 3 节逐字给出了它的示例配置。文末附上 Google 官方博客里 Gemini CLI hooks 的写法作对照，两者的设计几乎一样。
 :::
 
 ::: tip 小白先懂这几个词
@@ -267,6 +267,36 @@ Google 在 2026 年 1 月给 Gemini CLI 加上了几乎同样的机制，把 hoo
     ]
   }
 }
+```
+:::
+
+对应的脚本保存为 `.gemini/hooks/block-secrets.sh`，博客原文如下。注意它用 JSON 里的 `"decision": "deny"` 表达拒绝，退出码仍是 0；正则只是示例，覆盖不了所有密钥格式。
+
+::: tr block-secrets.sh：从 stdin 读取 hook 输入，用 jq 取出要写入的内容；匹配到常见密钥模式就返回结构化的拒绝（deny），否则放行（allow）。
+```bash
+#!/usr/bin/env bash
+# Read hook input from stdin
+input=$(cat)
+
+# Extract content being written using jq
+content=$(echo "$input" | jq -r '.tool_input.content // .tool_input.new_string // ""')
+
+# Check for common secret patterns
+if echo "$content" | grep -qE 'api[_-]?key|password|secret|AKIA[0-9A-Z]{16}'; then
+  # Return structured denial to the agent
+  cat <<EOF
+{
+  "decision": "deny",
+  "reason": "Security Policy: Potential secret detected in content.",
+  "systemMessage": "Security scanner blocked operation"
+}
+EOF
+  exit 0
+fi
+
+# Allow the operation
+echo '{"decision": "allow"}'
+exit 0
 ```
 :::
 

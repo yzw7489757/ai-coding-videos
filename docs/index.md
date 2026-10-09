@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 36 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的六个阶段组织，配阶段指南、模式库和配置模板。小白友好，术语可一键查。
+  tagline: 36 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的六个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -61,7 +61,7 @@ features:
 |---|---|---|
 | 单篇资料 | 每份视频 / 文章一篇拆解，固定 5 节：基本信息、做了什么、怎么做的、结果如何、可借鉴之处 | 左侧边栏，或[全部资料](/all) |
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
-| 工具页面 | [学习路径](/paths)、[模式库](/patterns)（20 个做法）、[配置模板库](/templates)（13 段原文配置）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
+| 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
 整理开始于 2026-10-08，最近一次更新：2026-10-09（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
@@ -74,29 +74,31 @@ features:
 
 ## 🆕 最近收录（2026-10-09，21 份）
 
-| # | 资料 | 阶段 | 类型 / 工具 |
-|---|---|---|---|
-| 16 | [Planner / Generator / Evaluator 长时 harness](/16-anthropic-harness-design-long-running-apps) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 17 | [16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 18 | [数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> |
-| 19 | [Agent Evals 入门](/19-anthropic-demystifying-agent-evals) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 20 | [CLAUDE.md 怎么写：少即是多](/20-humanlayer-writing-good-claude-md) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 21 | [别造代理，写 Skills](/21-anthropic-agent-skills-talk) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 22 | [CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span> |
-| 23 | [5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 24 | [Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 25 | [测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 26 | [让代码库为代理做好准备](/26-factory-agent-ready-codebases) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 27 | [从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
-| 28 | [Hooks：让规则一定会执行](/28-claude-code-hooks-guide) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-claude">Claude Code</span> |
-| 29 | [Conductor：把计划写进仓库](/29-gemini-cli-conductor) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span> |
-| 30 | [大型重构拆给并行代理](/30-openhands-parallel-refactors) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span> |
-| 31 | [AI 代码审查：精确率优先](/31-openai-verifying-code-at-scale) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> |
-| 32 | [Devin 用 Computer Use 自测](/32-cognition-verifying-agentic-development) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span> |
-| 33 | [Bugbot：用解决率迭代审查机器人](/33-cursor-building-bugbot) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> |
-| 34 | [Grok Build 跑进脚本和 CI](/34-grok-build-headless-hooks) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-grokbuild">Grok Build</span> |
-| 35 | [Amp 的专长子代理架构](/35-amp-next-generation-ai-coding) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-amp">Amp</span> |
-| 36 | [用代码调用 MCP 省上下文](/36-anthropic-code-execution-with-mcp) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> |
+| # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
+|---|---|---|---|---|
+| 16 | [Planner / Generator / Evaluator 长时 harness](/16-anthropic-harness-design-long-running-apps) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:5" role="img" aria-label="5.0 / 5"></span> **5.0** |
+| 17 | [16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:5" role="img" aria-label="5.0 / 5"></span> **5.0** |
+| 18 | [数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+| 19 | [Agent Evals 入门](/19-anthropic-demystifying-agent-evals) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" role="img" aria-label="4.5 / 5"></span> **4.5** |
+| 20 | [CLAUDE.md 怎么写：少即是多](/20-humanlayer-writing-good-claude-md) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4.5" role="img" aria-label="4.5 / 5"></span> **4.5** |
+| 21 | [别造代理，写 Skills](/21-anthropic-agent-skills-talk) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+| 22 | [CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" role="img" aria-label="4.5 / 5"></span> **4.5** |
+| 23 | [5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 24 | [Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 25 | [测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" role="img" aria-label="4.5 / 5"></span> **4.5** |
+| 26 | [让代码库为代理做好准备](/26-factory-agent-ready-codebases) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 27 | [从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+| 28 | [Hooks：让规则一定会执行](/28-claude-code-hooks-guide) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4.5" role="img" aria-label="4.5 / 5"></span> **4.5** |
+| 29 | [Conductor：把计划写进仓库](/29-gemini-cli-conductor) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 30 | [大型重构拆给并行代理](/30-openhands-parallel-refactors) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 31 | [AI 代码审查：精确率优先](/31-openai-verifying-code-at-scale) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+| 32 | [Devin 用 Computer Use 自测](/32-cognition-verifying-agentic-development) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span> | <span class="rating-stars" style="--r:3" role="img" aria-label="3.0 / 5"></span> **3.0** |
+| 33 | [Bugbot：用解决率迭代审查机器人](/33-cursor-building-bugbot) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+| 34 | [Grok Build 跑进脚本和 CI](/34-grok-build-headless-hooks) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-grokbuild">Grok Build</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 35 | [Amp 的专长子代理架构](/35-amp-next-generation-ai-coding) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-video">视频</span> <span class="tool-tag tool-amp">Amp</span> | <span class="rating-stars" style="--r:3.5" role="img" aria-label="3.5 / 5"></span> **3.5** |
+| 36 | [用代码调用 MCP 省上下文](/36-anthropic-code-execution-with-mcp) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" role="img" aria-label="4.0 / 5"></span> **4.0** |
+
+综合评分（1–5）兼顾内容质量和来源可信度；每篇的实用性、深度评分和理由见文章顶部，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
@@ -201,7 +203,7 @@ flowchart LR
 ## 不知道从哪开始？
 
 - **完全新手**：走[🌱 新手路径](/paths#beginner)，第一篇读 [#27 Mitchell Hashimoto 的六步路线](/27-mitchellh-ai-adoption-journey)。
-- **想马上抄作业**：去[🧩 模式库](/patterns)和[🧾 配置模板库](/templates)。
+- **想马上抄作业**：去[🧩 模式库](/patterns)，每个做法都链接到原文小节，配置和提示词原文就在文章里。
 - **想看全貌**：读[总结与最佳实践](/00-summary)，或打开[📚 全部资料](/all)按阶段浏览。
 
 ::: info 资料来源与可信度
