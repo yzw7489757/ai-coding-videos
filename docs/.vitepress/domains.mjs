@@ -38,7 +38,8 @@ export const domains = [
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video' },
       { n: '26', slug: '26-factory-agent-ready-codebases', text: '让代码库为代理做好准备', short: '8 根验证支柱', tool: 'general', type: 'video', added: '2026-10-09' },
       { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video' },
-      { n: '28', slug: '28-claude-code-hooks-guide', text: 'Hooks：让规则一定会执行', short: 'Hooks 确定性规则', tool: 'claude', type: 'docs', added: '2026-10-09' }
+      { n: '28', slug: '28-claude-code-hooks-guide', text: 'Hooks：让规则一定会执行', short: 'Hooks 确定性规则', tool: 'claude', type: 'docs', added: '2026-10-09' },
+      { n: '37', slug: '37-cursor-cloud-agent-environment', text: '把开发环境做成给代理用的产品', short: '代理用的开发环境', tool: 'cursor', type: 'article', added: '2026-10-12' }
     ]
   },
   {
@@ -87,7 +88,8 @@ export const domains = [
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video' },
       { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09' },
       { n: '31', slug: '31-openai-verifying-code-at-scale', text: 'AI 代码审查：精确率优先', short: '审查精确率优先', tool: 'codex', type: 'article', added: '2026-10-09' },
-      { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09' }
+      { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09' },
+      { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12' }
     ]
   },
   {
@@ -103,7 +105,8 @@ export const domains = [
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video' },
       { n: '22', slug: '22-openai-codex-ci-autofix', text: 'CI 挂了让 Codex 自动修', short: 'codex exec 修 CI', tool: 'codex', type: 'docs', added: '2026-10-09' },
       { n: '33', slug: '33-cursor-building-bugbot', text: 'Bugbot：用解决率迭代审查机器人', short: 'Bugbot 解决率', tool: 'cursor', type: 'article', added: '2026-10-09' },
-      { n: '34', slug: '34-grok-build-headless-hooks', text: 'Grok Build 跑进脚本和 CI', short: 'Grok Build 无人值守', tool: 'grokbuild', type: 'docs', added: '2026-10-09' }
+      { n: '34', slug: '34-grok-build-headless-hooks', text: 'Grok Build 跑进脚本和 CI', short: 'Grok Build 无人值守', tool: 'grokbuild', type: 'docs', added: '2026-10-09' },
+      { n: '40', slug: '40-cursor-cloud-agent-lessons', text: '云端代理一年的四条教训', short: '云端代理运行层', tool: 'cursor', type: 'article', added: '2026-10-12' }
     ]
   },
   {
@@ -118,7 +121,8 @@ export const domains = [
       { n: '24', slug: '24-huntley-horthy-ralph-loop', text: 'Ralph 循环：为什么每轮重开', short: 'Ralph 循环', tool: 'claude', type: 'video', added: '2026-10-09' },
       { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09' },
       { n: '35', slug: '35-amp-next-generation-ai-coding', text: 'Amp 的专长子代理架构', short: 'Amp 专长子代理', tool: 'amp', type: 'video', added: '2026-10-09' },
-      { n: '36', slug: '36-anthropic-code-execution-with-mcp', text: '用代码调用 MCP 省上下文', short: '代码调用 MCP', tool: 'general', type: 'article', added: '2026-10-09' }
+      { n: '36', slug: '36-anthropic-code-execution-with-mcp', text: '用代码调用 MCP 省上下文', short: '代码调用 MCP', tool: 'general', type: 'article', added: '2026-10-09' },
+      { n: '38', slug: '38-cursor-self-driving-codebases', text: '多代理 harness 的五次改版', short: '递归 Planner 加 handoff', tool: 'cursor', type: 'article', added: '2026-10-12' }
     ]
   }
 ]

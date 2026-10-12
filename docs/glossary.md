@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **144** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **150** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -21,15 +21,15 @@ outline: [2, 2]
 
 **给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent)
 
-**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding)
+**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff)
 
-**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open)
+**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution)
 
 **软件工程基础词**：[CI/CD](#ci-cd) · [PR](#pr) · [Code Review](#code-review) · [P0 / P1 / P2](#severity) · [Lint / Linter](#lint) · [Type Check](#type-check) · [Fixture / Invariant / Probe](#fixture) · [Happy Path](#happy-path) · [Flaky Test](#flaky-test) · [Monorepo](#monorepo) · [Brownfield / Greenfield](#brownfield) · [Slop](#slop) · [Deploy Preview](#deploy-preview) · [PR Babysitting](#babysitting) · [Dry Run](#dry-run) · [Evals / 红队](#evals) · [Benchmark](#benchmark) · [Codemod](#codemod)
 
 **工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot)
 
-**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing)
+**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping)
 
 ## 一、核心概念：代理、上下文与 Token
 
@@ -445,6 +445,12 @@ Mitchell Hashimoto 六步中的第四步：每天早上从前一晚的分诊结�
 
 #30 中 OpenHands 把前端从 Redux 迁到 Zustand 时，先让代理搭一层能同时用两者的兼容代码，每迁完一个组件就能测试应用，最后拆掉脚手架。
 
+### Handoff（交接报告） {#handoff}
+
+**白话**：执行任务的代理做完后交给上级的总结：做了什么，以及发现、担忧和偏离计划之处。
+
+Cursor 多代理 harness 的最终设计里，Worker 做完写一份 handoff，系统把它作为后续消息交给派任务的 Planner，信息就一层层传上去，不需要全局同步（#38）。
+
 ## 四、运行方式、权限与安全
 
 ### Auto Mode（自动模式） {#auto-mode}
@@ -469,7 +475,7 @@ Codex 在 macOS 用 Seatbelt、Linux 用 Bubblewrap（#09）。超出沙箱的�
 
 **白话**：Codex 中遇到越权操作时，另起一个只读子代理判断“用户是否真的授权了这件事”。
 
-#09 讲解：审查子代理拿到对话记录和待执行命令，分别评估授权程度和影响；它不能再派生子代理，只有读权限。讲者也说这是降低风险的手段，不是绝对安全保证。
+#09 讲解：审查子代理拿到对话记录和待执行命令，分别评估授权程度和影响；它不能再派生子代理，只有读权限。讲者也说这是降低风险的手段，不是绝对安全保证。Cursor 的 Auto-review 思路相同：小模型分类器在工具调用前结合上下文判断风险，拦截时把理由还给主代理（#39）。
 
 ### Headless Mode（无界面模式） {#headless}
 
@@ -493,7 +499,7 @@ Codex 在 macOS 用 Seatbelt、Linux 用 Bubblewrap（#09）。超出沙箱的�
 
 **白话**：在远程容器里持续运行的代理，你关掉电脑它也在干活。
 
-#02 的演进路径：本地 → 远程开发机 → 托管容器（Claude Code on the web）→ routines。Codex 也有云端任务。
+#02 的演进路径：本地 → 远程开发机 → 托管容器（Claude Code on the web）→ routines。Codex 也有云端任务。Cursor 的 Cloud Agents 每个代理一台虚拟机，环境怎么搭见 #37，基础设施经验见 #40。
 
 ### Routines / Automations（定时 / 事件触发任务） {#routines}
 
@@ -572,6 +578,30 @@ Cole Medin 的做法：`assign-port.ts` 对 worktree 目录路径做 md5 哈希�
 **白话**：检查程序自己出错（超时、崩溃）时，默认放行而不是拦截。
 
 #34 Grok Build 的 hooks 是故障放行的：只有明确返回 deny 或退出码 2 才会拦截。安全相关的检查要保持快速，并考虑在 CI 或沙箱层再加一道。
+
+### Risk Classifier Agent（风险分类器代理） {#risk-classifier}
+
+**白话**：在代理执行工具调用前，判断这一步是否符合用户意图、风险多大的小模型代理。
+
+Cursor Auto-review 的核心（#39）：小模型、可读文件和 Grep，跑在主代理同一个 RPC 流里；拦截时把理由返回主代理，让它换更安全的做法，而不是直接弹窗问人。
+
+### Secret Redaction（密钥脱敏） {#secret-redaction}
+
+**白话**：把工具输出里的密钥值遮掉，代理即使主动去读也看不到。
+
+Cursor 云端代理的安全功能之一，和出站网络限制、范围受限的 git 访问、提交里的密钥扫描一起，让用户敢把密钥放进代理环境（#37、#40）。
+
+### Egress Control（出站网络限制） {#egress-control}
+
+**白话**：限制代理所在环境能访问哪些外部网络地址。
+
+云端代理需要联网开 PR、拉依赖、做调研，但不能随便访问任何地址。Cursor 把这类网络策略、密钥脱敏和凭据管理称为“给代理用的企业 IT”（#40）。
+
+### Durable Execution（持久化执行）/ Temporal {#durable-execution}
+
+**白话**：把长任务每一步的状态持久保存，机器或服务故障后能从断点继续，而不是从头再来。
+
+Temporal 是常用的持久化执行框架，提供重试、跨机器调度和节点故障下的持久性。Cursor 把云端代理循环从自建的 work-stealing 架构迁到 Temporal 后，可靠性从“一个 9”提到“两个 9”以上（#40）。
 
 ## 五、软件工程基础词
 
@@ -908,4 +938,10 @@ Eno Reyes 用它解释为什么要先投资验证：只要能自动验证，代�
 **白话**：有了可靠指标后，每次做小改动并用指标检验，变好就保留、变差就撤回。
 
 #33 Cursor 用解决率（线上）和 BugBench（线下）给 Bugbot 爬山，发现很多看似合理的改动其实让指标变差。
+
+### Flapping（结果翻转） {#flapping}
+
+**白话**：同一个用例重复跑，结果时而通过时而失败，说明判断标准没写清楚。
+
+Cursor 评测 Auto-review 分类器时，同一用例“放行六次、拦截四次”，通常意味着策略或提示词不够明确；重复运行就是为了把这类用例找出来（#39）。和 flaky test 类似，但原因多在提示词而不是环境。
 

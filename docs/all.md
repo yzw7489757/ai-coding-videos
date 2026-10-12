@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 36 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 40 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -65,6 +65,13 @@
   - 作者 / 来源：Anthropic ／ Claude Code 官方文档 ｜ 发布：持续更新（抓取于 2026-10-09） ｜ 工具：Claude Code hooks（`settings.json`、`/hooks`）；对照 Gemini CLI hooks（Google Developers Blog，2026-01-28）
   - 看点：PostToolUse 自动格式化、PreToolUse + 退出码 2 拦截敏感文件、压缩后重新注入约定、Stop prompt / agent hook；PreToolUse 的 deny 在跳过权限模式下仍生效。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/28-claude-code-hooks-guide)
+
+### 把开发环境做成给代理用的产品 {#item-37}
+
+- **[How we set up our cloud agent environment](https://cursor.com/blog/cloud-agent-environment)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Mathew Hogan、Arvind Saripalli ／ Cursor 博客 ｜ 发布：2026-07-30 ｜ 工具：Cursor Cloud Agents、anydev、Cursor Cloud MCP、Cloud Doctor
+  - 看点：开发环境是用户为代理的产品；Skills 救不了太绕的命令，用统一 CLI `anydev` + supervisor 收起来；Cloud MCP 让代理自查环境，Cloud Doctor 读 trace 自动修；云端代理写的合并 PR 从约十分之一涨到一半以上。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/37-cursor-cloud-agent-environment)
 
 ## 做规划 · 需求澄清与任务拆解 {#domain-planning}
 
@@ -217,6 +224,13 @@
   - 看点：异步触发的会话已超过交互式；测试计划基于源码；操作前先写预期；登录写成确定性脚本放进测试技能；交回截图报告和分章节录屏。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/32-cognition-verifying-agentic-development)
 
+### Auto-review：分类器与评测 {#item-39}
+
+- **[Governing agent autonomy with Auto-review](https://cursor.com/blog/agent-autonomy-auto-review)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：David Gomes、Travis McPeak ／ Cursor 博客 ｜ 发布：2026-06-11 ｜ 工具：Cursor 桌面应用本地代理、Auto-review
+  - 看点：审批太多也不安全；小模型分类器结合用户意图判断风险，拦截时把理由还给主代理；评测：12 小时会话 → 6,122 条标注 + 合成用例，跑生产同一链路，重复跑找翻转；拦截约 4%，约 7% 对话被打断。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/39-cursor-auto-review-classifier)
+
 ## 自动化 · 后台代理与 CI/CD {#domain-automation}
 
 **这一组放什么**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
@@ -265,6 +279,13 @@
   - 看点：`grok -p` + JSON 输出；兼容 Claude Code / Cursor 的 hook 文件，PreToolUse 是唯一能拦截的事件，出错时故障放行；`/loop` 定时任务；`grok -w` worktree。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/34-grok-build-headless-hooks)
 
+### 云端代理一年的四条教训 {#item-40}
+
+- **[What we’ve learned building cloud agents](https://cursor.com/blog/cloud-agent-lessons)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Josh Ma ／ Cursor 博客 ｜ 发布：2026-06-02 ｜ 工具：Cursor Cloud Agents、Temporal、CI Autofix
+  - 看点：完整开发环境是输出质量的最大因素，缺了往往只表现为质量下降；从 work-stealing 迁到 Temporal，可靠性从一个 9 到两个 9 以上；代理循环、机器、对话状态解耦；模型变强后把 harness 逻辑搬进工具。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/40-cursor-cloud-agent-lessons)
+
 ## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
@@ -306,11 +327,18 @@
   - 看点：工具定义和中间结果都在吃上下文；把 MCP 服务器包装成文件树里的代码 API，按需加载，示例 token 从 150,000 降到 2,000；渐进披露、结果过滤、隐私脱敏、沉淀成技能；代价是沙箱。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/36-anthropic-code-execution-with-mcp)
 
+### 多代理 harness 的五次改版 {#item-38}
+
+- **[Towards self-driving codebases](https://cursor.com/blog/self-driving-codebases)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Wilson Lin ／ Cursor 博客 ｜ 发布：2026-02-05 ｜ 工具：Cursor 自研 Rust 多代理 harness
+  - 看点：#18 的续篇：锁 → Planner/Executor/Judge → 持续执行者（角色太多崩溃）→ 递归 Planner + Worker 交接报告；峰值约每小时 1,000 次提交；接受小而稳定的错误率；约束优于指令、给数字范围。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/38-cursor-self-driving-codebases)
+
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段：打地基 6 篇（#20、#21、#14、#26、#07、#28）；做规划 5 篇（#03、#06、#04、#13、#29）；去执行 8 篇（#27、#11、#05、#08、#23、#17、#18、#30）；做验证 6 篇（#25、#12、#15、#19、#31、#32）；自动化 6 篇（#01、#02、#10、#22、#33、#34）；看原理 5 篇（#09、#24、#16、#35、#36）。“去执行”已到 8 篇，下一批新增前需要检查归类是否偏了。
+按阶段：打地基 7 篇（#20、#21、#14、#26、#07、#28、#37）；做规划 5 篇（#03、#06、#04、#13、#29）；去执行 8 篇（#27、#11、#05、#08、#23、#17、#18、#30）；做验证 7 篇（#25、#12、#15、#19、#31、#32、#39）；自动化 7 篇（#01、#02、#10、#22、#33、#34、#40）；看原理 6 篇（#09、#24、#16、#35、#36、#38）。“去执行”仍是 8 篇：2026-10-12 按 AGENTS.md 第 5.1 节检查后，把 #18 的续篇 #38 放进“看原理”，因为它的主要贡献是解释多代理 harness 每一版为什么失败、为什么最终这样设计；它和 #18 在两个阶段指南里互相引用。
 
-按类型：视频 21 篇；文章 11 篇（#16–#20、#27、#29、#31、#32、#33、#36）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
+按类型：视频 21 篇；文章 15 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#40）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
 
 按工具：
 
@@ -319,7 +347,7 @@
 | Claude Code | 13 | #01–#06、#16、#17、#20、#21、#23、#24、#28 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
 | Codex | 7 | #07–#11、#22、#31 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
 | Grok（Grok Build / Cursor + Grok 4.5） | 5 | #12–#15、#34 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
-| Cursor | 2 | #18、#33 | 公司研究博客 |
+| Cursor | 6 | #18、#33、#37–#40 | 公司研究博客；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39） |
 | Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
 | OpenHands | 1 | #30 | 大会研讨会 |
 | Devin | 1 | #32 | Cognition 官方博客 |
@@ -334,7 +362,8 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
-- 2026-10-09 第二批**仍未覆盖**：Aider（没有找到近 12 个月内够分量的一手资料）；“把 agent evals 接进 CI”的专门资料（评测方法见 #19，但没有可靠的端到端 CI 配置示例）；Cursor 后台代理（Background / Cloud Agents）的专门资料（#33 只提到 Autofix 会启动云端代理）。
+- 2026-10-12 第三批补上了 Cursor 云端代理的专门资料（#37、#40），以及一个把评测接进生产链路的案例（#39，但它评测的是权限分类器，不是 CI 里的代码评测）。**仍未覆盖**：Aider；“把 agent evals 接进 CI”的端到端配置示例；xAI 官方的 Grok 工程博客或大会演讲。
+- Cursor 已有 6 篇，全部来自 Cursor 自己的博客，结论请视为该厂商的经验；#37 和 #40 的 PR 占比（一半以上 vs 超过 40%）是不同时间点的数据。
 - 第二批考虑过但未收录：Google Cloud Tech 的 Gemini CLI 直播《Making a list {and checking it twice}: The Gemini CLI workflow》（https://www.youtube.com/watch?v=4U3nfVxlwlM，1 小时直播，内容与 #29 重叠）。
 - 时效：#04、#20、#21、#26 发布于 2025 年 11–12 月，#22（持续更新的文档）与 #25（连载指南）以 2026-10-09 抓取的版本为准，其余均为 2026 年发布。
 - 按要求排除了以漏洞挖掘 / 攻防安全为主题的资料，只保留软件开发工作流。
