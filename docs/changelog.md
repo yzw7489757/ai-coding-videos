@@ -2,6 +2,32 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-13 · 第四批：新增 6 份资料，首次收录 Aider
+
+**新增资料（#41–#46）**
+
+| # | 资料 | 阶段 | 类型 | 工具 |
+|---|---|---|---|---|
+| 41 | [定时代理自动化的六条规则](/41-anthropic-agent-automations) | [自动化](/guide/automation) | 文章 | Claude Code（Claude Managed Agents） |
+| 42 | [Codex 应用实战：从上下文到自动化](/42-openai-cooking-with-codex) | [去执行](/guide/execution) | 视频 | Codex |
+| 43 | [在 Codex harness 上做自己的客户端](/43-codex-app-server) | [看原理](/guide/harness) | 视频 | Codex |
+| 44 | [Architect / Editor：推理与编辑分开](/44-aider-architect-editor) | [看原理](/guide/harness) | 文章 | Aider（新工具） |
+| 45 | [Managed Agents：大脑与双手解耦](/45-anthropic-managed-agents) | [看原理](/guide/harness) | 文章 | Claude Code（Claude Managed Agents） |
+| 46 | [Grok Build 的跨会话记忆](/46-grok-build-memory) | [打地基](/guide/foundation) | 文章 | Grok Build |
+
+**归类与容量**
+- 6 篇都按建议阶段归类。按 AGENTS.md 第 5.1 节第 4 条复核后，“去执行”（9 篇）和“看原理”（9 篇）都超过了 8 篇：#42 主要教的是在 Codex 应用里把活干完；#43、#44、#45 的主要贡献都是 harness 的接口或机制。放到其他阶段都会偏，所以没有改动归类，也暂不改阶段名称；下一批再往这两个阶段加时，应考虑拆分阶段（仍只按任务顺序一条轴）。详见[全部资料页的覆盖情况](/all#coverage)。
+- #42、#43 是视频，各配 3 张真实视频帧截图。
+
+**横向页面**
+- 阶段指南：打地基、去执行、自动化、看原理更新收录列表、小导图和推荐阅读顺序；“自动化”新增“无人值守的定时代理，怎么才不会悄悄出错？”（后续小节顺延编号）。分歧表新增 2 条：项目知识谁来写（#20 vs #46）、推理模型怎么接进来（#35 vs #44）。长时任务专题补充 #42、#45。
+- 模式库新增 P35–P38（定时代理书签 + 确认后记账、推理和编辑分给两个模型、大脑和双手解耦、代理记忆只记约定决定和事实）。
+- 学习路径、全部资料（含覆盖情况）、总结页同步更新。
+- 新增工具标签 Aider（`tools` 和 `custom.css` 亮 / 暗两套颜色）。
+- 术语表新增 9 个词：读取书签、凭据保险库、Codex App Server、Architect / Editor、编辑格式、会话事件日志、宠物与牲畜、代理记忆、Aider。
+
+**仍未覆盖**：“把 agent evals 接进 CI”的端到端配置示例；xAI 官方的 Grok 工程博客或大会演讲（#46 只是一篇简短的产品说明）。Aider 只有一篇 2024 年的老文章。
+
 ## 2026-10-12 · 第三批：新增 4 篇 Cursor 官方博客，补上云端代理
 
 **新增资料（#37–#40）**

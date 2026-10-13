@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **150** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **159** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -17,17 +17,17 @@ outline: [2, 2]
 
 ## 速查索引
 
-**核心概念：代理、上下文与 Token**：[Agent](#agent) · [Subagent](#subagent) · [Harness](#harness) · [Context Window](#context-window) · [Context Engineering](#context-engineering) · [Token](#token) · [Compaction](#compaction) · [Dumb Zone / Smart Zone](#dumb-zone) · [System Prompt](#system-prompt) · [Prompt](#prompt) · [Tool Call](#tool-call) · [Prompt Injection](#prompt-injection) · [Context Reset](#context-reset) · [Context Anxiety](#context-anxiety) · [Long-running Agent](#long-running-agent) · [Stateless](#stateless) · [Deliberate Malloc](#deliberate-malloc) · [Drift](#drift) · [Doom Loop](#doom-loop) · [Code Execution with MCP / Code Mode](#code-execution-mcp)
+**核心概念：代理、上下文与 Token**：[Agent](#agent) · [Subagent](#subagent) · [Harness](#harness) · [Context Window](#context-window) · [Context Engineering](#context-engineering) · [Token](#token) · [Compaction](#compaction) · [Dumb Zone / Smart Zone](#dumb-zone) · [System Prompt](#system-prompt) · [Prompt](#prompt) · [Tool Call](#tool-call) · [Prompt Injection](#prompt-injection) · [Context Reset](#context-reset) · [Context Anxiety](#context-anxiety) · [Long-running Agent](#long-running-agent) · [Stateless](#stateless) · [Deliberate Malloc](#deliberate-malloc) · [Drift](#drift) · [Doom Loop](#doom-loop) · [Code Execution with MCP / Code Mode](#code-execution-mcp) · [Session Log](#session-log)
 
-**给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent)
+**给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent) · [Agent Memory](#agent-memory)
 
-**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff)
+**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff) · [Bookmark](#bookmark-cursor) · [Architect / Editor](#architect-editor)
 
-**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution)
+**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution) · [Credential Vault](#credential-vault)
 
-**软件工程基础词**：[CI/CD](#ci-cd) · [PR](#pr) · [Code Review](#code-review) · [P0 / P1 / P2](#severity) · [Lint / Linter](#lint) · [Type Check](#type-check) · [Fixture / Invariant / Probe](#fixture) · [Happy Path](#happy-path) · [Flaky Test](#flaky-test) · [Monorepo](#monorepo) · [Brownfield / Greenfield](#brownfield) · [Slop](#slop) · [Deploy Preview](#deploy-preview) · [PR Babysitting](#babysitting) · [Dry Run](#dry-run) · [Evals / 红队](#evals) · [Benchmark](#benchmark) · [Codemod](#codemod)
+**软件工程基础词**：[CI/CD](#ci-cd) · [PR](#pr) · [Code Review](#code-review) · [P0 / P1 / P2](#severity) · [Lint / Linter](#lint) · [Type Check](#type-check) · [Fixture / Invariant / Probe](#fixture) · [Happy Path](#happy-path) · [Flaky Test](#flaky-test) · [Monorepo](#monorepo) · [Brownfield / Greenfield](#brownfield) · [Slop](#slop) · [Deploy Preview](#deploy-preview) · [PR Babysitting](#babysitting) · [Dry Run](#dry-run) · [Evals / 红队](#evals) · [Benchmark](#benchmark) · [Codemod](#codemod) · [Edit Format](#edit-format) · [Pets vs Cattle](#pets-vs-cattle)
 
-**工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot)
+**工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider)
 
 **评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping)
 
@@ -153,6 +153,12 @@ Cursor 的多代理实验里，这是长时间运行的主要失败方式之一�
 
 #36 Anthropic 的方案：代理按需读取工具文件，大数据在执行环境里过滤后再交给模型。文中示例的 token 用量从 150,000 降到 2,000。Cloudflare 把类似做法称为 “Code Mode”。代价是需要安全的代码执行沙箱。
 
+### Session Log（会话事件日志） {#session-log}
+
+**白话**：只追加、持久保存的代理事件记录；harness 崩溃后可以从中恢复，也可以按需切片读回上下文。
+
+Anthropic Managed Agents 把 session 和 harness、sandbox 分开：harness 用 emitEvent 写、getEvents 按位置读，自己不保存状态。完整历史留在日志里，喂给模型的上下文由 harness 决定（#45）。
+
 ## 二、给代理“立规矩”：规则文件与扩展机制
 
 ### CLAUDE.md {#claude-md}
@@ -232,6 +238,12 @@ Codex 默认读取它，Grok Build 官方说明也称兼容。#10 的建议是 A
 **白话**：OpenHands 里一段写给代理看的 Markdown 背景说明，作用类似 AGENTS.md。
 
 #30 中 Robert Brennan 建议大迁移时在迁移分支上放一份 AGENTS.md 或 OpenHands microagent，告诉每个代理“我们在做什么”。
+
+### Agent Memory（代理记忆） {#agent-memory}
+
+**白话**：代理在会话之间保留并读回的笔记或文件，让偏好和项目知识不随会话结束而丢失。
+
+Grok Build 在每个回合后自动记下约定、决定和项目事实，按主题整理（#46）；Anthropic 的定时代理用两个记忆库：用户偏好只读、代理状态可写（#41）。记忆可能过时或记错，要能被人查看和修改。
 
 ## 三、工作流与方法论
 
@@ -451,6 +463,18 @@ Mitchell Hashimoto 六步中的第四步：每天早上从前一晚的分诊结�
 
 Cursor 多代理 harness 的最终设计里，Worker 做完写一份 handoff，系统把它作为后续消息交给派任务的 Planner，信息就一层层传上去，不需要全局同步（#38）。
 
+### Bookmark（读取书签） {#bookmark-cursor}
+
+**白话**：记录每个数据源上次读到哪里，下次从那里接着读，而不是读固定的时间窗。
+
+Anthropic 的定时简报代理每次运行结束时，把每个源最新一条的时间戳写进 bookmarks.json；运行晚了或早了都不会漏或重复。读取失败时书签不动（#41）。
+
+### Architect / Editor（架构师 / 编辑者双模型） {#architect-editor}
+
+**白话**：一个模型只负责想怎么解决，另一个模型只负责把方案变成格式正确的代码编辑。
+
+Aider 的 --architect 模式（#44）。动机是 o1 这类推理模型擅长推理、但常输出格式错误的编辑；拆开后在 Aider 基准上多数组合都比单独使用分数更高。代价是两次推理的延迟和成本。
+
 ## 四、运行方式、权限与安全
 
 ### Auto Mode（自动模式） {#auto-mode}
@@ -603,6 +627,12 @@ Cursor 云端代理的安全功能之一，和出站网络限制、范围受限�
 
 Temporal 是常用的持久化执行框架，提供重试、跨机器调度和节点故障下的持久性。Cursor 把云端代理循环从自建的 work-stealing 架构迁到 Temporal 后，可靠性从“一个 9”提到“两个 9”以上（#40）。
 
+### Credential Vault（凭据保险库） {#credential-vault}
+
+**白话**：密钥存在代理沙箱之外，代理只拿到占位符，请求离开沙箱时才换上真实值。
+
+Claude Managed Agents 的做法：MCP 工具经沙箱外的代理服务调用，服务从保险库取凭据；shell 里只有占位符，出站时平台替换成真实 token（#41、#45）。
+
 ## 五、软件工程基础词
 
 ### CI/CD（持续集成 / 持续部署） {#ci-cd}
@@ -712,6 +742,18 @@ Vercel、Netlify 等平台自带。#10 的讲者称它已是 “non-negotiable�
 **白话**：按规则批量改写代码的脚本或工具，适合大规模重构。
 
 #35 中 Amp 的实验性子代理 `Kraken` 不逐个改文件，而是写 codemod 批量改；#30 的大型重构也属于这类任务。
+
+### Edit Format（编辑格式） {#edit-format}
+
+**白话**：代理要求模型用特定文本格式输出改动（整文件、diff 等），程序才能自动应用到文件。
+
+Aider 的 whole 格式要求输出整个新文件，diff 格式只输出改动部分，后者更省 token、更快（#44）。Codex 用 apply_patch 也是同类问题的解法（#09）。
+
+### Pets vs Cattle（宠物与牲畜） {#pets-vs-cattle}
+
+**白话**：运维比喻：宠物是要精心照料、丢不起的服务器；牲畜是可以随时替换的同质实例。
+
+Anthropic 最初把代理的一切放进一个容器，容器就成了“宠物”：挂了会话就丢，卡住要人护理。解耦后容器和 harness 都变成“牲畜”，挂了就重建（#45）。
 
 ## 六、工具、产品与模型
 
@@ -858,6 +900,18 @@ Vercel、Netlify 等平台自带。#10 的讲者称它已是 “non-negotiable�
 **白话**：Cursor 的 PR 代码审查代理，自动检查逻辑错误、性能问题和安全漏洞。
 
 #33 讲了它如何用“解决率”指标迭代；后来推出的 Autofix 会为发现的 bug 自动启动云端代理去修。
+
+### Codex App Server {#app-server}
+
+**白话**：包住 Codex harness 的 JSON-RPC 协议；Codex 应用、IDE 扩展和第三方集成都通过它和 harness 通信。
+
+和 Codex CLI 是同一个二进制，开源（Apache 2），支持 stdio 和 WebSocket，有 120 多种客户端消息。适合做自己的客户端或并发跑很多线程；脚本和 CI 用 codex exec 即可（#43）。
+
+### Aider {#aider}
+
+**白话**：开源的命令行 AI 结对编程工具，可以接多家模型，直接在 git 仓库里改代码并提交。
+
+本站收录了它的 Architect / Editor 双模型模式（#44）。
 
 ## 七、评测与验证
 

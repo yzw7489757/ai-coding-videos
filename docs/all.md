@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 40 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 46 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -72,6 +72,13 @@
   - 作者 / 来源：Mathew Hogan、Arvind Saripalli ／ Cursor 博客 ｜ 发布：2026-07-30 ｜ 工具：Cursor Cloud Agents、anydev、Cursor Cloud MCP、Cloud Doctor
   - 看点：开发环境是用户为代理的产品；Skills 救不了太绕的命令，用统一 CLI `anydev` + supervisor 收起来；Cloud MCP 让代理自查环境，Cloud Doctor 读 trace 自动修；云端代理写的合并 PR 从约十分之一涨到一半以上。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/37-cursor-cloud-agent-environment)
+
+### Grok Build 的跨会话记忆 {#item-46}
+
+- **[Memory in Grok Build](https://x.ai/news/grok-build-memory)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span>
+  - 作者 / 来源：xAI ／ x.ai 官方新闻 ｜ 发布：2026-09-16 ｜ 工具：Grok Build CLI（`/memory`、`/dream`）
+  - 看点：回合结束后在后台记下约定、决定和项目事实，按主题整理成 markdown；不记任务状态、未定结论、密钥和仓库已有内容；当前指令优先。发布说明很短，没有数据。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/46-grok-build-memory)
 
 ## 做规划 · 需求澄清与任务拆解 {#domain-planning}
 
@@ -175,6 +182,13 @@
   - 讲者 / 频道：Robert Brennan（OpenHands）／ AI Engineer ｜ 发布：2026-01-08 ｜ 工具：OpenHands、Agent SDK、Refactor SDK
   - 看点：代理一次做不完大迁移；迁移分支 + 背景说明 + 3–5 个并行代理 + 每个 PR 人审；拆任务的五条标准；按依赖图分批、验证器 + 修复器；Redux 迁 Zustand 的临时脚手架。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/30-openhands-parallel-refactors)
+
+### Codex 应用实战：从上下文到自动化 {#item-42}
+
+- **[Cooking with Codex — Charlie Guo & Gabriel Chua, OpenAI](https://www.youtube.com/watch?v=FwiS44-xyYw)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Charlie Guo、Gabriel Chua ／ AI Engineer ｜ 发布：2026-10-06 ｜ 工具：Codex 应用、Computer Use、`/goal`、子代理、hooks、自动化
+  - 看点：六步导览：上下文、Computer Use 三种方式怎么选、`/goal` 完成标准要可验证、子代理 vs 线程交接、侧线程结论要回传、两种自动化。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/42-openai-cooking-with-codex)
 
 ## 做验证 · 测试、评测与审查 {#domain-verification}
 
@@ -286,6 +300,13 @@
   - 看点：完整开发环境是输出质量的最大因素，缺了往往只表现为质量下降；从 work-stealing 迁到 Temporal，可靠性从一个 9 到两个 9 以上；代理循环、机器、对话状态解耦；模型变强后把 harness 逻辑搬进工具。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/40-cursor-cloud-agent-lessons)
 
+### 定时代理自动化的六条规则 {#item-41}
+
+- **[Building effective agent automations](https://claude.dev/blog/building-effective-agent-automations/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Lance Martin、CJ Avilla ／ claude.dev 博客（Anthropic） ｜ 发布：2026-10-08 ｜ 工具：Claude Managed Agents、`ant` CLI、GitHub MCP、Slack
+  - 看点：定时简报代理的参考实现：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；附原文配置。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/41-anthropic-agent-automations)
+
 ## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
@@ -334,24 +355,48 @@
   - 看点：#18 的续篇：锁 → Planner/Executor/Judge → 持续执行者（角色太多崩溃）→ 递归 Planner + Worker 交接报告；峰值约每小时 1,000 次提交；接受小而稳定的错误率；约束优于指令、给数字范围。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/38-cursor-self-driving-codebases)
 
+### 在 Codex harness 上做自己的客户端 {#item-43}
+
+- **[Building on the Codex Harness — Dominik Kundel, OpenAI](https://www.youtube.com/watch?v=9WiBJRO84yY)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Dominik Kundel ／ AI Engineer ｜ 发布：2026-10-09 ｜ 工具：Codex app server、Python SDK
+  - 看点：app server 是包住 Codex harness 的开源 JSON-RPC 协议；120 多种消息；和 ACP、codex exec 的区别；三条建议：自己打包 harness、工具标 deferred、用 developer instructions 追加。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/43-codex-app-server)
+
+### Architect / Editor：推理与编辑分开 {#item-44}
+
+- **[Separating code reasoning and editing](https://aider.chat/2024/09/26/architect.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-aider">Aider</span>
+  - 作者 / 来源：Paul Gauthier ／ Aider 博客 ｜ 发布：2024-09-26 ｜ 工具：Aider `--architect`
+  - 看点：一个模型想方案、另一个模型写格式正确的编辑；o1-preview + DeepSeek / o1-mini 达 85%，多数模型和自己搭档也提高；发布已两年，模型已过时。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/44-aider-architect-editor)
+
+### Managed Agents：大脑与双手解耦 {#item-45}
+
+- **[Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Lance Martin、Gabe Cemaj、Michael Cohen ／ Anthropic Engineering 博客 ｜ 发布：2026-04-08 ｜ 工具：Claude Managed Agents
+  - 看点：把代理拆成 session、harness、sandbox 三个接口；容器和 harness 都可丢弃；凭据不进沙箱；session 是窗口外的上下文对象；p50 TTFT 降约 60%、p95 降超 90%。
+  - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/45-anthropic-managed-agents)
+
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段：打地基 7 篇（#20、#21、#14、#26、#07、#28、#37）；做规划 5 篇（#03、#06、#04、#13、#29）；去执行 8 篇（#27、#11、#05、#08、#23、#17、#18、#30）；做验证 7 篇（#25、#12、#15、#19、#31、#32、#39）；自动化 7 篇（#01、#02、#10、#22、#33、#34、#40）；看原理 6 篇（#09、#24、#16、#35、#36、#38）。“去执行”仍是 8 篇：2026-10-12 按 AGENTS.md 第 5.1 节检查后，把 #18 的续篇 #38 放进“看原理”，因为它的主要贡献是解释多代理 harness 每一版为什么失败、为什么最终这样设计；它和 #18 在两个阶段指南里互相引用。
+按阶段：打地基 8 篇（#20、#21、#14、#26、#07、#28、#37、#46）；做规划 5 篇（#03、#06、#04、#13、#29）；去执行 9 篇（#27、#11、#05、#08、#23、#17、#18、#30、#42）；做验证 7 篇（#25、#12、#15、#19、#31、#32、#39）；自动化 8 篇（#01、#02、#10、#22、#33、#34、#40、#41）；看原理 9 篇（#09、#24、#16、#35、#36、#38、#43、#44、#45）。
 
-按类型：视频 21 篇；文章 15 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#40）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
+**容量检查（2026-10-13，按 AGENTS.md 第 5.1 节第 4 条）**：“去执行”和“看原理”都到了 9 篇。逐篇复核后没有改动归类：#42 主要教的是在 Codex 应用里把活干完（Computer Use、`/goal`、子代理、线程交接），属于去执行；#43、#44、#45 的主要贡献都是 harness 的接口或机制（app server 协议、推理与编辑分离、session / harness / sandbox 解耦），放在其他阶段都会偏。46 份资料分 6 个阶段，平均已接近 8 篇，所以暂不改阶段名称；下一批如果还要往这两个阶段加，应考虑拆分阶段（仍然只按任务顺序这一条轴）。
+
+按类型：视频 23 篇（新增 #42、#43）；文章 19 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#46）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
 
 按工具：
 
 | 工具 | 数量 | 资料 | 说明 |
 |---|---|---|---|
-| Claude Code | 13 | #01–#06、#16、#17、#20、#21、#23、#24、#28 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
-| Codex | 7 | #07–#11、#22、#31 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
-| Grok（Grok Build / Cursor + Grok 4.5） | 5 | #12–#15、#34 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
+| Claude Code | 15 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
+| Codex | 9 | #07–#11、#22、#31、#42、#43 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
+| Grok（Grok Build / Cursor + Grok 4.5） | 6 | #12–#15、#34、#46 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
 | Cursor | 6 | #18、#33、#37–#40 | 公司研究博客；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39） |
 | Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
 | OpenHands | 1 | #30 | 大会研讨会 |
 | Devin | 1 | #32 | Cognition 官方博客 |
 | Amp | 1 | #35 | 大会演讲；演讲后产品有较大变化，文中已注明 |
+| Aider | 1 | #44 | 官方博客，2024-09 发布，时效较差，文中已注明 |
 | 通用（不限工具） | 5 | #19、#25、#26、#27、#36 | 方法论、评测与 MCP 设计，适用于任何编码代理 |
 
 **Grok 的缺口：**
@@ -362,9 +407,10 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
-- 2026-10-12 第三批补上了 Cursor 云端代理的专门资料（#37、#40），以及一个把评测接进生产链路的案例（#39，但它评测的是权限分类器，不是 CI 里的代码评测）。**仍未覆盖**：Aider；“把 agent evals 接进 CI”的端到端配置示例；xAI 官方的 Grok 工程博客或大会演讲。
+- 2026-10-13 第四批补上了 Aider（#44，但是 2024 年的老文章）和 xAI 官方的一篇产品说明（#46，Grok Build 记忆，内容很短）；xAI 官方的**工程博客或大会演讲**仍未找到。#41、#45 来自 Anthropic，#42、#43 来自 OpenAI 的 AI Engineer 演讲（录制于 6–7 月，10 月上传）。
+- 2026-10-12 第三批补上了 Cursor 云端代理的专门资料（#37、#40），以及一个把评测接进生产链路的案例（#39，但它评测的是权限分类器，不是 CI 里的代码评测）。**仍未覆盖**（截至第三批）：Aider；“把 agent evals 接进 CI”的端到端配置示例；xAI 官方的 Grok 工程博客或大会演讲。
 - Cursor 已有 6 篇，全部来自 Cursor 自己的博客，结论请视为该厂商的经验；#37 和 #40 的 PR 占比（一半以上 vs 超过 40%）是不同时间点的数据。
 - 第二批考虑过但未收录：Google Cloud Tech 的 Gemini CLI 直播《Making a list {and checking it twice}: The Gemini CLI workflow》（https://www.youtube.com/watch?v=4U3nfVxlwlM，1 小时直播，内容与 #29 重叠）。
-- 时效：#04、#20、#21、#26 发布于 2025 年 11–12 月，#22（持续更新的文档）与 #25（连载指南）以 2026-10-09 抓取的版本为准，其余均为 2026 年发布。
+- 时效：#44 发布于 2024-09，是全站最老的资料；#04、#20、#21、#26 发布于 2025 年 11–12 月，#22（持续更新的文档）与 #25（连载指南）以 2026-10-09 抓取的版本为准，其余均为 2026 年发布。
 - 按要求排除了以漏洞挖掘 / 攻防安全为主题的资料，只保留软件开发工作流。
 - 未收录但可作延伸阅读：Ryan Lopopolo 在 Latent Space 的长访谈 *Extreme Harness Engineering*（https://www.youtube.com/watch?v=CeOXx-XTYek，与 #07 同一讲者，含 Symphony 编排器）；Jason Liu 在 OpenAI DevDay 2026 的 *From Single Player to Multiplayer with Codex*（https://www.youtube.com/watch?v=aDTPTwnrRyA，偏知识工作协作）。
