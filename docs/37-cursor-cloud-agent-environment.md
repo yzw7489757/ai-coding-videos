@@ -4,13 +4,18 @@
 
 <div class="hook">
 
-**一句话看懂**：Cursor 想让云端代理在自己的虚拟机里测试改动，第一件事是让自家 monorepo 能在云端跑起来。他们的结论是：**开发环境本身就是一个产品，只不过用户是代理**。做法分四步：让云端和本地开发一致；用一个统一的 CLI（`anydev`）把杂乱的构建命令收起来；用 Cursor Cloud MCP 让代理检查自己的环境；再让定时运行的 Cloud Doctor 自动排查故障、修 skill、开 PR。文中给出的结果是：云端代理写的合并 PR，从去年 12 月的约十分之一，涨到现在的一半以上。
+**一句话看懂**：Cursor 想让云端代理在自己的虚拟机里测试改动，结果发现第一道坎不是模型，而是自家 monorepo 在云端根本跑不顺。他们的结论是：**开发环境本身就是一个产品，只不过用户是代理**。做法分四步：让云端和本地一致；用一个统一的 CLI（`anydev`）把杂乱的构建命令收起来；用 Cursor Cloud MCP 让代理检查自己的环境；再让定时运行的 Cloud Doctor 自动排查故障、修 skill、开 PR。原文给出的结果是：云端代理写的合并 PR，从去年 12 月的约十分之一，涨到现在的一半以上。
 
 </div>
 
-::: info 为什么值得看
-本站“打地基”阶段讲过规则文件、Skills 和“代码库是否 agent-ready”（[#26](/26-factory-agent-ready-codebases)），但都停在“代理怎么理解代码”。这篇补的是另一半：**代理能不能把代码跑起来、测起来**。它也说明了一件常被忽略的事：Skills 只能写清楚命令，命令本身太绕时，帮助有限。
-:::
+## 读完你能带走的 6 条收获
+
+1. **代理测不了改动，常常是因为环境跑不起来，而不是不懂代码。** 先让云端虚拟机能像本地一样开发（见 3.1）。
+2. **给代理注入密钥之前，先把防线搭好**：出站网络限制、受限的 git 访问、提交里的密钥扫描、工具结果里的密钥脱敏（见 3.1）。
+3. **命令太绕时，写 skill 只能帮到边缘。** 更有效的是把接口本身变简单：一个 CLI 启动所有服务、自带 `--help`、替代理看着长时间运行的进程（见 3.2）。
+4. **环境能跑起来以后，云端代理才真正比本地代理有价值**：它能端到端测试、录屏，把证据交给人（见 3.3）。
+5. **环境一直在变，所以要让代理能自查、自愈**：给它一个检查环境的工具，再加一个定期巡检、能开修复 PR 的自动化（见 3.4）。
+6. **读代理的 trace，找出它在哪里绕了远路**，然后修 skill、简化流程，下一个代理就更顺（见 3.5）。
 
 ::: tip 小白先懂这几个词
 - [Background / Cloud Agent（后台 / 云端代理）](/glossary#background-agent)：在远程虚拟机里运行的代理，有自己的电脑。
@@ -28,123 +33,166 @@
 | 项目 | 内容 |
 |---|---|
 | 链接 | https://cursor.com/blog/cloud-agent-environment |
-| 类型 | 公司研究博客（文章） |
+| 类型 | 公司研究博客（文章，标注 7 min read） |
 | 作者 | Mathew Hogan、Arvind Saripalli |
 | 发布日期 | 2026-07-30 |
 | 使用工具 | Cursor Cloud Agents、自研 CLI `anydev`、Cursor Cloud MCP、Cloud Doctor 自动化、recordScreen 工具 |
-| 分析依据 | Cursor 官方博客原文全文，2026-10-12 用 curl 抓取。英文引用为原文摘录；“十分之一 → 一半以上”的数字来自原文，文中的折线图无法提取具体数据点。文中没有给出 `anydev` 的代码或命令示例。 |
+| 分析依据 | Cursor 官方博客原文全文，2026-10-14 用 curl 重新抓取并逐字核对引语。“十分之一 → 一半以上”的数字来自原文正文，配图折线图无法提取具体数据点。原文没有给出 `anydev` 的代码或命令示例，也没有给出 Cloud Doctor 的成功率。文末有咨询联系方式和客户案例链接，属推广内容。“我觉得”开头的段落是本站评论。 |
 
-## 2. 做了什么
+## 2. 这篇在回答什么
+
+设想你给代理配了一台云端虚拟机，希望它改完代码自己跑一遍、点一遍、确认没问题再交给你。结果它连服务都起不来：本地是 Mac，云端是 Linux；构建命令有十几个参数；某个脚本要先跑另一个脚本；长时间运行的构建挂了也没人管。
+
+这正是 Cursor 在自家 monorepo 上遇到的事。他们的总结是：
 
 ::: tr 把我们的 monorepo 改造成适合云端代理的样子，让我们认识到：开发环境本身就是一个产品，只是它的用户是代理。
 > "Getting our monorepo working for cloud agents taught us that the development environment is a product in its own right, only one whose users are agents."
 :::
 
-作者把要做的事概括成三件：让云端和本地开发一致；让仓库足够清楚，代理不靠口口相传的知识也能运行和测试代码；在代码库变化时保持环境健康。
+把环境当产品，就要回答产品的几个基本问题：
 
-结果用一句话说明：<Trans zh="12 月，云端代理大约写了合并进 Cursor monorepo 的十分之一的 PR。现在，它们写了一半以上。">“In December, cloud agents authored roughly one in ten PRs merged to the Cursor monorepo. Today, they write more than half.”</Trans>
+1. 用户能不能用起来？云端和本地怎么保持一致，密钥怎么安全地交出去？（3.1）
+2. 用户会不会用？命令太绕时，文档有没有用？（3.2）
+3. 用起来之后能做成什么？（3.3）
+4. 坏了怎么办？（3.4）
+5. 怎么越用越顺？（3.5）
+
+最后作者留了三个自查问题（3.6）。
 
 ```mermaid
 flowchart LR
-    A["1 云端和本地一致<br/>Linux 镜像 + 安全功能"] --> B["2 给代理的简单接口<br/>anydev CLI"]
-    B --> C["3 自愈环境<br/>Cursor Cloud MCP + Cloud Doctor"]
-    C --> D["4 改进代理体验<br/>读 trace 修 skill 和流程"]
-    D -. 环境变化 .-> C
+  A["云端和本地一致<br/>3.1"] --> B["anydev：简化接口<br/>3.2"]
+  B --> C["代理能端到端测试<br/>录屏交证据 3.3"]
+  C --> D["Cloud MCP + Cloud Doctor<br/>环境自愈 3.4"]
+  D --> E["读 trace 修 skill<br/>改进代理体验 3.5"]
+  E --> B
 ```
 
-## 3. 怎么做的
+## 3. 怎么做
 
 ### 3.1 云端和本地开发保持一致
 
-- Cursor 的开发者多数在 Mac 上本地开发，而云端虚拟机跑的是 Linux。他们把各种开发工具和安装脚本改成能在 Ubuntu 虚拟机上运行，并把关键依赖放进一个 Dockerfile，作为云端代理的起始镜像。
-- 和安全团队合作，给云端代理产品加了几项安全功能，让用户敢把需要的密钥放进代理环境：出站网络限制、有范围限制并经过代理转发的 git 远程访问、提交和提交信息里的密钥扫描，以及工具结果里的密钥脱敏。
+第一步其实是每个第一次搭远程开发环境的工程师都经历过的事：让仓库在云端虚拟机里能跑。
 
-::: tr 工具结果中的密钥脱敏，能防止代理读到密钥值，即使它主动去读。
-> "secret redaction in tool results, which prevents the agent from reading secret values even if it tries."
-:::
+Cursor 的开发者大多在 Mac 上本地开发，云端虚拟机却是 Linux。于是他们把各种开发工具和安装脚本改成平台无关，能在 Ubuntu 上运行；再把关键的开发依赖写进一个 Cursor 定义的 Dockerfile，作为云端代理的起始镜像。
+
+能跑之后，下一个问题是密钥。代理要连数据库、调内部服务，就得拿到密钥。Cursor 和安全团队一起，在云端代理产品里加了四道防线：
+
+- **出站网络限制**：代理只能访问允许的地址。
+- **范围受限、经过代理的 git 远程访问**：代理只能碰它该碰的仓库。
+- **提交和提交信息里的密钥扫描**：防止代理把密钥写进 git 历史。
+- **工具结果里的密钥脱敏**：
+
+<Trans zh="即使代理试图读取，也读不到密钥的值。">“which prevents the agent from reading secret values even if it tries.”</Trans>
+
+为什么要这么多层？因为代理有电脑、有密钥，还会自己执行命令。最后一层尤其关键：它不靠代理“自觉”，而是让代理在工具输出里根本看不到密钥。
 
 ### 3.2 给代理一个更简单的接口：anydev
 
-环境能跑之后，代理还是不太会运行他们的代码。原因是开发体验本身就乱：要记很多构建命令、构建参数和工具脚本。
+环境在 Ubuntu 上跑起来了，代理还是跑不好代码。作者说这并不意外：
 
-他们先写了 Skills，但效果有限：
+<Trans zh="我们的开发体验很乱，要学习和记住大量构建命令、构建参数和工具脚本。">“our devex was messy and involved learning and remembering numerous build commands, build flags, and utility scripts.”</Trans>
 
-::: tr Skills 能记录正确的命令，但这些命令本身就很绕，到处是坑。
+第一反应是写 skills，告诉代理每个部分怎么构建、怎么运行。效果有限：
+
+::: tr Skills 可以写清楚正确的命令，但这些命令本身就很绕，到处是坑。
 > "Skills can document the right commands, but those commands themselves were convoluted and filled with footguns."
 :::
 
-于是他们做了一个 CLI，叫 `anydev`：
+于是他们换了思路：不是把复杂的东西解释清楚，而是把它变简单。他们做了一个叫 `anydev` 的 CLI：
 
-- 代理用它启动所有服务，常用工具脚本也经过它转发；
-- 每个子命令都有 `--help` 说明；
-- 内置一个 supervisor 进程，负责监控和重启长时间运行的构建命令，<Trans zh="把这项责任完全从模型身上拿走">“removing that responsibility from the model entirely”</Trans>。
+- 代理用它启动**所有**服务；
+- 常用工具脚本也统一从 `anydev` 走；
+- 每个子命令都有 `--help` 菜单，说明怎么用；
+- 自带一个 supervisor 进程，监控并重启长时间运行的构建命令，<Trans zh="把这份责任完全从模型身上拿走">“removing that responsibility from the model entirely”</Trans>。
 
-作者的判断是，Skills 有帮助，但更大的变化是代理不用再拼凑多步构建命令、躲隐藏的坑、盯长时间运行的进程。
+作者的评价是：skills 帮着说明怎么用 `anydev`，但更大的变化是代理不用再拼多步构建命令、躲隐藏的坑、盯着长进程。
+
+我觉得这是全文最值得记住的一句判断。很多团队遇到代理跑不起项目，第一反应是往 `AGENTS.md` 或 skills 里写更多说明。这篇的经验是：如果人自己都要记一堆参数，那该改的是工具，不是文档。这和 Skills 作者“把经验写成 skills”（[[21§3.3]]）的建议并不矛盾，只是先后不同：先把接口理顺，再写说明。
 
 ### 3.3 能自证的云端代理
 
-有了能跑的环境，加上 Computer Use、`recordScreen` 工具，代理就能端到端测试自己的改动，并向用户证明结果是对的。它们可以在有人修复 bug 报告时，把自己录的演示视频发到 Slack，或者贴到自己开的 PR 上。
+`anydev` 之后，云端代理才开始真正比本地代理有价值。因为它有自己的电脑、有 computer use、有 recordScreen 录屏工具，再加上一个能用的开发环境，它可以端到端测试自己的改动，并且：
 
-::: tr 对很多任务来说，工程师现在可以放心地合并和部署云端代理的代码，而不用在本地 checkout 这个分支。
-> "For many tasks, engineers could now confidently merge and deploy cloud agent code without ever checking out the branch locally."
-:::
+<Trans zh="向用户证明自己工作的正确性。">“prove the correctness of their work to the user.”</Trans>
+
+具体表现是：有人修了一个 bug 报告，代理把自己录的演示视频发到 Slack；代理开 PR 时，把演示放在 PR 里。作者说，很多任务里，工程师可以直接合并、部署云端代理写的代码，<Trans zh="完全不用在本地检出这个分支">“without ever checking out the branch locally”</Trans>。
+
+原文配了一个例子：一个内部云端代理在自己的云端环境里使用 Cursor 代理，测试改进后的代理会话重试逻辑。
 
 ### 3.4 自愈的环境：Cursor Cloud MCP 与 Cloud Doctor
 
-环境一直在变，要保持可用，就要不断调整它怎么运行、能访问什么。
+能跑起来不等于一直能跑。代码库在变，依赖在变，密钥会轮换，网络策略会调整。
 
-- **Cursor Cloud MCP**：云端代理用它检查自己环境里的安装失败、出站策略、变更的密钥等，从而自己诊断和修复问题。选 MCP 的理由是：<Trans zh="它提供可以动态发现的工具，接口可以改，而不用重建代理循环">“it gave us dynamically discoverable tools with interfaces we could change without rebuilding the agent loop”</Trans>。
-- **Cloud Doctor**：一个定时运行的自动化。它会检查失败、记住哪些错误可能是暂时的、哪些是重要的，做根因分析，并且<Trans zh="在把握很高时开 PR 修复问题">“can open PRs to fix issues with high confidence”</Trans>。
+为此他们做了 **Cursor Cloud MCP**。为什么用 MCP？因为它提供可动态发现的工具，接口改了也不用重建代理循环。云端代理用它检查自己的环境：安装失败、出站策略、变更过的密钥等等，出了问题能自己诊断、更快恢复。
+
+在这之上，他们又搭了一个叫 **Cloud Doctor** 的自动化。它做四件事：
+
+1. 定期检查失败；
+2. 记住哪些错误可能是偶发的、哪些是真问题；
+3. 做根因分析；
+4. 在高置信度时开 PR 修复问题。
+
+“高置信度”具体怎么判断、Cloud Doctor 开的 PR 有多少被合并，原文没有给出。
 
 ### 3.5 改进“代理体验”
 
-环境健康了，代理有时仍会绕远路来验证改动：用错 skill、在虚拟机里踩到本可避免的问题、走比必要更慢的流程。
+环境健康了，代理有时还是会绕远路：用错 skill，在虚拟机里踩本可避免的坑，或者走一个比必要更长的流程。
 
-Cloud Doctor 的代理也会读其他代理的 trace，找出哪里出了错、哪些 skill 或命令有误导、哪些流程系统性地慢，然后修 skill、简化路径或改环境，<Trans zh="让下一个代理更轻松">“so the next agent has an easier time”</Trans>。
+Cloud Doctor 在这里还有第二份工作：读其他代理的 trace，找出三类问题：
+
+- 代理在哪一步走错了；
+- 哪些 skill 或命令有误导性；
+- 哪些工作流系统性地慢。
+
+然后修 skill、简化路径或改环境，<Trans zh="让下一个代理更轻松">“so the next agent has an easier time”</Trans>。
+
+这就形成了一个循环：代理用环境 → 留下 trace → Cloud Doctor 读 trace → 改进环境 → 下一个代理用得更顺。作者说，正是这个循环让他们能在内部扩大云端代理的使用，现在云端代理写了他们发布的大部分代码。
 
 ### 3.6 你的环境准备好了吗：三个问题
 
-原文结尾给出三个自查问题（逐字摘录，2026-10-12 抓取）：
+原文最后留了三个自查问题（原文摘录）：
 
-::: tr 代理能用到和开发者一样的工具和数据吗？代理能找到记录开发者实际工作方式的 skills 吗？代理能测试和验证核心流程吗？
-> - Do agents have access to the same tools and data a developer would?
-> - Can agents find skills that document how your developers actually work?
-> - Can agents test and verify core workflows?
+::: tr 代理能用到和开发者一样的工具和数据吗？代理能找到记录开发者实际工作方式的 skills 吗？代理能测试和验证核心工作流吗？
+> "Do agents have access to the same tools and data a developer would?"
 :::
 
-## 4. 结果如何
+后两个问题是：<Trans zh="代理能找到记录开发者实际工作方式的 skills 吗？">“Can agents find skills that document how your developers actually work?”</Trans> 和 <Trans zh="代理能测试和验证核心工作流吗？">“Can agents test and verify core workflows?”</Trans>
 
-| 指标 | 原文数据 |
+这三个问题和 Factory CTO 的“8 根验证支柱”（[[26§3.2]]）可以对照着用：那边问代码库能不能判断改动对不对，这边问代理能不能把代码跑起来、测起来。
+
+## 4. 结果与局限
+
+| 项目 | 原文说法 |
 |---|---|
-| 云端代理写的合并 PR 占比（Cursor monorepo） | 去年 12 月约十分之一 → 现在一半以上 |
-| 云端代理写的代码 | <Trans zh="现在写了我们发布代码的大部分">“now author a majority of the code we ship”</Trans> |
-| 环境自动修复 | Cloud Doctor 在高把握时开 PR；修复数量、成功率未给出 |
+| 云端代理写的合并 PR 占比 | 去年 12 月约十分之一，现在一半以上（7 天滚动占比折线图） |
+| 发布的代码 | “大部分”由云端代理写 |
+| `anydev` 命令、代码 | 未给出 |
+| Cloud Doctor 开 PR 的数量、合并率 | 未给出 |
 
 ::: warning 局限与注意
-- 这是 Cursor 介绍自家产品的博客，结尾有“联系我们”的推广，并链接到客户案例。
-- `anydev`、Cursor Cloud MCP、Cloud Doctor 都是内部工具，文中没有给出代码、命令或配置，无法照抄。
-- PR 占比是 Cursor 自己一个仓库的数据；“PR 数”不等于工作量或质量，文中也没有给出这些 PR 的回滚率或审查情况。
-- “自愈”的效果只有定性描述，没有给出修复成功率或误修的例子。
+- 占比数字是公司自报，没有说明统计口径（比如“代理写的 PR”怎么界定、人改了多少）。
+- `anydev` 是内部工具，原文没有代码、命令或配置示例，要自己实现。
+- Cloud Doctor 的“高置信度”阈值、误报情况都没讲。
+- 文章出自 Cursor，结尾有咨询入口和客户案例链接，带推广成分；做法本身和工具无关，可以借鉴。
 :::
 
-## 5. 可借鉴之处
+## 5. 结论
 
-1. **把开发环境当产品做，用户是代理**：代理跑不起来，很多时候不是模型笨，是环境乱。
-2. **Skills 救不了太绕的命令**：先把命令本身简化成一个统一入口，再用 skill 记录这个入口怎么用。
-3. **长时间运行的进程交给程序管**：构建、dev server 由 supervisor 监控和重启，不让模型去“盯进程”。
-4. **安全功能是放权的前提**：出站限制、范围受限的 git 访问、密钥扫描和脱敏，让人敢把密钥交给代理环境。
-5. **让代理能看到自己的环境**：给它一个检查安装、网络策略、密钥状态的工具，它才能自己排障。
-6. **读代理的 trace 来改环境**：代理绕远路的地方，就是 skill、命令或环境该改的地方。这和“每个错误都改环境”的自愈层是同一个思路（[[27§3.5]]、[[23§3.4]]）。
+这篇最重要的观点是：代理能不能干好活，很大程度上取决于它所在的环境。把环境当产品，要做的事和对人做产品差不多：先让它能用，再让它好用，然后持续看用户（代理）在哪里卡住。
+
+我觉得最该带走的是顺序：先简化接口，再写文档。命令太绕时，写再多 skill 也只能帮到边缘。
 
 ### 你可以这样试
 
-- [ ] 用原文的三个问题给自己的仓库打分：代理有没有和你一样的工具和数据？有没有记录真实工作方式的 skill？能不能测试核心流程？
-- [ ] 数一数“把项目跑起来”需要几条命令。超过三条，就写一个统一入口脚本（如 `make dev`），每个子命令带 `--help`，再在 AGENTS.md 里只写这个入口。
-- [ ] 翻最近 5 次代理会话记录，找出代理反复试错的命令或步骤，改掉对应的 skill 或脚本。
+- [ ] 让代理在一个干净的云端或容器环境里从零启动你的项目，记下它卡住的每一步。
+- [ ] 数一数启动所有服务需要几条命令、几个参数；超过三条，考虑包成一个带 `--help` 的脚本。
+- [ ] 翻几份代理的会话记录，找出它反复重试或绕远路的地方，改对应的 skill 或命令。
+- [ ] 用 3.6 的三个问题给自己的仓库打个分。
 
-::: details 读完自测（点开看答案）
-1. **为什么只写 Skills 不够？** Skills 能记录正确的命令，但命令本身很绕、到处是坑；要先用 `anydev` 把命令简化。
-2. **`anydev` 的 supervisor 解决什么问题？** 监控和重启长时间运行的构建命令，把这项责任从模型身上完全拿走。
-3. **Cursor Cloud MCP 和 Cloud Doctor 分别做什么？** 前者让代理检查自己环境的安装、出站策略、密钥等；后者定时检查失败、做根因分析，在高把握时开 PR 修复，还会读 trace 改进 skill 和流程。
-4. **原文的三个自查问题是什么？** 工具和数据是否与开发者一致；能否找到记录真实工作方式的 skills；能否测试和验证核心流程。
-:::
+### 读完自测
+
+1. Cursor 给云端代理加了哪四道密钥防线？哪一道不依赖代理“自觉”？
+2. 为什么作者说 skills 只帮到了边缘？他们后来怎么解决的？
+3. Cloud Doctor 做哪两类工作？
+4. 原文给出的三个自查问题是什么？
