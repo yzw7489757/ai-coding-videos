@@ -2,6 +2,17 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第八批：7 篇改为新写法
+
+按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写，每篇加上收获清单、按问题组织的第 2 节和“读完自测”：
+- [#33 Cursor Bugbot 与解决率](/33-cursor-building-bugbot)：补充七步流水线为什么能压误报、解决率的盲区；注明“this fall”按发布时间应为 2025 年秋。
+- [#20 HumanLayer 写好 CLAUDE.md](/20-humanlayer-writing-good-claude-md)：补充 WHAT / WHY / HOW 对照表、指令均匀衰减、`agent_docs/` 原文目录和 `/init` 的错误放大链。
+- [#14 OrcDev 测 Grok Build](/14-orcdev-grok-build-skills)：重新拉取字幕；补充 prompt 要点表、“超出要求的部分”在 always approve 下的风险，压缩价格和新闻性内容。
+- [#44 Aider Architect / Editor](/44-aider-architect-editor)：补全原文 20 行结果表，补充作者的四点解读和 o1-mini 提升最大的细节。
+- [#50 代理评测里的基础设施噪声](/50-anthropic-infrastructure-noise)：补充“保证分配 / 硬上限”两参数、bn-fit-modify 例子、SWE-bench 交叉实验和对三类人的建议。
+- [#46 Grok Build 的记忆功能](/46-grok-build-memory)：补充“记 / 不记”对照表、testing 主题原文；新增 3.5 用 `/memory` 检查记错的笔记。
+- [#51 Cursor Self-Hosted Machines](/51-cursor-self-hosted-machines)：补充连接方向图、空闲机器三种处理方式对照表，强调“只有执行环境搬走”的数据边界。
+
 ## 2026-10-14 · 重写第七批：6 篇改为新写法
 
 按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写，每篇加上收获清单、按问题组织的第 2 节和“读完自测”：
