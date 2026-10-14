@@ -4,13 +4,18 @@
 
 <div class="hook">
 
-**一句话看懂**：代理接的 MCP 服务器越多，就越慢、越贵，因为两件事都在吃上下文：**所有工具的定义一开始就塞进上下文**，以及**每次工具调用的中间结果都要经过模型**。Anthropic 的方案是把 MCP 服务器包装成文件系统里的代码 API，让代理写代码去调用：需要哪个工具才读哪个文件，大数据在代码里过滤完再交给模型。文中的例子把 token 用量从 15 万降到 2000，减少 98.7%。
+**一句话看懂**：代理接的 MCP 工具越多，就越慢、越贵，因为两样东西都在吃上下文：**所有工具的定义一开始就全塞进去**，以及**每次调用的中间结果都要经过模型**。Anthropic 的办法是把 MCP 服务器包装成文件系统里的代码 API，让代理写代码去调用：用到哪个工具才读哪个文件，大数据在代码里过滤完再给模型看。文中的例子把 token 用量从 15 万降到 2,000，减少 98.7%。代价是你得有一个安全的代码执行沙箱。
 
 </div>
 
-::: info 为什么值得看
-[#35](/35-amp-next-generation-ai-coding) 里 Amp 选择“少接 MCP、精选工具”来避免上下文混乱，这篇是 Anthropic 给出的另一条路：**工具可以多，但不要一次全部加载**。如果你在设计 MCP 服务器、给代理接了很多工具，或者想理解为什么 Skills（[#21](/21-anthropic-agent-skills-talk)）要“渐进披露”，这篇讲清楚了背后的原理，示例代码也很直观。
-:::
+## 读完你能带走的 6 条收获
+
+1. **工具多了变慢变贵，有两个原因**：定义全部预先加载；中间结果穿过模型，有时还要穿两次（见 3.1、3.2）。
+2. **把工具做成文件，代理按需读取。** 先列目录，再只读要用的那几个文件，这就是渐进披露（见 3.3、3.4）。
+3. **大数据在代码里处理完再交给模型**：一万行的表，模型只需要看 5 行和一个总数（见 3.4）。
+4. **循环、条件、轮询写成代码**，比让模型一轮一轮地调工具再 sleep 更省，也更快（见 3.4）。
+5. **敏感数据可以完全不经过模型**：留在执行环境里，或者由客户端替换成占位符再还原（见 3.4）。
+6. **代价是要有沙箱、资源限制和监控。** 工具少、数据小的时候，直接调用更简单（见 3.5、第 4 节）。
 
 ::: tip 小白先懂这几个词
 - [MCP](/glossary#mcp)：Model Context Protocol，让代理接入外部工具和数据的开放标准。
@@ -31,47 +36,86 @@
 | 作者 | Adam Jones、Conor Kelly |
 | 发布日期 | 2025-11-04 |
 | 适用范围 | 任何支持 MCP 且有代码执行环境的代理（文中示例为 TypeScript） |
-| 分析依据 | Anthropic Engineering 博客《Code execution with MCP: Building more efficient agents》全文，2026-10-09 抓取。文中数字和代码均为原文摘录。 |
+| 分析依据 | Anthropic Engineering 博客《Code execution with MCP: Building more efficient agents》全文，2026-10-14 重新抓取并逐字核对。文中数字和代码均为原文摘录；98.7% 来自文中单个示例，不是基准测试。“我觉得”开头的段落是本站评论，不是作者观点。 |
 
-## 2. 做了什么
+## 2. 这篇在回答什么
 
-文章先指出 MCP 普及之后的新问题：
+假设你给代理接了 Google Drive、Salesforce、Slack、GitHub 等十几个 MCP 服务器，加起来几百个工具。然后让它做一件很简单的事：
 
-::: tr 如今开发者经常构建能访问几十个 MCP 服务器、成百上千个工具的代理。然而，随着连接的工具增多，一开始就加载所有工具定义、并让中间结果穿过上下文窗口，会拖慢代理并增加成本。
-> "Today developers routinely build agents with access to hundreds or thousands of tools across dozens of MCP servers. However, as the number of connected tools grows, loading all tool definitions upfront and passing intermediate results through the context window slows down agents and increases costs."
+> "Download my meeting transcript from Google Drive and attach it to the Salesforce lead."
+
+它会变得又慢又贵。为什么？作者给了两个原因：
+
+::: tr 随着连接的工具增多，一开始就加载所有工具定义、并让中间结果穿过上下文窗口，会拖慢代理并增加成本。
+> "However, as the number of connected tools grows, loading all tool definitions upfront and passing intermediate results through the context window slows down agents and increases costs."
 :::
 
-然后给出方案：<Trans zh="把 MCP 服务器呈现为代码 API，而不是直接的工具调用。">“present MCP servers as code APIs rather than direct tool calls.”</Trans>
+这篇文章回答三个问题：
 
-## 3. 怎么做的
+1. 工具多了，上下文具体被什么吃掉？（3.1、3.2）
+2. 用代码调用 MCP，具体怎么做？（3.3）
+3. 这样做有什么好处，又要付出什么？（3.4、3.5）
+
+```mermaid
+flowchart LR
+  subgraph 直接调用
+    M1["模型"] -->|"调用"| T1["工具"]
+    T1 -->|"完整结果"| M1
+  end
+  subgraph 用代码调用
+    M2["模型写代码"] --> E["执行环境<br/>读需要的工具文件<br/>过滤、循环"]
+    E -->|"只回传摘要"| M2
+  end
+```
+
+## 3. 怎么做
 
 ### 3.1 问题一：工具定义一次性塞满上下文
 
-大多数 MCP 客户端会把所有工具的定义（名称、描述、参数、返回值）提前放进上下文。文中说，连接了几千个工具的代理，<Trans zh="在读到请求之前就要先处理几十万个 token">“they’ll need to process hundreds of thousands of tokens before reading a request”</Trans>。
+大多数 MCP 客户端会把**所有**工具的定义一开始就放进上下文。一个定义大概长这样：
+
+```text
+gdrive.getDocument
+     Description: Retrieves a document from Google Drive
+     Parameters:
+                documentId (required, string): The ID of the document to retrieve
+                fields (optional, string): Specific fields to return
+     Returns: Document object with title, body content, metadata, permissions, etc.
+```
+
+一个定义不长，但乘以几百上千就不一样了：
+
+::: tr 当代理连接了数千个工具时，它在读到请求之前，就要先处理几十万个 token。
+> "In cases where agents are connected to thousands of tools, they’ll need to process hundreds of thousands of tokens before reading a request."
+:::
+
+也就是说，用户的问题还没看到，上下文已经用掉一大块，每次请求都要为这些定义付钱、等时间。
 
 ### 3.2 问题二：中间结果要经过模型两次
 
-例子：“把会议记录从 Google Drive 下载下来，附到 Salesforce 的销售线索上”。直接调用工具时，模型先拿到完整的会议记录（进入上下文），再把整份记录原样写进下一个工具调用（又一次进入上下文）。文中估计，一场 2 小时的销售会议可能多处理 5 万个 token；文档再大一些甚至会超出上下文窗口。而且在工具之间复制大量数据时，模型更容易出错。
+第二个问题更隐蔽。直接调用工具时，每个结果都要回到模型那里，模型再决定下一步：
 
-```mermaid
-flowchart TB
-    subgraph A["直接调用工具"]
-        M1["模型"] -->|"getDocument"| T1["Google Drive"]
-        T1 -->|"完整记录进入上下文"| M1
-        M1 -->|"再把完整记录写一遍"| T2["Salesforce"]
-    end
-    subgraph B["用代码调用"]
-        M2["模型"] -->|"写一段代码"| E["执行环境"]
-        E --> T3["Google Drive"]
-        T3 -->|"数据留在执行环境"| E
-        E --> T4["Salesforce"]
-        E -->|"只返回日志 / 摘要"| M2
-    end
+```text
+TOOL CALL: gdrive.getDocument(documentId: "abc123")
+        → returns "Discussed Q4 goals...\n[full transcript text]"
+           (loaded into model context)
+TOOL CALL: salesforce.updateRecord(
+			objectType: "SalesMeeting",
+			recordId: "00Q5f000001abcXYZ",
+  			data: { "Notes": "Discussed Q4 goals...\n[full transcript text written out]" }
+		)
+		(model needs to write entire transcript into context again)
 ```
+
+会议记录先作为结果读进来一次，又作为参数写出去一次。作者算了一笔账：一场 2 小时的销售会议，可能要多处理 5 万个 token；文档再大一点，可能直接超出上下文窗口，整个流程就断了。
+
+还有一个准确性问题：<Trans zh="面对大文档或复杂数据结构时，模型在工具调用之间复制数据更容易出错。">“With large documents or complex data structures, models may be more likely to make mistakes when copying data between tool calls.”</Trans> 模型“抄写”几万字，本来就不是它该干的活。
 
 ### 3.3 方案：把 MCP 服务器变成文件树
 
-一种实现方式是给每个连接的服务器生成一个目录，每个工具一个文件（原文）：
+现在很多代理都有代码执行环境，于是作者的思路是：**别让模型直接调工具，而是把 MCP 服务器呈现成代码 API，让模型写代码去调。**
+
+实现方式有很多，文中给的一种是：为所有已连接的 MCP 服务器生成一棵文件树。
 
 ```text
 servers
@@ -86,9 +130,9 @@ servers
 └── ... (other servers)
 ```
 
-每个工具文件是对 MCP 调用的一层薄包装：
+每个工具一个文件，文件里是一个很薄的包装函数：
 
-::: tr 读取 Google Drive 文档的工具文件：定义输入输出类型，内部调用 MCP 工具 google_drive__get_document。
+::: tr 每个工具对应一个文件：声明输入输出类型，内部调用 callMCPTool 转发给真正的 MCP 工具。
 ```ts
 // ./servers/google-drive/getDocument.ts
 import { callMCPTool } from "../../../client.js";
@@ -108,9 +152,8 @@ export async function getDocument(input: GetDocumentInput): Promise<GetDocumentR
 ```
 :::
 
-前面的例子就变成了一段代码，会议记录只在执行环境里流转，不经过模型：
+开头那个“从 Drive 取会议记录、写进 Salesforce”的任务，就变成了几行代码：
 
-::: tr 从 Google Docs 读取会议记录，写进 Salesforce 的销售线索。
 ```ts
 // Read transcript from Google Docs and add to Salesforce prospect
 import * as gdrive from './servers/google-drive';
@@ -123,34 +166,24 @@ await salesforce.updateRecord({
   data: { Notes: transcript }
 });
 ```
-:::
 
-代理通过浏览文件系统来发现工具：先列出 `./servers/` 看有哪些服务器，再只读当前任务需要的工具文件。
+会议记录从 Drive 直接流到 Salesforce，一次都没进模型的上下文。
 
-::: tr 这把 token 用量从 15 万降到了 2000，节省了 98.7% 的时间和成本。
+代理怎么知道有哪些工具？像人一样逛文件系统：先列出 `./servers/` 看有哪些服务器，再只读这次要用的 `getDocument.ts` 和 `updateRecord.ts`。
+
+::: tr 这把 token 用量从 15 万降到了 2,000——时间和成本节省了 98.7%。
 > "This reduces the token usage from 150,000 tokens to 2,000 tokens—a time and cost saving of 98.7%."
 :::
 
-文章也提到 Cloudflare 发表过类似的发现，称之为“Code Mode”，核心观点相同：LLM 擅长写代码，应该利用这一点。
+作者还提到，Cloudflare 发表过类似的发现，把这种做法叫做 “Code Mode”。核心洞察一样：大模型很擅长写代码，就该利用这个长处。
 
 ### 3.4 带来的五个好处
 
-| 好处 | 做法（据原文） |
-|---|---|
-| 渐进披露 | 工具定义按需读取；也可以给服务器加一个 `search_tools` 工具，并提供“详细程度”参数（只要名称 / 名称加描述 / 完整定义） |
-| 结果先过滤 | 例如读取 1 万行的表格，在代码里筛出待处理订单，只打印前 5 行给模型看 |
-| 控制流更省 | 循环、条件、错误处理直接写在代码里，比如轮询 Slack 直到出现“deployment complete”，不必每轮都经过模型 |
-| 保护隐私 | 中间结果默认留在执行环境；harness 还可以把邮箱、电话等个人信息替换成 `[EMAIL_1]` 这样的占位符，在下一个工具调用时再还原，真实数据不经过模型 |
-| 状态与技能 | 中间结果写进文件以便中断后继续；跑通的代码可以保存成可复用的函数，加上 `SKILL.md` 就成了一个技能 |
+**1. 渐进披露。** 模型很会浏览文件系统，所以工具定义可以用到时再读。另一种做法是给服务器加一个 `search_tools` 工具，比如搜 “salesforce” 只加载相关工具；再给它一个“详细程度”参数（只要名字 / 名字加描述 / 完整定义和 schema），代理可以先粗看再细看。
 
-“结果先过滤”的原文示例：
+**2. 结果在进入上下文之前就过滤好。** 比如取一张 1 万行的表：
 
-::: tr 不用代码执行时，1 万行数据全部进入上下文；用代码执行时，在执行环境里筛选，只打印数量和前 5 行。
 ```ts
-// Without code execution - all rows flow through context
-TOOL CALL: gdrive.getSheet(sheetId: 'abc123')
-        → returns 10,000 rows in context to filter manually
-
 // With code execution - filter in the execution environment
 const allRows = await gdrive.getSheet({ sheetId: 'abc123' });
 const pendingOrders = allRows.filter(row => 
@@ -159,39 +192,84 @@ const pendingOrders = allRows.filter(row =>
 console.log(`Found ${pendingOrders.length} pending orders`);
 console.log(pendingOrders.slice(0, 5)); // Only log first 5 for review
 ```
+
+模型看到的是 5 行，而不是 1 万行。聚合、跨数据源 join、只取某几个字段，都可以这样做。
+
+**3. 控制流写成代码。** 循环、条件、错误处理，用熟悉的代码写，而不是让模型一次次调工具。比如等 Slack 里出现部署完成的消息：
+
+```ts
+let found = false;
+while (!found) {
+  const messages = await slack.getChannelHistory({ channel: 'C123456' });
+  found = messages.some(m => m.text.includes('deployment complete'));
+  if (!found) await new Promise(r => setTimeout(r, 5000));
+}
+console.log('Deployment notification received');
+```
+
+这比在代理循环里交替调用“查消息”和 “sleep” 高效得多。作者还指出，条件判断交给执行环境，也省掉了等模型判断一个 `if` 的首 token 延迟。
+
+**4. 隐私。** 中间结果默认留在执行环境里，模型只看到你明确 `log` 或 `return` 的东西。更敏感的场景，harness 可以自动把敏感数据换成占位符。比如把表格里的客户联系方式导入 Salesforce，代理就算打印出来，看到的也是：
+
+```ts
+[
+  { salesforceId: '00Q...', email: '[EMAIL_1]', phone: '[PHONE_1]', name: '[NAME_1]' },
+  ...
+]
+```
+
+等数据传给下一个 MCP 工具时，MCP 客户端再查表还原。真实的邮箱、电话、姓名从 Google Sheets 流到 Salesforce，**从不经过模型**。作者说，这还可以用来定义确定性的安全规则：数据能从哪里流到哪里。
+
+**5. 状态和 skills。** 有了文件系统，代理可以把中间结果写进文件，下次接着做；也可以把跑通的代码存成可复用的函数，比如 `./skills/save-sheet-as-csv.ts`。再给这些函数配一个 `SKILL.md`，就成了模型可以引用的 skill。作者的说法是，时间长了，代理会给自己攒出一套更高层的工具箱。
+
+我觉得第 5 条把这篇和 Skills（[[21]]）连了起来：skill 本质上也是“先给目录、用到再读”，只是这里的内容换成了可执行的代码。
+
+### 3.5 代价：你需要一个安全的执行环境
+
+作者没有回避代价：
+
+::: tr 注意，代码执行本身也会带来复杂度。运行代理生成的代码，需要一个安全的执行环境，有恰当的沙箱、资源限制和监控。这些基础设施要求会增加运维开销和安全考量，而直接调用工具可以避开这些。
+> "Note that code execution introduces its own complexity. Running agent-generated code requires a secure execution environment with appropriate sandboxing, resource limits, and monitoring. These infrastructure requirements add operational overhead and security considerations that direct tool calls avoid."
 :::
 
-最后一点把代码执行和 Skills 联系了起来：代理把跑通的代码存成 `./skills/save-sheet-as-csv.ts` 这样的函数，以后直接导入使用。原文说：<Trans zh="随着时间推移，代理可以积累一个更高层能力的工具箱，不断完善它高效工作所需的脚手架。">“Over time, this allows your agent to build a toolbox of higher-level capabilities, evolving the scaffolding that it needs to work most effectively.”</Trans>
+所以这不是“永远更好”的方案，而是一笔要算的账：省下的 token、延迟和更好的组合能力，要和搭沙箱、做监控的成本放在一起比。
 
-## 4. 结果如何
+作者在总结里说，这些问题看起来新（上下文管理、工具组合、状态持久化），其实软件工程里都有已知的解法，代码执行只是把这些成熟的模式用到代理身上。
 
-文中唯一的量化数字是上面的例子：按需加载工具定义后，token 用量从 150,000 降到 2,000（减少 98.7%）。文章没有给出更大范围的评测。
+## 4. 结果与局限
+
+文中唯一的量化结果来自一个示例：
+
+| 场景 | 直接调用 | 用代码调用 |
+|---|---|---|
+| Drive → Salesforce 的示例任务 | 约 150,000 token | 约 2,000 token（−98.7%） |
+| 2 小时会议记录在两次调用间传递 | 额外约 50,000 token | 不经过模型 |
+| 1 万行表格筛选 | 1 万行进上下文 | 模型只看 5 行 |
 
 ::: warning 局限与注意
-- **代码执行本身有成本**。原文明确提醒：<Trans zh="运行代理生成的代码，需要一个有适当沙箱、资源限制和监控的安全执行环境。这些基础设施要求带来了直接调用工具所没有的运维开销和安全考量。">“Running agent-generated code requires a secure execution environment with appropriate sandboxing, resource limits, and monitoring. These infrastructure requirements add operational overhead and security considerations that direct tool calls avoid.”</Trans>
-- 98.7% 是一个示例场景的数字，实际节省取决于连接了多少工具、数据有多大。
-- 文中的 `callMCPTool`、`search_tools`、个人信息占位符等是**设计思路的示例**，不是某个现成产品的 API；具体实现要自己做或看你用的代理是否支持。
-- 工具少、数据小的场景，直接调用工具更简单，不一定值得引入代码执行环境。
+- **98.7% 是单个示例**，不是在一组任务上测出来的；实际节省取决于工具数量和数据量。
+- **需要安全的代码执行环境**：沙箱、资源限制和监控都是额外的运维成本；工具少、数据小时，直接调用更简单。
+- **PII 占位符是一种可能的实现**，文中是“设想一下”的写法，没说哪个产品已经内置。
+- 模型要多写一步代码，代码写错就要调试；文中没有讨论代码出错的比例和处理方式。
+- 这是协议作者 Anthropic 的文章，没有和其他做法（比如精简工具数量）做对照实验。
 :::
 
-## 5. 可借鉴之处
+## 5. 结论
 
-1. **工具多了先想“按需加载”**：不要把所有工具定义一次性塞给代理；用目录、搜索工具或延迟加载。
-2. **大数据不要穿过模型**：让代理写代码处理，只把摘要、数量、少量样例交给模型。
-3. **MCP 服务器设计者可以提供“详细程度”选项**：只要名称、名称加描述、完整定义，让代理自己选。
-4. **敏感数据可以在 harness 层脱敏**：模型只看到占位符，真实数据在工具之间直接流转。
-5. **跑通的代码沉淀成技能**：把一次性的脚本保存成可复用函数，配上说明文件。
-6. **先评估沙箱成本**：代码执行需要隔离环境、资源限制和监控，权衡后再采用。
+工具多了，问题不在“工具太多”，而在**把所有东西都塞给模型**：所有定义，所有中间结果。这篇的答案是让模型写代码：工具做成文件，用到才读；数据在代码里处理，只把摘要交给模型。
+
+同一个问题还有另一种思路：Amp 选择少接 MCP、精心打磨少数工具（[[35§3.2]]）。我觉得两者并不冲突：工具不多时，精选就够了；工具多到几十个服务器时，按需加载加上代码执行才划算。前提是你已经有一个可靠的沙箱。
 
 ### 你可以这样试
 
-- [ ] 看看你的代理目前加载了多少个工具定义（很多代理有 `/context` 或类似命令能看到占用），估算它们占了多少上下文。
-- [ ] 找一个“读大文件再写到别处”的任务，对比两种做法：让代理直接调用工具搬运数据，和让它写一段脚本完成，比较上下文用量。
-- [ ] 把你经常让代理重复写的数据处理脚本保存进仓库的 `scripts/` 或技能目录，在 AGENTS.md 里告诉代理直接调用。
+- [ ] 数一数你的代理接了多少个 MCP 工具，看看会话一开始工具定义占了多少上下文（很多客户端有 `/context` 之类的命令）。
+- [ ] 找一个“取大数据 → 筛选 → 写回”的任务，让代理写一个脚本完成，而不是逐个调用工具。
+- [ ] 把一段反复用到的脚本存成一个 skill：一个函数文件加一份 `SKILL.md`。
+- [ ] 如果要在生产里用代码执行，先列出沙箱的三件事：能访问哪些文件和网络、资源上限、日志在哪看。
 
 ::: details 读完自测（点开看答案）
-1. **直接调用 MCP 工具时，哪两件事会浪费上下文？** 所有工具定义提前加载进上下文；每次工具调用的中间结果都要经过模型（有时还要再写一遍）。
-2. **“把 MCP 服务器变成文件树”是怎么省 token 的？** 代理只在需要时读取对应的工具文件，而不是一开始加载全部定义；数据在执行环境里流转，不进入上下文。
-3. **文中例子的 token 用量从多少降到多少？** 从 150,000 降到 2,000，减少 98.7%。
-4. **这种做法的主要代价是什么？** 需要安全的代码执行环境（沙箱、资源限制、监控），增加运维开销和安全考量。
+1. **工具多了，上下文被哪两样东西吃掉？** 预先加载的全部工具定义，以及在调用之间穿过模型的中间结果。
+2. **代理怎么发现有哪些工具？** 列出 `./servers/` 目录，再只读需要的工具文件；或者用 `search_tools`。
+3. **怎样让敏感数据不经过模型？** 中间结果留在执行环境里只打印需要的部分，或由 MCP 客户端把 PII 替换成占位符、在下一次调用时还原。
+4. **这个方案的主要代价是什么？** 需要安全的代码执行环境：沙箱、资源限制、监控。
 :::

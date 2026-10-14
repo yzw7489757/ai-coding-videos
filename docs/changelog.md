@@ -2,6 +2,16 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第五批：6 篇改为新写法
+
+按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
+- [#22 CI 失败让代理自动修](/22-openai-codex-ci-autofix)：重新抓取两页文档；补充 stdin 两种管道写法、`--full-auto` 移除、Action 的 `read-only` 不保护密钥；新增 3.5 认证、断点续跑和常见报错。
+- [#48 Claude Code 云端会话实战](/48-claude-code-cloud-sessions)：补充三个会话的具体结果（竞态、5 处文档错误、未越界修改）、超时设置、Auto-fix 边界；新增 3.7 好习惯和常见问答。
+- [#40 Cursor 云端代理的四条教训](/40-cursor-cloud-agent-lessons)：补充环境要重建的四类基础设施、对话流重试回卷、computer use 子代理细节。
+- [#34 Grok Build headless 与 hooks](/34-grok-build-headless-hooks)：按最新文档补充项目 hook 信任机制、完整事件表、ACP 客户端要点、监视器、worktree 清理和规则加载顺序。
+- [#26 让代码库为代理做好准备](/26-factory-agent-ready-codebases)：重新拉取英文字幕；新增 3.6 组织层面（初级工程师信号、投资方式、愿景数字的性质）。
+- [#36 用代码调用 MCP](/36-anthropic-code-execution-with-mcp)：补全五个好处的代码示例（过滤、轮询、PII 占位符、skills）；新增 3.5 代价与权衡。
+
 ## 2026-10-14 · 重写第四批：7 篇改为新写法
 
 按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对）重写：
