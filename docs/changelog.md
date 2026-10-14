@@ -2,6 +2,15 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第六批：5 篇改为新写法
+
+按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
+- [#02 Claude Code 团队怎么用 Claude Code](/02-claude-code-team-workflows)：改用人工字幕；补充“UI 与 transcript 解耦”、新工具内测的六步流程、验证 / 审查 / 反馈三原语；新增 3.7 工程师还剩什么。
+- [#43 Codex app server](/43-codex-app-server)：改用原始识别字幕重新核对引语（旧稿去掉了口头语）；补充抓包演示、按线程配置、Doom 演示里 dynamic tools 的用法。
+- [#25 Simon Willison 的测试与验收模式](/25-simonw-agentic-engineering-testing-patterns)：重新抓取四章原文；补充 `/tmp`、`curl` “explore”、Rodney 提示词的三个技巧、浏览器测试不稳定的问题。
+- [#13 Bijan Bowen 实测 Grok Build](/13-bijan-bowen-grok-build)：补充计划结构表、截图“修视觉不修逻辑”的规律、飞行游戏和网页复刻任务；新增 3.6 失败与越界。
+- [#12 ForrestKnight 逐行审 Grok 4.5](/12-forrestknight-grok-4-5)：补充价格表、训练数据来源、讲者对改动范围的口误；新增 3.5 守约束和 3.6 工作流分工。
+
 ## 2026-10-14 · 重写第五批：6 篇改为新写法
 
 按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
