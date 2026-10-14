@@ -2,6 +2,19 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第四批：7 篇改为新写法
+
+按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对）重写：
+- [#06 Field Guide to Fable](/06-field-guide-to-fable)：改用 AI Engineer 官方时间戳文字稿；拆出 3.4“实现笔记与反向考你”和 3.5“失落感与别太讲道理”；删掉旧稿里一条无法核对的英文提示词。
+- [#01 Claude Code 一年回顾](/01-claude-code-one-year)：重新拉取英文字幕；补充 auto mode 上线前的红队与评测流程、HBR 电脑转型类比；新增 3.8“人的角色在合并”。
+- [#27 Mitchell Hashimoto 的六步](/27-mitchellh-ai-adoption-journey)：补充“三阶段”框架、自己摸出的三条经验、技能形成取舍和“负空间”。
+- [#29 Gemini CLI Conductor](/29-gemini-cli-conductor)：按仓库最新 `workflow.md` 补充任务生命周期（`[~]`、提交号、git notes）和阶段检查点协议（最多修两次、等人确认）；3.5 补充三种纠正流程。
+- [#03 How we Claude Code](/03-how-we-claude-code)：重新拉取字幕；小节改为编号（3.1–3.5），新增 3.4 演示和 3.5 问答与设置建议。
+- [#19 Agent Evals 入门](/19-anthropic-demystifying-agent-evals)：补充对话、研究、computer use 代理的评测要点，评分器细则（评结果不评路径、部分得分）和六种方法对比表；注明原文 SWE-bench 起点数字前后不一致。
+- [#45 Managed Agents 架构](/45-anthropic-managed-agents)
+
+横向页面：阶段指南里引用 #03 的小节标题改为编号；#06 “五种手法”引用补上 3.4；#27 “关掉通知”引用改为 3.4、3.6。
+
 ## 2026-10-14 · 重写第三批：7 篇改为新写法
 
 按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
