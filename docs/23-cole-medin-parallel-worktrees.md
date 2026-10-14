@@ -1,4 +1,4 @@
-# 同时开 5 个 Claude Code 不打架：Cole Medin 的并行代理“五根支柱”与 worktree 实战
+# 5 个代理同时写代码，怎样不互相踩脚：Cole Medin 的并行“五根支柱”
 
 <div class="meta-tags"><span class="tool-tag tool-claude">Claude Code</span></div>
 
@@ -8,9 +8,14 @@
 
 </div>
 
-::: info 为什么值得看
-本站已有的并行内容偏概念（如 [#01](/01-claude-code-one-year) 的 worktree、[#11](/11-peter-steinberger-openclaw) 的 10 个 checkout），这个视频是**完整演示**：5 个 issue 同时规划、实现、开 PR、审查，配套仓库里有 worktree 创建脚本、按目录名分配端口的脚本、数据库分支脚本和 `/review-pr` 命令，可以直接参考。讲者是有大量实操视频的独立开发者，以 Claude Code 为主，但方法适用于任何编码代理。
-:::
+## 读完你能带走的 6 条收获
+
+1. **只多开几个终端不叫并行，代理会互相覆盖。** 每个代理要有自己的 worktree，最好连数据库也各有一份（见第 2 节、3.5）。
+2. **issue 是唯一输入，PR 是唯一输出。** 范围事先划好，事后把 PR 和 issue 一对比，就知道代理有没有跑偏（见 3.1、3.4）。
+3. **审查者永远不应该看到写代码者的聊天记录。** 先 `/clear`，再按改动类型并行派审查子代理（见 3.3）。
+4. **再请另一家模型审一遍。** 演示中 Codex 又从 Claude 审过的 PR 里挑出了问题（见 3.3）。
+5. **每个 bug 都要问“哪条规则、技能或流程放它进来的”，然后改那一层。** 这是让并行可持续的关键（见 3.4）。
+6. **端到端验证要先解决三件事：端口、依赖、数据库。** 端口按目录哈希分配，依赖预装，数据库按 worktree 分支（见 3.5）。
 
 ::: tip 小白先懂这几个词
 - [Git Worktree](/glossary#worktree)：同一个仓库检出多个工作目录，每个目录一个分支，互不干扰。
@@ -35,13 +40,25 @@
 | 配套仓库 | https://github.com/coleam00/GitHubIssueTriager |
 | 分析依据 | YouTube 自动字幕（yt-dlp 获取）+ 视频简介与章节 + 配套 GitHub 仓库 `coleam00/GitHubIssueTriager`（`.claude/commands/review-pr.md`、`scripts/assign-port.ts`、`scripts/worktree-setup.sh` 原文）。视频简介中包含 Neon 的推广链接，讲者也在推广自己的开源工具 Archon，阅读时请留意。 |
 
-## 2. 做了什么
+## 2. 这篇在回答什么
+
+早上把 5 个 issue 交给 5 个代理，午饭前收到 5 个可以审的 PR。这是讲者想要的状态。
 
 讲者每天并行运行 3–10 个 Claude Code 会话。他认为单个会话最多让产出翻倍，想要 10 倍就必须并行；但如果只是多开几个实例，<Trans zh="它们会不断踩到彼此、覆盖彼此的改动">“they're going to step on each other's toes constantly, override each other's changes”</Trans>。他也认为 Claude Code 自带的 Agent Teams 功能目前还不够可靠。
 
 演示项目是一个简单的“GitHub issue 分诊看板”（Next.js + Neon Postgres），仓库里有 5 个打开的 issue，目标是同时派 5 个代理各处理一个。
 
-## 3. 怎么做的
+他也提到 Claude Code 自带的 Agent Teams，但评价是 <Trans zh="老实说，它不太可靠">“honestly, that's not very reliable”</Trans>，不算一套真正的系统。所以他自己搭了一套，归纳成“五根支柱”，前三根管并行，后两根管验证：
+
+1. 工作怎么切、怎么交给代理？（3.1）
+2. 多个代理怎么不互相覆盖？（3.2）
+3. 代码谁来审，怎么审才不放水？（3.3）
+4. 同类问题怎么不再出现？（3.4）
+5. 并行做端到端验证，环境上会撞到什么？（3.5）
+
+讲者的判断是：后两根才决定能不能规模化。<Trans zh="如果你的系统里没有足够的自我验证，你就会成为系统的大瓶颈">“if you don't have a lot built into your system for self-validation, then you're going to become such a big bottleneck for your system”</Trans>，也就开不了那么多代理。
+
+## 3. 怎么做
 
 <figure class="shot"><img src="/images/23/0200.webp" alt="3:20 讲者的 Excalidraw 图：Parallelism Infrastructure，五根支柱依次是 Issue is the Spec、Plan / Build / Validate、Parallel Worktrees、Fresh-Session Review、Self-Healing Layer；下方 The Catch 写着 Your computer wasn't built for 5 agents at once。" loading="lazy"><figcaption>📷 视频截图 · <a href="https://www.youtube.com/watch?v=rFGlJ4oIlhw&t=200s" target="_blank" rel="noopener">3:20</a> · 五根支柱：Issue 即规格 → 规划/实现/验证 → 并行 worktree → 全新会话审查 → 自愈层；下方是“你的电脑不是为同时跑 5 个代理设计的”。</figcaption></figure>
 
@@ -159,7 +176,7 @@ export function assignPort(): number {
 ```
 :::
 
-## 4. 结果如何
+## 4. 结果与局限
 
 - 演示中 5 个 issue 全部走到了 PR，并完成了 Claude 子代理审查和 Codex 对抗式审查，两轮审查都找到了需要修改的问题。
 - 5 个 worktree 的应用同时运行在不同端口（例如 4161、4107），各自连接独立的数据库分支，可以并行做端到端测试。
@@ -172,7 +189,16 @@ export function assignPort(): number {
 - 讲者强调：代理审查之后，合并前**人仍然要自己审**。
 :::
 
-## 5. 可借鉴之处
+## 5. 结论
+
+这个视频回答的问题是：**怎样让并行代理的产出，不被人的审查能力卡住？**
+
+讲者的答案分两半。前一半是隔离：issue 切范围，worktree 隔代码，数据库分支隔数据，端口哈希隔服务。后一半是验证：全新上下文审查、第二家模型对抗式审查，每个 bug 都回头修“AI 层”。只做前一半，你会得到一堆等你审的 PR；两半都做，并行才能扩大。
+
+我觉得最值得马上抄的是两件小事：审查前一律 `/clear`；把 PR 和原 issue 放在一起对比。端口哈希和数据库分支，等你真的要并行跑端到端测试时再上。
+
+**可借鉴之处：**
+
 
 1. **用 issue 作为每个代理的唯一输入、PR 作为唯一输出**，事后可以直接对比两者，发现代理偏离范围。
 2. **审查一律开新会话**，并按改动类型派不同的审查子代理，严重问题必须带 `file:line`。

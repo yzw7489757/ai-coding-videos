@@ -2,6 +2,19 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第三批：7 篇改为新写法
+
+按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
+- [#28 Claude Code Hooks 官方指南](/28-claude-code-hooks-guide)：重新抓取文档全文；新增 3.7 通知、自动批准、审计、HTTP hook，3.8 常见坑与排错；3.3 补充结构化 JSON 输出和多个 hook 的合并规则，3.4 补充 direnv 环境重载。
+- [#15 Grok Build 三项实测](/15-arcade-grok-build-57-agents)：改用通顺的 en-US 字幕，引文改为逐字核对；补充 `/goal` 自动规划、7 分钟与 23 分钟的耗时差异。
+- [#38 Cursor 自动驾驶代码库](/38-cursor-self-driving-codebases)：补全背景（单代理失败、换模型）、保鲜机制、磁盘瓶颈、依赖与指令问题和四条提示词经验。
+- [#35 Amp 的设计决定](/35-amp-next-generation-ai-coding)：新增 3.7 终端界面和广告补贴推理成本。
+- [#24 Ralph 循环](/24-huntley-horthy-ralph-loop)：补充“致命三要素”、on the loop、坏规格放大；新增 3.8 讨论（“这就是软件工程”、Loom）。
+- [#23 Cole Medin 并行五支柱](/23-cole-medin-parallel-worktrees)
+- [#41 Anthropic 定时代理参考实现](/41-anthropic-agent-automations)
+
+各指南和模式库引用的结论没有变化，未改动。
+
 ## 2026-10-14 · 重写第二批：6 篇长文改为新写法
 
 按同一方法（大纲 → 综合 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
