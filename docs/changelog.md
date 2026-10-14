@@ -2,6 +2,18 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-14 · 重写第二批：6 篇长文改为新写法
+
+按同一方法（大纲 → 综合 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写：
+- [#10 How OpenAI Uses Codex](/10-how-openai-uses-codex)：字幕改用 yt-dlp android 客户端重新获取；新增 3.1 上下文、3.6 问答两节。
+- [#11 Peter Steinberger 构建 OpenClaw](/11-peter-steinberger-openclaw)：改用人工英文字幕核对引文；新增 3.6 全权限的惊喜与代价、3.7 怎么开始。
+- [#21 Agent Skills 演讲](/21-anthropic-agent-skills-talk)
+- [#16 Anthropic 长任务 harness 设计](/16-anthropic-harness-design-long-running-apps)
+- [#17 16 个 Claude 写 C 编译器](/17-anthropic-c-compiler-agent-teams)
+- [#18 Cursor 数百代理写浏览器](/18-cursor-scaling-long-running-agents)
+
+各指南和模式库引用的结论没有变化，未改动。
+
 ## 2026-10-14 · 重写第一批：长视频文章改为“收获清单 + 按问题组织”
 
 **写法变化（AGENTS.md 6.1 / 6.6 / 6.7 / 7 / 8）**
