@@ -29,7 +29,7 @@
 | 项目 | 内容 |
 |---|---|
 | 讲者 / 频道 | Ryan Lopopolo（OpenAI Member of Technical Staff），Q&A 主持 Vibhu Sapra ／ **AI Engineer**（AI Engineer Europe 2026，伦敦） |
-| 发布日期 | 2026-04-16 |
+| 发布日期 | 2026-04-17（YouTube 上传日期，yt-dlp 核实） |
 | 时长 | 46:20（主题演讲约 18 分钟 + Q&A） |
 | 使用工具 | Codex（GPT-5.4、auto compaction、skills、reviewer agents）、pnpm workspace、自定义 ESLint、Chrome DevTools、本地可观测性栈 |
 | 延伸 | 同一讲者在 Latent Space 播客的长访谈：https://www.youtube.com/watch?v=CeOXx-XTYek（含 Symphony 编排器，本文未单独分析） |

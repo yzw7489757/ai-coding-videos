@@ -27,7 +27,7 @@
 | 项目 | 内容 |
 |---|---|
 | 讲者 / 频道 | Arno（字幕自我介绍：Anthropic Applied AI 团队架构师）／ 官方频道 **Claude**（Code w/ Claude 2026 工作坊） |
-| 发布日期 | 2026-05-22 |
+| 发布日期 | 2026-05-23（YouTube 上传日期，yt-dlp 核实） |
 | 时长 | 31:43 |
 | 使用工具 | Claude Code（Opus 4.7、Auto mode、Fast mode、`/effort`、AskUserQuestion）、Playwright MCP、Bun、Vite + React、Zod、Vitest |
 | 配套仓库 | https://github.com/anthropics/cwc-workshops/tree/main/how-we-claude-code |

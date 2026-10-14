@@ -46,6 +46,7 @@ mindmap
 - **团队级 harness**（属于 [打地基](/guide/foundation)）：OpenAI Frontier 团队把非功能性需求写成 CI 审查代理、仓库专属 lint、结构测试，让约束“自动回到上下文里”（[[07§3.2]]）；仓库结构本身也是 prompt（[[07§3.5]]）。
 - **代理就是“模型 + 工具 + 循环”**：Amp 的 Beyang Liu 认为构建者能调的只有三根杠杆：选哪个模型、工具怎么描述、模型和工具怎么迭代（[[35§3.1]]）。
 - **harness 也是可替换的部件**：Anthropic 把代理拆成 session（只追加日志）、harness（循环）、sandbox（执行环境）三个接口，每个都能单独失败和替换（[[45§2]]、[[45§3.2]]）。
+- **“双手”也可以交给客户**：Cursor Self-Hosted Machines 把执行环境放进客户网络、循环留在 Cursor 云端，是同一种拆分的产品化（[[51§3.1]]）。
 - **在现成 harness 上构建**：Codex 的 app server 是包住 harness 的 JSON-RPC 协议，Codex 应用和第三方客户端都用它；建议自己打包 harness、工具标成 deferred、用 developer instructions 追加而不是重写系统提示词（[[43§3.1]]、[[43§3.6]]）。
 - **个人级 harness**：Mitchell 的定义很朴素：每犯一个错，就改一次环境，让它不再犯（[[27§3.5]]）。
 

@@ -94,7 +94,7 @@ python3 scripts/check-links.py   # 构建后检查站内链接与锚点
 **在 `domains.mjs` 里登记**：在对应阶段的 `items` 里追加
 
 ```js
-{ n: '28', slug: '28-xxx', text: '简洁中文标题', short: '导图短标签', tool: 'claude', type: 'article', added: 'YYYY-MM-DD' }
+{ n: '28', slug: '28-xxx', text: '简洁中文标题', short: '导图短标签', tool: 'claude', type: 'article', added: 'YYYY-MM-DD', published: 'YYYY-MM-DD' }
 ```
 
 | 字段 | 含义 |
@@ -106,11 +106,14 @@ python3 scripts/check-links.py   # 构建后检查站内链接与锚点
 | `tool` | `tools` 的 key：`claude` / `codex` / `grok45` / `grokbuild` / `cursor` / `gemini` / `openhands` / `devin` / `amp` / `general`。新工具先在 `tools` 加 key，并在 `custom.css` 加 `.tool-<key>` 亮 / 暗两套颜色 |
 | `type` | `video` / `article` / `docs` / `guide`（视频 / 文章 / 官方文档 / 指南） |
 | `added` | 收录日期。首页“最近收录”自动显示 `added` 最新的一批 |
+| `published` | **原始发布日期**。视频取 YouTube 上传日期（`yt-dlp --print upload_date` 核实）；文章 / 文档取原文日期（页面元数据 `datePublished` 或正文日期，与“基本信息”表一致）。拿不到（如持续更新的官方文档）就写 `''`，并在文章“基本信息”里如实说明，**不要编造** |
+
+**阶段内排序**：每个阶段的 `items` 在 `domains.mjs` 里按 `published` 从新到旧排列；同一天按编号从小到大；`published` 为空的排在末尾。新增资料时插到对应位置，不要追加到末尾。侧边栏、首页全景图和全部资料页（`all.md` 各阶段条目）都按这个顺序。
 
 ### 5.2 导航分工
 
 - **顶部导航只放工具页面**：学习路径、模式库、术语表、更新日志，加 GitHub 仓库图标；搜索用内置的。不要在顶部放内容分类或“全部资料”。
-- **左侧边栏只做内容导航**：6 个阶段分组，组名为 `阶段 · 副标题`（如“打地基 · 上下文与规范”），**菜单里不显示序号**，顺序由分组排列体现；每组第一项是“阶段指南”，“去执行”组第二项是“专题：长时自主任务”，其余是文章。所有页面共用同一个侧边栏。
+- **左侧边栏只做内容导航**：6 个阶段分组，组名为 `阶段 · 副标题`（如“打地基 · 上下文与规范”），**菜单里不显示序号**，顺序由分组排列体现；每组第一项是“阶段指南”，“去执行”组第二项是“专题：长时自主任务”，这两项位置固定；其余是文章，按 `published` 从新到旧排列（规则见 5.1 节“阶段内排序”）。所有页面共用同一个侧边栏。
 - 顶部导航和侧边栏的分组名、条目都**不带编号**；分组名、首页卡片里**不写篇数**；侧边栏里**不放类型 / 工具标签**（文章标题下方只显示工具名和评分）。
 - 侧边栏、首页卡片和全景图、全部资料页都由 `domains.mjs` 生成。改 URL 时必须在 `vercel.json` 的 `redirects` 里加旧地址跳转。
 
