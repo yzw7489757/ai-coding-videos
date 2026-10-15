@@ -241,11 +241,13 @@
 .tool-devin { color: #0f766e; }
 .tool-amp { color: #be123c; }
 .tool-aider { color: #15803d; }
+.tool-factory { color: #c2410c; }
 .dark .tool-gemini { color: #8ab4f8; }
 .dark .tool-openhands { color: #fcd34d; }
 .dark .tool-devin { color: #5eead4; }
 .dark .tool-amp { color: #fda4af; }
 .dark .tool-aider { color: #86efac; }
+.dark .tool-factory { color: #fdba74; }
 .type-tag {
   display: inline-block;
   margin-left: 4px;

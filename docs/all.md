@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 51 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 56 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -37,6 +37,13 @@
   - 作者 / 来源：xAI ／ x.ai 官方新闻 ｜ 发布：2026-09-16 ｜ 工具：Grok Build CLI（`/memory`、`/dream`）
   - 看点：回合结束后在后台记下约定、决定和项目事实，按主题整理成 markdown；不记任务状态、未定结论、密钥和仓库已有内容；当前指令优先。发布说明很短，没有数据。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/46-grok-build-memory)
+
+### Claude Code mods：可编程的扩展 {#item-52}
+
+- **[Customize Claude Code with mods in TypeScript](https://claude.com/resources/articles/claude-code-mods)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Anthropic ／ claude.com 产品文章 ｜ 发布：2026-10-01 ｜ 工具：Claude Code CLI 与桌面应用、`/plugin`
+  - 看点：mods 是挂在事件上的 TypeScript 函数，能在事件前后、代替或包住它运行，改写 prompt、拦截工具调用、替换 `/diff`；多个 mod 按加载顺序叠成洋葱；不在沙箱里，团队靠插件白名单和最先加载的 `sec-default` 管控。公告类短文，没有 API 和数据。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/52-claude-code-mods)
 
 ### 把开发环境做成给代理用的产品 {#item-37}
 
@@ -180,7 +187,7 @@
 
 - **[Claude Code Task System: ANTI-HYPE Agentic Coding (Advanced)](https://www.youtube.com/watch?v=4_2j5wgt_ds)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
   - 讲者 / 频道：IndyDevDan ｜ 发布：2026-02-02 ｜ 工具：Claude Code（Task 系统、Hooks、子代理）
-  - 看点：用模板元提示词生成计划，再让 builder / validator 成对的子代理通过 Task 依赖协作、自检。
+  - 看点：Task 系统补上共同任务、依赖和完成通知；模板元提示词 + Stop hook 保证计划格式；builder 一次一个任务带 lint 自检、validator 配置上只读。任务简单，讲者自认验证太浅。2026-10-15 取得完整字幕后重写。
   - 👉 [阅读分析](/05-indydevdan-task-system)
 
 ### 数百个代理协作写浏览器 {#item-18}
@@ -194,7 +201,7 @@
 
 - **[Automating Large Scale Refactors with Parallel Agents - Robert Brennan, OpenHands](https://www.youtube.com/watch?v=rcsliSIy_YU)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>
   - 讲者 / 频道：Robert Brennan（OpenHands）／ AI Engineer ｜ 发布：2026-01-08 ｜ 工具：OpenHands、Agent SDK、Refactor SDK
-  - 看点：代理一次做不完大迁移；迁移分支 + 背景说明 + 3–5 个并行代理 + 每个 PR 人审；拆任务的五条标准；按依赖图分批、验证器 + 修复器；Redux 迁 Zustand 的临时脚手架。
+  - 看点：代理一次做不完大迁移；迁移分支 + 背景说明 + 3–5 个并行代理 + 每个 PR 人审；拆任务的四条标准；按依赖图分批、验证器 + 修复器；Redux 迁 Zustand 的临时脚手架；代理间共享上下文的四种做法；后半场用 SDK 批量修漏洞的动手练习。2026-10-15 取得完整字幕后按全长重写。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/30-openhands-parallel-refactors)
 
 ## 做验证 · 测试、评测与审查 {#domain-verification}
@@ -230,6 +237,13 @@
   - 作者 / 来源：Ido Pesok ／ Cognition 博客 ｜ 发布：2026-05-29 ｜ 工具：Devin（云端虚拟机、Computer Use、测试模式）
   - 看点：异步触发的会话已超过交互式；测试计划基于源码；操作前先写预期；登录写成确定性脚本放进测试技能；交回截图报告和分章节录屏。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/32-cognition-verifying-agentic-development)
+
+### auto mode：两段式权限分类器 {#item-56}
+
+- **[How we built Claude Code auto mode: a safer way to skip permissions](https://www.anthropic.com/engineering/claude-code-auto-mode)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：John Hughes ／ Anthropic Engineering ｜ 发布：2026-03-25 ｜ 工具：Claude Code auto mode
+  - 看点：用户对 93% 的权限提示都点批准；三层权限，进入时丢弃宽泛允许规则；分类器只看用户消息和工具调用，单 token 快速过滤后再推理复核；误报 0.4%，对真实过度主动动作漏 17%；连续 3 次或累计 20 次拒绝交给人。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/56-anthropic-claude-code-auto-mode)
 
 ### 测试驱动与代理手动测试 {#item-25}
 
@@ -271,6 +285,13 @@
 **这一组放什么**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
 
 📘 **先读阶段指南**：[自动化 · 后台代理与 CI/CD](/guide/automation)
+
+### OpenCompute：给代理按需发电脑 {#item-53}
+
+- **[Introducing OpenCompute](https://factory.com/news/opencompute)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>
+  - 作者 / 来源：Walker Hildebrand、Sherry Bai ／ Factory 新闻 ｜ 发布：2026-10-14 ｜ 工具：Factory Droid、Missions、Remote Control
+  - 看点：一台远程机器不等于一支机队；在各家沙箱之上做通用生命周期，意图写进 Postgres 再由 reconciler 调和；每个平台一个 gRPC driver，用必选和可选能力档位的一致性测试约束；只向外连。首个客户的 driver 由代理按“合约 + 一致性测试”写成。private preview，无性能数据。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/53-factory-opencompute)
 
 ### 定时代理自动化的六条规则 {#item-41}
 
@@ -321,6 +342,13 @@
   - 看点：context → validation → verification 飞轮；100% PR 经 Codex review；PR 看护 skill 盯 CI；手机上完成“修复→预览→合并”。
   - 👉 [阅读分析](/10-how-openai-uses-codex)
 
+### 用 Skills 维护开源仓库 {#item-55}
+
+- **[Using skills to accelerate OSS maintenance](https://developers.openai.com/blog/skills-agents-sdk)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：OpenAI ／ OpenAI 开发者博客 ｜ 发布：2026-03-09 ｜ 工具：Codex、Codex GitHub Action、Docs MCP
+  - 看点：Agents SDK 两个仓库的 11 个 Skill；AGENTS.md 用 if/then 规定何时必须用；description 是路由合约；脚本管确定步骤、模型管判断；发版评审默认放行、阻止必附清单；公开仓库上 CI 的安全清单。PR 合并数 316 → 457 同期也受 Codex 自动审查影响。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/55-openai-skills-oss-maintenance)
+
 ### Bugbot：用解决率迭代审查机器人 {#item-33}
 
 - **[Building a better Bugbot](https://cursor.com/blog/building-bugbot)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
@@ -354,6 +382,13 @@
   - 作者 / 来源：Dominik Kundel ／ AI Engineer ｜ 发布：2026-10-09 ｜ 工具：Codex app server、Python SDK
   - 看点：app server 是包住 Codex harness 的开源 JSON-RPC 协议；120 多种消息；和 ACP、codex exec 的区别；三条建议：自己打包 harness、工具标 deferred、用 developer instructions 追加。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/43-codex-app-server)
+
+### 长任务的 token 省在哪 {#item-54}
+
+- **[Improved token efficiency for longer agent runs](https://cursor.com/blog/improved-token-efficiency)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Jediah Katz、Connor O’Keefe、Calvin Yee ／ Cursor 研究博客 ｜ 发布：2026-09-23 ｜ 工具：Cursor 代理 harness
+  - 看点：系统提示删约 66%；低频工具按需加载，静态工具描述 token 降 60%；缓存断点放在稳定前缀后，冷缓存未命中降 20%；行号每十行一个；少推子代理。合计降 7% token 成本，靠线上 A/B 确认质量。几个百分比口径不同，不能相加。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/54-cursor-token-efficiency)
 
 ### Codex Harness 内部机制 {#item-09}
 
@@ -413,26 +448,29 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 9 篇（#49、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 9 篇（#15、#12、#39、#32、#25、#50、#47、#19、#31）；自动化 10 篇（#41、#48、#02、#51、#01、#40、#10、#33、#22、#34）；看原理 9 篇（#43、#09、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 10 篇（#15、#12、#39、#32、#56、#25、#50、#47、#19、#31）；自动化 12 篇（#53、#41、#48、#02、#51、#01、#40、#10、#55、#33、#22、#34）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+
+**容量检查（2026-10-15，第六批 #52–#56 后）**：打地基 10 篇、做验证 10 篇、看原理 10 篇、自动化 12 篇，四个阶段都超过 8 篇，自动化明显超出。逐篇复核归类：#52（mods）的主要贡献是让代理每次开工的规则和扩展更可控，和 #28 Hooks 同类，归打地基；#53、#55 讲的分别是后台沙箱机队和把维护流程接进 CI，归自动化；#54 是 harness 怎么组装请求和缓存，归看原理；#56 是给代理的动作把关并公布误报漏报，与 #39 同类，归做验证。**拆分建议**：自动化已达 12 篇，建议按任务顺序拆成两个相邻阶段：“接进 PR 与 CI”（#10、#22、#33、#34、#55、#41）和“云端与后台运行环境”（#01、#02、#40、#48、#51、#53）。这仍是同一条“任务从开始到上线”的轴，只是把“触发与流水线”和“代理在哪里跑”分开。其余三个阶段各 10 篇，边界仍清楚，暂不拆。是否拆分等用户确认后再改 `domains.mjs` 和指南。
 
 **容量检查（2026-10-14，按 AGENTS.md 第 5.1 节第 4 条）**：第五批后打地基 9 篇、做验证 9 篇、自动化 10 篇。逐篇复核后没有改动归类：#49 的主要贡献是让开发基础设施（源代码管理）能承载代理规模，和 #37“把开发环境做成给代理用的产品”同类，归打地基（其中 CI、合并队列部分在自动化指南里用 xref 引用）；#47、#50 的核心论点都是“怎么确认评测结果可信”，归做验证；#48、#51 讲的都是代理在后台 / 云端哪里跑、怎么跑，归自动化。考虑过把 #51 放进打地基（与 #37 同为运行环境），但它讲的是云端代理的执行位置和扩缩，主要服务于后台运行，所以留在自动化。51 份资料分 6 个阶段，平均 8.5 篇，各阶段的边界仍然清楚，暂不改阶段名称、不拆分；如果自动化再增加，可考虑按“触发与 CI”和“云端运行环境”拆成两个相邻阶段（仍只按任务顺序这一条轴）。
 
 **容量检查（2026-10-13）**：“去执行”和“看原理”都到了 9 篇。逐篇复核后没有改动归类：#42 主要教的是在 Codex 应用里把活干完（Computer Use、`/goal`、子代理、线程交接），属于去执行；#43、#44、#45 的主要贡献都是 harness 的接口或机制（app server 协议、推理与编辑分离、session / harness / sandbox 解耦），放在其他阶段都会偏。46 份资料分 6 个阶段，平均已接近 8 篇，所以暂不改阶段名称；下一批如果还要往这两个阶段加，应考虑拆分阶段（仍然只按任务顺序这一条轴）。
 
-按类型：视频 23 篇；文章 24 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#51）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
+按类型：视频 23 篇；文章 29 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
 
 按工具：
 
 | 工具 | 数量 | 资料 | 说明 |
 |---|---|---|---|
-| Claude Code | 16 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45、#48 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
-| Codex | 10 | #07–#11、#22、#31、#42、#43、#47 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
+| Claude Code | 18 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45、#48、#52、#56 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
+| Codex | 11 | #07–#11、#22、#31、#42、#43、#47、#55 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
 | Grok（Grok Build / Cursor + Grok 4.5） | 6 | #12–#15、#34、#46 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
-| Cursor | 7 | #18、#33、#37–#40、#51 | 公司研究博客；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39）；2026-10-14 补上自托管执行机器（#51） |
+| Cursor | 8 | #18、#33、#37–#40、#51、#54 | 公司研究博客；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39）；2026-10-14 补上自托管执行机器（#51）；2026-10-15 补上 harness 省 token（#54） |
 | Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
 | OpenHands | 1 | #30 | 大会研讨会 |
 | Devin | 1 | #32 | Cognition 官方博客 |
 | Amp | 1 | #35 | 大会演讲；演讲后产品有较大变化，文中已注明 |
+| Factory Droid | 1 | #53 | Factory 官方新闻；#26 的讲者也来自 Factory，但内容不限工具，归“通用” |
 | Aider | 1 | #44 | 官方博客，2024-09 发布，时效较差，文中已注明 |
 | 通用（不限工具） | 7 | #19、#25、#26、#27、#36、#49、#50 | 方法论、评测、MCP 设计与开发基础设施，适用于任何编码代理 |
 
@@ -444,6 +482,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-15 第六批：#52 mods、#53 OpenCompute、#54 Cursor 省 token、#55 OpenAI 用 Skills 维护 SDK 仓库、#56 Claude Code auto mode。#55 补上了“把 Skill 接进 CI”的真实仓库做法，但仍不是“把 agent evals 接进 CI”的端到端示例。#55 页面日期 Mar 9, 2026，正文里的 March 6, 2026 是下载量数据截止日。同日 #05、#30 取得完整字幕，按新方法重写（#30 从只覆盖前 35 分钟扩展到全长）。
 - 2026-10-14 第五批：#47 补上了一个可照做的评测脚本（但评测对象是 Skill，不是 CI 里的代码评测，仍不算“把 agent evals 接进 CI”的端到端示例）；#50 说明评测分数里混着基础设施噪声；#48、#51 补上 Claude Code 云端会话和 Cursor 自托管执行环境；#49 是 Anthropic 源代码管理重做的一手经验。#51 页面元数据发布日期为 2026-09-02，页面里另有一个 2026-08-13 的时间标记，按元数据记。
 - 2026-10-13 第四批补上了 Aider（#44，但是 2024 年的老文章）和 xAI 官方的一篇产品说明（#46，Grok Build 记忆，内容很短）；xAI 官方的**工程博客或大会演讲**仍未找到。#41、#45 来自 Anthropic，#42、#43 来自 OpenAI 的 AI Engineer 演讲（录制于 6–7 月，10 月上传）。
 - 2026-10-12 第三批补上了 Cursor 云端代理的专门资料（#37、#40），以及一个把评测接进生产链路的案例（#39，但它评测的是权限分类器，不是 CI 里的代码评测）。**仍未覆盖**（截至第三批）：Aider；“把 agent evals 接进 CI”的端到端配置示例；xAI 官方的 Grok 工程博客或大会演讲。

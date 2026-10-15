@@ -15,6 +15,7 @@ export const tools = {
   devin: 'Devin',
   amp: 'Amp',
   aider: 'Aider',
+  factory: 'Factory Droid',
   general: '通用（不限工具）'
 }
 
@@ -38,6 +39,7 @@ export const domains = [
     items: [
       { n: '49', slug: '49-anthropic-scion-source-control', text: '为代理重做源代码管理', short: '代理规模的源码管理', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-10-13' },
       { n: '46', slug: '46-grok-build-memory', text: 'Grok Build 的跨会话记忆', short: 'Grok Build 记忆', tool: 'grokbuild', type: 'article', added: '2026-10-13', published: '2026-09-16' },
+      { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
       { n: '37', slug: '37-cursor-cloud-agent-environment', text: '把开发环境做成给代理用的产品', short: '代理用的开发环境', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-07-30' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video', published: '2026-05-19' },
       { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video', published: '2026-04-17' },
@@ -93,6 +95,7 @@ export const domains = [
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video', published: '2026-07-10' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09', published: '2026-05-29' },
+      { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '25', slug: '25-simonw-agentic-engineering-testing-patterns', text: '测试驱动与代理手动测试', short: 'TDD 与手动测试', tool: 'general', type: 'guide', added: '2026-10-09', published: '2026-02-23' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
       { n: '47', slug: '47-openai-eval-skills', text: '给 Skill 写评测', short: 'Skill 评测', tool: 'codex', type: 'article', added: '2026-10-14', published: '2026-01-22' },
@@ -108,6 +111,7 @@ export const domains = [
     icon: '⚙️',
     desc: '让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。',
     items: [
+      { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
       { n: '48', slug: '48-claude-code-cloud-sessions', text: 'Claude Code 云端会话实战', short: 'Claude Code 云端会话', tool: 'claude', type: 'article', added: '2026-10-14', published: '2026-10-06' },
       { n: '02', slug: '02-claude-code-team-workflows', text: 'Claude Code 团队的工作流', short: 'Slack 派活 扇出审查', tool: 'claude', type: 'video', published: '2026-09-02' },
@@ -115,6 +119,7 @@ export const domains = [
       { n: '01', slug: '01-claude-code-one-year', text: 'Claude Code 一周年：验证与 Routines', short: 'Routines 与验证', tool: 'claude', type: 'video', published: '2026-06-08' },
       { n: '40', slug: '40-cursor-cloud-agent-lessons', text: '云端代理一年的四条教训', short: '云端代理运行层', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-02' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video', published: '2026-05-28' },
+      { n: '55', slug: '55-openai-skills-oss-maintenance', text: '用 Skills 维护开源仓库', short: 'Skills 接进 CI', tool: 'codex', type: 'article', added: '2026-10-15', published: '2026-03-09' },
       { n: '33', slug: '33-cursor-building-bugbot', text: 'Bugbot：用解决率迭代审查机器人', short: 'Bugbot 解决率', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-15' },
       { n: '22', slug: '22-openai-codex-ci-autofix', text: 'CI 挂了让 Codex 自动修', short: 'codex exec 修 CI', tool: 'codex', type: 'docs', added: '2026-10-09', published: '' },
       { n: '34', slug: '34-grok-build-headless-hooks', text: 'Grok Build 跑进脚本和 CI', short: 'Grok Build 无人值守', tool: 'grokbuild', type: 'docs', added: '2026-10-09', published: '' }
@@ -129,6 +134,7 @@ export const domains = [
     desc: '理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。',
     items: [
       { n: '43', slug: '43-codex-app-server', text: '在 Codex harness 上做自己的客户端', short: 'Codex app server', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-09' },
+      { n: '54', slug: '54-cursor-token-efficiency', text: '长任务的 token 省在哪', short: 'harness 省 token', tool: 'cursor', type: 'article', added: '2026-10-15', published: '2026-09-23' },
       { n: '09', slug: '09-how-codex-works', text: 'Codex Harness 内部机制', short: 'Codex harness 拆解', tool: 'codex', type: 'video', published: '2026-08-10' },
       { n: '45', slug: '45-anthropic-managed-agents', text: 'Managed Agents：大脑与双手解耦', short: '大脑与双手解耦', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-04-08' },
       { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-03-24' },

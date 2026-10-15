@@ -2,6 +2,28 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-15 · 第六批收录 #52–#56，重写 #05、#30
+
+**新增资料（5 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#52](/52-claude-code-mods) | Anthropic：Customize Claude Code with mods | 打地基 | 2026-10-01 |
+| [#53](/53-factory-opencompute) | Factory：Introducing OpenCompute | 自动化 | 2026-10-14 |
+| [#54](/54-cursor-token-efficiency) | Cursor：Improved token efficiency for longer agent runs | 看原理 | 2026-09-23 |
+| [#55](/55-openai-skills-oss-maintenance) | OpenAI：Using skills to accelerate OSS maintenance | 自动化 | 2026-03-09（原文页面核实） |
+| [#56](/56-anthropic-claude-code-auto-mode) | Anthropic：How we built Claude Code auto mode | 做验证 | 2026-03-25 |
+
+**重写：** #05、#30 此前因 YouTube 限流拿不到完整字幕，这次取得 en-orig 字幕，按新写法重写。#05 改用完整字幕并核对仓库配置；#30 从只覆盖前 35 分钟扩展到全长，新增 3.6 动手练习（用 SDK 批量修漏洞）和 3.7 问答。原有小节编号全部保留。
+
+**结构变化：**
+- 新增工具标签 Factory Droid（#53）。
+- 阶段数量：打地基 9 → 10，做验证 9 → 10，看原理 9 → 10，自动化 10 → 12。自动化的拆分建议写在[全部资料 · 覆盖情况](/all#coverage)，等确认后再改。
+- 模式库新增 P43–P47（description 路由合约、评审默认放行、稳定前缀与缓存断点、两段式动作分类器、合约 + 一致性测试），共 47 个。
+- 同步更新：四个阶段指南（问题、分歧表、阅读顺序、导图）、学习路径（进阶第 13 步、专家第 11 步）、全部资料、总结页。
+
+**新增术语 6 个**：Mods、Reconciler、Conformance Test、Prompt Caching、Changeset、Deny-and-Continue。
+
 ## 2026-10-14 · 重写第八批：7 篇改为新写法
 
 按同一方法（片段分析 → 通盘梳理 → 成稿，引文逐字脚本核对，原有小节编号全部保留）重写，每篇加上收获清单、按问题组织的第 2 节和“读完自测”：
