@@ -124,5 +124,5 @@ mindmap
 10. [[50]]：读分数之前，先知道分数里有多少噪声。
 
 ::: info 上一阶段 / 下一阶段
-← [去执行](/guide/execution) ｜ 验证可靠之后，才适合交给后台：[自动化](/guide/automation) →
+← [去执行](/guide/execution) ｜ 验证可靠之后，才适合交给后台：[接进 PR 与 CI](/guide/ci) →
 :::

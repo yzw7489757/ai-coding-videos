@@ -36,7 +36,7 @@ export default withMermaid(
           }
         }
       },
-      // 左侧边栏只做内容导航：6 个阶段，每组先放阶段指南，再放文章（所有页面共用同一个侧边栏）
+      // 左侧边栏只做内容导航：7 个阶段，每组先放阶段指南，再放文章（所有页面共用同一个侧边栏）
       sidebar: domains.map((d) => ({
         text: stageLabel(d),
         collapsed: false,

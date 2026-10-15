@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 56 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的六个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 56 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的七个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -40,9 +40,14 @@ features:
     link: /guide/verification
     linkText: 阅读阶段指南
   - icon: ⚙️
-    title: 自动化 · 后台代理与 CI/CD
-    details: 让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
-    link: /guide/automation
+    title: 接进 PR 与 CI · 触发、审查与流水线
+    details: 让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。
+    link: /guide/ci
+    linkText: 阅读阶段指南
+  - icon: ☁️
+    title: 云端与后台运行环境 · 代理在哪里跑
+    details: 让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
+    link: /guide/cloud
     linkText: 阅读阶段指南
   - icon: 🧠
     title: 看原理 · Harness 与内部机制
@@ -53,7 +58,7 @@ features:
 
 ## 这是什么
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 六个阶段依次是：打地基（上下文与规范）→ 做规划 → 去执行 → 做验证 → 自动化，最后是看原理（Harness 与内部机制）。每份资料只放在它主要贡献所在的那个阶段。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 七个阶段依次是：打地基（上下文与规范）→ 做规划 → 去执行 → 做验证 → 接进 PR 与 CI → 云端与后台运行环境，最后是看原理（Harness 与内部机制）。每份资料只放在它主要贡献所在的那个阶段。
 
 一个持续更新的中文知识库，主题是**怎样用编码代理（coding agent）把软件做好**。内容分三层：
 
@@ -77,9 +82,9 @@ features:
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
 | 52 | [Claude Code mods：可编程的扩展](/52-claude-code-mods) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
-| 53 | [OpenCompute：给代理按需发电脑](/53-factory-opencompute) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
+| 53 | [OpenCompute：给代理按需发电脑](/53-factory-opencompute) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
 | 54 | [长任务的 token 省在哪](/54-cursor-token-efficiency) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 55 | [用 Skills 维护开源仓库](/55-openai-skills-oss-maintenance) | [自动化 · 后台代理与 CI/CD](/guide/automation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
+| 55 | [用 Skills 维护开源仓库](/55-openai-skills-oss-maintenance) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
 | 56 | [auto mode：两段式权限分类器](/56-anthropic-claude-code-auto-mode) | [做验证 · 测试、评测与审查](/guide/verification) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
@@ -92,7 +97,8 @@ features:
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
 - **[去执行 · 从单代理到多代理](/guide/execution)**：让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
 - **[做验证 · 测试、评测与审查](/guide/verification)**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
-- **[自动化 · 后台代理与 CI/CD](/guide/automation)**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
+- **[接进 PR 与 CI · 触发、审查与流水线](/guide/ci)**：让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。
+- **[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)**：让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
 - **[看原理 · Harness 与内部机制](/guide/harness)**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
 ```mermaid
@@ -173,33 +179,35 @@ flowchart LR
     A47 ~~~ A19
     A19 ~~~ A31
   end
-  subgraph S5["自动化"]
+  subgraph S5["接进 PR 与 CI"]
     direction TB
-    A53["53 代理沙箱机队"]
     A41["41 定时代理六规则"]
-    A48["48 Claude Code 云端会话"]
-    A02["02 Slack 派活 扇出审查"]
-    A51["51 自托管执行机器"]
-    A01["01 Routines 与验证"]
-    A40["40 云端代理运行层"]
     A10["10 PR 审查 CI 看护"]
     A55["55 Skills 接进 CI"]
     A33["33 Bugbot 解决率"]
     A22["22 codex exec 修 CI"]
     A34["34 Grok Build 无人值守"]
-    A53 ~~~ A41
-    A41 ~~~ A48
-    A48 ~~~ A02
-    A02 ~~~ A51
-    A51 ~~~ A01
-    A01 ~~~ A40
-    A40 ~~~ A10
+    A41 ~~~ A10
     A10 ~~~ A55
     A55 ~~~ A33
     A33 ~~~ A22
     A22 ~~~ A34
   end
-  subgraph S6["看原理"]
+  subgraph S6["云端与后台运行环境"]
+    direction TB
+    A53["53 代理沙箱机队"]
+    A48["48 Claude Code 云端会话"]
+    A02["02 Slack 派活 扇出审查"]
+    A51["51 自托管执行机器"]
+    A01["01 Routines 与验证"]
+    A40["40 云端代理运行层"]
+    A53 ~~~ A48
+    A48 ~~~ A02
+    A02 ~~~ A51
+    A51 ~~~ A01
+    A01 ~~~ A40
+  end
+  subgraph S7["看原理"]
     direction TB
     A43["43 Codex app server"]
     A54["54 harness 省 token"]
@@ -221,7 +229,7 @@ flowchart LR
     A35 ~~~ A36
     A36 ~~~ A44
   end
-  S1 --> S2 --> S3 --> S4 --> S5 --> S6
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7
 ```
 
 ## 不知道从哪开始？

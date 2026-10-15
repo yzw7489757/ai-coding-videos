@@ -2,12 +2,12 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 56 份资料分在 6 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 56 份资料分在 7 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
 ::: tip 快速跳转
-[打地基 · 上下文与规范](#domain-foundation) → [做规划 · 需求澄清与任务拆解](#domain-planning) → [去执行 · 从单代理到多代理](#domain-execution) → [做验证 · 测试、评测与审查](#domain-verification) → [自动化 · 后台代理与 CI/CD](#domain-automation) → [看原理 · Harness 与内部机制](#domain-harness)
+[打地基 · 上下文与规范](#domain-foundation) → [做规划 · 需求澄清与任务拆解](#domain-planning) → [去执行 · 从单代理到多代理](#domain-execution) → [做验证 · 测试、评测与审查](#domain-verification) → [接进 PR 与 CI · 触发、审查与流水线](#domain-ci) → [云端与后台运行环境 · 代理在哪里跑](#domain-cloud) → [看原理 · Harness 与内部机制](#domain-harness)
 
 想按评分挑着读：看下面的[评分总表](#scores)，可以按综合、实用性或深度排序。
 :::
@@ -280,18 +280,11 @@
   - 看点：精确率比召回率重要；审查者要能读整个仓库、运行代码；训练用的检查器和交给人用的审查器要分开；作者对 52.7% 的评论用代码修改回应。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/31-openai-verifying-code-at-scale)
 
-## 自动化 · 后台代理与 CI/CD {#domain-automation}
+## 接进 PR 与 CI · 触发、审查与流水线 {#domain-ci}
 
-**这一组放什么**：让代理脱离聊天框：事件触发、后台运行、PR 审查和 CI 自动修复。
+**这一组放什么**：让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。
 
-📘 **先读阶段指南**：[自动化 · 后台代理与 CI/CD](/guide/automation)
-
-### OpenCompute：给代理按需发电脑 {#item-53}
-
-- **[Introducing OpenCompute](https://factory.com/news/opencompute)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>
-  - 作者 / 来源：Walker Hildebrand、Sherry Bai ／ Factory 新闻 ｜ 发布：2026-10-14 ｜ 工具：Factory Droid、Missions、Remote Control
-  - 看点：一台远程机器不等于一支机队；在各家沙箱之上做通用生命周期，意图写进 Postgres 再由 reconciler 调和；每个平台一个 gRPC driver，用必选和可选能力档位的一致性测试约束；只向外连。首个客户的 driver 由代理按“合约 + 一致性测试”写成。private preview，无性能数据。
-  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/53-factory-opencompute)
+📘 **先读阶段指南**：[接进 PR 与 CI · 触发、审查与流水线](/guide/ci)
 
 ### 定时代理自动化的六条规则 {#item-41}
 
@@ -299,41 +292,6 @@
   - 作者 / 来源：Lance Martin、CJ Avilla ／ claude.dev 博客（Anthropic） ｜ 发布：2026-10-08 ｜ 工具：Claude Managed Agents、`ant` CLI、GitHub MCP、Slack
   - 看点：定时简报代理的参考实现：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；附原文配置。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/41-anthropic-agent-automations)
-
-### Claude Code 云端会话实战 {#item-48}
-
-- **[Claude Code in the cloud: a field guide to cloud sessions](https://claude.dev/blog/claude-code-in-the-cloud/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
-  - 作者 / 来源：Addy Osmani ／ claude.dev 博客 ｜ 发布：2026-10-06 ｜ 工具：Claude Code
-  - 看点：一个任务一台 VM：三个会话 87 秒修完三个问题；什么时候留在本地；七种云端用法（并行、反复验证、teleport、Auto-fix、routines、跑不可信代码）；GitHub 权限排错表。
-  - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/48-claude-code-cloud-sessions)
-
-### Claude Code 团队的工作流 {#item-02}
-
-- **[How the Claude Code team uses Claude Code](https://www.youtube.com/watch?v=S-sYlFiGFv8)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Thariq Shihipar、Sid Bidasaria、Robert Boyce（Anthropic）／ Claude ｜ 发布：2026-09-02 ｜ 工具：Claude Code、Claude Tag
-  - 看点：70–80% 工作经由 Slack 原生的 Claude Tag；给目标而非任务；扇出找 bug + 对抗式复审的 workflow。
-  - 👉 [阅读分析](/02-claude-code-team-workflows)
-
-### 云端代理跑在自己的机器上 {#item-51}
-
-- **[Run cloud agents on machines you manage](https://cursor.com/blog/self-hosted-machines)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
-  - 作者 / 来源：Jack Pertschuk ／ Cursor 博客 ｜ 发布：2026-09-02 ｜ 工具：Cursor
-  - 看点：执行搬进你的网络、推理留在 Cursor：worker 出站长连接接收工具调用；pool 按队列扩容、空闲休眠、一池多仓库；工具输出仍会回到 Cursor。
-  - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/51-cursor-self-hosted-machines)
-
-### Claude Code 一周年：验证与 Routines {#item-01}
-
-- **[Reflecting on a year of Claude Code](https://www.youtube.com/watch?v=Hth_tLaC2j8)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
-  - 讲者 / 频道：Boris Cherny、Cat Wu（Anthropic）／ Claude ｜ 发布：2026-06-08 ｜ 工具：Claude Code（Routines、Auto mode、`/loop`、Remote Control）
-  - 看点：每次犯错就写进 CLAUDE.md / Skill；验证 = “can the agent run the thing?”；用 routine 自动修 bug、盯 PR。
-  - 👉 [阅读分析](/01-claude-code-one-year)
-
-### 云端代理一年的四条教训 {#item-40}
-
-- **[What we’ve learned building cloud agents](https://cursor.com/blog/cloud-agent-lessons)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
-  - 作者 / 来源：Josh Ma ／ Cursor 博客 ｜ 发布：2026-06-02 ｜ 工具：Cursor Cloud Agents、Temporal、CI Autofix
-  - 看点：完整开发环境是输出质量的最大因素，缺了往往只表现为质量下降；从 work-stealing 迁到 Temporal，可靠性从一个 9 到两个 9 以上；代理循环、机器、对话状态解耦；模型变强后把 harness 逻辑搬进工具。
-  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/40-cursor-cloud-agent-lessons)
 
 ### OpenAI 用 Codex 守住 PR 质量 {#item-10}
 
@@ -370,6 +328,53 @@
   - 看点：`grok -p` + JSON 输出；兼容 Claude Code / Cursor 的 hook 文件，PreToolUse 是唯一能拦截的事件，出错时故障放行；`/loop` 定时任务；`grok -w` worktree。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/34-grok-build-headless-hooks)
 
+## 云端与后台运行环境 · 代理在哪里跑 {#domain-cloud}
+
+**这一组放什么**：让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
+
+📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
+
+### OpenCompute：给代理按需发电脑 {#item-53}
+
+- **[Introducing OpenCompute](https://factory.com/news/opencompute)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>
+  - 作者 / 来源：Walker Hildebrand、Sherry Bai ／ Factory 新闻 ｜ 发布：2026-10-14 ｜ 工具：Factory Droid、Missions、Remote Control
+  - 看点：一台远程机器不等于一支机队；在各家沙箱之上做通用生命周期，意图写进 Postgres 再由 reconciler 调和；每个平台一个 gRPC driver，用必选和可选能力档位的一致性测试约束；只向外连。首个客户的 driver 由代理按“合约 + 一致性测试”写成。private preview，无性能数据。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/53-factory-opencompute)
+
+### Claude Code 云端会话实战 {#item-48}
+
+- **[Claude Code in the cloud: a field guide to cloud sessions](https://claude.dev/blog/claude-code-in-the-cloud/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Addy Osmani ／ claude.dev 博客 ｜ 发布：2026-10-06 ｜ 工具：Claude Code
+  - 看点：一个任务一台 VM：三个会话 87 秒修完三个问题；什么时候留在本地；七种云端用法（并行、反复验证、teleport、Auto-fix、routines、跑不可信代码）；GitHub 权限排错表。
+  - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/48-claude-code-cloud-sessions)
+
+### Claude Code 团队的工作流 {#item-02}
+
+- **[How the Claude Code team uses Claude Code](https://www.youtube.com/watch?v=S-sYlFiGFv8)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 讲者 / 频道：Thariq Shihipar、Sid Bidasaria、Robert Boyce（Anthropic）／ Claude ｜ 发布：2026-09-02 ｜ 工具：Claude Code、Claude Tag
+  - 看点：70–80% 工作经由 Slack 原生的 Claude Tag；给目标而非任务；扇出找 bug + 对抗式复审的 workflow。
+  - 👉 [阅读分析](/02-claude-code-team-workflows)
+
+### 云端代理跑在自己的机器上 {#item-51}
+
+- **[Run cloud agents on machines you manage](https://cursor.com/blog/self-hosted-machines)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Jack Pertschuk ／ Cursor 博客 ｜ 发布：2026-09-02 ｜ 工具：Cursor
+  - 看点：执行搬进你的网络、推理留在 Cursor：worker 出站长连接接收工具调用；pool 按队列扩容、空闲休眠、一池多仓库；工具输出仍会回到 Cursor。
+  - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/51-cursor-self-hosted-machines)
+
+### Claude Code 一周年：验证与 Routines {#item-01}
+
+- **[Reflecting on a year of Claude Code](https://www.youtube.com/watch?v=Hth_tLaC2j8)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 讲者 / 频道：Boris Cherny、Cat Wu（Anthropic）／ Claude ｜ 发布：2026-06-08 ｜ 工具：Claude Code（Routines、Auto mode、`/loop`、Remote Control）
+  - 看点：每次犯错就写进 CLAUDE.md / Skill；验证 = “can the agent run the thing?”；用 routine 自动修 bug、盯 PR。
+  - 👉 [阅读分析](/01-claude-code-one-year)
+
+### 云端代理一年的四条教训 {#item-40}
+
+- **[What we’ve learned building cloud agents](https://cursor.com/blog/cloud-agent-lessons)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Josh Ma ／ Cursor 博客 ｜ 发布：2026-06-02 ｜ 工具：Cursor Cloud Agents、Temporal、CI Autofix
+  - 看点：完整开发环境是输出质量的最大因素，缺了往往只表现为质量下降；从 work-stealing 迁到 Temporal，可靠性从一个 9 到两个 9 以上；代理循环、机器、对话状态解耦；模型变强后把 harness 逻辑搬进工具。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/40-cursor-cloud-agent-lessons)
 ## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
@@ -448,7 +453,9 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 10 篇（#15、#12、#39、#32、#56、#25、#50、#47、#19、#31）；自动化 12 篇（#53、#41、#48、#02、#51、#01、#40、#10、#55、#33、#22、#34）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 10 篇（#15、#12、#39、#32、#56、#25、#50、#47、#19、#31）；接进 PR 与 CI 6 篇（#41、#10、#55、#33、#22、#34）；云端与后台运行环境 6 篇（#53、#48、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+
+**阶段拆分（2026-10-15，已确认）**：按上面的建议把“自动化”拆成“接进 PR 与 CI”（`ci`）和“云端与后台运行环境”（`cloud`）两个相邻阶段，各 6 篇；旧地址 `/guide/automation` 改为指向两个新指南的入口页。现在 56 份资料分 7 个阶段，平均 8 篇。
 
 **容量检查（2026-10-15，第六批 #52–#56 后）**：打地基 10 篇、做验证 10 篇、看原理 10 篇、自动化 12 篇，四个阶段都超过 8 篇，自动化明显超出。逐篇复核归类：#52（mods）的主要贡献是让代理每次开工的规则和扩展更可控，和 #28 Hooks 同类，归打地基；#53、#55 讲的分别是后台沙箱机队和把维护流程接进 CI，归自动化；#54 是 harness 怎么组装请求和缓存，归看原理；#56 是给代理的动作把关并公布误报漏报，与 #39 同类，归做验证。**拆分建议**：自动化已达 12 篇，建议按任务顺序拆成两个相邻阶段：“接进 PR 与 CI”（#10、#22、#33、#34、#55、#41）和“云端与后台运行环境”（#01、#02、#40、#48、#51、#53）。这仍是同一条“任务从开始到上线”的轴，只是把“触发与流水线”和“代理在哪里跑”分开。其余三个阶段各 10 篇，边界仍清楚，暂不拆。是否拆分等用户确认后再改 `domains.mjs` 和指南。
 

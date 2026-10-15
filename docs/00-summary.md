@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：56 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（06、03、13、29、04）；去执行 · 从单代理到多代理（42、08、23、11、17、27、05、18、30）；做验证 · 测试、评测与审查（15、12、39、32、56、25、50、47、19、31）；自动化 · 后台代理与 CI/CD（53、41、48、02、51、01、40、10、55、33、22、34）；看原理 · Harness 与内部机制（43、54、09、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 29、官方文档 3、指南 1。工具：Claude Code 18、Codex 11、Grok 6、Cursor 8、Gemini CLI 1、OpenHands 1、Devin 1、Amp 1、Aider 1、Factory Droid 1、通用 7。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：56 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（06、03、13、29、04）；去执行 · 从单代理到多代理（42、08、23、11、17、27、05、18、30）；做验证 · 测试、评测与审查（15、12、39、32、56、25、50、47、19、31）；接进 PR 与 CI · 触发、审查与流水线（41、10、55、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、48、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 29、官方文档 3、指南 1。工具：Claude Code 18、Codex 11、Grok 6、Cursor 8、Gemini CLI 1、OpenHands 1、Devin 1、Amp 1、Aider 1、Factory Droid 1、通用 7。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -164,7 +164,7 @@ flowchart TD
 先看 **27**（Mitchell 的六步路线）→ 再读 **20**（规则文件怎么写）→ 最后读本页第 1 节的七个模式。按阶段系统阅读，请走[学习路径](/paths)（新手 / 进阶 / 专家三条）。
 :::
 
-六个阶段按一个任务从开始到上线的顺序排列，和左侧边栏一致。每个阶段先读阶段指南，再按下面的顺序读资料。小标签是资料类型和所用工具。
+七个阶段按一个任务从开始到上线的顺序排列，和左侧边栏一致。每个阶段先读阶段指南，再按下面的顺序读资料。小标签是资料类型和所用工具。
 
 **打地基 · 上下文与规范**（[阶段指南](/guide/foundation)）
 
@@ -212,17 +212,20 @@ flowchart TD
 - [39 · Auto-review：分类器与评测](/39-cursor-auto-review-classifier) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：评测怎么接进真实产品链路。
 - [56 · auto mode：两段式权限分类器](/56-anthropic-claude-code-auto-mode) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：给代理动作把关的另一种设计，误报漏报数据都公开。
 
-**自动化 · 后台代理与 CI/CD**（[阶段指南](/guide/automation)）
+**接进 PR 与 CI · 触发、审查与流水线**（[阶段指南](/guide/ci)）
 
-- [01 · Claude Code 一周年：验证与 Routines](/01-claude-code-one-year) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
-- [02 · Claude Code 团队的工作流](/02-claude-code-team-workflows) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：团队级协作与动态 workflows。
 - [10 · OpenAI 用 Codex 守住 PR 质量](/10-how-openai-uses-codex) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：PR 审查、CI 看护、Deploy preview 全链路。
 - [22 · CI 挂了让 Codex 自动修](/22-openai-codex-ci-autofix) <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-codex">Codex</span>：能抄进仓库的 CI 配置和安全布局。
 - [55 · 用 Skills 维护开源仓库](/55-openai-skills-oss-maintenance) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：把验证、发版、PR 交接写成 Skills，再用 GitHub Action 搬进 CI。
 - [33 · Bugbot：用解决率迭代审查机器人](/33-cursor-building-bugbot) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：常驻 PR 审查机器人怎么衡量和迭代。
 - [34 · Grok Build 跑进脚本和 CI](/34-grok-build-headless-hooks) <span class="type-tag type-docs">官方文档</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：headless、hooks、`/loop`、worktree。
-- [48 · Claude Code 云端会话实战](/48-claude-code-cloud-sessions) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：一个任务一台 VM，七种用法和 GitHub 排错。
 - [41 · 定时代理自动化的六条规则](/41-anthropic-agent-automations) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：无人值守的定时代理怎么不悄悄出错。
+
+**云端与后台运行环境 · 代理在哪里跑**（[阶段指南](/guide/cloud)）
+
+- [01 · Claude Code 一周年：验证与 Routines](/01-claude-code-one-year) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
+- [02 · Claude Code 团队的工作流](/02-claude-code-team-workflows) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：团队级协作与动态 workflows。
+- [48 · Claude Code 云端会话实战](/48-claude-code-cloud-sessions) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：一个任务一台 VM，七种用法和 GitHub 排错。
 - [40 · 云端代理一年的四条教训](/40-cursor-cloud-agent-lessons) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：云端代理背后的环境、持久化执行和状态解耦。
 - [51 · 云端代理跑在自己的机器上](/51-cursor-self-hosted-machines) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：执行放进自己的网络，推理留在云端。
 - [53 · OpenCompute：给代理按需发电脑](/53-factory-opencompute) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>：从一台机器到一支沙箱机队，以及“合约 + 一致性测试”怎么让代理写基础设施。

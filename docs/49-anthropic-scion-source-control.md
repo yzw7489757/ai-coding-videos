@@ -187,7 +187,7 @@ flowchart LR
 
 **运维**：团队大量使用 Claude Tag。他们给每个组件开一个 Slack 频道，让一个 Claude 专门盯这个组件的健康状况，叫它们<Trans zh="超级粉丝">“superfans”</Trans>：有 scion-daemon 的、scion-cache 的、Antique 合并队列的。它们能访问遥测和日志，像一个没别的事可做、只会刷图表找异常的资深工程师。传统告警也都有，但作者说 superfans 能发现细微和新型的问题，相比之下告警显得很单一。
 
-**重新思考先验**：这是和自动化阶段关系最大的一条。作者说，规范的合并队列在代理规模下没什么意义：
+**重新思考先验**：这是和“接进 PR 与 CI”阶段关系最大的一条。作者说，规范的合并队列在代理规模下没什么意义：
 
 <Trans zh="测试还在跑的时候，就有成百上千个改动可能已经合并了，那 CI 到底意味着什么？">“What does CI even mean when hundreds or even thousands of changes can merge while tests are running?”</Trans>
 
