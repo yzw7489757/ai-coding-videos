@@ -98,5 +98,5 @@ Ralph 循环、C 编译器、Cursor 数百代理和 Anthropic 的 Planner / Gene
 7. [[17]] → [[18]]：从十几个代理到几百个代理，协调方式怎么变；想知道每一版为什么失败，接着读 [[38]]。
 
 ::: info 上一阶段 / 下一阶段
-← [做规划](/guide/planning) ｜ 代理说“做完了”之后，进入 [做验证](/guide/verification) →
+← [做规划](/guide/planning) ｜ 代理说“做完了”之后，进入 [验收这一次的产出](/guide/review) →
 :::

@@ -2,12 +2,12 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 59 份资料分在 7 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 59 份资料分在 8 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
 ::: tip 快速跳转
-[打地基 · 上下文与规范](#domain-foundation) → [做规划 · 需求澄清与任务拆解](#domain-planning) → [去执行 · 从单代理到多代理](#domain-execution) → [做验证 · 测试、评测与审查](#domain-verification) → [接进 PR 与 CI · 触发、审查与流水线](#domain-ci) → [云端与后台运行环境 · 代理在哪里跑](#domain-cloud) → [看原理 · Harness 与内部机制](#domain-harness)
+[打地基 · 上下文与规范](#domain-foundation) → [做规划 · 需求澄清与任务拆解](#domain-planning) → [去执行 · 从单代理到多代理](#domain-execution) → [验收这一次的产出 · 测试、审查与完成标准](#domain-review) → [评测代理本身与给动作把关 · 评测、分类器与分数噪声](#domain-evals) → [接进 PR 与 CI · 触发、审查与流水线](#domain-ci) → [云端与后台运行环境 · 代理在哪里跑](#domain-cloud) → [看原理 · Harness 与内部机制](#domain-harness)
 
 想按评分挑着读：看下面的[评分总表](#scores)，可以按综合、实用性或深度排序。
 :::
@@ -204,11 +204,13 @@
   - 看点：代理一次做不完大迁移；迁移分支 + 背景说明 + 3–5 个并行代理 + 每个 PR 人审；拆任务的四条标准；按依赖图分批、验证器 + 修复器；Redux 迁 Zustand 的临时脚手架；代理间共享上下文的四种做法；后半场用 SDK 批量修漏洞的动手练习。2026-10-15 取得完整字幕后按全长重写。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/30-openhands-parallel-refactors)
 
-## 做验证 · 测试、评测与审查 {#domain-verification}
+<a id="domain-verification"></a>
 
-**这一组放什么**：确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。
+## 验收这一次的产出 · 测试、审查与完成标准 {#domain-review}
 
-📘 **先读阶段指南**：[做验证 · 测试、评测与审查](/guide/verification)
+**这一组放什么**：确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。
+
+📘 **先读阶段指南**：[验收这一次的产出 · 测试、审查与完成标准](/guide/review)
 
 ### 57 个子代理与对抗式验证 {#item-15}
 
@@ -231,13 +233,6 @@
   - 看点：24 个测试全绿、Clippy 无警告，逐行审查仍发现字符串比较版本号、重复造轮子；对比 Fable 5 / Opus 4.8。
   - 👉 [阅读分析](/12-forrestknight-grok-4-5)
 
-### Auto-review：分类器与评测 {#item-39}
-
-- **[Governing agent autonomy with Auto-review](https://cursor.com/blog/agent-autonomy-auto-review)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
-  - 作者 / 来源：David Gomes、Travis McPeak ／ Cursor 博客 ｜ 发布：2026-06-11 ｜ 工具：Cursor 桌面应用本地代理、Auto-review
-  - 看点：审批太多也不安全；小模型分类器结合用户意图判断风险，拦截时把理由还给主代理；评测：12 小时会话 → 6,122 条标注 + 合成用例，跑生产同一链路，重复跑找翻转；拦截约 4%，约 7% 对话被打断。
-  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/39-cursor-auto-review-classifier)
-
 ### Devin 用 Computer Use 自测 {#item-32}
 
 - **[Verifying Agentic Development at Scale](https://cognition.com/blog/testing-development)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>
@@ -245,19 +240,39 @@
   - 看点：异步触发的会话已超过交互式；测试计划基于源码；操作前先写预期；登录写成确定性脚本放进测试技能；交回截图报告和分章节录屏。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/32-cognition-verifying-agentic-development)
 
-### auto mode：两段式权限分类器 {#item-56}
-
-- **[How we built Claude Code auto mode: a safer way to skip permissions](https://www.anthropic.com/engineering/claude-code-auto-mode)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
-  - 作者 / 来源：John Hughes ／ Anthropic Engineering ｜ 发布：2026-03-25 ｜ 工具：Claude Code auto mode
-  - 看点：用户对 93% 的权限提示都点批准；三层权限，进入时丢弃宽泛允许规则；分类器只看用户消息和工具调用，单 token 快速过滤后再推理复核；误报 0.4%，对真实过度主动动作漏 17%；连续 3 次或累计 20 次拒绝交给人。
-  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/56-anthropic-claude-code-auto-mode)
-
 ### 测试驱动与代理手动测试 {#item-25}
 
 - **[Agentic Engineering Patterns（测试与 QA 章节）](https://simonwillison.net/guides/agentic-engineering-patterns/)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span>
   - 作者 / 来源：Simon Willison ／ simonwillison.net ｜ 发布：2026-02-23 起连载 ｜ 工具：与工具无关；提到 Claude Code、Codex、Showboat、Rodney
   - 看点：“Use red/green TDD”“First run the tests”；测试通过后让代理手动测试并留下 Showboat 记录；别把没审过的代码丢给同事。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/25-simonw-agentic-engineering-testing-patterns)
+
+### AI 代码审查：精确率优先 {#item-31}
+
+- **[A Practical Approach to Verifying Code at Scale](https://alignment.openai.com/scaling-code-verification/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Maja Trębacz 等（OpenAI，与 Codex 团队合作）／ OpenAI Alignment Research Blog ｜ 发布：2025-12-01 ｜ 工具：Codex Code Review、`/review`
+  - 看点：精确率比召回率重要；审查者要能读整个仓库、运行代码；训练用的检查器和交给人用的审查器要分开；作者对 52.7% 的评论用代码修改回应。
+  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/31-openai-verifying-code-at-scale)
+
+## 评测代理本身与给动作把关 · 评测、分类器与分数噪声 {#domain-evals}
+
+**这一组放什么**：不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。
+
+📘 **先读阶段指南**：[评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals)
+
+### Auto-review：分类器与评测 {#item-39}
+
+- **[Governing agent autonomy with Auto-review](https://cursor.com/blog/agent-autonomy-auto-review)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：David Gomes、Travis McPeak ／ Cursor 博客 ｜ 发布：2026-06-11 ｜ 工具：Cursor 桌面应用本地代理、Auto-review
+  - 看点：审批太多也不安全；小模型分类器结合用户意图判断风险，拦截时把理由还给主代理；评测：12 小时会话 → 6,122 条标注 + 合成用例，跑生产同一链路，重复跑找翻转；拦截约 4%，约 7% 对话被打断。
+  - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/39-cursor-auto-review-classifier)
+
+### auto mode：两段式权限分类器 {#item-56}
+
+- **[How we built Claude Code auto mode: a safer way to skip permissions](https://www.anthropic.com/engineering/claude-code-auto-mode)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：John Hughes ／ Anthropic Engineering ｜ 发布：2026-03-25 ｜ 工具：Claude Code auto mode
+  - 看点：用户对 93% 的权限提示都点批准；三层权限，进入时丢弃宽泛允许规则；分类器只看用户消息和工具调用，单 token 快速过滤后再推理复核；误报 0.4%，对真实过度主动动作漏 17%；连续 3 次或累计 20 次拒绝交给人。
+  - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/56-anthropic-claude-code-auto-mode)
 
 ### 评测分数里的基础设施噪声 {#item-50}
 
@@ -279,13 +294,6 @@
   - 作者 / 来源：Mikaela Grace 等（Anthropic）／ Anthropic Engineering 博客 ｜ 发布：2026-01-09 ｜ 工具：与工具无关
   - 看点：评测的零件（Task / Trial / Grader）、三种评分器怎么搭配、能力评测与回归评测、pass@k 与 pass^k，以及从 0 到 1 的路线图。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/19-anthropic-demystifying-agent-evals)
-
-### AI 代码审查：精确率优先 {#item-31}
-
-- **[A Practical Approach to Verifying Code at Scale](https://alignment.openai.com/scaling-code-verification/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
-  - 作者 / 来源：Maja Trębacz 等（OpenAI，与 Codex 团队合作）／ OpenAI Alignment Research Blog ｜ 发布：2025-12-01 ｜ 工具：Codex Code Review、`/review`
-  - 看点：精确率比召回率重要；审查者要能读整个仓库、运行代码；训练用的检查器和交给人用的审查器要分开；作者对 52.7% 的评论用代码修改回应。
-  - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/31-openai-verifying-code-at-scale)
 
 ## 接进 PR 与 CI · 触发、审查与流水线 {#domain-ci}
 
@@ -474,9 +482,11 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 11 篇（#15、#59、#12、#39、#32、#56、#25、#50、#47、#19、#31）；接进 PR 与 CI 7 篇（#41、#57、#10、#55、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；验收这一次的产出 6 篇（#15、#59、#12、#32、#25、#31）；评测代理本身与给动作把关 5 篇（#39、#56、#50、#47、#19）；接进 PR 与 CI 7 篇（#41、#57、#10、#55、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
 
-**容量检查（2026-10-16，第七批 #57–#59 后）**：做验证到 11 篇，是唯一明显超过 8 篇检查线的阶段；打地基、看原理各 10 篇。逐篇复核归类：#57 的主要贡献是把评测接进 CI 流水线、挡住合并，归“接进 PR 与 CI”（评测概念仍在做验证，用 xref 互链）；#58 讲协调代理在云端管一群子代理，归“云端与后台运行环境”；#59 讲大任务的完成标准与验证者设计，归做验证。**拆分建议（未执行，等用户确认）**：做验证可以按“验证的对象”拆成两个相邻阶段，仍只走“任务从开始到上线”这条轴：①“验收这一次的产出”（测试、人工审查、对抗式审查、完成标准）：#59、#15、#12、#32、#25、#31，共 6 篇；②“评测代理本身与给动作把关”（评测、分数可信度、权限分类器）：#19、#47、#50、#39、#56，共 5 篇。这样两个阶段都低于 8 篇；#57 继续留在 CI 阶段。
+**阶段拆分（2026-10-16，已确认）**：按下面的建议把“做验证”拆成“验收这一次的产出”（`review`）和“评测代理本身与给动作把关”（`evals`）两个相邻阶段，分别 6 篇和 5 篇；旧地址 `/guide/verification` 改为指向两个新指南的入口页。现在 59 份资料分 8 个阶段，最多 10 篇、最少 5 篇。
+
+**容量检查（2026-10-16，第七批 #57–#59 后）**：做验证到 11 篇，是唯一明显超过 8 篇检查线的阶段；打地基、看原理各 10 篇。逐篇复核归类：#57 的主要贡献是把评测接进 CI 流水线、挡住合并，归“接进 PR 与 CI”（评测概念仍在做验证，用 xref 互链）；#58 讲协调代理在云端管一群子代理，归“云端与后台运行环境”；#59 讲大任务的完成标准与验证者设计，归做验证。**拆分建议（已于 2026-10-16 确认并执行，见下条）**：做验证可以按“验证的对象”拆成两个相邻阶段，仍只走“任务从开始到上线”这条轴：①“验收这一次的产出”（测试、人工审查、对抗式审查、完成标准）：#59、#15、#12、#32、#25、#31，共 6 篇；②“评测代理本身与给动作把关”（评测、分数可信度、权限分类器）：#19、#47、#50、#39、#56，共 5 篇。这样两个阶段都低于 8 篇；#57 继续留在 CI 阶段。
 
 **阶段拆分（2026-10-15，已确认）**：按上面的建议把“自动化”拆成“接进 PR 与 CI”（`ci`）和“云端与后台运行环境”（`cloud`）两个相邻阶段，各 6 篇；旧地址 `/guide/automation` 改为指向两个新指南的入口页。现在 56 份资料分 7 个阶段，平均 8 篇。
 

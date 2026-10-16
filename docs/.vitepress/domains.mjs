@@ -84,29 +84,39 @@ export const domains = [
     ]
   },
   {
-    id: 'verification',
+    id: 'review',
     no: '4',
-    name: '做验证',
-    sub: '测试、评测与审查',
+    name: '验收这一次的产出',
+    sub: '测试、审查与完成标准',
     icon: '✅',
-    desc: '确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。',
+    desc: '确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。',
     items: [
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
       { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video', published: '2026-07-10' },
-      { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09', published: '2026-05-29' },
-      { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '25', slug: '25-simonw-agentic-engineering-testing-patterns', text: '测试驱动与代理手动测试', short: 'TDD 与手动测试', tool: 'general', type: 'guide', added: '2026-10-09', published: '2026-02-23' },
-      { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
-      { n: '47', slug: '47-openai-eval-skills', text: '给 Skill 写评测', short: 'Skill 评测', tool: 'codex', type: 'article', added: '2026-10-14', published: '2026-01-22' },
-      { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-01-09' },
       { n: '31', slug: '31-openai-verifying-code-at-scale', text: 'AI 代码审查：精确率优先', short: '审查精确率优先', tool: 'codex', type: 'article', added: '2026-10-09', published: '2025-12-01' }
     ]
   },
   {
-    id: 'ci',
+    id: 'evals',
     no: '5',
+    name: '评测代理本身与给动作把关',
+    sub: '评测、分类器与分数噪声',
+    icon: '📏',
+    desc: '不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。',
+    items: [
+      { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
+      { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
+      { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
+      { n: '47', slug: '47-openai-eval-skills', text: '给 Skill 写评测', short: 'Skill 评测', tool: 'codex', type: 'article', added: '2026-10-14', published: '2026-01-22' },
+      { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-01-09' }
+    ]
+  },
+  {
+    id: 'ci',
+    no: '6',
     name: '接进 PR 与 CI',
     sub: '触发、审查与流水线',
     icon: '⚙️',
@@ -123,7 +133,7 @@ export const domains = [
   },
   {
     id: 'cloud',
-    no: '6',
+    no: '7',
     name: '云端与后台运行环境',
     sub: '代理在哪里跑',
     icon: '☁️',
@@ -140,7 +150,7 @@ export const domains = [
   },
   {
     id: 'harness',
-    no: '7',
+    no: '8',
     name: '看原理',
     sub: 'Harness 与内部机制',
     icon: '🧠',

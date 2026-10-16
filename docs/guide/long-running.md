@@ -57,5 +57,5 @@ Factory 的实验把“停在哪里”问题量化了：单代理在 gdal 上自
 4. **运行要能断点续跑**：跑几天的任务一定会遇到机器或 API 故障。Cursor 云端代理把代理循环放进 Temporal 持久化执行，并拆成多个短 workflow（[[40§3.2]]）；Anthropic 把事件日志放在 harness 之外，harness 崩溃后从日志恢复（[[45§3.2]]）。
 
 ::: info 所属阶段
-本专题属于 [去执行](/guide/execution)。Ralph 和 Planner / Generator / Evaluator 的设计原理见 [看原理](/guide/harness)，验收方式见 [做验证](/guide/verification)。
+本专题属于 [去执行](/guide/execution)。Ralph 和 Planner / Generator / Evaluator 的设计原理见 [看原理](/guide/harness)，验收方式见 [验收这一次的产出](/guide/review)。
 :::
