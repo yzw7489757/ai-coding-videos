@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 56 份资料分在 7 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 59 份资料分在 7 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -217,6 +217,13 @@
   - 看点：57 个并行子代理审查文件；`/goal` 声称完成后，skeptic 验证代理发现真实问题并只复查 delta。（字幕质量差，结合简介 + 官方文档分析）
   - 👉 [阅读分析](/15-arcade-grok-build-57-agents)
 
+### 先建完成标准，再让代理做大任务 {#item-59}
+
+- **[What it Takes for Coding Agents to Complete Large Software Tasks](https://factory.com/news/what-it-takes-for-coding-agents-to-complete-large-software-tasks)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>
+  - 作者 / 来源：Factory Research、Theo Luan ／ Factory 新闻 ｜ 发布：2026-08-27 ｜ 工具：Factory Droid；Fable 5、Kimi K3、GPT-5.6-sol（部分 Opus 替代）；ProgramBench
+  - 看点：同一模型从零复刻 gdal，单代理自认为做完时只到 36%，“验证者先建完成标准 + 实现者看不到用例”的三角色系统到 90%；24 个任务三个模型中位数都提升，也有下降格；gdal 花了 14 倍额度、13 倍时间，每格只跑一次。
+  - 🆕 收录于 2026-10-16 ｜ 👉 [阅读分析](/59-factory-large-software-tasks)
+
 ### 测试全绿也要读代码 {#item-12}
 
 - **[Coding with Grok 4.5 is surprisingly good…](https://www.youtube.com/watch?v=5J6HCDEkg64)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grok45">Cursor + Grok 4.5</span>
@@ -293,6 +300,13 @@
   - 看点：定时简报代理的参考实现：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；附原文配置。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/41-anthropic-agent-automations)
 
+### 把 agent evals 接进 CI {#item-57}
+
+- **[Continuous evals in CI](https://academy.claude.com/courses/ai-native-sdlc-playbook/continuous-evals-in-ci)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Anthropic ／ Claude Academy《The AI-native SDLC playbook》中的一课 ｜ 发布：2026-08-21（取自 playbook 总览页） ｜ 工具：Claude Code（`claude -p`）、GitHub Actions、git worktree、jq
+  - 看点：CLAUDE.md、skills、hooks 一改就在 CI 里用旧代码套新配置重做 20–50 个真实任务；eval JSON、workflow、`check.sh`、行为检查脚本全文；评测文件先拷走、越界改动即失败、不要加 `--bare`；演示删掉一行规则后被拦下。场景是课程构造的，没有成本数据。
+  - 🆕 收录于 2026-10-16 ｜ 👉 [阅读分析](/57-claude-continuous-evals-in-ci)
+
 ### OpenAI 用 Codex 守住 PR 质量 {#item-10}
 
 - **[OpenAI @ Replay 2026 | How OpenAI Uses Codex to Change How We Build](https://www.youtube.com/watch?v=NjaX4qt-O1Y)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>
@@ -347,6 +361,13 @@
   - 作者 / 来源：Addy Osmani ／ claude.dev 博客 ｜ 发布：2026-10-06 ｜ 工具：Claude Code
   - 看点：一个任务一台 VM：三个会话 87 秒修完三个问题；什么时候留在本地；七种云端用法（并行、反复验证、teleport、Auto-fix、routines、跑不可信代码）；GitHub 权限排错表。
   - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/48-claude-code-cloud-sessions)
+
+### Projects：一个协调代理管一群子代理 {#item-58}
+
+- **[Introducing Projects](https://cursor.com/blog/projects)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Alexi Robbins、Fredrika Lindh ／ Cursor 博客 ｜ 发布：2026-09-10 ｜ 工具：Cursor Projects（beta）、云端与本地代理、Slack
+  - 看点：协调代理只派活不写代码，所以随时响应；默认云端、共享上下文文件跨机器同步、订阅 Slack / 定时 / PR；功能、迁移、园艺三种用法；同一错误两次就加 lint 规则。产品发布文，30% / 6 倍 PR 为厂商自报。
+  - 🆕 收录于 2026-10-16 ｜ 👉 [阅读分析](/58-cursor-projects)
 
 ### Claude Code 团队的工作流 {#item-02}
 
@@ -453,7 +474,9 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 10 篇（#15、#12、#39、#32、#56、#25、#50、#47、#19、#31）；接进 PR 与 CI 6 篇（#41、#10、#55、#33、#22、#34）；云端与后台运行环境 6 篇（#53、#48、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 5 篇（#06、#03、#13、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；做验证 11 篇（#15、#59、#12、#39、#32、#56、#25、#50、#47、#19、#31）；接进 PR 与 CI 7 篇（#41、#57、#10、#55、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+
+**容量检查（2026-10-16，第七批 #57–#59 后）**：做验证到 11 篇，是唯一明显超过 8 篇检查线的阶段；打地基、看原理各 10 篇。逐篇复核归类：#57 的主要贡献是把评测接进 CI 流水线、挡住合并，归“接进 PR 与 CI”（评测概念仍在做验证，用 xref 互链）；#58 讲协调代理在云端管一群子代理，归“云端与后台运行环境”；#59 讲大任务的完成标准与验证者设计，归做验证。**拆分建议（未执行，等用户确认）**：做验证可以按“验证的对象”拆成两个相邻阶段，仍只走“任务从开始到上线”这条轴：①“验收这一次的产出”（测试、人工审查、对抗式审查、完成标准）：#59、#15、#12、#32、#25、#31，共 6 篇；②“评测代理本身与给动作把关”（评测、分数可信度、权限分类器）：#19、#47、#50、#39、#56，共 5 篇。这样两个阶段都低于 8 篇；#57 继续留在 CI 阶段。
 
 **阶段拆分（2026-10-15，已确认）**：按上面的建议把“自动化”拆成“接进 PR 与 CI”（`ci`）和“云端与后台运行环境”（`cloud`）两个相邻阶段，各 6 篇；旧地址 `/guide/automation` 改为指向两个新指南的入口页。现在 56 份资料分 7 个阶段，平均 8 篇。
 
@@ -463,21 +486,21 @@
 
 **容量检查（2026-10-13）**：“去执行”和“看原理”都到了 9 篇。逐篇复核后没有改动归类：#42 主要教的是在 Codex 应用里把活干完（Computer Use、`/goal`、子代理、线程交接），属于去执行；#43、#44、#45 的主要贡献都是 harness 的接口或机制（app server 协议、推理与编辑分离、session / harness / sandbox 解耦），放在其他阶段都会偏。46 份资料分 6 个阶段，平均已接近 8 篇，所以暂不改阶段名称；下一批如果还要往这两个阶段加，应考虑拆分阶段（仍然只按任务顺序这一条轴）。
 
-按类型：视频 23 篇；文章 29 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56）；官方文档 3 篇（#22、#28、#34）；指南 1 篇（#25）。
+按类型：视频 23 篇；文章 31 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56、#58、#59）；官方文档 3 篇（#22、#28、#34）；指南 2 篇（#25、#57）。
 
 按工具：
 
 | 工具 | 数量 | 资料 | 说明 |
 |---|---|---|---|
-| Claude Code | 18 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45、#48、#52、#56 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
+| Claude Code | 19 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45、#48、#52、#56、#57 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档 |
 | Codex | 11 | #07–#11、#22、#31、#42、#43、#47、#55 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究 |
 | Grok（Grok Build / Cursor + Grok 4.5） | 6 | #12–#15、#34、#46 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
-| Cursor | 8 | #18、#33、#37–#40、#51、#54 | 公司研究博客；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39）；2026-10-14 补上自托管执行机器（#51）；2026-10-15 补上 harness 省 token（#54） |
+| Cursor | 9 | #18、#33、#37–#40、#51、#54、#58 | 公司研究博客；2026-10-16 补上 Projects 协调代理（#58）；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39）；2026-10-14 补上自托管执行机器（#51）；2026-10-15 补上 harness 省 token（#54） |
 | Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
 | OpenHands | 1 | #30 | 大会研讨会 |
 | Devin | 1 | #32 | Cognition 官方博客 |
 | Amp | 1 | #35 | 大会演讲；演讲后产品有较大变化，文中已注明 |
-| Factory Droid | 1 | #53 | Factory 官方新闻；#26 的讲者也来自 Factory，但内容不限工具，归“通用” |
+| Factory Droid | 2 | #53、#59 | Factory 官方新闻与研究文章；#26 的讲者也来自 Factory，但内容不限工具，归“通用” |
 | Aider | 1 | #44 | 官方博客，2024-09 发布，时效较差，文中已注明 |
 | 通用（不限工具） | 7 | #19、#25、#26、#27、#36、#49、#50 | 方法论、评测、MCP 设计与开发基础设施，适用于任何编码代理 |
 
@@ -489,6 +512,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-16 第七批：#57 补上了长期缺的“把 agent evals 接进 CI”端到端示例（eval JSON、GitHub Actions workflow、`check.sh` 全文），该缺口**已覆盖**；局限是示例场景为课程构造、没有成本数据、每条 eval 只跑一次。#57 课程页本身不显示日期，2026-08-21 取自 playbook 总览页的发布日期。#58 是 Cursor Projects 发布文；#59 是 Factory 的 ProgramBench 实验，单次运行、算力不对等。
 - 2026-10-15 第六批：#52 mods、#53 OpenCompute、#54 Cursor 省 token、#55 OpenAI 用 Skills 维护 SDK 仓库、#56 Claude Code auto mode。#55 补上了“把 Skill 接进 CI”的真实仓库做法，但仍不是“把 agent evals 接进 CI”的端到端示例。#55 页面日期 Mar 9, 2026，正文里的 March 6, 2026 是下载量数据截止日。同日 #05、#30 取得完整字幕，按新方法重写（#30 从只覆盖前 35 分钟扩展到全长）。
 - 2026-10-14 第五批：#47 补上了一个可照做的评测脚本（但评测对象是 Skill，不是 CI 里的代码评测，仍不算“把 agent evals 接进 CI”的端到端示例）；#50 说明评测分数里混着基础设施噪声；#48、#51 补上 Claude Code 云端会话和 Cursor 自托管执行环境；#49 是 Anthropic 源代码管理重做的一手经验。#51 页面元数据发布日期为 2026-09-02，页面里另有一个 2026-08-13 的时间标记，按元数据记。
 - 2026-10-13 第四批补上了 Aider（#44，但是 2024 年的老文章）和 xAI 官方的一篇产品说明（#46，Grok Build 记忆，内容很短）；xAI 官方的**工程博客或大会演讲**仍未找到。#41、#45 来自 Anthropic，#42、#43 来自 OpenAI 的 AI Engineer 演讲（录制于 6–7 月，10 月上传）。

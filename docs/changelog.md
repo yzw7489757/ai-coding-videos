@@ -2,6 +2,25 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-16 · 第七批收录 #57–#59
+
+**新增资料（3 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对，配置和代码逐字摘录）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#57](/57-claude-continuous-evals-in-ci) | Anthropic AI-native SDLC playbook：Continuous evals in CI | 接进 PR 与 CI | 2026-08-21（课程页无日期，取自 playbook 总览页） |
+| [#58](/58-cursor-projects) | Cursor：Introducing Projects | 云端与后台运行环境 | 2026-09-10 |
+| [#59](/59-factory-large-software-tasks) | Factory：What it Takes for Coding Agents to Complete Large Software Tasks | 做验证 | 2026-08-27 |
+
+**结构变化：**
+- “把 agent evals 接进 CI”的端到端示例由 #57 补上，[全部资料 · 覆盖情况](/all#coverage)和[总结](/00-summary)里的这个缺口改为已覆盖。
+- 阶段数量：做验证 10 → 11，接进 PR 与 CI 6 → 7，云端与后台运行环境 6 → 7。做验证超过 8 篇检查线，拆分建议写在[全部资料 · 覆盖情况](/all#coverage)，等确认后再改。
+- 阶段指南：[接进 PR 与 CI](/guide/ci) 新增第 6 问“改了代理配置，怎么在 CI 里证明它没变差”；[做验证](/guide/verification) 新增第 8 问“大任务上代理为什么会提前说做完了”；[云端与后台运行环境](/guide/cloud) 第 1 问加入协调代理；三个指南的导图、分歧表和阅读顺序同步更新；[长时自主任务专题](/guide/long-running)“停在哪里”补充 #59。
+- 模式库新增 P48–P50（配置回归评测、实现前独立完成标准、审查强度递减 + 重复错误变 lint 规则），共 50 个。
+- 学习路径：进阶第 14、15 步（#57、#58），专家第 12 步（#59）。
+
+**新增术语 3 个**：Stage Gate、Coordinator Agent、Differential Testing。
+
 ## 2026-10-15 · 拆分“自动化”阶段
 
 “自动化 · 后台代理与 CI/CD”收录到 12 篇，明显超过 8 篇的检查线。经确认，按任务顺序拆成两个相邻阶段（仍只有“任务从开始到上线”这一条分类轴），文章编号和地址都不变：

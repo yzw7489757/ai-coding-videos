@@ -92,6 +92,7 @@ export const domains = [
     desc: '确认代理真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、系统评测。',
     items: [
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
+      { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video', published: '2026-07-10' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09', published: '2026-05-29' },
@@ -112,6 +113,7 @@ export const domains = [
     desc: '让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。',
     items: [
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
+      { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video', published: '2026-05-28' },
       { n: '55', slug: '55-openai-skills-oss-maintenance', text: '用 Skills 维护开源仓库', short: 'Skills 接进 CI', tool: 'codex', type: 'article', added: '2026-10-15', published: '2026-03-09' },
       { n: '33', slug: '33-cursor-building-bugbot', text: 'Bugbot：用解决率迭代审查机器人', short: 'Bugbot 解决率', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-15' },
@@ -129,6 +131,7 @@ export const domains = [
     items: [
       { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },
       { n: '48', slug: '48-claude-code-cloud-sessions', text: 'Claude Code 云端会话实战', short: 'Claude Code 云端会话', tool: 'claude', type: 'article', added: '2026-10-14', published: '2026-10-06' },
+      { n: '58', slug: '58-cursor-projects', text: 'Projects：一个协调代理管一群子代理', short: '协调代理派活', tool: 'cursor', type: 'article', added: '2026-10-16', published: '2026-09-10' },
       { n: '02', slug: '02-claude-code-team-workflows', text: 'Claude Code 团队的工作流', short: 'Slack 派活 扇出审查', tool: 'claude', type: 'video', published: '2026-09-02' },
       { n: '51', slug: '51-cursor-self-hosted-machines', text: '云端代理跑在自己的机器上', short: '自托管执行机器', tool: 'cursor', type: 'article', added: '2026-10-14', published: '2026-09-02' },
       { n: '01', slug: '01-claude-code-one-year', text: 'Claude Code 一周年：验证与 Routines', short: 'Routines 与验证', tool: 'claude', type: 'video', published: '2026-06-08' },

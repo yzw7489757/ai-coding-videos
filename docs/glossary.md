@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **173** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **176** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -21,7 +21,7 @@ outline: [2, 2]
 
 **给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent) · [Agent Memory](#agent-memory) · [Mods](#claude-code-mods)
 
-**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff) · [Bookmark](#bookmark-cursor) · [Architect / Editor](#architect-editor) · [Superfan](#superfan)
+**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff) · [Bookmark](#bookmark-cursor) · [Architect / Editor](#architect-editor) · [Superfan](#superfan) · [Coordinator Agent](#coordinator-agent)
 
 **运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution) · [Credential Vault](#credential-vault) · [Cloud Session](#cloud-session) · [Teleport](#teleport) · [Self-Hosted Worker](#self-hosted-worker) · [Reconciler](#reconciler) · [Deny-and-Continue](#deny-and-continue)
 
@@ -29,7 +29,7 @@ outline: [2, 2]
 
 **工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider) · [Scion](#scion)
 
-**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test)
+**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Differential Testing](#differential-testing)
 
 ## 一、核心概念：代理、上下文与 Token
 
@@ -492,6 +492,12 @@ Aider 的 --architect 模式（#44）。动机是 o1 这类推理模型擅长推
 **白话**：专门盯一个系统组件的遥测和日志、发现异常的 Claude，作为传统告警的补充。
 
 Anthropic 源代码管理团队给 scion-daemon、scion-cache 等每个组件建一个 Slack 频道，让 Claude 一直看图表找异常（#49）。
+
+### Coordinator Agent（协调代理） {#coordinator-agent}
+
+**白话**：只负责拆任务、派活、收结果，自己不写代码的代理。
+
+Cursor Projects 让你和一个协调代理对话，由它指挥成千的子代理；因为只委派不执行，它不会被手上的活卡住（#58）。
 
 ## 四、运行方式、权限与安全
 
@@ -1082,4 +1088,16 @@ Anthropic 只改容器资源，Terminal-Bench 2.0 分数就差 6 个百分点；
 **白话**：检查某个实现是否真的满足接口约定的黑盒测试。
 
 OpenCompute 用必选 Core 和可选 Suspend、Snapshot、Fork 档位的一致性测试验证每个 driver；“实现这份合约、通过这些测试”也让代理能接手写 driver（#53）。
+
+### Stage Gate（阶段关卡） {#stage-gate}
+
+**白话**：流程里必须通过才能进入下一步的检查点。
+
+Anthropic 的 AI-native SDLC playbook 把评测称为 AI 原生时代的阶段关卡式 QA：改 CLAUDE.md、skills、hooks 时跑评测，通过率不够就挡住合并（#57）。
+
+### Differential Testing（差分测试） {#differential-testing}
+
+**白话**：同一个输入同时喂给参考实现和新实现，比较输出是否一致。
+
+Factory 的验证者在 ProgramBench 上逐字节比较退出码、stdout、stderr 和文件变化，标准不再发现差异时再做定向差分测试（#59）。
 

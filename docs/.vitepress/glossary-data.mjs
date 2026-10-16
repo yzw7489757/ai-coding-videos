@@ -548,5 +548,14 @@ export const terms = [
     detail: 'OpenAI Agents JS 仓库用 changeset-validation Skill 让 Codex 判断 changeset 和升版级别是否真的匹配 diff（#55）。' },
   { id: 'deny-and-continue', cat: 'runtime', term: 'Deny-and-Continue（拒绝后继续）', aliases: ['拒绝后继续', 'deny-and-continue'],
     short: '动作被拦后把理由作为工具结果交还代理，让它换安全做法，而不是停下等人。',
-    detail: 'Claude Code auto mode 连续 3 次或累计 20 次拒绝才停下交给人，无界面模式下直接终止；这让 0.4% 的误报只多花一次重试（#56）。' }
+    detail: 'Claude Code auto mode 连续 3 次或累计 20 次拒绝才停下交给人，无界面模式下直接终止；这让 0.4% 的误报只多花一次重试（#56）。' },
+  { id: 'stage-gate', cat: 'eval', term: 'Stage Gate（阶段关卡）', aliases: ['阶段关卡', 'stage-gate', 'stage gate'],
+    short: '流程里必须通过才能进入下一步的检查点。',
+    detail: 'Anthropic 的 AI-native SDLC playbook 把评测称为 AI 原生时代的阶段关卡式 QA：改 CLAUDE.md、skills、hooks 时跑评测，通过率不够就挡住合并（#57）。' },
+  { id: 'coordinator-agent', cat: 'workflow', term: 'Coordinator Agent（协调代理）', aliases: ['协调代理', 'coordinator agent'],
+    short: '只负责拆任务、派活、收结果，自己不写代码的代理。',
+    detail: 'Cursor Projects 让你和一个协调代理对话，由它指挥成千的子代理；因为只委派不执行，它不会被手上的活卡住（#58）。' },
+  { id: 'differential-testing', cat: 'eval', term: 'Differential Testing（差分测试）', aliases: ['差分测试', 'differential testing'],
+    short: '同一个输入同时喂给参考实现和新实现，比较输出是否一致。',
+    detail: 'Factory 的验证者在 ProgramBench 上逐字节比较退出码、stdout、stderr 和文件变化，标准不再发现差异时再做定向差分测试（#59）。' }
 ]
