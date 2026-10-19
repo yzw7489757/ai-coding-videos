@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：67 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、06、03、13、61、29、04）；去执行 · 从单代理到多代理（42、65、08、23、11、17、27、05、18、30）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、12、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 35、官方文档 3、指南 2。工具：Claude Code 21、Codex 13、Grok 6、Cursor 9、Gemini CLI 1、OpenHands 1、Devin 1、Amp 1、Aider 1、Factory Droid 2、通用 7。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：67 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（65、17、05、18、30）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、12、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 35、官方文档 3、指南 2。工具：Claude Code 21、Codex 13、Grok 6、Cursor 9、Gemini CLI 1、OpenHands 1、Devin 1、Amp 1、Aider 1、Factory Droid 2、通用 7。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -174,7 +174,7 @@ flowchart TD
 先看 **27**（Mitchell 的六步路线）→ 再读 **20**（规则文件怎么写）→ 最后读本页第 1 节的七个模式。按阶段系统阅读，请走[学习路径](/paths)（新手 / 进阶 / 专家三条）。
 :::
 
-八个阶段按一个任务从开始到上线的顺序排列，和左侧边栏一致。每个阶段先读阶段指南，再按下面的顺序读资料。小标签是资料类型和所用工具。
+九个阶段按一个任务从开始到上线的顺序排列，和左侧边栏一致。每个阶段先读阶段指南，再按下面的顺序读资料。小标签是资料类型和所用工具。
 
 **打地基 · 上下文与规范**（[阶段指南](/guide/foundation)）
 
@@ -199,18 +199,21 @@ flowchart TD
 - [64 · 把审查挪到计划：五步规格驱动](/64-giant-swarm-spec-driven-development) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：PR 多到审不过来时，人审计划 PR；事实核对和反方两步可以单独抄。
 - [29 · Conductor：把计划写进仓库](/29-gemini-cli-conductor) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span>：spec 和 plan 写成仓库里的文件，适合团队。
 
-**去执行 · 从单代理到多代理**（[阶段指南](/guide/execution)）
+**单代理推进与一人多线 · 一个人怎么驾驭代理**（[阶段指南](/guide/solo)）
 
 - [27 · 从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：从怀疑到熟练的六步路线，最适合刚起步。
 - [11 · 一个人用 Codex 建 OpenClaw](/11-peter-steinberger-openclaw) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：轻松的访谈，先建立“代理主导开发”的直观印象。
-- [05 · Builder + Validator 代理团队](/05-indydevdan-task-system) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
-- [08 · Codex 子代理、Hooks 与插件](/08-codex-masterclass) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：子代理、hooks、plugins 的实操。
 - [23 · 5 个并行代理 + worktree](/23-cole-medin-parallel-worktrees) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：完整的并行开发演示，配套脚本可参考。
-- [17 · 16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：十几个代理、无编排者，靠 git + 锁文件协作。
-- [30 · 大型重构拆给并行代理](/30-openhands-parallel-refactors) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>：互相依赖的大迁移怎么拆、怎么审。
+- [08 · Codex 子代理、Hooks 与插件](/08-codex-masterclass) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：子代理、hooks、plugins 的实操。
 - [42 · Codex 应用实战：从上下文到自动化](/42-openai-cooking-with-codex) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：Computer Use、`/goal`、子代理和线程交接的实际用法。
-- [65 · Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：很短的产品公告，看“能拆成独立块、最后要一份报告”这个判断标准。
+
+**多代理协作与大任务拆分 · 分工、协调与长时运行**（[阶段指南](/guide/multi)，另有[长时自主任务专题](/guide/long-running)）
+
+- [05 · Builder + Validator 代理团队](/05-indydevdan-task-system) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
+- [30 · 大型重构拆给并行代理](/30-openhands-parallel-refactors) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>：互相依赖的大迁移怎么拆、怎么审。
+- [17 · 16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：十几个代理、无编排者，靠 git + 锁文件协作。
 - [18 · 数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：数百代理时扁平协作为什么失败、分层后怎么跑。
+- [65 · Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：很短的产品公告，看“能拆成独立块、最后要一份报告”这个判断标准。
 
 **验收这一次的产出 · 测试、审查与完成标准**（[阶段指南](/guide/review)）
 

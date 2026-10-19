@@ -121,5 +121,5 @@ mindmap
 团队规模的 harness 与仓库组织（[[07]]）放在 [打地基](/guide/foundation)。
 
 ::: info 上一阶段
-← [云端与后台运行环境](/guide/cloud) ｜ 四种长时任务做法的对照表见[长时自主任务专题](/guide/long-running)（属于 [去执行](/guide/execution)）。
+← [云端与后台运行环境](/guide/cloud) ｜ 四种长时任务做法的对照表见[长时自主任务专题](/guide/long-running)（属于 [多代理协作与大任务拆分](/guide/multi)）。
 :::

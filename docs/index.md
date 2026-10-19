@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 67 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的八个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 67 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -30,9 +30,14 @@ features:
     link: /guide/planning
     linkText: 阅读阶段指南
   - icon: 🚀
-    title: 去执行 · 从单代理到多代理
-    details: 让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
-    link: /guide/execution
+    title: 单代理推进与一人多线 · 一个人怎么驾驭代理
+    details: 一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。
+    link: /guide/solo
+    linkText: 阅读阶段指南
+  - icon: 🤝
+    title: 多代理协作与大任务拆分 · 分工、协调与长时运行
+    details: 多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。
+    link: /guide/multi
     linkText: 阅读阶段指南
   - icon: ✅
     title: 验收这一次的产出 · 测试、审查与完成标准
@@ -63,7 +68,7 @@ features:
 
 ## 这是什么
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 八个阶段依次是：打地基（上下文与规范）→ 做规划 → 去执行 → 验收这一次的产出 → 评测代理本身与给动作把关 → 接进 PR 与 CI → 云端与后台运行环境，最后是看原理（Harness 与内部机制）。每份资料只放在它主要贡献所在的那个阶段。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 九个阶段依次是：打地基（上下文与规范）→ 做规划 → 单代理推进与一人多线 → 多代理协作与大任务拆分 → 验收这一次的产出 → 评测代理本身与给动作把关 → 接进 PR 与 CI → 云端与后台运行环境，最后是看原理（Harness 与内部机制）。每份资料只放在它主要贡献所在的那个阶段。
 
 一个持续更新的中文知识库，主题是**怎样用编码代理（coding agent）把软件做好**。内容分三层：
 
@@ -91,7 +96,7 @@ features:
 | 62 | [评测设计与爬分不自欺](/62-claude-eval-design-hillclimbing) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
 | 63 | [让代理批量开维护 PR](/63-openai-gpt-6-software-maintenance) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
 | 64 | [把审查挪到计划：五步规格驱动](/64-giant-swarm-spec-driven-development) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 65 | [Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) | [去执行 · 从单代理到多代理](/guide/execution) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span> | <span class="rating-stars" style="--r:2.5" aria-hidden="true"></span> **2.5** |
+| 65 | [Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span> | <span class="rating-stars" style="--r:2.5" aria-hidden="true"></span> **2.5** |
 | 66 | [源码解剖 11 个代理外壳](/66-harness-engineering-eleven-systems) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
 | 67 | [Cognition 把 Devin 接进日常](/67-cognition-devin-builds-devin) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
 
@@ -103,7 +108,8 @@ features:
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
-- **[去执行 · 从单代理到多代理](/guide/execution)**：让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。
+- **[单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo)**：一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。
+- **[多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi)**：多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。
 - **[验收这一次的产出 · 测试、审查与完成标准](/guide/review)**：确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。
 - **[评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals)**：不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。
 - **[接进 PR 与 CI · 触发、审查与流水线](/guide/ci)**：让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。
@@ -150,29 +156,31 @@ flowchart LR
     A61 ~~~ A29
     A29 ~~~ A04
   end
-  subgraph S3["去执行"]
+  subgraph S3["单代理推进与一人多线"]
     direction TB
     A42["42 Codex 应用全景"]
-    A65["65 Workflows 后台扇出"]
     A08["08 子代理切片审查"]
     A23["23 worktree 并行"]
     A11["11 Steinberger 十个 checkout"]
-    A17["17 16 代理写编译器"]
     A27["27 Mitchell 六步采用"]
+    A42 ~~~ A08
+    A08 ~~~ A23
+    A23 ~~~ A11
+    A11 ~~~ A27
+  end
+  subgraph S4["多代理协作与大任务拆分"]
+    direction TB
+    A65["65 Workflows 后台扇出"]
+    A17["17 16 代理写编译器"]
     A05["05 Builder 加 Validator"]
     A18["18 数百代理分层"]
     A30["30 并行代理做大重构"]
-    A42 ~~~ A65
-    A65 ~~~ A08
-    A08 ~~~ A23
-    A23 ~~~ A11
-    A11 ~~~ A17
-    A17 ~~~ A27
-    A27 ~~~ A05
+    A65 ~~~ A17
+    A17 ~~~ A05
     A05 ~~~ A18
     A18 ~~~ A30
   end
-  subgraph S4["验收这一次的产出"]
+  subgraph S5["验收这一次的产出"]
     direction TB
     A60["60 七层审查 按风险定人数"]
     A15["15 skeptic 证伪"]
@@ -188,7 +196,7 @@ flowchart LR
     A32 ~~~ A25
     A25 ~~~ A31
   end
-  subgraph S5["评测代理本身与给动作把关"]
+  subgraph S6["评测代理本身与给动作把关"]
     direction TB
     A62["62 留出集爬分"]
     A39["39 风险分类器与评测"]
@@ -202,7 +210,7 @@ flowchart LR
     A50 ~~~ A47
     A47 ~~~ A19
   end
-  subgraph S6["接进 PR 与 CI"]
+  subgraph S7["接进 PR 与 CI"]
     direction TB
     A63["63 维护 PR 删死代码"]
     A41["41 定时代理六规则"]
@@ -222,7 +230,7 @@ flowchart LR
     A33 ~~~ A22
     A22 ~~~ A34
   end
-  subgraph S7["云端与后台运行环境"]
+  subgraph S8["云端与后台运行环境"]
     direction TB
     A53["53 代理沙箱机队"]
     A48["48 Claude Code 云端会话"]
@@ -238,7 +246,7 @@ flowchart LR
     A51 ~~~ A01
     A01 ~~~ A40
   end
-  subgraph S8["看原理"]
+  subgraph S9["看原理"]
     direction TB
     A43["43 Codex app server"]
     A54["54 harness 省 token"]
@@ -262,7 +270,7 @@ flowchart LR
     A35 ~~~ A36
     A36 ~~~ A44
   end
-  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9
 ```
 
 ## 不知道从哪开始？

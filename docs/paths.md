@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-不知道从哪读起？按你现在的水平选一条路径。左侧边栏是按任务阶段（打地基 → 做规划 → 去执行 → 验收这一次的产出 → 评测代理本身与给动作把关 → 接进 PR 与 CI → 云端与后台运行环境 → 看原理）组织的“目录”，这里是按难度组织的“读法”。每条 7–19 步，顺序是“先懂概念 → 跟着做 → 再扩展”。每一步都写了**读完能带走什么**。
+不知道从哪读起？按你现在的水平选一条路径。左侧边栏是按任务阶段（打地基 → 做规划 → 单代理推进与一人多线 → 多代理协作与大任务拆分 → 验收这一次的产出 → 评测代理本身与给动作把关 → 接进 PR 与 CI → 云端与后台运行环境 → 看原理）组织的“目录”，这里是按难度组织的“读法”。每条 7–19 步，顺序是“先懂概念 → 跟着做 → 再扩展”。每一步都写了**读完能带走什么**。
 
 </div>
 
@@ -34,7 +34,7 @@ flowchart LR
 
 **动手练习**：在自己的项目里新开一个会话，第一句话写 “First run the tests”，再按 [[20]] 的建议把 CLAUDE.md / AGENTS.md 删到只剩通用内容。
 
-**延伸阅读**：[打地基](/guide/foundation) · [做规划](/guide/planning) · [去执行](/guide/execution)
+**延伸阅读**：[打地基](/guide/foundation) · [做规划](/guide/planning) · [单代理推进与一人多线](/guide/solo)
 
 ## 🚀 进阶：并行与自动化 {#intermediate}
 
@@ -64,7 +64,7 @@ flowchart LR
 
 **动手练习**：挑两个互不相关的小 issue，各开一个 worktree 让代理实现并开 PR，然后在一个 `/clear` 后的新会话里审查它们（[模式 P12](/patterns#p12)、[P13](/patterns#p13)）。
 
-**延伸阅读**：[去执行](/guide/execution) · [验收这一次的产出](/guide/review) · [评测代理本身与给动作把关](/guide/evals) · [接进 PR 与 CI](/guide/ci) · [云端与后台运行环境](/guide/cloud) · 用 Grok Build 的话见 [[34]]，用 Gemini CLI 做规划见 [[29]]
+**延伸阅读**：[单代理推进与一人多线](/guide/solo) · [多代理协作与大任务拆分](/guide/multi) · [验收这一次的产出](/guide/review) · [评测代理本身与给动作把关](/guide/evals) · [接进 PR 与 CI](/guide/ci) · [云端与后台运行环境](/guide/cloud) · 用 Grok Build 的话见 [[34]]，用 Gemini CLI 做规划见 [[29]]
 
 ## 🧪 专家：长时自主任务与多代理 {#expert}
 
@@ -90,4 +90,4 @@ flowchart LR
 
 **动手练习**：把四种长时任务做法放在一起看：[长时自主任务专题](/guide/long-running)；再按 [[19]] 的路线图，为自己最常用的一类任务写 5 道评测题。
 
-**延伸阅读**：[去执行](/guide/execution) · [看原理](/guide/harness) · [🧩 模式库](/patterns)
+**延伸阅读**：[多代理协作与大任务拆分](/guide/multi) · [看原理](/guide/harness) · [🧩 模式库](/patterns)

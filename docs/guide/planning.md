@@ -87,5 +87,5 @@ mindmap
 7. [[64]]：计划怎么被审查：拷问、事实核对、反方三步，可以单独抄走。
 
 ::: info 上一阶段 / 下一阶段
-← [打地基](/guide/foundation) ｜ 计划定好后，进入 [去执行](/guide/execution) →
+← [打地基](/guide/foundation) ｜ 计划定好后，进入 [单代理推进与一人多线](/guide/solo) →
 :::

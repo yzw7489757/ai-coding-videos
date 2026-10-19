@@ -67,20 +67,30 @@ export const domains = [
     ]
   },
   {
-    id: 'execution',
+    id: 'solo',
     no: '3',
-    name: '去执行',
-    sub: '从单代理到多代理',
+    name: '单代理推进与一人多线',
+    sub: '一个人怎么驾驭代理',
     icon: '🚀',
-    desc: '让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。',
+    desc: '一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。',
     items: [
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
-      { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
       { n: '11', slug: '11-peter-steinberger-openclaw', text: '一个人用 Codex 建 OpenClaw', short: 'Steinberger 十个 checkout', tool: 'codex', type: 'video', published: '2026-02-24' },
+      { n: '27', slug: '27-mitchellh-ai-adoption-journey', text: '从怀疑到离不开：六步采用 AI', short: 'Mitchell 六步采用', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-02-05' }
+    ]
+  },
+  {
+    id: 'multi',
+    no: '4',
+    name: '多代理协作与大任务拆分',
+    sub: '分工、协调与长时运行',
+    icon: '🤝',
+    desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
+    items: [
+      { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '17', slug: '17-anthropic-c-compiler-agent-teams', text: '16 个代理并行写 C 编译器', short: '16 代理写编译器', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-02-05' },
-      { n: '27', slug: '27-mitchellh-ai-adoption-journey', text: '从怀疑到离不开：六步采用 AI', short: 'Mitchell 六步采用', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-02-05' },
       { n: '05', slug: '05-indydevdan-task-system', text: 'Builder + Validator 代理团队', short: 'Builder 加 Validator', tool: 'claude', type: 'video', published: '2026-02-02' },
       { n: '18', slug: '18-cursor-scaling-long-running-agents', text: '数百个代理协作写浏览器', short: '数百代理分层', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-14' },
       { n: '30', slug: '30-openhands-parallel-refactors', text: '大型重构拆给并行代理', short: '并行代理做大重构', tool: 'openhands', type: 'video', added: '2026-10-09', published: '2026-01-08' }
@@ -88,7 +98,7 @@ export const domains = [
   },
   {
     id: 'review',
-    no: '4',
+    no: '5',
     name: '验收这一次的产出',
     sub: '测试、审查与完成标准',
     icon: '✅',
@@ -105,7 +115,7 @@ export const domains = [
   },
   {
     id: 'evals',
-    no: '5',
+    no: '6',
     name: '评测代理本身与给动作把关',
     sub: '评测、分类器与分数噪声',
     icon: '📏',
@@ -121,7 +131,7 @@ export const domains = [
   },
   {
     id: 'ci',
-    no: '6',
+    no: '7',
     name: '接进 PR 与 CI',
     sub: '触发、审查与流水线',
     icon: '⚙️',
@@ -140,7 +150,7 @@ export const domains = [
   },
   {
     id: 'cloud',
-    no: '7',
+    no: '8',
     name: '云端与后台运行环境',
     sub: '代理在哪里跑',
     icon: '☁️',
@@ -157,7 +167,7 @@ export const domains = [
   },
   {
     id: 'harness',
-    no: '8',
+    no: '9',
     name: '看原理',
     sub: 'Harness 与内部机制',
     icon: '🧠',

@@ -36,13 +36,13 @@ export default withMermaid(
           }
         }
       },
-      // 左侧边栏只做内容导航：8 个阶段，每组先放阶段指南，再放文章（所有页面共用同一个侧边栏）
+      // 左侧边栏只做内容导航：9 个阶段，每组先放阶段指南，再放文章（“多代理协作与大任务拆分”组第二项是长时任务专题；所有页面共用同一个侧边栏）
       sidebar: domains.map((d) => ({
         text: stageLabel(d),
         collapsed: false,
         items: [
           { text: '阶段指南', link: `/guide/${d.id}` },
-          ...(d.id === 'execution' ? [{ text: '专题：长时自主任务', link: '/guide/long-running' }] : []),
+          ...(d.id === 'multi' ? [{ text: '专题：长时自主任务', link: '/guide/long-running' }] : []),
           ...d.items.map((i) => ({ text: i.text, link: `/${i.slug}` }))
         ]
       })),
