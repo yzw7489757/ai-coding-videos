@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 67 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 71 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -87,7 +87,7 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-19，8 份）
+## 🆕 最近收录（2026-10-19，12 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
@@ -99,12 +99,16 @@ features:
 | 65 | [Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span> | <span class="rating-stars" style="--r:2.5" aria-hidden="true"></span> **2.5** |
 | 66 | [源码解剖 11 个代理外壳](/66-harness-engineering-eleven-systems) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
 | 67 | [Cognition 把 Devin 接进日常](/67-cognition-devin-builds-devin) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
+| 68 | [计划切成带程序验收的短会话](/68-plan-to-unattended-agent-runs) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 69 | [按执行轨迹打分的四条评测教训](/69-google-eval-engineering-lessons) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 70 | [Air 云端沙箱：每任务新 VM](/70-jetbrains-air-cloud-sandboxing) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-jetbrains">JetBrains Air</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
+| 71 | [验证栈：轨迹打分加 PR 真跑](/71-openhands-verification-stack) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-openhands">OpenHands</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 67 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 71 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -143,13 +147,15 @@ flowchart LR
   subgraph S2["做规划"]
     direction TB
     A64["64 审计划不审 diff"]
+    A68["68 完成合约短会话"]
     A06["06 找未知 做减法"]
     A03["03 访谈式需求"]
     A13["13 plan mode 实测"]
     A61["61 四份 Markdown 长任务"]
     A29["29 Conductor 上下文驱动"]
     A04["04 RPI 有意压缩"]
-    A64 ~~~ A06
+    A64 ~~~ A68
+    A68 ~~~ A06
     A06 ~~~ A03
     A03 ~~~ A13
     A13 ~~~ A61
@@ -186,24 +192,28 @@ flowchart LR
     A15["15 skeptic 证伪"]
     A59["59 独立完成标准"]
     A12["12 测试全绿也要读"]
+    A71["71 critic 加 QA 真跑"]
     A32["32 Devin 带证据交付"]
     A25["25 TDD 与手动测试"]
     A31["31 审查精确率优先"]
     A60 ~~~ A15
     A15 ~~~ A59
     A59 ~~~ A12
-    A12 ~~~ A32
+    A12 ~~~ A71
+    A71 ~~~ A32
     A32 ~~~ A25
     A25 ~~~ A31
   end
   subgraph S6["评测代理本身与给动作把关"]
     direction TB
+    A69["69 轨迹打分 双条件"]
     A62["62 留出集爬分"]
     A39["39 风险分类器与评测"]
     A56["56 两段式权限分类器"]
     A50["50 评测里的基础设施噪声"]
     A47["47 Skill 评测"]
     A19["19 Agent Evals"]
+    A69 ~~~ A62
     A62 ~~~ A39
     A39 ~~~ A56
     A56 ~~~ A50
@@ -233,13 +243,15 @@ flowchart LR
   subgraph S8["云端与后台运行环境"]
     direction TB
     A53["53 代理沙箱机队"]
+    A70["70 每任务 VM 出站白名单"]
     A48["48 Claude Code 云端会话"]
     A58["58 协调代理派活"]
     A02["02 Slack 派活 扇出审查"]
     A51["51 自托管执行机器"]
     A01["01 Routines 与验证"]
     A40["40 云端代理运行层"]
-    A53 ~~~ A48
+    A53 ~~~ A70
+    A70 ~~~ A48
     A48 ~~~ A58
     A58 ~~~ A02
     A02 ~~~ A51

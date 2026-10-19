@@ -2,6 +2,30 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-19 · 第九批收录 #68–#71；录入规则改为核实后直接录入
+
+**规范变更（AGENTS.md）：**
+
+- 新增 §7.0：日常选题核实后**直接按阶段录入**，不必先发候选等确认；每天最多 4 篇；录入后必须同步阶段指南、大纲/总结、术语表、模式库、学习路径、全部资料、changelog，构建部署后发链接。
+- 阶段超过 **10 篇**时只给拆分建议，**不自行拆分**（等主人确认）。
+- 旧说法“先确认再录入”以 §7.0 为准。
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#68](/68-plan-to-unattended-agent-runs) | Sébastien Lavoie：From a plan to unattended agent runs（文首注明 AI 起草、作者审过） | 做规划 | 2026-10-09 |
+| [#69](/69-google-eval-engineering-lessons) | Casey West / Google Cloud：Four evaluation engineering lessons | 评测代理本身与给动作把关 | 2026-10-17 |
+| [#70](/70-jetbrains-air-cloud-sandboxing) | Dennis Ushakov / JetBrains：How Cloud-Based Agent Sandboxing Works in Air（站内首篇 JetBrains） | 云端与后台运行环境 | 2026-10-14 |
+| [#71](/71-openhands-verification-stack) | Xingyao Wang、Calvin Smith / OpenHands：The Verification Stack | 验收这一次的产出 | 2026-06-22 |
+
+**结构变化：**
+
+- 新工具标签：`jetbrains` → JetBrains Air（`domains.mjs` + `custom.css`）。
+- 模式库新增 P59–P62（程序跑完成合约、按轨迹打分 + live∥plan-only、先问默认隔离、验证栈分层）。
+- 术语表新增完成合约、决策完备、合约基线、会话交接、代理轨迹、只计划评测、黄金集、代理沙箱、MicroVM、出站代理、最小权限、验证栈、评论者模型、Code Review Skill、QA Agent、精确率/召回等。
+- 阶段数量：做规划 7 → 8，评测 6 → 7，云端 7 → 8，验收产出 7 → 8。全站 67 → 71 篇，9 个阶段；最多仍是看原理 11 篇，无阶段超过 10 篇检查线。
+
 ## 2026-10-19 · 拆分“去执行”阶段
 
 “去执行 · 从单代理到多代理”收录到 10 篇，超过 8 篇的检查线。经确认，按任务顺序拆成两个相邻阶段（仍只有“任务从开始到上线”这一条分类轴），文章编号和地址都不变；“看原理”（11 篇）这次不拆：

@@ -107,6 +107,14 @@
   - 看点：PR 一年三倍、审不过来，于是人只审计划的 PR；规格里每条关于现有代码的说法对照真实代码核对，反方一步只许 BUILD / SIMPLIFY / KILL；“含可争议决策才写计划”；多数代码 PR 不经人读 diff，前提是测试门和本地环境。一家公司自述，例子来自虚构示例计划。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/64-giant-swarm-spec-driven-development)
 
+
+### 计划切成带程序验收的短会话 {#item-68}
+
+- **[From a plan to unattended agent runs](https://www.sglavoie.com/posts/from-plan-to-unattended-agent-runs/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Sébastien Lavoie ／ 个人博客 ｜ 发布：2026-10-09 ｜ 工具：自研 `asl`（可挂 Claude Code / Codex / Copilot CLI）
+  - 看点：决策完备检验；计划切成短会话，每会话挂程序跑的完成合约与 baseline；全新上下文 + handoff；固定理由暂停；提示是建议、守卫才强制。文首注明初稿由 AI 根据笔记写成、作者审过。18 万 / 27 万行等为自报。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/68-plan-to-unattended-agent-runs)
+
 ### 找出未知，给上下文做减法 {#item-06}
 
 - **[Field Guide to Fable — Thariq Shihipar, Anthropic](https://www.youtube.com/watch?v=9fubhllmsBU)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -269,6 +277,14 @@
   - 看点：24 个测试全绿、Clippy 无警告，逐行审查仍发现字符串比较版本号、重复造轮子；对比 Fable 5 / Opus 4.8。
   - 👉 [阅读分析](/12-forrestknight-grok-4-5)
 
+
+### 验证栈：轨迹打分加 PR 真跑 {#item-71}
+
+- **[The Verification Stack](https://www.openhands.dev/blog/the-verification-stack)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-openhands">OpenHands</span>
+  - 作者 / 来源：Xingyao Wang、Calvin Smith ／ OpenHands 博客 ｜ 发布：2026-06-22 ｜ 工具：OpenHands Critic、code review skill、QA agent、`/iterate`、Automations
+  - 看点：推送前 critic 看轨迹；PR 上结构化审查（可按仓定制）+ QA 真跑；iterate 开 draft 修到绿。自报六个月：约 90% PR 用自动审查、合并时间降 58%、覆盖率近 +25%；精确率把无建议算完美。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/71-openhands-verification-stack)
+
 ### Devin 用 Computer Use 自测 {#item-32}
 
 - **[Verifying Agentic Development at Scale](https://cognition.com/blog/testing-development)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>
@@ -295,6 +311,14 @@
 **这一组放什么**：不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。
 
 📘 **先读阶段指南**：[评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals)
+
+
+### 按执行轨迹打分的四条评测教训 {#item-69}
+
+- **[Four evaluation engineering lessons learned from building agent plugins](https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Casey West ／ Google Cloud Developers & Practitioners ｜ 发布：2026-10-17 ｜ 工具：Google Cloud Developer 插件作试验田
+  - 看点：LLM 裁判只看总结会把做对的代理判失败；遥测保留 turn 结构；live 与 plan-only 并排（约一半重要发现来自两者差）；golden sets 压整栈。短文，数字自报，文末带产品入口。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/69-google-eval-engineering-lessons)
 
 ### 评测设计与爬分不自欺 {#item-62}
 
@@ -419,6 +443,14 @@
   - 作者 / 来源：Walker Hildebrand、Sherry Bai ／ Factory 新闻 ｜ 发布：2026-10-14 ｜ 工具：Factory Droid、Missions、Remote Control
   - 看点：一台远程机器不等于一支机队；在各家沙箱之上做通用生命周期，意图写进 Postgres 再由 reconciler 调和；每个平台一个 gRPC driver，用必选和可选能力档位的一致性测试约束；只向外连。首个客户的 driver 由代理按“合约 + 一致性测试”写成。private preview，无性能数据。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/53-factory-opencompute)
+
+
+### Air 云端沙箱：每任务新 VM {#item-70}
+
+- **[How Cloud-Based Agent Sandboxing Works in Air](https://blog.jetbrains.com/air/2026/10/cloud-agent-sandboxing/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-jetbrains">JetBrains Air</span>
+  - 作者 / 来源：Dennis Ushakov ／ JetBrains Blog · Air ｜ 发布：2026-10-14 ｜ 工具：JetBrains Air（组织用户预览）
+  - 看点：五种跑法的默认隔离对照；本地隔离靠客户端；Air = 每任务新 VM + 容器 + 出站白名单（默认源码托管与包仓库）；密钥加密注入、任务跟开发者本人仓库权限。知识库首篇 JetBrains；无逃逸测试数据。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/70-jetbrains-air-cloud-sandboxing)
 
 ### Claude Code 云端会话实战 {#item-48}
 
@@ -546,9 +578,9 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 7 篇（#64、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 5 篇（#42、#08、#23、#11、#27）；多代理协作与大任务拆分 5 篇（#65、#17、#05、#18、#30）；验收这一次的产出 7 篇（#60、#15、#59、#12、#32、#25、#31）；评测代理本身与给动作把关 6 篇（#62、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 8 篇（#64、#68、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 5 篇（#42、#08、#23、#11、#27）；多代理协作与大任务拆分 5 篇（#65、#17、#05、#18、#30）；验收这一次的产出 8 篇（#60、#15、#59、#12、#71、#32、#25、#31）；评测代理本身与给动作把关 7 篇（#69、#62、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 8 篇（#53、#70、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
 
-**阶段拆分（2026-10-19，已确认）**：按下面建议②把“去执行”拆成“单代理推进与一人多线”（`solo`）和“多代理协作与大任务拆分”（`multi`）两个相邻阶段，各 5 篇；边界：主角是“一个人 + 一个主代理”、任务彼此独立、协调靠人（子代理只是主代理的工具）的归前者，多个代理围绕同一个目标分工、认领、交接或长时间运行的归后者。#08 虽然演示了 20 个子代理，但子代理由主代理切片派发、结果交回主代理，归前者。旧地址 `/guide/execution` 改为指向两个新指南的入口页，长时任务专题归入后者；“看原理”按建议①暂不拆。现在 67 份资料分 9 个阶段，最多 11 篇（看原理）、最少 5 篇。
+**阶段拆分（2026-10-19，已确认）**：按下面建议②把“去执行”拆成“单代理推进与一人多线”（`solo`）和“多代理协作与大任务拆分”（`multi`）两个相邻阶段，各 5 篇；边界：主角是“一个人 + 一个主代理”、任务彼此独立、协调靠人（子代理只是主代理的工具）的归前者，多个代理围绕同一个目标分工、认领、交接或长时间运行的归后者。#08 虽然演示了 20 个子代理，但子代理由主代理切片派发、结果交回主代理，归前者。旧地址 `/guide/execution` 改为指向两个新指南的入口页，长时任务专题归入后者；“看原理”按建议①暂不拆。现在 71 份资料分 9 个阶段，最多 11 篇（看原理）、最少 5 篇。无阶段超过 10 篇检查线。
 
 **容量检查（2026-10-19，第八批 #64–#67 后）**：看原理到 11 篇，打地基、去执行各 10 篇，接进 PR 与 CI 9 篇，四个阶段超过 8 篇检查线。逐篇复核归类：#64 的主要贡献是“计划怎么被审查”，归做规划（与 #60 的分歧放在规划指南）；#65 讲把大任务扇出给并行代理，归去执行；#66 是 11 个外壳的源码解剖，归看原理；#67 讲把代理接进工单、PR 和告警等团队事件流，归接进 PR 与 CI。**拆分建议（只是建议，未执行，等用户确认）**：①看原理（11 篇）可按“外壳的哪一层”拆成“循环与上下文”（#24、#09、#54、#36、#35、#44、#66）和“多代理与外部接口”（#16、#38、#45、#43），但这会引入第二条分类轴，更稳妥的做法是先把 #66 当作本阶段的总索引、暂不拆；②去执行（10 篇，已于 2026-10-19 确认并执行，见上条）可按任务顺序拆成“单代理与一人多线程”（#27、#11、#42、#23、#08）和“多代理协作与大任务拆分”（#05、#17、#18、#30、#65）；③打地基（10 篇）可拆成“规则与上下文文件”（#20、#21、#26、#46、#14、#07）和“开发环境与扩展机制”（#28、#37、#49、#52）；④接进 PR 与 CI（9 篇）刚过线，边界仍清楚，暂不拆。
 
@@ -595,6 +627,7 @@
 **其他说明：**
 - 2026-10-19 第八批（下）：#64 Giant Swarm 规格驱动开发、#65 Grok Build Workflows、#66 Harness Engineering 源码研究、#67 Cognition 用 Devin 开发 Devin。#64 作者署名 Dominik Schmidle，作者页地址是 dominik-kress，按署名写；文章首发 LinkedIn（2026-09-29），published 取公司博客日期 2026-10-13。#66 的 arXiv 编号 2609 与 7 月 15 日提交不合常规，照录；只精读了摘要、七个子系统、13 条观察、效度威胁和 18 条建议。#67 为厂商自述。
 - 2026-10-19 第八批（上）：#60 Claude Code 团队代码审查、#61 Codex 25 小时长任务（配套仓库 design-desk 的四份 Markdown 原文可核对）、#62 评测设计与爬分、#63 用 Codex 批量维护。#61 博客说 prompt.md 有“非目标”一节，仓库里的版本没有，文中已注明。
+- 2026-10-19 第九批：#68 个人 asl 管线（AI 起草声明）；#69 Google Cloud 四条评测教训；#70 JetBrains Air 云端沙箱（站内首篇 JetBrains）；#71 OpenHands 验证栈。同步 AGENTS.md：核实后直接录入、阶段超 10 篇只给拆分建议。
 - 2026-10-16 第七批：#57 补上了长期缺的“把 agent evals 接进 CI”端到端示例（eval JSON、GitHub Actions workflow、`check.sh` 全文），该缺口**已覆盖**；局限是示例场景为课程构造、没有成本数据、每条 eval 只跑一次。#57 课程页本身不显示日期，2026-08-21 取自 playbook 总览页的发布日期。#58 是 Cursor Projects 发布文；#59 是 Factory 的 ProgramBench 实验，单次运行、算力不对等。
 - 2026-10-15 第六批：#52 mods、#53 OpenCompute、#54 Cursor 省 token、#55 OpenAI 用 Skills 维护 SDK 仓库、#56 Claude Code auto mode。#55 补上了“把 Skill 接进 CI”的真实仓库做法，但仍不是“把 agent evals 接进 CI”的端到端示例。#55 页面日期 Mar 9, 2026，正文里的 March 6, 2026 是下载量数据截止日。同日 #05、#30 取得完整字幕，按新方法重写（#30 从只覆盖前 35 分钟扩展到全长）。
 - 2026-10-14 第五批：#47 补上了一个可照做的评测脚本（但评测对象是 Skill，不是 CI 里的代码评测，仍不算“把 agent evals 接进 CI”的端到端示例）；#50 说明评测分数里混着基础设施噪声；#48、#51 补上 Claude Code 云端会话和 Cursor 自托管执行环境；#49 是 Anthropic 源代码管理重做的一手经验。#51 页面元数据发布日期为 2026-09-02，页面里另有一个 2026-08-13 的时间标记，按元数据记。

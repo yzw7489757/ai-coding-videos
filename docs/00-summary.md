@@ -1,8 +1,8 @@
-# 00 · 总结：67 份实战资料里的共性模式与最佳实践
+# 00 · 总结：71 份实战资料里的共性模式与最佳实践
 
 <div class="hook">
 
-**一句话看懂**：67 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、Sourcegraph 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
+**一句话看懂**：71 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
 
 </div>
 
@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：67 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（65、17、05、18、30）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、12、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 35、官方文档 3、指南 2。工具：Claude Code 21、Codex 13、Grok 6、Cursor 9、Gemini CLI 1、OpenHands 1、Devin 1、Amp 1、Aider 1、Factory Droid 2、通用 7。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：71 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（65、17、05、18、30）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 39、官方文档 3、指南 2。工具：Claude Code 21、Codex 13、Grok 6、Cursor 9、Gemini CLI 1、OpenHands 2、Devin 1、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 9。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -75,6 +75,7 @@
 - 让 Claude 采访你写 spec（03）、blind spot pass 和让模型反过来考你（06）、Steinberger 常问“Do you have any questions?”（11）。
 - Grok Build plan mode 的可交互计划含 non-goals 和成功指标（13）、计划式 prompt + skills（14）。
 - 新增：Sprint Contract，让写代码的代理和验收的代理在开工前约定完成标准（16）；把每个 GitHub issue 当作规格输入（23）。
+- 第九批：Lavoie（68）决策完备 + 程序完成合约；对照 64 的审计划。
 - 第八批：Giant Swarm（64）在 PR 一年涨三倍后把人的审查挪到计划上：拷问式访谈、写成规格、规格里每条关于现有代码的说法对照真实代码核对、再让反方试图毙掉计划；“含可争议决策才写计划”。
 - 第二批：Gemini CLI 的 Conductor（29）把产品背景、spec 和 plan 写成仓库里的文件，代理按 plan.md 打勾，人先审计划；OpenHands（30）强调大任务开工前要有清晰的完成标准，并拆成“一个代理一次做完”的小块。
 
@@ -120,6 +121,8 @@
 
 - 第五批：Claude Code 云端会话（48）和 Cursor Self-Hosted Machines（51）都把“一个任务一台机器”做成默认，循环留在厂商侧、执行可以放进自己的网络；Anthropic（49）在每天合并 3 万多个改动后重做了源代码管理，工程师的工作变成审意图、对 Claude 说“不”。
 
+- 第九批：Lavoie（68）把完成交给程序跑的合约；Google Cloud（69）强调按轨迹打分与 live∥plan-only；OpenHands（71）推送前 critic + PR 上 QA 真跑。
+- 第九批：JetBrains Air（70）给出五种跑法默认隔离对照与出站白名单；Lavoie（68）把计划切成可无人值守短会话。
 - 第八批（下）：Cognition（67）把代理接在团队已有的信号后面：Bug 标签触发分诊、PR 事件触发审查和自动修、告警经 API 开会话（厂商自述）；Grok Build Workflows（65）把“扇出 + 核验 + 汇总”做成后台脚本并存成团队命令。
 - 第八批：OpenAI 的 25 小时 Codex 实验（61）把长任务的记忆写成四份 Markdown（目标、带验证命令的里程碑、执行规则、状态日志）；OpenAI 实验平台团队（63）让 Codex 带着证据批量开维护 PR，一处清理一个小 draft PR，审查意见写回下一版 prompt。
 
@@ -197,6 +200,7 @@ flowchart TD
 - [13 · Grok Build 实测：从计划到执行](/13-bijan-bowen-grok-build) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：更长的全流程实测：plan mode、截图反馈、无头浏览器自测。
 - [61 · Codex 跑 25 小时的四份 Markdown](/61-codex-long-horizon-tasks) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：长任务的目标、里程碑、执行规则和状态日志怎么分文件写，原文可照抄。
 - [64 · 把审查挪到计划：五步规格驱动](/64-giant-swarm-spec-driven-development) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：PR 多到审不过来时，人审计划 PR；事实核对和反方两步可以单独抄。
+- [68 · 计划切成带程序验收的短会话](/68-plan-to-unattended-agent-runs) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：决策完备；完成合约由程序跑；AI 起草声明。
 - [29 · Conductor：把计划写进仓库](/29-gemini-cli-conductor) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span>：spec 和 plan 写成仓库里的文件，适合团队。
 
 **单代理推进与一人多线 · 一个人怎么驾驭代理**（[阶段指南](/guide/solo)）
@@ -220,6 +224,7 @@ flowchart TD
 - [25 · 测试驱动与代理手动测试](/25-simonw-agentic-engineering-testing-patterns) <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-general">通用（不限工具）</span>：三句马上能用的测试提示词。
 - [12 · 测试全绿也要读代码](/12-forrestknight-grok-4-5) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grok45">Cursor + Grok 4.5</span>：学会怎么审查 AI 产出，警惕“测试全绿”。
 - [15 · 57 个子代理与对抗式验证](/15-arcade-grok-build-57-agents) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grokbuild">Grok Build</span>：大规模并行与对抗式验证（建议配合 Grok Build 官方文档）。
+- [71 · 验证栈：轨迹打分加 PR 真跑](/71-openhands-verification-stack) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-openhands">OpenHands</span>：推送前 critic；PR 上审查 skill + QA 真跑；`/iterate`。
 - [32 · Devin 用 Computer Use 自测](/32-cognition-verifying-agentic-development) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>：让代理实际操作应用并交回证据。
 - [31 · AI 代码审查：精确率优先](/31-openai-verifying-code-at-scale) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：审查器为什么要“宁缺毋滥”。
 - [59 · 先建完成标准，再让代理做大任务](/59-factory-large-software-tasks) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>：代理为什么提前收工，独立完成标准能补多少、要花多少。
@@ -232,6 +237,7 @@ flowchart TD
 - [50 · 评测分数里的基础设施噪声](/50-anthropic-infrastructure-noise) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：读分数前先知道噪声有多大。
 - [39 · Auto-review：分类器与评测](/39-cursor-auto-review-classifier) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：评测怎么接进真实产品链路。
 - [56 · auto mode：两段式权限分类器](/56-anthropic-claude-code-auto-mode) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：给代理动作把关的另一种设计，误报漏报数据都公开。
+- [69 · 按执行轨迹打分的四条评测教训](/69-google-eval-engineering-lessons) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：别给闭幕演讲打分；live∥plan-only；golden sets。
 - [62 · 评测设计与爬分不自欺](/62-claude-eval-design-hillclimbing) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：评分器先验证，留出集 + 一次一个补丁 + 不涨就回滚。
 
 **接进 PR 与 CI · 触发、审查与流水线**（[阶段指南](/guide/ci)）
@@ -254,6 +260,7 @@ flowchart TD
 - [40 · 云端代理一年的四条教训](/40-cursor-cloud-agent-lessons) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：云端代理背后的环境、持久化执行和状态解耦。
 - [51 · 云端代理跑在自己的机器上](/51-cursor-self-hosted-machines) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：执行放进自己的网络，推理留在云端。
 - [53 · OpenCompute：给代理按需发电脑](/53-factory-opencompute) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>：从一台机器到一支沙箱机队，以及“合约 + 一致性测试”怎么让代理写基础设施。
+- [70 · Air 云端沙箱：每任务新 VM](/70-jetbrains-air-cloud-sandboxing) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-jetbrains">JetBrains Air</span>：五种跑法默认隔离；出站白名单与按人权限。
 - [58 · Projects：一个协调代理管一群子代理](/58-cursor-projects) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：跨月工作交给一个只派活的协调者，注意是产品发布文。
 
 **看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
@@ -291,7 +298,7 @@ flowchart TD
 - **第八批的局限**：#60 的 PR 翻倍、回滚降 40%、16% → 54% 都是团队自报、无绝对数，并推广自家 Code Review 产品；#61 是单次自报实验，质量没有独立评估，博客与配套仓库有小出入；#62 的两个例子都是内部基准，客服留出集只有 14 单；#63 的模型对比只跑一次，两处“1,400 多个 PR”口径未说明。
 - **第七批的局限**：#58 是产品发布文，30% / 6 倍 PR 为厂商自报；#59 每格只跑一次、任务手挑、系统组与单代理组算力不对等，结尾推广 Missions。
 - **第六批的局限**：#52 mods 和 #53 OpenCompute 都是发布公告，没有 API 示例或性能数据，OpenCompute 仍在 private preview；#54 的各项百分比口径不同；#56 的真实过度主动样本只有 52 个。
-- **单一来源的工具**：Gemini CLI（29）、OpenHands（30）、Amp（35）、Aider（44）各只有 1 篇，Devin 有 2 篇（32、67），Factory Droid 有 2 篇（53、59），且都来自厂商自己，结论请视为该厂商的经验。Amp 在演讲后停用了编辑器扩展、取消了广告，文中已注明。
+- **单一来源的工具**：Gemini CLI（29）、Amp（35）、Aider（44）各只有 1 篇，Devin 有 2 篇（32、67），Factory Droid 有 2 篇（53、59），且都来自厂商自己，结论请视为该厂商的经验。Amp 在演讲后停用了编辑器扩展、取消了广告，文中已注明。
 - **长时任务的数字**：#18、#38 都没有给出成本；#24 的直播结束时循环仍在跑，没有最终结果。
 - **范围**：按要求排除了以漏洞挖掘 / 攻防安全为主题的资料。
 - **时效**：#44（Aider，2024-09）是全站最老的资料，模型配置已过时；#42、#43 录制于 2026 年 6–7 月、10 月才上传；#04、#20、#21、#26、#29、#31、#35、#36 为 2025 年 11–12 月发布；#28、#34 为持续更新的官方文档；#22（官方文档）和 #25（连载指南）会持续更新，以 2026-10-09 抓取的版本为准；其余均为 2026 年。工具更新很快，具体命令和 UI 以官方最新文档为准。
