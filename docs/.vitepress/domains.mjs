@@ -57,6 +57,7 @@ export const domains = [
     icon: '📝',
     desc: '动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。',
     items: [
+      { n: '64', slug: '64-giant-swarm-spec-driven-development', text: '把审查挪到计划：五步规格驱动', short: '审计划不审 diff', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-13' },
       { n: '06', slug: '06-field-guide-to-fable', text: '找出未知，给上下文做减法', short: '找未知 做减法', tool: 'claude', type: 'video', published: '2026-07-06' },
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video', published: '2026-05-23' },
       { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video', published: '2026-05-15' },
@@ -74,6 +75,7 @@ export const domains = [
     desc: '让代理把活干完：真实项目里的单代理用法，到子代理、并行 worktree、代理团队和长时自主任务。',
     items: [
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
+      { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
       { n: '11', slug: '11-peter-steinberger-openclaw', text: '一个人用 Codex 建 OpenClaw', short: 'Steinberger 十个 checkout', tool: 'codex', type: 'video', published: '2026-02-24' },
@@ -130,6 +132,7 @@ export const domains = [
       { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video', published: '2026-05-28' },
       { n: '55', slug: '55-openai-skills-oss-maintenance', text: '用 Skills 维护开源仓库', short: 'Skills 接进 CI', tool: 'codex', type: 'article', added: '2026-10-15', published: '2026-03-09' },
+      { n: '67', slug: '67-cognition-devin-builds-devin', text: 'Cognition 把 Devin 接进日常', short: '标签与事件触发代理', tool: 'devin', type: 'article', added: '2026-10-19', published: '2026-02-27' },
       { n: '33', slug: '33-cursor-building-bugbot', text: 'Bugbot：用解决率迭代审查机器人', short: 'Bugbot 解决率', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-15' },
       { n: '22', slug: '22-openai-codex-ci-autofix', text: 'CI 挂了让 Codex 自动修', short: 'codex exec 修 CI', tool: 'codex', type: 'docs', added: '2026-10-09', published: '' },
       { n: '34', slug: '34-grok-build-headless-hooks', text: 'Grok Build 跑进脚本和 CI', short: 'Grok Build 无人值守', tool: 'grokbuild', type: 'docs', added: '2026-10-09', published: '' }
@@ -163,6 +166,7 @@ export const domains = [
       { n: '43', slug: '43-codex-app-server', text: '在 Codex harness 上做自己的客户端', short: 'Codex app server', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-09' },
       { n: '54', slug: '54-cursor-token-efficiency', text: '长任务的 token 省在哪', short: 'harness 省 token', tool: 'cursor', type: 'article', added: '2026-10-15', published: '2026-09-23' },
       { n: '09', slug: '09-how-codex-works', text: 'Codex Harness 内部机制', short: 'Codex harness 拆解', tool: 'codex', type: 'video', published: '2026-08-10' },
+      { n: '66', slug: '66-harness-engineering-eleven-systems', text: '源码解剖 11 个代理外壳', short: '11 个外壳源码解剖', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-07-15' },
       { n: '45', slug: '45-anthropic-managed-agents', text: 'Managed Agents：大脑与双手解耦', short: '大脑与双手解耦', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-04-08' },
       { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-03-24' },
       { n: '38', slug: '38-cursor-self-driving-codebases', text: '多代理 harness 的五次改版', short: '递归 Planner 加 handoff', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-02-05' },

@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 63 份资料分在 8 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 67 份资料分在 8 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -100,6 +100,13 @@
 
 📘 **先读阶段指南**：[做规划 · 需求澄清与任务拆解](/guide/planning)
 
+### 把审查挪到计划：五步规格驱动 {#item-64}
+
+- **[Spec-driven development: how we review plans, not pull requests](https://www.giantswarm.io/blog/spec-driven-development)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Dominik Schmidle ／ Giant Swarm 博客（首发 LinkedIn，2026-09-29） ｜ 发布：2026-10-13 ｜ 工具：开源的 spec-driven-development skills（`/plan`、`/grill-me`、`/to-spec`、`/ground-truth`、`/contrarian`、`/to-website`）
+  - 看点：PR 一年三倍、审不过来，于是人只审计划的 PR；规格里每条关于现有代码的说法对照真实代码核对，反方一步只许 BUILD / SIMPLIFY / KILL；“含可争议决策才写计划”；多数代码 PR 不经人读 diff，前提是测试门和本地环境。一家公司自述，例子来自虚构示例计划。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/64-giant-swarm-spec-driven-development)
+
 ### 找出未知，给上下文做减法 {#item-06}
 
 - **[Field Guide to Fable — Thariq Shihipar, Anthropic](https://www.youtube.com/watch?v=9fubhllmsBU)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -154,6 +161,13 @@
   - 作者 / 来源：Charlie Guo、Gabriel Chua ／ AI Engineer ｜ 发布：2026-10-06 ｜ 工具：Codex 应用、Computer Use、`/goal`、子代理、hooks、自动化
   - 看点：六步导览：上下文、Computer Use 三种方式怎么选、`/goal` 完成标准要可验证、子代理 vs 线程交接、侧线程结论要回传、两种自动化。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/42-openai-cooking-with-codex)
+
+### Grok Build Workflows：后台扇出脚本 {#item-65}
+
+- **[Workflows in Grok Build](https://x.ai/news/workflows)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span>
+  - 作者 / 来源：xAI 新闻页（未署个人名；页面标题写作 SpaceXSI） ｜ 发布：2026-07-23 ｜ 工具：Grok Build、`/workflows`、`/deep-research`
+  - 看点：能拆成独立块、最后要一份报告的任务，让 Grok 写成分阶段扇出脚本在后台跑；默认 128 个代理、最多 1,024；可内建“怀疑者”核验；存进 `.grok/workflows/` 变成带参数的命令。约 480 词的产品公告，没有效果和成本数据。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/65-grok-build-workflows)
 
 ### Codex 子代理、Hooks 与插件 {#item-08}
 
@@ -357,6 +371,13 @@
   - 看点：Agents SDK 两个仓库的 11 个 Skill；AGENTS.md 用 if/then 规定何时必须用；description 是路由合约；脚本管确定步骤、模型管判断；发版评审默认放行、阻止必附清单；公开仓库上 CI 的安全清单。PR 合并数 316 → 457 同期也受 Codex 自动审查影响。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/55-openai-skills-oss-maintenance)
 
+### Cognition 把 Devin 接进日常 {#item-67}
+
+- **[How Cognition Uses Devin to Build Devin](https://cognition.com/blog/how-cognition-uses-devin-to-build-devin)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>
+  - 作者 / 来源：The Cognition Team ／ Cognition 博客（厂商自述） ｜ 发布：2026-02-27 ｜ 工具：Devin、Devin Review、DANA、DeepWiki、Playbooks、Session Insights；Slack、Linear、Datadog、Sentry
+  - 看点：一周合并 659 个 Devin PR（2025 年最好一周 154）；Bug 标签触发分诊、PR 事件触发审查和自动修、每日审计最近 24 小时合并、只读数据库副本调试、API 接 Sentry 与部署失败；Playbook 六要素。厂商讲自家产品，数字自报，没有失败案例。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/67-cognition-devin-builds-devin)
+
 ### Bugbot：用解决率迭代审查机器人 {#item-33}
 
 - **[Building a better Bugbot](https://cursor.com/blog/building-bugbot)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
@@ -459,6 +480,13 @@
   - 看点：deferred tools、skills 占 2% 上下文上限、只读 Auto Review 子代理、`/goal` continuation prompt、服务端 compaction。
   - 👉 [阅读分析](/09-how-codex-works)
 
+### 源码解剖 11 个代理外壳 {#item-66}
+
+- **[Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents -- A Source-Code Study of Eleven Systems](https://arxiv.org/abs/2609.00006)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Paul Barbaste、Tristan Darrigol、Germain Vu、Tom Wiltberger ／ arXiv（cs.SE，83 页论文，4 月版的扩充第二版） ｜ 发布：2026-07-15 ｜ 工具：Claude Code、Codex CLI、Gemini CLI、OpenHands、Aider 等 11 个系统
+  - 看点：外壳的七个子系统及各自最小和最大实现；循环复杂度不预测成绩；11 个系统都不用通用代理框架、不给代码做向量检索；Skills 9/11 超过 MCP 8/11；一个季度里趋同变模仿；18 条设计建议和 90 行脚手架。只读源码不跑分，Claude Code 依据流传快照；arXiv 编号与提交日期不合常规。
+  - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/66-harness-engineering-eleven-systems)
+
 ### Managed Agents：大脑与双手解耦 {#item-45}
 
 - **[Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -510,7 +538,9 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 6 篇（#06、#03、#13、#61、#29、#04）；去执行 9 篇（#42、#08、#23、#11、#17、#27、#05、#18、#30）；验收这一次的产出 7 篇（#60、#15、#59、#12、#32、#25、#31）；评测代理本身与给动作把关 6 篇（#62、#39、#56、#50、#47、#19）；接进 PR 与 CI 8 篇（#63、#41、#57、#10、#55、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 10 篇（#43、#54、#09、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 7 篇（#64、#06、#03、#13、#61、#29、#04）；去执行 10 篇（#42、#65、#08、#23、#11、#17、#27、#05、#18、#30）；验收这一次的产出 7 篇（#60、#15、#59、#12、#32、#25、#31）；评测代理本身与给动作把关 6 篇（#62、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 7 篇（#53、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
+
+**容量检查（2026-10-19，第八批 #64–#67 后）**：看原理到 11 篇，打地基、去执行各 10 篇，接进 PR 与 CI 9 篇，四个阶段超过 8 篇检查线。逐篇复核归类：#64 的主要贡献是“计划怎么被审查”，归做规划（与 #60 的分歧放在规划指南）；#65 讲把大任务扇出给并行代理，归去执行；#66 是 11 个外壳的源码解剖，归看原理；#67 讲把代理接进工单、PR 和告警等团队事件流，归接进 PR 与 CI。**拆分建议（只是建议，未执行，等用户确认）**：①看原理（11 篇）可按“外壳的哪一层”拆成“循环与上下文”（#24、#09、#54、#36、#35、#44、#66）和“多代理与外部接口”（#16、#38、#45、#43），但这会引入第二条分类轴，更稳妥的做法是先把 #66 当作本阶段的总索引、暂不拆；②去执行（10 篇）可按任务顺序拆成“单代理与一人多线程”（#27、#11、#42、#23、#08）和“多代理协作与大任务拆分”（#05、#17、#18、#30、#65）；③打地基（10 篇）可拆成“规则与上下文文件”（#20、#21、#26、#46、#14、#07）和“开发环境与扩展机制”（#28、#37、#49、#52）；④接进 PR 与 CI（9 篇）刚过线，边界仍清楚，暂不拆。
 
 **容量检查（2026-10-19，第八批 #60–#63 后）**：接进 PR 与 CI 到 8 篇，打地基、看原理各 10 篇，其余阶段 6–7 篇。逐篇复核归类：#60 的核心论点是“这一次的改动怎么审”，归验收这一次的产出（其中 merge queue、CI 部分在 CI 指南用 xref 引用）；#61 的主要贡献是长任务的规格和里程碑计划怎么写，归做规划（长时运行的对照放进长时任务专题）；#62 是评测与爬分方法，归评测代理本身；#63 讲让代理批量开维护 PR、给 CI 提速，按内容也可放去执行，但去执行已有 9 篇，且主线是“维护 PR 怎么进流水线”，归接进 PR 与 CI。
 
@@ -526,7 +556,7 @@
 
 **容量检查（2026-10-13）**：“去执行”和“看原理”都到了 9 篇。逐篇复核后没有改动归类：#42 主要教的是在 Codex 应用里把活干完（Computer Use、`/goal`、子代理、线程交接），属于去执行；#43、#44、#45 的主要贡献都是 harness 的接口或机制（app server 协议、推理与编辑分离、session / harness / sandbox 解耦），放在其他阶段都会偏。46 份资料分 6 个阶段，平均已接近 8 篇，所以暂不改阶段名称；下一批如果还要往这两个阶段加，应考虑拆分阶段（仍然只按任务顺序这一条轴）。
 
-按类型：视频 23 篇；文章 35 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56、#58–#63）；官方文档 3 篇（#22、#28、#34）；指南 2 篇（#25、#57）。
+按类型：视频 23 篇；文章 39 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56、#58–#67；#66 为 arXiv 论文，按文章计）；官方文档 3 篇（#22、#28、#34）；指南 2 篇（#25、#57）。
 
 按工具：
 
@@ -534,17 +564,18 @@
 |---|---|---|---|
 | Claude Code | 21 | #01–#06、#16、#17、#20、#21、#23、#24、#28、#41、#45、#48、#52、#56、#57、#60、#62 | 内容最充足，官方团队直接讲内部用法；#28 为官方 hooks 文档；2026-10-19 补上团队代码审查流程（#60）和评测爬分（#62） |
 | Codex | 13 | #07–#11、#22、#31、#42、#43、#47、#55、#61、#63 | 官方工程师讲 harness 与内部流程，#22 为官方文档，#31 为 OpenAI 对齐团队的审查器研究；2026-10-19 补上 25 小时长任务（#61）和维护 PR（#63） |
-| Grok（Grok Build / Cursor + Grok 4.5） | 6 | #12–#15、#34、#46 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；仍缺官方工程演讲，见下 |
+| Grok（Grok Build / Cursor + Grok 4.5） | 7 | #12–#15、#34、#46、#65 | 2026-10-09 第二批补上了 xAI 官方文档（#34）；2026-10-19 收录 xAI 官方产品公告（#65，篇幅很短）；仍缺官方工程演讲，见下 |
 | Cursor | 9 | #18、#33、#37–#40、#51、#54、#58 | 公司研究博客；2026-10-16 补上 Projects 协调代理（#58）；2026-10-12 补上云端代理（#37、#40）和 Auto-review 评测（#39）；2026-10-14 补上自托管执行机器（#51）；2026-10-15 补上 harness 省 token（#54） |
 | Gemini CLI | 1 | #29 | Google 官方博客；#28 中附有 Gemini CLI hooks 对照 |
 | OpenHands | 1 | #30 | 大会研讨会 |
-| Devin | 1 | #32 | Cognition 官方博客 |
+| Devin | 2 | #32、#67 | Cognition 官方博客；#67 是厂商讲自家团队怎么用 Devin，文中已标明 |
 | Amp | 1 | #35 | 大会演讲；演讲后产品有较大变化，文中已注明 |
 | Factory Droid | 2 | #53、#59 | Factory 官方新闻与研究文章；#26 的讲者也来自 Factory，但内容不限工具，归“通用” |
 | Aider | 1 | #44 | 官方博客，2024-09 发布，时效较差，文中已注明 |
-| 通用（不限工具） | 7 | #19、#25、#26、#27、#36、#49、#50 | 方法论、评测、MCP 设计与开发基础设施，适用于任何编码代理 |
+| 通用（不限工具） | 9 | #19、#25、#26、#27、#36、#49、#50、#64、#66 | 方法论、评测、MCP 设计与开发基础设施，适用于任何编码代理；2026-10-19 补上规格驱动的计划审查（#64）和 11 个外壳的源码比较（#66） |
 
 **Grok 的缺口：**
+- 2026-10-19 收录了 xAI 官方的 Workflows 产品公告（#65），但它只有约 480 词，讲功能不讲设计取舍，仍不算工程博客。
 - 2026-10-09 第二批收录了 xAI 官方 Grok Build 文档（#34：hooks、headless、AGENTS.md、`/loop`、worktree），内容实在、可复制。但 xAI 官方的**工程博客或大会演讲**（讲设计取舍和团队实践）仍未找到。
 - 未找到 xAI 官方频道或 AI Engineer 等大会上关于 Grok Build / Grok 编码代理的长篇工程演讲或实战讲解；Grok 官方频道只有 1–2 分钟的产品宣传片（如 “Introducing Grok 4.5”），不符合“内容实战”的标准，没有收录。
 - 收录的 4 个 Grok 视频都是第三方实测：#12、#13、#14 有完整字幕；#15 内容最贴近“多代理 + 验证”主题，但自动字幕质量差，因此结合简介和官方文档分析。
@@ -552,6 +583,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-19 第八批（下）：#64 Giant Swarm 规格驱动开发、#65 Grok Build Workflows、#66 Harness Engineering 源码研究、#67 Cognition 用 Devin 开发 Devin。#64 作者署名 Dominik Schmidle，作者页地址是 dominik-kress，按署名写；文章首发 LinkedIn（2026-09-29），published 取公司博客日期 2026-10-13。#66 的 arXiv 编号 2609 与 7 月 15 日提交不合常规，照录；只精读了摘要、七个子系统、13 条观察、效度威胁和 18 条建议。#67 为厂商自述。
 - 2026-10-19 第八批（上）：#60 Claude Code 团队代码审查、#61 Codex 25 小时长任务（配套仓库 design-desk 的四份 Markdown 原文可核对）、#62 评测设计与爬分、#63 用 Codex 批量维护。#61 博客说 prompt.md 有“非目标”一节，仓库里的版本没有，文中已注明。
 - 2026-10-16 第七批：#57 补上了长期缺的“把 agent evals 接进 CI”端到端示例（eval JSON、GitHub Actions workflow、`check.sh` 全文），该缺口**已覆盖**；局限是示例场景为课程构造、没有成本数据、每条 eval 只跑一次。#57 课程页本身不显示日期，2026-08-21 取自 playbook 总览页的发布日期。#58 是 Cursor Projects 发布文；#59 是 Factory 的 ProgramBench 实验，单次运行、算力不对等。
 - 2026-10-15 第六批：#52 mods、#53 OpenCompute、#54 Cursor 省 token、#55 OpenAI 用 Skills 维护 SDK 仓库、#56 Claude Code auto mode。#55 补上了“把 Skill 接进 CI”的真实仓库做法，但仍不是“把 agent evals 接进 CI”的端到端示例。#55 页面日期 Mar 9, 2026，正文里的 March 6, 2026 是下载量数据截止日。同日 #05、#30 取得完整字幕，按新方法重写（#30 从只覆盖前 35 分钟扩展到全长）。

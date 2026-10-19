@@ -2,7 +2,28 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
-## 2026-10-19 · 第八批收录 #60–#63
+## 2026-10-19 · 第八批（下）收录 #64–#67
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#64](/64-giant-swarm-spec-driven-development) | Giant Swarm（Dominik Schmidle）：Spec-driven development: how we review plans, not pull requests | 做规划 | 2026-10-13 |
+| [#65](/65-grok-build-workflows) | xAI：Workflows in Grok Build（短篇产品公告） | 去执行 | 2026-07-23 |
+| [#66](/66-harness-engineering-eleven-systems) | arXiv 2609.00006：Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents（Barbaste 等） | 看原理 | 2026-07-15 |
+| [#67](/67-cognition-devin-builds-devin) | Cognition：How Cognition Uses Devin to Build Devin（厂商自述） | 接进 PR 与 CI | 2026-02-27 |
+
+**结构变化：**
+- 阶段数量：做规划 6 → 7，去执行 9 → 10，接进 PR 与 CI 8 → 9，看原理 10 → 11。看原理、打地基、去执行、接进 PR 与 CI 四个阶段超过 8 篇，拆分建议写在[全部资料页的覆盖情况](/all#coverage)，未执行。
+- 阶段指南：[做规划](/guide/planning) 第 1、2、3 问补 #64 的拷问、事实核对、反方和“审计划 PR”，分歧表加“计划审过之后人还要不要读代码”（与 #60 对照）；[去执行](/guide/execution) 第 3 问补 #65；[看原理](/guide/harness) 第 1、2、6 问补 #66 的七个子系统、共同做法和一个季度里的变化，分歧表加“要不要多代理”，#66 排在推荐阅读第一位；[接进 PR 与 CI](/guide/ci) 第 1、3、5 问补 #67 的标签触发、自动审查修复和只读调试。
+- 模式库新增 P55–P58（审计划不审 diff、分阶段扇出脚本、外壳从最小做起、把代理接在团队已有信号后面），共 58 个。
+- 学习路径：进阶第 18、19 步（#67、#64），专家第 15 步（#66）。
+
+**新增术语 7 个**：拷问式访谈（grill-me）、反方审查（Contrarian）、Grok Build Workflows、Meta-harness、通用代理框架、Playbook、DeepWiki。
+
+**核对备注**：#64 署名 Dominik Schmidle（作者页地址为 dominik-kress），首发 LinkedIn 2026-09-29；#65 页面标题和页脚写作 SpaceXSI / SpaceXAI LLC，照录；#66 的标题、四位作者和 2026-07-15 提交日期已在 arXiv 页面核对，编号 2609 与提交月份不合常规，照录；#67 页面修改日期为 2026-05-08。
+
+## 2026-10-19 · 第八批（上）收录 #60–#63
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对，prompt 和配置逐字摘录）：**
 
