@@ -2,6 +2,26 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-19 · 第八批收录 #60–#63
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对，prompt 和配置逐字摘录）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#60](/60-claude-code-team-code-review) | Anthropic：How the Claude Code team does code review | 验收这一次的产出 | 2026-10-15 |
+| [#61](/61-codex-long-horizon-tasks) | OpenAI：Run long horizon tasks with Codex（含配套仓库四份 Markdown） | 做规划 | 2026-02-23 |
+| [#62](/62-claude-eval-design-hillclimbing) | Anthropic：Automating eval design and hillclimbing with Claude | 评测代理本身与给动作把关 | 2026-09-28 |
+| [#63](/63-openai-gpt-6-software-maintenance) | OpenAI：Maintaining software with the GPT-6 family | 接进 PR 与 CI | 2026-10-14 |
+
+**结构变化：**
+- 阶段数量：验收这一次的产出 6 → 7，做规划 5 → 6，评测代理本身与给动作把关 5 → 6，接进 PR 与 CI 7 → 8。
+- 阶段指南：[验收这一次的产出](/guide/review) 新增第 7 问“代码多到读不过来时，审查怎么分层”，第 5 问补 #60 的投票与轮数上限，分歧表加“AI 审查该跑几轮”；[做规划](/guide/planning) 第 2、4 问补 #61 的里程碑与四份文件；[评测代理本身与给动作把关](/guide/evals) 新增第 3 问“分数涨了，怎么知道不是在自欺”，分歧表加“评测题从哪来”；[接进 PR 与 CI](/guide/ci) 新增第 7 问“怎么让代理批量开维护 PR”，分歧表加“维护 PR 谁来开、谁来审”；[长时自主任务专题](/guide/long-running) 补 #61。各指南的导图、收录列表和阅读顺序同步更新。
+- 模式库新增 P51–P54（审查分层与风险定档、长任务四份 Markdown、留出集爬分、维护 PR 回写 prompt），共 54 个。
+- 学习路径：进阶第 16、17 步（#60、#63），专家第 13、14 步（#61、#62）。
+- 顺手修正：`domains.mjs` 打地基阶段 #52（2026-10-01）与 #46（2026-09-16）的顺序，改为按发布日期从新到旧。
+
+**新增术语 8 个**：REVIEW.md、Merge Queue、Feature Flag、LLM-as-judge、Held-out Set、Overfitting、Runbook、Dead Code。
+
 ## 2026-10-16 · 拆分“做验证”阶段
 
 “做验证 · 测试、评测与审查”收录到 11 篇，明显超过 8 篇的检查线。经确认，按验证的对象拆成两个相邻阶段（仍只有“任务从开始到上线”这一条分类轴），文章编号和地址都不变：

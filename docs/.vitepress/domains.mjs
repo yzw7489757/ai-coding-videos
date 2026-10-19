@@ -38,8 +38,8 @@ export const domains = [
     desc: '让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。',
     items: [
       { n: '49', slug: '49-anthropic-scion-source-control', text: '为代理重做源代码管理', short: '代理规模的源码管理', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-10-13' },
-      { n: '46', slug: '46-grok-build-memory', text: 'Grok Build 的跨会话记忆', short: 'Grok Build 记忆', tool: 'grokbuild', type: 'article', added: '2026-10-13', published: '2026-09-16' },
       { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
+      { n: '46', slug: '46-grok-build-memory', text: 'Grok Build 的跨会话记忆', short: 'Grok Build 记忆', tool: 'grokbuild', type: 'article', added: '2026-10-13', published: '2026-09-16' },
       { n: '37', slug: '37-cursor-cloud-agent-environment', text: '把开发环境做成给代理用的产品', short: '代理用的开发环境', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-07-30' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video', published: '2026-05-19' },
       { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video', published: '2026-04-17' },
@@ -60,6 +60,7 @@ export const domains = [
       { n: '06', slug: '06-field-guide-to-fable', text: '找出未知，给上下文做减法', short: '找未知 做减法', tool: 'claude', type: 'video', published: '2026-07-06' },
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video', published: '2026-05-23' },
       { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video', published: '2026-05-15' },
+      { n: '61', slug: '61-codex-long-horizon-tasks', text: 'Codex 跑 25 小时的四份 Markdown', short: '四份 Markdown 长任务', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-02-23' },
       { n: '29', slug: '29-gemini-cli-conductor', text: 'Conductor：把计划写进仓库', short: 'Conductor 上下文驱动', tool: 'gemini', type: 'article', added: '2026-10-09', published: '2025-12-17' },
       { n: '04', slug: '04-no-vibes-allowed-rpi', text: 'RPI：研究、计划、实施', short: 'RPI 有意压缩', tool: 'claude', type: 'video', published: '2025-12-02' }
     ]
@@ -91,6 +92,7 @@ export const domains = [
     icon: '✅',
     desc: '确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。',
     items: [
+      { n: '60', slug: '60-claude-code-team-code-review', text: '代码审查的七层把关', short: '七层审查 按风险定人数', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-10-15' },
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
       { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video', published: '2026-07-10' },
@@ -107,6 +109,7 @@ export const domains = [
     icon: '📏',
     desc: '不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。',
     items: [
+      { n: '62', slug: '62-claude-eval-design-hillclimbing', text: '评测设计与爬分不自欺', short: '留出集爬分', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-09-28' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
@@ -122,6 +125,7 @@ export const domains = [
     icon: '⚙️',
     desc: '让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。',
     items: [
+      { n: '63', slug: '63-openai-gpt-6-software-maintenance', text: '让代理批量开维护 PR', short: '维护 PR 删死代码', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
       { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video', published: '2026-05-28' },
