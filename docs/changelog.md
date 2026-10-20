@@ -2,6 +2,25 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-20 · 第十批收录 #72–#75
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#72](/72-claude-code-spending-effort) | Thariq Shihipar：Using Claude Code: Spending your effort | 单代理推进与一人多线 | 2026-09-25 |
+| [#73](/73-anthropic-effective-harnesses-long-running) | Justin Young / Anthropic：Effective harnesses for long-running agents（#16 的前作） | 多代理协作与大任务拆分 | 2025-11-26 |
+| [#74](/74-blocshop-dotnet-multi-repo-migration) | Blocshop：How to coordinate AI agents in a multi-repository .NET migration（无个人署名） | 多代理协作与大任务拆分 | 2026-09-30 |
+| [#75](/75-codex-custom-code-review-rules) | Hari Srikanth / OpenAI：Custom Code Review rules for Codex | 验收这一次的产出 | 2026-07-20 |
+
+**结构变化：**
+
+- 阶段数量：单代理 5 → 6，多代理 5 → 7，验收产出 8 → 9。全站 71 → 75 篇，9 个阶段；最多仍是看原理 11 篇（按 2026-10-19 的决定暂不拆），打地基 10 篇到线未超过。
+- 单代理指南新增第 5 问“什么时候自己在环里盯着，什么时候放手？”和分歧“effort 默认开多高”（#03 vs #72）；多代理指南补上派活单六要素、只读调查并行和两条新分歧；长时任务专题的对照表从四种做法扩到五种（新增功能清单接力 #73）；验收指南补上“审查标准写在哪”的对照；打地基、接进 PR 与 CI、评测、看原理指南各加一条交叉引用。
+- 模式库新增 P63–P66（effort 低档在环、高档验证；长任务开工检查；派活单六要素 + 只读并行；审查规则 + 三个 PR 测）。
+- 学习路径：新手第 8 步 #72；进阶第 21 步 #75；专家第 4 步改为 #73 → #16，第 7 步加上 #74。
+- 术语表新增 Terminal-Bench、边界情况、初始化代理、功能清单、进度文件、停止条件、传递依赖、审查规则、不变量。
+
 ## 2026-10-19 · 第九批收录 #68–#71；录入规则改为核实后直接录入
 
 **规范变更（AGENTS.md）：**

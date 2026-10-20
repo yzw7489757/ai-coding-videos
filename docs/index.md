@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 71 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 75 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-10-19（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-10-20（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,28 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-19，12 份）
+## 🆕 最近收录（2026-10-20，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 60 | [代码审查的七层把关](/60-claude-code-team-code-review) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 61 | [Codex 跑 25 小时的四份 Markdown](/61-codex-long-horizon-tasks) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
-| 62 | [评测设计与爬分不自欺](/62-claude-eval-design-hillclimbing) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 63 | [让代理批量开维护 PR](/63-openai-gpt-6-software-maintenance) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
-| 64 | [把审查挪到计划：五步规格驱动](/64-giant-swarm-spec-driven-development) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 65 | [Grok Build Workflows：后台扇出脚本](/65-grok-build-workflows) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-grokbuild">Grok Build</span> | <span class="rating-stars" style="--r:2.5" aria-hidden="true"></span> **2.5** |
-| 66 | [源码解剖 11 个代理外壳](/66-harness-engineering-eleven-systems) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
-| 67 | [Cognition 把 Devin 接进日常](/67-cognition-devin-builds-devin) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
-| 68 | [计划切成带程序验收的短会话](/68-plan-to-unattended-agent-runs) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 69 | [按执行轨迹打分的四条评测教训](/69-google-eval-engineering-lessons) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 70 | [Air 云端沙箱：每任务新 VM](/70-jetbrains-air-cloud-sandboxing) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-jetbrains">JetBrains Air</span> | <span class="rating-stars" style="--r:3" aria-hidden="true"></span> **3.0** |
-| 71 | [验证栈：轨迹打分加 PR 真跑](/71-openhands-verification-stack) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-openhands">OpenHands</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 72 | [effort 档位：低档迭代高档验证](/72-claude-code-spending-effort) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 73 | [长任务的功能清单与进度文件](/73-anthropic-effective-harnesses-long-running) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 74 | [十个仓库的 .NET 迁移](/74-blocshop-dotnet-multi-repo-migration) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 75 | [把审查规则写进 AGENTS.md](/75-codex-custom-code-review-rules) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 71 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 75 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -165,32 +157,39 @@ flowchart LR
   subgraph S3["单代理推进与一人多线"]
     direction TB
     A42["42 Codex 应用全景"]
+    A72["72 effort 低档迭代 高档验证"]
     A08["08 子代理切片审查"]
     A23["23 worktree 并行"]
     A11["11 Steinberger 十个 checkout"]
     A27["27 Mitchell 六步采用"]
-    A42 ~~~ A08
+    A42 ~~~ A72
+    A72 ~~~ A08
     A08 ~~~ A23
     A23 ~~~ A11
     A11 ~~~ A27
   end
   subgraph S4["多代理协作与大任务拆分"]
     direction TB
+    A74["74 主代理管依赖图"]
     A65["65 Workflows 后台扇出"]
     A17["17 16 代理写编译器"]
     A05["05 Builder 加 Validator"]
     A18["18 数百代理分层"]
     A30["30 并行代理做大重构"]
+    A73["73 功能清单 进度文件"]
+    A74 ~~~ A65
     A65 ~~~ A17
     A17 ~~~ A05
     A05 ~~~ A18
     A18 ~~~ A30
+    A30 ~~~ A73
   end
   subgraph S5["验收这一次的产出"]
     direction TB
     A60["60 七层审查 按风险定人数"]
     A15["15 skeptic 证伪"]
     A59["59 独立完成标准"]
+    A75["75 AGENTS.md 审查规则"]
     A12["12 测试全绿也要读"]
     A71["71 critic 加 QA 真跑"]
     A32["32 Devin 带证据交付"]
@@ -198,7 +197,8 @@ flowchart LR
     A31["31 审查精确率优先"]
     A60 ~~~ A15
     A15 ~~~ A59
-    A59 ~~~ A12
+    A59 ~~~ A75
+    A75 ~~~ A12
     A12 ~~~ A71
     A71 ~~~ A32
     A32 ~~~ A25

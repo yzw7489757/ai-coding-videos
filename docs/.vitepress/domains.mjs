@@ -77,6 +77,7 @@ export const domains = [
     desc: '一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。',
     items: [
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
+      { n: '72', slug: '72-claude-code-spending-effort', text: 'effort 档位：低档迭代高档验证', short: 'effort 低档迭代 高档验证', tool: 'claude', type: 'article', added: '2026-10-20', published: '2026-09-25' },
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
       { n: '11', slug: '11-peter-steinberger-openclaw', text: '一个人用 Codex 建 OpenClaw', short: 'Steinberger 十个 checkout', tool: 'codex', type: 'video', published: '2026-02-24' },
@@ -91,11 +92,13 @@ export const domains = [
     icon: '🤝',
     desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
     items: [
+      { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '17', slug: '17-anthropic-c-compiler-agent-teams', text: '16 个代理并行写 C 编译器', short: '16 代理写编译器', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-02-05' },
       { n: '05', slug: '05-indydevdan-task-system', text: 'Builder + Validator 代理团队', short: 'Builder 加 Validator', tool: 'claude', type: 'video', published: '2026-02-02' },
       { n: '18', slug: '18-cursor-scaling-long-running-agents', text: '数百个代理协作写浏览器', short: '数百代理分层', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-14' },
-      { n: '30', slug: '30-openhands-parallel-refactors', text: '大型重构拆给并行代理', short: '并行代理做大重构', tool: 'openhands', type: 'video', added: '2026-10-09', published: '2026-01-08' }
+      { n: '30', slug: '30-openhands-parallel-refactors', text: '大型重构拆给并行代理', short: '并行代理做大重构', tool: 'openhands', type: 'video', added: '2026-10-09', published: '2026-01-08' },
+      { n: '73', slug: '73-anthropic-effective-harnesses-long-running', text: '长任务的功能清单与进度文件', short: '功能清单 进度文件', tool: 'claude', type: 'article', added: '2026-10-20', published: '2025-11-26' }
     ]
   },
   {
@@ -109,6 +112,7 @@ export const domains = [
       { n: '60', slug: '60-claude-code-team-code-review', text: '代码审查的七层把关', short: '七层审查 按风险定人数', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-10-15' },
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
       { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
+      { n: '75', slug: '75-codex-custom-code-review-rules', text: '把审查规则写进 AGENTS.md', short: 'AGENTS.md 审查规则', tool: 'codex', type: 'article', added: '2026-10-20', published: '2026-07-20' },
       { n: '12', slug: '12-forrestknight-grok-4-5', text: '测试全绿也要读代码', short: '测试全绿也要读', tool: 'grok45', type: 'video', published: '2026-07-10' },
       { n: '71', slug: '71-openhands-verification-stack', text: '验证栈：轨迹打分加 PR 真跑', short: 'critic 加 QA 真跑', tool: 'openhands', type: 'article', added: '2026-10-19', published: '2026-06-22' },
       { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09', published: '2026-05-29' },
