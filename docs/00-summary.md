@@ -1,8 +1,8 @@
-# 00 · 总结：75 份实战资料里的共性模式与最佳实践
+# 00 · 总结：79 份实战资料里的共性模式与最佳实践
 
 <div class="hook">
 
-**一句话看懂**：75 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
+**一句话看懂**：79 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
 
 </div>
 
@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：75 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、72、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（74、65、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 47、官方文档 3、指南 2。工具：Claude Code 23、Codex 14、Grok 7、Cursor 9、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 12。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：79 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、72、78、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（76、74、65、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 51、官方文档 3、指南 2。工具：Claude Code 25、Codex 15、Grok 7、Cursor 9、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 13。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -63,6 +63,7 @@
 - skills 渐进加载、deferred tools、服务端 compaction（09）、子代理隔离上下文（05 / 08 / 15）。
 - 新增：HumanLayer（20）指出指令是有“预算”的，规则文件少即是多；Skills 的创建者（21）讲三层渐进加载；Huntley（24）把上下文窗口比作数组，主张每轮全新上下文。注意来源在“压缩还是重开”上有分歧，见[长时自主任务专题](/guide/long-running)。
 - 第二批：Amp（35）指出工具定义和工具调用都在吃上下文，读太少又会陷入 doom loop，用专长子代理隔离搜索；Anthropic（36）把 MCP 服务器包装成代码 API 按需加载，示例中 token 从 150,000 降到 2,000。
+- 第十一批：Addy Osmani（78）把上下文的代价算成钱：每一轮都重发整段对话，40 轮的任务即使上下文不超过 120K 也要处理 2.8M 输入；缓存命中率是最大的旋钮，停顿、换模型、中途连 MCP、压缩都会让缓存重写，所以设置开头定好、休息前压缩；CLAUDE.md 每一行都是每轮重发的一部分。Expo（77）发现 Skill 目录本身也有预算：Codex 检查过的版本里只占上下文 2%，Skill 一多描述就被截短。
 
 ::: tip 实践
 用 research → plan 的产物（Markdown 文件）在会话之间交接，不要让单个会话无限变长。
@@ -106,6 +107,7 @@
 - 新增：issue → worktree → PR 的并行流程（23）；CI 失败后由 `codex exec` 生成补丁（22）；下班前 30 分钟启动代理（27）。
 - 第四批：Anthropic（41）总结了定时代理的六条规则：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；OpenAI（42）演示了 Codex 应用里的两种自动化和长任务的线程分工。
 - 第十批：Thariq（72）提醒“放手”和“在环”可以混着用：采访补 spec 后先开 low 档快速迭代、人审大方向，再开 high 档做验证和边界测试；只有没人在环、边界又多的任务才一开始就开高档。
+- 第十一批：Thomas Ricouard（79）把人在环里的工作归结为六个决定，人不在电脑前也能在手机上做：跟进默认排队、只在方向错时插话，权限只批最窄一档，先 plan 再 goal；Cohere（76）用对照实验量出多代理的代价：团队多 5–10 个点、贵 4–7 倍，工人放在瓶颈阶段（ProgramBench 上是探索和规划）、领队用强模型，16 个便宜规划工人约以全强队 30% 的成本拿到相近分数。
 - 第三批：Cursor（40）的云端代理需要一整套运行层：完整开发环境、Temporal 持久化执行、代理循环 / 机器 / 对话状态解耦；内部超过 40% 的 PR 来自云端代理（两个月后 #37 说一半以上）。
 - 第二批：OpenHands（30）用迁移分支 + 3–5 个并行代理 + 每个 PR 人审完成大迁移，目标是 90% 自动化；Grok Build（34）的 `grok -p`、hooks 和 `/loop` 让代理跑进脚本和 CI。
 
@@ -215,10 +217,13 @@ flowchart TD
 - [08 · Codex 子代理、Hooks 与插件](/08-codex-masterclass) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：子代理、hooks、plugins 的实操。
 - [42 · Codex 应用实战：从上下文到自动化](/42-openai-cooking-with-codex) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：Computer Use、`/goal`、子代理和线程交接的实际用法。
 - [72 · effort 档位：低档迭代高档验证](/72-claude-code-spending-effort) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：`/effort` 不是越高越好；低档在环迭代，高档留给验证和边界测试。
+- [78 · 一个任务花多少钱：轮数与缓存](/78-claude-code-task-cost) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：钱花在轮数、缓存、输出和模型上；先加检查再提档，用 `/usage` 量自己的数。
+- [79 · 手机当 Codex 控制台](/79-codex-remote-phone-control-plane) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：人不在电脑前时只做解阻塞的决定：排队还是插话、最窄权限、plan 再 goal。
 
 **多代理协作与大任务拆分 · 分工、协调与长时运行**（[阶段指南](/guide/multi)，另有[长时自主任务专题](/guide/long-running)）
 
 - [05 · Builder + Validator 代理团队](/05-indydevdan-task-system) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
+- [76 · 多代理团队值不值：受控实验](/76-cohere-agent-teams-cost) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：先算账再开团队：工人放在瓶颈阶段，强领队配便宜工人。
 - [30 · 大型重构拆给并行代理](/30-openhands-parallel-refactors) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>：互相依赖的大迁移怎么拆、怎么审。
 - [17 · 16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：十几个代理、无编排者，靠 git + 锁文件协作。
 - [18 · 数百个代理协作写浏览器](/18-cursor-scaling-long-running-agents) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：数百代理时扁平协作为什么失败、分层后怎么跑。
@@ -247,6 +252,7 @@ flowchart TD
 - [56 · auto mode：两段式权限分类器](/56-anthropic-claude-code-auto-mode) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：给代理动作把关的另一种设计，误报漏报数据都公开。
 - [69 · 按执行轨迹打分的四条评测教训](/69-google-eval-engineering-lessons) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：别给闭幕演讲打分；live∥plan-only；golden sets。
 - [62 · 评测设计与爬分不自欺](/62-claude-eval-design-hillclimbing) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：评分器先验证，留出集 + 一次一个补丁 + 不涨就回滚。
+- [77 · 给 Skills 做评测：会被找到吗](/77-expo-skill-evals) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：Skill 先要被找到：触发、吸收、行为三层评测，入口路由 Skill，目录截断。
 
 **接进 PR 与 CI · 触发、审查与流水线**（[阶段指南](/guide/ci)）
 
@@ -306,6 +312,8 @@ flowchart TD
 - **第八批的局限**：#60 的 PR 翻倍、回滚降 40%、16% → 54% 都是团队自报、无绝对数，并推广自家 Code Review 产品；#61 是单次自报实验，质量没有独立评估，博客与配套仓库有小出入；#62 的两个例子都是内部基准，客服留出集只有 14 单；#63 的模型对比只跑一次，两处“1,400 多个 PR”口径未说明。
 - **第七批的局限**：#58 是产品发布文，30% / 6 倍 PR 为厂商自报；#59 每格只跑一次、任务手挑、系统组与单代理组算力不对等，结尾推广 Missions。
 - **第六批的局限**：#52 mods 和 #53 OpenCompute 都是发布公告，没有 API 示例或性能数据，OpenCompute 仍在 private preview；#54 的各项百分比口径不同；#56 的真实过度主动样本只有 52 个。
+- **第十一批的局限**：#76 是基准上的受控实验，不是生产项目，固定人数和跨模型对比只跑一次，harness 没有公开；ProgramBench 偏向“发现规格”，换个任务最值得委派的阶段会变；#77 只有 10 个 PRD×3 次、只测了 Claude Code 一个模型，基线 9% 与“约 10%”前后不一，吸收和 App 行为两层没有数字；#78 的数字大多是用列表价构造的示意，“便宜 40%”“降 31%”是厂商估算，同时在推广新模型降价；#79 是产品团队成员的功能指南，没有效果数据。
+- **多代理的成本**：此前 #18、#38 没给成本、#59 只给了一格 14 倍；#76 第一次给出受控的“增益对成本”对照，但只在基准上。
 - **第十批的局限**：#72 的数字来自 Anthropic 内部运行（每题 5 次），文章同时在推广新模型的 effort 曲线，没有给成本；#73 发布于 2025-11（Opus 4.5 时期），没有量化结果，只在全栈 web 应用上试过；#74 无个人署名、未写明实际用的代理，没有成本和对照数据，结尾推广外包服务；#75 是厂商功能文，评测只给了一个主套件数字（98% vs 58.3%），四个维度的分数没有公开。
 - **单一来源的工具**：Gemini CLI（29）、Amp（35）、Aider（44）各只有 1 篇，Devin 有 2 篇（32、67），Factory Droid 有 2 篇（53、59），且都来自厂商自己，结论请视为该厂商的经验。Amp 在演讲后停用了编辑器扩展、取消了广告，文中已注明。
 - **长时任务的数字**：#18、#38 都没有给出成本；#24 的直播结束时循环仍在跑，没有最终结果。

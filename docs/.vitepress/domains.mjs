@@ -78,6 +78,8 @@ export const domains = [
     items: [
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
       { n: '72', slug: '72-claude-code-spending-effort', text: 'effort 档位：低档迭代高档验证', short: 'effort 低档迭代 高档验证', tool: 'claude', type: 'article', added: '2026-10-20', published: '2026-09-25' },
+      { n: '78', slug: '78-claude-code-task-cost', text: '一个任务花多少钱：轮数与缓存', short: '轮数 缓存 先加检查', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-09-25' },
+      { n: '79', slug: '79-codex-remote-phone-control-plane', text: '手机当 Codex 控制台', short: '排队还是插话 最窄权限', tool: 'codex', type: 'article', added: '2026-10-21', published: '2026-06-23' },
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
       { n: '11', slug: '11-peter-steinberger-openclaw', text: '一个人用 Codex 建 OpenClaw', short: 'Steinberger 十个 checkout', tool: 'codex', type: 'video', published: '2026-02-24' },
@@ -92,6 +94,7 @@ export const domains = [
     icon: '🤝',
     desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
     items: [
+      { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '17', slug: '17-anthropic-c-compiler-agent-teams', text: '16 个代理并行写 C 编译器', short: '16 代理写编译器', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-02-05' },
@@ -129,6 +132,7 @@ export const domains = [
     desc: '不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。',
     items: [
       { n: '69', slug: '69-google-eval-engineering-lessons', text: '按执行轨迹打分的四条评测教训', short: '轨迹打分 双条件', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-17' },
+      { n: '77', slug: '77-expo-skill-evals', text: '给 Skills 做评测：会被找到吗', short: 'Skill 触发 入口路由 目录截断', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-10-08' },
       { n: '62', slug: '62-claude-eval-design-hillclimbing', text: '评测设计与爬分不自欺', short: '留出集爬分', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-09-28' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
