@@ -227,6 +227,13 @@
 
 📘 **先读阶段指南**：[多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi)；另有[专题：长时自主任务](/guide/long-running)
 
+### 3315 次启动：失败在缝合处 {#item-80}
+
+- **[Multi-agent orchestration: what broke in 3,315 agent runs](https://madsalt.tech/blog/multi-agent-orchestration-what-broke/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Denys Zaichenko ／ madsalt.tech ｜ 发布：2026-10-19 ｜ 工具：Claude Code 主会话 + 子代理；165 hooks；git worktree；Opus / Sonnet / Fable
+  - 看点：3,315 次启动的事故几乎都在缝合处（并行覆盖翻译目录、清理删工作、代理改门禁）；Markdown 是建议、hook 是硬规则；六件先装；30 天约 160 亿 token、API 折算 ≥$3,350。单人上限五并行，被挡启动未入账。
+  - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/80-madsalt-multi-agent-orchestration-3315)
+
 ### 多代理团队值不值：受控实验 {#item-76}
 
 - **[Scaling agent teams: reach the frontier at 30% of the cost](https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -297,6 +304,13 @@
   - 作者 / 来源：Addy Osmani、Morgan Westlee Lunt、Qing Wang ／ claude.dev 博客 ｜ 发布：2026-10-15 ｜ 工具：Claude Code、Code Review for Claude Code、`/code-review`、`/security-review`、merge queue、feature flag
   - 看点：要省的是人的时间，回滚率和事故率当护栏；七层把关；人工批准按改动风险 0 / 1 / 2 人，代理批准不算、批准绑定 commit；REVIEW.md 写法；一个 PR 一夜被审 50 多轮后设三轮上限。PR 翻倍、回滚降 40% 为团队自报。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/60-claude-code-team-code-review)
+
+### 规则要按效果写成 hook {#item-81}
+
+- **[Harness Engineering: What I learned from 24,000 prompts building production apps](https://aditlal.dev/harness-engineering/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Adit Lal ｜ 发布：2026-10-10 ｜ 工具：Claude Code hooks；Codex 第二审查；Slack 机器人；GitHub Actions
+  - 看点：CLAUDE.md 点名命令挡不住 Gradle 先卸载；同提示审查 21/45 对 14/45；开 PR 绑第二模型；28 项勾选里 3 项没实现；缓存读约 240:1。单人 Android 经验。
+  - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/81-aditlal-harness-engineering-24000)
 
 ### 57 个子代理与对抗式验证 {#item-15}
 
@@ -382,6 +396,13 @@
   - 作者 / 来源：Lance Martin ／ claude.dev 博客 Playbooks ｜ 发布：2026-09-28 ｜ 工具：Claude Code 内置 claude-api skill 的 `/claude-api build-eval`、`/claude-api hillclimb`
   - 看点：好评测四特征，别只挑当前模型做错的题；评分器先验证（跑两次、先人工看）；随机拆训练集和留出集、一次一个补丁、不涨就回滚；从不涨的题多半是题错了。客服基准留出集 78.6% → 90.5%、成本约五分之一（留出集仅 14 单）。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/62-claude-eval-design-hillclimbing)
+
+### 行为规格只给裁判看 {#item-83}
+
+- **[How Basis builds long-horizon accounting agents with Cursor](https://cursor.com/blog/basis)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Cursor Team（引言 Mitch Troyanovsky / Basis） ｜ 发布：2026-09-04 ｜ 工具：Cursor 改规格与上下文；Basis 运行时；Braintrust 行为规格格式
+  - 看点：长程会计任务上结果评测有盲区；behavior spec 不给代理、裁判 true/false/NA；规格与运行时分离。Form 1065 约人 30–40h / 代理 6–7h（口述）。客户故事，无规格样例。
+  - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/83-cursor-basis-behavior-specs)
 
 ### Auto-review：分类器与评测 {#item-39}
 
@@ -492,6 +513,13 @@
 **这一组放什么**：让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
 
 📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
+
+### 自托管并行迁八个应用 {#item-82}
+
+- **[Navan cuts a month-long migration down to a week, without freezing the codebase](https://cursor.com/blog/navan)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Cursor Team（引言 Rahul Popuri、Elton Yang / Navan） ｜ 发布：2026-10-16 ｜ 工具：Cursor Cloud Agents 自托管；内部 MCP；浏览器验证
+  - 看点：Spring Boot 4 迁移 8 应用 + 15 库约一周 vs 两年前一个多月；GitHub 可托管侧、内部 MCP+浏览器自托管侧；约 200 人用 Cloud Agents。厂商客户故事，数字不可核对。
+  - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/82-cursor-navan-cloud-agents-migration)
 
 ### OpenCompute：给代理按需发电脑 {#item-53}
 
@@ -634,7 +662,7 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 8 篇（#64、#68、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 8 篇（#42、#72、#78、#79、#08、#23、#11、#27）；多代理协作与大任务拆分 8 篇（#76、#74、#65、#17、#05、#18、#30、#73）；验收这一次的产出 9 篇（#60、#15、#59、#75、#12、#71、#32、#25、#31）；评测代理本身与给动作把关 8 篇（#69、#77、#62、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 8 篇（#53、#70、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 8 篇（#64、#68、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 8 篇（#42、#72、#78、#79、#08、#23、#11、#27）；多代理协作与大任务拆分 9 篇（#80、#76、#74、#65、#17、#05、#18、#30、#73）；验收这一次的产出 10 篇（#60、#81、#15、#59、#75、#12、#71、#32、#25、#31）；评测代理本身与给动作把关 9 篇（#69、#77、#62、#83、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 9 篇（#82、#53、#70、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
 
 **阶段拆分（2026-10-19，已确认）**：按下面建议②把“去执行”拆成“单代理推进与一人多线”（`solo`）和“多代理协作与大任务拆分”（`multi`）两个相邻阶段，各 5 篇；边界：主角是“一个人 + 一个主代理”、任务彼此独立、协调靠人（子代理只是主代理的工具）的归前者，多个代理围绕同一个目标分工、认领、交接或长时间运行的归后者。#08 虽然演示了 20 个子代理，但子代理由主代理切片派发、结果交回主代理，归前者。旧地址 `/guide/execution` 改为指向两个新指南的入口页，长时任务专题归入后者；“看原理”按建议①暂不拆。现在 71 份资料分 9 个阶段，最多 11 篇（看原理）、最少 5 篇。无阶段超过 10 篇检查线。
 

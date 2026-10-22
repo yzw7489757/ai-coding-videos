@@ -2,6 +2,27 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-22 · 第十二批收录 #80–#83
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#80](/80-madsalt-multi-agent-orchestration-3315) | Denys Zaichenko：Multi-agent orchestration: what broke in 3,315 agent runs | 多代理协作与大任务拆分 | 2026-10-19 |
+| [#81](/81-aditlal-harness-engineering-24000) | Adit Lal：Harness Engineering: What I learned from 24,000 prompts building production apps | 验收这一次的产出 | 2026-10-10 |
+| [#82](/82-cursor-navan-cloud-agents-migration) | Cursor Team / Navan：Navan cuts a month-long migration down to a week… | 云端与后台运行环境 | 2026-10-16 |
+| [#83](/83-cursor-basis-behavior-specs) | Cursor Team / Basis：How Basis builds long-horizon accounting agents with Cursor | 评测代理本身与给动作把关 | 2026-09-04 |
+
+**结构变化：**
+
+- 阶段数量：多代理 8 → 9，验收产出 9 → 10，云端 8 → 9，评测 8 → 9。全站 79 → 83 篇，9 个阶段；最多仍是看原理 11 篇（按 2026-10-19 的决定暂不拆，本批没有往里加），打地基 10 篇到线未超过；验收产出到 10 篇检查线。
+- 多代理指南补上“失败在缝合处 / hook 硬拦”和一条分歧（规则写在哪）；验收指南补上按效果写 hook、审查方差、开 PR 绑第二模型；云端指南补上自托管并行迁移与内部 MCP+浏览器同机；评测指南补上行为规格不给代理、裁判 true/false/NA。
+- 模式库新增 P71–P74（缝合处 hook；按效果 hook + 第二模型审查；自托管并行 MCP/浏览器同机；行为规格给裁判）。
+- 学习路径：进阶第 12、21 步补 #82/#81；专家第 5、18 步补 #83/#80。
+- 术语表新增允许列表、行为规格、编排、缝合处失败。
+
+**未收录（备选）**：Jeremy Lewi Codex+Runme（偏薄/产品向，已两度跳过）；OpenAI “Rethinking skills…”（会把打地基推过 10，留作备选）。
+
 ## 2026-10-21 · 第十一批收录 #76–#79
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

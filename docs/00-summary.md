@@ -1,8 +1,8 @@
-# 00 · 总结：79 份实战资料里的共性模式与最佳实践
+# 00 · 总结：83 份实战资料里的共性模式与最佳实践
 
 <div class="hook">
 
-**一句话看懂**：79 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
+**一句话看懂**：83 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
 
 </div>
 
@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：79 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、72、78、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（76、74、65、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 51、官方文档 3、指南 2。工具：Claude Code 25、Codex 15、Grok 7、Cursor 9、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 13。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：83 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（42、72、78、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（80、76、74、65、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、81、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、83、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（82、53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 55、官方文档 3、指南 2。工具：Claude Code 27、Codex 15、Grok 7、Cursor 11、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 13。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -107,6 +107,7 @@
 - 新增：issue → worktree → PR 的并行流程（23）；CI 失败后由 `codex exec` 生成补丁（22）；下班前 30 分钟启动代理（27）。
 - 第四批：Anthropic（41）总结了定时代理的六条规则：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；OpenAI（42）演示了 Codex 应用里的两种自动化和长任务的线程分工。
 - 第十批：Thariq（72）提醒“放手”和“在环”可以混着用：采访补 spec 后先开 low 档快速迭代、人审大方向，再开 high 档做验证和边界测试；只有没人在环、边界又多的任务才一开始就开高档。
+- 第十二批：Denys（80）用 3,315 次启动说明失败在缝合处，Markdown 不够要 hook；Adit（81）把副作用规则迁进 hook，并量化同提示审查方差；Navan（82）用自托管 Cloud Agents 一周并行迁 8 应用；Basis（83）用行为规格（不给代理）补长程结果评测。
 - 第十一批：Thomas Ricouard（79）把人在环里的工作归结为六个决定，人不在电脑前也能在手机上做：跟进默认排队、只在方向错时插话，权限只批最窄一档，先 plan 再 goal；Cohere（76）用对照实验量出多代理的代价：团队多 5–10 个点、贵 4–7 倍，工人放在瓶颈阶段（ProgramBench 上是探索和规划）、领队用强模型，16 个便宜规划工人约以全强队 30% 的成本拿到相近分数。
 - 第三批：Cursor（40）的云端代理需要一整套运行层：完整开发环境、Temporal 持久化执行、代理循环 / 机器 / 对话状态解耦；内部超过 40% 的 PR 来自云端代理（两个月后 #37 说一半以上）。
 - 第二批：OpenHands（30）用迁移分支 + 3–5 个并行代理 + 每个 PR 人审完成大迁移，目标是 90% 自动化；Grok Build（34）的 `grok -p`、hooks 和 `/loop` 让代理跑进脚本和 CI。
@@ -223,6 +224,7 @@ flowchart TD
 **多代理协作与大任务拆分 · 分工、协调与长时运行**（[阶段指南](/guide/multi)，另有[长时自主任务专题](/guide/long-running)）
 
 - [05 · Builder + Validator 代理团队](/05-indydevdan-task-system) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
+- [80 · 3315 次启动：失败在缝合处](/80-madsalt-multi-agent-orchestration-3315) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：事故在共享文件与门禁，用 hook 挡，不要再写一条 Markdown。
 - [76 · 多代理团队值不值：受控实验](/76-cohere-agent-teams-cost) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：先算账再开团队：工人放在瓶颈阶段，强领队配便宜工人。
 - [30 · 大型重构拆给并行代理](/30-openhands-parallel-refactors) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-openhands">OpenHands</span>：互相依赖的大迁移怎么拆、怎么审。
 - [17 · 16 个代理并行写 C 编译器](/17-anthropic-c-compiler-agent-teams) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：十几个代理、无编排者，靠 git + 锁文件协作。
@@ -242,6 +244,7 @@ flowchart TD
 - [59 · 先建完成标准，再让代理做大任务](/59-factory-large-software-tasks) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>：代理为什么提前收工，独立完成标准能补多少、要花多少。
 - [60 · 代码审查的七层把关](/60-claude-code-team-code-review) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：代码多到读不过来时，审查分几层、人工批准按什么定。
 - [75 · 把审查规则写进 AGENTS.md](/75-codex-custom-code-review-rules) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：审查者反复说的话怎么写成规则，又怎么用三个 PR 测规则有没有噪声。
+- [81 · 规则要按效果写成 hook](/81-aditlal-harness-engineering-24000) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：副作用迁进 hook；审查回放看方差；开 PR 强制第二模型。
 
 **评测代理本身与给动作把关 · 评测、分类器与分数噪声**（[阶段指南](/guide/evals)）
 
@@ -253,6 +256,7 @@ flowchart TD
 - [69 · 按执行轨迹打分的四条评测教训](/69-google-eval-engineering-lessons) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：别给闭幕演讲打分；live∥plan-only；golden sets。
 - [62 · 评测设计与爬分不自欺](/62-claude-eval-design-hillclimbing) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：评分器先验证，留出集 + 一次一个补丁 + 不涨就回滚。
 - [77 · 给 Skills 做评测：会被找到吗](/77-expo-skill-evals) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：Skill 先要被找到：触发、吸收、行为三层评测，入口路由 Skill，目录截断。
+- [83 · 行为规格只给裁判看](/83-cursor-basis-behavior-specs) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：长程任务用过程行为评测补结果评测；规格不给代理。
 
 **接进 PR 与 CI · 触发、审查与流水线**（[阶段指南](/guide/ci)）
 
@@ -276,6 +280,7 @@ flowchart TD
 - [53 · OpenCompute：给代理按需发电脑](/53-factory-opencompute) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-factory">Factory Droid</span>：从一台机器到一支沙箱机队，以及“合约 + 一致性测试”怎么让代理写基础设施。
 - [70 · Air 云端沙箱：每任务新 VM](/70-jetbrains-air-cloud-sandboxing) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-jetbrains">JetBrains Air</span>：五种跑法默认隔离；出站白名单与按人权限。
 - [58 · Projects：一个协调代理管一群子代理](/58-cursor-projects) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：跨月工作交给一个只派活的协调者，注意是产品发布文。
+- [82 · 自托管并行迁八个应用](/82-cursor-navan-cloud-agents-migration) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：自托管 Cloud Agents 并行迁移；内部 MCP 与浏览器同机（客户故事）。
 
 **看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
 
@@ -305,13 +310,14 @@ flowchart TD
 
 - **Grok**：没有找到 xAI 官方或大会级的长篇工程实战内容，官方频道只有 1–2 分钟的宣传片。4 个 Grok 视频都是第三方实测，以 demo 或新项目为主，缺少大型存量代码库和长期团队实践的证据。其中 #15 的自动字幕质量差，结合简介、官方文档和画面文字分析。对 Grok 的结论请视为初步观察。第二批补上了 xAI 官方 Grok Build 文档（34），第四批又补上一篇官方产品说明（46，Grok Build 记忆），第八批补上 Workflows 产品公告（65），但仍没有官方工程博客或大会演讲。
 - **Codex**：#09、#10、#43 为同一讲者（Dominik Kundel），但主题不重叠（harness 内部 vs. 团队流程 vs. 外部接口 app server）。
-- **Cursor**：9 篇（#18、#33、#37–#40、#51、#54、#58），全部是 Cursor 自己的研究博客，结论请视为该厂商的经验；内部工具（anydev、Cloud MCP、Cloud Doctor）和分类器的准确率都没有公开。
+- **Cursor**：11 篇（#18、#33、#37–#40、#51、#54、#58、#82、#83），多为 Cursor 研究博客或客户故事，结论请视为该厂商视角；#82/#83 是客户成功叙事，数字不可外部核对；内部工具（anydev、Cloud MCP、Cloud Doctor）和分类器的准确率都没有公开。
 - **原文配置**：第一批缺的 hooks 配置和 Ghostty AGENTS.md，第二批已逐字收录（[[28§3.2]]、[[27§3.5]]）。仍缺：Ralph 官方插件 hook 实现的逐字引用（[[24§3.4]]）；Grok Build 文档里 `bin/safety-check.sh` 只有占位名、没有内容（本站不补写）；把 agent evals 接进 CI 的完整配置，2026-10-16 已由 #57 补上（[[57§3.2]]、[[57§3.3]]、[[57§3.4]]）。
 - **已覆盖**（2026-10-16 第七批）：“把 agent evals 接进 CI”的端到端配置示例由 #57 补上：eval JSON、GitHub Actions workflow、`check.sh` 和行为检查脚本全文（[[57§3.3]]）。它的局限是示例场景为课程构造、没有成本数据、每条 eval 只跑一次（[[57§4]]）。
 - **第八批（下）的局限**：#64 是一家公司的自述，“不经人读 diff 合并”后没有出错数据，例子来自虚构示例计划；#65 是约 480 词的产品公告，没有效果和成本；#66 只读源码不跑分，Claude Code 依据流传的源码快照，arXiv 编号 2609 与 7 月提交不合常规，本站只精读了部分章节；#67 是厂商讲自家产品，659 个 PR 没有分母、没有失败案例。
 - **第八批的局限**：#60 的 PR 翻倍、回滚降 40%、16% → 54% 都是团队自报、无绝对数，并推广自家 Code Review 产品；#61 是单次自报实验，质量没有独立评估，博客与配套仓库有小出入；#62 的两个例子都是内部基准，客服留出集只有 14 单；#63 的模型对比只跑一次，两处“1,400 多个 PR”口径未说明。
 - **第七批的局限**：#58 是产品发布文，30% / 6 倍 PR 为厂商自报；#59 每格只跑一次、任务手挑、系统组与单代理组算力不对等，结尾推广 Missions。
 - **第六批的局限**：#52 mods 和 #53 OpenCompute 都是发布公告，没有 API 示例或性能数据，OpenCompute 仍在 private preview；#54 的各项百分比口径不同；#56 的真实过度主动样本只有 52 个。
+- **第十二批的局限**：#80 是单人配置账本，被挡启动未入账，美元为 API 折算；#81 审查回放只有 4 个 PR / 45 bug，工具绑定 Claude Code；#82、#83 是 Cursor 客户故事，迁移一周、40%、6× 等数字不可核对，#83 无规格样例与通过率。
 - **第十一批的局限**：#76 是基准上的受控实验，不是生产项目，固定人数和跨模型对比只跑一次，harness 没有公开；ProgramBench 偏向“发现规格”，换个任务最值得委派的阶段会变；#77 只有 10 个 PRD×3 次、只测了 Claude Code 一个模型，基线 9% 与“约 10%”前后不一，吸收和 App 行为两层没有数字；#78 的数字大多是用列表价构造的示意，“便宜 40%”“降 31%”是厂商估算，同时在推广新模型降价；#79 是产品团队成员的功能指南，没有效果数据。
 - **多代理的成本**：此前 #18、#38 没给成本、#59 只给了一格 14 倍；#76 第一次给出受控的“增益对成本”对照，但只在基准上。
 - **第十批的局限**：#72 的数字来自 Anthropic 内部运行（每题 5 次），文章同时在推广新模型的 effort 曲线，没有给成本；#73 发布于 2025-11（Opus 4.5 时期），没有量化结果，只在全栈 web 应用上试过；#74 无个人署名、未写明实际用的代理，没有成本和对照数据，结尾推广外包服务；#75 是厂商功能文，评测只给了一个主套件数字（98% vs 58.3%），四个维度的分数没有公开。

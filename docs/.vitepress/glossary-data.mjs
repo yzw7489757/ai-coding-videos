@@ -700,4 +700,18 @@ export const terms = [
   { id: 'side-chat', cat: 'workflow', term: 'Side Chat（旁支对话）', aliases: ['side chat', '旁支对话'],
     short: '挂在当前聊天旁边的轻量对话，用来提问而不打乱主线。',
     detail: 'Codex Remote 里用 /side 打开，或选中记录文字点 Ask in side chat。主聊天负责干活，旁支帮你理解；方向真的变了才用 /fork 开新主线（#79）。' },
+
+  { id: 'allowlist', cat: 'config', term: 'Allowlist（允许列表）', aliases: ['允许列表', 'allowlist', 'allow list'],
+    short: '只允许名单上的命令或动作；没列出的一律拒绝。',
+    detail: '比拒绝列表更不容易漏。#81 的 Slack 机器人从拒绝列表改成允许列表后，才堵住 php 任意代码和 git update-ref 挪分支这类漏洞。' },
+  { id: 'behavior-spec', cat: 'eval', term: 'Behavior Spec（行为规格）', aliases: ['行为规格', 'behavior spec', 'behaviour spec'],
+    short: '写给人和裁判看的 Markdown 标准，定义某情境下代理应有的反复行为；不发给代理。',
+    detail: 'Basis 用它补结果评测的盲区：裁判拿规格与轨迹判 true / false / NA。规格与运行时提示词分离，假裁决只改实现（#83）。' },
+  { id: 'orchestration', cat: 'workflow', term: 'Orchestration（编排）', aliases: ['编排', 'orchestration', 'multi-agent orchestration'],
+    short: '主会话如何派子代理、合结果、限波次并挡住危险动作，而不是单个代理如何写代码。',
+    detail: '#80 把约 40 个编排 hook 与 Markdown 规则分开：代理读得懂的是建议，过不去的是 hook。失败多出在代理之间的缝合处。' },
+  { id: 'seam-failure', cat: 'workflow', term: 'Seam Failure（缝合处失败）', aliases: ['缝合处', 'seams', 'seam failure'],
+    short: '多代理在共享文件、工作树、分支交接上局部正确、整体出错。',
+    detail: '#80 的七起事故（并行覆盖翻译目录、清理删工作、代理改门禁等）都过了当时的测试；模型写错代码反而被测试拦住了。' },
+
 ]

@@ -94,6 +94,7 @@ export const domains = [
     icon: '🤝',
     desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
     items: [
+      { n: '80', slug: '80-madsalt-multi-agent-orchestration-3315', text: '3315 次启动：失败在缝合处', short: '缝合处 hook 挡事故', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-19' },
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
@@ -113,6 +114,7 @@ export const domains = [
     desc: '确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。',
     items: [
       { n: '60', slug: '60-claude-code-team-code-review', text: '代码审查的七层把关', short: '七层审查 按风险定人数', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-10-15' },
+      { n: '81', slug: '81-aditlal-harness-engineering-24000', text: '规则要按效果写成 hook', short: '副作用进 hook 第二模型审', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-10' },
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
       { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
       { n: '75', slug: '75-codex-custom-code-review-rules', text: '把审查规则写进 AGENTS.md', short: 'AGENTS.md 审查规则', tool: 'codex', type: 'article', added: '2026-10-20', published: '2026-07-20' },
@@ -134,6 +136,7 @@ export const domains = [
       { n: '69', slug: '69-google-eval-engineering-lessons', text: '按执行轨迹打分的四条评测教训', short: '轨迹打分 双条件', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-17' },
       { n: '77', slug: '77-expo-skill-evals', text: '给 Skills 做评测：会被找到吗', short: 'Skill 触发 入口路由 目录截断', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-10-08' },
       { n: '62', slug: '62-claude-eval-design-hillclimbing', text: '评测设计与爬分不自欺', short: '留出集爬分', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-09-28' },
+      { n: '83', slug: '83-cursor-basis-behavior-specs', text: '行为规格只给裁判看', short: '过程行为评测 规格不给代理', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-09-04' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
@@ -168,6 +171,7 @@ export const domains = [
     icon: '☁️',
     desc: '让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。',
     items: [
+      { n: '82', slug: '82-cursor-navan-cloud-agents-migration', text: '自托管并行迁八个应用', short: 'Cloud Agents 自托管并行', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-10-16' },
       { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },
       { n: '70', slug: '70-jetbrains-air-cloud-sandboxing', text: 'Air 云端沙箱：每任务新 VM', short: '每任务 VM 出站白名单', tool: 'jetbrains', type: 'article', added: '2026-10-19', published: '2026-10-14' },
       { n: '48', slug: '48-claude-code-cloud-sessions', text: 'Claude Code 云端会话实战', short: 'Claude Code 云端会话', tool: 'claude', type: 'article', added: '2026-10-14', published: '2026-10-06' },
