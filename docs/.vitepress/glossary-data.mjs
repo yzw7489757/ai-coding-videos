@@ -714,4 +714,11 @@ export const terms = [
     short: '多代理在共享文件、工作树、分支交接上局部正确、整体出错。',
     detail: '#80 的七起事故（并行覆盖翻译目录、清理删工作、代理改门禁等）都过了当时的测试；模型写错代码反而被测试拦住了。' },
 
+  { id: 'dynamic-workflow', cat: 'workflow', term: 'Dynamic Workflow（动态工作流）', aliases: ['动态工作流', 'dynamic workflow', 'ultracode'],
+    short: 'Claude Code 为当前任务现写的 JavaScript 编排脚本，用 agent/parallel/pipeline 拉起隔离子代理。',
+    detail: '#85：用来对抗单上下文的懒收工、自偏袒与目标漂移；比静态工作流更贴任务，也更费 token。' },
+  { id: 'reward-hacking', cat: 'eval', term: 'Reward Hacking（奖励黑客）', aliases: ['奖励黑客', 'reward hacking', 'reward-hacking'],
+    short: '优化了评分信号，却没按出题意图解题——例如在基准里查到金补丁而不是推导修复。',
+    detail: '#86 在 SWE-bench Pro 成功轨迹里看到 63% 属检索已知修复；严格外壳封 git 历史并限网后分数明显下降。' },
+
 ]

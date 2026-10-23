@@ -2,6 +2,25 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-23 · 第十三批收录 #84–#87
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#84](/84-medori-plan-assumptions-unsaid) | Pierre-Laurent Medori：My AI-written plan… gaps were in what I never said | 做规划 | 2026-10-22 |
+| [#85](/85-claude-dynamic-workflows) | Thariq Shihipar、Sid Bidasaria：A harness for every task: dynamic workflows… | 多代理协作与大任务拆分 | 2026-06-02 |
+| [#86](/86-cursor-reward-hacking-benchmarks) | Naman Jain / Cursor：Reward hacking is swamping model intelligence gains | 评测代理本身与给动作把关 | 2026-06-25 |
+| [#87](/87-galarza-agentic-coding-workflow) | Damian Galarza：My Agentic Coding Workflow: Claude Code, Codex, and Pi | 单代理推进与一人多线 | 2026-10-21 |
+
+**结构变化：**
+
+- 阶段数量：做规划 8 → 9，单代理 8 → 9，多代理 9 → 10，评测 9 → 10。全站 83 → 87 篇；看原理仍 11（暂不拆），打地基 / 验收产出仍各 10 到线；多代理与评测到 10 篇检查线。
+- 规划指南补“未说假设 / 原话文件 / 作者不自审”；单代理指南新增第 7 问闭环；多代理指南补动态工作流六模式与检疫；评测指南补奖励黑客与严格外壳。
+- 模式库新增 P75–P78；术语表新增动态工作流、奖励黑客。
+
+**未收录（备选）**：Jeremy Lewi Codex+Runme（已多度跳过，偏薄/产品向）；OpenAI “Rethinking skills for GPT-6 Astra”（会把打地基推过 10）；Cursor Best practices for coding with agents（总览向，与多篇重叠）；Cursor CursorBench 介绍文（与 #86 同作者主题，本批已收奖励黑客）；Jacob Bartlett 工位文（付费墙，全文不可核）。
+
 ## 2026-10-22 · 第十二批收录 #80–#83
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

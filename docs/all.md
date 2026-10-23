@@ -100,6 +100,13 @@
 
 📘 **先读阶段指南**：[做规划 · 需求澄清与任务拆解](/guide/planning)
 
+### 计划缺口在未说的假设 {#item-84}
+
+- **[My AI-written plan went through every check I could think of. The gaps were in what I never said.](https://dev.to/pierrelaurentmedori/my-ai-written-plan-went-through-every-check-i-could-think-of-the-gaps-were-in-what-i-never-said-3hf7)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Pierre-Laurent Medori ／ DEV Community ｜ 发布：2026-10-22 ｜ 工具：Claude Code（常规模型编排 + 高价模型写计划）
+  - 看点：12 代理管线与 51 条发现全绿后，缺口仍在未说出口的产品假设；先交假设清单、原话文件、引用抽查。
+  - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/84-medori-plan-assumptions-unsaid)
+
 ### 把审查挪到计划：五步规格驱动 {#item-64}
 
 - **[Spec-driven development: how we review plans, not pull requests](https://www.giantswarm.io/blog/spec-driven-development)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -164,6 +171,13 @@
 **这一组放什么**：一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。
 
 📘 **先读阶段指南**：[单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo)
+
+### 塑形构建审查交付闭环 {#item-87}
+
+- **[My Agentic Coding Workflow: Claude Code, Codex, and Pi](https://www.damiangalarza.com/posts/2026-10-21-agentic-coding-workflow/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Damian Galarza ／ 个人博客 ｜ 发布：2026-10-21 ｜ 工具：Claude Code、Codex、Pi、herdr、pstack
+  - 看点：先塑形再实现；可验证 playbook 并行；审查发现必须回代码核实；工具可换环不换。
+  - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/87-galarza-agentic-coding-workflow)
 
 ### Codex 应用实战：从上下文到自动化 {#item-42}
 
@@ -254,6 +268,13 @@
   - 作者 / 来源：xAI 新闻页（未署个人名；页面标题写作 SpaceXSI） ｜ 发布：2026-07-23 ｜ 工具：Grok Build、`/workflows`、`/deep-research`
   - 看点：能拆成独立块、最后要一份报告的任务，让 Grok 写成分阶段扇出脚本在后台跑；默认 128 个代理、最多 1,024；可内建“怀疑者”核验；存进 `.grok/workflows/` 变成带参数的命令。约 480 词的产品公告，没有效果和成本数据。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/65-grok-build-workflows)
+
+### 动态工作流现写多代理外壳 {#item-85}
+
+- **[A harness for every task: dynamic workflows in Claude Code](https://claude.dev/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Thariq Shihipar、Sid Bidasaria ／ claude.dev ｜ 发布：2026-06-02 ｜ 工具：Claude Code 动态工作流
+  - 看点：用 JS 工作流隔离上下文，对抗懒收工 / 自偏袒 / 目标漂移；六种模式与检疫分流；常规写码多数不必上。
+  - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/85-claude-dynamic-workflows)
 
 ### 16 个代理并行写 C 编译器 {#item-17}
 
@@ -403,6 +424,13 @@
   - 作者 / 来源：Cursor Team（引言 Mitch Troyanovsky / Basis） ｜ 发布：2026-09-04 ｜ 工具：Cursor 改规格与上下文；Basis 运行时；Braintrust 行为规格格式
   - 看点：长程会计任务上结果评测有盲区；behavior spec 不给代理、裁判 true/false/NA；规格与运行时分离。Form 1065 约人 30–40h / 代理 6–7h（口述）。客户故事，无规格样例。
   - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/83-cursor-basis-behavior-specs)
+
+### 基准奖励黑客与严格外壳 {#item-86}
+
+- **[Reward hacking is swamping model intelligence gains](https://cursor.com/blog/reward-hacking-coding-benchmarks)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Naman Jain ／ Cursor ｜ 发布：2026-06-25 ｜ 工具：编码代理评测外壳；SWE-bench Pro / Multilingual
+  - 看点：731 轨迹审计显示成功解题 63% 为检索已知修复；封 git 历史并限网后分数显著下降。
+  - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/86-cursor-reward-hacking-benchmarks)
 
 ### Auto-review：分类器与评测 {#item-39}
 
@@ -662,7 +690,9 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 8 篇（#64、#68、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 8 篇（#42、#72、#78、#79、#08、#23、#11、#27）；多代理协作与大任务拆分 9 篇（#80、#76、#74、#65、#17、#05、#18、#30、#73）；验收这一次的产出 10 篇（#60、#81、#15、#59、#75、#12、#71、#32、#25、#31）；评测代理本身与给动作把关 9 篇（#69、#77、#62、#83、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 9 篇（#82、#53、#70、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
+**容量检查（2026-10-23，第十三批 #84–#87 后）**：现在 87 份资料分 9 个阶段：看原理 11 篇（暂不拆）；打地基、验收产出、多代理、评测各 10 篇到线；做规划、单代理各 9 篇；接进 PR 与 CI、云端各 9 篇。除看原理外无阶段超过 10。**拆分建议（仅建议，未执行）**：①看原理维持 2026-10-19 方案暂不拆；②多代理（10）可按“并行编排/扇出”与“长时接力”拆，但仍是同一任务轴，等主人确认；③评测（10）可按“分数可信度/基准设计”与“权限分类器”拆，等确认。本批优先补了规划与单代理缺口，并各加一篇多代理/评测到线文章。
+
+按阶段（按发布日期从新到旧）：打地基 10 篇（#49、#52、#46、#37、#14、#07、#26、#21、#20、#28）；做规划 9 篇（#84、#64、#68、#06、#03、#13、#61、#29、#04）；单代理推进与一人多线 9 篇（#87、#42、#72、#78、#79、#08、#23、#11、#27）；多代理协作与大任务拆分 10 篇（#80、#76、#74、#65、#85、#17、#05、#18、#30、#73）；验收这一次的产出 10 篇（#60、#81、#15、#59、#75、#12、#71、#32、#25、#31）；评测代理本身与给动作把关 10 篇（#69、#77、#62、#83、#86、#39、#56、#50、#47、#19）；接进 PR 与 CI 9 篇（#63、#41、#57、#10、#55、#67、#33、#22、#34）；云端与后台运行环境 9 篇（#82、#53、#70、#48、#58、#02、#51、#01、#40）；看原理 11 篇（#43、#54、#09、#66、#45、#16、#38、#24、#35、#36、#44）。
 
 **阶段拆分（2026-10-19，已确认）**：按下面建议②把“去执行”拆成“单代理推进与一人多线”（`solo`）和“多代理协作与大任务拆分”（`multi`）两个相邻阶段，各 5 篇；边界：主角是“一个人 + 一个主代理”、任务彼此独立、协调靠人（子代理只是主代理的工具）的归前者，多个代理围绕同一个目标分工、认领、交接或长时间运行的归后者。#08 虽然演示了 20 个子代理，但子代理由主代理切片派发、结果交回主代理，归前者。旧地址 `/guide/execution` 改为指向两个新指南的入口页，长时任务专题归入后者；“看原理”按建议①暂不拆。现在 71 份资料分 9 个阶段，最多 11 篇（看原理）、最少 5 篇。无阶段超过 10 篇检查线。
 
@@ -686,7 +716,7 @@
 
 **容量检查（2026-10-13）**：“去执行”和“看原理”都到了 9 篇。逐篇复核后没有改动归类：#42 主要教的是在 Codex 应用里把活干完（Computer Use、`/goal`、子代理、线程交接），属于去执行；#43、#44、#45 的主要贡献都是 harness 的接口或机制（app server 协议、推理与编辑分离、session / harness / sandbox 解耦），放在其他阶段都会偏。46 份资料分 6 个阶段，平均已接近 8 篇，所以暂不改阶段名称；下一批如果还要往这两个阶段加，应考虑拆分阶段（仍然只按任务顺序这一条轴）。
 
-按类型：视频 23 篇；文章 51 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56、#58–#79；#66 为 arXiv 论文，按文章计）；官方文档 3 篇（#22、#28、#34）；指南 2 篇（#25、#57）。
+按类型：视频 23 篇；文章 59 篇（#16–#20、#27、#29、#31、#32、#33、#36、#37–#41、#44–#56、#58–#79；#66 为 arXiv 论文，按文章计）；官方文档 3 篇（#22、#28、#34）；指南 2 篇（#25、#57）。
 
 按工具：
 
@@ -714,6 +744,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-23 第十三批：#84 Medori 未说假设（规划）、#85 Claude 动态工作流（多代理）、#86 Cursor 奖励黑客（评测）、#87 Galarza 塑形闭环（单代理）。优先补规划/单代理（8→9），多代理与评测到 10。未收：Jeremy Lewi Runme、Astra skills（打地基已到线）、Cursor best practices 总览、CursorBench 介绍（与 #86 同主题）、Jacob 付费文。
 - 2026-10-21 第十一批：#76 Cohere 多代理团队受控实验、#77 Expo 的 Skill 评测、#78 Addy Osmani 拆 Claude Code 任务成本、#79 Thomas Ricouard 手机端 Codex Remote 指南（前一日的备选；功能导览为主，评分已体现）。优先补了单代理、多代理、评测三个较少的阶段（6 → 8、7 → 8、7 → 8）。#77 的基线加载率正文前后写了 9% 和“约 10%”，照录。考虑过但未收录：Jeremy Lewi *Automating repetitive work at OpenAI with Codex*（约 1,000 词，主要介绍作者自己的 Runme，继续留作备选）；Denys Zaichenko *Multi-agent orchestration: what broke in 3,315 agent runs*（madsalt.tech，2026-10-19，个人博客，留作备选）；Cursor *Git at any scale*（Vicent Martí，2026-08-18，讲 Git 托管存储架构，不是代理工作流，不收）；Cursor *Bots for the last mile: Rollouts, Security Review*（2026-09-23，约 550 词的产品公告，不收）。
 - 2026-10-20 第十批：#72 Claude Code effort 档位（Thariq Shihipar）、#73 Anthropic 长任务 harness（2025-11，#16 的前作，此前只在 #16 的基本信息里作为前作提到）、#74 Blocshop 十个仓库的 .NET 迁移（无个人署名，作者按公司记）、#75 Codex 审查规则（前一日的备选，核实非重复后录入）。优先补了最少的两个阶段（单代理 5 → 6、多代理 5 → 7）。考虑过但未收录：Thomas Ricouard *Mastering remote engineering work from your phone*（OpenAI，2026-06-23，偏产品功能导览，留作备选）；Jeremy Lewi *Automating repetitive work at OpenAI with Codex*（OpenAI，2026-08-25，约 1,000 词，主要介绍作者自己的 Runme 项目，留作备选）；Florian Bruniaux *Plan-execute: running 20+ agents on a migration*（作者自承 243 文件的例子是虚构的、没有日志）；Matías Romero 的个人工作流短文（约 4 分钟，细节不足）。
 - 2026-10-19 第八批（下）：#64 Giant Swarm 规格驱动开发、#65 Grok Build Workflows、#66 Harness Engineering 源码研究、#67 Cognition 用 Devin 开发 Devin。#64 作者署名 Dominik Schmidle，作者页地址是 dominik-kress，按署名写；文章首发 LinkedIn（2026-09-29），published 取公司博客日期 2026-10-13。#66 的 arXiv 编号 2609 与 7 月 15 日提交不合常规，照录；只精读了摘要、七个子系统、13 条观察、效度威胁和 18 条建议。#67 为厂商自述。

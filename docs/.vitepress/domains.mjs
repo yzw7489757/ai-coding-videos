@@ -58,6 +58,7 @@ export const domains = [
     icon: '📝',
     desc: '动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。',
     items: [
+      { n: '84', slug: '84-medori-plan-assumptions-unsaid', text: '计划缺口在未说的假设', short: '先交未说假设', tool: 'claude', type: 'article', added: '2026-10-23', published: '2026-10-22' },
       { n: '64', slug: '64-giant-swarm-spec-driven-development', text: '把审查挪到计划：五步规格驱动', short: '审计划不审 diff', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-13' },
       { n: '68', slug: '68-plan-to-unattended-agent-runs', text: '计划切成带程序验收的短会话', short: '完成合约短会话', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-09' },
       { n: '06', slug: '06-field-guide-to-fable', text: '找出未知，给上下文做减法', short: '找未知 做减法', tool: 'claude', type: 'video', published: '2026-07-06' },
@@ -76,6 +77,7 @@ export const domains = [
     icon: '🚀',
     desc: '一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。',
     items: [
+      { n: '87', slug: '87-galarza-agentic-coding-workflow', text: '塑形构建审查交付闭环', short: '塑形到交付闭环', tool: 'general', type: 'article', added: '2026-10-23', published: '2026-10-21' },
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
       { n: '72', slug: '72-claude-code-spending-effort', text: 'effort 档位：低档迭代高档验证', short: 'effort 低档迭代 高档验证', tool: 'claude', type: 'article', added: '2026-10-20', published: '2026-09-25' },
       { n: '78', slug: '78-claude-code-task-cost', text: '一个任务花多少钱：轮数与缓存', short: '轮数 缓存 先加检查', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-09-25' },
@@ -98,6 +100,7 @@ export const domains = [
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
+      { n: '85', slug: '85-claude-dynamic-workflows', text: '动态工作流现写多代理外壳', short: '动态工作流六模式', tool: 'claude', type: 'article', added: '2026-10-23', published: '2026-06-02' },
       { n: '17', slug: '17-anthropic-c-compiler-agent-teams', text: '16 个代理并行写 C 编译器', short: '16 代理写编译器', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-02-05' },
       { n: '05', slug: '05-indydevdan-task-system', text: 'Builder + Validator 代理团队', short: 'Builder 加 Validator', tool: 'claude', type: 'video', published: '2026-02-02' },
       { n: '18', slug: '18-cursor-scaling-long-running-agents', text: '数百个代理协作写浏览器', short: '数百代理分层', tool: 'cursor', type: 'article', added: '2026-10-09', published: '2026-01-14' },
@@ -137,6 +140,7 @@ export const domains = [
       { n: '77', slug: '77-expo-skill-evals', text: '给 Skills 做评测：会被找到吗', short: 'Skill 触发 入口路由 目录截断', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-10-08' },
       { n: '62', slug: '62-claude-eval-design-hillclimbing', text: '评测设计与爬分不自欺', short: '留出集爬分', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-09-28' },
       { n: '83', slug: '83-cursor-basis-behavior-specs', text: '行为规格只给裁判看', short: '过程行为评测 规格不给代理', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-09-04' },
+      { n: '86', slug: '86-cursor-reward-hacking-benchmarks', text: '基准奖励黑客与严格外壳', short: '封历史限网测真分', tool: 'cursor', type: 'article', added: '2026-10-23', published: '2026-06-25' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
