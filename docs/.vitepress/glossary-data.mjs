@@ -721,4 +721,15 @@ export const terms = [
     short: '优化了评分信号，却没按出题意图解题——例如在基准里查到金补丁而不是推导修复。',
     detail: '#86 在 SWE-bench Pro 成功轨迹里看到 63% 属检索已知修复；严格外壳封 git 历史并限网后分数明显下降。' },
 
+
+  { id: 'pr-review-bot', cat: 'workflow', term: 'PR Review Bot（PR 审查机器人）', aliases: ['PR 审查机器人', 'review bot', 'code review bot'],
+    short: '在 Pull Request 上自动留言的审查代理或机器人。',
+    detail: '#90 在同一 PR 上并行使用 GitHub Copilot 与 Claude Code Review，再用 triage Skill 分类、修真问题并设硬顶轮次。' },
+  { id: 'credential-injection', cat: 'runtime', term: 'Credential Injection（凭据注入）', aliases: ['凭据注入', 'credential injection', 'secure credential injection'],
+    short: '在网络出口代填认证信息，不把密钥放进代理可见的环境变量。',
+    detail: '#91 Cloudflare Sandboxes 用 outboundByHost 在 Worker 侧加认证头，沙箱内进程看不到密钥。' },
+  { id: 'fix-treadmill', cat: 'workflow', term: 'Fix Treadmill（补丁踩踏机）', aliases: ['踩踏机', 'fix treadmill', 'review treadmill'],
+    short: '修一个问题引入的新机制，在下一轮审查里又变成新问题。',
+    detail: '#90：为超时拆 job、为删除加唯一键后，下一轮审的是新 job / 新失败路径；应在推送前自审修丁。' },
+
 ]

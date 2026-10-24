@@ -129,6 +129,11 @@
   - 看点：Claude Code 删掉 80% system prompt；blind spot pass、HTML 原型、访谈、实现笔记、让模型 quiz 你。
   - 👉 [阅读分析](/06-field-guide-to-fable)
 
+### 规格驱动贵在哪：改用 plan mode {#item-88}
+- 工具：Claude Code · 类型：文章 · 发布：2026-06-19 · [阅读](/88-instil-plan-mode-vs-sdd)
+- 一句话：Matthew Wilson 复盘 SDD 层级脚手架又贵又漂、代码未必更好；按量计费下改用 Claude Code plan mode 三步。
+- 看点：token/漂移/质量三角；context rot；长期规格例外；被工作流架构图打动时先停。
+
 ### 访谈式需求与可验证组件 {#item-03}
 
 - **[How we Claude Code](https://www.youtube.com/watch?v=IlqJqcl8ONE)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -199,6 +204,11 @@
   - 作者 / 来源：Addy Osmani ／ claude.dev 博客（Playbooks） ｜ 发布：2026-09-25 ｜ 工具：Claude Code（`/usage`、`/effort`、`/model`、`/compact`、`/rewind`、`CLAUDE_CODE_SUBAGENT_MODEL`）、Opus 5.5、Fable 5.1、Sonnet、Haiku
   - 看点：成本按任务算：轮数、缓存读取、输出、模型四项；每轮重发整段对话；同样 2.8M 输入命中 0% $11.20、90% $1.62；先加检查再提 effort、xhigh 失败两次再换模型；查找子代理下放小模型；六种会让缓存重写的操作；休息前压缩。数字多为示意，同时在介绍新模型降价。
   - 🆕 收录于 2026-10-21 ｜ 👉 [阅读分析](/78-claude-code-task-cost)
+
+### 远程 Devbox + tmux + worktrunk {#item-89}
+- 工具：通用 · 类型：文章 · 发布：2026-07-05 · [阅读](/89-charles-devbox-tmux-worktrunk)
+- 一句话：Charles 用远程常开 Devbox、tmux 保活、worktrunk 一任务一树，把笔记本变成控制台。
+- 看点：可抄配置；`/goal` 验收优先于 24/7 空转；剪贴板与多机同步仍未解。
 
 ### 手机当 Codex 控制台 {#item-79}
 
@@ -487,6 +497,11 @@
   - 看点：定时简报代理的参考实现：按书签读、读失败要明说、发帖前复查、确认送达再记账、每次重读偏好、只读权限 + 花费上限；附原文配置。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/41-anthropic-agent-automations)
 
+### 六轮机器人审查与补丁踩踏机 {#item-90}
+- 工具：Claude Code · 类型：文章 · 发布：2026-10-03 · [阅读](/90-leek-six-rounds-bot-review)
+- 一句话：全绿 PR 上 Copilot + Claude Review 挖出 32 条真问题；修丁引入机制会续租轮次，要把问题前移。
+- 看点：五族失败模式；硬顶五轮；未推送先自审；不证明机器人强于自审。
+
 ### 把 agent evals 接进 CI {#item-57}
 
 - **[Continuous evals in CI](https://academy.claude.com/courses/ai-native-sdlc-playbook/continuous-evals-in-ci)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -610,6 +625,11 @@
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
 📘 **先读阶段指南**：[看原理 · Harness 与内部机制](/guide/harness)
+
+### 沙箱即完整电脑：凭据与快照 {#item-91}
+- 工具：通用 · 类型：文章 · 发布：2026-04-13 · [阅读](/91-cloudflare-sandboxes-ga)
+- 一句话：Cloudflare Sandboxes GA：出口注入凭据、PTY、持久解释器、预览 URL、文件监视与快照恢复。
+- 看点：沙箱进程不见密钥；用就绪信号代替 sleep；厂商 GA 与快照当时未全量。
 
 ### 在 Codex harness 上做自己的客户端 {#item-43}
 
@@ -744,6 +764,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-24 第十四批：#88 Instil plan mode vs SDD（规划）、#89 Charles Devbox+tmux+worktrunk（单代理）、#90 Chris Jones 六轮机器人审查（CI）、#91 Cloudflare Sandboxes GA（云端）。四阶段均 9→10。未收：Jeremy Lewi Runme（先前已判偏薄）、OpenAI Astra skills（打地基已到线）、Cursor best practices 总览（重叠）、Gabriel Anhaia Codex worktree 源码文（偏 RE/产品）、Cognition Devin autofix（产品通稿）、Jacob 付费文。看原理仍 11，只建议拆分不自行拆。
 - 2026-10-23 第十三批：#84 Medori 未说假设（规划）、#85 Claude 动态工作流（多代理）、#86 Cursor 奖励黑客（评测）、#87 Galarza 塑形闭环（单代理）。优先补规划/单代理（8→9），多代理与评测到 10。未收：Jeremy Lewi Runme、Astra skills（打地基已到线）、Cursor best practices 总览、CursorBench 介绍（与 #86 同主题）、Jacob 付费文。
 - 2026-10-21 第十一批：#76 Cohere 多代理团队受控实验、#77 Expo 的 Skill 评测、#78 Addy Osmani 拆 Claude Code 任务成本、#79 Thomas Ricouard 手机端 Codex Remote 指南（前一日的备选；功能导览为主，评分已体现）。优先补了单代理、多代理、评测三个较少的阶段（6 → 8、7 → 8、7 → 8）。#77 的基线加载率正文前后写了 9% 和“约 10%”，照录。考虑过但未收录：Jeremy Lewi *Automating repetitive work at OpenAI with Codex*（约 1,000 词，主要介绍作者自己的 Runme，继续留作备选）；Denys Zaichenko *Multi-agent orchestration: what broke in 3,315 agent runs*（madsalt.tech，2026-10-19，个人博客，留作备选）；Cursor *Git at any scale*（Vicent Martí，2026-08-18，讲 Git 托管存储架构，不是代理工作流，不收）；Cursor *Bots for the last mile: Rollouts, Security Review*（2026-09-23，约 550 词的产品公告，不收）。
 - 2026-10-20 第十批：#72 Claude Code effort 档位（Thariq Shihipar）、#73 Anthropic 长任务 harness（2025-11，#16 的前作，此前只在 #16 的基本信息里作为前作提到）、#74 Blocshop 十个仓库的 .NET 迁移（无个人署名，作者按公司记）、#75 Codex 审查规则（前一日的备选，核实非重复后录入）。优先补了最少的两个阶段（单代理 5 → 6、多代理 5 → 7）。考虑过但未收录：Thomas Ricouard *Mastering remote engineering work from your phone*（OpenAI，2026-06-23，偏产品功能导览，留作备选）；Jeremy Lewi *Automating repetitive work at OpenAI with Codex*（OpenAI，2026-08-25，约 1,000 词，主要介绍作者自己的 Runme 项目，留作备选）；Florian Bruniaux *Plan-execute: running 20+ agents on a migration*（作者自承 243 文件的例子是虚构的、没有日志）；Matías Romero 的个人工作流短文（约 4 分钟，细节不足）。

@@ -62,6 +62,7 @@ export const domains = [
       { n: '64', slug: '64-giant-swarm-spec-driven-development', text: '把审查挪到计划：五步规格驱动', short: '审计划不审 diff', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-13' },
       { n: '68', slug: '68-plan-to-unattended-agent-runs', text: '计划切成带程序验收的短会话', short: '完成合约短会话', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-09' },
       { n: '06', slug: '06-field-guide-to-fable', text: '找出未知，给上下文做减法', short: '找未知 做减法', tool: 'claude', type: 'video', published: '2026-07-06' },
+      { n: '88', slug: '88-instil-plan-mode-vs-sdd', text: '规格驱动贵在哪：改用 plan mode', short: 'SDD 贵且漂 改用 plan', tool: 'claude', type: 'article', added: '2026-10-24', published: '2026-06-19' },
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video', published: '2026-05-23' },
       { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video', published: '2026-05-15' },
       { n: '61', slug: '61-codex-long-horizon-tasks', text: 'Codex 跑 25 小时的四份 Markdown', short: '四份 Markdown 长任务', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-02-23' },
@@ -81,6 +82,7 @@ export const domains = [
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
       { n: '72', slug: '72-claude-code-spending-effort', text: 'effort 档位：低档迭代高档验证', short: 'effort 低档迭代 高档验证', tool: 'claude', type: 'article', added: '2026-10-20', published: '2026-09-25' },
       { n: '78', slug: '78-claude-code-task-cost', text: '一个任务花多少钱：轮数与缓存', short: '轮数 缓存 先加检查', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-09-25' },
+      { n: '89', slug: '89-charles-devbox-tmux-worktrunk', text: '远程 Devbox + tmux + worktrunk', short: '笔记本变控制台', tool: 'general', type: 'article', added: '2026-10-24', published: '2026-07-05' },
       { n: '79', slug: '79-codex-remote-phone-control-plane', text: '手机当 Codex 控制台', short: '排队还是插话 最窄权限', tool: 'codex', type: 'article', added: '2026-10-21', published: '2026-06-23' },
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
@@ -158,6 +160,7 @@ export const domains = [
     items: [
       { n: '63', slug: '63-openai-gpt-6-software-maintenance', text: '让代理批量开维护 PR', short: '维护 PR 删死代码', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
+      { n: '90', slug: '90-leek-six-rounds-bot-review', text: '六轮机器人审查与补丁踩踏机', short: '修丁先自审 硬顶五轮', tool: 'claude', type: 'article', added: '2026-10-24', published: '2026-10-03' },
       { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
       { n: '10', slug: '10-how-openai-uses-codex', text: 'OpenAI 用 Codex 守住 PR 质量', short: 'PR 审查 CI 看护', tool: 'codex', type: 'video', published: '2026-05-28' },
       { n: '55', slug: '55-openai-skills-oss-maintenance', text: '用 Skills 维护开源仓库', short: 'Skills 接进 CI', tool: 'codex', type: 'article', added: '2026-10-15', published: '2026-03-09' },
@@ -183,7 +186,8 @@ export const domains = [
       { n: '02', slug: '02-claude-code-team-workflows', text: 'Claude Code 团队的工作流', short: 'Slack 派活 扇出审查', tool: 'claude', type: 'video', published: '2026-09-02' },
       { n: '51', slug: '51-cursor-self-hosted-machines', text: '云端代理跑在自己的机器上', short: '自托管执行机器', tool: 'cursor', type: 'article', added: '2026-10-14', published: '2026-09-02' },
       { n: '01', slug: '01-claude-code-one-year', text: 'Claude Code 一周年：验证与 Routines', short: 'Routines 与验证', tool: 'claude', type: 'video', published: '2026-06-08' },
-      { n: '40', slug: '40-cursor-cloud-agent-lessons', text: '云端代理一年的四条教训', short: '云端代理运行层', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-02' }
+      { n: '40', slug: '40-cursor-cloud-agent-lessons', text: '云端代理一年的四条教训', short: '云端代理运行层', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-02' },
+      { n: '91', slug: '91-cloudflare-sandboxes-ga', text: '沙箱即完整电脑：凭据与快照', short: '出口注入凭据 快照恢复', tool: 'general', type: 'article', added: '2026-10-24', published: '2026-04-13' }
     ]
   },
   {

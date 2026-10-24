@@ -2,6 +2,27 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-24 · 第十四批收录 #88–#91
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#88](/88-instil-plan-mode-vs-sdd) | Matthew Wilson：Spec-driven development is dead. Long live plan mode | 做规划 | 2026-06-19 |
+| [#89](/89-charles-devbox-tmux-worktrunk) | Charles：My Coding Agent Workflow — devbox + tmux + worktrunk | 单代理推进与一人多线 | 2026-07-05 |
+| [#90](/90-leek-six-rounds-bot-review) | Chris Jones：Six Rounds of Bot Review on One PR | 接进 PR 与 CI | 2026-10-03 |
+| [#91](/91-cloudflare-sandboxes-ga) | Kate Reznykova / Mike Nomitch / Naresh Ramesh：Agents have their own computers with Sandboxes GA | 云端与后台运行环境 | 2026-04-13 |
+
+**结构变化：**
+
+- 阶段数量：做规划 / 单代理 / 接进 PR 与 CI / 云端 均 9 → 10。全站 87 → 91 篇；看原理仍 11（暂不拆）；打地基 / 多代理 / 验收 / 评测仍各 10 到线未再加。
+- 规划指南补“单功能别造 SDD 层级”；单代理指南补远程 Devbox+tmux；CI 指南补六轮真阳性与踩踏机；云端指南补出口注入凭据与完整电脑原语。
+- 模式库新增 P79–P82；术语表新增 PR 审查机器人、凭据注入、补丁踩踏机。
+
+**未收录（备选）**：Jeremy Lewi Codex+Runme（先前多日跳过，偏薄/产品向）；OpenAI “Rethinking skills for GPT-6 Astra”（会把打地基推过 10）；Cursor Best practices for coding with agents（总览向，与多篇重叠）；Gabriel Anhaia Codex 0.162 worktree 源码文（偏工具 RE，文末推 Hermes）；Cognition Devin autofix review comments（产品通稿）；Daniel Firu unattended harness（更偏多代理/看原理，两阶段已到线或超线）；Jacob Bartlett（付费墙）。
+
+**拆分建议（仅建议，未改 domains）**：看原理 11 篇——若拆，可沿“循环与上下文设计”vs“客户端 / 工具调用与解耦”切，保持单一任务轴，旧链接不动。做规划/单代理/CI/云端刚到 10，暂不拆。
+
 ## 2026-10-23 · 第十三批收录 #84–#87
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

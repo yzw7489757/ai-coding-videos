@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：87 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（84、64、68、06、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（87、42、72、78、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（80、76、74、65、85、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、81、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、83、86、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（82、53、70、48、58、02、51、01、40）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 59、官方文档 3、指南 2。工具：Claude Code 29、Codex 15、Grok 7、Cursor 12、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 14。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：91 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（84、64、68、06、88、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（87、42、72、78、89、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（80、76、74、65、85、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、81、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、83、86、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、90、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（82、53、70、48、58、02、51、01、40、91）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 63、官方文档 3、指南 2。工具：Claude Code 31、Codex 15、Grok 7、Cursor 12、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 16。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -211,6 +211,7 @@ flowchart TD
 - [68 · 计划切成带程序验收的短会话](/68-plan-to-unattended-agent-runs) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：决策完备；完成合约由程序跑；AI 起草声明。
 - [29 · Conductor：把计划写进仓库](/29-gemini-cli-conductor) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span>：spec 和 plan 写成仓库里的文件，适合团队。
 
+- [88 · 规格驱动贵在哪：改用 plan mode](/88-instil-plan-mode-vs-sdd) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：SDD 层级又贵又漂时，plan mode 三步够用。
 **单代理推进与一人多线 · 一个人怎么驾驭代理**（[阶段指南](/guide/solo)）
 
 - [27 · 从怀疑到离不开：六步采用 AI](/27-mitchellh-ai-adoption-journey) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：从怀疑到熟练的六步路线，最适合刚起步。
@@ -222,6 +223,7 @@ flowchart TD
 - [78 · 一个任务花多少钱：轮数与缓存](/78-claude-code-task-cost) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：钱花在轮数、缓存、输出和模型上；先加检查再提档，用 `/usage` 量自己的数。
 - [79 · 手机当 Codex 控制台](/79-codex-remote-phone-control-plane) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：人不在电脑前时只做解阻塞的决定：排队还是插话、最窄权限、plan 再 goal。
 
+- [89 · 远程 Devbox + tmux + worktrunk](/89-charles-devbox-tmux-worktrunk) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：笔记本变控制台；一任务一 worktree。
 **多代理协作与大任务拆分 · 分工、协调与长时运行**（[阶段指南](/guide/multi)，另有[长时自主任务专题](/guide/long-running)）
 
 - [05 · Builder + Validator 代理团队](/05-indydevdan-task-system) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：builder / validator 团队的编排。
@@ -271,6 +273,7 @@ flowchart TD
 - [67 · Cognition 把 Devin 接进日常](/67-cognition-devin-builds-devin) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-devin">Devin</span>：工单标签、PR 事件、告警和每日审计触发代理；Playbook 六要素；厂商自述。
 - [63 · 让代理批量开维护 PR](/63-openai-gpt-6-software-maintenance) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：删死代码、清过期实验、给 CI 提速，prompt 原文可借用。
 
+- [90 · 六轮机器人审查与补丁踩踏机](/90-leek-six-rounds-bot-review) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：32 真阳性与修丁踩踏机；问题前移到开 PR 前。
 **云端与后台运行环境 · 代理在哪里跑**（[阶段指南](/guide/cloud)）
 
 - [01 · Claude Code 一周年：验证与 Routines](/01-claude-code-one-year) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
@@ -283,6 +286,7 @@ flowchart TD
 - [58 · Projects：一个协调代理管一群子代理](/58-cursor-projects) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：跨月工作交给一个只派活的协调者，注意是产品发布文。
 - [82 · 自托管并行迁八个应用](/82-cursor-navan-cloud-agents-migration) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>：自托管 Cloud Agents 并行迁移；内部 MCP 与浏览器同机（客户故事）。
 
+- [91 · 沙箱即完整电脑：凭据与快照](/91-cloudflare-sandboxes-ga) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：出口注入凭据、PTY、预览 URL、快照。
 **看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
 
 - [66 · 源码解剖 11 个代理外壳](/66-harness-engineering-eleven-systems) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：先读这篇当本阶段的总图：七个子系统、两个“缺席”、18 条建议。
@@ -309,6 +313,7 @@ flowchart TD
 
 ## 6. 缺口与局限（如实说明）
 
+- **第十四批（2026-10-24）**：补规划/单代理/CI/云端到各 10 篇（#88–#91）。看原理仍 11，拆分建议见更新日志，未自行拆。
 - **Grok**：没有找到 xAI 官方或大会级的长篇工程实战内容，官方频道只有 1–2 分钟的宣传片。4 个 Grok 视频都是第三方实测，以 demo 或新项目为主，缺少大型存量代码库和长期团队实践的证据。其中 #15 的自动字幕质量差，结合简介、官方文档和画面文字分析。对 Grok 的结论请视为初步观察。第二批补上了 xAI 官方 Grok Build 文档（34），第四批又补上一篇官方产品说明（46，Grok Build 记忆），第八批补上 Workflows 产品公告（65），但仍没有官方工程博客或大会演讲。
 - **Codex**：#09、#10、#43 为同一讲者（Dominik Kundel），但主题不重叠（harness 内部 vs. 团队流程 vs. 外部接口 app server）。
 - **Cursor**：11 篇（#18、#33、#37–#40、#51、#54、#58、#82、#83），多为 Cursor 研究博客或客户故事，结论请视为该厂商视角；#82/#83 是客户成功叙事，数字不可外部核对；内部工具（anydev、Cloud MCP、Cloud Doctor）和分类器的准确率都没有公开。
