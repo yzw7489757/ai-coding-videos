@@ -42,6 +42,7 @@ export const domains = [
       { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
       { n: '46', slug: '46-grok-build-memory', text: 'Grok Build 的跨会话记忆', short: 'Grok Build 记忆', tool: 'grokbuild', type: 'article', added: '2026-10-13', published: '2026-09-16' },
       { n: '37', slug: '37-cursor-cloud-agent-environment', text: '把开发环境做成给代理用的产品', short: '代理用的开发环境', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-07-30' },
+      { n: '92', slug: '92-steering-claude-code-customization', text: '七种方式：何时用 CLAUDE.md / Skills / Hooks', short: '七种指令投放方式', tool: 'claude', type: 'article', added: '2026-10-25', published: '2026-06-18' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video', published: '2026-05-19' },
       { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video', published: '2026-04-17' },
       { n: '26', slug: '26-factory-agent-ready-codebases', text: '让代码库为代理做好准备', short: '8 根验证支柱', tool: 'general', type: 'video', added: '2026-10-09', published: '2025-12-22' },
@@ -119,6 +120,7 @@ export const domains = [
     desc: '确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。',
     items: [
       { n: '60', slug: '60-claude-code-team-code-review', text: '代码审查的七层把关', short: '七层审查 按风险定人数', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-10-15' },
+      { n: '95', slug: '95-osmani-agentic-verification', text: '代理验证：E2E / 属性 / 差分测试', short: '代理自验证', tool: 'general', type: 'article', added: '2026-10-25', published: '2026-10-14' },
       { n: '81', slug: '81-aditlal-harness-engineering-24000', text: '规则要按效果写成 hook', short: '副作用进 hook 第二模型审', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-10' },
       { n: '15', slug: '15-arcade-grok-build-57-agents', text: '57 个子代理与对抗式验证', short: 'skeptic 证伪', tool: 'grokbuild', type: 'video', published: '2026-09-09' },
       { n: '59', slug: '59-factory-large-software-tasks', text: '先建完成标准，再让代理做大任务', short: '独立完成标准', tool: 'factory', type: 'article', added: '2026-10-16', published: '2026-08-27' },
@@ -139,6 +141,7 @@ export const domains = [
     desc: '不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。',
     items: [
       { n: '69', slug: '69-google-eval-engineering-lessons', text: '按执行轨迹打分的四条评测教训', short: '轨迹打分 双条件', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-17' },
+      { n: '94', slug: '94-jain-harnesses-worth-the-cost', text: '外壳值不值得：便宜模型的实验', short: '外壳成本实验', tool: 'codex', type: 'article', added: '2026-10-25', published: '2026-10-13' },
       { n: '77', slug: '77-expo-skill-evals', text: '给 Skills 做评测：会被找到吗', short: 'Skill 触发 入口路由 目录截断', tool: 'claude', type: 'article', added: '2026-10-21', published: '2026-10-08' },
       { n: '62', slug: '62-claude-eval-design-hillclimbing', text: '评测设计与爬分不自欺', short: '留出集爬分', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-09-28' },
       { n: '83', slug: '83-cursor-basis-behavior-specs', text: '行为规格只给裁判看', short: '过程行为评测 规格不给代理', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-09-04' },
@@ -203,6 +206,7 @@ export const domains = [
       { n: '09', slug: '09-how-codex-works', text: 'Codex Harness 内部机制', short: 'Codex harness 拆解', tool: 'codex', type: 'video', published: '2026-08-10' },
       { n: '66', slug: '66-harness-engineering-eleven-systems', text: '源码解剖 11 个代理外壳', short: '11 个外壳源码解剖', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-07-15' },
       { n: '45', slug: '45-anthropic-managed-agents', text: 'Managed Agents：大脑与双手解耦', short: '大脑与双手解耦', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-04-08' },
+      { n: '93', slug: '93-bockeler-harness-engineering-users', text: '用户侧外壳：引导与传感器', short: '引导与传感器', tool: 'general', type: 'article', added: '2026-10-25', published: '2026-04-02' },
       { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-03-24' },
       { n: '38', slug: '38-cursor-self-driving-codebases', text: '多代理 harness 的五次改版', short: '递归 Planner 加 handoff', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-02-05' },
       { n: '24', slug: '24-huntley-horthy-ralph-loop', text: 'Ralph 循环：为什么每轮重开', short: 'Ralph 循环', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-01-04' },

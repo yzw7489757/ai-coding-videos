@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 91 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 95 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-10-24（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-10-25（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,20 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-24，4 份）
+## 🆕 最近收录（2026-10-25，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 88 | [规格驱动贵在哪：改用 plan mode](/88-instil-plan-mode-vs-sdd) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 89 | [远程 Devbox + tmux + worktrunk](/89-charles-devbox-tmux-worktrunk) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
-| 90 | [六轮机器人审查与补丁踩踏机](/90-leek-six-rounds-bot-review) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 91 | [沙箱即完整电脑：凭据与快照](/91-cloudflare-sandboxes-ga) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 92 | [七种方式：何时用 CLAUDE.md / Skills / Hooks](/92-steering-claude-code-customization) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 93 | [用户侧外壳：引导与传感器](/93-bockeler-harness-engineering-users) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
+| 94 | [外壳值不值得：便宜模型的实验](/94-jain-harnesses-worth-the-cost) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
+| 95 | [代理验证：E2E / 属性 / 差分测试](/95-osmani-agentic-verification) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 91 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 95 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -120,6 +120,7 @@ flowchart LR
     A52["52 Claude Code mods"]
     A46["46 Grok Build 记忆"]
     A37["37 代理用的开发环境"]
+    A92["92 七种指令投放方式"]
     A14["14 Skills 管 UI 风格"]
     A07["07 规范变 lint 和测试"]
     A26["26 8 根验证支柱"]
@@ -129,7 +130,8 @@ flowchart LR
     A49 ~~~ A52
     A52 ~~~ A46
     A46 ~~~ A37
-    A37 ~~~ A14
+    A37 ~~~ A92
+    A92 ~~~ A14
     A14 ~~~ A07
     A07 ~~~ A26
     A26 ~~~ A21
@@ -205,6 +207,7 @@ flowchart LR
   subgraph S5["验收这一次的产出"]
     direction TB
     A60["60 七层审查 按风险定人数"]
+    A95["95 代理自验证"]
     A81["81 副作用进 hook 第二模型审"]
     A15["15 skeptic 证伪"]
     A59["59 独立完成标准"]
@@ -214,7 +217,8 @@ flowchart LR
     A32["32 Devin 带证据交付"]
     A25["25 TDD 与手动测试"]
     A31["31 审查精确率优先"]
-    A60 ~~~ A81
+    A60 ~~~ A95
+    A95 ~~~ A81
     A81 ~~~ A15
     A15 ~~~ A59
     A59 ~~~ A75
@@ -227,6 +231,7 @@ flowchart LR
   subgraph S6["评测代理本身与给动作把关"]
     direction TB
     A69["69 轨迹打分 双条件"]
+    A94["94 外壳成本实验"]
     A77["77 Skill 触发 入口路由 目录截断"]
     A62["62 留出集爬分"]
     A83["83 过程行为评测 规格不给代理"]
@@ -236,7 +241,8 @@ flowchart LR
     A50["50 评测里的基础设施噪声"]
     A47["47 Skill 评测"]
     A19["19 Agent Evals"]
-    A69 ~~~ A77
+    A69 ~~~ A94
+    A94 ~~~ A77
     A77 ~~~ A62
     A62 ~~~ A83
     A83 ~~~ A86
@@ -297,6 +303,7 @@ flowchart LR
     A09["09 Codex harness 拆解"]
     A66["66 11 个外壳源码解剖"]
     A45["45 大脑与双手解耦"]
+    A93["93 引导与传感器"]
     A16["16 Planner Generator Evaluator"]
     A38["38 递归 Planner 加 handoff"]
     A24["24 Ralph 循环"]
@@ -307,7 +314,8 @@ flowchart LR
     A54 ~~~ A09
     A09 ~~~ A66
     A66 ~~~ A45
-    A45 ~~~ A16
+    A45 ~~~ A93
+    A93 ~~~ A16
     A16 ~~~ A38
     A38 ~~~ A24
     A24 ~~~ A35

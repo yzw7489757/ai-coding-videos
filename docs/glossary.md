@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **232** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **235** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -17,7 +17,7 @@ outline: [2, 2]
 
 ## 速查索引
 
-**核心概念：代理、上下文与 Token**：[Agent](#agent) · [Subagent](#subagent) · [Harness](#harness) · [Context Window](#context-window) · [Context Engineering](#context-engineering) · [Token](#token) · [Compaction](#compaction) · [Dumb Zone / Smart Zone](#dumb-zone) · [System Prompt](#system-prompt) · [Prompt](#prompt) · [Tool Call](#tool-call) · [Prompt Injection](#prompt-injection) · [Context Reset](#context-reset) · [Context Anxiety](#context-anxiety) · [Long-running Agent](#long-running-agent) · [Stateless](#stateless) · [Deliberate Malloc](#deliberate-malloc) · [Drift](#drift) · [Doom Loop](#doom-loop) · [Code Execution with MCP / Code Mode](#code-execution-mcp) · [Session Log](#session-log) · [Prompt Caching](#prompt-caching)
+**核心概念：代理、上下文与 Token**：[Agent](#agent) · [Subagent](#subagent) · [Harness](#harness) · [Guides](#guides) · [Sensors](#sensors) · [Context Window](#context-window) · [Context Engineering](#context-engineering) · [Token](#token) · [Compaction](#compaction) · [Dumb Zone / Smart Zone](#dumb-zone) · [System Prompt](#system-prompt) · [Prompt](#prompt) · [Tool Call](#tool-call) · [Prompt Injection](#prompt-injection) · [Context Reset](#context-reset) · [Context Anxiety](#context-anxiety) · [Long-running Agent](#long-running-agent) · [Stateless](#stateless) · [Deliberate Malloc](#deliberate-malloc) · [Drift](#drift) · [Doom Loop](#doom-loop) · [Code Execution with MCP / Code Mode](#code-execution-mcp) · [Session Log](#session-log) · [Prompt Caching](#prompt-caching)
 
 **给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent) · [Agent Memory](#agent-memory) · [Mods](#claude-code-mods) · [REVIEW.md](#review-md) · [Playbook](#playbook) · [Code Review Skill](#code-review-skill) · [Review Rules](#review-rules) · [Skill Catalog](#skill-catalog) · [Allowlist](#allowlist)
 
@@ -29,7 +29,7 @@ outline: [2, 2]
 
 **工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider) · [Scion](#scion) · [DeepWiki](#deepwiki)
 
-**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking)
+**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Property-based Testing](#property-based-testing) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking)
 
 ## 一、核心概念：代理、上下文与 Token
 
@@ -50,6 +50,18 @@ outline: [2, 2]
 **白话**：包在模型外面的那一层程序：负责拼提示词、提供工具、执行命令、管权限、管上下文。
 
 同一个模型，放进不同的 harness 表现差别很大。Claude Code、Codex CLI 本质上就是 harness。#07 里的 “Harness Engineering” 指把团队规范变成 lint、测试、reviewer agent 等，让代理在正确时机看到正确的约束。Mitchell Hashimoto 的个人定义更朴素：代理每犯一次错，就改规则文件或补脚本工具，让它不再犯（#27）。
+
+### Guides（引导 / 前馈控制） {#guides}
+
+**白话**：在代理行动前写入的约束与说明，用来提高一次做对的概率。
+
+#93 与反馈传感器相对：如 AGENTS.md、Skills、规格。只做引导而不做传感器，就不知道规则有没有生效。
+
+### Sensors（传感器 / 反馈控制） {#sensors}
+
+**白话**：在代理行动后观察结果并给出可自纠信号的检查，最好对 LLM 可读。
+
+#93：lint、结构测试、合约测试等。带修复指引的自定义 lint 被称作正面的提示注入；#94 把传感器当作可执行注意力。
 
 ### Context Window（上下文窗口） {#context-window}
 
@@ -1346,6 +1358,12 @@ OpenCompute 用必选 Core 和可选 Suspend、Snapshot、Fork 档位的一致�
 **白话**：流程里必须通过才能进入下一步的检查点。
 
 Anthropic 的 AI-native SDLC playbook 把评测称为 AI 原生时代的阶段关卡式 QA：改 CLAUDE.md、skills、hooks 时跑评测，通过率不够就挡住合并（#57）。
+
+### Property-based Testing（基于属性的测试） {#property-based-testing}
+
+**白话**：陈述应始终成立的规则，由工具生成大量输入试图打破它，并缩小到最小失败例。
+
+#95：与“示例测试”相对，用来规定绝不能发生什么；常见库有 fast-check、Hypothesis、proptest。
 
 ### Differential Testing（差分测试） {#differential-testing}
 

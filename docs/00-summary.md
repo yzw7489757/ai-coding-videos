@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**一句话看懂**：87 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
+**一句话看懂**：95 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
 
 </div>
 
@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：91 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（84、64、68、06、88、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（87、42、72、78、89、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（80、76、74、65、85、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、81、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、77、62、83、86、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、90、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（82、53、70、48、58、02、51、01、40、91）；看原理 · Harness 与内部机制（43、54、09、66、45、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 63、官方文档 3、指南 2。工具：Claude Code 31、Codex 15、Grok 7、Cursor 12、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 16。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：95 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（49、52、46、37、92、14、07、26、21、20、28）；做规划 · 需求澄清与任务拆解（84、64、68、06、88、03、13、61、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（87、42、72、78、89、79、08、23、11、27）；多代理协作与大任务拆分 · 分工、协调与长时运行（80、76、74、65、85、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（60、95、81、15、59、75、12、71、32、25、31）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（69、94、77、62、83、86、39、56、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（63、41、90、57、10、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（82、53、70、48、58、02、51、01、40、91）；看原理 · Harness 与内部机制（43、54、09、66、45、93、16、38、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 67、官方文档 3、指南 2。工具：Claude Code 32、Codex 16、Grok 7、Cursor 12、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 18。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -25,6 +25,7 @@
 - 第三批（2026-10-12）：Cursor（37）把开发环境当成给代理用的产品：统一 CLI 收起杂乱的构建命令，让云端代理能端到端测试、录屏证明改动；Cursor（39）展示了评测怎么接进生产链路：真实会话 + 合成用例，重复跑找结果翻转的用例。
 - 第二批（2026-10-09）：Cognition（32）让 Devin 用 Computer Use 实测改动，先根据源码写测试计划、每步先写预期，最后交回截图和录屏，因为异步触发的会话已经比交互式多。
 
+- 第十五批（2026-10-25）：Osmani（95）把瓶颈明确为验证，主张 E2E / 属性 / 差分作代理 oracle，并警告慢测会训练重试（[[95§3.1]]–[[95§3.5]]）；Jain（94）用对照实验量外壳 ROI（见评测阶段）。
 - 第五批（2026-10-14）：Addy Osmani（48）的云端会话演示里，prompt 写明“测试至少连跑 30 次”，会话就跑了 40 次；作者的结论是给会话能跑测试的环境，否则你审的是没人跑过的改动。
 
 ::: tip 实践
@@ -289,6 +290,7 @@ flowchart TD
 - [91 · 沙箱即完整电脑：凭据与快照](/91-cloudflare-sandboxes-ga) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：出口注入凭据、PTY、预览 URL、快照。
 **看原理 · Harness 与内部机制**（[阶段指南](/guide/harness)）
 
+- [93 · 用户侧外壳：引导与传感器](/93-bockeler-harness-engineering-users) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：外层 harness 词汇表；行为外壳仍是缺口。
 - [66 · 源码解剖 11 个代理外壳](/66-harness-engineering-eleven-systems) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：先读这篇当本阶段的总图：七个子系统、两个“缺席”、18 条建议。
 - [09 · Codex Harness 内部机制](/09-how-codex-works) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：harness 内部机制，理解前面所有现象的“为什么”。
 - [24 · Ralph 循环：为什么每轮重开](/24-huntley-horthy-ralph-loop) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：“上下文窗口就是数组”的心智模型。
@@ -313,6 +315,7 @@ flowchart TD
 
 ## 6. 缺口与局限（如实说明）
 
+- **第十五批（2026-10-25）**：#92 七种指令通道（打地基）、#93 用户侧引导/传感器（看原理）、#94 外壳成本实验（评测）、#95 代理验证 oracle（验收）。地基/验收/评测 11，看原理 12；拆分建议见更新日志，未自行拆。
 - **第十四批（2026-10-24）**：补规划/单代理/CI/云端到各 10 篇（#88–#91）。看原理仍 11，拆分建议见更新日志，未自行拆。
 - **Grok**：没有找到 xAI 官方或大会级的长篇工程实战内容，官方频道只有 1–2 分钟的宣传片。4 个 Grok 视频都是第三方实测，以 demo 或新项目为主，缺少大型存量代码库和长期团队实践的证据。其中 #15 的自动字幕质量差，结合简介、官方文档和画面文字分析。对 Grok 的结论请视为初步观察。第二批补上了 xAI 官方 Grok Build 文档（34），第四批又补上一篇官方产品说明（46，Grok Build 记忆），第八批补上 Workflows 产品公告（65），但仍没有官方工程博客或大会演讲。
 - **Codex**：#09、#10、#43 为同一讲者（Dominik Kundel），但主题不重叠（harness 内部 vs. 团队流程 vs. 外部接口 app server）。

@@ -52,6 +52,13 @@
   - 看点：开发环境是用户为代理的产品；Skills 救不了太绕的命令，用统一 CLI `anydev` + supervisor 收起来；Cloud MCP 让代理自查环境，Cloud Doctor 读 trace 自动修；云端代理写的合并 PR 从约十分之一涨到一半以上。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/37-cursor-cloud-agent-environment)
 
+### 七种方式：何时用 CLAUDE.md / Skills / Hooks {#item-92}
+
+- **[Steering Claude Code: when to use CLAUDE.md, skills, hooks, and subagents](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Michael Segner ／ Anthropic（claude.com） ｜ 发布：2026-06-18 ｜ 工具：Claude Code
+  - 看点：七种指令通道按加载时机、压缩、成本、权威选型；绝对禁止用 hook/权限；流程进 Skills；CLAUDE.md 约 200 行。
+  - 🆕 收录于 2026-10-25 ｜ 👉 [阅读分析](/92-steering-claude-code-customization)
+
 ### 用 Skills 约束 UI 风格 {#item-14}
 
 - **[I Put Grok Build to the Test](https://www.youtube.com/watch?v=W8wECVc3z6E)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-grokbuild">Grok Build</span>
@@ -336,6 +343,13 @@
   - 看点：要省的是人的时间，回滚率和事故率当护栏；七层把关；人工批准按改动风险 0 / 1 / 2 人，代理批准不算、批准绑定 commit；REVIEW.md 写法；一个 PR 一夜被审 50 多轮后设三轮上限。PR 翻倍、回滚降 40% 为团队自报。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/60-claude-code-team-code-review)
 
+### 代理验证：E2E / 属性 / 差分测试 {#item-95}
+
+- **[Agentic Verification](https://addyo.substack.com/p/agentic-verification)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Addy Osmani ／ Elevate（Substack） ｜ 发布：2026-10-14 ｜ 工具：通用
+  - 看点：瓶颈在验证；优先 E2E / 属性 / 差分；慢或不稳的测试会训练代理去重试；人审证据。
+  - 🆕 收录于 2026-10-25 ｜ 👉 [阅读分析](/95-osmani-agentic-verification)
+
 ### 规则要按效果写成 hook {#item-81}
 
 - **[Harness Engineering: What I learned from 24,000 prompts building production apps](https://aditlal.dev/harness-engineering/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -413,6 +427,13 @@
   - 作者 / 来源：Casey West ／ Google Cloud Developers & Practitioners ｜ 发布：2026-10-17 ｜ 工具：Google Cloud Developer 插件作试验田
   - 看点：LLM 裁判只看总结会把做对的代理判失败；遥测保留 turn 结构；live 与 plan-only 并排（约一半重要发现来自两者差）；golden sets 压整栈。短文，数字自报，文末带产品入口。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/69-google-eval-engineering-lessons)
+
+### 外壳值不值得：便宜模型的实验 {#item-94}
+
+- **[Are Harnesses Worth the Cost?](https://martinfowler.com/articles/are-harnesses-worth-the-cost.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Naresh Jain ／ Martin Fowler《Exploring Gen AI》 ｜ 发布：2026-10-13 ｜ 工具：Codex + GPT-6 Sol / Luna
+  - 看点：Sol 有无外壳都 10/10 但外壳贵约 7×；Luna 3/10→10/10；带外壳 Luna 比无外壳 Sol 约便宜 33%。样本 10 对跑次。
+  - 🆕 收录于 2026-10-25 ｜ 👉 [阅读分析](/94-jain-harnesses-worth-the-cost)
 
 ### 给 Skills 做评测：会被找到吗 {#item-77}
 
@@ -620,16 +641,18 @@
   - 作者 / 来源：Josh Ma ／ Cursor 博客 ｜ 发布：2026-06-02 ｜ 工具：Cursor Cloud Agents、Temporal、CI Autofix
   - 看点：完整开发环境是输出质量的最大因素，缺了往往只表现为质量下降；从 work-stealing 迁到 Temporal，可靠性从一个 9 到两个 9 以上；代理循环、机器、对话状态解耦；模型变强后把 harness 逻辑搬进工具。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/40-cursor-cloud-agent-lessons)
+### 沙箱即完整电脑：凭据与快照 {#item-91}
+
+- **[Agents have their own computers with Sandboxes GA](https://blog.cloudflare.com/sandbox-ga/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Kate Reznykova、Mike Nomitch、Naresh Ramesh ／ Cloudflare 博客 ｜ 发布：2026-04-13 ｜ 工具：Cloudflare Sandboxes / Containers
+  - 看点：按名取沙箱；出口注入凭据；PTY；持久解释器；预览 URL；watch；快照规划。厂商 GA，快照当时未全量。
+  - 🆕 收录于 2026-10-24 ｜ 👉 [阅读分析](/91-cloudflare-sandboxes-ga)
+
 ## 看原理 · Harness 与内部机制 {#domain-harness}
 
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
 📘 **先读阶段指南**：[看原理 · Harness 与内部机制](/guide/harness)
-
-### 沙箱即完整电脑：凭据与快照 {#item-91}
-- 工具：通用 · 类型：文章 · 发布：2026-04-13 · [阅读](/91-cloudflare-sandboxes-ga)
-- 一句话：Cloudflare Sandboxes GA：出口注入凭据、PTY、持久解释器、预览 URL、文件监视与快照恢复。
-- 看点：沙箱进程不见密钥；用就绪信号代替 sleep；厂商 GA 与快照当时未全量。
 
 ### 在 Codex harness 上做自己的客户端 {#item-43}
 
@@ -665,6 +688,13 @@
   - 作者 / 来源：Lance Martin、Gabe Cemaj、Michael Cohen ／ Anthropic Engineering 博客 ｜ 发布：2026-04-08 ｜ 工具：Claude Managed Agents
   - 看点：把代理拆成 session、harness、sandbox 三个接口；容器和 harness 都可丢弃；凭据不进沙箱；session 是窗口外的上下文对象；p50 TTFT 降约 60%、p95 降超 90%。
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/45-anthropic-managed-agents)
+
+### 用户侧外壳：引导与传感器 {#item-93}
+
+- **[Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Birgitta Böckeler ／ Thoughtworks（Martin Fowler 站点） ｜ 发布：2026-04-02 ｜ 工具：通用
+  - 看点：外层 harness = 引导 + 传感器；计算型/推断型；可维护性/架构/行为三类；行为外壳仍是缺口。
+  - 🆕 收录于 2026-10-25 ｜ 👉 [阅读分析](/93-bockeler-harness-engineering-users)
 
 ### Planner / Generator / Evaluator 长时 harness {#item-16}
 
@@ -709,6 +739,8 @@
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/44-aider-architect-editor)
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
+
+**容量检查（2026-10-25，第十五批 #92–#95 后）**：现在 **95** 份资料分 9 个阶段：看原理 12 篇、打地基 / 验收 / 评测各 11 篇；做规划 / 单代理 / 多代理 / 接进 PR 与 CI / 云端各 10 篇。**拆分建议（仅建议，未执行）**：①看原理（12）仍按 2026-10-19 方案暂不拆，可沿“循环与上下文”vs“客户端/工具与解耦”切；②打地基（11）可拆“规则与上下文文件”vs“开发环境与扩展机制”；③验收（11）可拆“代理自验证与完成标准”vs“审查器与分层把关”；④评测（11）可拆“配置/外壳 ROI 与基准设计”vs“权限分类器”。本批补了打地基决策框架、用户侧 harness 词汇、外壳成本实验与代理验证 oracle 种类。另：修正 #91 在本页误挂在看原理下的条目，改回云端阶段。
 
 **容量检查（2026-10-23，第十三批 #84–#87 后）**：现在 87 份资料分 9 个阶段：看原理 11 篇（暂不拆）；打地基、验收产出、多代理、评测各 10 篇到线；做规划、单代理各 9 篇；接进 PR 与 CI、云端各 9 篇。除看原理外无阶段超过 10。**拆分建议（仅建议，未执行）**：①看原理维持 2026-10-19 方案暂不拆；②多代理（10）可按“并行编排/扇出”与“长时接力”拆，但仍是同一任务轴，等主人确认；③评测（10）可按“分数可信度/基准设计”与“权限分类器”拆，等确认。本批优先补了规划与单代理缺口，并各加一篇多代理/评测到线文章。
 

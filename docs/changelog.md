@@ -2,6 +2,28 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-25 · 第十五批收录 #92–#95
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#92](/92-steering-claude-code-customization) | Michael Segner：Steering Claude Code — when to use CLAUDE.md, skills, hooks, and subagents | 打地基 | 2026-06-18 |
+| [#93](/93-bockeler-harness-engineering-users) | Birgitta Böckeler：Harness engineering for coding agent users | 看原理 | 2026-04-02 |
+| [#94](/94-jain-harnesses-worth-the-cost) | Naresh Jain：Are Harnesses Worth the Cost? | 评测代理本身与给动作把关 | 2026-10-13 |
+| [#95](/95-osmani-agentic-verification) | Addy Osmani：Agentic Verification | 验收这一次的产出 | 2026-10-14 |
+
+**结构变化：**
+
+- 阶段数量：打地基 / 验收 / 评测 10 → 11；看原理 11 → 12。全站 91 → 95 篇；做规划 / 单代理 / 多代理 / CI / 云端仍各 10。
+- 打地基指南补七种指令通道选型；看原理指南补用户侧引导/传感器词汇；评测指南补行为外壳 ROI；验收指南补 E2E/属性/差分与环激励。
+- 模式库新增 P83–P86；术语表新增引导、传感器、基于属性的测试。
+- `all.md`：修正 #91 误挂在看原理下的条目，改回云端阶段。
+
+**未收录（备选）**：Jeremy Lewi Codex+Runme（偏薄/产品向，多日跳过）；OpenAI Astra skills（打地基已超 10）；Cursor best practices overview（总览重叠）；Cognition Devin Oncall / autofix（产品向）；OpenAI harness 工程博客（与 #07 视频重叠）；Unrolling Codex loop / iterative repair loops（留作后续看原理/多代理备选）。
+
+**拆分建议（仅建议，未改 domains）**：看原理 12 篇——仍建议沿“循环与上下文”vs“客户端/工具与解耦”切，旧链接不动。打地基 / 验收 / 评测现亦各 11：地基可拆“规则与上下文”vs“环境与扩展”；验收可拆“自验证与完成标准”vs“审查器与分层”；评测可拆“配置/外壳与基准”vs“权限分类器”。均保持单一任务轴，等主人确认后再拆。
+
 ## 2026-10-24 · 第十四批收录 #88–#91
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
