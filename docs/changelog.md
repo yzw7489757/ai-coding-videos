@@ -2,6 +2,27 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-26 · 第十六批收录 #96–#99
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#96](/96-osmani-good-spec-for-agents) | Addy Osmani：How to write a good spec for AI agents | 做规划 | 2026-01-13 |
+| [#97](/97-earlam-claude-native-pipeline) | Rob Earlam：Harness Engineering: Anthropic's AI SDLC | 多代理协作与大任务拆分 | 2026-10-20 |
+| [#98](/98-crowder-claude-open-pull-requests) | Aaron Crowder：Letting Claude Open Pull Requests | 接进 PR 与 CI | 2026-10-14 |
+| [#99](/99-reit-agentrite-roles-sandbox) | Nora Reit：AgentRite - roles and sandbox | 云端与后台运行环境 | 2026-10-04 |
+
+**结构变化：**
+
+- 阶段数量：做规划 / 多代理 / 接进 PR 与 CI / 云端 10 → 11。全站 95 → 99 篇；单代理仍 10；看原理仍 12；打地基 / 验收 / 评测仍各 11。
+- 规划指南补规格六块与模块喂入；多代理指南补原生流水线与状态脚本；CI 指南补开 PR 硬护栏；云端指南补默认拒绝沙箱与换模型族审查。
+- 模式库新增 P87–P90。
+
+**未收录（备选）**：SpotDev Tuning Cursor Bugbot（顾问营销重，且与 #33 解决率主题重叠，CI 已用 Crowder 一手护栏）；Dotzlaw Cross-Harness Skill Engineering（打地基已 11）；AutoCoder Unbundled Coding Agent（产品综述+自推）；Luis Mori Spec→Parallel Delivery（与 #64 Spec Kit / worktree 重叠，多代理已收 Earlam）；Bridge Spec/Plan/Build/Review（偏短+产品）；Devo worktrees+sandboxes 通识文（缺一手数字）。
+
+**拆分建议（仅建议，未改 domains）**：看原理 12、打地基/验收/评测/规划/多代理/CI/云端各 11。规划可拆“需求澄清与假设”vs“规格结构与门闸”；多代理可拆“并行扇出”vs“多阶段流水线与长时”；CI 可拆“触发与维护 PR”vs“审查机器人与写路径护栏”；云端可拆“托管会话”vs“沙箱与默认拒绝”。均保持单一任务轴，等主人确认后再拆。
+
 ## 2026-10-25 · 第十五批收录 #92–#95
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

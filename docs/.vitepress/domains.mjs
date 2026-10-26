@@ -67,6 +67,7 @@ export const domains = [
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video', published: '2026-05-23' },
       { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video', published: '2026-05-15' },
       { n: '61', slug: '61-codex-long-horizon-tasks', text: 'Codex 跑 25 小时的四份 Markdown', short: '四份 Markdown 长任务', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-02-23' },
+      { n: '96', slug: '96-osmani-good-spec-for-agents', text: '给代理写好规格：五条原则', short: '规格五原则 模块喂入', tool: 'general', type: 'article', added: '2026-10-26', published: '2026-01-13' },
       { n: '29', slug: '29-gemini-cli-conductor', text: 'Conductor：把计划写进仓库', short: 'Conductor 上下文驱动', tool: 'gemini', type: 'article', added: '2026-10-09', published: '2025-12-17' },
       { n: '04', slug: '04-no-vibes-allowed-rpi', text: 'RPI：研究、计划、实施', short: 'RPI 有意压缩', tool: 'claude', type: 'video', published: '2025-12-02' }
     ]
@@ -99,6 +100,7 @@ export const domains = [
     icon: '🤝',
     desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
     items: [
+      { n: '97', slug: '97-earlam-claude-native-pipeline', text: '放弃可移植：Claude 原生流水线', short: '原生流水线 状态脚本', tool: 'claude', type: 'article', added: '2026-10-26', published: '2026-10-20' },
       { n: '80', slug: '80-madsalt-multi-agent-orchestration-3315', text: '3315 次启动：失败在缝合处', short: '缝合处 hook 挡事故', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-19' },
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
@@ -162,6 +164,7 @@ export const domains = [
     desc: '让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。',
     items: [
       { n: '63', slug: '63-openai-gpt-6-software-maintenance', text: '让代理批量开维护 PR', short: '维护 PR 删死代码', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-10-14' },
+      { n: '98', slug: '98-crowder-claude-open-pull-requests', text: '让 Claude 开 PR：护栏怎么钉死', short: '开 PR 硬护栏', tool: 'claude', type: 'article', added: '2026-10-26', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
       { n: '90', slug: '90-leek-six-rounds-bot-review', text: '六轮机器人审查与补丁踩踏机', short: '修丁先自审 硬顶五轮', tool: 'claude', type: 'article', added: '2026-10-24', published: '2026-10-03' },
       { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
@@ -185,6 +188,7 @@ export const domains = [
       { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },
       { n: '70', slug: '70-jetbrains-air-cloud-sandboxing', text: 'Air 云端沙箱：每任务新 VM', short: '每任务 VM 出站白名单', tool: 'jetbrains', type: 'article', added: '2026-10-19', published: '2026-10-14' },
       { n: '48', slug: '48-claude-code-cloud-sessions', text: 'Claude Code 云端会话实战', short: 'Claude Code 云端会话', tool: 'claude', type: 'article', added: '2026-10-14', published: '2026-10-06' },
+      { n: '99', slug: '99-reit-agentrite-roles-sandbox', text: '角色分工加默认拒绝沙箱', short: '角色加默认拒绝沙箱', tool: 'general', type: 'article', added: '2026-10-26', published: '2026-10-04' },
       { n: '58', slug: '58-cursor-projects', text: 'Projects：一个协调代理管一群子代理', short: '协调代理派活', tool: 'cursor', type: 'article', added: '2026-10-16', published: '2026-09-10' },
       { n: '02', slug: '02-claude-code-team-workflows', text: 'Claude Code 团队的工作流', short: 'Slack 派活 扇出审查', tool: 'claude', type: 'video', published: '2026-09-02' },
       { n: '51', slug: '51-cursor-self-hosted-machines', text: '云端代理跑在自己的机器上', short: '自托管执行机器', tool: 'cursor', type: 'article', added: '2026-10-14', published: '2026-09-02' },

@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 95 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 99 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-10-25（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-10-26（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,20 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-25，4 份）
+## 🆕 最近收录（2026-10-26，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 92 | [七种方式：何时用 CLAUDE.md / Skills / Hooks](/92-steering-claude-code-customization) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 93 | [用户侧外壳：引导与传感器](/93-bockeler-harness-engineering-users) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
-| 94 | [外壳值不值得：便宜模型的实验](/94-jain-harnesses-worth-the-cost) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
-| 95 | [代理验证：E2E / 属性 / 差分测试](/95-osmani-agentic-verification) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 96 | [给代理写好规格：五条原则](/96-osmani-good-spec-for-agents) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 97 | [放弃可移植：Claude 原生流水线](/97-earlam-claude-native-pipeline) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 98 | [让 Claude 开 PR：护栏怎么钉死](/98-crowder-claude-open-pull-requests) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 99 | [角色分工加默认拒绝沙箱](/99-reit-agentrite-roles-sandbox) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 95 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 99 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -148,6 +148,7 @@ flowchart LR
     A03["03 访谈式需求"]
     A13["13 plan mode 实测"]
     A61["61 四份 Markdown 长任务"]
+    A96["96 规格五原则 模块喂入"]
     A29["29 Conductor 上下文驱动"]
     A04["04 RPI 有意压缩"]
     A84 ~~~ A64
@@ -157,7 +158,8 @@ flowchart LR
     A88 ~~~ A03
     A03 ~~~ A13
     A13 ~~~ A61
-    A61 ~~~ A29
+    A61 ~~~ A96
+    A96 ~~~ A29
     A29 ~~~ A04
   end
   subgraph S3["单代理推进与一人多线"]
@@ -184,6 +186,7 @@ flowchart LR
   end
   subgraph S4["多代理协作与大任务拆分"]
     direction TB
+    A97["97 原生流水线 状态脚本"]
     A80["80 缝合处 hook 挡事故"]
     A76["76 工人放在瓶颈上 强领队便宜工人"]
     A74["74 主代理管依赖图"]
@@ -194,6 +197,7 @@ flowchart LR
     A18["18 数百代理分层"]
     A30["30 并行代理做大重构"]
     A73["73 功能清单 进度文件"]
+    A97 ~~~ A80
     A80 ~~~ A76
     A76 ~~~ A74
     A74 ~~~ A65
@@ -255,6 +259,7 @@ flowchart LR
   subgraph S7["接进 PR 与 CI"]
     direction TB
     A63["63 维护 PR 删死代码"]
+    A98["98 开 PR 硬护栏"]
     A41["41 定时代理六规则"]
     A90["90 修丁先自审 硬顶五轮"]
     A57["57 配置变更跑评测"]
@@ -264,7 +269,8 @@ flowchart LR
     A33["33 Bugbot 解决率"]
     A22["22 codex exec 修 CI"]
     A34["34 Grok Build 无人值守"]
-    A63 ~~~ A41
+    A63 ~~~ A98
+    A98 ~~~ A41
     A41 ~~~ A90
     A90 ~~~ A57
     A57 ~~~ A10
@@ -280,6 +286,7 @@ flowchart LR
     A53["53 代理沙箱机队"]
     A70["70 每任务 VM 出站白名单"]
     A48["48 Claude Code 云端会话"]
+    A99["99 角色加默认拒绝沙箱"]
     A58["58 协调代理派活"]
     A02["02 Slack 派活 扇出审查"]
     A51["51 自托管执行机器"]
@@ -289,7 +296,8 @@ flowchart LR
     A82 ~~~ A53
     A53 ~~~ A70
     A70 ~~~ A48
-    A48 ~~~ A58
+    A48 ~~~ A99
+    A99 ~~~ A58
     A58 ~~~ A02
     A02 ~~~ A51
     A51 ~~~ A01

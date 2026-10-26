@@ -162,6 +162,13 @@
   - 看点：空仓库从零做设计工具，约 25 小时、13M token、3 万行；prompt.md 冻结目标并要求先写计划，plans.md 每个里程碑带验收标准和验证命令，implement.md 是执行规则，documentation.md 是审计日志；四份文件原文在公开仓库里。单次自报实验，质量未独立评估。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/61-codex-long-horizon-tasks)
 
+### 给代理写好规格：五条原则 {#item-96}
+
+- **[How to write a good spec for AI agents](https://addyosmani.com/blog/good-spec/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Addy Osmani ｜ 发布：2026-01-13 ｜ 工具：通用（Claude Code、Gemini CLI、Spec Kit 等举例）
+  - 看点：五原则——愿景扩写、PRD 六块、模块喂入、Always/Ask/Never、活文档迭代；对抗上下文压垮与指令诅咒。
+  - 🆕 收录于 2026-10-26 ｜ 👉 [阅读分析](/96-osmani-good-spec-for-agents)
+
 ### Conductor：把计划写进仓库 {#item-29}
 
 - **[Conductor: Introducing context-driven development for Gemini CLI](https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-gemini">Gemini CLI</span>
@@ -257,6 +264,13 @@
 **这一组放什么**：多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。
 
 📘 **先读阶段指南**：[多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi)；另有[专题：长时自主任务](/guide/long-running)
+
+### 放弃可移植：Claude 原生流水线 {#item-97}
+
+- **[Harness Engineering: Anthropic's AI SDLC](https://robearlam.com/blog/harness-engineering-anthropics-ai-sdlc)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Rob Earlam ｜ 发布：2026-10-20（DEV 转载 10-21） ｜ 工具：Claude Code agents / skills / hooks / settings
+  - 看点：放弃跨 IDE 适配；隔离子代理 + Skills + harness-state 脚本；SubagentStop 验产物；最多三轮 Build；对齐 Anthropic AI-native SDLC。
+  - 🆕 收录于 2026-10-26 ｜ 👉 [阅读分析](/97-earlam-claude-native-pipeline)
 
 ### 3315 次启动：失败在缝合处 {#item-80}
 
@@ -511,6 +525,13 @@
   - 看点：短 prompt + 安全边界 + 证据，一处清理一个小 draft PR；审查意见写回下一版全库 `/goal` prompt；5 人两周合并 1,400 多个 PR、删 80 多万行；同一任务便宜模型 92% 发现、14% 成本；CI 中位耗时约 10 → 4.5 分钟；6 段 prompt 原文。团队自报，模型对比只跑一次。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/63-openai-gpt-6-software-maintenance)
 
+### 让 Claude 开 PR：护栏怎么钉死 {#item-98}
+
+- **[Letting Claude Open Pull Requests](https://crowdersoup.com/blog/post/letting-claude-open-pull-requests/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Aaron Crowder ／ CrowderSoup ｜ 发布：2026-10-14 ｜ 工具：Claude / Grok、`repo-pr`、Docker 测沙箱、GitHub App
+  - 看点：worktree + 一次性 App 令牌 + 无 Workflows + ruleset + 每次 `!yes`；无网测；代理试图绕过 hook 被拦住；只开 PR 不合并。
+  - 🆕 收录于 2026-10-26 ｜ 👉 [阅读分析](/98-crowder-claude-open-pull-requests)
+
 ### 定时代理自动化的六条规则 {#item-41}
 
 - **[Building effective agent automations](https://claude.dev/blog/building-effective-agent-automations/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -606,6 +627,13 @@
   - 作者 / 来源：Addy Osmani ／ claude.dev 博客 ｜ 发布：2026-10-06 ｜ 工具：Claude Code
   - 看点：一个任务一台 VM：三个会话 87 秒修完三个问题；什么时候留在本地；七种云端用法（并行、反复验证、teleport、Auto-fix、routines、跑不可信代码）；GitHub 权限排错表。
   - 🆕 收录于 2026-10-14 ｜ 👉 [阅读分析](/48-claude-code-cloud-sessions)
+
+### 角色分工加默认拒绝沙箱 {#item-99}
+
+- **[AgentRite - roles and sandbox](https://norareit.com/posts/agentrite-roles-sandbox)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Nora Reit ｜ 发布：2026-10-04 ｜ 工具：Claude Code、OpenCode、自研 Docker 沙箱、npm `agentrite`
+  - 看点：specifier/planner/implementer/reviewer 分产物；审查换模型族；默认拒绝出网（TLS 主机名）、启动自证、只带回分支提交。未生产验证已声明。
+  - 🆕 收录于 2026-10-26 ｜ 👉 [阅读分析](/99-reit-agentrite-roles-sandbox)
 
 ### Projects：一个协调代理管一群子代理 {#item-58}
 
@@ -739,6 +767,8 @@
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/44-aider-architect-editor)
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
+
+**容量检查（2026-10-26，第十六批 #96–#99 后）**：现在 **99** 份资料分 9 个阶段：看原理 12；打地基 / 验收 / 评测 / 做规划 / 多代理 / 接进 PR 与 CI / 云端各 11；单代理仍 10。本批优先补了仍为 10 的规划 / 多代理 / CI / 云端。**拆分建议（仅建议，未执行）**：①看原理（12）仍可沿“循环与上下文”vs“客户端/工具与解耦”；②打地基 / 验收 / 评测（11）维持 10-25 建议；③新超线的做规划 / 多代理 / CI / 云端（各 11）：规划可拆“需求澄清与假设”vs“规格结构与门闸”；多代理可拆“并行编排/扇出”vs“多阶段流水线与长时接力”；CI 可拆“事件触发与维护 PR”vs“审查机器人与写路径护栏”；云端可拆“托管/自托管会话”vs“沙箱隔离与默认拒绝”。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-10-25，第十五批 #92–#95 后）**：现在 **95** 份资料分 9 个阶段：看原理 12 篇、打地基 / 验收 / 评测各 11 篇；做规划 / 单代理 / 多代理 / 接进 PR 与 CI / 云端各 10 篇。**拆分建议（仅建议，未执行）**：①看原理（12）仍按 2026-10-19 方案暂不拆，可沿“循环与上下文”vs“客户端/工具与解耦”切；②打地基（11）可拆“规则与上下文文件”vs“开发环境与扩展机制”；③验收（11）可拆“代理自验证与完成标准”vs“审查器与分层把关”；④评测（11）可拆“配置/外壳 ROI 与基准设计”vs“权限分类器”。本批补了打地基决策框架、用户侧 harness 词汇、外壳成本实验与代理验证 oracle 种类。另：修正 #91 在本页误挂在看原理下的条目，改回云端阶段。
 
