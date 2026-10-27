@@ -2,6 +2,25 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-27 · 第十七批收录 #100–#102
+
+**新增资料（3 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#100](/100-patryk-claude-code-everyday) | Patryk Reba：How I use Claude Code every day | 单代理推进与一人多线 | 2026-10-02 |
+| [#101](/101-ahmed-ship-with-claude-code) | Ahmed Saad：How I ship with Claude Code | 单代理推进与一人多线 | 2026-10-13 |
+| [#102](/102-dryrun-worktrees-not-magic) | Vasisht Sankar：Git Worktrees Aren't a Magic Bullet | 单代理推进与一人多线 | 2026-05-30 |
+
+**结构变化：**
+
+- 阶段数量：单代理 10 → 13。全站 99 → 102 篇；看原理仍 12；打地基 / 规划 / 多代理 / 验收 / 评测 / CI / 云端仍各 11。
+- 单代理指南补 brief/NOT IN THIS、主人闸门、worktree 成本与冷 clone；模式库新增 P91–P93。
+
+**未收录（备选）**：Anthropic *Agentic coding and persistent returns to expertise*（高质量研究，更偏看原理/评测，避免再堆看原理）；Cursor Agent SDK / HumanLayer 开源公告（产品通稿）；vibeide Claude Code workflow（产品营销）；Iliya Oblakov Two Engines Kit（付费套件推销）；SpotDev Bugbot、Dotzlaw skills、AutoCoder roundup、Luis Mori、Jeremy Lewi Runme、OpenAI Astra、Cursor best practices overview、Devin Oncall、OpenAI harness 博客、Unrolli、Gabriel Anhaia、Jacob Bartlett 等（与昨日同因或阶段已满）。
+
+**拆分建议（仅建议，未改 domains）**：单代理 13——可拆“一人日环与闸门”vs“并行隔离形状”；看原理 12 及各 11 的阶段维持既有建议。均保持单一任务轴，等主人确认后再拆。
+
 ## 2026-10-26 · 第十六批收录 #96–#99
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
