@@ -515,6 +515,26 @@ export const ratings = {
     depth: [4, '从 git 内部机制推到环境成本，反例完整；短文未给折中实验。'],
     overall: [4, '对 #23/#89 的必要解毒剂，机制可核对；仓体积为自述。']
   },
+  '103': {
+    use: [4.5, '验证优先、--worktree、/batch、/simplify、/loop 与 /schedule 今天就能试；受组织策略与版本约束。'],
+    depth: [3, '官方日用目录覆盖面广，机制与对照数据薄；验证为何#1讲清但未展开实现。'],
+    overall: [4, '可核对的厂商 tip 目录，与#100/#102互补；Help Center无稳定日期，无吞吐实验。']
+  },
+  '104': {
+    use: [3.5, 'Keep Rate思路、unknown/expected分类与分模型基线可缩小版自建；完整工厂难复现。'],
+    depth: [4.5, '窗口演进、Keep Rate、错误工厂、按模型工具格式与换模代价讲透；间隔与绝对率未公开。'],
+    overall: [4, '一手 harness 改进博文，指标定义可核对；厂商自述，数量级无绝对前后值。']
+  },
+  '105': {
+    use: [3.5, 'Blame 题源、短规格+agentic grader、多指标同向与版本内比分今天就能缩小版照搬；CursorBench 本身不开放。'],
+    depth: [4.5, '公开基准三失灵、Cursor Blame 配对、在线离线环与 3.1 版本纪律讲透；缺可抄排行数字。'],
+    overall: [4, '厂商一手方法文，与 #86 互补；内部套件不可复现，图中分数点未列表。']
+  },
+  '106': {
+    use: [3.5, '缓存未命中清单、追加而非改写、auto_compact_limit 对自建/调 Codex 有用；纯终端用户偏原理。'],
+    depth: [5, '从 Responses 组包、精确前缀缓存、ZDR 取舍到 compact 端点，客户端 loop 拆到底。'],
+    overall: [4.5, '官方开源 harness 一手说明，机制可对仓库；抓取代码块有噪声但不妨碍正文核对。']
+  },
 }
 
 export const scoreKeys = [

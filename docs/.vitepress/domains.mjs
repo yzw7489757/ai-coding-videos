@@ -81,6 +81,7 @@ export const domains = [
     desc: '一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。',
     items: [
       { n: '87', slug: '87-galarza-agentic-coding-workflow', text: '塑形构建审查交付闭环', short: '塑形到交付闭环', tool: 'general', type: 'article', added: '2026-10-23', published: '2026-10-21' },
+      { n: '103', slug: '103-claude-power-user-tips', text: '官方 tips：验证与并行', short: '验证优先 并行 tips', tool: 'claude', type: 'article', added: '2026-10-28', published: '2026-10-20' },
       { n: '101', slug: '101-ahmed-ship-with-claude-code', text: '主人闸门：一票一会话', short: '主人闸门一票一会话', tool: 'claude', type: 'article', added: '2026-10-27', published: '2026-10-13' },
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
       { n: '100', slug: '100-patryk-claude-code-everyday', text: '先写 brief 再用命令验收', short: 'brief 与命令验收', tool: 'claude', type: 'article', added: '2026-10-27', published: '2026-10-02' },
@@ -153,6 +154,7 @@ export const domains = [
       { n: '86', slug: '86-cursor-reward-hacking-benchmarks', text: '基准奖励黑客与严格外壳', short: '封历史限网测真分', tool: 'cursor', type: 'article', added: '2026-10-23', published: '2026-06-25' },
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
+      { n: '105', slug: '105-cursorbench', text: 'CursorBench 对齐真实用法', short: 'CursorBench 在线离线环', tool: 'cursor', type: 'article', added: '2026-10-28', published: '2026-03-11' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
       { n: '47', slug: '47-openai-eval-skills', text: '给 Skill 写评测', short: 'Skill 评测', tool: 'codex', type: 'article', added: '2026-10-14', published: '2026-01-22' },
       { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-01-09' }
@@ -212,10 +214,12 @@ export const domains = [
       { n: '54', slug: '54-cursor-token-efficiency', text: '长任务的 token 省在哪', short: 'harness 省 token', tool: 'cursor', type: 'article', added: '2026-10-15', published: '2026-09-23' },
       { n: '09', slug: '09-how-codex-works', text: 'Codex Harness 内部机制', short: 'Codex harness 拆解', tool: 'codex', type: 'video', published: '2026-08-10' },
       { n: '66', slug: '66-harness-engineering-eleven-systems', text: '源码解剖 11 个代理外壳', short: '11 个外壳源码解剖', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-07-15' },
+      { n: '104', slug: '104-cursor-improving-agent-harness', text: 'Keep Rate 与按模型定制 harness', short: 'Keep Rate 按模型定制', tool: 'cursor', type: 'article', added: '2026-10-28', published: '2026-04-30' },
       { n: '45', slug: '45-anthropic-managed-agents', text: 'Managed Agents：大脑与双手解耦', short: '大脑与双手解耦', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-04-08' },
       { n: '93', slug: '93-bockeler-harness-engineering-users', text: '用户侧外壳：引导与传感器', short: '引导与传感器', tool: 'general', type: 'article', added: '2026-10-25', published: '2026-04-02' },
       { n: '16', slug: '16-anthropic-harness-design-long-running-apps', text: 'Planner / Generator / Evaluator 长时 harness', short: 'Planner Generator Evaluator', tool: 'claude', type: 'article', added: '2026-10-09', published: '2026-03-24' },
       { n: '38', slug: '38-cursor-self-driving-codebases', text: '多代理 harness 的五次改版', short: '递归 Planner 加 handoff', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-02-05' },
+      { n: '106', slug: '106-unrolling-codex-agent-loop', text: '拆开 Codex agent loop', short: 'agent loop 缓存压缩', tool: 'codex', type: 'article', added: '2026-10-28', published: '2026-01-23' },
       { n: '24', slug: '24-huntley-horthy-ralph-loop', text: 'Ralph 循环：为什么每轮重开', short: 'Ralph 循环', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-01-04' },
       { n: '35', slug: '35-amp-next-generation-ai-coding', text: 'Amp 的专长子代理架构', short: 'Amp 专长子代理', tool: 'amp', type: 'video', added: '2026-10-09', published: '2025-12-22' },
       { n: '36', slug: '36-anthropic-code-execution-with-mcp', text: '用代码调用 MCP 省上下文', short: '代码调用 MCP', tool: 'general', type: 'article', added: '2026-10-09', published: '2025-11-04' },

@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 102 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 106 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -197,6 +197,14 @@
   - 作者 / 来源：Damian Galarza ／ 个人博客 ｜ 发布：2026-10-21 ｜ 工具：Claude Code、Codex、Pi、herdr、pstack
   - 看点：先塑形再实现；可验证 playbook 并行；审查发现必须回代码核实；工具可换环不换。
   - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/87-galarza-agentic-coding-workflow)
+
+
+### 官方 tips：验证与并行 {#item-103}
+
+- **[Claude Code power user tips](https://support.claude.com/en/articles/14554000-claude-code-power-user-tips)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Claude Code team（Anthropic Help Center） ｜ 发布：2026-10-20 ｜ 工具：Claude Code CLI / Desktop；git worktree
+  - 看点：若只学一件就学验证；最大解锁是 3–5 个各自 worktree 的并行会话；`/batch`、`isolation: worktree`、`/simplify`、`/loop` / `/schedule`。
+  - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/103-claude-power-user-tips)
 
 ### 主人闸门：一票一会话 {#item-101}
 
@@ -512,6 +520,14 @@
   - 看点：用户对 93% 的权限提示都点批准；三层权限，进入时丢弃宽泛允许规则；分类器只看用户消息和工具调用，单 token 快速过滤后再推理复核；误报 0.4%，对真实过度主动动作漏 17%；连续 3 次或累计 20 次拒绝交给人。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/56-anthropic-claude-code-auto-mode)
 
+
+### CursorBench 对齐真实用法 {#item-105}
+
+- **[How we compare model quality in Cursor](https://cursor.com/blog/cursorbench)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Naman Jain ／ Cursor 博客 ｜ 发布：2026-03-11 ｜ 工具：Cursor；CursorBench；Cursor Blame
+  - 看点：公开基准三种失灵；用 Blame 造短题；在线–离线环对齐真实用法；分数只在同一评测版本内比。
+  - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/105-cursorbench)
+
 ### 评测分数里的基础设施噪声 {#item-50}
 
 - **[Quantifying infrastructure noise in agentic coding evals](https://www.anthropic.com/engineering/infrastructure-noise)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -731,6 +747,14 @@
   - 看点：外壳的七个子系统及各自最小和最大实现；循环复杂度不预测成绩；11 个系统都不用通用代理框架、不给代码做向量检索；Skills 9/11 超过 MCP 8/11；一个季度里趋同变模仿；18 条设计建议和 90 行脚手架。只读源码不跑分，Claude Code 依据流传快照；arXiv 编号与提交日期不合常规。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/66-harness-engineering-eleven-systems)
 
+
+### Keep Rate 与按模型定制 harness {#item-104}
+
+- **[Continually improving our agent harness](https://cursor.com/blog/continually-improving-agent-harness)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span>
+  - 作者 / 来源：Stefan Heule、Jediah Katz ／ Cursor 博客 ｜ 发布：2026-04-30 ｜ 工具：Cursor 代理 harness；CursorBench；线上 A/B
+  - 看点：Keep Rate + 用户回复语义作线上质量；未知工具错误当 bug；按模型定制训练时工具形状；中途换模的分布外历史。
+  - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/104-cursor-improving-agent-harness)
+
 ### Managed Agents：大脑与双手解耦 {#item-45}
 
 - **[Scaling Managed Agents: Decoupling the brain from the hands](https://www.anthropic.com/engineering/managed-agents)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -758,6 +782,14 @@
   - 作者 / 来源：Wilson Lin ／ Cursor 博客 ｜ 发布：2026-02-05 ｜ 工具：Cursor 自研 Rust 多代理 harness
   - 看点：#18 的续篇：锁 → Planner/Executor/Judge → 持续执行者（角色太多崩溃）→ 递归 Planner + Worker 交接报告；峰值约每小时 1,000 次提交；接受小而稳定的错误率；约束优于指令、给数字范围。
   - 🆕 收录于 2026-10-12 ｜ 👉 [阅读分析](/38-cursor-self-driving-codebases)
+
+
+### 拆开 Codex agent loop {#item-106}
+
+- **[Unrolling the Codex agent loop](https://openai.com/index/unrolling-the-codex-agent-loop/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Michael Bolin ／ OpenAI 工程博客 ｜ 发布：2026-01-23 ｜ 工具：Codex CLI / harness；Responses API
+  - 看点：agent loop 到 assistant 消息；精确前缀保 prompt cache；不用 previous_response_id 以保 ZDR；超限走 compact / auto compact。
+  - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/106-unrolling-codex-agent-loop)
 
 ### Ralph 循环：为什么每轮重开 {#item-24}
 
@@ -788,6 +820,8 @@
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/44-aider-architect-editor)
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
+
+**容量检查（2026-10-28，第十八批 #103–#106 后）**：现在 **106** 份资料分 9 个阶段：单代理 14；看原理 14；评测 12；打地基 / 做规划 / 多代理 / 验收 / 接进 PR 与 CI / 云端各 11。本批补单代理官方 tips、看原理 Keep Rate / agent loop、评测 CursorBench。**拆分建议（仅建议，未执行）**：①单代理（14）可拆“一人日环与闸门 / 官方 tips”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③评测（12）可拆“配置/外壳 ROI 与自有基准（CursorBench）”vs“权限分类器”；④其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-10-27，第十七批 #100–#102 后）**：现在 **102** 份资料分 9 个阶段：单代理 13；看原理 12；打地基 / 验收 / 评测 / 做规划 / 多代理 / 接进 PR 与 CI / 云端各 11。本批专补唯一仍为 10 的单代理（+3）。**拆分建议（仅建议，未执行）**：①单代理（13）可拆“一人日环与闸门”（brief/主人闸门/手机控制）vs“并行隔离形状”（worktree / 冷 clone / 远程保活）；②看原理（12）仍沿“循环与上下文”vs“客户端/工具与解耦”；③其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
 
@@ -849,6 +883,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-28 第十八批：#103 Claude Code power tips（单代理）、#104 Cursor Keep Rate harness（看原理）、#105 CursorBench（评测）、#106 Unrolling Codex agent loop（看原理）。单代理 13→14，看原理 12→14，评测 11→12，全站 102→106。工具计数相对第十七批：Claude Code +1、Cursor +2、Codex +1。未收：offrun 产品 CTA、Alistair 薄交接文、Codex-as-platform 产品文、Agent SDK build-agents、vibeide、Gabriel Anhaia、Astra、OpenAI harness 博客；power-tips 已覆盖角度的重复文。
 - 2026-10-24 第十四批：#88 Instil plan mode vs SDD（规划）、#89 Charles Devbox+tmux+worktrunk（单代理）、#90 Chris Jones 六轮机器人审查（CI）、#91 Cloudflare Sandboxes GA（云端）。四阶段均 9→10。未收：Jeremy Lewi Runme（先前已判偏薄）、OpenAI Astra skills（打地基已到线）、Cursor best practices 总览（重叠）、Gabriel Anhaia Codex worktree 源码文（偏 RE/产品）、Cognition Devin autofix（产品通稿）、Jacob 付费文。看原理仍 11，只建议拆分不自行拆。
 - 2026-10-23 第十三批：#84 Medori 未说假设（规划）、#85 Claude 动态工作流（多代理）、#86 Cursor 奖励黑客（评测）、#87 Galarza 塑形闭环（单代理）。优先补规划/单代理（8→9），多代理与评测到 10。未收：Jeremy Lewi Runme、Astra skills（打地基已到线）、Cursor best practices 总览、CursorBench 介绍（与 #86 同主题）、Jacob 付费文。
 - 2026-10-21 第十一批：#76 Cohere 多代理团队受控实验、#77 Expo 的 Skill 评测、#78 Addy Osmani 拆 Claude Code 任务成本、#79 Thomas Ricouard 手机端 Codex Remote 指南（前一日的备选；功能导览为主，评分已体现）。优先补了单代理、多代理、评测三个较少的阶段（6 → 8、7 → 8、7 → 8）。#77 的基线加载率正文前后写了 9% 和“约 10%”，照录。考虑过但未收录：Jeremy Lewi *Automating repetitive work at OpenAI with Codex*（约 1,000 词，主要介绍作者自己的 Runme，继续留作备选）；Denys Zaichenko *Multi-agent orchestration: what broke in 3,315 agent runs*（madsalt.tech，2026-10-19，个人博客，留作备选）；Cursor *Git at any scale*（Vicent Martí，2026-08-18，讲 Git 托管存储架构，不是代理工作流，不收）；Cursor *Bots for the last mile: Rollouts, Security Review*（2026-09-23，约 550 词的产品公告，不收）。

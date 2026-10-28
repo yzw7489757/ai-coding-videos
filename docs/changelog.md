@@ -2,6 +2,27 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-28 · 第十八批收录 #103–#106
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#103](/103-claude-power-user-tips) | Claude Code team：Claude Code power user tips | 单代理推进与一人多线 | 2026-10-20 |
+| [#104](/104-cursor-improving-agent-harness) | Stefan Heule、Jediah Katz：Continually improving our agent harness | 看原理 | 2026-04-30 |
+| [#105](/105-cursorbench) | Naman Jain：How we compare model quality in Cursor（CursorBench） | 评测代理本身与给动作把关 | 2026-03-11 |
+| [#106](/106-unrolling-codex-agent-loop) | Michael Bolin：Unrolling the Codex agent loop | 看原理 | 2026-01-23 |
+
+**结构变化：**
+
+- 阶段数量：单代理 13 → 14；看原理 12 → 14；评测 11 → 12。全站 102 → 106 篇；打地基 / 规划 / 多代理 / 验收 / CI / 云端仍各 11。
+- 单代理指南补验证优先与并行 tips；看原理补 Keep Rate / 错误工厂 / 按模型工具形状与 agent loop 缓存压缩；评测补 CursorBench / Blame / 在线离线环。
+- 模式库新增 P94–P97。
+
+**未收录（备选）**：offrun 产品 CTA；Alistair 薄交接文；Codex-as-platform 产品文；Agent SDK build-agents；vibeide；Gabriel Anhaia；Astra；OpenAI harness 博客（与 #07 等重叠）；power-tips 已覆盖角度的重复文；以及此前跳过的 Anthropic expertise 研究、Cursor Agent SDK / HumanLayer 通稿等。
+
+**拆分建议（仅建议，未改 domains）**：单代理 14——可拆“一人日环与闸门 / 官方 tips”vs“并行隔离形状”；看原理 14——可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；评测 12——可拆“配置/外壳 ROI 与自有基准”vs“权限分类器”；其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
+
 ## 2026-10-27 · 第十七批收录 #100–#102
 
 **新增资料（3 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

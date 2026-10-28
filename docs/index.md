@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 102 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 106 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-10-27（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-10-28（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,19 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-27，3 份）
+## 🆕 最近收录（2026-10-28，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 100 | [先写 brief 再用命令验收](/100-patryk-claude-code-everyday) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 101 | [主人闸门：一票一会话](/101-ahmed-ship-with-claude-code) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
-| 102 | [Worktree 不是并行万灵药](/102-dryrun-worktrees-not-magic) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 103 | [官方 tips：验证与并行](/103-claude-power-user-tips) | [单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 104 | [Keep Rate 与按模型定制 harness](/104-cursor-improving-agent-harness) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 105 | [CursorBench 对齐真实用法](/105-cursorbench) | [评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-cursor">Cursor</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 106 | [拆开 Codex agent loop](/106-unrolling-codex-agent-loop) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 102 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 106 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -164,6 +165,7 @@ flowchart LR
   subgraph S3["单代理推进与一人多线"]
     direction TB
     A87["87 塑形到交付闭环"]
+    A103["103 验证优先 并行 tips"]
     A101["101 主人闸门一票一会话"]
     A42["42 Codex 应用全景"]
     A100["100 brief 与命令验收"]
@@ -176,7 +178,8 @@ flowchart LR
     A23["23 worktree 并行"]
     A11["11 Steinberger 十个 checkout"]
     A27["27 Mitchell 六步采用"]
-    A87 ~~~ A101
+    A87 ~~~ A103
+    A103 ~~~ A101
     A101 ~~~ A42
     A42 ~~~ A100
     A100 ~~~ A72
@@ -247,6 +250,7 @@ flowchart LR
     A86["86 封历史限网测真分"]
     A39["39 风险分类器与评测"]
     A56["56 两段式权限分类器"]
+    A105["105 CursorBench 在线离线环"]
     A50["50 评测里的基础设施噪声"]
     A47["47 Skill 评测"]
     A19["19 Agent Evals"]
@@ -257,7 +261,8 @@ flowchart LR
     A83 ~~~ A86
     A86 ~~~ A39
     A39 ~~~ A56
-    A56 ~~~ A50
+    A56 ~~~ A105
+    A105 ~~~ A50
     A50 ~~~ A47
     A47 ~~~ A19
   end
@@ -315,10 +320,12 @@ flowchart LR
     A54["54 harness 省 token"]
     A09["09 Codex harness 拆解"]
     A66["66 11 个外壳源码解剖"]
+    A104["104 Keep Rate 按模型定制"]
     A45["45 大脑与双手解耦"]
     A93["93 引导与传感器"]
     A16["16 Planner Generator Evaluator"]
     A38["38 递归 Planner 加 handoff"]
+    A106["106 agent loop 缓存压缩"]
     A24["24 Ralph 循环"]
     A35["35 Amp 专长子代理"]
     A36["36 代码调用 MCP"]
@@ -326,11 +333,13 @@ flowchart LR
     A43 ~~~ A54
     A54 ~~~ A09
     A09 ~~~ A66
-    A66 ~~~ A45
+    A66 ~~~ A104
+    A104 ~~~ A45
     A45 ~~~ A93
     A93 ~~~ A16
     A16 ~~~ A38
-    A38 ~~~ A24
+    A38 ~~~ A106
+    A106 ~~~ A24
     A24 ~~~ A35
     A35 ~~~ A36
     A36 ~~~ A44
