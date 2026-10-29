@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 106 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 110 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -72,6 +72,13 @@
   - 讲者 / 频道：Ryan Lopopolo（OpenAI）／ AI Engineer ｜ 发布：2026-04-16 ｜ 工具：Codex
   - 看点：禁止团队碰编辑器；750 包仓库、文件行数测试、带修复指引的 lint、按 persona 的 CI reviewer、每周 Garbage Collection Day。
   - 👉 [阅读分析](/07-harness-engineering)
+
+### 编码代理的上下文工程：配置面地图 {#item-107}
+
+- **[Context Engineering for Coding Agents](https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Birgitta Böckeler ／ Thoughtworks / Martin Fowler 站 ｜ 发布：2026-02-05 ｜ 工具：Claude Code（对照 Cursor / Copilot 等）
+  - 看点：Instructions vs Guidance；三类加载者；Claude Code 配置面对照表；渐进做小；控制的幻觉。
+  - 🆕 收录于 2026-10-29 ｜ 👉 [阅读分析](/107-bockeler-context-engineering)
 
 ### 让代码库为代理做好准备 {#item-26}
 
@@ -154,6 +161,13 @@
   - 讲者 / 频道：Bijan Bowen ｜ 发布：2026-05-15 ｜ 工具：Grok Build + Grok 4.3
   - 看点：plan mode 的可交互计划（含 non-goals 与成功指标）、截图反馈、无头浏览器自测，以及越界行为等问题。
   - 👉 [阅读分析](/13-bijan-bowen-grok-build)
+
+### 先设计再写代码：五级对齐 {#item-108}
+
+- **[Design-First Collaboration](https://www.martinfowler.com/articles/reduce-friction-ai/design-first-collaboration.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Rahul Garg ／ Thoughtworks / Martin Fowler 站 ｜ 发布：2026-03-03 ｜ 工具：通用编码助手
+  - 看点：Implementation Trap；五级对齐；L5 前不写代码；Contracts→测试；按复杂度裁剪。
+  - 🆕 收录于 2026-10-29 ｜ 👉 [阅读分析](/108-garg-design-first-collaboration)
 
 ### Codex 跑 25 小时的四份 Markdown {#item-61}
 
@@ -287,6 +301,14 @@
   - 作者 / 来源：Mitchell Hashimoto ／ mitchellh.com ｜ 发布：2026-02-05 ｜ 工具：与工具无关；提到 Claude Code、Amp、Gemini
   - 看点：六步：扔掉聊天框 → 重做自己的活 → 下班前 30 分钟 → 外包稳赢的任务 → 改造 harness → 始终有一个代理在跑。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/27-mitchellh-ai-adoption-journey)
+
+### Codex Goals：跨轮次的完成合约 {#item-109}
+
+- **[Using Goals in Codex: Persistent Objectives for Long-Running Work](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：OpenAI Cookbook ｜ 发布：未标注 ｜ 工具：Codex CLI Goals（0.128.0+）
+  - 看点：完成合约六要素；空闲续跑；证据完成；研究账本；何时不用 Goal。
+  - 🆕 收录于 2026-10-29 ｜ 👉 [阅读分析](/109-codex-using-goals)
+
 
 ## 多代理协作与大任务拆分 · 分工、协调与长时运行 {#domain-multi}
 
@@ -456,6 +478,14 @@
   - 作者 / 来源：Maja Trębacz 等（OpenAI，与 Codex 团队合作）／ OpenAI Alignment Research Blog ｜ 发布：2025-12-01 ｜ 工具：Codex Code Review、`/review`
   - 看点：精确率比召回率重要；审查者要能读整个仓库、运行代码；训练用的检查器和交给人用的审查器要分开；作者对 52.7% 的评论用代码修改回应。
   - 🆕 收录于 2026-10-09 ｜ 👉 [阅读分析](/31-openai-verifying-code-at-scale)
+
+### 审查→修复→验证：闭环修复环 {#item-110}
+
+- **[Build iterative repair loops with Codex](https://developers.openai.com/cookbook/examples/codex/build_iterative_repair_loops_with_codex)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：OpenAI Cookbook ｜ 发布：未标注 ｜ 工具：Codex CLI `codex exec` + output-schema
+  - 看点：Review/Repair/Validate；结构化交接；remaining_delta；停机条件与 record.json。
+  - 🆕 收录于 2026-10-29 ｜ 👉 [阅读分析](/110-codex-iterative-repair-loops)
+
 
 ## 评测代理本身与给动作把关 · 评测、分类器与分数噪声 {#domain-evals}
 
@@ -821,6 +851,8 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
+**容量检查（2026-10-29，第十九批 #107–#110 后）**：现在 **110** 份资料分 9 个阶段：单代理 15；看原理 14；打地基 / 做规划 / 验收 / 评测各 12；多代理 / 接进 PR 与 CI / 云端各 11。本批补打地基配置面地图、规划五级对齐、单代理 Goals、验收修复环。**拆分建议（仅建议，未执行）**：①单代理（15）可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③打地基 / 规划 / 验收 / 评测（各 12）可沿既有建议再切；④其余各 11 维持。均保持单一任务轴，等主人确认后再拆。
+
 **容量检查（2026-10-28，第十八批 #103–#106 后）**：现在 **106** 份资料分 9 个阶段：单代理 14；看原理 14；评测 12；打地基 / 做规划 / 多代理 / 验收 / 接进 PR 与 CI / 云端各 11。本批补单代理官方 tips、看原理 Keep Rate / agent loop、评测 CursorBench。**拆分建议（仅建议，未执行）**：①单代理（14）可拆“一人日环与闸门 / 官方 tips”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③评测（12）可拆“配置/外壳 ROI 与自有基准（CursorBench）”vs“权限分类器”；④其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-10-27，第十七批 #100–#102 后）**：现在 **102** 份资料分 9 个阶段：单代理 13；看原理 12；打地基 / 验收 / 评测 / 做规划 / 多代理 / 接进 PR 与 CI / 云端各 11。本批专补唯一仍为 10 的单代理（+3）。**拆分建议（仅建议，未执行）**：①单代理（13）可拆“一人日环与闸门”（brief/主人闸门/手机控制）vs“并行隔离形状”（worktree / 冷 clone / 远程保活）；②看原理（12）仍沿“循环与上下文”vs“客户端/工具与解耦”；③其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
@@ -883,6 +915,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-29 第十九批：#107 Böckeler 上下文配置面（打地基）、#108 Garg Design-First 五级对齐（规划）、#109 Codex Goals（单代理）、#110 Codex 闭环修复环（验收）。打地基/规划/验收 11→12，单代理 14→15，全站 106→110。工具：Claude Code +1、Codex +2、通用 +1；类型：文章 +2、指南 +2。未收：Context Anchoring（同作者规划备选）、Iterating development workflows with Codex、Knowledge Priming、QualityLayer / SwarmPane / Northflank / Paneherd / aiexpert / Harry Lo；以及 offrun、Astra、Agent SDK 产品、vibeide、OpenAI harness 博客等既有备选。
 - 2026-10-28 第十八批：#103 Claude Code power tips（单代理）、#104 Cursor Keep Rate harness（看原理）、#105 CursorBench（评测）、#106 Unrolling Codex agent loop（看原理）。单代理 13→14，看原理 12→14，评测 11→12，全站 102→106。工具计数相对第十七批：Claude Code +1、Cursor +2、Codex +1。未收：offrun 产品 CTA、Alistair 薄交接文、Codex-as-platform 产品文、Agent SDK build-agents、vibeide、Gabriel Anhaia、Astra、OpenAI harness 博客；power-tips 已覆盖角度的重复文。
 - 2026-10-24 第十四批：#88 Instil plan mode vs SDD（规划）、#89 Charles Devbox+tmux+worktrunk（单代理）、#90 Chris Jones 六轮机器人审查（CI）、#91 Cloudflare Sandboxes GA（云端）。四阶段均 9→10。未收：Jeremy Lewi Runme（先前已判偏薄）、OpenAI Astra skills（打地基已到线）、Cursor best practices 总览（重叠）、Gabriel Anhaia Codex worktree 源码文（偏 RE/产品）、Cognition Devin autofix（产品通稿）、Jacob 付费文。看原理仍 11，只建议拆分不自行拆。
 - 2026-10-23 第十三批：#84 Medori 未说假设（规划）、#85 Claude 动态工作流（多代理）、#86 Cursor 奖励黑客（评测）、#87 Galarza 塑形闭环（单代理）。优先补规划/单代理（8→9），多代理与评测到 10。未收：Jeremy Lewi Runme、Astra skills（打地基已到线）、Cursor best practices 总览、CursorBench 介绍（与 #86 同主题）、Jacob 付费文。

@@ -2,7 +2,29 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-29 · 第十九批收录 #107–#110
+
+**新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
+
+| 编号 | 资料 | 阶段 | 原文发布 |
+|---|---|---|---|
+| [#107](/107-bockeler-context-engineering) | Birgitta Böckeler：Context Engineering for Coding Agents | 打地基 · 上下文与规范 | 2026-02-05 |
+| [#108](/108-garg-design-first-collaboration) | Rahul Garg：Design-First Collaboration | 做规划 · 需求澄清与任务拆解 | 2026-03-03 |
+| [#109](/109-codex-using-goals) | OpenAI Cookbook：Using Goals in Codex | 单代理推进与一人多线 | 未标注 |
+| [#110](/110-codex-iterative-repair-loops) | OpenAI Cookbook：Build iterative repair loops with Codex | 验收这一次的产出 | 未标注 |
+
+**结构变化：**
+
+- 阶段数量：打地基 / 做规划 / 验收 11 → 12；单代理 14 → 15。全站 106 → 110 篇；看原理仍 14；评测仍 12；多代理 / CI / 云端仍各 11。
+- 打地基指南补配置面地图与加载者；规划指南补五级对齐与 Implementation Trap；单代理指南补 Goals 完成合约；验收指南补 Review→Repair→Validate。
+- 模式库新增 P98–P101；术语表新增 Goal、Design-First、Implementation Trap、Repair Loop（并补强 Context Engineering 释义）。
+
+**未收录（备选）**：Context Anchoring（Rahul Garg，2026-03-17，强规划候选，同日避免堆两篇 Garg）；Iterating development workflows with Codex cookbook（与 Goals+repair 重叠）；Knowledge Priming（Fowler 系列，地基备选）；QualityLayer / SwarmPane / Northflank / Paneherd / aiexpert / Harry Lo（产品或偏薄二手）；以及 offrun、Astra、Agent SDK 产品、vibeide、OpenAI harness 博客 vs #07 等既有备选。
+
+**拆分建议（仅建议，未改 domains）**：单代理 15——可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；看原理 14——可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；打地基 / 规划 / 验收 / 评测各 12——维持既有切法建议。均保持单一任务轴，等主人确认后再拆。
+
 ## 2026-10-28 · 第十八批收录 #103–#106
+
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**
 

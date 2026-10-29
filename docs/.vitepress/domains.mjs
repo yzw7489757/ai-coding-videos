@@ -45,6 +45,7 @@ export const domains = [
       { n: '92', slug: '92-steering-claude-code-customization', text: '七种方式：何时用 CLAUDE.md / Skills / Hooks', short: '七种指令投放方式', tool: 'claude', type: 'article', added: '2026-10-25', published: '2026-06-18' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video', published: '2026-05-19' },
       { n: '07', slug: '07-harness-engineering', text: '把团队规范变成 lint 和测试', short: '规范变 lint 和测试', tool: 'codex', type: 'video', published: '2026-04-17' },
+      { n: '107', slug: '107-bockeler-context-engineering', text: '编码代理的上下文工程：配置面地图', short: '上下文配置面地图', tool: 'claude', type: 'article', added: '2026-10-29', published: '2026-02-05' },
       { n: '26', slug: '26-factory-agent-ready-codebases', text: '让代码库为代理做好准备', short: '8 根验证支柱', tool: 'general', type: 'video', added: '2026-10-09', published: '2025-12-22' },
       { n: '21', slug: '21-anthropic-agent-skills-talk', text: '别造代理，写 Skills', short: 'Skills 按需加载', tool: 'claude', type: 'video', added: '2026-10-09', published: '2025-12-08' },
       { n: '20', slug: '20-humanlayer-writing-good-claude-md', text: 'CLAUDE.md 怎么写：少即是多', short: '规则文件少即是多', tool: 'claude', type: 'article', added: '2026-10-09', published: '2025-11-25' },
@@ -66,6 +67,7 @@ export const domains = [
       { n: '88', slug: '88-instil-plan-mode-vs-sdd', text: '规格驱动贵在哪：改用 plan mode', short: 'SDD 贵且漂 改用 plan', tool: 'claude', type: 'article', added: '2026-10-24', published: '2026-06-19' },
       { n: '03', slug: '03-how-we-claude-code', text: '访谈式需求与可验证组件', short: '访谈式需求', tool: 'claude', type: 'video', published: '2026-05-23' },
       { n: '13', slug: '13-bijan-bowen-grok-build', text: 'Grok Build 实测：从计划到执行', short: 'plan mode 实测', tool: 'grokbuild', type: 'video', published: '2026-05-15' },
+      { n: '108', slug: '108-garg-design-first-collaboration', text: '先设计再写代码：五级对齐', short: '五级设计对齐', tool: 'general', type: 'article', added: '2026-10-29', published: '2026-03-03' },
       { n: '61', slug: '61-codex-long-horizon-tasks', text: 'Codex 跑 25 小时的四份 Markdown', short: '四份 Markdown 长任务', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-02-23' },
       { n: '96', slug: '96-osmani-good-spec-for-agents', text: '给代理写好规格：五条原则', short: '规格五原则 模块喂入', tool: 'general', type: 'article', added: '2026-10-26', published: '2026-01-13' },
       { n: '29', slug: '29-gemini-cli-conductor', text: 'Conductor：把计划写进仓库', short: 'Conductor 上下文驱动', tool: 'gemini', type: 'article', added: '2026-10-09', published: '2025-12-17' },
@@ -93,7 +95,8 @@ export const domains = [
       { n: '08', slug: '08-codex-masterclass', text: 'Codex 子代理、Hooks 与插件', short: '子代理切片审查', tool: 'codex', type: 'video', published: '2026-04-29' },
       { n: '23', slug: '23-cole-medin-parallel-worktrees', text: '5 个并行代理 + worktree', short: 'worktree 并行', tool: 'claude', type: 'video', added: '2026-10-09', published: '2026-04-23' },
       { n: '11', slug: '11-peter-steinberger-openclaw', text: '一个人用 Codex 建 OpenClaw', short: 'Steinberger 十个 checkout', tool: 'codex', type: 'video', published: '2026-02-24' },
-      { n: '27', slug: '27-mitchellh-ai-adoption-journey', text: '从怀疑到离不开：六步采用 AI', short: 'Mitchell 六步采用', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-02-05' }
+      { n: '27', slug: '27-mitchellh-ai-adoption-journey', text: '从怀疑到离不开：六步采用 AI', short: 'Mitchell 六步采用', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-02-05' },
+      { n: '109', slug: '109-codex-using-goals', text: 'Codex Goals：跨轮次的完成合约', short: 'Goals 完成合约', tool: 'codex', type: 'guide', added: '2026-10-29', published: '' }
     ]
   },
   {
@@ -135,7 +138,8 @@ export const domains = [
       { n: '71', slug: '71-openhands-verification-stack', text: '验证栈：轨迹打分加 PR 真跑', short: 'critic 加 QA 真跑', tool: 'openhands', type: 'article', added: '2026-10-19', published: '2026-06-22' },
       { n: '32', slug: '32-cognition-verifying-agentic-development', text: 'Devin 用 Computer Use 自测', short: 'Devin 带证据交付', tool: 'devin', type: 'article', added: '2026-10-09', published: '2026-05-29' },
       { n: '25', slug: '25-simonw-agentic-engineering-testing-patterns', text: '测试驱动与代理手动测试', short: 'TDD 与手动测试', tool: 'general', type: 'guide', added: '2026-10-09', published: '2026-02-23' },
-      { n: '31', slug: '31-openai-verifying-code-at-scale', text: 'AI 代码审查：精确率优先', short: '审查精确率优先', tool: 'codex', type: 'article', added: '2026-10-09', published: '2025-12-01' }
+      { n: '31', slug: '31-openai-verifying-code-at-scale', text: 'AI 代码审查：精确率优先', short: '审查精确率优先', tool: 'codex', type: 'article', added: '2026-10-09', published: '2025-12-01' },
+      { n: '110', slug: '110-codex-iterative-repair-loops', text: '审查→修复→验证：闭环修复环', short: '闭环修复环', tool: 'codex', type: 'guide', added: '2026-10-29', published: '' }
     ]
   },
   {

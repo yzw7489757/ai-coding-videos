@@ -535,6 +535,26 @@ export const ratings = {
     depth: [5, '从 Responses 组包、精确前缀缓存、ZDR 取舍到 compact 端点，客户端 loop 拆到底。'],
     overall: [4.5, '官方开源 harness 一手说明，机制可对仓库；抓取代码块有噪声但不妨碍正文核对。']
   },
+  '107': {
+    use: [4, '配置面地图与 Claude 对照表今天就能盘点 CLAUDE.md/Skills/Hooks；渐进做小可立刻执行。'],
+    depth: [4, '意图×加载者×体量 taxonomy 清楚；无 token 最优数字，Skills 吸收 rules 为预期。'],
+    overall: [4, 'Thoughtworks 一手备忘，与 #92 互补的地基地图；非 harness 原理文。']
+  },
+  '108': {
+    use: [4.5, '五级硬约束与开场 prompt 可直接套；复杂度裁剪表降低仪式成本。'],
+    depth: [4, 'Trap/认知过载/债务注入论证完整；案例叙事无对照实验。'],
+    overall: [4, '规划轴可操作的设计对话模式；Lattice 侧栏可忽略。']
+  },
+  '109': {
+    use: [4.5, '/goal 生命周期与六要素模板今天就能写；需 0.128.0+。'],
+    depth: [4, '线程作用域、空闲续跑、证据完成与预算边界讲清；研究例偏演示。'],
+    overall: [4, '官方 Cookbook 完成合约原语，补 #68/#61 的产品落点；无稳定发布日。']
+  },
+  '110': {
+    use: [4, '三相+schema+record.json 可缩小版搬到有自动检查的维护流；依赖可执行验证。'],
+    depth: [4, '判断与证明分离、停机条件与审计讲透；收敛数字为教学轨迹。'],
+    overall: [4, '验收轴可复用的闭环修复模式；notebook 仅为载体。']
+  },
 }
 
 export const scoreKeys = [
