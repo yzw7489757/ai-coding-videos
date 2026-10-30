@@ -2,6 +2,21 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-30 · 第二十批收录 #111–#114
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#111](/111-bswen-claude-codex-together) | Cowrie Dev @ Bswen：How to Make Claude Code and Codex Work Together | 多代理协作与大任务拆分 | 2026-10-19 |
+| [#112](/112-octomind-claude-worktrees) | Don Karter：Claude Worktree Guide（三工具） | 单代理推进与一人多线 | 2026-10-29 |
+| [#113](/113-instavm-claude-codex-sandboxing) | Abhishek：How Claude Code & Codex approach sandboxing | 云端与后台运行环境 | 2026-04-05 |
+| [#114](/114-anthropic-measuring-agent-autonomy) | Miles McCain 等：Measuring AI agent autonomy in practice | 评测代理本身与给动作把关 | 2026-02-18 |
+
+- 阶段数量：多代理 11→12；单代理 15→16；云端 11→12；评测 12→13。全站 110→114。打地基/规划/验收仍 12；看原理仍 14；CI 仍 11。
+- **拆分建议（未执行）**：单代理 16、评测 13、多代理/云端/打地基/规划/验收 12、看原理 14——均 >10，仅建议、不自行拆。
+- 横向：阶段指南 multi/solo/cloud/evals；patterns / paths / all / 00-summary；术语表增 Agent Autonomy，补 worktree/sandbox 交叉引用。
+
+**未收录（备选）**：无。本日四篇均已核实录入。
+
 ## 2026-10-29 · 第十九批收录 #107–#110
 
 **新增资料（4 篇，均按片段分析 → 通盘梳理 → 成稿写成，引语逐字脚本核对）：**

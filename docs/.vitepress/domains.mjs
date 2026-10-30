@@ -82,6 +82,7 @@ export const domains = [
     icon: '🚀',
     desc: '一个人用好一个主代理：起步建立判断、让代理边做边检查自己、多份工作目录并行推进，以及什么时候派子代理。',
     items: [
+      { n: '112', slug: '112-octomind-claude-worktrees', text: '三工具 Worktree：环境也要拆开', short: 'Worktree 环境隔离', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-29' },
       { n: '87', slug: '87-galarza-agentic-coding-workflow', text: '塑形构建审查交付闭环', short: '塑形到交付闭环', tool: 'general', type: 'article', added: '2026-10-23', published: '2026-10-21' },
       { n: '103', slug: '103-claude-power-user-tips', text: '官方 tips：验证与并行', short: '验证优先 并行 tips', tool: 'claude', type: 'article', added: '2026-10-28', published: '2026-10-20' },
       { n: '101', slug: '101-ahmed-ship-with-claude-code', text: '主人闸门：一票一会话', short: '主人闸门一票一会话', tool: 'claude', type: 'article', added: '2026-10-27', published: '2026-10-13' },
@@ -109,6 +110,7 @@ export const domains = [
     items: [
       { n: '97', slug: '97-earlam-claude-native-pipeline', text: '放弃可移植：Claude 原生流水线', short: '原生流水线 状态脚本', tool: 'claude', type: 'article', added: '2026-10-26', published: '2026-10-20' },
       { n: '80', slug: '80-madsalt-multi-agent-orchestration-3315', text: '3315 次启动：失败在缝合处', short: '缝合处 hook 挡事故', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-19' },
+      { n: '111', slug: '111-bswen-claude-codex-together', text: 'Claude Code 与 Codex 三种协作', short: 'CLI 互调 写审 并行', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-19' },
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
@@ -159,6 +161,7 @@ export const domains = [
       { n: '39', slug: '39-cursor-auto-review-classifier', text: 'Auto-review：分类器与评测', short: '风险分类器与评测', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-11' },
       { n: '56', slug: '56-anthropic-claude-code-auto-mode', text: 'auto mode：两段式权限分类器', short: '两段式权限分类器', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-03-25' },
       { n: '105', slug: '105-cursorbench', text: 'CursorBench 对齐真实用法', short: 'CursorBench 在线离线环', tool: 'cursor', type: 'article', added: '2026-10-28', published: '2026-03-11' },
+      { n: '114', slug: '114-anthropic-measuring-agent-autonomy', text: '实测代理自主性：批准与中断', short: '部署里测自主性', tool: 'claude', type: 'article', added: '2026-10-30', published: '2026-02-18' },
       { n: '50', slug: '50-anthropic-infrastructure-noise', text: '评测分数里的基础设施噪声', short: '评测里的基础设施噪声', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-02-05' },
       { n: '47', slug: '47-openai-eval-skills', text: '给 Skill 写评测', short: 'Skill 评测', tool: 'codex', type: 'article', added: '2026-10-14', published: '2026-01-22' },
       { n: '19', slug: '19-anthropic-demystifying-agent-evals', text: 'Agent Evals 入门', short: 'Agent Evals', tool: 'general', type: 'article', added: '2026-10-09', published: '2026-01-09' }
@@ -203,7 +206,8 @@ export const domains = [
       { n: '51', slug: '51-cursor-self-hosted-machines', text: '云端代理跑在自己的机器上', short: '自托管执行机器', tool: 'cursor', type: 'article', added: '2026-10-14', published: '2026-09-02' },
       { n: '01', slug: '01-claude-code-one-year', text: 'Claude Code 一周年：验证与 Routines', short: 'Routines 与验证', tool: 'claude', type: 'video', published: '2026-06-08' },
       { n: '40', slug: '40-cursor-cloud-agent-lessons', text: '云端代理一年的四条教训', short: '云端代理运行层', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-06-02' },
-      { n: '91', slug: '91-cloudflare-sandboxes-ga', text: '沙箱即完整电脑：凭据与快照', short: '出口注入凭据 快照恢复', tool: 'general', type: 'article', added: '2026-10-24', published: '2026-04-13' }
+      { n: '91', slug: '91-cloudflare-sandboxes-ga', text: '沙箱即完整电脑：凭据与快照', short: '出口注入凭据 快照恢复', tool: 'general', type: 'article', added: '2026-10-24', published: '2026-04-13' },
+      { n: '113', slug: '113-instavm-claude-codex-sandboxing', text: 'Claude 与 Codex 沙箱：同原语不同信任', short: '沙箱同原语不同信任', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-04-05' },
     ]
   },
   {

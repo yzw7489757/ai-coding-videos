@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 110 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 114 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -205,6 +205,12 @@
 
 📘 **先读阶段指南**：[单代理推进与一人多线 · 一个人怎么驾驭代理](/guide/solo)
 
+### 三工具 Worktree：环境也要拆开 {#item-112}
+
+- **[Claude Worktree Guide: Parallel Agents in Claude Code, Codex and Cursor](https://octomind.run/blog/claude-code-worktrees)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Don Karter ／ Octomind ｜ 发布：2026-10-29 ｜ 工具：通用（Claude Code / Codex / Cursor）
+  - 深度解读：[三工具 Worktree：环境也要拆开](/112-octomind-claude-worktrees)
+
 ### 塑形构建审查交付闭环 {#item-87}
 
 - **[My Agentic Coding Workflow: Claude Code, Codex, and Pi](https://www.damiangalarza.com/posts/2026-10-21-agentic-coding-workflow/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -329,6 +335,12 @@
   - 作者 / 来源：Denys Zaichenko ／ madsalt.tech ｜ 发布：2026-10-19 ｜ 工具：Claude Code 主会话 + 子代理；165 hooks；git worktree；Opus / Sonnet / Fable
   - 看点：3,315 次启动的事故几乎都在缝合处（并行覆盖翻译目录、清理删工作、代理改门禁）；Markdown 是建议、hook 是硬规则；六件先装；30 天约 160 亿 token、API 折算 ≥$3,350。单人上限五并行，被挡启动未入账。
   - 🆕 收录于 2026-10-22 ｜ 👉 [阅读分析](/80-madsalt-multi-agent-orchestration-3315)
+
+### Claude Code 与 Codex 三种协作 {#item-111}
+
+- **[How to Make Claude Code and Codex Work Together (3 Practical Methods)](https://docs.bswen.com/blog/2026-10-19-claude-code-codex-together/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Cowrie Dev @ Bswen ｜ 发布：2026-10-19 ｜ 工具：通用（Claude Code + Codex）
+  - 深度解读：[让 Claude Code 与 Codex 真正协作：三种方法](/111-bswen-claude-codex-together)
 
 ### 多代理团队值不值：受控实验 {#item-76}
 
@@ -558,6 +570,12 @@
   - 看点：公开基准三种失灵；用 Blame 造短题；在线–离线环对齐真实用法；分数只在同一评测版本内比。
   - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/105-cursorbench)
 
+### 实测代理自主性：批准与中断 {#item-114}
+
+- **[Measuring AI agent autonomy in practice](https://www.anthropic.com/research/measuring-agent-autonomy)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Miles McCain 等 ／ Anthropic ｜ 发布：2026-02-18 ｜ 工具：Claude Code（兼公共 API 流量）
+  - 深度解读：[实测代理自主性：部署里的自主如何共构](/114-anthropic-measuring-agent-autonomy)
+
 ### 评测分数里的基础设施噪声 {#item-50}
 
 - **[Quantifying infrastructure noise in agentic coding evals](https://www.anthropic.com/engineering/infrastructure-noise)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -748,6 +766,12 @@
 **这一组放什么**：理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。
 
 📘 **先读阶段指南**：[看原理 · Harness 与内部机制](/guide/harness)
+
+### Claude 与 Codex 沙箱：同原语不同信任 {#item-113}
+
+- **[How Claude Code & Codex approach sandboxing](https://instavm.io/blog/how-claude-code-and-codex-approach-sandboxing)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Abhishek ／ InstaVM ｜ 发布：2026-04-05 ｜ 工具：通用（Claude Code / Codex）
+  - 深度解读：[Claude Code 与 Codex 的沙箱：同原语，不同信任](/113-instavm-claude-codex-sandboxing)
 
 ### 在 Codex harness 上做自己的客户端 {#item-43}
 

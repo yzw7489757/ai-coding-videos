@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **241** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **242** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -29,7 +29,7 @@ outline: [2, 2]
 
 **工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider) · [Scion](#scion) · [DeepWiki](#deepwiki)
 
-**评测与验证**：[Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [Keep Rate](#keep-rate) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Property-based Testing](#property-based-testing) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking)
+**评测与验证**：[Agent Autonomy](#agent-autonomy) · [Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [Keep Rate](#keep-rate) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Property-based Testing](#property-based-testing) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking)
 
 ## 一、核心概念：代理、上下文与 Token
 
@@ -703,7 +703,7 @@ Grok Build 叫 always approve，Claude Code 类似的是 --dangerously-skip-perm
 
 **白话**：限制代理只能在划定范围内读写文件、访问网络的隔离环境。
 
-Codex 在 macOS 用 Seatbelt、Linux 用 Bubblewrap（#09）。超出沙箱的操作要么问人，要么交给 Auto Review 判断。
+Codex 在 macOS 用 Seatbelt、Linux 用 Bubblewrap（#09）。超出沙箱的操作要么问人，要么交给 Auto Review 判断。 #113 拆 Claude Code 与 Codex 同原语不同信任架构。
 
 ### Auto Review / Guardian Approvals {#auto-review}
 
@@ -727,7 +727,7 @@ Codex 在 macOS 用 Seatbelt、Linux 用 Bubblewrap（#09）。超出沙箱的�
 
 **白话**：同一个 Git 仓库同时检出多个工作目录，每个目录一条分支，互不干扰。
 
-并行代理的基础设施：每个代理在自己的 worktree 里改代码、起服务，不会互相覆盖。#11 的 Peter 则用更朴素的办法：直接 clone 10 份（checkout 1 到 10）。
+并行代理的基础设施：每个代理在自己的 worktree 里改代码、起服务，不会互相覆盖。#11 的 Peter 则用更朴素的办法：直接 clone 10 份（checkout 1 到 10）。 #112 对照 Claude/Codex/Cursor 默认行为，并强调 .env/端口/Compose 也要拆开。
 
 ### Background / Cloud Agent（后台 / 云端代理） {#background-agent}
 
@@ -1274,6 +1274,12 @@ Claude Code 团队把它作为七层审查里的第六层（#60）。代码量�
 Devin 用它给所有仓库建索引，Ask Devin 靠它找相关上下文；公开仓库可以直接在 deepwiki.com 看，也有免费的 DeepWiki MCP（#67）。
 
 ## 七、评测与验证
+
+### Agent Autonomy（代理自主性） {#agent-autonomy}
+
+**白话**：代理少依赖逐步人指令、自行决定做什么与怎么做的程度；是部署涌现属性。
+
+Anthropic 用回合时长、auto-approve、打断与代理自停等在真实流量里测量；能力评测上的长任务不等于实践中被允许多久（#114）。
 
 ### Task / Trial（评测题目 / 一次作答） {#eval-task-trial}
 
