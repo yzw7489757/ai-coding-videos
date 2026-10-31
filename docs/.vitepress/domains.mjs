@@ -41,6 +41,7 @@ export const domains = [
       { n: '49', slug: '49-anthropic-scion-source-control', text: '为代理重做源代码管理', short: '代理规模的源码管理', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-10-13' },
       { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
       { n: '46', slug: '46-grok-build-memory', text: 'Grok Build 的跨会话记忆', short: 'Grok Build 记忆', tool: 'grokbuild', type: 'article', added: '2026-10-13', published: '2026-09-16' },
+      { n: '116', slug: '116-aaif-effective-agents-md', text: 'AGENTS.md 只写会改变动作的事', short: '只写改变动作的指令', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-08-13' },
       { n: '37', slug: '37-cursor-cloud-agent-environment', text: '把开发环境做成给代理用的产品', short: '代理用的开发环境', tool: 'cursor', type: 'article', added: '2026-10-12', published: '2026-07-30' },
       { n: '92', slug: '92-steering-claude-code-customization', text: '七种方式：何时用 CLAUDE.md / Skills / Hooks', short: '七种指令投放方式', tool: 'claude', type: 'article', added: '2026-10-25', published: '2026-06-18' },
       { n: '14', slug: '14-orcdev-grok-build-skills', text: '用 Skills 约束 UI 风格', short: 'Skills 管 UI 风格', tool: 'grokbuild', type: 'video', published: '2026-05-19' },
@@ -112,6 +113,7 @@ export const domains = [
       { n: '80', slug: '80-madsalt-multi-agent-orchestration-3315', text: '3315 次启动：失败在缝合处', short: '缝合处 hook 挡事故', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-19' },
       { n: '111', slug: '111-bswen-claude-codex-together', text: 'Claude Code 与 Codex 三种协作', short: 'CLI 互调 写审 并行', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-19' },
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
+      { n: '117', slug: '117-mertsahin-two-agent-team', text: 'Codex 审 Claude 写：八个坑', short: '写者不验收 提交即交接', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-10-04' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
       { n: '85', slug: '85-claude-dynamic-workflows', text: '动态工作流现写多代理外壳', short: '动态工作流六模式', tool: 'claude', type: 'article', added: '2026-10-23', published: '2026-06-02' },
@@ -175,6 +177,7 @@ export const domains = [
     icon: '⚙️',
     desc: '让代理脱离聊天框、接进团队流水线：定时与事件触发、无人值守的规则、PR 审查机器人和 CI 自动修复。',
     items: [
+      { n: '115', slug: '115-giantswarm-agent-in-ci-pipeline', text: 'CI 里的 Claude Code：难在凭据', short: '流水线 pod 凭据轮换', tool: 'claude', type: 'article', added: '2026-10-31', published: '2026-10-15' },
       { n: '63', slug: '63-openai-gpt-6-software-maintenance', text: '让代理批量开维护 PR', short: '维护 PR 删死代码', tool: 'codex', type: 'article', added: '2026-10-19', published: '2026-10-14' },
       { n: '98', slug: '98-crowder-claude-open-pull-requests', text: '让 Claude 开 PR：护栏怎么钉死', short: '开 PR 硬护栏', tool: 'claude', type: 'article', added: '2026-10-26', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
@@ -196,6 +199,7 @@ export const domains = [
     icon: '☁️',
     desc: '让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。',
     items: [
+      { n: '118', slug: '118-avichal-cloud-agent-sandboxes', text: '云端代理沙箱：隔离阶梯与五层防线', short: '隔离阶梯 五层防线', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-10-21' },
       { n: '82', slug: '82-cursor-navan-cloud-agents-migration', text: '自托管并行迁八个应用', short: 'Cloud Agents 自托管并行', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-10-16' },
       { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },
       { n: '70', slug: '70-jetbrains-air-cloud-sandboxing', text: 'Air 云端沙箱：每任务新 VM', short: '每任务 VM 出站白名单', tool: 'jetbrains', type: 'article', added: '2026-10-19', published: '2026-10-14' },

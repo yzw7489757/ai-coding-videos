@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-10-31 · 第二十一批收录 #115–#118
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#115](/115-giantswarm-agent-in-ci-pipeline) | Thibaud Vaisseau：Running an AI agent in a CI/CD pipeline: a how-to guide | 接进 PR 与 CI | 2026-10-15 |
+| [#116](/116-aaif-effective-agents-md) | Steve Kearns（AAIF）：Writing an Effective AGENTS.md for Coding Agents | 打地基 | 2026-08-13 |
+| [#117](/117-mertsahin-two-agent-team) | Mert Sahin：Running Codex and Claude as a two-agent team | 多代理协作与大任务拆分 | 2026-10-04 |
+| [#118](/118-avichal-cloud-agent-sandboxes) | Avichal Pandey：Inside the Box: How Production Sandboxes for AI Coding Agents Are Built | 云端与后台运行环境 | 2026-10-21 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，英文引语用脚本逐字核对（48 条，0 处不符）。
+- 阶段数量：CI 11→12；打地基 12→13；多代理 12→13；云端 12→13。全站 114→118。规划/验收仍 12；评测 13；看原理 14；单代理 16。
+- **拆分建议（未执行）**：九个阶段都已超过 10 篇。最需要先拆的是单代理（16）和看原理（14）；其次打地基、多代理、评测、云端（各 13）。仅建议，等确认后再拆。
+- 横向：阶段指南 ci / foundation / multi / cloud（核心问题、导图、分歧表、阅读顺序）；模式库新增 P106–P109；paths / all / 00-summary 同步。
+- 术语表新增 8 个：GitHub App 安装令牌、External Secrets Operator、嵌套 AGENTS.md、WORK.md 轮次头、变异测试、gVisor、暖池、Fencing Token。
+
+**未收录（备选）**：Agentastic 定时 CI 修复指南（厂商教程，作者自承未实际运行托管修复）；GitHub Agentic Workflows GA（产品公告）；GitLab AI-Native Engineering Playbook 文（推广新 playbook）；Whitelam Media 审查流程（代理商营销）；Qovery / Northflank 沙箱环境（厂商产品文）；Niraj Kumar 自愈 CI 教程（偏通用架构，今日名额已满）。
+
 ## 2026-10-30 · 第二十批收录 #111–#114
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

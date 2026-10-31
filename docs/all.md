@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 114 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 118 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -44,6 +44,13 @@
   - 作者 / 来源：Anthropic ／ claude.com 产品文章 ｜ 发布：2026-10-01 ｜ 工具：Claude Code CLI 与桌面应用、`/plugin`
   - 看点：mods 是挂在事件上的 TypeScript 函数，能在事件前后、代替或包住它运行，改写 prompt、拦截工具调用、替换 `/diff`；多个 mod 按加载顺序叠成洋葱；不在沙箱里，团队靠插件白名单和最先加载的 `sec-default` 管控。公告类短文，没有 API 和数据。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/52-claude-code-mods)
+
+### AGENTS.md 只写会改变动作的事 {#item-116}
+
+- **[Writing an Effective AGENTS.md for Coding Agents](https://aaif.io/blog/writing-an-effective-agents-md)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Steve Kearns ／ Agentic AI Foundation（AAIF） ｜ 发布：2026-08-13 ｜ 工具：通用（AGENTS.md 规范）
+  - 看点：每条指令先问“会不会改变代理的动作”；三项研究结论不一（中位运行时间 −28.64% 只测效率；另一项成功率无显著提升、成本增加，人写显著好于 LLM 生成）；写含义化结构、不用再猜的命令、点名的生成文件与依赖方向、随改动缩放的完成标准；嵌套文件最近者优先但要实测。
+  - 🆕 收录于 2026-10-31 ｜ 👉 [阅读分析](/116-aaif-effective-agents-md)
 
 ### 把开发环境做成给代理用的产品 {#item-37}
 
@@ -349,6 +356,13 @@
   - 看点：一次只改一个变量的对照实验：团队比单代理多 5–10 个点、贵 4–7 倍；只委派规划追平全委派、成本减半；Sol 领队 + 16 个 Luna 规划工人 $155 对全强队 $510；实现工人越多每人的活越薄；`send_message` 84% 是向上汇报；不同模型愿不愿意委派差别很大。只在基准上，部分配置单次运行。
   - 🆕 收录于 2026-10-21 ｜ 👉 [阅读分析](/76-cohere-agent-teams-cost)
 
+### Codex 审 Claude 写：八个坑 {#item-117}
+
+- **[Running Codex and Claude as a two-agent team: what broke, and the rules that fixed it](https://mertsahin.ai/notes/two-agent-team/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Mert Sahin ／ 个人笔记 ｜ 发布：2026-10-04 ｜ 工具：Codex（规格与审查）+ Claude Code（构建与集成）+ GitHub Spec Kit
+  - 看点：写者不验收；WORK.md 轮次头里的 Next-Actor 决定谁动，只认提交；完成 = 上 main 并复验（曾 4 天 30 项 0 项集成）；752 个测试 vs harness 0 个；6 轮对抗审查不收敛，改成约 40 项封闭清单一轮收敛。单人自述，无成本数据。
+  - 🆕 收录于 2026-10-31 ｜ 👉 [阅读分析](/117-mertsahin-two-agent-team)
+
 ### 十个仓库的 .NET 迁移 {#item-74}
 
 - **[How to coordinate AI agents in a multi-repository .NET migration (case study)](https://www.blocshop.io/blog/how-to-coordinate-ai-agents-in-a-multi-repository-net-migration-case-study)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -603,6 +617,13 @@
 
 📘 **先读阶段指南**：[接进 PR 与 CI · 触发、审查与流水线](/guide/ci)
 
+### CI 里的 Claude Code：难在凭据 {#item-115}
+
+- **[Running an AI agent in a CI/CD pipeline: a how-to guide](https://www.giantswarm.io/blog/running-an-ai-agent-in-a-ci-cd-pipeline)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Thibaud Vaisseau ／ Giant Swarm 博客 ｜ 发布：2026-10-15 ｜ 工具：Claude Code、Tekton、GitHub App、External Secrets Operator
+  - 看点：代理只产出报告、不做决定；自家 Tekton 起 pod 而非托管 Action；GitHub App 令牌 CronJob 每 40 分钟续；LLM 密钥经 1Password → ESO → PushSecret 一步轮换；固定命令 + 硬编码 prompt 防 PR 评论注入，组织级写权限偏宽。每次省约一小时。
+  - 🆕 收录于 2026-10-31 ｜ 👉 [阅读分析](/115-giantswarm-agent-in-ci-pipeline)
+
 ### 让代理批量开维护 PR {#item-63}
 
 - **[Maintaining software with the GPT-6 family](https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
@@ -683,6 +704,13 @@
 **这一组放什么**：让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
 
 📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
+
+### 云端代理沙箱：隔离阶梯与五层防线 {#item-118}
+
+- **[Inside the Box: How Production Sandboxes for AI Coding Agents Are Built](https://avichal.me/blog/cloud-agent-sandboxes)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Avichal Pandey ／ 个人博客 ｜ 发布：2026-10-21 ｜ 工具：通用（对照 Claude Code on the web、Codex cloud、Copilot coding agent、E2B、Modal）
+  - 看点：按“能碰多少宿主内核”选墙（容器→gVisor→microVM→VM）；大脑在外则密钥不进盒；快靠快照、写时复制、暖池；稳靠状态外置、fencing token、分层超时、收割者；网络默认拒绝 + 两阶段 + 封元数据地址。综述长文，无实测数据。
+  - 🆕 收录于 2026-10-31 ｜ 👉 [阅读分析](/118-avichal-cloud-agent-sandboxes)
 
 ### 自托管并行迁八个应用 {#item-82}
 
@@ -939,6 +967,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-10-31 第二十一批：#115 Giant Swarm CI 流水线里的 Claude Code（CI 11→12）、#116 AAIF 写好 AGENTS.md（打地基 12→13）、#117 Mert Sahin 双代理八个坑（多代理 12→13）、#118 Avichal Pandey 云端沙箱全景（云端 12→13）。全站 114→118。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Agentastic 定时 CI 修复（厂商教程，作者自承未实际跑托管修复）、GitHub Agentic Workflows GA（产品公告）、GitLab AI-Native Playbook（推广文）、Whitelam Media（代理商营销）、Qovery / Northflank 沙箱环境（厂商产品文）、Niraj 自愈 CI（个人教程，偏通用架构，今日名额已满未深读）。
 - 2026-10-29 第十九批：#107 Böckeler 上下文配置面（打地基）、#108 Garg Design-First 五级对齐（规划）、#109 Codex Goals（单代理）、#110 Codex 闭环修复环（验收）。打地基/规划/验收 11→12，单代理 14→15，全站 106→110。工具：Claude Code +1、Codex +2、通用 +1；类型：文章 +2、指南 +2。未收：Context Anchoring（同作者规划备选）、Iterating development workflows with Codex、Knowledge Priming、QualityLayer / SwarmPane / Northflank / Paneherd / aiexpert / Harry Lo；以及 offrun、Astra、Agent SDK 产品、vibeide、OpenAI harness 博客等既有备选。
 - 2026-10-28 第十八批：#103 Claude Code power tips（单代理）、#104 Cursor Keep Rate harness（看原理）、#105 CursorBench（评测）、#106 Unrolling Codex agent loop（看原理）。单代理 13→14，看原理 12→14，评测 11→12，全站 102→106。工具计数相对第十七批：Claude Code +1、Cursor +2、Codex +1。未收：offrun 产品 CTA、Alistair 薄交接文、Codex-as-platform 产品文、Agent SDK build-agents、vibeide、Gabriel Anhaia、Astra、OpenAI harness 博客；power-tips 已覆盖角度的重复文。
 - 2026-10-24 第十四批：#88 Instil plan mode vs SDD（规划）、#89 Charles Devbox+tmux+worktrunk（单代理）、#90 Chris Jones 六轮机器人审查（CI）、#91 Cloudflare Sandboxes GA（云端）。四阶段均 9→10。未收：Jeremy Lewi Runme（先前已判偏薄）、OpenAI Astra skills（打地基已到线）、Cursor best practices 总览（重叠）、Gabriel Anhaia Codex worktree 源码文（偏 RE/产品）、Cognition Devin autofix（产品通稿）、Jacob 付费文。看原理仍 11，只建议拆分不自行拆。
