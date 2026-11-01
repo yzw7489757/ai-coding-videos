@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 118 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 122 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -168,6 +168,13 @@
   - 讲者 / 频道：Bijan Bowen ｜ 发布：2026-05-15 ｜ 工具：Grok Build + Grok 4.3
   - 看点：plan mode 的可交互计划（含 non-goals 与成功指标）、截图反馈、无头浏览器自测，以及越界行为等问题。
   - 👉 [阅读分析](/13-bijan-bowen-grok-build)
+
+### 上下文锚定：决策写进功能文档 {#item-119}
+
+- **[Context Anchoring](https://martinfowler.com/articles/reduce-friction-ai/context-anchoring.html)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Rahul Garg ／ Thoughtworks / Martin Fowler 站 ｜ 发布：2026-03-17 ｜ 工具：通用编码助手
+  - 看点：理由比决策先褪色；priming 与 feature 两层文档；不到 50 行的四段模板（决策 / 理由 / 否决项、约束、开放问题、进度）；按规模校准；关掉会话重开 30 秒对齐。单人案例，无量化。
+  - 🆕 收录于 2026-11-01 ｜ 👉 [阅读分析](/119-garg-context-anchoring)
 
 ### 先设计再写代码：五级对齐 {#item-108}
 
@@ -427,6 +434,13 @@
 
 📘 **先读阶段指南**：[验收这一次的产出 · 测试、审查与完成标准](/guide/review)
 
+### AI 审查先回放已合并 PR {#item-120}
+
+- **[What AI caught in PRs our human reviewers had approved](https://www.faros.ai/blog/what-ai-caught-in-prs-our-human-reviewers-had-approved)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Thierry Donneau-Golencer ／ Faros 博客 ｜ 发布：2026-10-28 ｜ 工具：基于 Open Code Review 的双审查器（Anthropic + OpenAI 模型）
+  - 看点：28 个已批准 PR 回放，每个 3–14 个人工未提的关键问题；通宵运行与文档 PR 13 轮的不收敛循环；闸门与停止条件合一（P0 / P1 清零即批准）；五步改法。样本小、无误报率，夹带自家报告导流。
+  - 🆕 收录于 2026-11-01 ｜ 👉 [阅读分析](/120-faros-ai-review-replay)
+
 ### 代码审查的七层把关 {#item-60}
 
 - **[How the Claude Code team does code review](https://claude.dev/blog/solving-code-review-at-anthropic/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -638,6 +652,13 @@
   - 看点：worktree + 一次性 App 令牌 + 无 Workflows + ruleset + 每次 `!yes`；无网测；代理试图绕过 hook 被拦住；只开 PR 不合并。
   - 🆕 收录于 2026-10-26 ｜ 👉 [阅读分析](/98-crowder-claude-open-pull-requests)
 
+### monorepo 审查：先匹配指南再审 {#item-122}
+
+- **[How we accelerated code review in a large monorepo using Agentic Pipelines](https://www.atlassian.com/blog/bitbucket/how-we-accelerated-code-review-in-a-large-monorepo-using-agentic-pipelines)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Arthy Vijayaraghavan ／ Inside Atlassian ｜ 发布：2026-10-14 ｜ 工具：Bitbucket Agentic Pipelines（beta）、Bitbucket MCP、Rovo Dev / Claude / Codex
+  - 看点：选指南与审代码拆成两个代理；两段 prompt 大半写禁止项和停止条件；PR 编号只取流水线变量；产物交接、匹配输出要乏味；评论质量靠改指南。7 分钟为单次运行，产品博客带推广。
+  - 🆕 收录于 2026-11-01 ｜ 👉 [阅读分析](/122-atlassian-guideline-matcher-review)
+
 ### 定时代理自动化的六条规则 {#item-41}
 
 - **[Building effective agent automations](https://claude.dev/blog/building-effective-agent-automations/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -663,6 +684,13 @@
   - 讲者 / 频道：Dominik Kundel（OpenAI）／ Temporal ｜ 发布：2026-05-28 ｜ 工具：Codex（GitHub Code Review、babysitting skill、`/goal`）
   - 看点：context → validation → verification 飞轮；100% PR 经 Codex review；PR 看护 skill 盯 CI；手机上完成“修复→预览→合并”。
   - 👉 [阅读分析](/10-how-openai-uses-codex)
+
+### 夜间 E2E 失败自动修复 PR {#item-121}
+
+- **[深夜のE2Eテスト失敗をClaude Codeが自動修正してPRを作る仕組みの構築](https://tech.kickflow.co.jp/entry/2026/04/03/113600)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：川村（kickflow QA 团队）／ kickflow Tech Blog（日文） ｜ 发布：2026-04-03 ｜ 工具：claude-code-action、Claude Code Skill、GitHub Actions、Playwright、Slack
+  - 看点：约 900 个 Playwright 测试的夜间失败分 spec-change / flaky / unknown；只修 UI 表面、不改测试逻辑；`--retries=0` 真跑验证门；两类分开开 PR；代理只写 JSON、通知交后续步骤；4 小时窗口、分支守卫、workflow 须与默认分支一致。无成功率统计。
+  - 🆕 收录于 2026-11-01 ｜ 👉 [阅读分析](/121-kickflow-nightly-e2e-autofix)
 
 ### 用 Skills 维护开源仓库 {#item-55}
 
@@ -903,6 +931,8 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
+**容量检查（2026-11-01，第二十二批 #119–#122 后）**：现在 **122** 份资料分 9 个阶段：单代理 16；看原理、接进 PR 与 CI 各 14；打地基 / 做规划 / 多代理 / 验收 / 评测 / 云端各 13。本批按“篇数少的先补”补了做规划（#119 上下文锚定）、验收（#120 审查回放）和 CI（#121 夜间 E2E 自动修、#122 monorepo 指南匹配审查）。逐篇复核归类：#119 的主要贡献是把设计决策落成跨会话的计划文档，归做规划（它也像项目规则文件，但讲的是功能级、随会话变化的内容，不归打地基）；#120 讲怎么确认审查这一关真的在起作用、何时停止审查，归验收；#121 是定时触发的无人值守修复流水线，#122 是 PR 流水线里的审查机器人，均归 CI。**拆分建议（仅建议，未执行）**：①单代理（16）可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状（worktree / 冷 clone / 远程保活）”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量”；③接进 PR 与 CI（14）可拆“触发、定时与自动修复”（#41、#67、#121、#22、#34、#63、#55、#57）vs“PR 审查机器人与写路径护栏”（#10、#33、#90、#98、#115、#122）；④其余各 13 维持既有建议。均保持单一任务轴，等主人确认后再拆。
+
 **容量检查（2026-10-29，第十九批 #107–#110 后）**：现在 **110** 份资料分 9 个阶段：单代理 15；看原理 14；打地基 / 做规划 / 验收 / 评测各 12；多代理 / 接进 PR 与 CI / 云端各 11。本批补打地基配置面地图、规划五级对齐、单代理 Goals、验收修复环。**拆分建议（仅建议，未执行）**：①单代理（15）可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③打地基 / 规划 / 验收 / 评测（各 12）可沿既有建议再切；④其余各 11 维持。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-10-28，第十八批 #103–#106 后）**：现在 **106** 份资料分 9 个阶段：单代理 14；看原理 14；评测 12；打地基 / 做规划 / 多代理 / 验收 / 接进 PR 与 CI / 云端各 11。本批补单代理官方 tips、看原理 Keep Rate / agent loop、评测 CursorBench。**拆分建议（仅建议，未执行）**：①单代理（14）可拆“一人日环与闸门 / 官方 tips”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③评测（12）可拆“配置/外壳 ROI 与自有基准（CursorBench）”vs“权限分类器”；④其余各 11 维持既有建议。均保持单一任务轴，等主人确认后再拆。
@@ -967,6 +997,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-11-01 第二十二批：#119 Garg 上下文锚定（规划 12→13）、#120 Faros 审查回放（验收 12→13）、#121 kickflow 夜间 E2E 自动修复、#122 Atlassian monorepo 指南匹配审查（CI 12→14）。全站 118→122。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Periscoped 审查流程（与 #60 高度同构，自承照搬）、Hotfix Daily 审查清单（媒体综述）、Eric Brookfield 自愈 CI（约 400 词，偏短）、Zenn flaky 测试检测（今日 CI 名额已用，留作备选）、QualityLayer / vibeide（产品向，先前已拒）。
 - 2026-10-31 第二十一批：#115 Giant Swarm CI 流水线里的 Claude Code（CI 11→12）、#116 AAIF 写好 AGENTS.md（打地基 12→13）、#117 Mert Sahin 双代理八个坑（多代理 12→13）、#118 Avichal Pandey 云端沙箱全景（云端 12→13）。全站 114→118。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Agentastic 定时 CI 修复（厂商教程，作者自承未实际跑托管修复）、GitHub Agentic Workflows GA（产品公告）、GitLab AI-Native Playbook（推广文）、Whitelam Media（代理商营销）、Qovery / Northflank 沙箱环境（厂商产品文）、Niraj 自愈 CI（个人教程，偏通用架构，今日名额已满未深读）。
 - 2026-10-29 第十九批：#107 Böckeler 上下文配置面（打地基）、#108 Garg Design-First 五级对齐（规划）、#109 Codex Goals（单代理）、#110 Codex 闭环修复环（验收）。打地基/规划/验收 11→12，单代理 14→15，全站 106→110。工具：Claude Code +1、Codex +2、通用 +1；类型：文章 +2、指南 +2。未收：Context Anchoring（同作者规划备选）、Iterating development workflows with Codex、Knowledge Priming、QualityLayer / SwarmPane / Northflank / Paneherd / aiexpert / Harry Lo；以及 offrun、Astra、Agent SDK 产品、vibeide、OpenAI harness 博客等既有备选。
 - 2026-10-28 第十八批：#103 Claude Code power tips（单代理）、#104 Cursor Keep Rate harness（看原理）、#105 CursorBench（评测）、#106 Unrolling Codex agent loop（看原理）。单代理 13→14，看原理 12→14，评测 11→12，全站 102→106。工具计数相对第十七批：Claude Code +1、Cursor +2、Codex +1。未收：offrun 产品 CTA、Alistair 薄交接文、Codex-as-platform 产品文、Agent SDK build-agents、vibeide、Gabriel Anhaia、Astra、OpenAI harness 博客；power-tips 已覆盖角度的重复文。

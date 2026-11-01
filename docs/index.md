@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 118 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 122 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-10-31（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-11-01（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,20 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-10-31，4 份）
+## 🆕 最近收录（2026-11-01，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 115 | [CI 里的 Claude Code：难在凭据](/115-giantswarm-agent-in-ci-pipeline) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 116 | [AGENTS.md 只写会改变动作的事](/116-aaif-effective-agents-md) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4.5" aria-hidden="true"></span> **4.5** |
-| 117 | [Codex 审 Claude 写：八个坑](/117-mertsahin-two-agent-team) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
-| 118 | [云端代理沙箱：隔离阶梯与五层防线](/118-avichal-cloud-agent-sandboxes) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 119 | [上下文锚定：决策写进功能文档](/119-garg-context-anchoring) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 120 | [AI 审查先回放已合并 PR](/120-faros-ai-review-replay) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 121 | [夜间 E2E 失败自动修复 PR](/121-kickflow-nightly-e2e-autofix) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 122 | [monorepo 审查：先匹配指南再审](/122-atlassian-guideline-matcher-review) | [接进 PR 与 CI · 触发、审查与流水线](/guide/ci) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 118 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 122 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -151,6 +151,7 @@ flowchart LR
     A88["88 SDD 贵且漂 改用 plan"]
     A03["03 访谈式需求"]
     A13["13 plan mode 实测"]
+    A119["119 功能文档锚定决策"]
     A108["108 五级设计对齐"]
     A61["61 四份 Markdown 长任务"]
     A96["96 规格五原则 模块喂入"]
@@ -162,7 +163,8 @@ flowchart LR
     A06 ~~~ A88
     A88 ~~~ A03
     A03 ~~~ A13
-    A13 ~~~ A108
+    A13 ~~~ A119
+    A119 ~~~ A108
     A108 ~~~ A61
     A61 ~~~ A96
     A96 ~~~ A29
@@ -232,6 +234,7 @@ flowchart LR
   end
   subgraph S5["验收这一次的产出"]
     direction TB
+    A120["120 历史回放 闸门即循环"]
     A60["60 七层审查 按风险定人数"]
     A95["95 代理自验证"]
     A81["81 副作用进 hook 第二模型审"]
@@ -244,6 +247,7 @@ flowchart LR
     A25["25 TDD 与手动测试"]
     A31["31 审查精确率优先"]
     A110["110 闭环修复环"]
+    A120 ~~~ A60
     A60 ~~~ A95
     A95 ~~~ A81
     A81 ~~~ A15
@@ -289,10 +293,12 @@ flowchart LR
     A115["115 流水线 pod 凭据轮换"]
     A63["63 维护 PR 删死代码"]
     A98["98 开 PR 硬护栏"]
+    A122["122 指南匹配 两步审查"]
     A41["41 定时代理六规则"]
     A90["90 修丁先自审 硬顶五轮"]
     A57["57 配置变更跑评测"]
     A10["10 PR 审查 CI 看护"]
+    A121["121 夜间 E2E 分类自动修"]
     A55["55 Skills 接进 CI"]
     A67["67 标签与事件触发代理"]
     A33["33 Bugbot 解决率"]
@@ -300,11 +306,13 @@ flowchart LR
     A34["34 Grok Build 无人值守"]
     A115 ~~~ A63
     A63 ~~~ A98
-    A98 ~~~ A41
+    A98 ~~~ A122
+    A122 ~~~ A41
     A41 ~~~ A90
     A90 ~~~ A57
     A57 ~~~ A10
-    A10 ~~~ A55
+    A10 ~~~ A121
+    A121 ~~~ A55
     A55 ~~~ A67
     A67 ~~~ A33
     A33 ~~~ A22

@@ -11,7 +11,7 @@ import { trPlugin } from '../docs/.vitepress/tr-plugin.mjs'
 const docs = path.resolve('docs')
 // 与 glossary-plugin 的作用范围一致：单篇资料 + 主题指南 + 模式库 / 学习路径 / 首页
 const files = [
-  ...fs.readdirSync(docs).filter((f) => /^(\d\d-.*|patterns|paths|index)\.md$/.test(f)),
+  ...fs.readdirSync(docs).filter((f) => /^(\d{2,3}-.*|patterns|paths|index)\.md$/.test(f)),
   ...(fs.existsSync(path.join(docs, 'guide')) ? fs.readdirSync(path.join(docs, 'guide')).filter((f) => f.endsWith('.md')).map((f) => 'guide/' + f) : [])
 ].sort()
 const hits = new Map() // id -> [file]

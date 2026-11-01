@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-01 · 第二十二批收录 #119–#122
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#119](/119-garg-context-anchoring) | Rahul Garg：Context Anchoring | 做规划 | 2026-03-17 |
+| [#120](/120-faros-ai-review-replay) | Thierry Donneau-Golencer（Faros）：What AI caught in PRs our human reviewers had approved | 验收这一次的产出 | 2026-10-28 |
+| [#121](/121-kickflow-nightly-e2e-autofix) | 川村（kickflow QA）：深夜のE2Eテスト失敗をClaude Codeが自動修正してPRを作る仕組みの構築 | 接进 PR 与 CI | 2026-04-03 |
+| [#122](/122-atlassian-guideline-matcher-review) | Arthy Vijayaraghavan（Atlassian）：How we accelerated code review in a large monorepo using Agentic Pipelines | 接进 PR 与 CI | 2026-10-14 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语用脚本逐字核对（53 条，0 处不符；#121 引用保留日文原文）。
+- 阶段数量：规划 12→13；验收 12→13；CI 12→14。全站 118→122。打地基 / 多代理 / 评测 / 云端仍各 13；看原理 14；单代理 16。
+- **拆分建议（未执行）**：单代理（16）最需要先拆；看原理与 CI（各 14）其次——CI 可拆“触发、定时与自动修复”vs“PR 审查机器人与写路径护栏”。仅建议，等确认后再拆。
+- 横向：阶段指南 planning / review / ci（核心问题、导图、分歧表、阅读顺序）；模式库新增 P110–P113；paths / all / 00-summary 同步。
+- 术语表新增 7 个：Context Anchoring、ADR、Lost in the Middle、Review Replay、LGTM、claude-code-action、Guideline Matcher。
+
+**未收录（备选）**：Periscoped *How We Review Code When Agents Write Most of It*（自承照着 #60 改的小团队版，与 #60 高度同构）；Hotfix Daily 审查清单（媒体综述）；Eric Brookfield *The CI That Fixes Itself*（约 400 词，细节不足）；Zenn flaky 测试检测（今日 CI 名额已用，留作备选）；QualityLayer / vibeide（产品向，先前已拒）；sglavoie 计划到无人值守（已收为 #68）。
+
 ## 2026-10-31 · 第二十一批收录 #115–#118
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

@@ -32,7 +32,7 @@ function index() {
 }
 
 export function resolveXrefs(src, file = '') {
-  return src.replace(/\[\[(\d\d)(?:§([^\]|]+))?(?:\|([^\]]+))?\]\]/g, (all, n, sec, label) => {
+  return src.replace(/\[\[(\d{2,3})(?:§([^\]|]+))?(?:\|([^\]]+))?\]\]/g, (all, n, sec, label) => {
     const e = index().get(n)
     if (!e) throw new Error(`[xref] ${file}: 未知文章编号 ${all}`)
     const { it, heads } = e

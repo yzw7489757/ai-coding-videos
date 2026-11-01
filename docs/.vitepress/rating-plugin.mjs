@@ -33,7 +33,7 @@ export function ratingPlugin(md) {
   md.core.ruler.push('rating_meta', (state) => {
     const rel = (state.env && state.env.relativePath) || ''
     const toks = state.tokens
-    const m = rel.match(/^(\d\d)-.*\.md$/)
+    const m = rel.match(/^(\d{2,3})-.*\.md$/)
     if (m && m[1] !== '00') {
       const item = items.get(m[1])
       if (!item) throw new Error(`[rating] ${rel} 没有在 domains.mjs 里登记`)
@@ -51,7 +51,7 @@ export function ratingPlugin(md) {
       for (let k = toks.length - 1; k >= 0; k--) {
         const t = toks[k]
         if (t.type !== 'heading_open' || t.tag !== 'h3') continue
-        const mm = (t.attrGet('id') || '').match(/^item-(\d\d)$/)
+        const mm = (t.attrGet('id') || '').match(/^item-(\d{2,3})$/)
         if (!mm || !ratings[mm[1]]) continue
         const tok = new state.Token('html_block', '', 0)
         tok.content = `<p class="meta-tags meta-inline">${scoreSpans(mm[1])}</p>\n`
