@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-02 · 第二十三批收录 #123–#126
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#123](/123-snowflake-snowpr-benchmark) | Soyoung Yoon +5（Snowflake）：SnowPR monorepo 基准 | 评测代理本身与给动作把关 | 2026-10-27 |
+| [#124](/124-loams-coding-agent-harnesses) | Dinakaran（Loams）：八家 coding-agent harness 拆解 | 看原理 | 2026-10-18 |
+| [#125](/125-agents-md-vs-claude-md) | Johannes Millan：AGENTS.md 与 CLAUDE.md 单源接线 | 打地基 | 2026-09-07 |
+| [#126](/126-github-copilot-agentic-harness-evals) | Shibani Basava & Carlos Castro：评 Copilot agentic harness | 评测代理本身与给动作把关 | 2026-06-25 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语用脚本逐字核对。
+- 阶段数量：评测 13→15；看原理 14→15；打地基 13→14。全站 122→126。规划/验收仍 13；CI 14；单代理 16；多代理/云端仍 13。
+- **拆分建议（未执行）**：单代理（16）仍最优先；看原理与评测（各 15）、CI（14）其次——评测可沿“私有/厂商 harness 对照与方法学”vs“Skill/分类器/噪声与爬分”。仅建议，等确认后再拆。
+- 横向：阶段指南 evals / harness / foundation；模式库新增 P114–P117；paths / all / 00-summary 同步。
+- 术语表新增 3 个：SnowPR、REM mode、SWE-bench。
+
+**未收录（备选）**：Cursor Agent SDK 产品帖（先前已拒）；Anthropic Claude Code expertise research（先前已拒 / 堆评测）；Faisal Karkoh HarnessAgent CI 镜像（SEO/产品向，开源可复制性不清）；kitquarry worktrees 跨工具指南（与 #112/#102/#23 重叠，单代理已 16）；Stuzhuk harness architecture（与 Loams 重叠）；OpenAI agent improvement loop cookbook（勤奋合成、非编码代理一手）；Tokenise October digest（二手）。
+
 ## 2026-11-01 · 第二十二批收录 #119–#122
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

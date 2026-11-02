@@ -66,7 +66,7 @@ export const terms = [
     detail: '放在仓库根目录或子目录，写构建命令、代码约定、常见坑、去哪找资料等。#01 的做法是：Claude 每犯一次错，就让它把教训写进 CLAUDE.md，下次自动避开。' },
   { id: 'agents-md', cat: 'config', term: 'AGENTS.md', aliases: ['AGENTS.md'], code: ['AGENTS.md'],
     short: '和 CLAUDE.md 同类的项目说明文件，是 Codex 等多家代理通用的约定文件名。',
-    detail: 'Codex 默认读取它，Grok Build 官方说明也称兼容。#10 的建议是 AGENTS.md 宁短勿乱，互相矛盾的指令比内容不够更糟。' },
+    detail: 'Codex 默认读取它，Grok Build 官方说明也称兼容。#10 的建议是 AGENTS.md 宁短勿乱，互相矛盾的指令比内容不够更糟。#125：多工具时以 AGENTS.md 为单源，CLAUDE.md 用 @ 导入。' },
   { id: 'mcp', cat: 'config', term: 'MCP（Model Context Protocol）', aliases: ['MCP'],
     short: '一种让代理接入外部工具和数据（浏览器、数据库、Sentry、Linear……）的通用插头标准。',
     detail: '一个 MCP server 暴露一组工具，代理连上后就能调用。例如 Playwright MCP 让代理能打开浏览器点页面。注意：每接一个 MCP，它的工具说明都会占用上下文，#04 提醒装太多会让你一直在 dumb zone 干活。' },
@@ -808,4 +808,14 @@ export const terms = [
   { id: 'guideline-matcher', cat: 'workflow', term: 'Guideline Matcher（指南匹配器）', aliases: ['指南匹配器', '匹配代理', 'guideline matcher'],
     short: '审查前的一步：只把改动文件对到适用的审查指南并写成产物文件，不审代码。',
     detail: '#122：Atlassian 在 monorepo 里用它给审查代理一份短名单；输出只列路径和指南名，避免下游把观察当结论。' },
+  { id: 'snowpr', cat: 'eval', term: 'SnowPR', aliases: ['SnowPR'],
+    short: 'Snowflake 用自家已合并 PR 与随 PR 隐藏测试做成的编码代理基准。',
+    detail: '#123：65 题、私有 Java/C++ monorepo；LLM 法官只过滤不打分；同模型下 harness 通过率接近、成本差明显。' },
+  { id: 'rem-mode', cat: 'runtime', term: 'REM mode（REPL Execution Model）', aliases: ['REM mode', 'REM', 'REPL Execution Model'],
+    short: 'Cortex Code 把文件、shell、搜索、SQL 暴露成同一 REPL 里 Python 函数的模式，便于一步串操作。',
+    detail: '#123：相对分开的 code mode，opus-5 上通过率接近且更省成本与新 token；文中标明内部 only、尚未对客户开放。' },
+  { id: 'swe-bench', cat: 'eval', term: 'SWE-bench', aliases: ['SWE-bench', 'SWE-bench Verified', 'SWE-bench Pro'],
+    short: '以开源仓真实 issue 为题、用隐藏测试判对错的主流编码代理基准；Verified / Pro 等是后续子集。',
+    detail: '#123 用规模对照说明公开榜与私有 monorepo 的差距；#126 在固定模型下用 Verified / Pro 等比较 harness。' },
+
 ]

@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 122 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 126 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -44,6 +44,13 @@
   - 作者 / 来源：Anthropic ／ claude.com 产品文章 ｜ 发布：2026-10-01 ｜ 工具：Claude Code CLI 与桌面应用、`/plugin`
   - 看点：mods 是挂在事件上的 TypeScript 函数，能在事件前后、代替或包住它运行，改写 prompt、拦截工具调用、替换 `/diff`；多个 mod 按加载顺序叠成洋葱；不在沙箱里，团队靠插件白名单和最先加载的 `sec-default` 管控。公告类短文，没有 API 和数据。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/52-claude-code-mods)
+
+### 一份 AGENTS.md 多工具薄指针 {#item-125}
+
+- **[AGENTS.md and CLAUDE.md: One Context File for Every Agent](https://parallelcode.app/blog/agents-md-vs-claude-md/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Johannes Millan ／ Parallel Code 博客 ｜ 发布：2026-09-07 ｜ 工具：通用（Codex / Claude Code / Gemini CLI / Copilot CLI）
+  - 看点：AGENTS.md 单源，CLAUDE.md 用 `@AGENTS.md` 或 symlink，Gemini 配 `context.fileName`；Copilot 全读但不定义优先级；指令是指导不是强制；多 worktree 时指令跟 commit。作者披露 Parallel Code 产品。
+  - 🆕 收录于 2026-11-02 ｜ 👉 [阅读分析](/125-agents-md-vs-claude-md)
 
 ### AGENTS.md 只写会改变动作的事 {#item-116}
 
@@ -534,6 +541,13 @@
 📘 **先读阶段指南**：[评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals)
 
 
+### SnowPR：用自家 PR 评编码代理 {#item-123}
+
+- **[SnowPR: Benchmarking Coding Agents on Snowflake's 43-Million-Line Monorepo](https://www.snowflake.com/en/blog/engineering/Benchmarking-coding-agents/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Soyoung Yoon +5 ／ Snowflake Engineering Blog ｜ 发布：2026-10-27 ｜ 工具：通用（Cortex Code / Claude Code / Cursor / Codex）
+  - 看点：65 个已合并 PR + 隐藏测试；LLM 法官只过滤；描述敏感性 83% vs 57%；opus-5 四 harness 通过率 84.1%–85.1%，REM 更省；跨 Java+C++ 才难。私有基准，REM 内部 only。
+  - 🆕 收录于 2026-11-02 ｜ 👉 [阅读分析](/123-snowflake-snowpr-benchmark)
+
 ### 按执行轨迹打分的四条评测教训 {#item-69}
 
 - **[Four evaluation engineering lessons learned from building agent plugins](https://cloud.google.com/blog/topics/developers-practitioners/four-eval-engineering-lessons)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -575,6 +589,13 @@
   - 作者 / 来源：Naman Jain ／ Cursor ｜ 发布：2026-06-25 ｜ 工具：编码代理评测外壳；SWE-bench Pro / Multilingual
   - 看点：731 轨迹审计显示成功解题 63% 为检索已知修复；封 git 历史并限网后分数显著下降。
   - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/86-cursor-reward-hacking-benchmarks)
+
+### 固定模型评 Copilot harness {#item-126}
+
+- **[Evaluating performance and efficiency of the GitHub Copilot agentic harness across models and tasks](https://github.blog/ai-and-ml/github-copilot/evaluating-performance-and-efficiency-of-the-github-copilot-agentic-harness-across-models-and-tasks/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Shibani Basava & Carlos Castro ／ GitHub Blog ｜ 发布：2026-06-25 ｜ 工具：通用（Copilot CLI vs Claude Code / Codex CLI）
+  - 看点：固定模型与题，归一窗口 / reasoning / 工具 / MCP；主张完成率持平、多数配置更省 token；TB2 多跑方差椭圆；Methodology 含 best-of-5 与公开榜不可直接比。厂商自报，正文少裸数字。
+  - 🆕 收录于 2026-11-02 ｜ 👉 [阅读分析](/126-github-copilot-agentic-harness-evals)
 
 ### Auto-review：分类器与评测 {#item-39}
 
@@ -828,6 +849,13 @@
 - **[How Claude Code & Codex approach sandboxing](https://instavm.io/blog/how-claude-code-and-codex-approach-sandboxing)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
   - 作者 / 来源：Abhishek ／ InstaVM ｜ 发布：2026-04-05 ｜ 工具：通用（Claude Code / Codex）
   - 深度解读：[Claude Code 与 Codex 的沙箱：同原语，不同信任](/113-instavm-claude-codex-sandboxing)
+
+### 八家外壳对照：门沙箱压缩 {#item-124}
+
+- **[Coding-agent harnesses, taken apart: Codex, Claude Code, Cursor, OpenCode, Aider, Goose, Cline and T3 Code](https://loams.dev/blog/coding-agent-harnesses)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Dinakaran ／ Loams 博客 ｜ 发布：2026-10-18 ｜ 工具：通用（八家公开源对照）
+  - 看点：同一循环下拆门禁、OS 沙箱、压缩、编辑格式、撤销与 lethal trifecta；门里模型非边界；checkpoints 不替代沙箱。后半 Loams 产品标 Experimental，需折扣阅读。
+  - 🆕 收录于 2026-11-02 ｜ 👉 [阅读分析](/124-loams-coding-agent-harnesses)
 
 ### 在 Codex harness 上做自己的客户端 {#item-43}
 
