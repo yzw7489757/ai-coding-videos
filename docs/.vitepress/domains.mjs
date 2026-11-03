@@ -62,6 +62,7 @@ export const domains = [
     icon: '📝',
     desc: '动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。',
     items: [
+      { n: '127', slug: '127-freshworktree-plan-mode-dead', text: '目标够硬还要六步计划吗', short: 'goal护栏对六步计划', tool: 'general', type: 'article', added: '2026-11-03', published: '2026-10-30' },
       { n: '84', slug: '84-medori-plan-assumptions-unsaid', text: '计划缺口在未说的假设', short: '先交未说假设', tool: 'claude', type: 'article', added: '2026-10-23', published: '2026-10-22' },
       { n: '64', slug: '64-giant-swarm-spec-driven-development', text: '把审查挪到计划：五步规格驱动', short: '审计划不审 diff', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-13' },
       { n: '68', slug: '68-plan-to-unattended-agent-runs', text: '计划切成带程序验收的短会话', short: '完成合约短会话', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-09' },
@@ -111,6 +112,7 @@ export const domains = [
     icon: '🤝',
     desc: '多个代理围绕同一个目标：什么时候该用、怎么分工和协调、互相依赖的大迁移怎么拆，以及长时自主任务。',
     items: [
+      { n: '128', slug: '128-generality-mirrorcode-multi-agent', text: '固定预算下多分代理会更快吗', short: '250M均分留言板', tool: 'general', type: 'article', added: '2026-11-03', published: '2026-10-29' },
       { n: '97', slug: '97-earlam-claude-native-pipeline', text: '放弃可移植：Claude 原生流水线', short: '原生流水线 状态脚本', tool: 'claude', type: 'article', added: '2026-10-26', published: '2026-10-20' },
       { n: '80', slug: '80-madsalt-multi-agent-orchestration-3315', text: '3315 次启动：失败在缝合处', short: '缝合处 hook 挡事故', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-19' },
       { n: '111', slug: '111-bswen-claude-codex-together', text: 'Claude Code 与 Codex 三种协作', short: 'CLI 互调 写审 并行', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-19' },
@@ -135,6 +137,7 @@ export const domains = [
     desc: '确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。',
     items: [
       { n: '120', slug: '120-faros-ai-review-replay', text: 'AI 审查先回放已合并 PR', short: '历史回放 闸门即循环', tool: 'general', type: 'article', added: '2026-11-01', published: '2026-10-28' },
+      { n: '129', slug: '129-aalonso-tdd-hooks', text: 'Hooks 强制先红再绿', short: 'TDD 守卫与 journal', tool: 'claude', type: 'article', added: '2026-11-03', published: '2026-10-24' },
       { n: '60', slug: '60-claude-code-team-code-review', text: '代码审查的七层把关', short: '七层审查 按风险定人数', tool: 'claude', type: 'article', added: '2026-10-19', published: '2026-10-15' },
       { n: '95', slug: '95-osmani-agentic-verification', text: '代理验证：E2E / 属性 / 差分测试', short: '代理自验证', tool: 'general', type: 'article', added: '2026-10-25', published: '2026-10-14' },
       { n: '81', slug: '81-aditlal-harness-engineering-24000', text: '规则要按效果写成 hook', short: '副作用进 hook 第二模型审', tool: 'claude', type: 'article', added: '2026-10-22', published: '2026-10-10' },
@@ -206,6 +209,7 @@ export const domains = [
     icon: '☁️',
     desc: '让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。',
     items: [
+      { n: '130', slug: '130-google-ace-deep-dive', text: 'ACE：microVM 与零秘密', short: 'ACE 零秘密与闲置', tool: 'general', type: 'article', added: '2026-11-03', published: '2026-10-23' },
       { n: '118', slug: '118-avichal-cloud-agent-sandboxes', text: '云端代理沙箱：隔离阶梯与五层防线', short: '隔离阶梯 五层防线', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-10-21' },
       { n: '82', slug: '82-cursor-navan-cloud-agents-migration', text: '自托管并行迁八个应用', short: 'Cloud Agents 自托管并行', tool: 'cursor', type: 'article', added: '2026-10-22', published: '2026-10-16' },
       { n: '53', slug: '53-factory-opencompute', text: 'OpenCompute：给代理按需发电脑', short: '代理沙箱机队', tool: 'factory', type: 'article', added: '2026-10-15', published: '2026-10-14' },

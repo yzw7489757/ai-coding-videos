@@ -818,4 +818,23 @@ export const terms = [
     short: '以开源仓真实 issue 为题、用隐藏测试判对错的主流编码代理基准；Verified / Pro 等是后续子集。',
     detail: '#123 用规模对照说明公开榜与私有 monorepo 的差距；#126 在固定模型下用 Verified / Pro 等比较 harness。' },
 
+  { id: 'mirrorcode', cat: 'eval', term: 'MirrorCode', aliases: ['MirrorCode'],
+    short: 'Epoch AI 的长程软件复刻基准：代理不见源码，按可见与隐藏测试通过率打分。',
+    detail: '#128：Generality Labs 在固定 250M token 预算下用留言板多代理跑 Ruff / Cprepro / Sed 等任务；作者提醒该基准可能比真实工作更适委托。' },
+  { id: 'message-board', cat: 'workflow', term: 'Message Board（留言板）', aliases: ['留言板', 'message board', 'Message board'],
+    short: '多代理共享的通信面：可全局广播也可私信，常在工具调用间隙提示未读。',
+    detail: '#128：无条数限制的全局板 + 私信；同模型常撞名，入板前要多轮改名。' },
+  { id: 'ace', cat: 'runtime', term: 'Agent Compute Engine（ACE）', aliases: ['ACE', 'Agent Compute Engine', 'Google ACE'],
+    short: 'Google 给每个代理一台硬件隔离 microVM 的统一代理计算平台，含闲置检查点与零秘密出站。',
+    detail: '#130：盒内不放长期凭据，出站经 Agent Gateway 飞行中换票；应用感知 idle 近零成本；基镜像 DAX/CoW 去重；计划 Cloud 预览。' },
+  { id: 'zero-secrets', cat: 'runtime', term: 'Zero-secrets（零秘密架构）', aliases: ['零秘密', 'zero-secrets', 'Zero-secrets', 'zero secrets'],
+    short: '沙箱内存与磁盘不持久存放用户或云凭据；开门钥匙只在盒外注入。',
+    detail: '#130：假设沙箱已被攻陷；guest 无 OAuth/服务账号密钥、无直连 VPC 网卡；短命 SPIFFE 身份，凭据在网关 in-flight 插入。' },
+  { id: 'in-flight-token-swap', cat: 'runtime', term: 'In-flight Token Swap（飞行中换票）', aliases: ['in-flight token swap', '飞行中换票', 'token swap'],
+    short: '出站流量在盒外网关把工作负载身份换成目标服务凭据，沙箱进程看不到长期密钥。',
+    detail: '#130：Agent Gateway 验身份、做 egress/DLP，并在飞行中插入开门凭据。' },
+  { id: 'tdd-guard', cat: 'workflow', term: 'TDD Guard（编辑窗口）', aliases: ['TDD guard', 'TDD Guard', '编辑窗口', 'tdd-guard'],
+    short: '用 hooks 做的状态机：观察到真正失败的测试才打开生产码编辑权，全绿后重新上锁。',
+    detail: '#129：信 summary 行不信非零退出码；一窗允许多次编辑到绿；重构要显式声明并保持绿；journal 供独立 reviewer 对账。' },
+
 ]

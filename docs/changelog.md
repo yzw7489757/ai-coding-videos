@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-03 · 第二十四批收录 #127–#130
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#127](/127-freshworktree-plan-mode-dead) | Tom Skeggs：Plan mode is dead? | 做规划 | 2026-10-30 |
+| [#128](/128-generality-mirrorcode-multi-agent) | Pablo Romero（Generality Labs）：固定预算 MirrorCode 多代理 | 多代理协作与大任务拆分 | 2026-10-29 |
+| [#129](/129-aalonso-tdd-hooks) | Aitor Alonso：Enforcing TDD on AI agents with Claude Code hooks | 验收这一次的产出 | 2026-10-24 |
+| [#130](/130-google-ace-deep-dive) | Ramanathan Venkatapathy & Rohit Jnagal：Agent Compute Engine deep dive | 云端与后台运行环境 | 2026-10-23 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：规划 / 多代理 / 验收 / 云端 13→14。全站 126→130。单代理仍 16；看原理 / 评测仍 15；打地基 / CI 仍 14。
+- **拆分建议（未执行）**：单代理（16）仍最优先；看原理与评测（各 15）其次；打地基 / CI（各 14）与新到 14 的规划·多代理·验收·云端再次——规划可拆“需求澄清与假设”vs“规格与 plan/goal 门闸”；多代理可拆“并行编排/预算实验”vs“流水线与长时接力”；验收可拆“自验证与 TDD 门闩”vs“审查器与分层把关”；云端可拆“托管/自托管会话”vs“沙箱隔离与零秘密”。仅建议，等确认后再拆。
+- 横向：阶段指南 planning / multi / review / cloud；模式库新增 P118–P121；paths / all / 00-summary 同步。
+- 术语表新增 6 个：MirrorCode、Message Board、ACE、Zero-secrets、In-flight Token Swap、TDD Guard。
+
+**未收录（备选）**：AgentRex *Review Can't Be the Last Gate*（偏综述/产品）；Ajayk AGENTS.md 指南（与 #116/#125 重叠）；AutoCoder *Unbundled Coding Agent*（产品向）；Stuzhuk harness architecture（与 #124 重叠）；Orbit / Continuum / Nimbalyst 并行与 worktree 产品文（与 #112/#102/#23 重叠，单代理已 16）；Claude Code sandbox docs / Academy plan·evals 课程页（文档/课程骨架，非一手工程复盘）；GitHub Agent HQ 产品帖；Vivek *Plan before you prompt*、BuildLoop PVI（规划弱于今日 #127）；Kean *Bring Receipts*（验收强备选，今日名额给 #129）。
+
 ## 2026-11-02 · 第二十三批收录 #123–#126
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

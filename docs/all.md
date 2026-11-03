@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 126 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 130 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -127,6 +127,13 @@
 **这一组放什么**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
 
 📘 **先读阶段指南**：[做规划 · 需求澄清与任务拆解](/guide/planning)
+
+### 目标够硬还要六步计划吗 {#item-127}
+
+- **[Plan mode is dead?](https://freshworktree.com/plan-mode-is-dead/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Tom Skeggs ／ Fresh Worktree ｜ 发布：2026-10-30 ｜ 工具：Claude Code 与 OpenCode 对照；Adventure Party 编排
+  - 看点：同一目标/契约/护栏，只给 plan 格多六步计划；Claude 上 goal 更快更省，弱本地模型上 plan 才稳；行为测外仍有板外探针。n=5，绑 Sidekick。
+  - 🆕 收录于 2026-11-03 ｜ 👉 [阅读分析](/127-freshworktree-plan-mode-dead)
 
 ### 计划缺口在未说的假设 {#item-84}
 
@@ -343,6 +350,13 @@
 
 📘 **先读阶段指南**：[多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi)；另有[专题：长时自主任务](/guide/long-running)
 
+### 固定预算下多分代理会更快吗 {#item-128}
+
+- **[Multi-agent experiments under fixed token budgets on MirrorCode](https://generality.org/blog/posts/mirrorcode-collaboration/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Pablo Romero ／ Generality Labs ｜ 发布：2026-10-29 ｜ 工具：通用；自研留言板 harness + Inspect AI
+  - 看点：250M token 总预算均分 1–64；Ruff 上 8 代理甜点；Cprepro 终分常单代理更好；8 代理平均只贵约 1.1%。作者自限 MirrorCode 可能更适委托。
+  - 🆕 收录于 2026-11-03 ｜ 👉 [阅读分析](/128-generality-mirrorcode-multi-agent)
+
 ### 放弃可移植：Claude 原生流水线 {#item-97}
 
 - **[Harness Engineering: Anthropic's AI SDLC](https://robearlam.com/blog/harness-engineering-anthropics-ai-sdlc)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -447,6 +461,13 @@
   - 作者 / 来源：Thierry Donneau-Golencer ／ Faros 博客 ｜ 发布：2026-10-28 ｜ 工具：基于 Open Code Review 的双审查器（Anthropic + OpenAI 模型）
   - 看点：28 个已批准 PR 回放，每个 3–14 个人工未提的关键问题；通宵运行与文档 PR 13 轮的不收敛循环；闸门与停止条件合一（P0 / P1 清零即批准）；五步改法。样本小、无误报率，夹带自家报告导流。
   - 🆕 收录于 2026-11-01 ｜ 👉 [阅读分析](/120-faros-ai-review-replay)
+
+### Hooks 强制先红再绿 {#item-129}
+
+- **[Enforcing TDD on AI agents with Claude Code hooks](https://aalonso.dev/blog/2026/enforcing-tdd-on-ai-agents-with-claude-code-hooks/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Aitor Alonso ／ 个人工程博客 ｜ 发布：2026-10-24 ｜ 工具：Claude Code Pre/PostToolUse hooks；Superpowers
+  - 看点：提示词挡不住测后写；失败测（summary 行）开编辑窗、全绿关窗；重构显式声明；journal + 独立 reviewer。Elixir 特化，无量化对照。
+  - 🆕 收录于 2026-11-03 ｜ 👉 [阅读分析](/129-aalonso-tdd-hooks)
 
 ### 代码审查的七层把关 {#item-60}
 
@@ -754,6 +775,13 @@
 
 📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
 
+### ACE：microVM 与零秘密 {#item-130}
+
+- **[Inside Agent Compute Engine: Building the compute foundation for the agentic era](https://cloud.google.com/blog/topics/ai-infrastructure/agent-compute-engine-deep-dive)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Ramanathan Venkatapathy、Rohit Jnagal ／ Google Cloud Blog ｜ 发布：2026-10-23 ｜ 工具：通用（Google ACE / microVM）
+  - 看点：每代理一台硬件隔离 microVM；盒内零秘密、飞行中换票；应用感知闲置检查点；DAX/CoW 去重。官方深潜，无独立密度数字，绑 Cloud 预览。
+  - 🆕 收录于 2026-11-03 ｜ 👉 [阅读分析](/130-google-ace-deep-dive)
+
 ### 云端代理沙箱：隔离阶梯与五层防线 {#item-118}
 
 - **[Inside the Box: How Production Sandboxes for AI Coding Agents Are Built](https://avichal.me/blog/cloud-agent-sandboxes)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -959,6 +987,8 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
+**容量检查（2026-11-03，第二十四批 #127–#130 后）**：现在 **130** 份资料分 9 个阶段：单代理 16；看原理、评测各 15；打地基、接进 PR 与 CI 各 14；做规划 / 多代理 / 验收 / 云端各 14。本批补规划（#127 goal vs plan）、多代理（#128 固定预算留言板）、验收（#129 TDD hooks）、云端（#130 Google ACE）。逐篇复核归类：#127 主要贡献是动手前选 plan 还是 goal，归做规划；#128 是同目标下多代理预算与通信，归多代理；#129 是强制一次产出的测试纪律，归验收；#130 是代理跑在哪台隔离机、凭据与闲置，归云端。**拆分建议（仅建议，未执行）**：①单代理（16）仍最优先——可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理与评测（各 15）其次——评测可沿“私有/厂商 harness 对照与方法学”vs“Skill/分类器/噪声与爬分”；③打地基与 CI（各 14）、以及新到 14 的规划/多代理/验收/云端——规划可拆“需求澄清与假设”vs“规格结构与 plan/goal 门闸”；多代理可拆“并行编排/扇出与预算实验”vs“多阶段流水线与长时接力”；验收可拆“代理自验证与 TDD 门闩”vs“审查器与分层把关”；云端可拆“托管/自托管会话”vs“沙箱隔离与零秘密”。均保持单一任务轴，等主人确认后再拆。
+
 **容量检查（2026-11-01，第二十二批 #119–#122 后）**：现在 **122** 份资料分 9 个阶段：单代理 16；看原理、接进 PR 与 CI 各 14；打地基 / 做规划 / 多代理 / 验收 / 评测 / 云端各 13。本批按“篇数少的先补”补了做规划（#119 上下文锚定）、验收（#120 审查回放）和 CI（#121 夜间 E2E 自动修、#122 monorepo 指南匹配审查）。逐篇复核归类：#119 的主要贡献是把设计决策落成跨会话的计划文档，归做规划（它也像项目规则文件，但讲的是功能级、随会话变化的内容，不归打地基）；#120 讲怎么确认审查这一关真的在起作用、何时停止审查，归验收；#121 是定时触发的无人值守修复流水线，#122 是 PR 流水线里的审查机器人，均归 CI。**拆分建议（仅建议，未执行）**：①单代理（16）可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状（worktree / 冷 clone / 远程保活）”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量”；③接进 PR 与 CI（14）可拆“触发、定时与自动修复”（#41、#67、#121、#22、#34、#63、#55、#57）vs“PR 审查机器人与写路径护栏”（#10、#33、#90、#98、#115、#122）；④其余各 13 维持既有建议。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-10-29，第十九批 #107–#110 后）**：现在 **110** 份资料分 9 个阶段：单代理 15；看原理 14；打地基 / 做规划 / 验收 / 评测各 12；多代理 / 接进 PR 与 CI / 云端各 11。本批补打地基配置面地图、规划五级对齐、单代理 Goals、验收修复环。**拆分建议（仅建议，未执行）**：①单代理（15）可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理（14）可沿“循环与上下文 / agent loop”vs“客户端、工具形状与线上质量（Keep Rate）”；③打地基 / 规划 / 验收 / 评测（各 12）可沿既有建议再切；④其余各 11 维持。均保持单一任务轴，等主人确认后再拆。
@@ -1025,6 +1055,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-11-03 第二十四批：#127 Fresh Worktree plan vs goal（规划 13→14）、#128 Generality MirrorCode 多代理（多代理 13→14）、#129 Alonso TDD hooks（验收 13→14）、#130 Google ACE（云端 13→14）。全站 126→130。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：AgentRex 审查闸门文、Ajayk AGENTS.md 指南、AutoCoder Unbundled 产品向、Stuzhuk harness（与 #124 重叠）、Orbit/Continuum/Nimbalyst 并行产品文、Claude sandbox docs / Academy 课程页、GitHub Agent HQ 产品帖、Vivek/BuildLoop 规划文（弱于 #127）、Kean Bring Receipts（验收备选）。
 - 2026-11-01 第二十二批：#119 Garg 上下文锚定（规划 12→13）、#120 Faros 审查回放（验收 12→13）、#121 kickflow 夜间 E2E 自动修复、#122 Atlassian monorepo 指南匹配审查（CI 12→14）。全站 118→122。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Periscoped 审查流程（与 #60 高度同构，自承照搬）、Hotfix Daily 审查清单（媒体综述）、Eric Brookfield 自愈 CI（约 400 词，偏短）、Zenn flaky 测试检测（今日 CI 名额已用，留作备选）、QualityLayer / vibeide（产品向，先前已拒）。
 - 2026-10-31 第二十一批：#115 Giant Swarm CI 流水线里的 Claude Code（CI 11→12）、#116 AAIF 写好 AGENTS.md（打地基 12→13）、#117 Mert Sahin 双代理八个坑（多代理 12→13）、#118 Avichal Pandey 云端沙箱全景（云端 12→13）。全站 114→118。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Agentastic 定时 CI 修复（厂商教程，作者自承未实际跑托管修复）、GitHub Agentic Workflows GA（产品公告）、GitLab AI-Native Playbook（推广文）、Whitelam Media（代理商营销）、Qovery / Northflank 沙箱环境（厂商产品文）、Niraj 自愈 CI（个人教程，偏通用架构，今日名额已满未深读）。
 - 2026-10-29 第十九批：#107 Böckeler 上下文配置面（打地基）、#108 Garg Design-First 五级对齐（规划）、#109 Codex Goals（单代理）、#110 Codex 闭环修复环（验收）。打地基/规划/验收 11→12，单代理 14→15，全站 106→110。工具：Claude Code +1、Codex +2、通用 +1；类型：文章 +2、指南 +2。未收：Context Anchoring（同作者规划备选）、Iterating development workflows with Codex、Knowledge Priming、QualityLayer / SwarmPane / Northflank / Paneherd / aiexpert / Harry Lo；以及 offrun、Astra、Agent SDK 产品、vibeide、OpenAI harness 博客等既有备选。
