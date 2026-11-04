@@ -4,7 +4,7 @@ title: AI 编程代理实战知识库
 hero:
   name: AI 编程代理实战知识库
   text: 资深工程师怎么用 Claude Code、Codex、Cursor、Grok 写软件
-  tagline: 130 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
+  tagline: 134 份真实存在的演讲、工程博客、官方文档和指南，每份配一篇深度拆解；按 AI 代理开发任务的九个阶段组织，配阶段指南、模式库和学习路径。小白友好，术语可一键查。
   actions:
     - theme: brand
       text: 按学习路径读
@@ -78,7 +78,7 @@ features:
 | 阶段指南 | 每个阶段一页，把多份资料串起来回答几个核心问题，并标出来源之间的分歧 | 左侧边栏每组第一项 |
 | 工具页面 | [学习路径](/paths)、[模式库](/patterns)（29 个做法）、[术语表](/glossary)、[更新日志](/changelog)；另有[总结](/00-summary) | 顶部导航 |
 
-整理开始于 2026-10-08，最近一次更新：2026-11-03（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
+整理开始于 2026-10-08，最近一次更新：2026-11-04（见[更新日志](/changelog)）。工具和资料类型标在每篇文章的标题下方。
 
 ::: tip 阅读小功能
 - **术语一点就懂**：文章里带品牌色点状下划线的词，鼠标悬停能看到一句话解释，点击跳到[术语表](/glossary)。
@@ -87,20 +87,20 @@ features:
 - **小节级引用**：阶段指南和模式库里的 `#16 §3.5` 这类链接，会直接跳到原文对应小节。
 :::
 
-## 🆕 最近收录（2026-11-03，4 份）
+## 🆕 最近收录（2026-11-04，4 份）
 
 | # | 资料 | 阶段 | 类型 / 工具 | 综合评分 |
 |---|---|---|---|---|
-| 127 | [目标够硬还要六步计划吗](/127-freshworktree-plan-mode-dead) | [做规划 · 需求澄清与任务拆解](/guide/planning) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 128 | [固定预算下多分代理会更快吗](/128-generality-mirrorcode-multi-agent) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 129 | [Hooks 强制先红再绿](/129-aalonso-tdd-hooks) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
-| 130 | [ACE：microVM 与零秘密](/130-google-ace-deep-dive) | [云端与后台运行环境 · 代理在哪里跑](/guide/cloud) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:3.5" aria-hidden="true"></span> **3.5** |
+| 131 | [Symphony：用 issue 板编排 Codex](/131-openai-symphony-orchestration) | [多代理协作与大任务拆分 · 分工、协调与长时运行](/guide/multi) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 132 | [一人团队的可信任代理 harness](/132-axel-agent-harness-trust) | [打地基 · 上下文与规范](/guide/foundation) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 133 | [T3 Code：本机多代理控制面](/133-flavio-t3-code-control-plane) | [看原理 · Harness 与内部机制](/guide/harness) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
+| 134 | [Stop hook 强制交叉审查](/134-wonjoon-sparring-review-loop) | [验收这一次的产出 · 测试、审查与完成标准](/guide/review) | <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span> | <span class="rating-stars" style="--r:4" aria-hidden="true"></span> **4.0** |
 
 每篇的实用性、深度评分见文章标题下方，[全部资料页](/all#scores)可以按评分排序。
 
 ## 知识库全景图
 
-按“阶段 → 资料”展示全部 130 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
+按“阶段 → 资料”展示全部 134 份资料，从左到右就是一个任务从开始到上线的顺序。每个阶段指南里还有更细的“问题 → 资料”小图。
 
 - **[打地基 · 上下文与规范](/guide/foundation)**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 - **[做规划 · 需求澄清与任务拆解](/guide/planning)**：动手前把需求问清楚、把任务拆好：让代理采访你、找出未知、研究→计划→实施、plan mode。
@@ -116,6 +116,7 @@ features:
 flowchart LR
   subgraph S1["打地基"]
     direction TB
+    A132["132 文件型 harness 强制分层"]
     A49["49 代理规模的源码管理"]
     A52["52 Claude Code mods"]
     A46["46 Grok Build 记忆"]
@@ -130,6 +131,7 @@ flowchart LR
     A21["21 Skills 按需加载"]
     A20["20 规则文件少即是多"]
     A28["28 Hooks 确定性规则"]
+    A132 ~~~ A49
     A49 ~~~ A52
     A52 ~~~ A46
     A46 ~~~ A125
@@ -219,6 +221,7 @@ flowchart LR
     A74["74 主代理管依赖图"]
     A65["65 Workflows 后台扇出"]
     A85["85 动态工作流六模式"]
+    A131["131 Linear 控制面 SPEC"]
     A17["17 16 代理写编译器"]
     A05["05 Builder 加 Validator"]
     A18["18 数百代理分层"]
@@ -232,7 +235,8 @@ flowchart LR
     A117 ~~~ A74
     A74 ~~~ A65
     A65 ~~~ A85
-    A85 ~~~ A17
+    A85 ~~~ A131
+    A131 ~~~ A17
     A17 ~~~ A05
     A05 ~~~ A18
     A18 ~~~ A30
@@ -247,6 +251,7 @@ flowchart LR
     A81["81 副作用进 hook 第二模型审"]
     A15["15 skeptic 证伪"]
     A59["59 独立完成标准"]
+    A134["134 sparring 停机审查环"]
     A75["75 AGENTS.md 审查规则"]
     A12["12 测试全绿也要读"]
     A71["71 critic 加 QA 真跑"]
@@ -260,7 +265,8 @@ flowchart LR
     A95 ~~~ A81
     A81 ~~~ A15
     A15 ~~~ A59
-    A59 ~~~ A75
+    A59 ~~~ A134
+    A134 ~~~ A75
     A75 ~~~ A12
     A12 ~~~ A71
     A71 ~~~ A32
@@ -365,6 +371,7 @@ flowchart LR
     A124["124 八家 harness 横向拆"]
     A43["43 Codex app server"]
     A54["54 harness 省 token"]
+    A133["133 多厂商本机控制面"]
     A09["09 Codex harness 拆解"]
     A66["66 11 个外壳源码解剖"]
     A104["104 Keep Rate 按模型定制"]
@@ -379,7 +386,8 @@ flowchart LR
     A44["44 Architect Editor 双模型"]
     A124 ~~~ A43
     A43 ~~~ A54
-    A54 ~~~ A09
+    A54 ~~~ A133
+    A133 ~~~ A09
     A09 ~~~ A66
     A66 ~~~ A104
     A104 ~~~ A45

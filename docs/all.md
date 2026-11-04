@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 130 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 134 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -19,6 +19,10 @@
 <ScoreTable />
 
 ## 打地基 · 上下文与规范 {#domain-foundation}
+
+### 一人团队的可信任代理 harness {#item-132}
+- 原文：Axel Sooriah · Building a harness so a team of one can trust its coding agents（2026-10-29）
+- 看点：四种失败驱动文件型 harness；提示词是请求，权限/CI/验证器才是规则；244 条偏离与验证器夹具。
 
 **这一组放什么**：让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。
 
@@ -412,6 +416,9 @@
   - 看点：用 JS 工作流隔离上下文，对抗懒收工 / 自偏袒 / 目标漂移；六种模式与检疫分流；常规写码多数不必上。
   - 🆕 收录于 2026-10-23 ｜ 👉 [阅读分析](/85-claude-dynamic-workflows)
 
+### Symphony：用 issue 板编排 Codex {#item-131}
+- 原文：OpenAI · An open-source spec for Codex orchestration: Symphony（2026-04-27）
+- 看点：Linear 作控制面；每票常驻代理 + WORKFLOW.md/SPEC.md；部分团队落地 PR +500%；参考实现非产品。
 ### 16 个代理并行写 C 编译器 {#item-17}
 
 - **[Building a C compiler with a team of parallel Claudes](https://www.anthropic.com/engineering/building-c-compiler)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -504,6 +511,9 @@
   - 看点：同一模型从零复刻 gdal，单代理自认为做完时只到 36%，“验证者先建完成标准 + 实现者看不到用例”的三角色系统到 90%；24 个任务三个模型中位数都提升，也有下降格；gdal 花了 14 倍额度、13 倍时间，每格只跑一次。
   - 🆕 收录于 2026-10-16 ｜ 👉 [阅读分析](/59-factory-large-software-tasks)
 
+### Stop hook 强制交叉审查 {#item-134}
+- 原文：wonjoon · Keeping Agents from Grading Their Own Code: sparring（2026-07-30）
+- 看点：审查是 Stop hook 停机条件；防说服与盲法官；示例分 17→24。
 ### 把审查规则写进 AGENTS.md {#item-75}
 
 - **[Custom Code Review rules for Codex](https://developers.openai.com/blog/custom-code-review-rules-for-codex)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
@@ -899,6 +909,9 @@
   - 看点：系统提示删约 66%；低频工具按需加载，静态工具描述 token 降 60%；缓存断点放在稳定前缀后，冷缓存未命中降 20%；行号每十行一个；少推子代理。合计降 7% token 成本，靠线上 A/B 确认质量。几个百分比口径不同，不能相加。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/54-cursor-token-efficiency)
 
+### T3 Code：本机多代理控制面 {#item-133}
+- 原文：Flavio Copes · A deep dive into T3 Code（2026-08-28）
+- 看点：多厂商本机控制面；客户端展示、environment 执行；worktree 与权限两套旋钮。
 ### Codex Harness 内部机制 {#item-09}
 
 - **[How Codex Works — Dominik Kundel, OpenAI](https://www.youtube.com/watch?v=shRR1e2HXMk)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>

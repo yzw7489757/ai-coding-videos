@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-04 · 第二十五批收录 #131–#134
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#131](/131-openai-symphony-orchestration) | OpenAI（Kotliarskyi / Zhu / Brock）：An open-source spec for Codex orchestration: Symphony | 多代理协作与大任务拆分 | 2026-04-27 |
+| [#132](/132-axel-agent-harness-trust) | Axel Sooriah：Building a harness so a team of one can trust its coding agents | 打地基 | 2026-10-29 |
+| [#133](/133-flavio-t3-code-control-plane) | Flavio Copes：A deep dive into T3 Code | 看原理 | 2026-08-28 |
+| [#134](/134-wonjoon-sparring-review-loop) | wonjoon：Keeping Agents from Grading Their Own Code: sparring | 验收这一次的产出 | 2026-07-30 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：打地基 / 多代理 / 验收 14→15；看原理 15→16。全站 130→134。单代理仍 16；评测仍 15；规划 / CI / 云端仍 14。
+- **拆分建议（未执行）**：单代理（16）与看原理（16）最优先；评测（15）与新到 15 的打地基·多代理·验收其次——看原理可拆“厂商/内部 harness 机制”vs“其上控制面与编排规格”；多代理可拆“tracker/编排器控制面”vs“并行实验与写审协作”；验收可拆“自验证与 TDD 门闩”vs“Stop-hook / 对抗式交叉审查”。仅建议，等确认后再拆。
+- 横向：阶段指南 foundation / multi / review / harness；模式库新增 P122–P125；paths / all / 00-summary 同步。
+- 术语表新增 5 个：Symphony、WORKFLOW.md、Codex App Server、T3 Code、sparring。
+
+**未收录（备选）**：Alex Rusin hooks/skills/headless（Gui Ferreira 演讲二手整理，与 #28/#92/#129 重叠）；Orbit 多 Claude 代理（changelog 已拒，与 #112/#102/#23 重叠）；Nir Feinstein agent-harness 推广帖；Gareth Paul Symphony 字段短报（#131 已覆盖主线）；AGI Lab Claude+Codex 指南（产品向 + 与 #111/#117 重叠）；tappers 41 harness VM 基准（文风与 n=1 叙事偏 AI-slop，未采）；Papan Sarkar Claude vs Codex 双开（与 #111/#117 重叠）。
+
 ## 2026-11-03 · 第二十四批收录 #127–#130
 
 | 编号 | 原题（作者） | 阶段 | 发布 |
