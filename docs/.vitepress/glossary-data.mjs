@@ -854,4 +854,16 @@ export const terms = [
     short: '用 hooks 做的状态机：观察到真正失败的测试才打开生产码编辑权，全绿后重新上锁。',
     detail: '#129：信 summary 行不信非零退出码；一窗允许多次编辑到绿；重构要显式声明并保持绿；journal 供独立 reviewer 对账。' },
 
+  { id: 'ask-plan-confirm', cat: 'workflow', term: 'Ask / Plan / Confirm', aliases: ['Ask-Plan-Confirm', 'ask-plan-confirm', '三拍门闸'],
+    short: '编辑前的三拍门闸：先问清、再列计划、明确确认后才改文件；计划外生长要重规划。',
+    detail: '#135：写在 .claude/workflows/plan-first.md；只读审查者默认只做 Ask，被要求修复时恢复完整三拍。' },
+  { id: 'instruction-file-regression', cat: 'eval', term: '指令文件回归（配对评测）', aliases: ['instruction-file regression', '配对指令评测', 'paired instruction eval'],
+    short: '在干净输入上对 base 与 candidate 的 AGENTS.md/CLAUDE.md 做配对重复跑，用硬门/软门决定能不能合。',
+    detail: '#136：candidate 只物化白名单指令路径；密钥经 broker，fork PR 不进带密钥 job。' },
+  { id: 'fail-closed', cat: 'runtime', term: 'Fail-closed（故障收紧）', aliases: ['fail-closed', 'Fail-closed', '故障收紧', 'failClosed'],
+    short: '检查或 hook 崩溃/超时时报失败并挡住动作，而不是放行。',
+    detail: '#137：Claude Code 可用 onFailure: "block"；Cursor 可用 failClosed: true。对照 fail-open。' },
+  { id: 'yuurei', cat: 'tools', term: 'yuurei', aliases: ['yuurei', 'Yuurei'],
+    short: '用可版本化 Profile 在隔离执行单元里跑编码代理、留下 trace 的 CLI；把隔离与评测拆开。',
+    detail: '#138：Profile×Task→Run；默认临时 HOME 级配置隔离，不是 OS 沙箱；trace 记事实不自动打行为分。' },
 ]

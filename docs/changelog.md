@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-05 · 第二十六批收录 #135–#138
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#135](/135-adron-ask-plan-confirm) | Adron：Ask, Plan, Confirm: Making Agents Stop Before They Start | 做规划 | 2026-08-20 |
+| [#136](/136-dvnc-agents-md-ci-harness) | Dev（DVNC Dev）：Treat AGENTS.md Like Code: A CI Regression Harness for Repository Instructions | 接进 PR 与 CI | 2026-08-08（更新 2026-09-11） |
+| [#137](/137-thinkingraven-agent-enforce) | Thinking Raven：What each coding agent can enforce | 云端与后台运行环境 | 2026-10-13 |
+| [#138](/138-takamatsu-yuurei-isolate-eval) | Shin Takamatsu：Before I Could Evaluate My Coding-Agent Harness, I Had to Isolate It | 评测代理本身与给动作把关 | 2026-11-04 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：规划 / CI / 云端 14→15；评测 15→16。全站 134→138。单代理仍 16；看原理仍 16；打地基 / 多代理 / 验收仍 15。
+- **拆分建议（未执行）**：单代理（16）与看原理（16）仍最优先；评测新到 16 可拆“隔离/配置可重放基建”vs“基准、分数噪声与动作分类器”；规划 / CI / 云端（各 15）与打地基·多代理·验收（各 15）其次——规划可拆“需求澄清与假设”vs“编辑前门闸与 goal/plan”；CI 可拆“触发与自动修复”vs“指令/配置回归与流水线安全”；云端可拆“托管会话与机队”vs“强制边界/沙箱对照”。仅建议，等确认后再拆。
+- 横向：阶段指南 planning / ci / cloud / evals；模式库新增 P126–P129；paths / all / 00-summary 同步。
+- 术语表新增 4 个：Ask / Plan / Confirm、指令文件回归、Fail-closed、yuurei。
+
+**未收录（备选）**：Kean *Bring Receipts*（验收向，今日名额给薄阶段）；其余候选未展开。
+
 ## 2026-11-04 · 第二十五批收录 #131–#134
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 134 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 138 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -160,6 +160,11 @@
   - 作者 / 来源：Sébastien Lavoie ／ 个人博客 ｜ 发布：2026-10-09 ｜ 工具：自研 `asl`（可挂 Claude Code / Codex / Copilot CLI）
   - 看点：决策完备检验；计划切成短会话，每会话挂程序跑的完成合约与 baseline；全新上下文 + handoff；固定理由暂停；提示是建议、守卫才强制。文首注明初稿由 AI 根据笔记写成、作者审过。18 万 / 27 万行等为自报。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/68-plan-to-unattended-agent-runs)
+
+### 先问再计划再动手 {#item-135}
+- 原文：Adron · Ask, Plan, Confirm: Making Agents Stop Before They Start（2026-08-20）
+- 看点：Ask→Plan→Confirm 编辑前门闸；审批只覆盖当时计划；与 worktree 叠用。
+- 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/135-adron-ask-plan-confirm)
 
 ### 找出未知，给上下文做减法 {#item-06}
 
@@ -572,6 +577,11 @@
 📘 **先读阶段指南**：[评测代理本身与给动作把关 · 评测、分类器与分数噪声](/guide/evals)
 
 
+### 评测前先隔离 harness {#item-138}
+- 原文：Shin Takamatsu · Before I Could Evaluate My Coding-Agent Harness, I Had to Isolate It（2026-11-04）
+- 看点：yuurei Profile/Task/Run；隔离与评测拆开；n=1 假设失败的三项对照。
+- 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/138-takamatsu-yuurei-isolate-eval)
+
 ### SnowPR：用自家 PR 评编码代理 {#item-123}
 
 - **[SnowPR: Benchmarking Coding Agents on Snowflake's 43-Million-Line Monorepo](https://www.snowflake.com/en/blog/engineering/Benchmarking-coding-agents/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -730,6 +740,11 @@
   - 看点：CLAUDE.md、skills、hooks 一改就在 CI 里用旧代码套新配置重做 20–50 个真实任务；eval JSON、workflow、`check.sh`、行为检查脚本全文；评测文件先拷走、越界改动即失败、不要加 `--bare`；演示删掉一行规则后被拦下。场景是课程构造的，没有成本数据。
   - 🆕 收录于 2026-10-16 ｜ 👉 [阅读分析](/57-claude-continuous-evals-in-ci)
 
+### AGENTS.md 变更先过 CI {#item-136}
+- 原文：Dev（DVNC Dev）· Treat AGENTS.md Like Code: A CI Regression Harness for Repository Instructions（2026-08-08；更新 2026-09-11）
+- 看点：指令文件配对回归；硬门/软门；broker 密钥；作者为 AI 运营实验需下调综合可信度。
+- 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/136-dvnc-agents-md-ci-harness)
+
 ### OpenAI 用 Codex 守住 PR 质量 {#item-10}
 
 - **[OpenAI @ Replay 2026 | How OpenAI Uses Codex to Change How We Build](https://www.youtube.com/watch?v=NjaX4qt-O1Y)** <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>
@@ -820,6 +835,11 @@
   - 作者 / 来源：Dennis Ushakov ／ JetBrains Blog · Air ｜ 发布：2026-10-14 ｜ 工具：JetBrains Air（组织用户预览）
   - 看点：五种跑法的默认隔离对照；本地隔离靠客户端；Air = 每任务新 VM + 容器 + 出站白名单（默认源码托管与包仓库）；密钥加密注入、任务跟开发者本人仓库权限。知识库首篇 JetBrains；无逃逸测试数据。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/70-jetbrains-air-cloud-sandboxing)
+
+### 七家代理能强制什么 {#item-137}
+- 原文：Thinking Raven · What each coding agent can enforce（2026-10-13）
+- 看点：7×16 强制边界矩阵；deny≠sandbox≠audit；信任/hook 故障放行/无防篡改本机审计。
+- 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/137-thinkingraven-agent-enforce)
 
 ### Claude Code 云端会话实战 {#item-48}
 
