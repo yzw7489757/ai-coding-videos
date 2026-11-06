@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-06 · 第二十七批收录 #139–#142
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#139](/139-remy-persistent-agents) | Dave Remy：Persistent Agents on Claude Code | 云端与后台运行环境 | 2026-10-30 |
+| [#140](/140-kean-bring-receipts) | Alex Grebenyuk（Kean）：Bring Receipts | 验收这一次的产出 | 2026-10-29 |
+| [#141](/141-mantovani-orchestrator-workers) | Giacomo Mantovani：My Claude Code workflow: one orchestrator and many parallel workers | 多代理协作与大任务拆分 | 2026-10-14 |
+| [#142](/142-oblakov-claude-codex-gate) | Iliya Oblakov：How to use Claude Code and Codex together: setup lessons from my review gate | 多代理协作与大任务拆分 | 2026-10-29 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：云端 / 验收 15→16；多代理 15→17。全站 138→142。单代理 / 评测 / 看原理仍 16；打地基 / 规划 / CI 仍 15。
+- **拆分建议（未执行）**：全部阶段均 >10。多代理（17）最优先——可拆“编排/控制面与写审门闸”vs“并行实验与长时接力”；其次单代理 / 看原理 / 评测 / 验收 / 云端（各 16）；再次打地基 / 规划 / CI（各 15）。仅建议，等确认后再拆。
+- 横向：阶段指南 cloud / review / multi；模式库新增 P130–P133；paths / all / 00-summary 同步。
+- 术语表新增 4 个：Receipts（证据收据）、Risk Tier（风险档）、Ledger（任务运行账本）、Durable Lease（持久租约）。
+
+**未收录（备选）**：本批名额给云端 / 验收 / 多代理；其余候选未展开。
+
 ## 2026-11-05 · 第二十六批收录 #135–#138
 
 | 编号 | 原题（作者） | 阶段 | 发布 |
@@ -17,7 +34,7 @@
 - 横向：阶段指南 planning / ci / cloud / evals；模式库新增 P126–P129；paths / all / 00-summary 同步。
 - 术语表新增 4 个：Ask / Plan / Confirm、指令文件回归、Fail-closed、yuurei。
 
-**未收录（备选）**：Kean *Bring Receipts*（验收向，今日名额给薄阶段）；其余候选未展开。
+**未收录（备选）**：Kean *Bring Receipts*（验收向，当日名额给薄阶段；已于 2026-11-06 第二十七批收录为 #140）；其余候选未展开。
 
 ## 2026-11-04 · 第二十五批收录 #131–#134
 

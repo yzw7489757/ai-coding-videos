@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 138 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 142 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -366,6 +366,13 @@
   - 看点：250M token 总预算均分 1–64；Ruff 上 8 代理甜点；Cprepro 终分常单代理更好；8 代理平均只贵约 1.1%。作者自限 MirrorCode 可能更适委托。
   - 🆕 收录于 2026-11-03 ｜ 👉 [阅读分析](/128-generality-mirrorcode-multi-agent)
 
+### Claude写Codex审门闸 {#item-142}
+
+- **[How to use Claude Code and Codex together: setup lessons from my review gate](https://rayastats.com/en/blog/use-claude-code-and-codex-together)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Iliya Oblakov ／ rayastats ｜ 发布：2026-10-29 ｜ 工具：通用（Claude Code 写 + Codex 只读审；gate/review/merge-check）
+  - 看点：Verdict ACCEPT 绑死 commit SHA；旧绿灯盖不住新提交；GATE_CMD 收窄仍 PASS 的假绿坑；GATE_MIN_TESTS。
+  - 🆕 收录于 2026-11-06 ｜ 👉 [阅读分析](/142-oblakov-claude-codex-gate)
+
 ### 放弃可移植：Claude 原生流水线 {#item-97}
 
 - **[Harness Engineering: Anthropic's AI SDLC](https://robearlam.com/blog/harness-engineering-anthropics-ai-sdlc)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -392,6 +399,13 @@
   - 作者 / 来源：Keenan Samway、Daniel D'souza、Nouha Dziri ／ Cohere 研究博客 ｜ 发布：2026-10-14 ｜ 工具：自建极简领队 + 工人 harness；GPT-5.6 Luna / Terra / Sol，另测 Claude Opus 4.7 / 4.8、Haiku 4.5、Gemini Flash；ProgramBench、Commit0-Lite
   - 看点：一次只改一个变量的对照实验：团队比单代理多 5–10 个点、贵 4–7 倍；只委派规划追平全委派、成本减半；Sol 领队 + 16 个 Luna 规划工人 $155 对全强队 $510；实现工人越多每人的活越薄；`send_message` 84% 是向上汇报；不同模型愿不愿意委派差别很大。只在基准上，部分配置单次运行。
   - 🆕 收录于 2026-10-21 ｜ 👉 [阅读分析](/76-cohere-agent-teams-cost)
+
+### 编排者加并行工人 {#item-141}
+
+- **[My Claude Code workflow: one orchestrator and many parallel workers](https://www.mantovani-giacomo.com/en/blog/claude-code-orchestrator-parallel-workers)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Giacomo Mantovani ／ 个人博客 ｜ 发布：2026-10-14 ｜ 工具：Claude Code；herdr / treehouse 租约 worktree
+  - 看点：编排者绝不改代码；租约创建/关闭防幽灵租约；仓外报告；唯一合入点。角色纪律可迁移，绑具体工具。
+  - 🆕 收录于 2026-11-06 ｜ 👉 [阅读分析](/141-mantovani-orchestrator-workers)
 
 ### Codex 审 Claude 写：八个坑 {#item-117}
 
@@ -466,6 +480,13 @@
 **这一组放什么**：确认代理这一次真的做完、做对：测试驱动、代理手动测试、人工与对抗式审查、AI 审查器和独立的完成标准。
 
 📘 **先读阶段指南**：[验收这一次的产出 · 测试、审查与完成标准](/guide/review)
+
+### 审查前先交证据收据 {#item-140}
+
+- **[Bring Receipts](https://kean.blog/post/pr-reviews-are-for-humans)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Alex Grebenyuk ／ kean.blog ｜ 发布：2026-10-29 ｜ 工具：Claude Code（`/fix-issues`、`/code-review`）
+  - 看点：开 PR 前自审 + 四件收据；风险 Low/Medium/High 只能抬档；人合并盯不可协商项。单仓 AI 审查器 10/23 → 1/11。
+  - 🆕 收录于 2026-11-06 ｜ 👉 [阅读分析](/140-kean-bring-receipts)
 
 ### AI 审查先回放已合并 PR {#item-120}
 
@@ -800,6 +821,13 @@
 
 📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
 
+### 自托管常驻代理舰队 {#item-139}
+
+- **[Persistent Agents on Claude Code](https://daveremy.github.io/persistent-agents/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Dave Remy ｜ 发布：2026-10-30 ｜ 工具：Claude Code；tmux / systemd / Telegram / 自建脚本
+  - 看点：九个常驻会话；保活四层；ledger 与读回发布；hooks 挡外发/改库；八个月 3,761 次提交。多数人仍更适合托管。
+  - 🆕 收录于 2026-11-06 ｜ 👉 [阅读分析](/139-remy-persistent-agents)
+
 ### ACE：microVM 与零秘密 {#item-130}
 
 - **[Inside Agent Compute Engine: Building the compute foundation for the agentic era](https://cloud.google.com/blog/topics/ai-infrastructure/agent-compute-engine-deep-dive)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -1019,6 +1047,8 @@
   - 🆕 收录于 2026-10-13 ｜ 👉 [阅读分析](/44-aider-architect-editor)
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
+
+**容量检查（2026-11-06，第二十七批 #139–#142 后）**：现在 **142** 份资料分 9 个阶段：多代理 17；单代理 / 验收 / 评测 / 云端 / 看原理各 16；打地基 / 做规划 / CI 各 15。本批补云端（#139 自托管常驻舰队）、验收（#140 开 PR 前证据收据）、多代理（#141 编排者不改代码、#142 Claude 写 Codex 审门闸）。逐篇复核归类：#139 主要贡献是代理在自托管机器上怎么常驻保活，归云端；#140 是一次产出开 PR 前怎么证明能工作，归验收；#141/#142 是同目标下多角色分工与写审协调，归多代理。**拆分建议（仅建议，未执行）**：①多代理（17）最优先——可拆“编排/控制面与写审门闸”（#141、#142、#131、#111、#117、#80、#97…）vs“并行实验与长时接力”（#128、#76、#65、#17、#18、#30、#73…）；②单代理 / 看原理 / 评测 / 验收 / 云端（各 16）其次——单代理可拆日环闸门 vs 并行隔离形状；看原理可拆厂商 harness 机制 vs 其上控制面；评测可拆隔离/配置可重放 vs 基准与分类器；验收可拆自验证/TDD/收据前移 vs 审查器与 Stop-hook；云端可拆托管会话与机队 vs 强制边界/自托管常驻；③打地基 / 规划 / CI（各 15）再次。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-11-03，第二十四批 #127–#130 后）**：现在 **130** 份资料分 9 个阶段：单代理 16；看原理、评测各 15；打地基、接进 PR 与 CI 各 14；做规划 / 多代理 / 验收 / 云端各 14。本批补规划（#127 goal vs plan）、多代理（#128 固定预算留言板）、验收（#129 TDD hooks）、云端（#130 Google ACE）。逐篇复核归类：#127 主要贡献是动手前选 plan 还是 goal，归做规划；#128 是同目标下多代理预算与通信，归多代理；#129 是强制一次产出的测试纪律，归验收；#130 是代理跑在哪台隔离机、凭据与闲置，归云端。**拆分建议（仅建议，未执行）**：①单代理（16）仍最优先——可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理与评测（各 15）其次——评测可沿“私有/厂商 harness 对照与方法学”vs“Skill/分类器/噪声与爬分”；③打地基与 CI（各 14）、以及新到 14 的规划/多代理/验收/云端——规划可拆“需求澄清与假设”vs“规格结构与 plan/goal 门闸”；多代理可拆“并行编排/扇出与预算实验”vs“多阶段流水线与长时接力”；验收可拆“代理自验证与 TDD 门闩”vs“审查器与分层把关”；云端可拆“托管/自托管会话”vs“沙箱隔离与零秘密”。均保持单一任务轴，等主人确认后再拆。
 

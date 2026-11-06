@@ -866,4 +866,18 @@ export const terms = [
   { id: 'yuurei', cat: 'tools', term: 'yuurei', aliases: ['yuurei', 'Yuurei'],
     short: '用可版本化 Profile 在隔离执行单元里跑编码代理、留下 trace 的 CLI；把隔离与评测拆开。',
     detail: '#138：Profile×Task→Run；默认临时 HOME 级配置隔离，不是 OS 沙箱；trace 记事实不自动打行为分。' },
+
+  { id: 'receipts', cat: 'workflow', term: 'Receipts（证据收据）', aliases: ['Receipts', 'receipts', '证据收据', '收据'],
+    short: '开 PR 前附上的、证明改动真能工作的证据包：前后截图、复现步骤、单测结果等。',
+    detail: '#140：自审之后、开 PR 之前强制交收据；仓库 AI 审查器从同类修复的 10/23 降到 1/11。审查与证明是写变更的一部分，PR 上留给人合并责任。' },
+  { id: 'risk-tier', cat: 'workflow', term: 'Risk Tier（风险档）', aliases: ['Risk Tier', 'risk tier', '风险档', '风险三档'],
+    short: '按改动爆炸半径把合并审批分成 Low / Medium / High；脚本只能抬档，不能按作者身份降档。',
+    detail: '#140：与 Claude Code 团队七层审查的按风险定人数同向；区别是收据与自审发生在开 PR 前。' },
+  { id: 'ledger', cat: 'runtime', term: 'Ledger（任务运行账本）', aliases: ['Ledger', 'ledger', '运行账本', '任务账本'],
+    short: '每个定时或后台任务写下「查了什么、找到什么」的记录，避免空结果与「没跑」长得一样。',
+    detail: '#139：常驻舰队用 ledger 把沉默失败变可见；发布类动作还要「读回才算发布」。' },
+  { id: 'durable-lease', cat: 'runtime', term: 'Durable Lease（持久租约）', aliases: ['Durable Lease', 'durable lease', '租约', 'worktree 租约'],
+    short: '并行工人占用隔离工作区前必须拿到的租约；关闭工人时必须归还，否则池子会被幽灵租约占满。',
+    detail: '#141：treehouse 租 worktree；创建工人要租约、关工人还租约；与 fencing token（#118）同属「防陈旧写者醒来覆盖」一类纪律。' },
+
 ]
