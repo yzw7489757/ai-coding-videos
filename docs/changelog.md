@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-07 · 第二十八批收录 #143–#146
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#143](/143-santana-context-load-check) | Samuel Santana：Context engineering in practice: what the agent doesn't load doesn't exist | 打地基 · 上下文与规范 | 2026-09-20 |
+| [#144](/144-broekx-cross-provider-pr-review) | Ruben Broekx：Don't Let Claude Grade Its Own Homework | 接进 PR 与 CI | 2026-07-15 |
+| [#145](/145-schuberg-agent-interview) | Schuberg Philis AI Training：Let the agent interview you | 做规划 | 2026-10-07 |
+| [#146](/146-atlas-codex-ci-safety) | Atlas：Codex in CI: codex exec and the GitHub Action | 接进 PR 与 CI | 2026-10-31 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：打地基 / 规划 15→16；CI 15→17。全站 142→146。多代理仍 17；单代理 / 验收 / 评测 / 云端 / 看原理仍 16。
+- **拆分建议（未执行）**：多代理（17）与 CI（17）并列最高——多代理可拆“编排/控制面与写审门闸”vs“并行实验与长时接力”；CI 可拆“触发与自动修复 / 跨厂审查合同”vs“指令回归与流水线安全（凭据、sandbox、双 job）”。其次打地基 / 规划 / 单代理 / 验收 / 评测 / 云端 / 看原理（各 16）——打地基可拆“规则与上下文加载”vs“开发环境与扩展”；规划可拆“需求澄清与词表”vs“编辑前门闸与 goal/plan”。仅建议，等确认后再拆。
+- 横向：阶段指南 foundation / planning / ci；模式库新增 P134–P137；paths / all / 00-summary 同步。
+- 术语表新增 6 个：`/context`、Shared vocabulary（共享词表）、Auto memory（自动记忆）、Feedback Summary（生命周期反馈表）、drop-sudo、permission-profile。
+
+**未收录（备选）**：本批名额给打地基 / 规划 / CI；其余候选未展开。
+
 ## 2026-11-06 · 第二十七批收录 #139–#142
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

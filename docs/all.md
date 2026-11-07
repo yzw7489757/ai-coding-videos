@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 142 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 146 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -48,6 +48,15 @@
   - 作者 / 来源：Anthropic ／ claude.com 产品文章 ｜ 发布：2026-10-01 ｜ 工具：Claude Code CLI 与桌面应用、`/plugin`
   - 看点：mods 是挂在事件上的 TypeScript 函数，能在事件前后、代替或包住它运行，改写 prompt、拦截工具调用、替换 `/diff`；多个 mod 按加载顺序叠成洋葱；不在沙箱里，团队靠插件白名单和最先加载的 `sec-default` 管控。公告类短文，没有 API 和数据。
   - 🆕 收录于 2026-10-15 ｜ 👉 [阅读分析](/52-claude-code-mods)
+
+
+### 没加载进上下文的规则等于不存在 {#item-143}
+
+- **[Context engineering in practice: what the agent doesn't load doesn't exist](https://www.samuelsantana.dev/en/blog/context-engineering-in-practice-claude-md-memory-agents)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Samuel Santana ／ 个人工程博客 ｜ 发布：2026-09-20 ｜ 工具：Claude Code（`/context`、CLAUDE.md / AGENTS.md、auto memory）
+  - 看点：开局先跑 `/context`；没加载等于不存在；拼接非覆盖、冲突两端写明；always-load 放结论，测量进 docs、强制进 hooks。
+  - 🆕 收录于 2026-11-07 ｜ 👉 [阅读分析](/143-santana-context-load-check)
+
 
 ### 一份 AGENTS.md 多工具薄指针 {#item-125}
 
@@ -160,6 +169,15 @@
   - 作者 / 来源：Sébastien Lavoie ／ 个人博客 ｜ 发布：2026-10-09 ｜ 工具：自研 `asl`（可挂 Claude Code / Codex / Copilot CLI）
   - 看点：决策完备检验；计划切成短会话，每会话挂程序跑的完成合约与 baseline；全新上下文 + handoff；固定理由暂停；提示是建议、守卫才强制。文首注明初稿由 AI 根据笔记写成、作者审过。18 万 / 27 万行等为自报。
   - 🆕 收录于 2026-10-19 ｜ 👉 [阅读分析](/68-plan-to-unattended-agent-runs)
+
+
+### 先让代理采访你再写规格 {#item-145}
+
+- **[Let the agent interview you](https://schubergphilis.github.io/ai-training/coding-with-agents/agent-interviews-you/)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Schuberg Philis AI Training ／ 公开培训课（Content co-authored by AI） ｜ 发布：2026-10-07 ｜ 工具：Claude Code（AskUserQuestion、auto memory 开关、`check_terms.py`）
+  - 看点：设计采访 → TERMS.md + SPEC.md → 脚本验词表；关 auto memory 的 fresh session 写计划，避免采访笔记污染。
+  - 🆕 收录于 2026-11-07 ｜ 👉 [阅读分析](/145-schuberg-agent-interview)
+
 
 ### 先问再计划再动手 {#item-135}
 - 原文：Adron · Ask, Plan, Confirm: Making Agents Stop Before They Start（2026-08-20）
@@ -714,6 +732,15 @@
 
 📘 **先读阶段指南**：[接进 PR 与 CI · 触发、审查与流水线](/guide/ci)
 
+
+### Codex进CI只读与双作业 {#item-146}
+
+- **[Codex in CI: codex exec and the GitHub Action](https://bridge-terminal.com/atlas/blog/codex-exec-github-action-ci-review/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Atlas ／ 产品博客（Technical How-to；文末软广；Claude 起草后核对） ｜ 发布：2026-10-31 ｜ 工具：`codex exec`、`openai/codex-action`
+  - 看点：CLI vs Action 默认差；禁 job 级密钥；两 job 审查读写拆分；drop-sudo / 触发名单 / 钉版本清单。
+  - 🆕 收录于 2026-11-07 ｜ 👉 [阅读分析](/146-atlas-codex-ci-safety)
+
+
 ### CI 里的 Claude Code：难在凭据 {#item-115}
 
 - **[Running an AI agent in a CI/CD pipeline: a how-to guide](https://www.giantswarm.io/blog/running-an-ai-agent-in-a-ci-cd-pipeline)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -765,6 +792,15 @@
 - 原文：Dev（DVNC Dev）· Treat AGENTS.md Like Code: A CI Regression Harness for Repository Instructions（2026-08-08；更新 2026-09-11）
 - 看点：指令文件配对回归；硬门/软门；broker 密钥；作者为 AI 运营实验需下调综合可信度。
 - 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/136-dvnc-agents-md-ci-harness)
+
+
+### 别让模型给自己打分 {#item-144}
+
+- **[Don't Let Claude Grade Its Own Homework](https://towardsdatascience.com/dont-let-claude-gaslight-you/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>
+  - 作者 / 来源：Ruben Broekx ／ Towards Data Science ｜ 发布：2026-07-15 ｜ 工具：`openai/codex-action`；作者侧 Claude Code skills
+  - 看点：跨厂审查降自偏好；单 job + Feedback Summary + decline + unresolved trailer→status；作者三技能先回后推。
+  - 🆕 收录于 2026-11-07 ｜ 👉 [阅读分析](/144-broekx-cross-provider-pr-review)
+
 
 ### OpenAI 用 Codex 守住 PR 质量 {#item-10}
 
@@ -1048,6 +1084,8 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
+**容量检查（2026-11-07，第二十八批 #143–#146 后）**：现在 **146** 份资料分 9 个阶段：多代理 / CI 各 17；打地基 / 做规划 / 单代理 / 验收 / 评测 / 云端 / 看原理各 16。本批补打地基（#143 `/context` 加载检查）、规划（#145 采访词表）、CI（#146 Codex Action 安全拆分、#144 跨厂审查合同）。逐篇复核归类：#143 主要贡献是开工前核实规则是否进会话，归打地基；#145 是动手前采访对齐词义与计划，归做规划；#144/#146 是 PR/CI 流水线里的审查与权限布局，归 CI。**拆分建议（仅建议，未执行）**：①多代理（17）与 CI（17）并列最高——多代理可拆“编排/控制面与写审门闸”vs“并行实验与长时接力”；CI 可拆“触发与自动修复 / 跨厂审查合同”vs“指令回归与流水线安全（凭据、sandbox、双 job）”；②打地基 / 规划 / 单代理 / 验收 / 评测 / 云端 / 看原理（各 16）其次——打地基可拆“规则与上下文加载”vs“开发环境与扩展”；规划可拆“需求澄清与词表”vs“编辑前门闸与 goal/plan”。均保持单一任务轴，等主人确认后再拆。
+
 **容量检查（2026-11-06，第二十七批 #139–#142 后）**：现在 **142** 份资料分 9 个阶段：多代理 17；单代理 / 验收 / 评测 / 云端 / 看原理各 16；打地基 / 做规划 / CI 各 15。本批补云端（#139 自托管常驻舰队）、验收（#140 开 PR 前证据收据）、多代理（#141 编排者不改代码、#142 Claude 写 Codex 审门闸）。逐篇复核归类：#139 主要贡献是代理在自托管机器上怎么常驻保活，归云端；#140 是一次产出开 PR 前怎么证明能工作，归验收；#141/#142 是同目标下多角色分工与写审协调，归多代理。**拆分建议（仅建议，未执行）**：①多代理（17）最优先——可拆“编排/控制面与写审门闸”（#141、#142、#131、#111、#117、#80、#97…）vs“并行实验与长时接力”（#128、#76、#65、#17、#18、#30、#73…）；②单代理 / 看原理 / 评测 / 验收 / 云端（各 16）其次——单代理可拆日环闸门 vs 并行隔离形状；看原理可拆厂商 harness 机制 vs 其上控制面；评测可拆隔离/配置可重放 vs 基准与分类器；验收可拆自验证/TDD/收据前移 vs 审查器与 Stop-hook；云端可拆托管会话与机队 vs 强制边界/自托管常驻；③打地基 / 规划 / CI（各 15）再次。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-11-03，第二十四批 #127–#130 后）**：现在 **130** 份资料分 9 个阶段：单代理 16；看原理、评测各 15；打地基、接进 PR 与 CI 各 14；做规划 / 多代理 / 验收 / 云端各 14。本批补规划（#127 goal vs plan）、多代理（#128 固定预算留言板）、验收（#129 TDD hooks）、云端（#130 Google ACE）。逐篇复核归类：#127 主要贡献是动手前选 plan 还是 goal，归做规划；#128 是同目标下多代理预算与通信，归多代理；#129 是强制一次产出的测试纪律，归验收；#130 是代理跑在哪台隔离机、凭据与闲置，归云端。**拆分建议（仅建议，未执行）**：①单代理（16）仍最优先——可拆“一人日环与闸门 / 官方 tips / Goals”vs“并行隔离形状”；②看原理与评测（各 15）其次——评测可沿“私有/厂商 harness 对照与方法学”vs“Skill/分类器/噪声与爬分”；③打地基与 CI（各 14）、以及新到 14 的规划/多代理/验收/云端——规划可拆“需求澄清与假设”vs“规格结构与 plan/goal 门闸”；多代理可拆“并行编排/扇出与预算实验”vs“多阶段流水线与长时接力”；验收可拆“代理自验证与 TDD 门闩”vs“审查器与分层把关”；云端可拆“托管/自托管会话”vs“沙箱隔离与零秘密”。均保持单一任务轴，等主人确认后再拆。
@@ -1118,6 +1156,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-11-07 第二十八批：#143 Santana `/context` 加载检查（打地基 15→16）、#145 Schuberg 采访词表（规划 15→16）、#146 Atlas Codex CI 安全 / #144 Broekx 跨厂审查（CI 15→17）。全站 142→146。工具：Claude Code +2、Codex +2；类型：文章 +3、指南 +1。
 - 2026-11-03 第二十四批：#127 Fresh Worktree plan vs goal（规划 13→14）、#128 Generality MirrorCode 多代理（多代理 13→14）、#129 Alonso TDD hooks（验收 13→14）、#130 Google ACE（云端 13→14）。全站 126→130。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：AgentRex 审查闸门文、Ajayk AGENTS.md 指南、AutoCoder Unbundled 产品向、Stuzhuk harness（与 #124 重叠）、Orbit/Continuum/Nimbalyst 并行产品文、Claude sandbox docs / Academy 课程页、GitHub Agent HQ 产品帖、Vivek/BuildLoop 规划文（弱于 #127）、Kean Bring Receipts（验收备选）。
 - 2026-11-01 第二十二批：#119 Garg 上下文锚定（规划 12→13）、#120 Faros 审查回放（验收 12→13）、#121 kickflow 夜间 E2E 自动修复、#122 Atlassian monorepo 指南匹配审查（CI 12→14）。全站 118→122。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Periscoped 审查流程（与 #60 高度同构，自承照搬）、Hotfix Daily 审查清单（媒体综述）、Eric Brookfield 自愈 CI（约 400 词，偏短）、Zenn flaky 测试检测（今日 CI 名额已用，留作备选）、QualityLayer / vibeide（产品向，先前已拒）。
 - 2026-10-31 第二十一批：#115 Giant Swarm CI 流水线里的 Claude Code（CI 11→12）、#116 AAIF 写好 AGENTS.md（打地基 12→13）、#117 Mert Sahin 双代理八个坑（多代理 12→13）、#118 Avichal Pandey 云端沙箱全景（云端 12→13）。全站 114→118。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Agentastic 定时 CI 修复（厂商教程，作者自承未实际跑托管修复）、GitHub Agentic Workflows GA（产品公告）、GitLab AI-Native Playbook（推广文）、Whitelam Media（代理商营销）、Qovery / Northflank 沙箱环境（厂商产品文）、Niraj 自愈 CI（个人教程，偏通用架构，今日名额已满未深读）。

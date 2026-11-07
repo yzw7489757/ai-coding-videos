@@ -1,8 +1,8 @@
-# 00 · 总结：142 份实战资料里的共性模式与最佳实践
+# 00 · 总结：146 份实战资料里的共性模式与最佳实践
 
 <div class="hook">
 
-**一句话看懂**：142 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
+**一句话看懂**：146 份资料（23 个视频，加上工程博客、官方文档和指南）、多家工具、来自 Anthropic、OpenAI、Google、xAI、Cursor、Cognition、Factory、OpenHands、JetBrains、Google Cloud、Sourcegraph、Cohere、Expo 和独立开发者的作者，最后都指向同一套做法：先让代理能自己验证；做事的和检查的分开；上下文做减法；动手前先把需求问清楚；每次纠错都沉淀成规则；人只负责定目标和看结果。
 
 </div>
 
@@ -10,7 +10,7 @@
 [Agent](/glossary#agent)、[子代理](/glossary#subagent)、[上下文窗口](/glossary#context-window)、[Harness](/glossary#harness)、[CLAUDE.md](/glossary#claude-md) / [AGENTS.md](/glossary#agents-md)、[Plan Mode](/glossary#plan-mode)。不认识的词随时查[术语表](/glossary)。
 :::
 
-> 覆盖：142 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（132、49、52、46、125、116、37、92、14、07、107、26、21、20、28）；做规划 · 需求澄清与任务拆解（127、84、64、68、135、06、88、03、13、119、108、61、96、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（112、87、103、101、42、100、72、78、89、79、102、08、23、11、27、109）；多代理协作与大任务拆分 · 分工、协调与长时运行（128、142、97、80、111、76、141、117、74、65、85、131、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（140、120、129、60、95、81、15、59、134、75、12、71、32、25、31、110）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（138、123、69、94、77、62、83、86、126、39、56、105、114、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（115、63、98、122、41、90、57、136、10、121、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（139、130、118、82、53、70、137、48、99、58、02、51、01、40、91、113）；看原理 · Harness 与内部机制（124、43、54、133、09、66、104、45、93、16、38、106、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 112、官方文档 3、指南 4。工具：Claude Code 46、Codex 20、Grok 7、Cursor 14、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 45。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
+> 覆盖：146 份。**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组**：打地基 · 上下文与规范（132、49、52、143、46、125、116、37、92、14、07、107、26、21、20、28）；做规划 · 需求澄清与任务拆解（127、84、64、68、145、135、06、88、03、13、119、108、61、96、29、04）；单代理推进与一人多线 · 一个人怎么驾驭代理（112、87、103、101、42、100、72、78、89、79、102、08、23、11、27、109）；多代理协作与大任务拆分 · 分工、协调与长时运行（128、142、97、80、111、76、141、117、74、65、85、131、17、05、18、30、73）；验收这一次的产出 · 测试、审查与完成标准（140、120、129、60、95、81、15、59、134、75、12、71、32、25、31、110）；评测代理本身与给动作把关 · 评测、分类器与分数噪声（138、123、69、94、77、62、83、86、126、39、56、105、114、50、47、19）；接进 PR 与 CI · 触发、审查与流水线（146、115、63、98、122、41、90、57、136、144、10、121、55、67、33、22、34）；云端与后台运行环境 · 代理在哪里跑（139、130、118、82、53、70、137、48、99、58、02、51、01、40、91、113）；看原理 · Harness 与内部机制（124、43、54、133、09、66、104、45、93、16、38、106、24、35、36、44）。括号内按原始发布日期从新到旧。类型：视频 23、文章 115、官方文档 3、指南 5。工具：Claude Code 48、Codex 22、Grok 7、Cursor 14、Gemini CLI 1、OpenHands 2、Devin 2、Amp 1、Aider 1、Factory Droid 2、JetBrains Air 1、通用 45。本文只总结各篇分析里有来源支撑的内容，细节和原话见对应文章；按阶段的详细对照见各[阶段指南](/guide/foundation)。
 
 ## 1. 共性模式（多数资料独立得出的结论）
 
@@ -46,6 +46,7 @@
 
 - 第八批：Claude Code 团队（60）在代码量翻倍后把审查拆成七层：AI 审查发现先投票再发，人工批准按改动风险 0 / 1 / 2 人，代理批准不算、批准绑定 commit；AI 审查三轮封顶，因为反复标出的内容约 59% 是旧代码。Anthropic（62）把“爬分不自欺”做成命令：先验证评分器，再拆留出集、一次一个补丁、不涨就回滚。
 
+- 第二十八批（2026-11-07）：Santana（143）开局 `/context`；Schuberg（145）采访词表；Broekx（144）跨厂 CI 审查；Atlas（146）Codex Action 双 job。
 - 第二十七批（2026-11-06）：Remy（139）自托管常驻舰队；Kean（140）开 PR 前证据收据；Mantovani（141）编排者不改代码；Oblakov（142）ACCEPT 绑死 commit。
 - 第二十六批（2026-11-05）：Adron（135）Ask/Plan/Confirm 门闸；DVNC（136）指令文件配对 CI；Thinking Raven（137）七家强制边界；Takamatsu（138）yuurei 先隔离再评测。
 - 第二十五批（2026-11-04）：Sooriah（132）文件型 harness 强制分层；Symphony（131）issue 控制面；sparring（134）Stop hook 审查；T3（133）本机控制面。
@@ -212,6 +213,7 @@ flowchart TD
 - [52 · Claude Code mods：可编程的扩展](/52-claude-code-mods) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：Hooks 不够用时，mods 能改写事件和替换功能；团队怎么管。
 - [07 · 把团队规范变成 lint 和测试](/07-harness-engineering) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-codex">Codex</span>：最激进的“人不写代码”团队实践，适合最后看。
 - [107 · 编码代理的上下文工程：配置面地图](/107-bockeler-context-engineering) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：配置面地图；渐进做小；控制的幻觉。
+- [143 · 没加载进上下文的规则等于不存在](/143-santana-context-load-check) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：开局先跑 `/context`；冲突两端写明；强制项放 hook。
 
 **做规划 · 需求澄清与任务拆解**（[阶段指南](/guide/planning)）
 
@@ -227,6 +229,7 @@ flowchart TD
 - [88 · 规格驱动贵在哪：改用 plan mode](/88-instil-plan-mode-vs-sdd) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：SDD 层级又贵又漂时，plan mode 三步够用。
 - [108 · 先设计再写代码：五级对齐](/108-garg-design-first-collaboration) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：Implementation Trap；五级对齐；L5 前不写代码。
 - [119 · 上下文锚定：决策写进功能文档](/119-garg-context-anchoring) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：多日功能把决策、理由、否决项写进不到 50 行的功能文档；关掉会话重开 30 秒对齐。
+- [145 · 先让代理采访你再写规格](/145-schuberg-agent-interview) <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-claude">Claude Code</span>：TERMS + check_terms；关 auto memory 的 fresh session 写计划。
 
 **单代理推进与一人多线 · 一个人怎么驾驭代理**（[阶段指南](/guide/solo)）
 
@@ -306,6 +309,8 @@ flowchart TD
 - [122 · monorepo 审查：先匹配指南再审](/122-atlassian-guideline-matcher-review) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>：匹配代理与审查代理分开；prompt 写禁止项；评论质量靠改指南。
 
 - [90 · 六轮机器人审查与补丁踩踏机](/90-leek-six-rounds-bot-review) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>：32 真阳性与修丁踩踏机；问题前移到开 PR 前。
+- [146 · Codex进CI只读与双作业](/146-atlas-codex-ci-safety) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：Action 显式只读；两 job 拆密钥与写权；drop-sudo 清单。
+- [144 · 别让模型给自己打分](/144-broekx-cross-provider-pr-review) <span class="type-tag type-article">文章</span> <span class="tool-tag tool-codex">Codex</span>：跨厂审查；Feedback Summary + unresolved trailer。
 **云端与后台运行环境 · 代理在哪里跑**（[阶段指南](/guide/cloud)）
 
 - [01 · Claude Code 一周年：验证与 Routines](/01-claude-code-one-year) <span class="type-tag type-video">视频</span> <span class="tool-tag tool-claude">Claude Code</span>：从工具作者口中了解验证、CLAUDE.md、Routines 等基本观念。
@@ -351,6 +356,7 @@ flowchart TD
 
 ## 6. 缺口与局限（如实说明）
 
+- **第二十八批（2026-11-07）**：#143 `/context` 加载检查（打地基 15→16）、#145 采访词表（规划 15→16）、#146 Codex CI 安全 / #144 跨厂审查（CI 15→17）。全站 142→146。局限：#143 绑 Claude Code 当季行为与个人仓；#145 示例对话为 illustrative、AI 共著；#146 产品博客+软广+Claude 起草；#144 非 blocking、无对照实验。拆分建议见更新日志，未自行拆。
 - **第二十七批（2026-11-06）**：#139 常驻舰队（云端 15→16）、#140 证据收据（验收 15→16）、#141 编排者+工人 / #142 写审门闸（多代理 15→17）。全站 138→142。局限：#139 自报数字无对照、运维面大；#140 短文且仅单仓前后计数；#141 绑 herdr/treehouse、无吞吐；#142 不保证正确性、Kit 未推广。拆分建议见更新日志，未自行拆。
 - **第二十六批（2026-11-05）**：#135 Ask/Plan/Confirm（规划 14→15）、#136 指令文件 CI 回归（CI 14→15）、#137 七家强制矩阵（云端 14→15）、#138 yuurei 隔离（评测 15→16）。全站 134→138。局限：#135 无定量前后对照；#136 作者为 AI 运营公司公开实验，综合已下调；#137 组织署名、版本会漂，本站压缩了产品表；#138 原对照 n=1、工具非 OS 沙箱。拆分建议见更新日志，未自行拆。
 - **第二十四批（2026-11-03）**：#127 plan vs goal（规划 13→14）、#128 MirrorCode 固定预算多代理（多代理 13→14）、#129 TDD hooks（验收 13→14）、#130 Google ACE（云端 13→14）。全站 126→130。局限：#127 绑 Sidekick、n=5；#128 作者自限基准可能更适委托；#129 Elixir 特化、无量化；#130 厂商深潜、无独立密度数字、绑 Cloud 预览。拆分建议见更新日志，未自行拆。

@@ -880,4 +880,23 @@ export const terms = [
     short: '并行工人占用隔离工作区前必须拿到的租约；关闭工人时必须归还，否则池子会被幽灵租约占满。',
     detail: '#141：treehouse 租 worktree；创建工人要租约、关工人还租约；与 fencing token（#118）同属「防陈旧写者醒来覆盖」一类纪律。' },
 
+  { id: 'slash-context', cat: 'config', term: '`/context`', aliases: ['/context', 'slash context', 'slash-context'], code: ['/context'],
+    short: 'Claude Code 命令，列出本会话已加载的 Memory files 等；不在列表里等于模型看不见。',
+    detail: '#143 主张把「工具读哪个文件名」换成「本会话加载了哪些文件」，开局先跑 /context。' },
+  { id: 'shared-vocabulary', cat: 'workflow', term: 'Shared vocabulary（共享词表）', aliases: ['shared vocabulary', 'Shared Vocabulary', '共享词表', 'TERMS.md'], code: ['TERMS.md'],
+    short: '功能里每个术语一个约定含义，并列出避免用的近义词；对话、规格、计划、代码共用。',
+    detail: '#145 用 TERMS.md + check_terms.py 落实；源自 DDD Ubiquitous Language 的精简版。' },
+  { id: 'auto-memory', cat: 'runtime', term: 'Auto memory（自动记忆）', aliases: ['auto memory', 'Auto Memory', '自动记忆'],
+    short: 'Claude Code 默认把代理自写笔记带进同项目下一会话；可用环境变量关掉。',
+    detail: '#145 要求设计采访与写计划会话都设 CLAUDE_CODE_DISABLE_AUTO_MEMORY=1，以免采访笔记污染「无记忆」的计划会话。#143 亦提到 MEMORY.md 索引与 modified 时间戳。' },
+  { id: 'feedback-summary', cat: 'workflow', term: 'Feedback Summary（生命周期反馈表）', aliases: ['Feedback Summary', 'feedback summary', '反馈摘要表'],
+    short: 'PR 审查合同里跟踪一生 finding 的表（Issue/Severity/Summary/Resolved）。',
+    detail: 'Broekx 跨厂 Codex 审查（#144）要求每次审查输出该表，编辑同一条评论；配合 decline 规则与 `<!-- codex-review: unresolved=N -->` trailer 驱动 commit status。' },
+  { id: 'drop-sudo', cat: 'runtime', term: 'drop-sudo（Action safety-strategy）', aliases: ['drop-sudo', 'drop sudo'], code: ['drop-sudo'],
+    short: 'openai/codex-action 默认安全策略：跑前撤 sudo，降低提权读内存密钥。',
+    detail: 'Linux 上还挡 /run 下 root socket（含 Docker）；自托管复用 runner 上可能持久，宜 disposable 且 Action 放 job 末步（#22、#146）。勿与「sandbox: read-only 护密钥」混淆。' },
+  { id: 'permission-profile', cat: 'runtime', term: 'permission-profile（Codex）', aliases: ['permission-profile', 'permission profile', ':workspace'], code: ['permission-profile', ':workspace'],
+    short: 'Action/CLI 的权限配置档，与 sandbox 输入互斥；`:workspace` 等为内置档。',
+    detail: 'beta，需较新 CLI；不可与 sandbox 同设；配置须来自可信工作流而非不可信 checkout（#146）。' },
+
 ]

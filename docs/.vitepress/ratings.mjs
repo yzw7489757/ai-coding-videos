@@ -720,6 +720,27 @@ export const ratings = {
     overall: [4, '免费实践帖可核对；不保证正确性作者自限；Kit 未推广']
   },
 
+  '143': {
+    use: [4.5, '给出 /context 开局检查、冲突两端写明、Rules that will bite 模板、gitignore 备份警示与可复制检查清单，今天就能对照自己的会话做。'],
+    depth: [4, '讲清拼接非覆盖、always-load 与 docs/Skills/hooks 分流、交接笔记是假设；附版本 2.1.277 条件读 AGENTS.md 的陷阱，但不含作者自测遵从度数据。'],
+    overall: [4, '一手事故时间线可核对，机制引用文档与 changelog；局限在 Claude Code 当季行为与个人仓，仍是「先查加载」主题的强资料。']
+  },
+  '144': {
+    use: [4.5, '可复制的 GHA 单 job、Feedback Summary 合同、decline/trailer→status、作者三技能与先回后推，今天就能挂上'],
+    depth: [4, '讲清跨厂 decorrelation（含 NeurIPS 自偏好引用）、单 job 躲 secret-blanking 等工程取舍，不只贴 yaml'],
+    overall: [4, '一手实践帖、局限（非 blocking、同仓信任）写明；无对照实验数字，综合略低于满分'],
+  },
+  '145': {
+    use: [5, '采访 prompt、TERMS 行格式、check_terms.py 用法、关 auto memory 命令与 fresh session 写计划步骤完整可跟练，不依赖特定业务仓。'],
+    depth: [3.5, '把共享词表 + 机器检查 + 会话隔离收成一课，并点到 DDD Ubiquitous Language；原理展开有限，示例对话为 illustrative 非实录。'],
+    overall: [4, '公开培训课、Sources checked 日期明确、脚本输出有 CI 核实；AI 共著已披露。适合 planning 阶段作可执行入口，深度不及长篇工程复盘。']
+  },
+  '146': {
+    use: [4.5, 'CLI vs Action 默认差、禁 job 级密钥、两 job 审查、drop-sudo/触发名单 checklist 可直接改工作流'],
+    depth: [3, 'how-to 收束官方文档要点，机制深度有限，与 #22 重叠部分需对照读'],
+    overall: [3.5, '内容可核对且短清单有用，但是产品博客、文末软广、自称 Claude 起草；综合压到 3.5'],
+  },
+
 
 }
 
