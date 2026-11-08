@@ -38,6 +38,7 @@ export const domains = [
     icon: '🧱',
     desc: '让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。',
     items: [
+      { n: '149', slug: '149-kaminski-one-config', text: '多工具单源加薄适配器', short: '单源AGENTS加适配器', tool: 'general', type: 'article', added: '2026-11-08', published: '2026-11-05' },
       { n: '132', slug: '132-axel-agent-harness-trust', text: '一人团队的可信任代理 harness', short: '文件型 harness 强制分层', tool: 'general', type: 'article', added: '2026-11-04', published: '2026-10-29' },
       { n: '49', slug: '49-anthropic-scion-source-control', text: '为代理重做源代码管理', short: '代理规模的源码管理', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-10-13' },
       { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
@@ -93,6 +94,7 @@ export const domains = [
       { n: '112', slug: '112-octomind-claude-worktrees', text: '三工具 Worktree：环境也要拆开', short: 'Worktree 环境隔离', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-29' },
       { n: '87', slug: '87-galarza-agentic-coding-workflow', text: '塑形构建审查交付闭环', short: '塑形到交付闭环', tool: 'general', type: 'article', added: '2026-10-23', published: '2026-10-21' },
       { n: '103', slug: '103-claude-power-user-tips', text: '官方 tips：验证与并行', short: '验证优先 并行 tips', tool: 'claude', type: 'article', added: '2026-10-28', published: '2026-10-20' },
+      { n: '148', slug: '148-csiki-evidence-workflow', text: '用证据重建代理工作流', short: '两道门闸只读审查', tool: 'claude', type: 'article', added: '2026-11-08', published: '2026-10-15' },
       { n: '101', slug: '101-ahmed-ship-with-claude-code', text: '主人闸门：一票一会话', short: '主人闸门一票一会话', tool: 'claude', type: 'article', added: '2026-10-27', published: '2026-10-13' },
       { n: '42', slug: '42-openai-cooking-with-codex', text: 'Codex 应用实战：从上下文到自动化', short: 'Codex 应用全景', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-06' },
       { n: '100', slug: '100-patryk-claude-code-everyday', text: '先写 brief 再用命令验收', short: 'brief 与命令验收', tool: 'claude', type: 'article', added: '2026-10-27', published: '2026-10-02' },
@@ -123,6 +125,7 @@ export const domains = [
       { n: '111', slug: '111-bswen-claude-codex-together', text: 'Claude Code 与 Codex 三种协作', short: 'CLI 互调 写审 并行', tool: 'general', type: 'article', added: '2026-10-30', published: '2026-10-19' },
       { n: '76', slug: '76-cohere-agent-teams-cost', text: '多代理团队值不值：受控实验', short: '工人放在瓶颈上 强领队便宜工人', tool: 'general', type: 'article', added: '2026-10-21', published: '2026-10-14' },
       { n: '141', slug: '141-mantovani-orchestrator-workers', text: '编排者加并行工人', short: '编排者不改代码', tool: 'claude', type: 'article', added: '2026-11-06', published: '2026-10-14' },
+      { n: '147', slug: '147-zimmer-dynamic-workflows', text: '把编排写成可恢复脚本', short: '脚本编排可恢复可重跑', tool: 'claude', type: 'article', added: '2026-11-08', published: '2026-10-10' },
       { n: '117', slug: '117-mertsahin-two-agent-team', text: 'Codex 审 Claude 写：八个坑', short: '写者不验收 提交即交接', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-10-04' },
       { n: '74', slug: '74-blocshop-dotnet-multi-repo-migration', text: '十个仓库的 .NET 迁移', short: '主代理管依赖图', tool: 'general', type: 'article', added: '2026-10-20', published: '2026-09-30' },
       { n: '65', slug: '65-grok-build-workflows', text: 'Grok Build Workflows：后台扇出脚本', short: 'Workflows 后台扇出', tool: 'grokbuild', type: 'article', added: '2026-10-19', published: '2026-07-23' },
@@ -248,6 +251,7 @@ export const domains = [
     icon: '🧠',
     desc: '理解代理外壳怎么工作：上下文、权限、循环和“做与查分离”背后的设计。',
     items: [
+      { n: '150', slug: '150-anthropic-agent-memory', text: '笔记显著性与离线做梦', short: '当场笔记离线做梦', tool: 'claude', type: 'article', added: '2026-11-08', published: '2026-11-06' },
       { n: '124', slug: '124-loams-coding-agent-harnesses', text: '八家外壳对照：门沙箱压缩', short: '八家 harness 横向拆', tool: 'general', type: 'article', added: '2026-11-02', published: '2026-10-18' },
       { n: '43', slug: '43-codex-app-server', text: '在 Codex harness 上做自己的客户端', short: 'Codex app server', tool: 'codex', type: 'video', added: '2026-10-13', published: '2026-10-09' },
       { n: '54', slug: '54-cursor-token-efficiency', text: '长任务的 token 省在哪', short: 'harness 省 token', tool: 'cursor', type: 'article', added: '2026-10-15', published: '2026-09-23' },

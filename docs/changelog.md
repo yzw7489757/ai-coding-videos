@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-08 · 第二十九批收录 #147–#150
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#147](/147-zimmer-dynamic-workflows) | Max Zimmer：Dynamic workflows in Claude Code move the plan out of the context window | 多代理协作与大任务拆分 | 2026-10-10 |
+| [#148](/148-csiki-evidence-workflow) | Laszlo Csiki：I rebuilt our Claude Code workflow on evidence, not habit | 单代理推进与一人多线 | 2026-10-15 |
+| [#149](/149-kaminski-one-config) | Kevin Kaminski：CLAUDE.md, AGENTS.md and .cursorrules: One Config Strategy | 打地基 · 上下文与规范 | 2026-11-05 |
+| [#150](/150-anthropic-agent-memory) | Lance Martin（Anthropic）：The components of agent memory | 看原理 · Harness 与内部机制 | 2026-11-06 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：多代理 17→18；打地基 / 单代理 / 看原理 16→17。全站 146→150。CI 仍为 17；规划 / 验收 / 评测 / 云端仍各 16。
+- **拆分建议（未执行）**：多代理（18）最优先——可拆“编排/控制面与写审门闸 / 工作流脚本”vs“并行实验与长时接力”。其次 CI（17，上次已建议优先）以及打地基 / 单代理 / 看原理（各 17）。打地基可拆“规则与上下文加载”vs“开发环境与扩展”；单代理可拆“一人多线与 worktree”vs“循环、effort 与主人闸门”；看原理可拆“厂商/内部 harness 机制”vs“记忆、控制面与编排规格”；CI 可沿用上次建议拆“PR 审查代理”vs“流水线触发与安全”。规划 / 验收 / 评测 / 云端仍各 16。仅建议，等确认后再拆。
+- 横向：阶段指南 multi / solo / foundation / harness；模式库新增 P138–P141；paths / all / 00-summary 同步。
+- 术语表新增 4 个：薄适配器、Plan gate / Confidence gate、Dreaming（做梦）、`/doctor prompt-audit`。
+
+**未收录（备选）**：GitHub Beyond code generation（产品导览）；Svyatov 三模型路由（与 #147 重叠且无测量）；Oblakov / alcoven / Pulore 的 AGENTS.md 对照（被 #149 覆盖）；Halfcycle harness 文（产品向）；攻防主题的种植 AGENTS.md 文；arXiv 2610.30571 过期指令文件（名额满，可作后续候选）。
+
 ## 2026-11-07 · 第二十八批收录 #143–#146
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

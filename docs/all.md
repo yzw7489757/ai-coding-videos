@@ -20,6 +20,14 @@
 
 ## 打地基 · 上下文与规范 {#domain-foundation}
 
+### 多工具单源加薄适配器 {#item-149}
+
+- **[CLAUDE.md, AGENTS.md and .cursorrules: One Config Strategy](https://www.bighatgroup.com/blog/claude-md-agents-md-cursorrules-configuration-strategy/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Kevin Kaminski ／ Big Hat Group ｜ 发布：2026-11-05 ｜ 工具：Claude Code、Codex、Copilot、Cursor、Gemini CLI、Windsurf
+  - 看点：一份 AGENTS.md 加薄适配器；Claude 用 `@AGENTS.md` 导入，Copilot 用 CI 生成副本；嵌套文件必须自包含；权限/hooks/MCP 不靠散文共享。咨询文，文末有转化。
+  - 🆕 收录于 2026-11-08 ｜ 👉 [阅读分析](/149-kaminski-one-config)
+
+
 ### 一人团队的可信任代理 harness {#item-132}
 - 原文：Axel Sooriah · Building a harness so a team of one can trust its coding agents（2026-10-29）
 - 看点：四种失败驱动文件型 harness；提示词是请求，权限/CI/验证器才是规则；244 条偏离与验证器夹具。
@@ -281,6 +289,14 @@
   - 看点：若只学一件就学验证；最大解锁是 3–5 个各自 worktree 的并行会话；`/batch`、`isolation: worktree`、`/simplify`、`/loop` / `/schedule`。
   - 🆕 收录于 2026-10-28 ｜ 👉 [阅读分析](/103-claude-power-user-tips)
 
+
+### 用证据重建代理工作流 {#item-148}
+
+- **[I rebuilt our Claude Code workflow on evidence, not habit](https://x2labs.ai/notes/rebuilding-the-workflow)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Laszlo Csiki ／ X2 Labs ｜ 发布：2026-10-15 ｜ 工具：Claude Code（按代理设置 effort）；顾问代理用第二个模型
+  - 看点：六千多行仪式收到约 1,400 行；两道门闸；只读的最高档审查；循环不能改自己的配置；先测量再信文档。发文时加速为零分钟；视频是模拟运行。
+  - 🆕 收录于 2026-11-08 ｜ 👉 [阅读分析](/148-csiki-evidence-workflow)
+
 ### 主人闸门：一票一会话 {#item-101}
 
 - **[How I ship with Claude Code: my spec-driven workflow](https://amdsaad.com/lab/ship-with-claude-code)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -424,6 +440,14 @@
   - 作者 / 来源：Giacomo Mantovani ／ 个人博客 ｜ 发布：2026-10-14 ｜ 工具：Claude Code；herdr / treehouse 租约 worktree
   - 看点：编排者绝不改代码；租约创建/关闭防幽灵租约；仓外报告；唯一合入点。角色纪律可迁移，绑具体工具。
   - 🆕 收录于 2026-11-06 ｜ 👉 [阅读分析](/141-mantovani-orchestrator-workers)
+
+
+### 把编排写成可恢复脚本 {#item-147}
+
+- **[Dynamic workflows in Claude Code move the plan out of the context window](https://emzimmer.com/dynamic-workflows-in-claude-code/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Max Zimmer ／ 个人工程博客 ｜ 发布：2026-10-10 ｜ 工具：Claude Code 动态工作流
+  - 看点：计划搬进 JavaScript；恢复即重放；v2.1.210 起 ultracode 只认亲手输入；一次审计用量约 11%→48%；Bun 案例证明规模不是正确性。对照官方预览 #85。
+  - 🆕 收录于 2026-11-08 ｜ 👉 [阅读分析](/147-zimmer-dynamic-workflows)
 
 ### Codex 审 Claude 写：八个坑 {#item-117}
 
@@ -972,6 +996,14 @@
   - 作者 / 来源：Abhishek ／ InstaVM ｜ 发布：2026-04-05 ｜ 工具：通用（Claude Code / Codex）
   - 深度解读：[Claude Code 与 Codex 的沙箱：同原语，不同信任](/113-instavm-claude-codex-sandboxing)
 
+
+### 笔记显著性与离线做梦 {#item-150}
+
+- **[The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Lance Martin ／ Anthropic 研究博客 ｜ 发布：2026-11-06 ｜ 工具：Claude Managed Agents、Claude Code 自动记忆
+  - 看点：记忆是对未来需求的预测；宝可梦对照 413 文件/1 徽章 vs 9 文件/4 徽章；做梦改正、建 wiki、提升到 MEMORY.md 注入层；“只记录失败”会削弱更强模型。
+  - 🆕 收录于 2026-11-08 ｜ 👉 [阅读分析](/150-anthropic-agent-memory)
+
 ### 八家外壳对照：门沙箱压缩 {#item-124}
 
 - **[Coding-agent harnesses, taken apart: Codex, Claude Code, Cursor, OpenCode, Aider, Goose, Cline and T3 Code](https://loams.dev/blog/coding-agent-harnesses)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -1084,7 +1116,7 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
-**容量检查（2026-11-07，第二十八批 #143–#146 后）**：现在 **146** 份资料分 9 个阶段：多代理 / CI 各 17；打地基 / 做规划 / 单代理 / 验收 / 评测 / 云端 / 看原理各 16。本批补打地基（#143 `/context` 加载检查）、规划（#145 采访词表）、CI（#146 Codex Action 安全拆分、#144 跨厂审查合同）。逐篇复核归类：#143 主要贡献是开工前核实规则是否进会话，归打地基；#145 是动手前采访对齐词义与计划，归做规划；#144/#146 是 PR/CI 流水线里的审查与权限布局，归 CI。**拆分建议（仅建议，未执行）**：①多代理（17）与 CI（17）并列最高——多代理可拆“编排/控制面与写审门闸”vs“并行实验与长时接力”；CI 可拆“触发与自动修复 / 跨厂审查合同”vs“指令回归与流水线安全（凭据、sandbox、双 job）”；②打地基 / 规划 / 单代理 / 验收 / 评测 / 云端 / 看原理（各 16）其次——打地基可拆“规则与上下文加载”vs“开发环境与扩展”；规划可拆“需求澄清与词表”vs“编辑前门闸与 goal/plan”。均保持单一任务轴，等主人确认后再拆。
+**容量检查（2026-11-08，第二十九批 #147–#150 后）**：现在 **150** 份资料分 9 个阶段：多代理 18；打地基 / 单代理 / 看原理各 17；规划 / 验收 / 评测 / CI / 云端各 16。本批补多代理（#147 动态工作流操作手册）、单代理（#148 用证据重建循环）、打地基（#149 多工具单源适配器）、看原理（#150 代理记忆与做梦）。逐篇复核归类：#147 主要贡献是把多代理编排写成可恢复脚本，归多代理；#148 是一个人如何驾驭一套循环（两道门闸、只读审查），归单代理；#149 是规则文件如何在多工具间共读，归打地基；#150 是记忆系统的设计原理与评测，归看原理。**拆分建议（仅建议，未执行）**：①多代理（18）最优先——可拆“编排/控制面与写审门闸 / 工作流脚本”vs“并行实验与长时接力”；②打地基 / 单代理 / 看原理（各 17）与 CI（16）其次——CI 可拆“触发与自动修复 / 跨厂审查合同”vs“指令回归与流水线安全”；打地基可拆“规则与上下文加载”vs“开发环境与扩展”；单代理可拆“一人多线与 worktree”vs“循环、effort 与主人闸门”；看原理可拆“厂商/内部 harness 机制”vs“记忆、控制面与编排规格”。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-11-06，第二十七批 #139–#142 后）**：现在 **142** 份资料分 9 个阶段：多代理 17；单代理 / 验收 / 评测 / 云端 / 看原理各 16；打地基 / 做规划 / CI 各 15。本批补云端（#139 自托管常驻舰队）、验收（#140 开 PR 前证据收据）、多代理（#141 编排者不改代码、#142 Claude 写 Codex 审门闸）。逐篇复核归类：#139 主要贡献是代理在自托管机器上怎么常驻保活，归云端；#140 是一次产出开 PR 前怎么证明能工作，归验收；#141/#142 是同目标下多角色分工与写审协调，归多代理。**拆分建议（仅建议，未执行）**：①多代理（17）最优先——可拆“编排/控制面与写审门闸”（#141、#142、#131、#111、#117、#80、#97…）vs“并行实验与长时接力”（#128、#76、#65、#17、#18、#30、#73…）；②单代理 / 看原理 / 评测 / 验收 / 云端（各 16）其次——单代理可拆日环闸门 vs 并行隔离形状；看原理可拆厂商 harness 机制 vs 其上控制面；评测可拆隔离/配置可重放 vs 基准与分类器；验收可拆自验证/TDD/收据前移 vs 审查器与 Stop-hook；云端可拆托管会话与机队 vs 强制边界/自托管常驻；③打地基 / 规划 / CI（各 15）再次。均保持单一任务轴，等主人确认后再拆。
 
@@ -1156,6 +1188,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-11-08 第二十九批：#147 Zimmer 动态工作流操作手册（多代理 17→18）、#148 Csiki 用证据重建循环（单代理 16→17）、#149 Kaminski 多工具单源适配器（打地基 16→17）、#150 Anthropic 代理记忆与做梦（看原理 16→17）。全站 146→150。工具：Claude Code +3、通用 +1；类型：文章 +4。
 - 2026-11-07 第二十八批：#143 Santana `/context` 加载检查（打地基 15→16）、#145 Schuberg 采访词表（规划 15→16）、#146 Atlas Codex CI 安全 / #144 Broekx 跨厂审查（CI 15→17）。全站 142→146。工具：Claude Code +2、Codex +2；类型：文章 +3、指南 +1。
 - 2026-11-03 第二十四批：#127 Fresh Worktree plan vs goal（规划 13→14）、#128 Generality MirrorCode 多代理（多代理 13→14）、#129 Alonso TDD hooks（验收 13→14）、#130 Google ACE（云端 13→14）。全站 126→130。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：AgentRex 审查闸门文、Ajayk AGENTS.md 指南、AutoCoder Unbundled 产品向、Stuzhuk harness（与 #124 重叠）、Orbit/Continuum/Nimbalyst 并行产品文、Claude sandbox docs / Academy 课程页、GitHub Agent HQ 产品帖、Vivek/BuildLoop 规划文（弱于 #127）、Kean Bring Receipts（验收备选）。
 - 2026-11-01 第二十二批：#119 Garg 上下文锚定（规划 12→13）、#120 Faros 审查回放（验收 12→13）、#121 kickflow 夜间 E2E 自动修复、#122 Atlassian monorepo 指南匹配审查（CI 12→14）。全站 118→122。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：Periscoped 审查流程（与 #60 高度同构，自承照搬）、Hotfix Daily 审查清单（媒体综述）、Eric Brookfield 自愈 CI（约 400 词，偏短）、Zenn flaky 测试检测（今日 CI 名额已用，留作备选）、QualityLayer / vibeide（产品向，先前已拒）。
