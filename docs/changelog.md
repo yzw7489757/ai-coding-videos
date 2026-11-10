@@ -2,6 +2,23 @@
 
 新资料按批次收录。每批会记录：新增了哪些资料、主题和术语有什么变化、哪些横向页面跟着更新。
 
+## 2026-11-10 · 第三十批收录 #151–#154
+
+| 编号 | 原题（作者） | 阶段 | 发布 |
+|---|---|---|---|
+| [#151](/151-openai-scaling-git-pando) | Aaron Friel、Taylor Blau、Ted Nyman（OpenAI）：Scaling Git at OpenAI | 打地基 · 上下文与规范 | 2026-11-02 |
+| [#152](/152-unlearn-build-coding-agent-eval) | Alex Garrett-Smith（Unlearn）：Build an Eval for Your Coding Agent | 评测代理本身与给动作把关 | 2026-11-03 |
+| [#153](/153-aws-claude-code-agentcore) | Andrew (Qingjie) Ren、Kevin Low、Traci Lim（AWS）：Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls | 云端与后台运行环境 | 2026-11-06 |
+| [#154](/154-sharma-claude-review-playbook) | Rohan Sen Sharma：Claude Code Review in Production: How Our Review Rules Evolved Over Five Months | 接进 PR 与 CI | 2026-09-28 |
+
+- 四篇均按片段分析 → 通盘梳理 → 成稿写成，引语与数字按原文核对。
+- 阶段数量：打地基 17→18；评测 16→17；CI 17→18；云端 16→17。全站 150→154。多代理仍 18；单代理 / 看原理仍 17；规划 / 验收仍 16。
+- **拆分建议（未执行）**：全部阶段均已 >10。最高是多代理 / 打地基 / CI（各 18）：①多代理仍优先——可拆“编排/控制面与写审门闸/工作流脚本”vs“并行实验与长时接力”；②打地基（18）可拆“规则与上下文加载”vs“开发环境、扩展与代理规模基础设施”（#151 Pando / #49 Scion 属后者）；③CI（18）可拆“PR 审查机器人与规则剧本”vs“流水线触发、自动修复与安全”。其次单代理 / 看原理 / 评测 / 云端各 17，规划 / 验收各 16。仅建议，等确认后再拆。
+- 横向：阶段指南 foundation / evals / cloud / ci，以及 review 对 #154 的 xref；模式库新增 P142–P147；paths / all / 00-summary 同步。
+- 术语表新增 8 个：Pando、因果一致性、packfile-uri、Amazon Bedrock AgentCore、ZOA、ZDR、隐藏测试、Finding Verifier（核对器）。
+
+**未收录（备选）**：Halfcycle SDD（产品向）；Brett / Steamfield（与已有写审文重叠）；Chabot（较短）；CodeRabbit / Qodo（客户成功通稿）；Pulore（与 #149 重叠）。
+
 ## 2026-11-08 · 第二十九批收录 #147–#150
 
 | 编号 | 原题（作者） | 阶段 | 发布 |

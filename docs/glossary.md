@@ -4,7 +4,7 @@ outline: [2, 2]
 
 # 术语表：小白也能看懂的 AI 编程词典
 
-本站文章里出现的专业词都收在这里，共 **289** 个，分 7 类。每个词给出：
+本站文章里出现的专业词都收在这里，共 **297** 个，分 7 类。每个词给出：
 
 - **白话**：一句话说清它是什么；
 - **展开**：在本站视频里具体怎么用。
@@ -21,15 +21,15 @@ outline: [2, 2]
 
 **给代理“立规矩”：规则文件与扩展机制**：[CLAUDE.md](#claude-md) · [AGENTS.md](#agents-md) · [MCP](#mcp) · [Hooks](#hooks) · [Skills](#skills) · [Plugins](#plugins) · [Slash Command](#slash-command) · [Front Matter](#front-matter) · [Persona](#persona) · [AskUserQuestion](#ask-user-question) · [Artifact](#artifact) · [Prompt Hook / Agent Hook](#prompt-agent-hook) · [Microagent](#microagent) · [Agent Memory](#agent-memory) · [Mods](#claude-code-mods) · [REVIEW.md](#review-md) · [Playbook](#playbook) · [Code Review Skill](#code-review-skill) · [Review Rules](#review-rules) · [Skill Catalog](#skill-catalog) · [Allowlist](#allowlist) · [嵌套 AGENTS.md](#nested-agents-md) · [WORKFLOW.md](#workflow-md) · [`/context`](#slash-context) · [薄适配器](#thin-adapter) · [`/doctor prompt-audit`](#prompt-audit)
 
-**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff) · [Bookmark](#bookmark-cursor) · [Architect / Editor](#architect-editor) · [Superfan](#superfan) · [Coordinator Agent](#coordinator-agent) · [Runbook](#runbook) · [拷问式访谈](#grill-me) · [反方审查](#contrarian-review) · [Completion Contract](#completion-contract) · [Decision-complete](#decision-complete) · [Session Handoff](#session-handoff) · [Initializer Agent](#initializer-agent) · [Feature List](#feature-list) · [Progress File](#progress-file) · [Stop Condition](#stop-condition) · [Lead / Worker](#lead-worker) · [Queue / Steer](#queue-steer) · [Side Chat](#side-chat) · [Orchestration](#orchestration) · [Seam Failure](#seam-failure) · [Dynamic Workflow](#dynamic-workflow) · [PR Review Bot](#pr-review-bot) · [Fix Treadmill](#fix-treadmill) · [Goal](#codex-goal) · [Design-First](#design-first) · [Implementation Trap](#implementation-trap) · [Repair Loop](#repair-loop) · [WORK.md 轮次头](#turn-header) · [Context Anchoring](#context-anchoring) · [Guideline Matcher](#guideline-matcher) · [Message Board](#message-board) · [sparring](#sparring) · [TDD Guard](#tdd-guard) · [Ask / Plan / Confirm](#ask-plan-confirm) · [Receipts](#receipts) · [Risk Tier](#risk-tier) · [Shared vocabulary](#shared-vocabulary) · [Feedback Summary](#feedback-summary) · [Plan gate / Confidence gate](#plan-confidence-gate)
+**工作流与方法论**：[Plan Mode](#plan-mode) · [RPI](#rpi) · [Spec](#spec) · [Non-goals](#non-goals) · [Vibe Coding](#vibe-coding) · [Blind Spot Pass](#blind-spot-pass) · [Unknown Unknowns](#unknown-unknowns) · [Fan-out](#fan-out) · [Adversarial Review](#adversarial-review) · [Builder / Validator](#builder-validator) · [Task 系统](#task-system) · [Human-in-the-loop](#human-in-the-loop) · [Mental Alignment](#mental-alignment) · [Unhobbling](#unhobbling) · [Garbage Collection Day](#garbage-collection-day) · [Progressive Disclosure](#progressive-disclosure) · [Generator / Evaluator](#generator-evaluator) · [Sprint Contract](#sprint-contract) · [Planner / Worker / Judge](#planner-worker-judge) · [Agent Teams](#agent-teams) · [Task Lock](#task-lock) · [Oracle](#oracle) · [Delta Debugging](#delta-debugging) · [Ralph Loop](#ralph-loop) · [Completion Promise](#completion-promise) · [Human on the Loop](#human-on-the-loop) · [Fresh-context Review](#fresh-context-review) · [Self-healing Layer](#self-healing-layer) · [Specification-Driven Development](#spec-driven-development) · [Red / Green TDD](#red-green-tdd) · [Agentic Manual Testing](#agentic-manual-testing) · [Slam Dunk 任务](#slam-dunk) · [Context-driven Development](#context-driven-development) · [Definition of Done](#definition-of-done) · [Migration Scaffolding](#migration-scaffolding) · [Handoff](#handoff) · [Bookmark](#bookmark-cursor) · [Architect / Editor](#architect-editor) · [Superfan](#superfan) · [Coordinator Agent](#coordinator-agent) · [Runbook](#runbook) · [拷问式访谈](#grill-me) · [反方审查](#contrarian-review) · [Completion Contract](#completion-contract) · [Decision-complete](#decision-complete) · [Session Handoff](#session-handoff) · [Initializer Agent](#initializer-agent) · [Feature List](#feature-list) · [Progress File](#progress-file) · [Stop Condition](#stop-condition) · [Lead / Worker](#lead-worker) · [Queue / Steer](#queue-steer) · [Side Chat](#side-chat) · [Orchestration](#orchestration) · [Seam Failure](#seam-failure) · [Dynamic Workflow](#dynamic-workflow) · [PR Review Bot](#pr-review-bot) · [Fix Treadmill](#fix-treadmill) · [Goal](#codex-goal) · [Design-First](#design-first) · [Implementation Trap](#implementation-trap) · [Repair Loop](#repair-loop) · [WORK.md 轮次头](#turn-header) · [Context Anchoring](#context-anchoring) · [Guideline Matcher](#guideline-matcher) · [Message Board](#message-board) · [sparring](#sparring) · [TDD Guard](#tdd-guard) · [Ask / Plan / Confirm](#ask-plan-confirm) · [Receipts](#receipts) · [Risk Tier](#risk-tier) · [Shared vocabulary](#shared-vocabulary) · [Feedback Summary](#feedback-summary) · [Plan gate / Confidence gate](#plan-confidence-gate) · [Finding Verifier](#finding-verifier)
 
-**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution) · [Credential Vault](#credential-vault) · [Cloud Session](#cloud-session) · [Teleport](#teleport) · [Self-Hosted Worker](#self-hosted-worker) · [Reconciler](#reconciler) · [Deny-and-Continue](#deny-and-continue) · [Grok Build Workflows](#grok-workflows) · [Meta-harness](#meta-harness) · [Agent Sandbox](#agent-sandbox) · [MicroVM](#microvm) · [Egress Proxy](#egress-proxy) · [QA Agent](#qa-agent) · [Cache Hit Rate](#cache-hit-rate) · [Control Plane](#control-plane) · [Credential Injection](#credential-injection) · [GitHub App 安装令牌](#github-app-token) · [External Secrets Operator](#external-secrets) · [gVisor](#gvisor) · [Warm Pool](#warm-pool) · [Fencing Token](#fencing-token) · [REM mode](#rem-mode) · [Agent Compute Engine](#ace) · [Zero-secrets](#zero-secrets) · [In-flight Token Swap](#in-flight-token-swap) · [Fail-closed](#fail-closed) · [Ledger](#ledger) · [Durable Lease](#durable-lease) · [Auto memory](#auto-memory) · [drop-sudo](#drop-sudo) · [permission-profile](#permission-profile) · [Dreaming](#dreaming)
+**运行方式、权限与安全**：[Auto Mode](#auto-mode) · [Always Approve / Full Access](#always-approve) · [Sandbox](#sandbox) · [Auto Review / Guardian Approvals](#auto-review) · [Headless Mode](#headless) · [无头浏览器](#headless-browser) · [Git Worktree](#worktree) · [Background / Cloud Agent](#background-agent) · [Routines / Automations](#routines) · [/loop](#loop) · [/goal](#goal) · [Computer Use](#computer-use) · [TUI / CLI](#tui) · [`codex exec`](#codex-exec) · [Patch Artifact](#patch-artifact) · [Stop Hook](#stop-hook) · [Lethal Trifecta](#lethal-trifecta) · [Database Branching](#db-branching) · [Worktree 端口分配](#port-hashing) · [ACP](#acp) · [Fail-open](#fail-open) · [Risk Classifier Agent](#risk-classifier) · [Secret Redaction](#secret-redaction) · [Egress Control](#egress-control) · [Durable Execution](#durable-execution) · [Credential Vault](#credential-vault) · [Cloud Session](#cloud-session) · [Teleport](#teleport) · [Self-Hosted Worker](#self-hosted-worker) · [Reconciler](#reconciler) · [Deny-and-Continue](#deny-and-continue) · [Grok Build Workflows](#grok-workflows) · [Meta-harness](#meta-harness) · [Agent Sandbox](#agent-sandbox) · [MicroVM](#microvm) · [Egress Proxy](#egress-proxy) · [QA Agent](#qa-agent) · [Cache Hit Rate](#cache-hit-rate) · [Control Plane](#control-plane) · [Credential Injection](#credential-injection) · [GitHub App 安装令牌](#github-app-token) · [External Secrets Operator](#external-secrets) · [gVisor](#gvisor) · [Warm Pool](#warm-pool) · [Fencing Token](#fencing-token) · [REM mode](#rem-mode) · [Agent Compute Engine](#ace) · [Zero-secrets](#zero-secrets) · [In-flight Token Swap](#in-flight-token-swap) · [Fail-closed](#fail-closed) · [Ledger](#ledger) · [Durable Lease](#durable-lease) · [Auto memory](#auto-memory) · [drop-sudo](#drop-sudo) · [permission-profile](#permission-profile) · [Dreaming](#dreaming) · [ZOA](#zoa) · [ZDR](#zdr)
 
-**软件工程基础词**：[CI/CD](#ci-cd) · [PR](#pr) · [Code Review](#code-review) · [P0 / P1 / P2](#severity) · [Lint / Linter](#lint) · [Type Check](#type-check) · [Fixture / Invariant / Probe](#fixture) · [Happy Path](#happy-path) · [Flaky Test](#flaky-test) · [Monorepo](#monorepo) · [Brownfield / Greenfield](#brownfield) · [Slop](#slop) · [Deploy Preview](#deploy-preview) · [PR Babysitting](#babysitting) · [Dry Run](#dry-run) · [Evals / 红队](#evals) · [Benchmark](#benchmark) · [Codemod](#codemod) · [Edit Format](#edit-format) · [Pets vs Cattle](#pets-vs-cattle) · [Changeset](#changeset) · [Merge Queue](#merge-queue) · [Feature Flag](#feature-flag) · [Dead Code](#dead-code) · [通用代理框架](#agentic-framework) · [Least Privilege](#least-privilege) · [Edge Case](#edge-case) · [Transitive Dependency](#transitive-dependency) · [Invariant](#invariant) · [Mutation Testing](#mutation-testing) · [ADR](#adr) · [LGTM](#lgtm)
+**软件工程基础词**：[CI/CD](#ci-cd) · [PR](#pr) · [Code Review](#code-review) · [P0 / P1 / P2](#severity) · [Lint / Linter](#lint) · [Type Check](#type-check) · [Fixture / Invariant / Probe](#fixture) · [Happy Path](#happy-path) · [Flaky Test](#flaky-test) · [Monorepo](#monorepo) · [Brownfield / Greenfield](#brownfield) · [Slop](#slop) · [Deploy Preview](#deploy-preview) · [PR Babysitting](#babysitting) · [Dry Run](#dry-run) · [Evals / 红队](#evals) · [Benchmark](#benchmark) · [Codemod](#codemod) · [Edit Format](#edit-format) · [Pets vs Cattle](#pets-vs-cattle) · [Changeset](#changeset) · [Merge Queue](#merge-queue) · [Feature Flag](#feature-flag) · [Dead Code](#dead-code) · [通用代理框架](#agentic-framework) · [Least Privilege](#least-privilege) · [Edge Case](#edge-case) · [Transitive Dependency](#transitive-dependency) · [Invariant](#invariant) · [Mutation Testing](#mutation-testing) · [ADR](#adr) · [LGTM](#lgtm) · [因果一致性](#causal-consistency) · [packfile-uri](#packfile-uri)
 
-**工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider) · [Scion](#scion) · [DeepWiki](#deepwiki) · [claude-code-action](#claude-code-action) · [Symphony](#symphony) · [Codex App Server](#codex-app-server) · [T3 Code](#t3-code) · [yuurei](#yuurei)
+**工具、产品与模型**：[Claude Code](#claude-code) · [Codex](#codex) · [Grok Build](#grok-build) · [Cursor](#cursor) · [Claude Tag](#claude-tag) · [Playwright](#playwright) · [Claude Agent SDK](#agent-sdk) · [Responses API / app-server](#responses-api) · [Deferred Tools / Tool Search](#deferred-tools) · [apply_patch](#apply-patch) · [ripgrep](#ripgrep) · [模型名称](#model-names) · [Reasoning Effort / Fast Mode](#reasoning-effort) · [Showboat / Rodney](#showboat) · [Droid](#droid) · [Neon](#neon) · [skill-creator](#skill-creator) · [tmux](#tmux) · [Gemini CLI](#gemini-cli) · [Conductor](#conductor) · [OpenHands](#openhands) · [Devin](#devin) · [Amp](#amp) · [Bugbot](#bugbot) · [Codex App Server](#app-server) · [Aider](#aider) · [Scion](#scion) · [DeepWiki](#deepwiki) · [claude-code-action](#claude-code-action) · [Symphony](#symphony) · [Codex App Server](#codex-app-server) · [T3 Code](#t3-code) · [yuurei](#yuurei) · [Pando](#pando) · [Amazon Bedrock AgentCore](#agentcore)
 
-**评测与验证**：[Agent Autonomy](#agent-autonomy) · [Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [Keep Rate](#keep-rate) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Property-based Testing](#property-based-testing) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking) · [Review Replay](#review-replay) · [SnowPR](#snowpr) · [SWE-bench](#swe-bench) · [MirrorCode](#mirrorcode) · [指令文件回归](#instruction-file-regression)
+**评测与验证**：[Agent Autonomy](#agent-autonomy) · [Task / Trial](#eval-task-trial) · [Grader](#grader) · [Transcript / Outcome](#transcript-outcome) · [Keep Rate](#keep-rate) · [pass@k / pass^k](#pass-at-k) · [Capability Eval / Regression Eval](#capability-regression-eval) · [Saturation](#eval-saturation) · [Asymmetry of Verification](#asymmetry-of-verification) · [8 Pillars of Verification](#verification-pillars) · [Reward Model](#reward-model) · [Precision / Recall](#precision-recall) · [Resolution Rate](#resolution-rate) · [Majority Voting](#majority-voting) · [Hill-climbing](#hill-climbing) · [Flapping](#flapping) · [Negative Control](#negative-control) · [Output Schema](#output-schema) · [Infrastructure Noise](#infra-noise) · [Conformance Test](#conformance-test) · [Stage Gate](#stage-gate) · [Property-based Testing](#property-based-testing) · [Differential Testing](#differential-testing) · [LLM-as-judge](#llm-as-judge) · [Held-out Set](#held-out-set) · [Overfitting](#overfitting) · [Baseline](#baseline-contract) · [Agent Trajectory](#agent-trajectory) · [Plan-only Eval](#plan-only-eval) · [Golden Set](#golden-set) · [Verification Stack](#verification-stack) · [Critic Model](#critic-model) · [Terminal-Bench](#terminal-bench) · [ProgramBench](#programbench) · [Skill Triggering](#skill-triggering) · [Behavior Spec](#behavior-spec) · [Reward Hacking](#reward-hacking) · [Review Replay](#review-replay) · [SnowPR](#snowpr) · [SWE-bench](#swe-bench) · [MirrorCode](#mirrorcode) · [指令文件回归](#instruction-file-regression) · [隐藏测试](#hidden-tests)
 
 ## 一、核心概念：代理、上下文与 Token
 
@@ -793,6 +793,12 @@ Broekx 跨厂 Codex 审查（#144）要求每次审查输出该表，编辑同�
 
 #148：计划批准清掉的是不确定性阻断项，不是风险阻断项；计划批准不等于合并批准。
 
+### Finding Verifier（核对器） {#finding-verifier}
+
+**白话**：不找新问题，只检查发现能否被证明，证明不了就丢掉。
+
+#154 的核对器检查引用的文件、摘录、是否落在这次 diff 里、规则是否真那样写；不得重评严重级别，也不得自己追加发现。
+
 ## 四、运行方式、权限与安全
 
 ### Auto Mode（自动模式） {#auto-mode}
@@ -1131,6 +1137,18 @@ beta，需较新 CLI；不可与 sandbox 同设；配置须来自可信工作流
 
 #150：Anthropic 用来组织代理记忆；宝可梦评测里改正了写错的路标，内部语料上 128 轮建设 wiki。不等于压缩（compaction）。
 
+### ZOA（零运维访问） {#zoa}
+
+**白话**：Mantle 推理引擎的设计目标：AWS 运维人员没有技术手段访问客户的提示词或补全。
+
+#153 把它列为在 Bedrock 上跑 Claude Code 的一项厂商声明，细节指向其他文档。
+
+### ZDR（零数据保留） {#zdr}
+
+**白话**：可配置的数据保留选项，使推理请求和响应不被 AWS 写入持久存储，也不分享给模型提供商。
+
+#153 与 ZOA 一并列出；这是可配置项，不是默认保证。
+
 ## 五、软件工程基础词
 
 ### CI/CD（持续集成 / 持续部署） {#ci-cd}
@@ -1324,6 +1342,18 @@ Claude Code 团队把它作为七层审查里的第六层（#60）。代码量�
 **白话**：Looks Good To Me 的缩写，审查者表示同意合并的惯用语。
 
 #120：Faros 回放的 28 个 PR 中，多数原始人工审查只写了一个 LGTM。
+
+### 因果一致性（Causal Consistency） {#causal-consistency}
+
+**白话**：读到某次写入时也能读到它所依赖的历史，但不保证仓库里所有分支处于同一时间点。
+
+Pando 用它换掉仓库级时间点快照，让无关分支可以并行写入。clone 协商期间，不同客户端可能看到不同分支版本的组合（#151）。
+
+### packfile-uri {#packfile-uri}
+
+**白话**：Git 协议允许服务器在 clone/fetch 时返回额外 pack 的下载链接、响应体只传空 pack 的机制。
+
+Pando 用它把真正的数据交给 Express 区域缓存分发，避免给每个客户端现场打包；OpenAI 也为上游 Git 贡献了相关改进（#151）。
 
 ## 六、工具、产品与模型
 
@@ -1524,6 +1554,18 @@ Symphony 默认用它拉起每票会话；也是自建客户端的接口（参�
 **白话**：用可版本化 Profile 在隔离执行单元里跑编码代理、留下 trace 的 CLI；把隔离与评测拆开。
 
 #138：Profile×Task→Run；默认临时 HOME 级配置隔离，不是 OS 沙箱；trace 记事实不自动打行为分。
+
+### Pando {#pando}
+
+**白话**：OpenAI 为大量并发分支推送而建的 Git 仓库后端，保留 Git 协议，用因果一致性换写入并行，并复用客户端推上来的 packfile。
+
+默认只广告指定的 trunk，好让推上来的 pack 原样发给后来的 fetch；读路径走 packfile-uri 和区域缓存。系统未对外开放（#151）。与 Anthropic 的 Scion（#49）面对同类压力，但 Scion 选择离开 Git。
+
+### Amazon Bedrock AgentCore {#agentcore}
+
+**白话**：在 Amazon Bedrock 上构建和运行代理的平台；#153 用到 runtime（每任务一个隔离会话）、Identity（短时凭证）和 memory。
+
+#153 的示例里，每个已注册仓库有自己的 runtime，每个任务再开一个隔离的 microVM 会话；GitHub 令牌由 AgentCore Identity 签发，8 小时过期。
 
 ## 七、评测与验证
 
@@ -1778,4 +1820,10 @@ Basis 用它补结果评测的盲区：裁判拿规格与轨迹判 true / false 
 **白话**：在干净输入上对 base 与 candidate 的 AGENTS.md/CLAUDE.md 做配对重复跑，用硬门/软门决定能不能合。
 
 #136：candidate 只物化白名单指令路径；密钥经 broker，fork PR 不进带密钥 job。
+
+### 隐藏测试（Hidden tests） {#hidden-tests}
+
+**白话**：代理做题时看不到、结束后才拷进项目打分的测试，避免按测试特判或改测试过关。
+
+#152 把评测和隐藏测试放在项目旁边，打分前先把原来的测试文件 checkout 回去。#123 SnowPR 也用隐藏测试判对错。
 

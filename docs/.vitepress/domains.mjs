@@ -39,6 +39,7 @@ export const domains = [
     desc: '让代理每次开工都拿到对的上下文：规则文件、Skills、团队规范，以及能被自动验证的代码库。',
     items: [
       { n: '149', slug: '149-kaminski-one-config', text: '多工具单源加薄适配器', short: '单源AGENTS加适配器', tool: 'general', type: 'article', added: '2026-11-08', published: '2026-11-05' },
+      { n: '151', slug: '151-openai-scaling-git-pando', text: '代理规模的 Git 后端 Pando', short: 'Pando 并发推送', tool: 'general', type: 'article', added: '2026-11-10', published: '2026-11-02' },
       { n: '132', slug: '132-axel-agent-harness-trust', text: '一人团队的可信任代理 harness', short: '文件型 harness 强制分层', tool: 'general', type: 'article', added: '2026-11-04', published: '2026-10-29' },
       { n: '49', slug: '49-anthropic-scion-source-control', text: '为代理重做源代码管理', short: '代理规模的源码管理', tool: 'general', type: 'article', added: '2026-10-14', published: '2026-10-13' },
       { n: '52', slug: '52-claude-code-mods', text: 'Claude Code mods：可编程的扩展', short: 'Claude Code mods', tool: 'claude', type: 'article', added: '2026-10-15', published: '2026-10-01' },
@@ -173,6 +174,7 @@ export const domains = [
     desc: '不只看一次产出，而是系统地评测代理和它的配置：评测零件与 pass@k、给 Skill 写评测、评测分数里的噪声，以及给代理动作把关的权限分类器。',
     items: [
       { n: '138', slug: '138-takamatsu-yuurei-isolate-eval', text: '评测前先隔离 harness', short: 'yuurei隔离配置', tool: 'general', type: 'article', added: '2026-11-05', published: '2026-11-04' },
+      { n: '152', slug: '152-unlearn-build-coding-agent-eval', text: '用自家任务搭代理评测', short: '自家隐藏测试评测', tool: 'claude', type: 'article', added: '2026-11-10', published: '2026-11-03' },
       { n: '123', slug: '123-snowflake-snowpr-benchmark', text: 'SnowPR：用自家 PR 评编码代理', short: '私有 monorepo 基准', tool: 'general', type: 'article', added: '2026-11-02', published: '2026-10-27' },
       { n: '69', slug: '69-google-eval-engineering-lessons', text: '按执行轨迹打分的四条评测教训', short: '轨迹打分 双条件', tool: 'general', type: 'article', added: '2026-10-19', published: '2026-10-17' },
       { n: '94', slug: '94-jain-harnesses-worth-the-cost', text: '外壳值不值得：便宜模型的实验', short: '外壳成本实验', tool: 'codex', type: 'article', added: '2026-10-25', published: '2026-10-13' },
@@ -205,6 +207,7 @@ export const domains = [
       { n: '122', slug: '122-atlassian-guideline-matcher-review', text: 'monorepo 审查：先匹配指南再审', short: '指南匹配 两步审查', tool: 'general', type: 'article', added: '2026-11-01', published: '2026-10-14' },
       { n: '41', slug: '41-anthropic-agent-automations', text: '定时代理自动化的六条规则', short: '定时代理六规则', tool: 'claude', type: 'article', added: '2026-10-13', published: '2026-10-08' },
       { n: '90', slug: '90-leek-six-rounds-bot-review', text: '六轮机器人审查与补丁踩踏机', short: '修丁先自审 硬顶五轮', tool: 'claude', type: 'article', added: '2026-10-24', published: '2026-10-03' },
+      { n: '154', slug: '154-sharma-claude-review-playbook', text: '五个月演化的审查剧本', short: '审查剧本加核对器', tool: 'claude', type: 'article', added: '2026-11-10', published: '2026-09-28' },
       { n: '57', slug: '57-claude-continuous-evals-in-ci', text: '把 agent evals 接进 CI', short: '配置变更跑评测', tool: 'claude', type: 'guide', added: '2026-10-16', published: '2026-08-21' },
       { n: '136', slug: '136-dvnc-agents-md-ci-harness', text: 'AGENTS.md 变更先过 CI', short: '指令文件配对回归', tool: 'general', type: 'article', added: '2026-11-05', published: '2026-08-08' },
       { n: '144', slug: '144-broekx-cross-provider-pr-review', text: '别让模型给自己打分', short: '跨厂审查进 CI', tool: 'codex', type: 'article', added: '2026-11-07', published: '2026-07-15' },
@@ -225,6 +228,7 @@ export const domains = [
     icon: '☁️',
     desc: '让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。',
     items: [
+      { n: '153', slug: '153-aws-claude-code-agentcore', text: 'Bedrock 远程 Claude 会话', short: 'AgentCore 远程会话', tool: 'claude', type: 'article', added: '2026-11-10', published: '2026-11-06' },
       { n: '139', slug: '139-remy-persistent-agents', text: '自托管常驻代理舰队', short: '常驻 tmux 代理', tool: 'claude', type: 'article', added: '2026-11-06', published: '2026-10-30' },
       { n: '130', slug: '130-google-ace-deep-dive', text: 'ACE：microVM 与零秘密', short: 'ACE 零秘密与闲置', tool: 'general', type: 'article', added: '2026-11-03', published: '2026-10-23' },
       { n: '118', slug: '118-avichal-cloud-agent-sandboxes', text: '云端代理沙箱：隔离阶梯与五层防线', short: '隔离阶梯 五层防线', tool: 'general', type: 'article', added: '2026-10-31', published: '2026-10-21' },

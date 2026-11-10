@@ -2,7 +2,7 @@
 
 <div class="hook">
 
-**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 146 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
+**分类原则：按一个 AI 代理开发任务从开始到上线的顺序分组。** 知识库收录的全部 154 份资料分在 9 个阶段里，每份只放在它主要贡献所在的那个阶段；阶段内按原始发布日期从新到旧排列（持续更新的文档排在末尾）。每条标出资料类型（视频 / 文章 / 官方文档 / 指南）和所用工具。
 
 </div>
 
@@ -27,6 +27,12 @@
   - 看点：一份 AGENTS.md 加薄适配器；Claude 用 `@AGENTS.md` 导入，Copilot 用 CI 生成副本；嵌套文件必须自包含；权限/hooks/MCP 不靠散文共享。咨询文，文末有转化。
   - 🆕 收录于 2026-11-08 ｜ 👉 [阅读分析](/149-kaminski-one-config)
 
+### 代理规模的 Git 后端 Pando {#item-151}
+
+- **[Scaling Git at OpenAI](https://openai.com/index/scaling-git-at-openai)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
+  - 作者 / 来源：Aaron Friel、Taylor Blau、Ted Nyman ／ OpenAI ｜ 发布：2026-11-02 ｜ 工具：Git 协议与客户端；自研后端 Pando
+  - 看点：OpenAI 没有抛弃 Git，而是用因果一致性和可复用 packfile 重建后端，把中位推送延迟降到原来的约五分之一。
+  - 🆕 收录于 2026-11-10 ｜ 👉 [阅读分析](/151-openai-scaling-git-pando)
 
 ### 一人团队的可信任代理 harness {#item-132}
 - 原文：Axel Sooriah · Building a harness so a team of one can trust its coding agents（2026-10-29）
@@ -645,6 +651,13 @@
 - 看点：yuurei Profile/Task/Run；隔离与评测拆开；n=1 假设失败的三项对照。
 - 🆕 收录于 2026-11-05 ｜ 👉 [阅读分析](/138-takamatsu-yuurei-isolate-eval)
 
+### 用自家任务搭代理评测 {#item-152}
+
+- **[Build an Eval for Your Coding Agent](https://unlearn.dev/blog/build-an-eval-for-your-coding-agent)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Alex Garrett-Smith ／ Unlearn ｜ 发布：2026-11-03 ｜ 工具：Claude Code（`claude -p`；作者写明可换成其他无人值守代理）
+  - 看点：从自家 git 历史抽任务，把隐藏测试放在项目外，打分前还原原测试，一次只改一件事看表。
+  - 🆕 收录于 2026-11-10 ｜ 👉 [阅读分析](/152-unlearn-build-coding-agent-eval)
+
 ### SnowPR：用自家 PR 评编码代理 {#item-123}
 
 - **[SnowPR: Benchmarking Coding Agents on Snowflake's 43-Million-Line Monorepo](https://www.snowflake.com/en/blog/engineering/Benchmarking-coding-agents/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-general">通用（不限工具）</span>
@@ -805,6 +818,13 @@
 - 一句话：全绿 PR 上 Copilot + Claude Review 挖出 32 条真问题；修丁引入机制会续租轮次，要把问题前移。
 - 看点：五族失败模式；硬顶五轮；未推送先自审；不证明机器人强于自审。
 
+### 五个月演化的审查剧本 {#item-154}
+
+- **[Claude Code Review in Production: How Our Review Rules Evolved Over Five Months](https://nulltensor.com/posts/claude-code-review/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Rohan Sen Sharma ｜ 发布：2026-09-28 ｜ 工具：Claude Code（GitHub Actions 中的官方 action、本地 `/review`）
+  - 看点：从一条按需提示词演化到剧本、六位专家和“无法证明就扔掉”的核对器，因为错误的 request changes 会堵住同事。
+  - 🆕 收录于 2026-11-10 ｜ 👉 [阅读分析](/154-sharma-claude-review-playbook)
+
 ### 把 agent evals 接进 CI {#item-57}
 
 - **[Continuous evals in CI](https://academy.claude.com/courses/ai-native-sdlc-playbook/continuous-evals-in-ci)** <span class="type-tag type-guide">指南</span> <span class="tool-tag tool-claude">Claude Code</span>
@@ -880,6 +900,13 @@
 **这一组放什么**：让代理离开你的笔记本：云端会话、托管 VM、自托管执行机器和沙箱机队，以及背后的持久化与安全布局。
 
 📘 **先读阶段指南**：[云端与后台运行环境 · 代理在哪里跑](/guide/cloud)
+
+### Bedrock 远程 Claude 会话 {#item-153}
+
+- **[Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls](https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/)** <span class="type-tag type-article">文章</span> <span class="tool-tag tool-claude">Claude Code</span>
+  - 作者 / 来源：Andrew (Qingjie) Ren、Kevin Low、Traci Lim ／ AWS ｜ 发布：2026-11-06 ｜ 工具：Claude Code（经 Amazon Bedrock）；AgentCore runtime、Identity、memory
+  - 看点：官方可部署示例：在你的 AWS 账户里为每个任务开一个隔离的 AgentCore 会话，做完交回 PR，并写清了适合与不适合的边界。
+  - 🆕 收录于 2026-11-10 ｜ 👉 [阅读分析](/153-aws-claude-code-agentcore)
 
 ### 自托管常驻代理舰队 {#item-139}
 
@@ -1116,6 +1143,8 @@
 
 ## 覆盖情况与已知缺口（如实说明） {#coverage}
 
+**容量检查（2026-11-10，第三十批 #151–#154 后）**：现在 **154** 份资料分 9 个阶段：多代理 / 打地基 / CI 各 18；单代理 / 评测 / 云端 / 看原理各 17；规划 / 验收各 16。本批补打地基（#151 OpenAI 的 Git 后端 Pando）、评测（#152 用自家任务搭隐藏测试评测）、云端（#153 Bedrock AgentCore 远程隔离会话）、CI（#154 五个月演化的审查剧本）。逐篇复核归类：#151 的主要贡献是代理规模下源代码管理怎么重建，与 #49 Scion 同类，归打地基；#152 讲的是怎么系统地评测代理本身，归评测（把评测接进 CI 的课程示例仍是 #57）；#153 讲代理在自己账户里的隔离会话里跑、做完交回 PR，归云端；#154 的主贡献是每条 PR 上提交 approve / request changes 的 GitHub workflow，规则演化服务于这个会投票的机器人，归 CI（验收指南只做 xref，不重复收录）。**拆分建议（仅建议，未执行）**：全部阶段均已 >10。最高是多代理 / 打地基 / CI（各 18）：①多代理仍优先——可拆“编排/控制面与写审门闸/工作流脚本”vs“并行实验与长时接力”；②打地基（18）可拆“规则与上下文加载”vs“开发环境、扩展与代理规模基础设施”（#151 Pando / #49 Scion 属后者）；③CI（18）可拆“PR 审查机器人与规则剧本”vs“流水线触发、自动修复与安全”。其次单代理 / 看原理 / 评测 / 云端各 17，规划 / 验收各 16。均保持单一任务轴，等主人确认后再拆。
+
 **容量检查（2026-11-08，第二十九批 #147–#150 后）**：现在 **150** 份资料分 9 个阶段：多代理 18；打地基 / 单代理 / 看原理各 17；规划 / 验收 / 评测 / CI / 云端各 16。本批补多代理（#147 动态工作流操作手册）、单代理（#148 用证据重建循环）、打地基（#149 多工具单源适配器）、看原理（#150 代理记忆与做梦）。逐篇复核归类：#147 主要贡献是把多代理编排写成可恢复脚本，归多代理；#148 是一个人如何驾驭一套循环（两道门闸、只读审查），归单代理；#149 是规则文件如何在多工具间共读，归打地基；#150 是记忆系统的设计原理与评测，归看原理。**拆分建议（仅建议，未执行）**：①多代理（18）最优先——可拆“编排/控制面与写审门闸 / 工作流脚本”vs“并行实验与长时接力”；②打地基 / 单代理 / 看原理（各 17）与 CI（16）其次——CI 可拆“触发与自动修复 / 跨厂审查合同”vs“指令回归与流水线安全”；打地基可拆“规则与上下文加载”vs“开发环境与扩展”；单代理可拆“一人多线与 worktree”vs“循环、effort 与主人闸门”；看原理可拆“厂商/内部 harness 机制”vs“记忆、控制面与编排规格”。均保持单一任务轴，等主人确认后再拆。
 
 **容量检查（2026-11-06，第二十七批 #139–#142 后）**：现在 **142** 份资料分 9 个阶段：多代理 17；单代理 / 验收 / 评测 / 云端 / 看原理各 16；打地基 / 做规划 / CI 各 15。本批补云端（#139 自托管常驻舰队）、验收（#140 开 PR 前证据收据）、多代理（#141 编排者不改代码、#142 Claude 写 Codex 审门闸）。逐篇复核归类：#139 主要贡献是代理在自托管机器上怎么常驻保活，归云端；#140 是一次产出开 PR 前怎么证明能工作，归验收；#141/#142 是同目标下多角色分工与写审协调，归多代理。**拆分建议（仅建议，未执行）**：①多代理（17）最优先——可拆“编排/控制面与写审门闸”（#141、#142、#131、#111、#117、#80、#97…）vs“并行实验与长时接力”（#128、#76、#65、#17、#18、#30、#73…）；②单代理 / 看原理 / 评测 / 验收 / 云端（各 16）其次——单代理可拆日环闸门 vs 并行隔离形状；看原理可拆厂商 harness 机制 vs 其上控制面；评测可拆隔离/配置可重放 vs 基准与分类器；验收可拆自验证/TDD/收据前移 vs 审查器与 Stop-hook；云端可拆托管会话与机队 vs 强制边界/自托管常驻；③打地基 / 规划 / CI（各 15）再次。均保持单一任务轴，等主人确认后再拆。
@@ -1188,6 +1217,7 @@
 - 已排除：James Montemagno 的 *Grok Code Fast 1 in VS Code*（2025-08，超出 12 个月且仅 4 分钟）；若干标题党 / 新闻解读类 Grok 视频。
 
 **其他说明：**
+- 2026-11-10 第三十批：#151 OpenAI Pando Git 后端（打地基 17→18）、#152 Unlearn 自家任务评测（评测 16→17）、#153 AWS AgentCore 远程会话（云端 16→17）、#154 Sharma 审查剧本（CI 17→18）。全站 150→154。工具：Claude Code +3、通用 +1；类型：文章 +4。
 - 2026-11-08 第二十九批：#147 Zimmer 动态工作流操作手册（多代理 17→18）、#148 Csiki 用证据重建循环（单代理 16→17）、#149 Kaminski 多工具单源适配器（打地基 16→17）、#150 Anthropic 代理记忆与做梦（看原理 16→17）。全站 146→150。工具：Claude Code +3、通用 +1；类型：文章 +4。
 - 2026-11-07 第二十八批：#143 Santana `/context` 加载检查（打地基 15→16）、#145 Schuberg 采访词表（规划 15→16）、#146 Atlas Codex CI 安全 / #144 Broekx 跨厂审查（CI 15→17）。全站 142→146。工具：Claude Code +2、Codex +2；类型：文章 +3、指南 +1。
 - 2026-11-03 第二十四批：#127 Fresh Worktree plan vs goal（规划 13→14）、#128 Generality MirrorCode 多代理（多代理 13→14）、#129 Alonso TDD hooks（验收 13→14）、#130 Google ACE（云端 13→14）。全站 126→130。工具：Claude Code +1、通用 +3；类型：文章 +4。未收：AgentRex 审查闸门文、Ajayk AGENTS.md 指南、AutoCoder Unbundled 产品向、Stuzhuk harness（与 #124 重叠）、Orbit/Continuum/Nimbalyst 并行产品文、Claude sandbox docs / Academy 课程页、GitHub Agent HQ 产品帖、Vivek/BuildLoop 规划文（弱于 #127）、Kean Bring Receipts（验收备选）。
